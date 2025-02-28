@@ -5,22 +5,22 @@ Bem-vindo ao **CodeWiki**! Este repositório tem a finalidade de organizar minha
 
 # Anotaçoes
 
-- [Risco ao usar target_blank](problemas-target-blank.md)
+- [Risco ao usar target_blank](Anotações/problemas-target-blank.md)
 
 ---
 
 # Livros
 
-- [Curso em Video PDF das Aulas](curso-em-video-aulas-em-pdf)
+- [Curso em Video PDF das Aulas](LIVROS/curso-em-video-aulas-em-pdf/)
 
 ---
 
 # SNIPPETS
 
-- [Função JavaScript Botão de volta ao topo](btn-volta-ao-topo.md)
-- [Função JavaScript para Copiar Textos](copiar-texto.md)
-- [Função JavaScript Relógio](relogio.md)
-- [Script em Batch para abrir programas automáticamente](turn-on.md)
+- [Função JavaScript Botão de volta ao topo](Snippets/btn-volta-ao-topo.md)
+- [Função JavaScript para Copiar Textos](Snippets/copiar-texto.md)
+- [Função JavaScript Relógio](Snippets/relogio.md)
+- [Script em Batch para abrir programas automáticamente](Snippets/turn-on.md)
 
 
 ---
