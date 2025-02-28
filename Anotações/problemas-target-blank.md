@@ -8,8 +8,6 @@ Adicione o atributo rel="noopener noreferrer" ao link para evitar que a página 
 Exemplo:
 
 ```html
-Copiar
-Editar
 <a href="https://www.example.com/manual.pdf" target="_blank" rel="noopener noreferrer">
     Clique aqui para acessar o manual
 </a>
