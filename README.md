@@ -17,6 +17,7 @@ O repositório está organizado da seguinte forma:
 ### 📜 Livros e Anotações
 
 - [Anotação - Risco ao usar target_blank](Anotações/problemas-target-blank.md)
+- [Anotação -Tutorial: Como Criar Links Internos no Markdown](Anotações/criando-links-com-markdown.md)
 
 #### Curso em Video HTML
 - [Aula 01 - História da Internet](LIVROS/curso-em-video-aulas-em-pdf/01.pdf)
@@ -39,7 +40,6 @@ O repositório está organizado da seguinte forma:
 - [Aula 18 - Aprendendo Git e GitHub](LIVROS/curso-em-video-aulas-em-pdf/18.pdf)
 - [Aula 19 - Imagens de Fundo](LIVROS/curso-em-video-aulas-em-pdf/19.pdf)
 - [Aula 20 - Mini-projeto Cordel](LIVROS/curso-em-video-aulas-em-pdf/20.pdf)
-
 
 ---
 
