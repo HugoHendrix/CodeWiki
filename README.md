@@ -8,7 +8,7 @@ Este repositório tem a finalidade de organizar minhas anotações, dicas e trec
 
 O repositório está organizado da seguinte forma:
 
-- **[Livros e Anotações](#-livros-e-anotações)**: Vários tipos de livros de programação e minhas Anotações.
+- **[Livros e Anotações](#-anotações)**: Vários tipos de livros de programação e minhas Anotações.
 - **[Funções em JavaScript](#-javascript)**: Funções que utilizo com frequência.
 - **[Snippets](#-snippets)**: Trechos de código úteis para reutilização.
 - **[Recursos para WEB](#-recursos-para-desenvolvimento-e-design)**: Links para documentações, ferramentas e outros recursos.
@@ -57,14 +57,14 @@ O repositório está organizado da seguinte forma:
 
 # 🖖 Curso em Video 
 
-#### Anotações
+#### 📝 Anotações
 
 - [Internet Antiga](Curso%20em%20Video/internet-antiga.md)
-- [Gopher - Protocolo e sistema de organização de informações](Curso%20em%20Video/gopher.md)
+- [Gopher - Protocolo e Sistema de Organização de Informações](Curso%20em%20Video/gopher.md)
 - [TCP/IP (Transmission Control Protocol/Internet Protocol)](Curso%20em%20Video/protocolos.md)
-- [Tim Berners-Lee**, HTML 1, WWW (World Wide Web) e Browsers (navegadores)](Curso%20em%20Video/tim-html-www-browser.md)
+- [Tim Berners-Lee | HTML 1 | WWW (World Wide Web) | Browsers (navegadores)](Curso%20em%20Video/tim-html-www-browser.md)
 
-#### Curso de HTML
+#### 📖 PDF das Aulas
 
 - [Aula 01 - História da Internet](Curso%20em%20Video/curso-em-video-aulas-em-pdf/01.pdf)
 - [Aula 02 - Como funciona a Internet](Curso%20em%20Video/curso-em-video-aulas-em-pdf/02%20-%20Como%20funciona%20a%20Internet.pdf)
@@ -93,7 +93,7 @@ O repositório está organizado da seguinte forma:
 
 ### 🔗 Links Rápidos
 
-- [Livros e Anotações](#-livros-e-anotações)
+- [Livros e Anotações](#-anotações)
 - [JavaScript](#-javascript)
 - [Snippets](#-snippets)
 - [Recursos para WEB](#-recursos-para-desenvolvimento-e-design)

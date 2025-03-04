@@ -1,8 +1,7 @@
-Claro! Vou explicar de forma detalhada e simples os protocolos **TCP/IP**, **HTTP** e **HTTPS**, que são fundamentais para o funcionamento da internet e da web. Vamos lá!
+### 💾 **TCP/IP (Transmission Control Protocol/Internet Protocol)**
 
 ---
 
-### **TCP/IP (Transmission Control Protocol/Internet Protocol)**
 **Definição:**  
 TCP/IP é um conjunto de protocolos de comunicação que permite a transmissão de dados entre dispositivos em uma rede, como a internet. Ele é a base de toda a comunicação online.
 

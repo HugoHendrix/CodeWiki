@@ -1,6 +1,9 @@
 
 
-### **Tim Berners-Lee**
+### 💾 **Tim Berners-Lee**
+
+--- 
+
 **Quem é:**  
 Tim Berners-Lee é um cientista da computação britânico, conhecido como o **pai da World Wide Web (WWW)**. Ele criou as bases da web como a conhecemos hoje.
 
