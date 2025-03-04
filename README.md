@@ -1,4 +1,4 @@
-## 💻📘 CodeWiki 
+# 💻📘 Documentação - CodeWiki 
 
 Bem-vindo ao **CodeWiki**! Este repositório tem a finalidade de organizar minhas anotações, dicas e trechos de códigos diversos. É um projeto em constante evolução, então sinta-se à vontade para explorar!
 
@@ -22,6 +22,27 @@ O repositório está organizado da seguinte forma:
 - [Anotação - Risco ao usar target_blank](Anotações/problemas-target-blank.md)
 - [Anotação - Tutorial: Como Criar Links Internos no Markdown](Anotações/criando-links-com-markdown.md)
 - [Media Queries e CLAMP FUNCTION no CSS](Anotações/media-queries-e-clamp-function-css.md)
+
+
+---
+
+### 💻 JavaScript
+
+- [Função JavaScript Botão de volta ao topo](Snippets/btn-volta-ao-topo.md)
+- [Função JavaScript para Copiar Textos](Snippets/copiar-texto.md)
+- [Função JavaScript Relógio](Snippets/relogio.md)
+
+---
+
+### 🚩 Snippets
+
+- [Script em Batch para abrir programas automaticamente](Snippets/turn-on.md)
+
+---
+
+### 📌 Recursos para Desenvolvimento e Design
+
+- [Recursos para WEB](Recursos-Web/recursos-web.md)
 
 ---
 
@@ -51,26 +72,6 @@ O repositório está organizado da seguinte forma:
 - [Aula 18 - Aprendendo Git e GitHub](Curso%20em%20Video/curso-em-video-aulas-em-pdf/18.pdf)
 - [Aula 19 - Imagens de Fundo](Curso%20em%20Video/curso-em-video-aulas-em-pdf/19.pdf)
 - [Aula 20 - Mini-projeto Cordel](Curso%20em%20Video/curso-em-video-aulas-em-pdf/20.pdf)
-
----
-
-### 💻 JavaScript
-
-- [Função JavaScript Botão de volta ao topo](Snippets/btn-volta-ao-topo.md)
-- [Função JavaScript para Copiar Textos](Snippets/copiar-texto.md)
-- [Função JavaScript Relógio](Snippets/relogio.md)
-
----
-
-### 🚩 Snippets
-
-- [Script em Batch para abrir programas automaticamente](Snippets/turn-on.md)
-
----
-
-### 📌 Recursos para Desenvolvimento e Design
-
-- [Recursos para WEB](Recursos-Web/recursos-web.md)
 
 
 ### 🔗 Links Rápidos
