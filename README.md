@@ -1,10 +1,10 @@
-# 💻📘 Documentação - CodeWiki 
+# 💻📘 CodeWiki 
 
 Bem-vindo ao **CodeWiki**! Este repositório tem a finalidade de organizar minhas anotações, dicas e trechos de códigos diversos. É um projeto em constante evolução, então sinta-se à vontade para explorar!
 
 ---
 
-### 📂 Estrutura do Repositório
+## 📂 Estrutura do Repositório
 
 O repositório está organizado da seguinte forma:
 
@@ -16,8 +16,9 @@ O repositório está organizado da seguinte forma:
 
 
 ---
+---
 
-### 📜 Livros e Anotações
+## 📜 Livros e Anotações
 
 - [Anotação - Risco ao usar target_blank](Anotações/problemas-target-blank.md)
 - [Anotação - Tutorial: Como Criar Links Internos no Markdown](Anotações/criando-links-com-markdown.md)
@@ -25,32 +26,38 @@ O repositório está organizado da seguinte forma:
 
 
 ---
+---
 
-### 💻 JavaScript
+## 💻 JavaScript
 
 - [Função JavaScript Botão de volta ao topo](Snippets/btn-volta-ao-topo.md)
 - [Função JavaScript para Copiar Textos](Snippets/copiar-texto.md)
 - [Função JavaScript Relógio](Snippets/relogio.md)
 
 ---
+---
 
-### 🚩 Snippets
+## 🚩 Snippets
 
 - [Script em Batch para abrir programas automaticamente](Snippets/turn-on.md)
 
 ---
+---
 
-### 📌 Recursos para Desenvolvimento e Design
+## 📌 Recursos para Desenvolvimento e Design
 
 - [Recursos para WEB](Recursos-Web/recursos-web.md)
+- [Bibliotecas e Ícones](Recursos-Web/icones.md)
+- [Referências Técnicas](Recursos-Web/referencia-tecnica.md)
+- [Ilustrações e Design](Recursos-Web/ilustracoes-designs.md)
+- [Outros Recursos](Recursos-Web/outros.md)
 
 ---
+---
 
-## 🖖 Curso em Video 
+# 🖖 Curso em Video 
 
 #### Curso de HTML
-
----
 
 - [Aula 01 - História da Internet](Curso%20em%20Video/curso-em-video-aulas-em-pdf/01.pdf)
 - [Aula 02 - Como funciona a Internet](Curso%20em%20Video/curso-em-video-aulas-em-pdf/02%20-%20Como%20funciona%20a%20Internet.pdf)
@@ -73,6 +80,9 @@ O repositório está organizado da seguinte forma:
 - [Aula 19 - Imagens de Fundo](Curso%20em%20Video/curso-em-video-aulas-em-pdf/19.pdf)
 - [Aula 20 - Mini-projeto Cordel](Curso%20em%20Video/curso-em-video-aulas-em-pdf/20.pdf)
 
+---
+---
+---
 
 ### 🔗 Links Rápidos
 
@@ -82,6 +92,8 @@ O repositório está organizado da seguinte forma:
 - [Recursos para WEB](#-recursos-para-desenvolvimento-e-design)
 - [Curso em Video](#-curso-em-video)
 
+---
+---
 ---
 
 Feito com ❤️ por  [Hugo Hendrix](https://github.com/HugoHendrix)
