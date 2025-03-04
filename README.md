@@ -1,6 +1,6 @@
-# 📘 CodeWiki 
+# 📘 Bem-vindo ao **CodeWiki**! 
 
-Bem-vindo ao **CodeWiki**! Este repositório tem a finalidade de organizar minhas anotações, dicas e trechos de códigos diversos. É um projeto em constante evolução, então sinta-se à vontade para explorar!
+Este repositório tem a finalidade de organizar minhas anotações, dicas e trechos de códigos diversos. É um projeto em constante evolução, então sinta-se à vontade para explorar!
 
 ---
 
@@ -56,6 +56,13 @@ O repositório está organizado da seguinte forma:
 ---
 
 # 🖖 Curso em Video 
+
+#### Anotações
+
+- [Internet Antiga](Curso%20em%20Video/internet-antiga.md)
+- [Gopher - Protocolo e sistema de organização de informações](Curso%20em%20Video/gopher.md)
+- [TCP/IP (Transmission Control Protocol/Internet Protocol)](Curso%20em%20Video/protocolos.md)
+- [Tim Berners-Lee**, HTML 1, WWW (World Wide Web) e Browsers (navegadores)](Curso%20em%20Video/tim-html-www-browser.md)
 
 #### Curso de HTML
 
