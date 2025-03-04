@@ -70,7 +70,7 @@ O repositório está organizado da seguinte forma:
 
 ### 📌 Recursos para Desenvolvimento e Design
 
-- [Recursos para WEB](Recursos%20para%20Desenvolvimento%20e%20Design/recursos-web.md)
+- [Recursos para WEB](Recursos-Web/recursos-web.md)
 
 
 ### 🔗 Links Rápidos
