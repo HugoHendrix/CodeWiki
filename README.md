@@ -62,7 +62,7 @@ O repositório está organizado da seguinte forma:
 - [Internet Antiga](Curso-em-Video/internet-antiga.md)
 - [Gopher - Protocolo e Sistema de Organização de Informações](Curso-em-Video/gopher.md)
 - [TCP/IP (Transmission Control Protocol/Internet Protocol)](Curso-em-Video/protocolos.md)
-- [Tim Berners-Lee | HTML 1 | WWW (World Wide Web) | Browsers (navegadores)](Curso-em-Video/tim-html-www-browser.md)
+- [Tim Berners-Lee - HTML 1 - WWW (World Wide Web) - Browsers (navegadores)](Curso-em-Video/tim-html-www-browser.md)
 
 ----
 

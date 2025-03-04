@@ -77,16 +77,6 @@ https://www.exemplo.com
 
 ---
 
-### **Comparação entre HTTP e HTTPS**
-| Característica       | HTTP                          | HTTPS                         |
-|----------------------|-------------------------------|-------------------------------|
-| **Segurança**        | Dados não criptografados      | Dados criptografados          |
-| **Porta**            | 80                            | 443                           |
-| **Desempenho**       | Mais rápido                   | Um pouco mais lento (devido à criptografia) |
-| **Uso**              | Sites sem dados sensíveis     | Sites com dados sensíveis (e-commerce, bancos) |
-
----
-
 ### **Resumo dos Protocolos**
 1. **TCP/IP:** A base da comunicação na internet, responsável por enviar e receber dados.  
 2. **HTTP:** O protocolo usado para transferir dados na web, mas sem segurança.  
