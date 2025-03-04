@@ -1,4 +1,4 @@
-# 💻📘 CodeWiki 
+# 📘 CodeWiki 
 
 Bem-vindo ao **CodeWiki**! Este repositório tem a finalidade de organizar minhas anotações, dicas e trechos de códigos diversos. É um projeto em constante evolução, então sinta-se à vontade para explorar!
 
@@ -18,11 +18,11 @@ O repositório está organizado da seguinte forma:
 ---
 ---
 
-## 📜 Livros e Anotações
+## 📝 Anotações
 
 - [Anotação - Risco ao usar target_blank](Anotações/problemas-target-blank.md)
 - [Anotação - Tutorial: Como Criar Links Internos no Markdown](Anotações/criando-links-com-markdown.md)
-- [Media Queries e CLAMP FUNCTION no CSS](Anotações/media-queries-e-clamp-function-css.md)
+- [Anotação - Media Queries e Clamp function no CSS](Anotações/media-queries-e-clamp-function-css.md)
 
 
 ---
