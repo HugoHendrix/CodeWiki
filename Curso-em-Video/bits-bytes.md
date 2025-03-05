@@ -31,16 +31,6 @@ Os bytes são a unidade padrão para medir o tamanho de arquivos, a capacidade d
 
 ---
 
-### **Diferença entre Bit e Byte**
-| Característica       | Bit                           | Byte                          |
-|----------------------|-------------------------------|-------------------------------|
-| **Tamanho**          | Menor unidade (0 ou 1).       | Conjunto de 8 bits.           |
-| **Símbolo**          | "b" (minúsculo).              | "B" (maiúsculo).              |
-| **Uso principal**    | Transmissão de dados (velocidade de internet). | Armazenamento de dados (tamanho de arquivos). |
-| **Exemplo prático**  | Velocidade de internet: 100 Mbps (megabits por segundo). | Tamanho de arquivo: 5 MB (megabytes). |
-
----
-
 ### **Conversão entre Bits e Bytes**
 - **1 byte = 8 bits**  
 - **1 kilobyte (KB) = 1024 bytes**  

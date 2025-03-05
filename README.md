@@ -65,7 +65,7 @@ O repositório está organizado da seguinte forma:
 - [Tim Berners-Lee - HTML 1 - WWW (World Wide Web) - Browsers (navegadores)](Curso-em-Video/tim-html-www-browser.md)
 - [Mosaic e Marc Andreessen](Curso-em-Video/mosaic.md)
 - [FTP, SMTP, POP3 e IMAP](Curso-em-Video/ftp-smtp-pop3-imap.md)
-- [A diferença entre bytes e bits](Curso-em-Video/bites-bytes.md)
+- [A diferença entre byte e bit](Curso-em-Video/bits-bytes.md)
 - [Conexão entre cliente e servidor, o papel do modem e os conceitos de modulação e demodulação](Curso-em-Video/cliente-servidor.md)
 
 ----
@@ -97,7 +97,7 @@ O repositório está organizado da seguinte forma:
 ---
 ---
 
-### 🔗 Links Rápidos
+# 🔗 Links Rápidos
 
 - [Anotações](#-anotações)
 - [JavaScript](#-javascript)

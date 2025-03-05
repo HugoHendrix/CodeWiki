@@ -109,16 +109,6 @@ Acessar emails no Gmail de um computador e de um celular, mantendo a sincroniza�
 
 ---
 
-### **Comparação entre POP3 e IMAP**
-| Característica       | POP3                          | IMAP                         |
-|----------------------|-------------------------------|------------------------------|
-| **Armazenamento**    | Emails são baixados para o dispositivo local. | Emails permanecem no servidor. |
-| **Acesso offline**   | Sim, após o download.         | Não, a menos que marcados para offline. |
-| **Sincronização**    | Não sincroniza entre dispositivos. | Sincroniza entre todos os dispositivos. |
-| **Uso recomendado**  | Usuários com um único dispositivo. | Usuários com múltiplos dispositivos. |
-
----
-
 ### **Resumo dos Protocolos**
 1. **FTP:** Para transferência de arquivos entre cliente e servidor.  
 2. **SMTP:** Para envio de emails.  
