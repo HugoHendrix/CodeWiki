@@ -63,6 +63,10 @@ O repositório está organizado da seguinte forma:
 - [Gopher - Protocolo e Sistema de Organização de Informações](Curso-em-Video/gopher.md)
 - [TCP/IP (Transmission Control Protocol/Internet Protocol)](Curso-em-Video/protocolos.md)
 - [Tim Berners-Lee - HTML 1 - WWW (World Wide Web) - Browsers (navegadores)](Curso-em-Video/tim-html-www-browser.md)
+- [Mosaic e Marc Andreessen](Curso-em-Video/mosaic.md)
+- [FTP, SMTP, POP3 e IMAP](Curso-em-Video/ftp-smtp-pop3-imap.md)
+- [A diferença entre bytes e bits](Curso-em-Video/bites-bytes.md)
+- [Conexão entre cliente e servidor, o papel do modem e os conceitos de modulação e demodulação](Curso-em-Video/cliente-servidor.md)
 
 ----
 
