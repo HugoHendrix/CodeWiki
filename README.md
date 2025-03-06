@@ -23,6 +23,7 @@ O repositório está organizado da seguinte forma:
 - [Anotação - Risco ao usar target_blank](Anotações/problemas-target-blank.md)
 - [Anotação - Tutorial: Como Criar Links Internos no Markdown](Anotações/criando-links-com-markdown.md)
 - [Anotação - Media Queries e Clamp function no CSS](Anotações/media-queries-e-clamp-function-css.md)
+- [Anotação = Nova Sintaxe de Consultas de Mídia](Anotações/nova-sintaxe-media-queries.md)
 
 
 ---
@@ -97,7 +98,7 @@ O repositório está organizado da seguinte forma:
 ---
 ---
 
-# 🔗 Links Rápidos
+## 🔗 Links Rápidos
 
 - [Anotações](#-anotações)
 - [JavaScript](#-javascript)
