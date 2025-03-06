@@ -1,7 +1,7 @@
 # Nova Sintaxe de Consultas de Mídia
 
-[Can I Use](https://caniuse.com/?search=media%20queries)
-[Dev.to - Link do artigo](https://dev.to/perisicnikola37/new-css-media-queries-syntax-45og?ref=dailydev)
+- [Can I Use](https://caniuse.com/?search=media%20queries)
+- [Dev.to - Link do artigo](https://dev.to/perisicnikola37/new-css-media-queries-syntax-45og?ref=dailydev)
 
 As consultas de mídia (media queries) são um recurso do CSS que permite aplicar estilos condicionais com base em características do dispositivo ou do ambiente do usuário, como o tipo de dispositivo, largura da tela, resolução, orientação e preferências do usuário. Elas são fundamentais para o design responsivo, garantindo que a apresentação do conteúdo se adapte a diferentes tamanhos e tipos de tela.
 
@@ -49,7 +49,7 @@ Para definir estilos entre um intervalo de larguras, como entre 600px e 1200px, 
 ```
 
 
-Essa abordagem elimina a necessidade de combinar múltiplas condições com operadores lógicos, tornando o código mais legível e menos propenso a erros. citeturn0search6
+Essa abordagem elimina a necessidade de combinar múltiplas condições com operadores lógicos, tornando o código mais legível e menos propenso a erros. 
 
 **Suporte dos Navegadores**
 
