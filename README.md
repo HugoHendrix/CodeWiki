@@ -1,5 +1,7 @@
 # 📘 Bem-vindo ao **CodeWiki**! 
 
+<img src="Curso-em-Video/tech.png" width="250" alt="Logo HTML, CSS e Javascript" style="display: block; margin: 0 auto;"/>
+
 Este repositório tem a finalidade de organizar minhas anotações, dicas e trechos de códigos diversos. É um projeto em constante evolução, então sinta-se à vontade para explorar!
 
 ---
@@ -19,10 +21,10 @@ O repositório está organizado da seguinte forma:
 ---
 ---
 
-## 📝 Anotações
+## 📝 Anotações, Dicas e Boas Práticas
 
 - [Anotação - Risco ao usar target_blank](Anotações/problemas-target-blank.md)
-- [Anotação - Tutorial: Como Criar Links Internos no Markdown](Anotações/criando-links-com-markdown.md)
+- [Tutorial - Como Criar Links Internos no Markdown](Anotações/criando-links-com-markdown.md)
 
 
 
@@ -44,6 +46,8 @@ Cascading Style Sheets (CSS) é uma linguagem de estilos que define como um docu
 
 ## 💻 JavaScript
 JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e baseada em objetos com funções de primeira classe, mais conhecida como a linguagem de script para páginas Web, mas usada também em vários outros ambientes sem browser, tais como node.js, Apache CouchDB e Adobe Acrobat. O JavaScript é uma linguagem baseada em protótipos, multi-paradigma e dinâmica, suportando estilos de orientação a objetos, imperativos e declarativos
+
+<img src="Curso-em-Video/tech.png" width="150" alt="Logo HTML, CSS e Javascript" style="display: block; margin: 0 auto;"/>
 
 - [Função JavaScript Botão de volta ao topo](Snippets/btn-volta-ao-topo.md)
 - [Função JavaScript para Copiar Textos](Snippets/copiar-texto.md)
@@ -92,6 +96,7 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 #### 📝 Anotações - HTML (HyperText Markup Language)
 
 - [Caracteres Especiais em HTML](Curso-em-Video/emojis-caracteres-especiais.md)
+- [Inserindo imagens em HTML e Direitos Autorais](Curso-em-Video/imagens-dicas.md)
 
 
 ----

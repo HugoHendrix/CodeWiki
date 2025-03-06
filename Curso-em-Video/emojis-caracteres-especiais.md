@@ -223,4 +223,7 @@ console.log("Marca registrada: " + simbolo); // Exibe: Marca registrada: ®
 - [Emojipedia](https://emojipedia.org/) para emojis.  
 - [Unicode Table](https://unicode-table.com/) para símbolos especiais.  
 - [HTML Entities](https://www.w3schools.com/html/html_entities.asp) para entidades HTML.
+- [UTF-8 Miscellaneous Symbols](https://www.w3schools.com/charsets/ref_utf_symbols.asp) Tabela de simbolos W3Schools.
+- [PDF Aula 05](curso-em-video-aulas-em-pdf/05.pdf)
+
 
