@@ -132,11 +132,12 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 
 ---
 
-# Analise e Desenvolvimento de Sistemas - UNIFRAN
+# ADS
+## Analise e Desenvolvimento de Sistemas - UNIFRAN
 
-## Aplicações para a Internet
+### Aplicações para a Internet
 
-### UNIDADE I
+#### UNIDADE I
 
 - [Material Teórico - Conceitos Básicos do HTML](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-I/I-Teorico.pdf)
 - [Anotações da Aula Conceitos Básico do HTML](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-I/UNIDADE-I-Anotações-da-aula.md)
@@ -144,7 +145,7 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 
 ---
 
-### UNIDADE II
+#### UNIDADE II
 
 - [Material Teórico - Introdução HTML5 e Principais Tags de Estrutura](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-II/II-Teorico.pdf)
 - [Introdução HTML5 e Principais Tags de Estrutura](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-II/UNIDADE-II-Introdução-HTML5-e-Principais-Tags-de-Estrutura.md)
@@ -152,7 +153,7 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 
 ---
 
-### UNIDADE III
+#### UNIDADE III
 
 - [Material Teórico - Formulários e Videos](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-III/III_Teorico.pdf)
 - [Formulários e Videos](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-III/UNIDADE-III-Formulários-e-Vídeos.md)
@@ -160,7 +161,7 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 
 ---
 
-### UNIDADE IV
+#### UNIDADE IV
 
 - [Material Teórico - Aplicando Estilo à Estrutura do Documento](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-IV/IV_teorico.pdf)
 - [Aplicando Estilo à Estrutura do Documento](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-IV/UNIDADE-IV-Aplicando-Estilo-à-Estrutura-do-Documento.md)
@@ -168,7 +169,7 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 
 ---
 
-### UNIDADE V
+#### UNIDADE V
 
 - [Material Teórico - Layouts](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-V/V_Teorico.pdf)
 - [Layouts](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-V/UNIDADE-V-Layouts.md)
@@ -176,11 +177,21 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 
 ---
 
-### UNIDADE VI
+#### UNIDADE VI
 
 - [Material Teórico - Introdução ao CMS](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-VI/VI_Teorico.pdf)
 - [Introdução ao CMS](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-VI/UNIDADE-VI-Introdução-CMS.md)
 - [Anotações da Aula](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-VI/UNIDADE-VI-Anotações.md)
+
+---
+
+### Computação e Informática
+
+#### UNIDADE I
+
+- [Material Teórico - Desenvolvimento e Organização Contemporâneas](ADS-Unifran/Computação-e-Informática/UNIDADE-I/teorico.pdf)
+- [Desenvolvimento e Organizações Contemporâneas](ADS-Unifran/Computação-e-Informática/UNIDADE-I/UNIDADE-I-Desenvolvimento-das-Organizações-Contemporâneas.md)
+- [Anotação da Aula](ADS-Unifran/Computação-e-Informática/UNIDADE-I/UNIDADE-I-Anotações.md)
 
 ---
 
@@ -196,7 +207,7 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 - [Snippets](#-snippets)
 - [Recursos para WEB](#-recursos-para-desenvolvimento-e-design)
 - [Curso em Video](#-curso-em-video)
-- [Análise e Desenvolvimento de Sistemas](#-analise-e-desenvolvimento-de-sistemas---unifran)
+- [Análise e Desenvolvimento de Sistemas](#-ads)
 
 ---
 
