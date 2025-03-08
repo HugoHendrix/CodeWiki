@@ -213,8 +213,28 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 #### UNIDADE IV
 
 - [Material Teórico - Sistemas de Informações Gerenciais (SIG](ADS-Unifran/Computação-e-Informática/UNIDADE-IV/teorico.pdf)
-- [Sistemas de Informações Gerenciais (SIG)](ADS-Unifran/Computação-e-Informática/UNIDADE-IV/UNIDADE-IV-Sistemas-de-Informações-Gerenciais-(SIG).md)
-- [Anotações da Auça](ADS-Unifran/Computação-e-Informática/UNIDADE-IV/UNIDADE-IV-Anotações.md)
+- [Sistemas de Informações Gerenciais (SIG)](ADS-Unifran/Computação-e-Informática/UNIDADE-IV/UNIDADE-IV-Sistemas-de-Informações-Gerenciais.md)
+- [Anotações da Aula](ADS-Unifran/Computação-e-Informática/UNIDADE-IV/UNIDADE-IV-Anotações.md)
+
+
+---
+
+#### UNIDADE V
+
+- [Material Teórico - Sistema de Gestão Empresarial](ADS-Unifran/Computação-e-Informática/UNIDADE-V/teorico.pdf)
+- [Sistema de Gestão Empresarial](ADS-Unifran/Computação-e-Informática/UNIDADE-V/UNIDADE-V-Sistemas-de-Gestão-Empresarial.md)
+- [Anotações da Aula](ADS-Unifran/Computação-e-Informática/UNIDADE-V/UNIDADE-V-Anotações.md)
+
+
+
+---
+
+#### UNIDADE VI
+
+- [Material Teórico - PDI](ADS-Unifran/Computação-e-Informática/UNIDADE-VI/UNIDADE-VI-Anotações.md)
+- [Projetos e Plano do Diretor de Informática (PDI)](ADS-Unifran/Computação-e-Informática/UNIDADE-VI/UNIDADE-VI-Projetos-e-o-Plano-Diretor-de-Informática.md)
+- [Anotações da Aula](ADS-Unifran/Computação-e-Informática/UNIDADE-VI/UNIDADE-VI-Anotações.md)
+
 
 
 ---
