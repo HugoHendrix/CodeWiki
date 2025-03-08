@@ -122,16 +122,6 @@ As fases do desenvolvimento das organizações refletem a evolução da sociedad
 
 ---
 
-### **Comparação das Fases**
-| **Aspecto**            | **Sociedade Comercial**       | **Sociedade Industrial**       | **Sociedade do Conhecimento**  |
-|-------------------------|-------------------------------|--------------------------------|--------------------------------|
-| **Fator de Produção**   | Capital (ouro, prata, comércio) | Capital físico (máquinas, fábricas) | Capital intelectual (conhecimento, informação) |
-| **Atividade Principal** | Comércio                      | Indústria                      | Serviços e tecnologia          |
-| **Estrutura Organizacional** | Pequenas oficinas e empresas familiares | Grandes fábricas e hierarquias rígidas | Redes flexíveis e organizações horizontais |
-| **Foco**                | Acumulação de riqueza         | Eficiência e produção em massa | Inovação e satisfação do cliente |
-
----
-
 ### **Conclusão**
 Essas fases mostram como as organizações evoluíram em resposta às mudanças sociais, econômicas e tecnológicas.
 
