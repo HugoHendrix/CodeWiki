@@ -1,6 +1,4 @@
-# 📘 Bem-vindo ao **CodeWiki**! 
-
-<img src="Curso-em-Video/tech.png" width="250" alt="Logo HTML, CSS e Javascript" style="display: block; margin: 0 auto;"/>
+# 📘 Bem-vindo ao **CodeWiki**!
 
 Este repositório tem a finalidade de organizar minhas anotações, dicas e trechos de códigos diversos. É um projeto em constante evolução, então sinta-se à vontade para explorar!
 
@@ -16,9 +14,10 @@ O repositório está organizado da seguinte forma:
 - **[Snippets](#-snippets)**: Trechos de código úteis para reutilização.
 - **[Recursos para WEB](#-recursos-para-desenvolvimento-e-design)**: Links para documentações, ferramentas e outros recursos.
 - **[Curso em Video - Gustava Guanabara](#-curso-em-video)**: Anotações e PDF do Curso em Video.
-
+- [Análise e Desenvolvimento de Sistemas](#-analise-e-desenvolvimento-de-sistemas-unifran)
 
 ---
+
 ---
 
 ## 📝 Anotações, Dicas e Boas Práticas
@@ -26,12 +25,12 @@ O repositório está organizado da seguinte forma:
 - [Anotação - Risco ao usar target_blank](Anotações/problemas-target-blank.md)
 - [Tutorial - Como Criar Links Internos no Markdown](Anotações/criando-links-com-markdown.md)
 
-
-
 ---
+
 ---
 
 ## 🎨 CSS (Cascading Style Sheets)
+
 Cascading Style Sheets (CSS) é uma linguagem de estilos que define como um documento escrito em HTML ou XML deve ser apresentado. É uma tecnologia fundamental da World Wide Web, juntamente com HTML e JavaScript
 
 ### Media Queries e Responsividade
@@ -40,20 +39,20 @@ Cascading Style Sheets (CSS) é uma linguagem de estilos que define como um docu
 - [Nova Sintaxe de Consultas de Mídia](CSS/nova-sintaxe-media-queries.md)
 - [Container Queries explicado](CSS/container-queries.md)
 
-
 ---
+
 ---
 
 ## 💻 JavaScript
-JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e baseada em objetos com funções de primeira classe, mais conhecida como a linguagem de script para páginas Web, mas usada também em vários outros ambientes sem browser, tais como node.js, Apache CouchDB e Adobe Acrobat. O JavaScript é uma linguagem baseada em protótipos, multi-paradigma e dinâmica, suportando estilos de orientação a objetos, imperativos e declarativos
 
-<img src="Curso-em-Video/tech.png" width="150" alt="Logo HTML, CSS e Javascript" style="display: block; margin: 0 auto;"/>
+JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e baseada em objetos com funções de primeira classe, mais conhecida como a linguagem de script para páginas Web, mas usada também em vários outros ambientes sem browser, tais como node.js, Apache CouchDB e Adobe Acrobat. O JavaScript é uma linguagem baseada em protótipos, multi-paradigma e dinâmica, suportando estilos de orientação a objetos, imperativos e declarativos
 
 - [Função JavaScript Botão de volta ao topo](Snippets/btn-volta-ao-topo.md)
 - [Função JavaScript para Copiar Textos](Snippets/copiar-texto.md)
 - [Função JavaScript Relógio](Snippets/relogio.md)
 
 ---
+
 ---
 
 ## 🚩 Snippets
@@ -61,6 +60,7 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 - [Script em Batch para abrir programas automaticamente](Snippets/turn-on.md)
 
 ---
+
 ---
 
 ## 📌 Recursos para Desenvolvimento e Design
@@ -72,9 +72,10 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 - [Outros Recursos](Recursos-Web/outros.md)
 
 ---
+
 ---
 
-# 🖖 Curso em Video 
+# 🖖 Curso em Video
 
 #### 📝 Anotações - História da Internet e como ela funciona
 
@@ -88,7 +89,7 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 - [Conexão entre cliente e servidor, o papel do Modem e os conceitos de modulação e demodulação](Curso-em-Video/cliente-servidor.md)
 - [Servidor DNS (Domain Name System) - Rotas da Internet - URL (Uniform Resource Locator) - Domínio - Hospedagem - TLD (Top-Level Domain) - gTLD (Generic Top-Level Domain) - Domínio e da Hospedagem](Curso-em-Video/servidor-dns.md)
 - [História do HTML](Curso-em-Video/historia-html.md)
-- [UTF-8: Codificação para suporte caracteres especiais.](Curso-em-Video/utf8.md) 
+- [UTF-8: Codificação para suporte caracteres especiais.](Curso-em-Video/utf8.md)
 - [Viewport: Área visível da página no dispositivo do usuário.](Curso-em-Video/viewport.md)
 
 ---
@@ -98,8 +99,7 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 - [Caracteres Especiais em HTML](Curso-em-Video/emojis-caracteres-especiais.md)
 - [Inserindo imagens em HTML e Direitos Autorais](Curso-em-Video/imagens-dicas.md)
 
-
-----
+---
 
 #### 📖 PDF das Aulas
 
@@ -125,6 +125,31 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 - [Aula 20 - Mini-projeto Cordel](Curso-em-Video/curso-em-video-aulas-em-pdf/20.pdf)
 
 ---
+
+---
+
+---
+
+# 🎓 Análise e Desenvolvimento de Sistema - UNIFRAN
+
+## Aplicações para a Internet
+
+### UNIDADE I
+
+- [Material Teórico - Conceitos Básicos do HTML](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-I/I-Teorico.pdf)
+- [Anotações da Aula Conceitos Básico do HTML](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-I/UNIDADE-I-Anotações-da-aula.md)
+- [Conceitos Básico do HTML](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-I/UNIDADE-I-Conceitos-Básicos-do-HTML.md)
+
+<hr>
+
+### UNIDADE II
+
+
+
+
+
+
+---
 ---
 ---
 
@@ -136,9 +161,12 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 - [Snippets](#-snippets)
 - [Recursos para WEB](#-recursos-para-desenvolvimento-e-design)
 - [Curso em Video](#-curso-em-video)
+- [Análise e Desenvolvimento de Sistemas](#-analise-e-desenvolvimento-de-sistemas-unifran)
 
 ---
----
+
 ---
 
-Feito com ❤️ por  [Hugo Hendrix](https://github.com/HugoHendrix)
+---
+
+Feito com ❤️ por [Hugo Hendrix](https://github.com/HugoHendrix)
