@@ -20,7 +20,9 @@ O repositório está organizado da seguinte forma:
 
 ---
 
-## 📝 Anotações, Dicas e Boas Práticas
+## 📝 Anotações
+
+Dicas e Boas Práticas
 
 - [Anotação - Risco ao usar target_blank](Anotações/problemas-target-blank.md)
 - [Tutorial - Como Criar Links Internos no Markdown](Anotações/criando-links-com-markdown.md)
@@ -180,7 +182,8 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 - [Snippets](#-snippets)
 - [Recursos para WEB](#-recursos-para-desenvolvimento-e-design)
 - [Curso em Video](#-curso-em-video)
-- [Análise e Desenvolvimento de Sistemas](#-analise-e-desenvolvimento-de-sistemas-unifran)
+- [Análise e Desenvolvimento de Sistemas](#-análise-e-desenvolvimento-de-sistemas-unifran)
+
 
 ---
 
