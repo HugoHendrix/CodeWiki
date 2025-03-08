@@ -581,19 +581,6 @@ Em HTML, alguns caracteres têm significados especiais (como `<`, `>`, `&`). Par
 <p>Eu adoro HTML5 &hearts;</p>
 ```
 
-### 📌 Lista de alguns caracteres especiais comuns:
-| Símbolo | Entidade de Caracteres |
-|---------|------------------------|
-| `<`     | `&lt;`                 |
-| `>`     | `&gt;`                 |
-| `&`     | `&amp;`                |
-| `"`     | `&quot;`               |
-| `'`     | `&apos;`               |
-| `©`     | `&copy;`               |
-| `®`     | `&reg;`                |
-| `€`     | `&euro;`               |
-| `£`     | `&pound;`              |
-
 ---
 
 ## 💡 **Dicas Importantes**:
