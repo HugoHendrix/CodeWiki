@@ -132,7 +132,7 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 
 ---
 
-# 🎓 Análise e Desenvolvimento de Sistemas - UNIFRAN
+# Analise e Desenvolvimento de Sistemas - UNIFRAN
 
 ## Aplicações para a Internet
 
@@ -166,20 +166,26 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 - [Aplicando Estilo à Estrutura do Documento](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-IV/UNIDADE-IV-Aplicando-Estilo-à-Estrutura-do-Documento.md)
 - [Anotações da Aula](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-IV/UNIDADE-IV-Anotações.md)
 
-----
+---
 
 ### UNIDADE V
 
--[Material Teórico - Layouts](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-V/V_Teorico.pdf)
--[Layouts](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-V/UNIDADE-V-Layouts.md)
--[Anotações da Aula](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-V/UNIDADE-V-Anotações.md)
-
-
-
-
+- [Material Teórico - Layouts](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-V/V_Teorico.pdf)
+- [Layouts](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-V/UNIDADE-V-Layouts.md)
+- [Anotações da Aula](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-V/UNIDADE-V-Anotações.md)
 
 ---
+
+### UNIDADE VI
+
+- [Material Teórico - Introdução ao CMS](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-VI/VI_Teorico.pdf)
+- [Introdução ao CMS](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-VI/UNIDADE-VI-Introdução-CMS.md)
+- [Anotações da Aula](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-VI/UNIDADE-VI-Anotações.md)
+
 ---
+
+---
+
 ---
 
 ## 🔗 Links Rápidos
@@ -191,7 +197,6 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 - [Recursos para WEB](#-recursos-para-desenvolvimento-e-design)
 - [Curso em Video](#-curso-em-video)
 - [Análise e Desenvolvimento de Sistemas](#-analise-e-desenvolvimento-de-sistemas---unifran)
-
 
 ---
 
