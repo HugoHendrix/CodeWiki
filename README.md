@@ -148,6 +148,13 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 - [Introdução HTML5 e Principais Tags de Estrutura](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-II/UNIDADE-II-Introdução-HTML5-e-Principais-Tags-de-Estrutura.md)
 - [Anotações da Aula](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-II/UNIDADE-II-Anotações.md)
 
+---
+
+### UNIDADE III
+
+- [Material Teórico - Formulários e Videos](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-III/III_Teorico.pdf)
+- [Formulários e Videos](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-III/UNIDADE-III-Formulários-e-Vídeos.md)
+- [Anotações da Aula](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-III/UNIDADE-III-Anotações.md)
 
 
 
