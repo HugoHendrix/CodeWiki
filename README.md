@@ -133,7 +133,7 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 ---
 # 🎓 Analise e Desenvolvimento de Sistemas - UNIFRAN
 
-### Aplicações para a Internet
+### **Aplicações para a Internet**
 
 #### UNIDADE I
 
@@ -183,7 +183,7 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 
 ---
 
-### Computação e Informática
+### **Computação e Informática**
 
 #### UNIDADE I
 
@@ -205,14 +205,14 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 #### UNIDADE III
 
 - [Material Teórico - Teoria Geral dos Sistemas (TGS)](ADS-Unifran/Computação-e-Informática/UNIDADE-III/teorico.pdf)
-- [Teoria Geral dos Sistemas (TGS)](ADS-Unifran/Computação-e-Informática/UNIDADE-III/UNIDADE-III-Teoria-Geral-dos-Sistemas-(TGS).md)
+- [Teoria Geral dos Sistemas (TGS)](ADS-Unifran/Computação-e-Informática/UNIDADE-III/UNIDADE-III-Teoria-Geral-dos-Sistemas.md)
 - [Anotações da Aula](ADS-Unifran/Computação-e-Informática/UNIDADE-III/UNIDADE-III-Anotações.md)
 
 ---
 
 #### UNIDADE IV
 
-- [Material Teórico - Sistemas de Informações Gerenciais (SIG](ADS-Unifran/Computação-e-Informática/UNIDADE-IV/teorico.pdf)
+- [Material Teórico - Sistemas de Informações Gerenciais (SIG)](ADS-Unifran/Computação-e-Informática/UNIDADE-IV/teorico.pdf)
 - [Sistemas de Informações Gerenciais (SIG)](ADS-Unifran/Computação-e-Informática/UNIDADE-IV/UNIDADE-IV-Sistemas-de-Informações-Gerenciais.md)
 - [Anotações da Aula](ADS-Unifran/Computação-e-Informática/UNIDADE-IV/UNIDADE-IV-Anotações.md)
 
@@ -234,6 +234,17 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 - [Material Teórico - PDI](ADS-Unifran/Computação-e-Informática/UNIDADE-VI/UNIDADE-VI-Anotações.md)
 - [Projetos e Plano do Diretor de Informática (PDI)](ADS-Unifran/Computação-e-Informática/UNIDADE-VI/UNIDADE-VI-Projetos-e-o-Plano-Diretor-de-Informática.md)
 - [Anotações da Aula](ADS-Unifran/Computação-e-Informática/UNIDADE-VI/UNIDADE-VI-Anotações.md)
+
+---
+
+### **Sistemas Operacionais**
+
+#### UNIDADE I
+
+- [Material Teórico](ADS-Unifran/Sistemas-Operacionais/UNIDADE-I/Unidade1.pdf)
+- [Introdução aos Sistemas Operacionais](ADS-Unifran/Sistemas-Operacionais/UNIDADE-I/UNIDADE-I-Introducao-ao-so.md)
+- [Anotações da Aula](ADS-Unifran/Sistemas-Operacionais/UNIDADE-I/UNIDADE-I-Anotações.md)
+
 
 
 
