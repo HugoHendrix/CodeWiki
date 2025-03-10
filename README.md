@@ -133,7 +133,7 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 ---
 # 🎓 Analise e Desenvolvimento de Sistemas - UNIFRAN
 
-### **Aplicações para a Internet**
+### 📌 **Aplicações para a Internet**
 
 #### UNIDADE I
 
@@ -183,13 +183,13 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 
 ---
 
-### **Computação e Informática**
+### 📌 **Computação e Informática**
 
 #### UNIDADE I
 
 - [Material Teórico - Desenvolvimento e Organização Contemporâneas](ADS-Unifran/Computação-e-Informática/UNIDADE-I/teorico.pdf)
 - [Desenvolvimento e Organizações Contemporâneas](ADS-Unifran/Computação-e-Informática/UNIDADE-I/UNIDADE-I-Desenvolvimento-das-Organizações-Contemporâneas.md)
-- [Anotação da Aula](ADS-Unifran/Computação-e-Informática/UNIDADE-I/UNIDADE-I-Anotações.md)
+- [Anotações da Aula](ADS-Unifran/Computação-e-Informática/UNIDADE-I/UNIDADE-I-Anotações.md)
 
 ---
 
@@ -237,13 +237,20 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 
 ---
 
-### **Sistemas Operacionais**
+### 📌 **Sistemas Operacionais**
 
 #### UNIDADE I
 
 - [Material Teórico](ADS-Unifran/Sistemas-Operacionais/UNIDADE-I/Unidade1.pdf)
 - [Introdução aos Sistemas Operacionais](ADS-Unifran/Sistemas-Operacionais/UNIDADE-I/UNIDADE-I-Introducao-ao-so.md)
 - [Anotações da Aula](ADS-Unifran/Sistemas-Operacionais/UNIDADE-I/UNIDADE-I-Anotações.md)
+
+---
+
+#### UNIDADE II 
+
+- [Material Teórico - Gerenciamento de Processos](ADS-Unifran/Sistemas-Operacionais/UNIDADE-II/Unidade2.pdf)
+- [Anotações da Aula](ADS-Unifran/Sistemas-Operacionais/UNIDADE-II/gerenciamentos-de-processos.md)
 
 
 
