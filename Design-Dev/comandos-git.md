@@ -1,4 +1,4 @@
-##  **10 principais comandos do Git**, 
+#  **10 principais comandos do Git** 
 
 ---
 

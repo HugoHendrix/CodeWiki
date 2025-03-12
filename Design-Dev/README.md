@@ -10,7 +10,7 @@ Este repositório contém dicas, trechos de código e boas práticas compartilha
 ## **Sobre a Newsletter**
 A **The Design.dev Crew** é uma newsletter que oferece dicas valiosas, truques e boas práticas para desenvolvedores e designers que desejam melhorar suas habilidades em desenvolvimento web, design de interfaces e otimização de desempenho.
 
-[Veja mais em - https://design.dev/](https://design.dev/)
+[Veja mais em https://design.dev/](https://design.dev/)
 
 ---
 
@@ -28,3 +28,4 @@ A **The Design.dev Crew** é uma newsletter que oferece dicas valiosas, truques 
 ### Outras Dicas
 
 - [10 principais comandos do Git,](comandos-git.md)
+- [Comparação entre frameworks e bibliotecas em JavaScript](comparacao.md)
