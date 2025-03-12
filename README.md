@@ -63,7 +63,7 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 
 Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 
-- [The Design.dev Crew](CSS/design-dev/README.md)
+- [The Design.dev Crew](Design-Dev/README.md)
 
 
 ---
@@ -278,6 +278,7 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 - [Anotações](#-anotações)
 - [CSS](#-css-cascading-style-sheets)
 - [JavaScript](#-javascript)
+- [The Design.dev Crew](#-design-dev)
 - [Snippets](#-snippets)
 - [Recursos para WEB](#-recursos-para-desenvolvimento-e-design)
 - [Curso em Video](#-curso-em-video)

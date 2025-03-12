@@ -1,4 +1,4 @@
-![logo design.dev](design-dev-logo.png)
+![logo design.dev](design-dev-logo2.png)
 
 # Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 
@@ -11,6 +11,8 @@ Este repositório contém dicas, trechos de código e boas práticas compartilha
 A **The Design.dev Crew** é uma newsletter que oferece dicas valiosas, truques e boas práticas para desenvolvedores e designers que desejam melhorar suas habilidades em desenvolvimento web, design de interfaces e otimização de desempenho.
 
 [Veja mais em - https://design.dev/](https://design.dev/)
+
+---
 
 ## Dicas HTML
 
