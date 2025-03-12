@@ -25,6 +25,8 @@ A **The Design.dev Crew** é uma newsletter que oferece dicas valiosas, truques 
 
 - [Utilzando Text-Balance](text-balance.md)
 - [Padrões de fundo criados com CSS puro](padroes-css.md)
+- [O formato WebP](webp.md)
+
 
 ---
 
@@ -32,4 +34,4 @@ A **The Design.dev Crew** é uma newsletter que oferece dicas valiosas, truques 
 
 - [10 principais comandos do Git,](comandos-git.md)
 - [Comparação entre frameworks e bibliotecas em JavaScript](comparacao.md)
-- []
+
