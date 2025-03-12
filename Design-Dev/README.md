@@ -28,6 +28,7 @@ A **The Design.dev Crew** é uma newsletter que oferece dicas valiosas, truques 
 - [O formato WebP](webp.md)
 - [Paletas de cores](temas.md)
 - [CSS box-sizing](box-sizing.md)
+- [A propriedade filter](filter.md)
 
 
 
