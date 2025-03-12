@@ -19,5 +19,12 @@ A **The Design.dev Crew** é uma newsletter que oferece dicas valiosas, truques 
 - [Dicas de atributos de imagens HTML](atributos-para-carregamentos-de-imagens.md)
 
 
+---
 
 ## Dicas CSS
+
+---
+
+### Outras Dicas
+
+- [10 principais comandos do Git,](comandos-git.md)
