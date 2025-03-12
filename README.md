@@ -11,6 +11,7 @@ O repositório está organizado da seguinte forma:
 - **[Anotações](#-anotações)**: Minhas Anotações e Artigos para leitura.
 - **[Dicas de CSS](#-css-cascading-style-sheets)**: Dicas de CSS e Boa práticas
 - **[Funções em JavaScript](#-javascript)**: Funções que utilizo com frequência.
+- **[The Design.dev Crew](#-design-dev)**: Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 - **[Snippets](#-snippets)**: Trechos de código úteis para reutilização.
 - **[Recursos para WEB](#-recursos-para-desenvolvimento-e-design)**: Links para documentações, ferramentas e outros recursos.
 - **[Curso em Video - Gustava Guanabara](#-curso-em-video)**: Anotações e PDF do Curso em Video.
@@ -41,15 +42,6 @@ Cascading Style Sheets (CSS) é uma linguagem de estilos que define como um docu
 - [Nova Sintaxe de Consultas de Mídia](CSS/nova-sintaxe-media-queries.md)
 - [Container Queries explicado](CSS/container-queries.md)
 
-### Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
-
-- [—The Design.dev Crew](CSS/design-dev/README.md)
-
-
----
-
-
-
 ---
 
 ---
@@ -65,6 +57,17 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 ---
 
 ---
+
+
+## 🎁 Design-DEV
+
+Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
+
+- [The Design.dev Crew](CSS/design-dev/README.md)
+
+
+---
+----
 
 ## 🚩 Snippets
 

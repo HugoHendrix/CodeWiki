@@ -1,5 +1,7 @@
 # Atributo loading no HTML
 
+![carregamento com loading](carregamento-img.png)
+
 ---
 
 ### **Explicação Detalhada**
