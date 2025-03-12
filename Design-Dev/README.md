@@ -30,6 +30,9 @@ A **The Design.dev Crew** é uma newsletter que oferece dicas valiosas, truques 
 - [CSS box-sizing](box-sizing.md)
 - [A propriedade filter](filter.md)
 - [CSS Zen Garden](zengarden.md)
+- [Alternativas Criativas aos Bancos de Imagens](banco-imagens.md)
+- [Animações Interessantes com CSS](animacao.md)
+- [Efeito de texto 3D em camadas](camadas.md)
 
 
 ---
