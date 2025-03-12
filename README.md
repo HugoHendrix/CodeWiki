@@ -41,6 +41,15 @@ Cascading Style Sheets (CSS) é uma linguagem de estilos que define como um docu
 - [Nova Sintaxe de Consultas de Mídia](CSS/nova-sintaxe-media-queries.md)
 - [Container Queries explicado](CSS/container-queries.md)
 
+### Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
+
+- [—The Design.dev Crew](CSS/design-dev/README.md)
+
+
+---
+
+
+
 ---
 
 ---
