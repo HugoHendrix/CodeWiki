@@ -37,4 +37,5 @@ A **The Design.dev Crew** é uma newsletter que oferece dicas valiosas, truques 
 
 - [10 principais comandos do Git,](comandos-git.md)
 - [Comparação entre frameworks e bibliotecas em JavaScript](comparacao.md)
+- [Node Package Manager (NPM), sua importância e como usar](node.md)
 
