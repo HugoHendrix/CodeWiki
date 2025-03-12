@@ -23,9 +23,12 @@ A **The Design.dev Crew** é uma newsletter que oferece dicas valiosas, truques 
 
 ## Dicas CSS
 
+- [Utilzando Text-Balance](text-balance.md)
+
 ---
 
 ### Outras Dicas
 
 - [10 principais comandos do Git,](comandos-git.md)
 - [Comparação entre frameworks e bibliotecas em JavaScript](comparacao.md)
+- []
