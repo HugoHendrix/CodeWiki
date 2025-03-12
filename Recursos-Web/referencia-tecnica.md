@@ -8,6 +8,9 @@
 | [W3C Developers](https://www.w3.org/developers/) | O site oficial do **World Wide Web Consortium (W3C)** para desenvolvedores. Oferece ferramentas, padrões e recursos para implementar tecnologias web de acordo com as especificações internacionais. |
 | [W3Schools](https://www.w3schools.com/) | **W3Schools** é uma plataforma de aprendizado online que oferece tutoriais, exemplos interativos e referências sobre HTML, CSS, JavaScript, SQL e outras tecnologias web. É ideal para iniciantes e para consultas rápidas. |
 | [HTML Living Standard (WHATWG)](https://html.spec.whatwg.org/multipage/) | A **HTML Living Standard** é a especificação oficial e atualizada do HTML, mantida pelo **WHATWG** (Web Hypertext Application Technology Working Group). É a referência definitiva para entender como o HTML funciona e suas últimas atualizações. |
+| [WEB Reference.com](https://webreference.com/) | **WEB Reference** O original da Web (criado em 1995!) e um dos recursos de desenvolvimento web mais respeitados. Aprenda a construir para a Web e divirta-se. |
+
+
 
 
 
