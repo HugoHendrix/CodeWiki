@@ -104,4 +104,3 @@ Aqui está um resumo organizado para você consultar:
 3. **Compartilhe suas descobertas**: Mostre suas paletas favoritas para a comunidade de design.
 
 ---
-
