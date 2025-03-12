@@ -24,6 +24,7 @@ A **The Design.dev Crew** é uma newsletter que oferece dicas valiosas, truques 
 ## Dicas CSS
 
 - [Utilzando Text-Balance](text-balance.md)
+- [Padrões de fundo criados com CSS puro](padroes-css.md)
 
 ---
 
