@@ -72,6 +72,7 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 ## 🚩 Snippets
 
 - [Script em Batch para abrir programas automaticamente](Snippets/turn-on.md)
+- [Criando um Sistema de Sliders Multi-Range com Atualização Dinâmica de Total](Snippets/sliders-multi-range.md)
 
 ---
 
