@@ -23,25 +23,26 @@ A **The Design.dev Crew** é uma newsletter que oferece dicas valiosas, truques 
 
 ## Dicas CSS
 
-- [Utilizando Text-Balance](text-balance.md)
-- [Padrões de fundo criados com CSS puro](padroes-css.md)
+- [A propriedade filter](filter.md)
+- [Animações Interessantes com CSS](animacao.md)
+- [CSS box-sizing](box-sizing.md)
+- [CSS Nesting](css-nesting.md)
+- [CSS Zen Garden](zengarden.md)
+- [Clip-path botão estilo Cyberpunk](clippath.md)
+- [Evitando Saltos no Layout com `scrollbar-gutter: stable`](scrollbar-gutter.md)
+- [Efeito de texto 3D em camadas](camadas.md)
 - [O formato WebP](webp.md)
 - [Paletas de cores](temas.md)
-- [CSS box-sizing](box-sizing.md)
-- [A propriedade filter](filter.md)
-- [CSS Zen Garden](zengarden.md)
-- [Alternativas Criativas aos Bancos de Imagens](banco-imagens.md)
-- [Animações Interessantes com CSS](animacao.md)
-- [Efeito de texto 3D em camadas](camadas.md)
-- [CSS Nesting](css-nesting.md)
-- [Evitando Saltos no Layout com `scrollbar-gutter: stable`](scrollbar-gutter.md)
-- [Clip-path botão estilo Cyberpunk](clippath.md)
+- [Padrões de fundo criados com CSS puro](padroes-css.md)
+- [Propriedade `aspect-ratio` no CSS](aspect-radio.md)
+- [Utilizando Text-Balance](text-balance.md)
 
 
 ---
 
 ### Outras Dicas
 
+- [Alternativas Criativas aos Bancos de Imagens](banco-imagens.md)
 - [10 principais comandos do Git,](comandos-git.md)
 - [Comparação entre frameworks e bibliotecas em JavaScript](comparacao.md)
 - [Node Package Manager (NPM), sua importância e como usar](node.md)
