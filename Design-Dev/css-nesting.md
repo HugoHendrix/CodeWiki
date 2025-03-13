@@ -123,6 +123,8 @@
 
 ---
 
+- [Documentação MDN CSS Nesting](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting)
+
 #### **Conclusão**
 - O aninhamento CSS nativo é uma adição poderosa à linguagem, trazendo organização e eficiência ao escrever estilos.
 - Embora ainda esteja em fase de adoção, é uma funcionalidade promissora para projetos modernos.

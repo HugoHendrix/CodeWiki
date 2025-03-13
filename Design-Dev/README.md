@@ -34,6 +34,7 @@ A **The Design.dev Crew** é uma newsletter que oferece dicas valiosas, truques 
 - [Animações Interessantes com CSS](animacao.md)
 - [Efeito de texto 3D em camadas](camadas.md)
 - [CSS Nesting](css-nesting.md)
+- [Evitando Saltos no Layout com `scrollbar-gutter: stable`](scrollbar-gutter.md)
 
 
 ---
