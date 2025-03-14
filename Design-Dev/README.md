@@ -36,7 +36,9 @@ A **The Design.dev Crew** é uma newsletter que oferece dicas valiosas, truques 
 - [Paletas de cores](temas.md)
 - [Padrões de fundo criados com CSS puro](padroes-css.md)
 - [Propriedade `aspect-ratio` no CSS](aspect-radio.md)
+- [Position Sticky](position-sticky.md)
 - [Utilizando Text-Balance](text-balance.md)
+
 
 
 ---
