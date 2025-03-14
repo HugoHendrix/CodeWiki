@@ -92,7 +92,7 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 
 # 🖖 Curso em Video
 
-[Curso de HTML](Curso-em-Video/README.md)
+[Curso de HTML e CSS](Curso-em-Video/README.md)
 
 ---
 
