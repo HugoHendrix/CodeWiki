@@ -1,5 +1,7 @@
 ### **Criando um Sistema de Sliders Multi-Range com Atualização Dinâmica de Total**
 
+[Exemplo](https://codepen.io/themolitor/pen/mdoxjKq/5ccf57f05485491c76304ea4af86d519/)
+
 
 - Este exemplo demonstra como criar um sistema de **sliders multi-range** que atualiza dinamicamente um valor total com base nos ajustes feitos em cada slider.
 - O sistema é ideal para cenários onde você precisa de feedback em tempo real com base em múltiplas entradas, como cálculos de preços ou quantidades.

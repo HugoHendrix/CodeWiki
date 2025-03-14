@@ -99,51 +99,12 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 ---
 
 ---
+
 # 🎓 Analise e Desenvolvimento de Sistemas - UNIFRAN
 
 ### 📌 **Aplicações para a Internet**
 
-#### UNIDADE I
-
-- [Material Teórico - Conceitos Básicos do HTML](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-I/I-Teorico.pdf)
-- [Anotações da Aula Conceitos Básico do HTML](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-I/UNIDADE-I-Anotações-da-aula.md)
-- [Conceitos Básico do HTML](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-I/UNIDADE-I-Conceitos-Básicos-do-HTML.md)
-
----
-
-#### UNIDADE II
-
-- [Material Teórico - Introdução HTML5 e Principais Tags de Estrutura](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-II/II-Teorico.pdf)
-- [Introdução HTML5 e Principais Tags de Estrutura](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-II/UNIDADE-II-Introdução-HTML5-e-Principais-Tags-de-Estrutura.md)
-- [Anotações da Aula](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-II/UNIDADE-II-Anotações.md)
-
----
-
-#### UNIDADE III
-
-- [Material Teórico - Formulários e Videos](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-III/III_Teorico.pdf)
-- [Formulários e Videos](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-III/UNIDADE-III-Formulários-e-Vídeos.md)
-- [Anotações da Aula](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-III/UNIDADE-III-Anotações.md)
-
----
-
-#### UNIDADE IV
-
-- [Material Teórico - Aplicando Estilo à Estrutura do Documento](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-IV/IV_teorico.pdf)
-- [Aplicando Estilo à Estrutura do Documento](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-IV/UNIDADE-IV-Aplicando-Estilo-à-Estrutura-do-Documento.md)
-- [Anotações da Aula](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-IV/UNIDADE-IV-Anotações.md)
-
----
-
-#### UNIDADE V
-
-- [Material Teórico - Layouts](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-V/V_Teorico.pdf)
-- [Layouts](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-V/UNIDADE-V-Layouts.md)
-- [Anotações da Aula](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-V/UNIDADE-V-Anotações.md)
-
----
-
-#### UNIDADE VI
+[](ADS-Unifran/Aplicações-para-a-Internet/README.md)
 
 - [Material Teórico - Introdução ao CMS](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-VI/VI_Teorico.pdf)
 - [Introdução ao CMS](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-VI/UNIDADE-VI-Introdução-CMS.md)
