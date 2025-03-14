@@ -72,6 +72,8 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 
 - [Script em Batch para abrir programas automaticamente](Snippets/turn-on.md)
 - [Criando um Sistema de Sliders Multi-Range com Atualização Dinâmica de Total](Snippets/sliders-multi-range.md)
+- [Galeria Infinita HTML, CSS E JS - Tema One Piece](Snippets/galeria-infinita.md)
+- [Rolagem de Texto ao Passar o Mouse](rolagem-texto.md)
 
 ---
 
@@ -91,7 +93,7 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 
 # 🖖 Curso em Video
 
-[Curso de HTML e CSS](Curso-em-Video/README.md)
+- [Curso de HTML e CSS](Curso-em-Video/README.md)
 
 ---
 
