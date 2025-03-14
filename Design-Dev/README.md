@@ -38,6 +38,7 @@ A **The Design.dev Crew** é uma newsletter que oferece dicas valiosas, truques 
 - [Propriedade `aspect-ratio` no CSS](aspect-radio.md)
 - [Position Sticky](position-sticky.md)
 - [Utilizando Text-Balance](text-balance.md)
+- [Usando :focus-visible para Melhorar a Acessibilidade](focus-visible.md)
 
 
 

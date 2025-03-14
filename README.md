@@ -74,6 +74,7 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 - [Criando um Sistema de Sliders Multi-Range com Atualização Dinâmica de Total](Snippets/sliders-multi-range.md)
 - [Galeria Infinita HTML, CSS E JS - Tema One Piece](Snippets/galeria-infinita.md)
 - [Rolagem de Texto ao Passar o Mouse](rolagem-texto.md)
+- [Criando um Acordeão com <details> e <summary> sem JavaScript](acordeao.md)
 
 ---
 
