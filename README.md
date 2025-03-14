@@ -9,7 +9,8 @@ Este repositório tem a finalidade de organizar minhas anotações, dicas e trec
 O repositório está organizado da seguinte forma:
 
 - **[Anotações](#-anotações)**: Minhas Anotações e Artigos para leitura.
-- **[Dicas de CSS](#-css-cascading-style-sheets)**: Dicas de CSS e Boa práticas
+- **[HTML](#-html-hyper-text-markup-languange)**: Dicas de HTML e boas práticas
+- **[Dicas de CSS](#-css-cascading-style-sheets)**: Dicas de CSS e boas práticas
 - **[Funções em JavaScript](#-javascript)**: Funções que utilizo com frequência.
 - **[The Design.dev Crew](#-design-dev)**: Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 - **[Snippets](#-snippets)**: Trechos de código úteis para reutilização.
@@ -32,7 +33,7 @@ Dicas e Boas Práticas
 
 ---
 
-# 💻 HTML (HYPER TEXT MARKUP LANGUANGE)
+## 💻 HTML (HYPER TEXT MARKUP LANGUANGE)
 
 - [Validação de Formulários com Atributos HTML Nativos](HTML/valida-form.md)
 
@@ -40,7 +41,7 @@ Dicas e Boas Práticas
 
 ---
 
-## 🎨 CSS (Cascading Style Sheets)
+## 🎨 CSS (CASCADING STYLE SHEETS)
 
 Cascading Style Sheets (CSS) é uma linguagem de estilos que define como um documento escrito em HTML ou XML deve ser apresentado. É uma tecnologia fundamental da World Wide Web, juntamente com HTML e JavaScript
 
@@ -54,7 +55,7 @@ Cascading Style Sheets (CSS) é uma linguagem de estilos que define como um docu
 
 ---
 
-## 💻 JavaScript
+## 💻 JAVASCRIPT
 
 JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e baseada em objetos com funções de primeira classe, mais conhecida como a linguagem de script para páginas Web, mas usada também em vários outros ambientes sem browser, tais como node.js, Apache CouchDB e Adobe Acrobat. O JavaScript é uma linguagem baseada em protótipos, multi-paradigma e dinâmica, suportando estilos de orientação a objetos, imperativos e declarativos
 
@@ -82,7 +83,7 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 - [Criando um Sistema de Sliders Multi-Range com Atualização Dinâmica de Total](Snippets/sliders-multi-range.md)
 - [Galeria Infinita HTML, CSS E JS - Tema One Piece](Snippets/galeria-infinita.md)
 - [Rolagem de Texto ao Passar o Mouse](rolagem-texto.md)
-- [Criando um Acordeão com <details> e <summary> sem JavaScript](acordeao.md)
+- [Criando um Acordeão com `<details>` e `<summary>` sem JavaScript](acordeao.md)
 
 ---
 
@@ -125,6 +126,7 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 ## 🔗 Links Rápidos
 
 - [Anotações](#-anotações)
+- [HTML](#-html-hyper-text-markup-languange)
 - [CSS](#-css-cascading-style-sheets)
 - [JavaScript](#-javascript)
 - [The Design.dev Crew](#-design-dev)
