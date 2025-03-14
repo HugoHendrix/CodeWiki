@@ -106,80 +106,19 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 
 [UNIDADES](ADS-Unifran/Aplicações-para-a-Internet/README.md)
 
-- [Material Teórico - Introdução ao CMS](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-VI/VI_Teorico.pdf)
-- [Introdução ao CMS](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-VI/UNIDADE-VI-Introdução-CMS.md)
-- [Anotações da Aula](ADS-Unifran/Aplicações-para-a-Internet/UNIDADE-VI/UNIDADE-VI-Anotações.md)
-
 ---
 
 ### 📌 **Computação e Informática**
 
-#### UNIDADE I
-
-- [Material Teórico - Desenvolvimento e Organização Contemporâneas](ADS-Unifran/Computação-e-Informática/UNIDADE-I/teorico.pdf)
-- [Desenvolvimento e Organizações Contemporâneas](ADS-Unifran/Computação-e-Informática/UNIDADE-I/UNIDADE-I-Desenvolvimento-das-Organizações-Contemporâneas.md)
-- [Anotações da Aula](ADS-Unifran/Computação-e-Informática/UNIDADE-I/UNIDADE-I-Anotações.md)
-
----
-
-#### UNIDADE II
-
-- [Material Teóerico - Tópicos de Computação e Informática](ADS-Unifran/Computação-e-Informática/UNIDADE-II/teorico.pdf)
-- [Tópicos de Computação e Informática](ADS-Unifran/Computação-e-Informática/UNIDADE-II/UNIDADE-II-Tópicos-de-Computação-e-Informática.md)
-- [Anotações da Aula](ADS-Unifran/Computação-e-Informática/UNIDADE-II/UNIDADE-II-Anotações.md)
-
-
----
-
-#### UNIDADE III
-
-- [Material Teórico - Teoria Geral dos Sistemas (TGS)](ADS-Unifran/Computação-e-Informática/UNIDADE-III/teorico.pdf)
-- [Teoria Geral dos Sistemas (TGS)](ADS-Unifran/Computação-e-Informática/UNIDADE-III/UNIDADE-III-Teoria-Geral-dos-Sistemas.md)
-- [Anotações da Aula](ADS-Unifran/Computação-e-Informática/UNIDADE-III/UNIDADE-III-Anotações.md)
-
----
-
-#### UNIDADE IV
-
-- [Material Teórico - Sistemas de Informações Gerenciais (SIG)](ADS-Unifran/Computação-e-Informática/UNIDADE-IV/teorico.pdf)
-- [Sistemas de Informações Gerenciais (SIG)](ADS-Unifran/Computação-e-Informática/UNIDADE-IV/UNIDADE-IV-Sistemas-de-Informações-Gerenciais.md)
-- [Anotações da Aula](ADS-Unifran/Computação-e-Informática/UNIDADE-IV/UNIDADE-IV-Anotações.md)
-
-
----
-
-#### UNIDADE V
-
-- [Material Teórico - Sistema de Gestão Empresarial](ADS-Unifran/Computação-e-Informática/UNIDADE-V/teorico.pdf)
-- [Sistema de Gestão Empresarial](ADS-Unifran/Computação-e-Informática/UNIDADE-V/UNIDADE-V-Sistemas-de-Gestão-Empresarial.md)
-- [Anotações da Aula](ADS-Unifran/Computação-e-Informática/UNIDADE-V/UNIDADE-V-Anotações.md)
-
-
-
----
-
-#### UNIDADE VI
-
-- [Material Teórico - PDI](ADS-Unifran/Computação-e-Informática/UNIDADE-VI/UNIDADE-VI-Anotações.md)
-- [Projetos e Plano do Diretor de Informática (PDI)](ADS-Unifran/Computação-e-Informática/UNIDADE-VI/UNIDADE-VI-Projetos-e-o-Plano-Diretor-de-Informática.md)
-- [Anotações da Aula](ADS-Unifran/Computação-e-Informática/UNIDADE-VI/UNIDADE-VI-Anotações.md)
+[UNIDADES](ADS-Unifran/Computação-e-Informática/README.md)
 
 ---
 
 ### 📌 **Sistemas Operacionais**
 
-#### UNIDADE I
+[UNIDADES](ADS-Unifran/Sistemas-Operacionais/README.md)
 
-- [Material Teórico](ADS-Unifran/Sistemas-Operacionais/UNIDADE-I/Unidade1.pdf)
-- [Introdução aos Sistemas Operacionais](ADS-Unifran/Sistemas-Operacionais/UNIDADE-I/UNIDADE-I-Introducao-ao-so.md)
-- [Anotações da Aula](ADS-Unifran/Sistemas-Operacionais/UNIDADE-I/UNIDADE-I-Anotações.md)
 
----
-
-#### UNIDADE II 
-
-- [Material Teórico - Gerenciamento de Processos](ADS-Unifran/Sistemas-Operacionais/UNIDADE-II/Unidade2.pdf)
-- [Anotações da Aula](ADS-Unifran/Sistemas-Operacionais/UNIDADE-II/gerenciamentos-de-processos.md)
 
 
 
