@@ -58,16 +58,15 @@ JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e b
 
 ---
 
-
 ## 🎁 Design-DEV
 
 Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 
 - [The Design.dev Crew](Design-Dev/README.md)
 
+---
 
 ---
-----
 
 ## 🚩 Snippets
 
@@ -102,26 +101,9 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 
 # 🎓 Analise e Desenvolvimento de Sistemas - UNIFRAN
 
-### 📌 **Aplicações para a Internet**
-
-[UNIDADES](ADS-Unifran/Aplicações-para-a-Internet/README.md)
-
----
-
-### 📌 **Computação e Informática**
-
-[UNIDADES](ADS-Unifran/Computação-e-Informática/README.md)
-
----
-
-### 📌 **Sistemas Operacionais**
-
-[UNIDADES](ADS-Unifran/Sistemas-Operacionais/README.md)
-
-
-
-
-
+- 📌 **Aplicações para a Internet** - [UNIDADES](ADS-Unifran/Aplicações-para-a-Internet/README.md)
+- 📌 **Computação e Informática** - [UNIDADES](ADS-Unifran/Computação-e-Informática/README.md)
+- 📌 **Sistemas Operacionais** - [UNIDADES](ADS-Unifran/Sistemas-Operacionais/README.md)
 
 ---
 
