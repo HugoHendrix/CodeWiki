@@ -32,6 +32,14 @@ Dicas e Boas Práticas
 
 ---
 
+# 💻 HTML (HYPER TEXT MARKUP LANGUANGE)
+
+- [Validação de Formulários com Atributos HTML Nativos](HTML/valida-form.md)
+
+---
+
+---
+
 ## 🎨 CSS (Cascading Style Sheets)
 
 Cascading Style Sheets (CSS) é uma linguagem de estilos que define como um documento escrito em HTML ou XML deve ser apresentado. É uma tecnologia fundamental da World Wide Web, juntamente com HTML e JavaScript
