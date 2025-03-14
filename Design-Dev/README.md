@@ -31,6 +31,7 @@ A **The Design.dev Crew** é uma newsletter que oferece dicas valiosas, truques 
 - [Clip-path botão estilo Cyberpunk](clippath.md)
 - [Evitando Saltos no Layout com `scrollbar-gutter: stable`](scrollbar-gutter.md)
 - [Efeito de texto 3D em camadas](camadas.md)
+- [Entendendo as Pseudoclasses :is() e :where() no CSS](pseudo.md)
 - [O formato WebP](webp.md)
 - [Paletas de cores](temas.md)
 - [Padrões de fundo criados com CSS puro](padroes-css.md)
