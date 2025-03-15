@@ -33,6 +33,9 @@
 
 ### UNIDADE V
 
+- [Material Teórico - Gerenciador de Entreda e Saída](UNIDADE-V/Unidade5.pdf)
+- [Anotações da Aula](UNIDADE-V/gerenciador-saida.md)
+
 ---
 
 
