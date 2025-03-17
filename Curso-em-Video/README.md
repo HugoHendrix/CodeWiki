@@ -1,3 +1,5 @@
+![logo-curso-em-video](logo-cv.png)
+
 # CURSO EM VIDEO - ANOTAÇÕES DO CURSO DE HTML e CSS
 
 #### 📝 Anotações - História da Internet e como ela funciona
