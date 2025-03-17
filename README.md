@@ -117,8 +117,9 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 
 ### Jornada de Extensão
 
-- 🚧 [Orientações para Atividade de Extensão](ADS-Unifran/Atividade-Extensao/atividade-extensao.md)
+- ✔ [Orientações para Atividade de Extensão](ADS-Unifran/Atividade-Extensao/atividade-extensao.md)
 - ✔ [PDF com orientações](ADS-Unifran/Atividade-Extensao/jornada-extensao.pdf)
+- ✔ [ODS - A serviço da comunidade](ADS-Unifran/Atividade-Extensao/ods.md)
 
 ### Disciplinas
 

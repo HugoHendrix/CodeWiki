@@ -31,7 +31,7 @@ Para isso, pode parar e pensar um pouco: quais são as áreas mais negligenciada
 
 Em qual temática você realizará sua intervenção comunitária? Escolha apenas um.
 
-- 1) Erradicação da Pobreza - /*escolhi esse*/
+- 1) Erradicação da Pobreza 
 - 2) Fome Zero e Agricultura Sustentável
 - 3) Boa Saúde e Bem-Estar
 - 4) Educação de qualidade
