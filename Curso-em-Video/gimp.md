@@ -55,15 +55,15 @@ Uma ferramenta gratuita e poderosa para edição de imagens.
 
 ### **5. Usar o GIMP para Redimensionar e Definir Qualidade em 70%**
 - **Redimensionar**:
-  1. Abra a imagem no GIMP.
-  2. Vá em **Imagem > Escalar Imagem**.
-  3. Defina a largura e altura desejadas (em pixels). Mantenha a proporção clicando no ícone de corrente para evitar distorções.
-  4. Clique em **Escalar**.
+  - Abra a imagem no GIMP.
+  - Vá em **Imagem > Escalar Imagem**.
+  - Defina a largura e altura desejadas (em pixels). Mantenha a proporção clicando no ícone de corrente para evitar distorções.
+  - Clique em **Escalar**.
 - **Definir Qualidade em 70%**:
-  1. Após redimensionar, vá em **Arquivo > Exportar como**.
-  2. Escolha o formato JPEG e clique em **Exportar**.
-  3. Na janela que abrir, ajuste a qualidade para **70%**.
-  4. Clique em **Exportar**.
+  - Após redimensionar, vá em **Arquivo > Exportar como**.
+  - Escolha o formato JPEG e clique em **Exportar**.
+  - Na janela que abrir, ajuste a qualidade para **70%**.
+  - Clique em **Exportar**.
 - **Backup**: Sempre mantenha uma cópia da imagem original em alta resolução para futuras edições ou ajustes.
 
 ---
@@ -71,7 +71,7 @@ Uma ferramenta gratuita e poderosa para edição de imagens.
 ### **6. Salvar Arquivos com Nomes Intuitivos**
 - **Boas Práticas**:
   - Use nomes em **minúsculas** e sem espaços ou caracteres especiais.
-  - Inclua informações como o conteúdo da imagem e o tamanho (ex: `cavalo-1920.jpg`).
+  - Inclua informações como o conteúdo da imagem e o tamanho (ex: `banner-1920x800.jpg`).
   - Isso facilita a organização e a identificação rápida dos arquivos.
 - **Exemplos**:
   - `logo-300x300.png`

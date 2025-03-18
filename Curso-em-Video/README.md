@@ -23,9 +23,13 @@
 
 - [Caracteres Especiais em HTML](emojis-caracteres-especiais.md)
 - [Inserindo imagens em HTML e Direitos Autorais](imagens-dicas.md)
+
+---
+
+#### ⛺ Anotações sobre Imagens na WEB
+
 - [Anotações Complementares Imagens](anotacao-imagem.md)
 - [Gimp e formatos das imagens](gimp.md)
-
 
 ---
 
