@@ -102,11 +102,12 @@ Carrega recursos críticos com alta prioridade, antes que o navegador os descubr
 ---
 
 ### **Comparação entre `preconnect`, `prefetch`, e `preload`**
-| **Diretiva**   | **Prioridade** | **Uso**                                                                 |
-|----------------|----------------|-------------------------------------------------------------------------|
-| `preconnect`   | Média          | Estabelece conexões antecipadas com servidores externos.                |
-| `prefetch`     | Baixa          | Pré-carrega recursos para navegações futuras.                           |
-| `preload`      | Alta           | Carrega recursos críticos necessários no carregamento inicial da página. |
+
+| **Diretiva**   | **Prioridade** | **Uso** |
+|----------------|----------------|---------|
+| `preconnect`   | Média          | Estabelece conexões antecipadas com servidores externos. |
+| `prefetch`     | Baixa          | Pré-carrega recursos para navegações. |
+| `preload`      | Alta           | Carrega recursos críticos necessários no carregamento inicial da. |
 
 ---
 
