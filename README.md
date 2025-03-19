@@ -30,7 +30,7 @@ Dicas e Boas Práticas
 - [Tutorial - Como Criar Links Internos no Markdown](Anotações/criando-links-com-markdown.md)
 - [Simulando Condições de Rede no DevTools do Chrome](Anotações/simula-rede.md)
 - [Otimizando Fontes da Web para Melhorar o Desempenho do Site](Anotações/fonts.md)
-= [Road Map Dev Front end](Anotações/devmap.md)
+- [Road Map Dev Front end](Anotações/devmap.md)
 
 ---
 
