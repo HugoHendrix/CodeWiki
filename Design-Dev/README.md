@@ -39,6 +39,8 @@ A **The Design.dev Crew** é uma newsletter que oferece dicas valiosas, truques 
 - [Position Sticky](position-sticky.md)
 - [Utilizando Text-Balance](text-balance.md)
 - [Usando :focus-visible para Melhorar a Acessibilidade](focus-visible.md)
+- [Propriedade CSS `content-visibility`](content-visibility.md)
+
 
 
 
