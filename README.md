@@ -30,6 +30,7 @@ Dicas e Boas Práticas
 - [Tutorial - Como Criar Links Internos no Markdown](Anotações/criando-links-com-markdown.md)
 - [Simulando Condições de Rede no DevTools do Chrome](Anotações/simula-rede.md)
 - [Otimizando Fontes da Web para Melhorar o Desempenho do Site](Anotações/fonts.md)
+= [Road Map Dev Front end](Anotações/devmap.md)
 
 ---
 
@@ -84,8 +85,8 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 - [Script em Batch para abrir programas automaticamente](Snippets/turn-on.md)
 - [Criando um Sistema de Sliders Multi-Range com Atualização Dinâmica de Total](Snippets/sliders-multi-range.md)
 - [Galeria Infinita HTML, CSS E JS - Tema One Piece](Snippets/galeria-infinita.md)
-- [Rolagem de Texto ao Passar o Mouse](rolagem-texto.md)
-- [Criando um Acordeão com `<details>` e `<summary>` sem JavaScript](acordeao.md)
+- [Rolagem de Texto ao Passar o Mouse](Snippets/rolagem-texto.md)
+- [Criando um Acordeão com `<details>` e `<summary>` sem JavaScript](Snippets/acordeao.md)
 
 ---
 
