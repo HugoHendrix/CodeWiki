@@ -39,6 +39,7 @@ Dicas e Boas Práticas
 ## 💻 HTML (HYPER TEXT MARKUP LANGUANGE)
 
 - [Validação de Formulários com Atributos HTML Nativos](HTML/valida-form.md)
+- [Documentação: preconnect, prefetch, e preload](HTML/melhor-carregamento.md)
 
 ---
 
