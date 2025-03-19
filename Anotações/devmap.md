@@ -3,9 +3,9 @@
 
 #### **1. Fundamentos Básicos**
 - [ ] Aprender **HTML**:
-  - Sintaxe básica
-  - Tags semânticas (`<header>`, `<main>`, `<section>`, `<footer>`, etc.)
-  - Formulários e inputs
+  - [x] Sintaxe básica
+  - [x] Tags semânticas (`<header>`, `<main>`, `<section>`, `<footer>`, etc.)
+  - [ ] Formulários e inputs
 - [ ] Aprender **CSS**:
   - Seletores e especificidade
   - Box model
