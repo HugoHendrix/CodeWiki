@@ -31,6 +31,7 @@ Dicas e Boas Práticas
 - [Simulando Condições de Rede no DevTools do Chrome](Anotações/simula-rede.md)
 - [Otimizando Fontes da Web para Melhorar o Desempenho do Site](Anotações/fonts.md)
 - [Road Map Dev Front end](Anotações/devmap.md)
+- [Como Criar e Usar Snippets Personalizados no VS Code](Anotações/snippets-vscode.md)
 
 ---
 
