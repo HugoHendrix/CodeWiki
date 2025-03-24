@@ -2,6 +2,8 @@
 
 # CURSO EM VIDEO - ANOTAÇÕES DO CURSO DE HTML e CSS
 
+![logo-curso-em-video](mascote-html5.png)
+
 #### 📝 Anotações - História da Internet e como ela funciona
 
 - [Internet Antiga](internet-antiga.md)
@@ -33,6 +35,8 @@
 - [Gimp e formatos das imagens](gimp.md)
 
 ---
+
+![Mascote curso en video](mascote.png)
 
 #### 📖 PDF das Aulas
 
