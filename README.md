@@ -10,8 +10,8 @@ O repositório está organizado da seguinte forma:
 
 - **[Anotações](#-anotações)**: Minhas Anotações e Artigos para leitura.
 - **[HTML](#-html-hyper-text-markup-languange)**: Dicas de HTML e boas práticas
-- **[Dicas de CSS](#-css-cascading-style-sheets)**: Dicas de CSS e boas práticas
-- **[Funções em JavaScript](#-javascript)**: Funções que utilizo com frequência.
+- **[CSS](#-css-cascading-style-sheets)**: Dicas de CSS e boas práticas
+- **[JavaScript](#-javascript)**: Funções que utilizo com frequência.
 - **[The Design.dev Crew](#-design-dev)**: Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 - **[Snippets](#-snippets)**: Trechos de código úteis para reutilização.
 - **[Recursos para WEB](#-recursos-para-desenvolvimento-e-design)**: Links para documentações, ferramentas e outros recursos.
@@ -41,6 +41,7 @@ Dicas e Boas Práticas
 
 - [Validação de Formulários com Atributos HTML Nativos](HTML/valida-form.md)
 - [Documentação: preconnect, prefetch, e preload](HTML/melhor-carregamento.md)
+- [Artigo de Josh W. Comeau: HTML Skeleton](HTML/josh-html-skeleton)
 
 ---
 
