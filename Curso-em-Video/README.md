@@ -4,7 +4,7 @@
 
 ![logo-curso-em-video](mascote-html5.png)
 
-#### 📝 Anotações - História da Internet e como ela funciona
+### 📝 Anotações - História da Internet e como ela funciona
 
 - [Internet Antiga](internet-antiga.md)
 - [Gopher - Protocolo e Sistema de Organização de Informações](gopher.md)
@@ -21,7 +21,7 @@
 
 ---
 
-#### 📝 Anotações - HTML (HyperText Markup Language)
+### 📝 Anotações - HTML (HyperText Markup Language)
 
 - [Caracteres Especiais em HTML](emojis-caracteres-especiais.md)
 - [Inserindo imagens em HTML e Direitos Autorais](imagens-dicas.md)
@@ -29,16 +29,15 @@
 
 ---
 
-#### ⛺ Anotações sobre Imagens na WEB
+### ⛺ Anotações sobre Imagens na WEB
 
 - [Anotações Complementares Imagens](anotacao-imagem.md)
 - [Gimp e formatos das imagens](gimp.md)
 
 ---
 
-![Mascote curso en video](mascote.png)
 
-#### 📖 PDF das Aulas
+### 📖 PDF das Aulas
 
 - [Aula 01 - História da Internet](curso-em-video-aulas-em-pdf/01.pdf)
 - [Aula 02 - Como funciona a Internet](curso-em-video-aulas-em-pdf/02.pdf)
@@ -60,3 +59,5 @@
 - [Aula 18 - Aprendendo Git e GitHub](curso-em-video-aulas-em-pdf/18.pdf)
 - [Aula 19 - Imagens de Fundo](curso-em-video-aulas-em-pdf/19.pdf)
 - [Aula 20 - Mini-projeto Cordel](curso-em-video-aulas-em-pdf/20.pdf)
+
+![Mascote curso en video](mascote.png)
