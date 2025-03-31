@@ -28,11 +28,11 @@ Dicas e Boas Práticas
 
 - [Anotação - Risco ao usar target_blank](Anotações/problemas-target-blank.md)
 - [Como Adicionar Link para PDF no Seu Site](Anotações/link-pdf.md)
-- [Tutorial - Como Criar Links Internos no Markdown](Anotações/criando-links-com-markdown.md)
-- [Simulando Condições de Rede no DevTools do Chrome](Anotações/simula-rede.md)
+- [Como Criar e Usar Snippets Personalizados no VS Code](Anotações/snippets-vscode.md)
 - [Otimizando Fontes da Web para Melhorar o Desempenho do Site](Anotações/fonts.md)
 - [Road Map Dev Front end](Anotações/devmap.md)
-- [Como Criar e Usar Snippets Personalizados no VS Code](Anotações/snippets-vscode.md)
+- [Simulando Condições de Rede no DevTools do Chrome](Anotações/simula-rede.md)
+- [Tutorial - Como Criar Links Internos no Markdown](Anotações/criando-links-com-markdown.md)
 
 ---
 
@@ -42,9 +42,9 @@ Dicas e Boas Práticas
 
 HTML (HyperText Markup Language) é o bloco de construção mais básico da Web. Ele define o significado e a estrutura do conteúdo da Web 
 
-- [Validação de Formulários com Atributos HTML Nativos](HTML/valida-form.md)
-- [Documentação: preconnect, prefetch, e preload](HTML/melhor-carregamento.md)
 - [Artigo de Josh W. Comeau: HTML Skeleton](HTML/josh-html-skeleton.md)
+- [Documentação: preconnect, prefetch, e preload](HTML/melhor-carregamento.md)
+- [Validação de Formulários com Atributos HTML Nativos](HTML/valida-form.md)
 
 ---
 
@@ -56,10 +56,10 @@ Cascading Style Sheets (CSS) é uma linguagem de estilos que define como um docu
 
 ### Media Queries e Responsividade
 
+- [CSS Reset de Josh Comeau](CSS/reset-css-josh.md)
+- [Container Queries explicado](CSS/container-queries.md)
 - [Media Queries e Clamp function no CSS](CSS/media-queries-e-clamp-function-css.md)
 - [Nova Sintaxe de Consultas de Mídia](CSS/nova-sintaxe-media-queries.md)
-- [Container Queries explicado](CSS/container-queries.md)
-- [CSS Reset de Josh Comeau](CSS/reset-css-josh.md)
 
 ---
 
@@ -89,11 +89,13 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 
 ## 🚩 Snippets
 
-- [Script em Batch para abrir programas automaticamente](Snippets/turn-on.md)
+- [Criando um Acordeão com `<details>` e `<summary>` sem JavaScript](Snippets/acordeao.md)
 - [Criando um Sistema de Sliders Multi-Range com Atualização Dinâmica de Total](Snippets/sliders-multi-range.md)
 - [Galeria Infinita HTML, CSS E JS - Tema One Piece](Snippets/galeria-infinita.md)
+- [Script em Batch para abrir programas automaticamente](Snippets/turn-on.md)
+- [Script em Visual Basic para desliga o PC, salve em um bloco de notas com .vbs](Snippets/desliga-pc.md)
+- [Vários Scripts em VB e Batch](Snippets/varios-scripts.md)
 - [Rolagem de Texto ao Passar o Mouse](Snippets/rolagem-texto.md)
-- [Criando um Acordeão com `<details>` e `<summary>` sem JavaScript](Snippets/acordeao.md)
 
 ---
 
@@ -101,11 +103,11 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 
 ## 📌 Recursos para Desenvolvimento e Design
 
-- [Recursos para WEB](Recursos-Web/recursos-web.md)
 - [Bibliotecas e Ícones](Recursos-Web/icones.md)
-- [Referências Técnicas](Recursos-Web/referencia-tecnica.md)
 - [Ilustrações e Design](Recursos-Web/ilustracoes-designs.md)
 - [Outros Recursos](Recursos-Web/outros.md)
+- [Recursos para WEB](Recursos-Web/recursos-web.md)
+- [Referências Técnicas](Recursos-Web/referencia-tecnica.md)
 
 ---
 
@@ -126,8 +128,8 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 ### Jornada de Extensão
 
 - ✔ [Orientações para Atividade de Extensão](ADS-Unifran/Atividade-Extensao/atividade-extensao.md)
-- ✔ [PDF com orientações](ADS-Unifran/Atividade-Extensao/jornada-extensao.pdf)
 - ✔ [ODS - A serviço da comunidade](ADS-Unifran/Atividade-Extensao/ods.md)
+- ✔ [PDF com orientações](ADS-Unifran/Atividade-Extensao/jornada-extensao.pdf)
 - ✔ [Projeto de Extensão](https://hugohendrix.github.io/estancia-alvorada/)
 
 ### Disciplinas
