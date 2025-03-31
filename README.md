@@ -27,6 +27,7 @@ O repositório está organizado da seguinte forma:
 Dicas e Boas Práticas
 
 - [Anotação - Risco ao usar target_blank](Anotações/problemas-target-blank.md)
+- [Como Adicionar Link para PDF no Seu Site](Anotações/link-pdf.md)
 - [Tutorial - Como Criar Links Internos no Markdown](Anotações/criando-links-com-markdown.md)
 - [Simulando Condições de Rede no DevTools do Chrome](Anotações/simula-rede.md)
 - [Otimizando Fontes da Web para Melhorar o Desempenho do Site](Anotações/fonts.md)
@@ -39,9 +40,11 @@ Dicas e Boas Práticas
 
 ## 💻 HTML (HYPER TEXT MARKUP LANGUANGE)
 
+HTML (HyperText Markup Language) é o bloco de construção mais básico da Web. Ele define o significado e a estrutura do conteúdo da Web 
+
 - [Validação de Formulários com Atributos HTML Nativos](HTML/valida-form.md)
 - [Documentação: preconnect, prefetch, e preload](HTML/melhor-carregamento.md)
-- [Artigo de Josh W. Comeau: HTML Skeleton](HTML/josh-html-skeleton)
+- [Artigo de Josh W. Comeau: HTML Skeleton](HTML/josh-html-skeleton.md)
 
 ---
 
@@ -125,6 +128,7 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 - ✔ [Orientações para Atividade de Extensão](ADS-Unifran/Atividade-Extensao/atividade-extensao.md)
 - ✔ [PDF com orientações](ADS-Unifran/Atividade-Extensao/jornada-extensao.pdf)
 - ✔ [ODS - A serviço da comunidade](ADS-Unifran/Atividade-Extensao/ods.md)
+- ✔ [Projeto de Extensão](https://hugohendrix.github.io/estancia-alvorada/)
 
 ### Disciplinas
 
