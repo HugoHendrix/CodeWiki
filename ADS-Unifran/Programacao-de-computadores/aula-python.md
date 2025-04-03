@@ -34,7 +34,7 @@
 
 ### **3. Frameworks para Desenvolvimento Web**  
 | Framework | Uso Principal | Dificuldade |  
-|-----------|--------------|-------------|  
+|-----------|--------------|--------------|  
 | **Django** | Aplicações completas (admin, ORM, segurança) | Intermediário |  
 | **Flask**  | Microservices e APIs leves | Iniciante |  
 | **FastAPI** | APIs modernas (rápido e assíncrono) | Intermediário |  
@@ -64,12 +64,21 @@
 ---
 
 ### **6. Palavras Reservadas do Python**  
-|          |           |          |  
-|----------|-----------|----------|  
-| `and`    | `as`      | `assert` |  
-| `break`  | `class`   | `def`    |  
-| `if`     | `else`    | `for`    |  
-| `while`  | `import`  | `return` |  
+
+- `and` 
+- `as` 
+- `assert`
+- `break` 
+- `class` 
+- `def` 
+- `if` 
+- `else` 
+- `for` 
+- `while` 
+- `import` 
+- `return`  
+
+
 *(Lista completa: [Python Docs](https://docs.python.org/3/reference/lexical_analysis.html#keywords))*  
 
 ---
@@ -107,12 +116,12 @@ numero_float = float("3.14")   # String → Float
 ---
 
 ### **9. Tipos de Dados Básicos**  
-| Tipo      | Exemplo          | Descrição                |  
-|-----------|------------------|--------------------------|  
-| `int`     | `42`             | Números inteiros         |  
-| `float`   | `3.14`           | Números decimais         |  
-| `str`     | `"Python"`       | Texto (entre aspas)      |  
-| `bool`    | `True`/`False`   | Valores lógicos          |  
+| Tipo | Exemplo | Descrição | 
+|------|---------|-----------|
+| `int`| `42`| Números inteiros |  
+| `float`| `3.14` | Números decimais |  
+| `str` | `"Python"`| Texto (entre aspas) |  
+| `bool` | `True`/`False` | Valores |  
 
 ---
 
