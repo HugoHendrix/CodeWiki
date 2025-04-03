@@ -137,6 +137,7 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 - 📌 [Aplicações para a Internet](ADS-Unifran/Aplicações-para-a-Internet/README.md)
 - 📌 [Computação e Informática](ADS-Unifran/Computação-e-Informática/README.md)
 - 📌 [Sistemas Operacionais](ADS-Unifran/Sistemas-Operacionais/README.md)
+- 📌 [Programação de Computadores](ADS-Unifran/Programacao-de-computadores/README.md)
 
 ---
 
