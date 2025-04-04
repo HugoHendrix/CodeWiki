@@ -17,16 +17,6 @@
 ---
 
 
-### Markdown
-
-| Link                      | Descrição                                                                 |
-|---------------------------|---------------------------------------------------------------------------|
-| [https://readme.so/pt](https://readme.so/pt) | A forma mais fácil de criar um README O nosso simples editor permite adicionar e personalizar facilmente todas as seções que você precisa para o README do seu projeto. |
-| [Playground Markdown](https://markdowneditor.org/) | Quando não estamos escrevendo e-mails e codificando sites, estamos usando Markdown para anotar ideias rapidamente. Você deve conferir o Markdown Editor se estiver interessado em aprender a marcação, eles têm uma ótima demonstração de playground para testar. |
-
-
-
-
 
 
 

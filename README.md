@@ -32,7 +32,17 @@ Dicas e Boas Práticas
 - [Otimizando Fontes da Web para Melhorar o Desempenho do Site](Anotações/fonts.md)
 - [Road Map Dev Front end](Anotações/devmap.md)
 - [Simulando Condições de Rede no DevTools do Chrome](Anotações/simula-rede.md)
+
+---
+
+---
+
+## 🔧 GIT e Markdown
+
+- [Guia prática de comandos GIT](git-mark/comandos-git.md)
 - [Tutorial - Como Criar Links Internos no Markdown](Anotações/criando-links-com-markdown.md)
+- [README.SO - Ferramenta para criar README](https://readme.so/pt)
+- [Playground Markdown](https://markdowneditor.org/)
 
 ---
 
@@ -40,7 +50,7 @@ Dicas e Boas Práticas
 
 ## 💻 HTML (HYPER TEXT MARKUP LANGUANGE)
 
-HTML (HyperText Markup Language) é o bloco de construção mais básico da Web. Ele define o significado e a estrutura do conteúdo da Web 
+HTML (HyperText Markup Language) é o bloco de construção mais básico da Web. Ele define o significado e a estrutura do conteúdo da Web
 
 - [Artigo de Josh W. Comeau: HTML Skeleton](HTML/josh-html-skeleton.md)
 - [Documentação: preconnect, prefetch, e preload](HTML/melhor-carregamento.md)
