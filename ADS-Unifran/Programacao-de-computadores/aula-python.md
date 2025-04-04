@@ -33,11 +33,12 @@
 ---
 
 ### **3. Frameworks para Desenvolvimento Web**  
-| Framework | Uso Principal | Dificuldade |  
-|-----------|---------------|-------------|  
-| **Django** | Aplicações completas (admin, ORM, segurança) | Intermediário |  
-| **Flask**  | Microservices e APIs leves | Iniciante |  
-| **FastAPI** | APIs modernas (rápido e assíncrono) | Intermediário |  
+
+| Framework   | Uso Principal                                | Dificuldade   |  
+|-------------|----------------------------------------------|---------------|  
+| **Django**  | Aplicações completas (admin, ORM, segurança) | Intermediário |  
+| **Flask**   | Microservices e APIs leves                   | Iniciante     |  
+| **FastAPI** | APIs modernas (rápido e assíncrono)          | Intermediário |  
 
 - **Melhor para iniciantes:** **Flask** (simplicidade) ou **FastAPI** (se focar em APIs).  
 
