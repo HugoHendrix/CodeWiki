@@ -116,6 +116,7 @@ numero_float = float("3.14")   # String → Float
 ---
 
 ### **9. Tipos de Dados Básicos**  
+
 | Tipo   | Exemplo        | Descrição              | 
 |--------|----------------|------------------------|
 | `int`  | `42`           | Números inteiros       |  
