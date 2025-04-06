@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h3 id="-criando-um-sistema-de-sliders-multi-range-com-atualiza-o-din-mica-de-total-"><strong>Criando um Sistema de
+            Sliders Multi-Range com Atualização Dinâmica de Total</strong></h3>
+    <p><a href="https://codepen.io/themolitor/pen/mdoxjKq/5ccf57f05485491c76304ea4af86d519/">Exemplo</a></p>
+    <ul>
+        <li>Este exemplo demonstra como criar um sistema de <strong>sliders multi-range</strong> que atualiza
+            dinamicamente um valor total com base nos ajustes feitos em cada slider.</li>
+        <li>O sistema é ideal para cenários onde você precisa de feedback em tempo real com base em múltiplas entradas,
+            como cálculos de preços ou quantidades.</li>
+        <li>O design dos sliders é personalizado com CSS, e a lógica de atualização do total é implementada com
+            JavaScript.</li>
+    </ul>
+    <hr>
+    <h4 id="-estrutura-html-"><strong>Estrutura HTML</strong></h4>
+    <p>O HTML consiste em três sliders, cada um representando um produto com um preço específico. O valor total é
+        exibido em um campo de saída (<code>&lt;output&gt;</code>).</p>
+    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"page-wrapper"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Slider 1: Apple Vision Pro --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"slider-wrapper"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"slider_1"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://png.pngtree.com/png-clipart/20230624/original/pngtree-apple-vision-png-image_9212583.png"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"apple-range"</span>&gt;</span> Vision Pro <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>$3499 ea.<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">output</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"appleOutput"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"qtyOutput"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"apple-range"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">output</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"apple-range"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"apple_range"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">step</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">data-price</span>=<span class="hljs-string">"3499.00"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- Slider 2: Meta Quest 3 --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"slider-wrapper"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"slider_2"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://s7d1.scene7.com/is/image/dmqualcommprod/meta-quest-3-1?$QC_Responsive$&amp;fmt=png-alpha"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"meta-range"</span>&gt;</span>Meta Quest 3 <span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>$649 ea.<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">output</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"metaOutput"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rangeOutput"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"meta-range"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">output</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"meta-range"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"meta_range"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">step</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">data-price</span>=<span class="hljs-string">"649.00"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- Slider 3: HTC VIVE XR Elite --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"slider-wrapper"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"slider_3"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://vr-expert.com/wp-content/uploads/2023/02/vive-xr-elite-removebg-preview.png"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"html-range"</span>&gt;</span>HTC VIVE XR Elite<span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>$1099 ea.<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">output</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"htcOutput"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rangeOutput"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"htc-range"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">output</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"range"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"htc-range"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"htc_range"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"100"</span> <span class="hljs-attr">step</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"50"</span> <span class="hljs-attr">data-price</span>=<span class="hljs-string">"1099.00"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- Total e Botão de Compra --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"slider-totals-wrapper"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">output</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"total"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"apple-range meta-range htc-range"</span>&gt;</span>5<span class="hljs-tag">&lt;/<span class="hljs-name">output</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"buy-now"</span>&gt;</span>Buy Now<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- Texto de Rodapé --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"footer-text"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>Published July 2024<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>. This code example is provided for demonstration and educational purposes only...
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+    <hr>
+    <h4 id="-estiliza-o-com-css-"><strong>Estilização com CSS</strong></h4>
+    <p>O CSS personaliza a aparência dos sliders, dos rótulos e do layout geral.</p>
+    <pre><code class="lang-css"><span class="hljs-comment">/* Estilo dos Sliders */</span>
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type="range"]</span> {
+  <span class="hljs-attribute">-webkit-appearance</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">3px</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#e8e8e8</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">25px</span>;
+  <span class="hljs-attribute">box-shadow</span>: inset <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-built_in">rgba</span>(0,0,0,.15);
+  <span class="hljs-attribute">cursor</span>: pointer;
+}
+
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type="range"]</span><span class="hljs-selector-pseudo">::-webkit-slider-thumb</span> {
+  <span class="hljs-attribute">-webkit-appearance</span>: none;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">17.5px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">17.5px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fff</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">outline</span>: <span class="hljs-number">3px</span> solid <span class="hljs-number">#000</span>;
+}
+
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type="range"]</span><span class="hljs-selector-pseudo">::-moz-range-thumb</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">17.5px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">17.5px</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fff</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
+  <span class="hljs-attribute">outline</span>: <span class="hljs-number">3px</span> solid <span class="hljs-number">#000</span>;
+}
+
+<span class="hljs-comment">/* Layout Geral */</span>
+<span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#f8f8f8</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">5vw</span>;
+  <span class="hljs-attribute">font-family</span>: sans-serif;
+}
+
+<span class="hljs-selector-id">#page-wrapper</span> {
+  <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">text-align</span>: left;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">12px</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#fff</span>;
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">5px</span> <span class="hljs-number">5px</span> <span class="hljs-built_in">rgba</span>(0,0,0,.1);
+}
+
+<span class="hljs-selector-class">.slider-wrapper</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">30px</span> <span class="hljs-number">45px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">display</span>: inline-block;
+  <span class="hljs-attribute">vertical-align</span>: top;
+}
+
+<span class="hljs-selector-id">#slider-totals-wrapper</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">40px</span> <span class="hljs-number">15px</span> <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#222</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">12px</span>;
+}
+
+<span class="hljs-selector-id">#total</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">500</span>;
+}
+
+<span class="hljs-selector-id">#buy-now</span> {
+  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">rgba</span>(255,255,255,.0);
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid <span class="hljs-number">#fff</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">25px</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span> <span class="hljs-number">40px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">600</span>;
+  <span class="hljs-attribute">cursor</span>: pointer;
+  <span class="hljs-attribute">transition</span>: background-color .<span class="hljs-number">25s</span>, color .<span class="hljs-number">25s</span>;
+}
+
+<span class="hljs-selector-id">#buy-now</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#fff</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#000</span>;
+}
+</code></pre>
+    <hr>
+    <h4 id="-l-gica-com-javascript-"><strong>Lógica com JavaScript</strong></h4>
+    <p>O JavaScript atualiza o valor total sempre que um slider é ajustado.</p>
+    <pre><code class="lang-javascript"><span class="hljs-comment">// Atualiza o valor total</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateTotal</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> sliders = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'input[type="range"]'</span>);
+  <span class="hljs-keyword">let</span> total = <span class="hljs-number">0</span>;
+
+  sliders.forEach(<span class="hljs-function"><span class="hljs-params">slider</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> pricePerUnit = <span class="hljs-built_in">parseFloat</span>(slider.dataset.price);
+    <span class="hljs-keyword">const</span> quantity = <span class="hljs-built_in">parseFloat</span>(slider.value);
+    total += pricePerUnit * quantity;
+  });
+
+  <span class="hljs-keyword">const</span> formattedTotal = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Intl</span>.NumberFormat(<span class="hljs-string">'en-US'</span>, { <span class="hljs-attr">style</span>: <span class="hljs-string">'currency'</span>, <span class="hljs-attr">currency</span>: <span class="hljs-string">'USD'</span> }).format(total);
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'total'</span>).textContent = formattedTotal;
+}
+
+<span class="hljs-comment">// Configura cada slider</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setupSlider</span>(<span class="hljs-params">slider</span>) </span>{
+  slider.addEventListener(<span class="hljs-string">'input'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> output = slider.closest(<span class="hljs-string">'.slider-wrapper'</span>).querySelector(<span class="hljs-string">'output'</span>);
+    output.innerHTML = slider.value;
+
+    <span class="hljs-keyword">const</span> percent = (slider.value - slider.min) / (slider.max - slider.min) * <span class="hljs-number">100</span>;
+    slider.style.background = <span class="hljs-string">`linear-gradient(to right, #000 <span class="hljs-subst">${percent}</span>%, #e8e8e8 <span class="hljs-subst">${percent}</span>%)`</span>;
+
+    updateTotal();
+  });
+
+  slider.dispatchEvent(<span class="hljs-keyword">new</span> Event(<span class="hljs-string">'input'</span>));
+}
+
+<span class="hljs-comment">// Inicializa todos os sliders</span>
+<span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'input[type="range"]'</span>).forEach(setupSlider);
+
+<span class="hljs-comment">// Efeito de confetti ao clicar em "Buy Now"</span>
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'buy-now'</span>).addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  confetti({
+    <span class="hljs-attr">particleCount</span>: <span class="hljs-number">100</span>,
+    <span class="hljs-attr">spread</span>: <span class="hljs-number">100</span>,
+    <span class="hljs-attr">origin</span>: { <span class="hljs-attr">x</span>: <span class="hljs-number">0.5</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">0.5</span> }
+  });
+});
+</code></pre>
+    <hr>
+    <h4 id="-funcionalidades-principais-"><strong>Funcionalidades Principais</strong></h4>
+    <ol>
+        <li>
+            <p><strong>Sliders Personalizados</strong>:</p>
+            <ul>
+                <li>Cada slider tem um design único, com um &quot;thumb&quot; (alça) redondo e uma trilha estilizada.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Atualização Dinâmica do Total</strong>:</p>
+            <ul>
+                <li>O valor total é recalculado em tempo real conforme os sliders são ajustados.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Efeito de Confetti</strong>:</p>
+            <ul>
+                <li>Um efeito visual divertido é acionado ao clicar no botão &quot;Buy Now&quot;.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h4 id="-conclus-o-"><strong>Conclusão</strong></h4>
+    <ul>
+        <li>Este exemplo combina <strong>HTML</strong>, <strong>CSS</strong> e <strong>JavaScript</strong> para criar
+            uma interface interativa e visualmente atraente.</li>
+        <li>É uma solução prática para cenários que exigem feedback em tempo real com base em múltiplas entradas.</li>
+        <li>Personalize e adapte conforme necessário para seus projetos!</li>
+    </ul>
+    <hr>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
