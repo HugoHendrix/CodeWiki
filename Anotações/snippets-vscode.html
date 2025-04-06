@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="tutorial-como-criar-e-usar-snippets-personalizados-no-vs-code">Tutorial: Como Criar e Usar Snippets
+        Personalizados no VS Code</h1>
+    <p>Os <strong>snippets</strong> (ou &quot;atalhos de código&quot;) são trechos de código reutilizáveis que podem ser
+        acionados rapidamente no Visual Studio Code (VS Code). Eles são ideais para evitar a repetição de padrões de
+        código comuns, como estruturas HTML, estilos CSS ou funções JavaScript. Neste tutorial, você aprenderá a criar
+        seus próprios snippets em 3 passos simples.</p>
+    <hr>
+    <h2 id="passo-1-acessar-a-configura-o-de-snippets">Passo 1: Acessar a Configuração de Snippets</h2>
+    <ol>
+        <li>Abra o VS Code.</li>
+        <li>No menu superior, clique em <strong>File</strong> (Arquivo) &gt; <strong>Preferences</strong> (Preferências)
+            &gt; <strong>Configure User Snippets</strong> (Configurar Snippets do Usuário).<ul>
+                <li>Alternativamente, você pode usar o atalho <code>Ctrl + Shift + P</code> (ou
+                    <code>Cmd + Shift + P</code> no macOS), digitar &quot;snippets&quot; e selecionar
+                    <strong>Preferences: Configure User Snippets</strong>.</li>
+            </ul>
+        </li>
+        <li>Uma lista de linguagens de programação será exibida. Escolha a linguagem para a qual deseja criar um snippet
+            (por exemplo, HTML, CSS, JavaScript, etc.).<ul>
+                <li>Se você não encontrar a linguagem desejada, pode criar um snippet global selecionando <strong>New
+                        Global Snippets File</strong>.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="passo-2-definir-o-snippet">Passo 2: Definir o Snippet</h2>
+    <p>Após selecionar a linguagem, um arquivo JSON será aberto. Esse arquivo é onde você define seus snippets. Aqui
+        está um exemplo de como criar um snippet para uma estrutura CSS Flexbox:</p>
+    <pre><code class="lang-json">{
+  <span class="hljs-attr">"Flexbox Container"</span>: {
+    <span class="hljs-attr">"prefix"</span>: <span class="hljs-string">"flex"</span>,
+    <span class="hljs-attr">"body"</span>: [
+      <span class="hljs-string">"display: flex;"</span>,
+      <span class="hljs-string">"justify-content: center;"</span>,
+      <span class="hljs-string">"align-items: center;"</span>
+    ],
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Cria um container com display flex e alinhamento centralizado."</span>
+  }
+}
+</code></pre>
+    <h3 id="explica-o-do-c-digo-">Explicação do Código:</h3>
+    <ul>
+        <li><strong>&quot;Flexbox Container&quot;</strong>: Nome do snippet (pode ser qualquer nome descritivo).</li>
+        <li><strong>&quot;prefix&quot;</strong>: O atalho que você digitará no editor para acionar o snippet (neste
+            caso, <code>flex</code>).</li>
+        <li><strong>&quot;body&quot;</strong>: O conteúdo do snippet. Cada linha do código deve estar entre aspas e
+            separada por vírgulas.</li>
+        <li><strong>&quot;description&quot;</strong>: Uma descrição opcional para explicar o que o snippet faz.</li>
+    </ul>
+    <hr>
+    <h2 id="passo-3-usar-o-snippet">Passo 3: Usar o Snippet</h2>
+    <ol>
+        <li>Salve o arquivo JSON após definir o snippet.</li>
+        <li>Abra um arquivo da linguagem para a qual você criou o snippet (por exemplo, um arquivo CSS).</li>
+        <li>Digite o prefixo do snippet (<code>flex</code>, no exemplo acima) e pressione <code>Tab</code>. O snippet
+            será expandido automaticamente:</li>
+    </ol>
+    <pre><code class="lang-css"><span class="hljs-attribute">display</span>: flex;
+<span class="hljs-attribute">justify-content</span>: center;
+<span class="hljs-attribute">align-items</span>: center;
+</code></pre>
+    <hr>
+    <h2 id="dicas-avan-adas">Dicas Avançadas</h2>
+    <ol>
+        <li>
+            <p><strong>Tabstops</strong>: Use <code>$1</code>, <code>$2</code>, etc., para criar pontos de interação no
+                snippet. Por exemplo:</p>
+            <pre><code class="lang-json"><span class="hljs-string">"body"</span>: [
+  <span class="hljs-string">"display: flex;"</span>,
+  <span class="hljs-string">"justify-content: <span class="hljs-variable">$1</span>;"</span>,
+  <span class="hljs-string">"align-items: <span class="hljs-variable">$2</span>;"</span>
+]
+</code></pre>
+            <p>Isso permitirá que você navegue rapidamente entre os valores <code>justify-content</code> e
+                <code>align-items</code> ao usar o snippet.</p>
+        </li>
+        <li>
+            <p><strong>Snippets Globais</strong>: Se você quiser usar o mesmo snippet em várias linguagens, crie um
+                arquivo de snippet global (como mencionado no Passo 1).</p>
+        </li>
+        <li>
+            <p><strong>Cheat Sheet de Atalhos</strong>: Para explorar mais funcionalidades do VS Code, confira este <a
+                    href="https://webreference.com/cheat-sheets/vscode/?rel=design-dev-newsletter">cheat sheet
+                    completo</a>.</p>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="exemplos-pr-ticos">Exemplos Práticos</h2>
+    <h3 id="snippet-para-html-b-sico">Snippet para HTML Básico</h3>
+    <pre><code class="lang-json">{
+  <span class="hljs-attr">"HTML Boilerplate"</span>: {
+    <span class="hljs-attr">"prefix"</span>: <span class="hljs-string">"html5"</span>,
+    <span class="hljs-attr">"body"</span>: [
+      <span class="hljs-string">"&lt;!DOCTYPE html&gt;"</span>,
+      <span class="hljs-string">"&lt;html lang=\"en\"&gt;"</span>,
+      <span class="hljs-string">"&lt;head&gt;"</span>,
+      <span class="hljs-string">"    &lt;meta charset=\"UTF-8\"&gt;"</span>,
+      <span class="hljs-string">"    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;"</span>,
+      <span class="hljs-string">"    &lt;title&gt;$1&lt;/title&gt;"</span>,
+      <span class="hljs-string">"&lt;/head&gt;"</span>,
+      <span class="hljs-string">"&lt;body&gt;"</span>,
+      <span class="hljs-string">"    $2"</span>,
+      <span class="hljs-string">"&lt;/body&gt;"</span>,
+      <span class="hljs-string">"&lt;/html&gt;"</span>
+    ],
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Cria um template básico de HTML5."</span>
+  }
+}
+</code></pre>
+    <h3 id="snippet-para-uma-fun-o-javascript">Snippet para uma Função JavaScript</h3>
+    <pre><code class="lang-json">{
+  <span class="hljs-attr">"Arrow Function"</span>: {
+    <span class="hljs-attr">"prefix"</span>: <span class="hljs-string">"afn"</span>,
+    <span class="hljs-attr">"body"</span>: [
+      <span class="hljs-string">"const ${1:functionName} = (${2:params}) =&gt; {"</span>,
+      <span class="hljs-string">"    $3"</span>,
+      <span class="hljs-string">"};"</span>
+    ],
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Cria uma função arrow."</span>
+  }
+}
+</code></pre>
+    <hr>
+    <h2 id="conclus-o">Conclusão</h2>
+    <p>Criar snippets personalizados no VS Code é uma maneira eficiente de acelerar seu fluxo de trabalho e evitar
+        repetições. Com os exemplos acima, você pode começar a criar seus próprios snippets e explorar as infinitas
+        possibilidades que o VS Code oferece.</p>
+    <p>Se precisar de mais referências, não deixe de consultar o <a
+            href="https://webreference.com/cheat-sheets/vscode/?rel=design-dev-newsletter">cheat sheet do VS Code</a>
+        para descobrir outros atalhos e dicas úteis.</p>
+    <hr>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
