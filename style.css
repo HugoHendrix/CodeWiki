@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 19%;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 3px solid rgb(49, 45, 45);
+
+}
+
+.content {
+    margin-left: 12%;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.sidebar a {
+    display: block;
+    padding: 3px;
+    text-decoration: none;
+    
+}
+

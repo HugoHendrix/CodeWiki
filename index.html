@@ -4,172 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shortcut icon" href="img/book.png" type="image/x-icon">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="img/book.png" type="image/x-icon">
-    <title>CodeWiki - Biblioteca DEV</title>
+    <title>Code Wiki</title>
 </head>
 
 <body>
+
     <div class="container">
-        <div class="row">
-            <!-- NAV MENU -->
-            <div class="col-4" style="height: 100%vh;" >
+        <!-- Barra Lateral -->
+        <nav class="sidebar">
+            <menu>
                 <nav>
                     <ul>
                         <h2>Menu</h2>
-                        <li><a href="">Anotações</a></li>
-                        <li><a href="">HTML</a></li>
-                        <li><a href="">CSS</a></li>
-                        <li><a href="">JavaScript</a></li>
-                        <li><a href="">The Design.dev Crew</a></li>
-                        <li><a href="">Snippets</a></li>
-                        <li><a href="">Recursos para WEB</a></li>
-                        <li><a href="">Curso em Video</a></li>
-                        <li><a href="">Analise e Desenvolvimento de Sistemas</a></li>
+                        <li><a href="#anotacao">Anotações</a>
+                            <ul>
+                                <li><a href="#">Snippets</a></li>
+                                <li><a href="#">The Design.dev Crew</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">JavaSript</a></li>
+                        <li><a href="#">Git e Markdown</a></li>
+                        <li><a href="#">Recursos e Ferramentas</a></li>
+                        <li><a href="#">Curso em Video</a></li>
+                        <li><a href="#">Analise e Desenvolvimento de Sistemas</a></li>
                     </ul>
-                </nav>
-            </div>
+            </menu>
 
-            <!-- MAIN -->
-            <main class="col-8">
-                <h1 id="-bem-vindo-ao-codewiki-">📘 Bem-vindo ao <strong>CodeWiki</strong>!</h1>
-                <p>Este repositório tem a finalidade de organizar minhas anotações, dicas e trechos de códigos diversos. É um projeto em constante evolução, então sinta-se à vontade para explorar!</p>
-                <hr>
-                <h2 id="-estrutura-do-reposit-rio">📂 Estrutura do Repositório</h2>
-                <p>O repositório está organizado da seguinte forma:</p>
-                <ul>
-                <li><strong><a href="#-anotações">Anotações</a></strong>: Minhas Anotações e Artigos para leitura.</li>
-                <li><strong><a href="#-html-hyper-text-markup-languange">HTML</a></strong>: Dicas de HTML e boas práticas</li>
-                <li><strong><a href="#-css-cascading-style-sheets">CSS</a></strong>: Dicas de CSS e boas práticas</li>
-                <li><strong><a href="#-javascript">JavaScript</a></strong>: Funções que utilizo com frequência.</li>
-                <li><strong><a href="#-design-dev">The Design.dev Crew</a></strong>: Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew</li>
-                <li><strong><a href="#-snippets">Snippets</a></strong>: Trechos de código úteis para reutilização.</li>
-                <li><strong><a href="#-recursos-para-desenvolvimento-e-design">Recursos para WEB</a></strong>: Links para documentações, ferramentas e outros recursos.</li>
-                <li><strong><a href="#-curso-em-video">Curso em Video - Gustava Guanabara</a></strong>: Anotações e PDF do Curso em Video.</li>
-                <li><strong><a href="#-analise-e-desenvolvimento-de-sistemas---unifran">Análise e Desenvolvimento de Sistemas</a></strong>: Anotações sobre a faculdade de ADS pela Unifran/Cruzeiro do Sul.</li>
-                </ul>
-                <hr>
-                <hr>
-                <h2 id="-anota-es">📝 Anotações</h2>
-                <p>Dicas e Boas Práticas</p>
-                <ul>
-                <li><a href="Anotações/problemas-target-blank.md">Anotação - Risco ao usar target_blank</a></li>
-                <li><a href="Anotações/link-pdf.md">Como Adicionar Link para PDF no Seu Site</a></li>
-                <li><a href="Anotações/snippets-vscode.md">Como Criar e Usar Snippets Personalizados no VS Code</a></li>
-                <li><a href="Anotações/fonts.md">Otimizando Fontes da Web para Melhorar o Desempenho do Site</a></li>
-                <li><a href="Anotações/devmap.md">Road Map Dev Front end</a></li>
-                <li><a href="Anotações/simula-rede.md">Simulando Condições de Rede no DevTools do Chrome</a></li>
-                <li><a href="Anotações/criando-links-com-markdown.md">Tutorial - Como Criar Links Internos no Markdown</a></li>
-                </ul>
-                <hr>
-                <hr>
-                <h2 id="-html-hyper-text-markup-languange-">💻 HTML (HYPER TEXT MARKUP LANGUANGE)</h2>
-                <p>HTML (HyperText Markup Language) é o bloco de construção mais básico da Web. Ele define o significado e a estrutura do conteúdo da Web </p>
-                <ul>
-                <li><a href="HTML/josh-html-skeleton.md">Artigo de Josh W. Comeau: HTML Skeleton</a></li>
-                <li><a href="HTML/melhor-carregamento.md">Documentação: preconnect, prefetch, e preload</a></li>
-                <li><a href="HTML/valida-form.md">Validação de Formulários com Atributos HTML Nativos</a></li>
-                </ul>
-                <hr>
-                <hr>
-                <h2 id="-css-cascading-style-sheets-">🎨 CSS (CASCADING STYLE SHEETS)</h2>
-                <p>Cascading Style Sheets (CSS) é uma linguagem de estilos que define como um documento escrito em HTML ou XML deve ser apresentado. É uma tecnologia fundamental da World Wide Web, juntamente com HTML e JavaScript</p>
-                <h3 id="media-queries-e-responsividade">Media Queries e Responsividade</h3>
-                <ul>
-                <li><a href="CSS/reset-css-josh.md">CSS Reset de Josh Comeau</a></li>
-                <li><a href="CSS/container-queries.md">Container Queries explicado</a></li>
-                <li><a href="CSS/media-queries-e-clamp-function-css.md">Media Queries e Clamp function no CSS</a></li>
-                <li><a href="CSS/nova-sintaxe-media-queries.md">Nova Sintaxe de Consultas de Mídia</a></li>
-                </ul>
-                <hr>
-                <hr>
-                <h2 id="-javascript">💻 JAVASCRIPT</h2>
-                <p>JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e baseada em objetos com funções de primeira classe, mais conhecida como a linguagem de script para páginas Web, mas usada também em vários outros ambientes sem browser, tais como node.js, Apache CouchDB e Adobe Acrobat. O JavaScript é uma linguagem baseada em protótipos, multi-paradigma e dinâmica, suportando estilos de orientação a objetos, imperativos e declarativos</p>
-                <ul>
-                <li><a href="Snippets/btn-volta-ao-topo.md">Função JavaScript Botão de volta ao topo</a></li>
-                <li><a href="Snippets/copiar-texto.md">Função JavaScript para Copiar Textos</a></li>
-                <li><a href="Snippets/relogio.md">Função JavaScript Relógio</a></li>
-                </ul>
-                <hr>
-                <hr>
-                <h2 id="-design-dev">🎁 Design-DEV</h2>
-                <p>Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew</p>
-                <ul>
-                <li><a href="Design-Dev/README.md">The Design.dev Crew</a></li>
-                </ul>
-                <hr>
-                <hr>
-                <h2 id="-snippets">🚩 Snippets</h2>
-                <ul>
-                <li><a href="Snippets/acordeao.md">Criando um Acordeão com <code>&lt;details&gt;</code> e <code>&lt;summary&gt;</code> sem JavaScript</a></li>
-                <li><a href="Snippets/sliders-multi-range.md">Criando um Sistema de Sliders Multi-Range com Atualização Dinâmica de Total</a></li>
-                <li><a href="Snippets/galeria-infinita.md">Galeria Infinita HTML, CSS E JS - Tema One Piece</a></li>
-                <li><a href="Snippets/turn-on.md">Script em Batch para abrir programas automaticamente</a></li>
-                <li><a href="Snippets/desliga-pc.md">Script em Visual Basic para desliga o PC, salve em um bloco de notas com .vbs</a></li>
-                <li><a href="Snippets/varios-scripts.md">Vários Scripts em VB e Batch</a></li>
-                <li><a href="Snippets/rolagem-texto.md">Rolagem de Texto ao Passar o Mouse</a></li>
-                </ul>
-                <hr>
-                <hr>
-                <h2 id="-recursos-para-desenvolvimento-e-design">📌 Recursos para Desenvolvimento e Design</h2>
-                <ul>
-                <li><a href="Recursos-Web/icones.md">Bibliotecas e Ícones</a></li>
-                <li><a href="Recursos-Web/ilustracoes-designs.md">Ilustrações e Design</a></li>
-                <li><a href="Recursos-Web/outros.md">Outros Recursos</a></li>
-                <li><a href="Recursos-Web/recursos-web.md">Recursos para WEB</a></li>
-                <li><a href="Recursos-Web/referencia-tecnica.md">Referências Técnicas</a></li>
-                </ul>
-                <hr>
-                <hr>
-                <h1 id="-curso-em-video">🖖 Curso em Video</h1>
-                <ul>
-                <li><a href="Curso-em-Video/README.md">Curso de HTML e CSS</a></li>
-                </ul>
-                <hr>
-                <hr>
-                <hr>
-                <h1 id="-analise-e-desenvolvimento-de-sistemas-unifran">🎓 Analise e Desenvolvimento de Sistemas - UNIFRAN</h1>
-                <h3 id="jornada-de-extens-o">Jornada de Extensão</h3>
-                <ul>
-                <li>✔ <a href="ADS-Unifran/Atividade-Extensao/atividade-extensao.md">Orientações para Atividade de Extensão</a></li>
-                <li>✔ <a href="ADS-Unifran/Atividade-Extensao/ods.md">ODS - A serviço da comunidade</a></li>
-                <li>✔ <a href="ADS-Unifran/Atividade-Extensao/jornada-extensao.pdf">PDF com orientações</a></li>
-                <li>✔ <a href="https://hugohendrix.github.io/estancia-alvorada/">Projeto de Extensão</a></li>
-                </ul>
-                <h3 id="disciplinas">Disciplinas</h3>
-                <ul>
-                <li>📌 <a href="ADS-Unifran/Aplicações-para-a-Internet/README.md">Aplicações para a Internet</a></li>
-                <li>📌 <a href="ADS-Unifran/Computação-e-Informática/README.md">Computação e Informática</a></li>
-                <li>📌 <a href="ADS-Unifran/Sistemas-Operacionais/README.md">Sistemas Operacionais</a></li>
-                <li>📌 <a href="ADS-Unifran/Programacao-de-computadores/README.md">Programação de Computadores</a></li>
-                </ul>
-                <hr>
-                <hr>
-                <hr>
-                <h2 id="-links-r-pidos">🔗 Links Rápidos</h2>
-                <ul>
-                <li><a href="#-anotações">Anotações</a></li>
-                <li><a href="#-html-hyper-text-markup-languange">HTML</a></li>
-                <li><a href="#-css-cascading-style-sheets">CSS</a></li>
-                <li><a href="#-javascript">JavaScript</a></li>
-                <li><a href="#-design-dev">The Design.dev Crew</a></li>
-                <li><a href="#-snippets">Snippets</a></li>
-                <li><a href="#-recursos-para-desenvolvimento-e-design">Recursos para WEB</a></li>
-                <li><a href="#-curso-em-video">Curso em Video</a></li>
-                <li><a href="#-analise-e-desenvolvimento-de-sistemas---unifran">Análise e Desenvolvimento de Sistemas</a></li>
-                </ul>
-                <hr>
-                <hr>
-                <hr>
-                <p>Feito com ❤️ por <a href="https://github.com/HugoHendrix">Hugo Hendrix</a></p>
-                
-            </main>
-        </div>
+        </nav>
+
+        </nav>
+
+        <!-- Conteúdo Principal -->
+        <main class="content">
+            <h1>📘 Bem-vindo ao CodeWiki!</h1>
+            <p>Este repositório tem a finalidade de organizar minhas anotações, dicas e trechos de códigos diversos. É um projeto em constante evolução, então sinta-se à vontade para explorar!</p> 
+            <hr>
+           
+            <section id="anotacao">
+                <h2>📝 Anotações</h2>
+                <li><a href="Anotações/problemas-target-blank.html">Risco ao usar target_blank</a></li>
+
+
+
+            </section>
+        </main>
+        
     </div>
-    
 
 </body>
 

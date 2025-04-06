@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <div class="section">
+        <h2>Risco ao usar target_blank</h2>
+        <p>O uso do atributo target=&quot;_blank&quot; pode introduzir riscos de segurança, especialmente devido a
+            vulnerabilidades conhecidas como tabnabbing. Isso ocorre quando o site que você abriu em uma nova guia obtém
+            acesso à window.opener da guia original e pode redirecioná-la para outro endereço malicioso.</p>
+        <p>Para tornar o link mais seguro, siga estas práticas:</p>
+        <p>Use o atributo <code>rel=&quot;noopener noreferrer&quot;</code>
+            Adicione o atributo <code>rel=&quot;noopener noreferrer&quot;</code> ao link para evitar que a página aberta obtenha acesso
+            ao objeto window.opener.</p>
+        <p>Exemplo:</p>
+        <pre><code class="lang-html">&lt;<span class="hljs-keyword">a</span> href=<span class="hljs-string">"https://www.example.com/manual.pdf"</span> target=<span class="hljs-string">"_blank"</span> <span class="hljs-built_in">rel</span>=<span class="hljs-string">"noopener noreferrer"</span>&gt;
+        Clique aqui para acessar o manual
+        &lt;/<span class="hljs-keyword">a</span>&gt;
+        </code></pre>
+        <ul>
+            <li>noopener: Garante que o objeto window.opener não será exposto.</li>
+            <li>noreferrer: Além de impedir o acesso ao window.opener, ele também remove informações de referência (como o
+                URL de origem).</li>
+        </ul>
+    </div>
+
+    <footer class="p-1"> 
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+            
+    </footer>
+
+</body>
+
+</html>
