@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h2 id="aninhamento-css-nativo-simplificando-e-organizando-seus-estilos"><strong>Aninhamento CSS Nativo:
+            Simplificando e Organizando Seus Estilos</strong></h2>
+    <ul>
+        <li>O <strong>aninhamento CSS nativo</strong> é uma funcionalidade recente que está sendo implementada em
+            navegadores modernos.</li>
+        <li>Ele permite aninhar regras de estilo dentro de outras, semelhante ao que fazem pré-processadores como
+            <strong>Sass</strong> ou <strong>Less</strong>.</li>
+        <li>Essa abordagem reduz a redundância de código e melhora a legibilidade, tornando os estilos mais organizados
+            e fáceis de entender.</li>
+    </ul>
+    <hr>
+    <h4 id="comparação-tradicional-vs-aninhamento-css"><strong>Comparação: Tradicional vs. Aninhamento CSS</strong></h4>
+    <h5 id="código-tradicional"><strong>Código Tradicional</strong></h5>
+    <pre><code class="language-css">#header { 
+        background-color: #333;
+    }
+    
+    #header .logo {
+        margin-left: 20px;
+        float: left;
+    }
+    
+    #header .navigation {
+        padding: 5px 0; 
+        float: right;
+    }
+    </code></pre>
+    <h5 id="código-com-aninhamento-css"><strong>Código com Aninhamento CSS</strong></h5>
+    <pre><code class="language-css">#header { 
+        background-color: #333;
+    
+        .logo {
+            margin-left: 20px;
+            float: left;
+        }
+    
+        .navigation {
+            padding: 5px 0;
+            float: right;
+        }
+    }
+    </code></pre>
+    <hr>
+    <h4 id="vantagens-do-aninhamento-css"><strong>Vantagens do Aninhamento CSS</strong></h4>
+    <ol>
+        <li>
+            <p><strong>Menos Redundância</strong>:</p>
+            <ul>
+                <li>Evita a repetição de seletores, como <code>#header</code>, para cada elemento interno.</li>
+                <li>O código fica mais compacto e fácil de manter.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Melhor Legibilidade</strong>:</p>
+            <ul>
+                <li>O recuo e a estrutura aninhada tornam mais claro quais estilos se aplicam a quais elementos.</li>
+                <li>Facilita a identificação da hierarquia dos seletores.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Suporte a Pseudo-seletores</strong>:</p>
+            <ul>
+                <li>Funciona bem com pseudo-seletores como <code>:hover</code>, <code>:active</code>, entre outros.</li>
+                <li>Exemplo:
+                    <pre><code class="language-css">a {
+        color: blue;
+    
+        &amp;:hover {
+            color: red;
+        }
+    
+        &amp;:active {
+            color: green;
+        }
+    }
+    </code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Integração com Pré-processadores</strong>:</p>
+            <ul>
+                <li>Se você já usa Sass ou Less, a transição para o aninhamento CSS nativo será natural e familiar.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h4 id="considerações-importantes"><strong>Considerações Importantes</strong></h4>
+    <ol>
+        <li>
+            <p><strong>Suporte a Navegadores</strong>:</p>
+            <ul>
+                <li>O aninhamento CSS nativo é uma funcionalidade <strong>relativamente nova</strong>.</li>
+                <li>Verifique a compatibilidade com os navegadores que seu projeto precisa suportar.</li>
+                <li>Ferramentas como o <a href="https://caniuse.com/">Can I use</a> podem ajudar a verificar o suporte.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Decisão de Uso</strong>:</p>
+            <ul>
+                <li>Se o suporte a navegadores mais antigos for essencial, considere continuar usando pré-processadores
+                    como Sass ou Less.</li>
+                <li>Para projetos modernos, o aninhamento CSS nativo pode ser uma ótima opção para simplificar o código.
+                </li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h4 id="exemplo-completo-com-pseudo-seletores"><strong>Exemplo Completo com Pseudo-seletores</strong></h4>
+    <pre><code class="language-css">#header { 
+        background-color: #333;
+    
+        .logo {
+            margin-left: 20px;
+            float: left;
+    
+            &amp;:hover {
+                opacity: 0.8;
+            }
+        }
+    
+        .navigation {
+            padding: 5px 0;
+            float: right;
+    
+            a {
+                color: white;
+    
+                &amp;:hover {
+                    color: #66bbb2;
+                }
+    
+                &amp;:active {
+                    color: #c53b3d;
+                }
+            }
+        }
+    }
+    </code></pre>
+    <hr>
+    <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting">Documentação MDN CSS Nesting</a></li>
+    </ul>
+    <h4 id="conclusão"><strong>Conclusão</strong></h4>
+    <ul>
+        <li>O aninhamento CSS nativo é uma adição poderosa à linguagem, trazendo organização e eficiência ao escrever
+            estilos.</li>
+        <li>Embora ainda esteja em fase de adoção, é uma funcionalidade promissora para projetos modernos.</li>
+        <li>Avalie o suporte necessário para seu projeto e experimente essa abordagem para simplificar seu código CSS.
+        </li>
+    </ul>
+    <hr>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

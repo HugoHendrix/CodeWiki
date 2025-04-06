@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h3 id="como-usar-position-sticky-para-fixar-elementos-em-partes-específicas-da-página"><strong>Como Usar
+            <code>position: sticky</code> para Fixar Elementos em Partes Específicas da Página</strong></h3>
+    <p>Neste tutorial, você aprenderá a usar a propriedade CSS <code>position: sticky</code> para fixar elementos em
+        partes específicas da página enquanto o usuário rola o conteúdo. Essa técnica é útil para criar barras de
+        navegação, cabeçalhos, ou chamadas de ação (CTAs) que permanecem visíveis apenas em determinadas seções.</p>
+    <hr>
+    <h2 id="passo-1-entenda-o-position-sticky"><strong>Passo 1: Entenda o <code>position: sticky</code></strong></h2>
+    <ul>
+        <li>
+            <p><strong>O que é?</strong></p>
+            <ul>
+                <li><code>position: sticky</code> é uma propriedade CSS que faz com que um elemento se comporte como
+                    <code>relative</code> até atingir um ponto específico na tela (definido por <code>top</code>,
+                    <code>bottom</code>, <code>left</code>, ou <code>right</code>). Após atingir esse ponto, ele se
+                    comporta como <code>fixed</code>, permanecendo visível enquanto o contêiner pai estiver na viewport.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Quando usar?</strong></p>
+            <ul>
+                <li>Para fixar elementos como cabeçalhos, barras de navegação, ou CTAs em partes específicas da página.
+                </li>
+                <li>Quando você quer que o elemento fique visível apenas enquanto o contêiner pai estiver na tela.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h2 id="passo-2-estrutura-html-básica"><strong>Passo 2: Estrutura HTML Básica</strong></h2>
+    <p>Crie a estrutura HTML com um contêiner e um elemento que será fixo.</p>
+    <pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;content&quot;&gt;
+    &lt;p&gt;Conteúdo da seção 1...&lt;/p&gt;
+    &lt;p&gt;Mais conteúdo...&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;sticky-element&quot;&gt;
+    Este elemento é sticky!
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;content&quot;&gt;
+    &lt;p&gt;Conteúdo da seção 2...&lt;/p&gt;
+    &lt;p&gt;Mais conteúdo...&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;sticky-element&quot;&gt;
+    Este elemento é sticky!
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    <hr>
+    <h2 id="passo-3-adicione-estilos-css"><strong>Passo 3: Adicione Estilos CSS</strong></h2>
+    <p>Agora, vamos estilizar o contêiner e o elemento sticky.</p>
+    <pre><code class="language-css">/* Estilos globais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contêiner */
+.container {
+  border: 2px solid #ccc;
+  margin-bottom: 20px;
+  position: relative; /* Importante para o sticky funcionar */
+  height: 300px; /* Altura definida para demonstrar o comportamento */
+  overflow-y: auto; /* Adiciona rolagem interna */
+}
+
+/* Elemento Sticky */
+.sticky-element {
+  position: sticky;
+  bottom: 0; /* Fixa o elemento na parte inferior */
+  background-color: #007BFF;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+</code></pre>
+    <hr>
+    <h2 id="passo-4-explicação-dos-estilos"><strong>Passo 4: Explicação dos Estilos</strong></h2>
+    <ol>
+        <li>
+            <p><strong>Contêiner (<code>.container</code>)</strong>:</p>
+            <ul>
+                <li>Define uma altura fixa e uma rolagem interna (<code>overflow-y: auto;</code>) para simular o
+                    comportamento de rolagem.</li>
+                <li>A propriedade <code>position: relative;</code> é importante para que o elemento sticky funcione
+                    corretamente.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Elemento Sticky (<code>.sticky-element</code>)</strong>:</p>
+            <ul>
+                <li>Usa <code>position: sticky;</code> e <code>bottom: 0;</code> para fixar o elemento na parte inferior
+                    do contêiner pai.</li>
+                <li>O elemento só ficará fixo enquanto o contêiner pai estiver visível na viewport.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="passo-5-teste-o-comportamento"><strong>Passo 5: Teste o Comportamento</strong></h2>
+    <ul>
+        <li>Abra o arquivo HTML no navegador.</li>
+        <li>Role o conteúdo dentro do contêiner e observe que o elemento sticky permanece visível na parte inferior.
+        </li>
+        <li>Quando o contêiner pai sai da viewport (por exemplo, ao rolar para a próxima seção), o elemento sticky deixa
+            de ser fixo e rola junto com o conteúdo.</li>
+    </ul>
+    <hr>
+    <h2 id="passo-6-personalização"><strong>Passo 6: Personalização</strong></h2>
+    <p>Você pode personalizar o comportamento do elemento sticky ajustando os valores de <code>top</code>,
+        <code>bottom</code>, <code>left</code>, ou <code>right</code>. Por exemplo:</p>
+    <ul>
+        <li>
+            <p><strong>Fixar no Topo</strong>:</p>
+            <pre><code class="language-css">.sticky-element {
+  position: sticky;
+  top: 0; /* Fixa o elemento no topo */
+}
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Fixar à Direita</strong>:</p>
+            <pre><code class="language-css">.sticky-element {
+  position: sticky;
+  right: 0; /* Fixa o elemento à direita */
+}
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h2 id="passo-7-casos-de-uso-comuns"><strong>Passo 7: Casos de Uso Comuns</strong></h2>
+    <ol>
+        <li>
+            <p><strong>Barras de Ação em Formulários Longos</strong>:</p>
+            <ul>
+                <li>Manter botões como &quot;Enviar&quot; ou &quot;Salvar&quot; visíveis enquanto o usuário preenche um
+                    formulário extenso.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Cabeçalhos ou Rodapés em Seções Específicas</strong>:</p>
+            <ul>
+                <li>Fixar cabeçalhos ou rodapés em seções específicas de uma página longa.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Notificações ou Mensagens</strong>:</p>
+            <ul>
+                <li>Exibir mensagens importantes que precisam permanecer visíveis enquanto o usuário interage com uma
+                    seção.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="passo-8-considerações-finais"><strong>Passo 8: Considerações Finais</strong></h2>
+    <ol>
+        <li>
+            <p><strong>Suporte a Navegadores</strong>:</p>
+            <ul>
+                <li><code>position: sticky;</code> é amplamente suportado em navegadores modernos, mas verifique a
+                    compatibilidade em <a href="https://caniuse.com/css-sticky">Can I use</a>.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Desempenho</strong>:</p>
+            <ul>
+                <li>Em páginas com muitos elementos sticky, pode haver impactos no desempenho. Teste em diferentes
+                    dispositivos e cenários.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Fallback para Navegadores Antigos</strong>:</p>
+            <ul>
+                <li>Para navegadores que não suportam <code>position: sticky;</code>, considere usar JavaScript para
+                    simular o comportamento.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="exemplo-completo"><strong>Exemplo Completo</strong></h2>
+    <p>Aqui está o código completo para você testar:</p>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Exemplo de Position Sticky&lt;/title&gt;
+  &lt;style&gt;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      border: 2px solid #ccc;
+      margin-bottom: 20px;
+      position: relative;
+      height: 300px;
+      overflow-y: auto;
+    }
+    .sticky-element {
+      position: sticky;
+      bottom: 0;
+      background-color: #007BFF;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;content&quot;&gt;
+      &lt;p&gt;Conteúdo da seção 1...&lt;/p&gt;
+      &lt;p&gt;Mais conteúdo...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;sticky-element&quot;&gt;
+      Este elemento é sticky!
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;content&quot;&gt;
+      &lt;p&gt;Conteúdo da seção 2...&lt;/p&gt;
+      &lt;p&gt;Mais conteúdo...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;sticky-element&quot;&gt;
+      Este elemento é sticky!
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    <hr>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

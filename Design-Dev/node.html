@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="o-node-package-manager-npm">o <strong>Node Package Manager (NPM)</strong></h1>
+    <hr>
+    <p>Dominar o <strong>Node Package Manager (NPM)</strong> é uma habilidade poderosa para gerenciar dependências,
+        scripts e versões em seus projetos JavaScript. O NPM ajuda a evitar conflitos de versão e pode automatizar
+        tarefas como testes e implantação de servidores.</p>
+    <p>Para começar, certifique-se de ter o <strong>Node.js</strong> instalado no seu sistema.</p>
+    <p>Em seguida, preparamos uma folha de referência com <strong>15 comandos</strong> comumente usados. Aproveite!</p>
+    <p><img src="tabela-npm.jpg" alt="Tabela NPM"></p>
+    <hr>
+    <h3 id="explicação-detalhada"><strong>Explicação Detalhada</strong></h3>
+    <h4 id="1-o-que-é-o-npm"><strong>1. O que é o NPM?</strong></h4>
+    <ul>
+        <li><strong>Definição</strong>: O NPM é o gerenciador de pacotes padrão para o Node.js, usado para instalar,
+            compartilhar e gerenciar dependências em projetos JavaScript.</li>
+        <li><strong>Funcionalidades</strong>:<ul>
+                <li>Instalação de pacotes e bibliotecas.</li>
+                <li>Gerenciamento de versões de dependências.</li>
+                <li>Execução de scripts automatizados (testes, builds, deploys etc.).</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="2-por-que-usar-o-npm"><strong>2. Por que usar o NPM?</strong></h4>
+    <ul>
+        <li><strong>Gerenciamento de dependências</strong>: Facilita a instalação e atualização de bibliotecas.</li>
+        <li><strong>Evita conflitos de versão</strong>: Permite especificar versões exatas das dependências.</li>
+        <li><strong>Automatização</strong>: Executa tarefas repetitivas através de scripts definidos no
+            <code>package.json</code>.</li>
+    </ul>
+    <hr>
+    <h4 id="3-como-começar"><strong>3. Como começar?</strong></h4>
+    <ol>
+        <li>
+            <p><strong>Instale o Node.js</strong>:</p>
+            <ul>
+                <li>O NPM vem incluído com o Node.js. Baixe e instale a versão mais recente do <a
+                        href="https://nodejs.org/">Node.js</a>.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Verifique a instalação</strong>:</p>
+            <ul>
+                <li>No terminal, execute:
+                    <pre><code class="language-bash">node -v
+npm -v
+</code></pre>
+                </li>
+                <li>Isso exibirá as versões do Node.js e do NPM instaladas.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Inicialize um projeto</strong>:</p>
+            <ul>
+                <li>Crie um novo diretório para seu projeto e execute:
+                    <pre><code class="language-bash">npm init
+</code></pre>
+                </li>
+                <li>Siga as instruções para criar o arquivo <code>package.json</code>.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h4 id="4-comandos-npm-mais-usados"><strong>4. Comandos NPM mais usados</strong></h4>
+    <p>Aqui estão 15 comandos essenciais para dominar o NPM:</p>
+    <ol>
+        <li>
+            <p><strong>Inicializar um projeto</strong>:</p>
+            <pre><code class="language-bash">npm init
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Instalar um pacote localmente</strong>:</p>
+            <pre><code class="language-bash">npm install &lt;nome-do-pacote&gt;
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Instalar um pacote globalmente</strong>:</p>
+            <pre><code class="language-bash">npm install -g &lt;nome-do-pacote&gt;
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Instalar um pacote como dependência de desenvolvimento</strong>:</p>
+            <pre><code class="language-bash">npm install &lt;nome-do-pacote&gt; --save-dev
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Atualizar um pacote</strong>:</p>
+            <pre><code class="language-bash">npm update &lt;nome-do-pacote&gt;
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Desinstalar um pacote</strong>:</p>
+            <pre><code class="language-bash">npm uninstall &lt;nome-do-pacote&gt;
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Listar pacotes instalados</strong>:</p>
+            <pre><code class="language-bash">npm list
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Verificar pacotes desatualizados</strong>:</p>
+            <pre><code class="language-bash">npm outdated
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Executar scripts definidos no <code>package.json</code></strong>:</p>
+            <pre><code class="language-bash">npm run &lt;nome-do-script&gt;
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Instalar todas as dependências de um projeto</strong>:</p>
+            <pre><code class="language-bash">npm install
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Publicar um pacote no NPM</strong>:</p>
+            <pre><code class="language-bash">npm publish
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Adicionar um usuário ao NPM</strong>:</p>
+            <pre><code class="language-bash">npm adduser
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Login no NPM</strong>:</p>
+            <pre><code class="language-bash">npm login
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Verificar permissões de um pacote</strong>:</p>
+            <pre><code class="language-bash">npm access
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Limpar o cache do NPM</strong>:</p>
+            <pre><code class="language-bash">npm cache clean --force
+</code></pre>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="organizando-como-anotação-de-estudo"><strong>Organizando como Anotação de Estudo</strong></h3>
+    <p>Aqui está um resumo organizado para você consultar:</p>
+    <hr>
+    <h4 id="node-package-manager-npm"><strong>Node Package Manager (NPM)</strong></h4>
+    <p><strong>O que é?</strong></p>
+    <ul>
+        <li>Gerenciador de pacotes padrão para Node.js, usado para instalar e gerenciar dependências em projetos
+            JavaScript.</li>
+    </ul>
+    <p><strong>Por que usar?</strong></p>
+    <ul>
+        <li>Facilita o gerenciamento de dependências.</li>
+        <li>Evita conflitos de versão.</li>
+        <li>Automatiza tarefas como testes e deploys.</li>
+    </ul>
+    <p><strong>Como começar?</strong></p>
+    <ol>
+        <li>Instale o Node.js: <a href="https://nodejs.org/">https://nodejs.org/</a>.</li>
+        <li>Verifique a instalação:
+            <pre><code class="language-bash">node -v
+npm -v
+</code></pre>
+        </li>
+        <li>Inicialize um projeto:
+            <pre><code class="language-bash">npm init
+</code></pre>
+        </li>
+    </ol>
+    <p><strong>Comandos mais usados</strong></p>
+    <ol>
+        <li>Inicializar um projeto:
+            <pre><code class="language-bash">npm init
+</code></pre>
+        </li>
+        <li>Instalar pacote localmente:
+            <pre><code class="language-bash">npm install &lt;nome-do-pacote&gt;
+</code></pre>
+        </li>
+        <li>Instalar pacote globalmente:
+            <pre><code class="language-bash">npm install -g &lt;nome-do-pacote&gt;
+</code></pre>
+        </li>
+        <li>Instalar como dependência de desenvolvimento:
+            <pre><code class="language-bash">npm install &lt;nome-do-pacote&gt; --save-dev
+</code></pre>
+        </li>
+        <li>Atualizar pacote:
+            <pre><code class="language-bash">npm update &lt;nome-do-pacote&gt;
+</code></pre>
+        </li>
+        <li>Desinstalar pacote:
+            <pre><code class="language-bash">npm uninstall &lt;nome-do-pacote&gt;
+</code></pre>
+        </li>
+        <li>Listar pacotes instalados:
+            <pre><code class="language-bash">npm list
+</code></pre>
+        </li>
+        <li>Verificar pacotes desatualizados:
+            <pre><code class="language-bash">npm outdated
+</code></pre>
+        </li>
+        <li>Executar scripts:
+            <pre><code class="language-bash">npm run &lt;nome-do-script&gt;
+</code></pre>
+        </li>
+        <li>Instalar todas as dependências:
+            <pre><code class="language-bash">npm install
+</code></pre>
+        </li>
+        <li>Publicar um pacote:
+            <pre><code class="language-bash">npm publish
+</code></pre>
+        </li>
+        <li>Adicionar usuário:
+            <pre><code class="language-bash">npm adduser
+</code></pre>
+        </li>
+        <li>Login no NPM:
+            <pre><code class="language-bash">npm login
+</code></pre>
+        </li>
+        <li>Verificar permissões:
+            <pre><code class="language-bash">npm access
+</code></pre>
+        </li>
+        <li>Limpar cache:
+            <pre><code class="language-bash">npm cache clean --force
+</code></pre>
+        </li>
+    </ol>
+    <hr>
+    <h4 id="próximos-passos"><strong>Próximos Passos</strong></h4>
+    <ol>
+        <li><strong>Crie um projeto</strong>: Use <code>npm init</code> para iniciar um novo projeto.</li>
+        <li><strong>Instale pacotes</strong>: Experimente instalar bibliotecas populares, como <code>express</code> ou
+            <code>lodash</code>.</li>
+        <li><strong>Automatize tarefas</strong>: Defina scripts no <code>package.json</code> para testes, builds ou
+            deploys.</li>
+    </ol>
+    <hr>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

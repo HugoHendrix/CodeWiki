@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="o-formato-de-imagem-webp">O formato de imagem <strong>WebP</strong></h1>
+    <p>Hoje, vamos fazer um curso rápido sobre o formato de imagem <strong>WebP</strong>. Se você ainda não ouviu falar
+        dele, o WebP é um formato de imagem que oferece excelente compressão em comparação com formatos mais pesados,
+        como JPG ou PNG. Você obtém arquivos menores sem sacrificar a qualidade, além de suportar compressão com perdas
+        (lossy) e sem perdas (lossless), animação e transparência.</p>
+    <p>Criar uma imagem WebP é tão simples quanto usar a ferramenta gratuita <strong>cwebp</strong> do Google para
+        converter suas imagens existentes ou ativar o WebP por meio de serviços como o <strong>Cloudflare</strong>. Para
+        fazer isso, faça login na sua conta do Cloudflare, navegue até <strong>Speed &gt; Optimization</strong> e ative
+        o <strong>Polish</strong> com a opção WebP marcada.</p>
+    <p>Para garantir a máxima compatibilidade, você também pode usar o elemento <code>&lt;picture&gt;</code> para
+        fornecer opções de fallback para navegadores mais antigos, como este:</p>
+    <p><strong>Demonstração de código WebP</strong></p>
+    <p>Lembre-se de que você pode simplificar ainda mais esse código se o seu público não depender de navegadores mais
+        antigos, algo que você pode verificar nas análises do seu site. O WebP é atualmente suportado em todos os
+        principais navegadores, incluindo Chrome, Firefox, Safari e Edge.</p>
+    <p>O WebP é uma ferramenta incrível no seu arsenal de desenvolvedor e vale a pena pelos ganhos de velocidade!</p>
+    <hr>
+    <h3 id="explicação-detalhada"><strong>Explicação Detalhada</strong></h3>
+    <h4 id="1-o-que-é-o-formato-webp"><strong>1. O que é o formato WebP?</strong></h4>
+    <ul>
+        <li><strong>Definição</strong>: WebP é um formato de imagem desenvolvido pelo Google que oferece compressão
+            avançada para reduzir o tamanho dos arquivos sem perder qualidade.</li>
+        <li><strong>Vantagens</strong>:<ul>
+                <li><strong>Tamanhos menores</strong>: Comparado a JPG e PNG, o WebP pode reduzir o tamanho das imagens
+                    em até 30%.</li>
+                <li><strong>Suporte a transparência</strong>: Semelhante ao PNG.</li>
+                <li><strong>Animações</strong>: Semelhante ao GIF, mas com melhor compressão.</li>
+                <li><strong>Compressão com e sem perdas</strong>: Escolha entre qualidade máxima ou tamanho mínimo.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="2-como-usar-o-webp"><strong>2. Como usar o WebP?</strong></h4>
+    <ul>
+        <li>
+            <p><strong>Conversão de imagens</strong>:</p>
+            <ul>
+                <li>Use a ferramenta <strong>cwebp</strong> do Google para converter imagens existentes para WebP.</li>
+                <li>Exemplo de comando:
+                    <pre><code class="language-bash">cwebp input_image.jpg -o output_image.webp
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Ativação via Cloudflare</strong>:</p>
+            <ul>
+                <li>Se você usa o Cloudflare, ative o <strong>Polish</strong> com a opção WebP:<ol>
+                        <li>Faça login na sua conta do Cloudflare.</li>
+                        <li>Navegue até <strong>Speed &gt; Optimization</strong>.</li>
+                        <li>Ative o <strong>Polish</strong> e marque a opção WebP.</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="3-garantindo-compatibilidade"><strong>3. Garantindo compatibilidade</strong></h4>
+    <ul>
+        <li>
+            <p><strong>Uso do elemento <code>&lt;picture&gt;</code></strong>:</p>
+            <ul>
+                <li>Para garantir que navegadores mais antigos ainda exibam as imagens, use o elemento
+                    <code>&lt;picture&gt;</code> com fallbacks para JPG ou PNG.</li>
+                <li>Exemplo de código:
+                    <pre><code class="language-html">&lt;picture&gt;
+  &lt;source srcset=&quot;imagem.webp&quot; type=&quot;image/webp&quot;&gt;
+  &lt;img src=&quot;imagem.jpg&quot; alt=&quot;Descrição da imagem&quot;&gt;
+&lt;/picture&gt;
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Verificação de suporte</strong>:</p>
+            <ul>
+                <li>Verifique as estatísticas do seu site para ver se seus usuários ainda usam navegadores antigos.</li>
+                <li>Se não for o caso, você pode simplificar o código e usar apenas WebP.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="4-suporte-do-navegador"><strong>4. Suporte do navegador</strong></h4>
+    <ul>
+        <li><strong>Navegadores compatíveis</strong>:<ul>
+                <li>Chrome, Firefox, Safari, Edge e outros navegadores modernos.</li>
+            </ul>
+        </li>
+        <li><strong>Navegadores sem suporte</strong>:<ul>
+                <li>Navegadores muito antigos podem não suportar WebP, daí a importância do fallback.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h3 id="organizando-como-anotação-de-estudo"><strong>Organizando como Anotação de Estudo</strong></h3>
+    <p>Aqui está um resumo organizado para você consultar:</p>
+    <hr>
+    <h4 id="formato-de-imagem-webp"><strong>Formato de Imagem WebP</strong></h4>
+    <p><strong>O que é?</strong></p>
+    <ul>
+        <li>Formato de imagem desenvolvido pelo Google com excelente compressão.</li>
+    </ul>
+    <p><strong>Vantagens</strong></p>
+    <ul>
+        <li>Tamanhos menores em comparação com JPG e PNG.</li>
+        <li>Suporte a transparência (como PNG) e animações (como GIF).</li>
+        <li>Compressão com perdas (lossy) e sem perdas (lossless).</li>
+    </ul>
+    <p><strong>Como usar?</strong></p>
+    <ol>
+        <li><strong>Conversão de imagens</strong>:<ul>
+                <li>Use a ferramenta <strong>cwebp</strong>:
+                    <pre><code class="language-bash">cwebp input_image.jpg -o output_image.webp
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Ativação via Cloudflare</strong>:<ul>
+                <li>Ative o <strong>Polish</strong> com a opção WebP em <strong>Speed &gt; Optimization</strong>.</li>
+            </ul>
+        </li>
+    </ol>
+    <p><strong>Garantindo compatibilidade</strong></p>
+    <ul>
+        <li>Use o elemento <code>&lt;picture&gt;</code> para fallback em navegadores antigos:
+            <pre><code class="language-html">&lt;picture&gt;
+  &lt;source srcset=&quot;imagem.webp&quot; type=&quot;image/webp&quot;&gt;
+  &lt;img src=&quot;imagem.jpg&quot; alt=&quot;Descrição da imagem&quot;&gt;
+&lt;/picture&gt;
+</code></pre>
+        </li>
+    </ul>
+    <p><strong>Suporte do navegador</strong></p>
+    <ul>
+        <li>Compatível com Chrome, Firefox, Safari, Edge e outros navegadores modernos.</li>
+        <li>Verifique as estatísticas do seu site para ver se fallbacks são necessários.</li>
+    </ul>
+    <hr>
+    <h4 id="exemplo-de-código"><strong>Exemplo de Código</strong></h4>
+    <pre><code class="language-html">&lt;picture&gt;
+  &lt;source srcset=&quot;imagem.webp&quot; type=&quot;image/webp&quot;&gt;
+  &lt;img src=&quot;imagem.jpg&quot; alt=&quot;Descrição da imagem&quot;&gt;
+&lt;/picture&gt;
+</code></pre>
+    <hr>
+    <h4 id="próximos-passos"><strong>Próximos Passos</strong></h4>
+    <ol>
+        <li><strong>Converta suas imagens</strong>: Use a ferramenta <strong>cwebp</strong> para converter imagens
+            existentes.</li>
+        <li><strong>Ative o WebP no Cloudflare</strong>: Se você usa Cloudflare, siga os passos para ativar o suporte a
+            WebP.</li>
+        <li><strong>Teste a compatibilidade</strong>: Verifique se seus usuários usam navegadores antigos e adicione
+            fallbacks, se necessário.</li>
+    </ol>
+    <hr>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

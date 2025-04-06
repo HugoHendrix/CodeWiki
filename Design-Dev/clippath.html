@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h3 id="criando-estética-cyberpunk-com-clip-path-no-css"><strong>Criando Estética Cyberpunk com
+            <code>clip-path</code> no CSS</strong></h3>
+    <ul>
+        <li>A estética <strong>Cyberpunk</strong> é conhecida por seus designs futuristas e recortes geométricos.</li>
+        <li>Com a propriedade CSS <strong><code>clip-path</code></strong>, é fácil criar efeitos visuais
+            impressionantes, como recortes em elementos, que remetem a essa estética.</li>
+        <li>Neste exemplo, vamos explorar como usar <code>clip-path</code> para criar um botão com um recorte no canto
+            inferior direito, típico do estilo Cyberpunk.</li>
+    </ul>
+    <hr>
+    <h4 id="como-funciona"><strong>Como Funciona?</strong></h4>
+    <ul>
+        <li>
+            <p><strong><code>clip-path</code></strong>:</p>
+            <ul>
+                <li>Define uma região de recorte em um elemento usando uma forma geométrica.</li>
+                <li>No exemplo, usamos um <strong>polígono</strong> para criar um recorte no canto inferior direito do
+                    botão.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Pontos do Polígono</strong>:</p>
+            <ul>
+                <li>Os valores de <code>clip-path: polygon()</code> definem os vértices do polígono.</li>
+                <li>No exemplo, o polígono cobre toda a área do botão, exceto um pequeno retângulo no canto inferior
+                    direito, criando o efeito de &quot;entalhe&quot;.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="código-css"><strong>Código CSS</strong></h4>
+    <pre><code class="language-css">button {
+    padding: 8px 15px; /* Espaçamento interno */
+    background: yellow; /* Cor de fundo */
+    color: black; /* Cor do texto */
+    font-family: &#39;Barlow&#39;, sans-serif; /* Fonte */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: 600; /* Peso da fonte */
+    text-transform: uppercase; /* Texto em maiúsculas */
+    border: none; /* Sem borda */
+    clip-path: polygon(
+        100% 0, /* Canto superior direito */
+        100% calc(100% - 10px), /* Desce 10px do canto inferior direito */
+        calc(100% - 10px) 100%, /* Move 10px para a esquerda no canto inferior */
+        0 100%, /* Canto inferior esquerdo */
+        0 0 /* Canto superior esquerdo */
+    );
+}
+</code></pre>
+    <hr>
+    <h4 id="explicação-do-clip-path"><strong>Explicação do <code>clip-path</code></strong></h4>
+    <ul>
+        <li><strong><code>100% 0</code></strong>: Canto superior direito.</li>
+        <li><strong><code>100% calc(100% - 10px)</code></strong>: Desce 10px do canto inferior direito.</li>
+        <li><strong><code>calc(100% - 10px) 100%</code></strong>: Move 10px para a esquerda no canto inferior.</li>
+        <li><strong><code>0 100%</code></strong>: Canto inferior esquerdo.</li>
+        <li><strong><code>0 0</code></strong>: Canto superior esquerdo.</li>
+    </ul>
+    <p>Esses pontos criam um polígono que recorta um pequeno retângulo no canto inferior direito do botão.</p>
+    <hr>
+    <h4 id="considerações"><strong>Considerações</strong></h4>
+    <ol>
+        <li>
+            <p><strong>Efeitos Externos Ocultos</strong>:</p>
+            <ul>
+                <li>A propriedade <code>clip-path</code> também recorta efeitos externos, como <strong>bordas</strong> e
+                    <strong>sombras de caixa</strong> (<code>box-shadow</code>).</li>
+                <li>Se precisar desses efeitos, considere aplicá-los a um contêiner pai ou usar técnicas alternativas.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Personalização</strong>:</p>
+            <ul>
+                <li>Ajuste os valores do <code>clip-path</code> para criar diferentes formas e recortes.</li>
+                <li>Experimente com outras formas, como círculos (<code>circle</code>) ou elipses
+                    (<code>ellipse</code>).</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Suporte a Navegadores</strong>:</p>
+            <ul>
+                <li>Verifique a compatibilidade do <code>clip-path</code> em <a href="https://caniuse.com/">Can I
+                        use</a>.</li>
+                <li>Para navegadores mais antigos, considere usar fallbacks ou técnicas alternativas.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h4 id="exemplo-prático"><strong>Exemplo Prático</strong></h4>
+    <pre><code class="language-html">&lt;button&gt;Clique Aqui&lt;/button&gt;
+</code></pre>
+    <pre><code class="language-css">button {
+    padding: 8px 15px;
+    background: yellow;
+    color: black;
+    font-family: &#39;Barlow&#39;, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    clip-path: polygon(
+        100% 0,
+        100% calc(100% - 10px),
+        calc(100% - 10px) 100%,
+        0 100%,
+        0 0
+    );
+}
+</code></pre>
+    <p><img src="cyberpunk.png" alt="cyberpunk"></p>
+    <hr>
+    <h4 id="conclusão"><strong>Conclusão</strong></h4>
+    <ul>
+        <li>A propriedade <strong><code>clip-path</code></strong> é uma ferramenta poderosa para criar designs únicos e
+            modernos, como a estética Cyberpunk.</li>
+        <li>Com um pouco de criatividade, você pode aplicar recortes geométricos em botões, imagens e outros elementos,
+            elevando o visual do seu projeto.</li>
+        <li>Lembre-se de testar a compatibilidade e considerar fallbacks para navegadores mais antigos.</li>
+    </ul>
+    <hr>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

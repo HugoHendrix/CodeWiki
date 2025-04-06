@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h3 id="entendendo-as-pseudoclasses-is-e-where-no-css"><strong>Entendendo as Pseudoclasses <code>:is()</code> e
+            <code>:where()</code> no CSS</strong></h3>
+    <ul>
+        <li>O CSS é uma linguagem poderosa, mas o aspecto cascateante pode se tornar complicado quando você precisa
+            aplicar estilos sem sobrepor outras regras.</li>
+        <li>As pseudoclasses <strong><code>:is()</code></strong> e <strong><code>:where()</code></strong> são
+            ferramentas modernas que ajudam a simplificar a escrita de seletores e a gerenciar a especificidade.</li>
+        <li>Cada uma tem seus próprios pontos fortes, e entender quando usar uma ou outra pode melhorar a organização e
+            a manutenção do seu código.</li>
+    </ul>
+    <hr>
+    <h4 id="o-que-é-is"><strong>O que é <code>:is()</code>?</strong></h4>
+    <ul>
+        <li><strong>Funcionalidade</strong>: Permite agrupar múltiplos seletores em uma única regra.</li>
+        <li><strong>Especificidade</strong>: Adiciona <strong>especificidade</strong> aos estilos, o que significa que
+            eles terão &quot;peso&quot; em conflitos com outros estilos.</li>
+        <li><strong>Uso Ideal</strong>: Quando você quer garantir que um estilo seja aplicado e tenha prioridade sobre
+            outros.</li>
+    </ul>
+    <h5 id="exemplo-de-is"><strong>Exemplo de <code>:is()</code></strong></h5>
+    <pre><code class="language-css">:is(h1, h2, h3) {
+  font-weight: bold;
+  color: #333;
+}
+</code></pre>
+    <ul>
+        <li>Neste exemplo, todos os elementos <code>h1</code>, <code>h2</code> e <code>h3</code> terão o texto em
+            negrito e a cor <code>#333</code>.</li>
+        <li>A regra tem especificidade, então ela prevalece sobre estilos menos específicos.</li>
+    </ul>
+    <hr>
+    <h4 id="o-que-é-where"><strong>O que é <code>:where()</code>?</strong></h4>
+    <ul>
+        <li><strong>Funcionalidade</strong>: Também agrupa múltiplos seletores, mas com <strong>especificidade
+                zero</strong>.</li>
+        <li><strong>Uso Ideal</strong>: Quando você quer definir estilos padrão que podem ser facilmente substituídos
+            posteriormente.</li>
+    </ul>
+    <h5 id="exemplo-de-where"><strong>Exemplo de <code>:where()</code></strong></h5>
+    <pre><code class="language-css">:where(h1, h2, h3) {
+  font-family: &#39;Arial&#39;, sans-serif;
+  margin-bottom: 1rem;
+}
+</code></pre>
+    <ul>
+        <li>Aqui, os elementos <code>h1</code>, <code>h2</code> e <code>h3</code> terão a fonte Arial e um espaçamento
+            inferior de 1rem.</li>
+        <li>Como a especificidade é zero, esses estilos podem ser facilmente sobrescritos por regras mais específicas.
+        </li>
+    </ul>
+    <hr>
+    <h4 id="comparação-entre-is-e-where"><strong>Comparação entre <code>:is()</code> e <code>:where()</code></strong>
+    </h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Característica</th>
+                <th><code>:is()</code></th>
+                <th><code>:where()</code></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Especificidade</strong></td>
+                <td>Adiciona especificidade</td>
+                <td>Especificidade zero</td>
+            </tr>
+            <tr>
+                <td><strong>Uso Ideal</strong></td>
+                <td>Estilos que precisam de prioridade</td>
+                <td>Estilos padrão que podem ser sobrescritos</td>
+            </tr>
+            <tr>
+                <td><strong>Exemplo</strong></td>
+                <td><code>:is(h1, h2) { color: red; }</code></td>
+                <td><code>:where(h1, h2) { color: blue; }</code></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h4 id="quando-usar-is"><strong>Quando Usar <code>:is()</code>?</strong></h4>
+    <ul>
+        <li>Quando você precisa que um estilo seja <strong>mantido</strong> e tenha prioridade sobre outros.</li>
+        <li>Exemplo: Estilos globais que devem ser consistentes em todo o site.</li>
+    </ul>
+    <h5 id="caso-de-uso"><strong>Caso de Uso</strong></h5>
+    <pre><code class="language-css">:is(.header, .footer) a {
+  color: #007BFF;
+  text-decoration: none;
+}
+</code></pre>
+    <ul>
+        <li>Todos os links dentro de <code>.header</code> e <code>.footer</code> terão a cor azul e sem sublinhado, e
+            essa regra terá prioridade sobre estilos menos específicos.</li>
+    </ul>
+    <hr>
+    <h4 id="quando-usar-where"><strong>Quando Usar <code>:where()</code>?</strong></h4>
+    <ul>
+        <li>Quando você quer definir estilos <strong>flexíveis</strong> que podem ser facilmente sobrescritos.</li>
+        <li>Exemplo: Estilos base para tipografia ou layout que podem precisar de ajustes em contextos específicos.</li>
+    </ul>
+    <h5 id="caso-de-uso-1"><strong>Caso de Uso</strong></h5>
+    <pre><code class="language-css">:where(.card, .banner) {
+  padding: 1rem;
+  border-radius: 8px;
+}
+</code></pre>
+    <ul>
+        <li><code>.card</code> e <code>.banner</code> terão um padding e bordas arredondadas, mas esses estilos podem
+            ser sobrescritos sem dificuldade.</li>
+    </ul>
+    <hr>
+    <h4 id="resumo"><strong>Resumo</strong></h4>
+    <ul>
+        <li><strong><code>:is()</code></strong>: Use quando precisar de estilos com <strong>prioridade</strong> e que
+            não devem ser facilmente sobrescritos.</li>
+        <li><strong><code>:where()</code></strong>: Use para estilos <strong>flexíveis</strong> que podem ser ajustados
+            ou substituídos posteriormente.</li>
+    </ul>
+    <hr>
+    <h4 id="conclusão"><strong>Conclusão</strong></h4>
+    <ul>
+        <li>As pseudoclasses <code>:is()</code> e <code>:where()</code> são ferramentas valiosas para simplificar a
+            escrita de seletores e gerenciar a especificidade no CSS.</li>
+        <li>Escolha <code>:is()</code> para estilos que precisam de &quot;peso&quot; e <code>:where()</code> para
+            estilos que devem ser facilmente sobrescritos.</li>
+        <li>Experimente essas pseudoclasses em seus projetos para melhorar a organização e a manutenção do seu código!
+        </li>
+    </ul>
+    <hr>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h3 id="criando-efeito-de-texto-3d-em-camadas-com-css"><strong>Criando Efeito de Texto 3D em Camadas com
+            CSS</strong></h3>
+    <h4 id="introdução"><strong>Introdução</strong></h4>
+    <ul>
+        <li>O <strong>CSS</strong> continua a surpreender com suas possibilidades criativas, e um exemplo impressionante
+            é o efeito de texto em camadas 3D.</li>
+        <li>Usando propriedades como <code>-webkit-text-stroke</code> e <code>text-shadow</code>, é possível criar
+            designs de texto visualmente atraentes sem a necessidade de imagens ou JavaScript.</li>
+    </ul>
+    <h4 id="como-funciona"><strong>Como Funciona?</strong></h4>
+    <ol>
+        <li>
+            <p><strong><code>-webkit-text-stroke</code></strong>:</p>
+            <ul>
+                <li>Cria um contorno ao redor do texto.</li>
+                <li>Combinado com <code>color: transparent</code>, o texto fica apenas com o contorno, dando um efeito
+                    de &quot;texto vazado&quot;.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>text-shadow</code></strong>:</p>
+            <ul>
+                <li>Adiciona múltiplas sombras ao texto, criando a ilusão de camadas empilhadas.</li>
+                <li>Cada sombra pode ter diferentes deslocamentos (<code>offset-x</code>, <code>offset-y</code>),
+                    desfoque (<code>blur-radius</code>) e cores, contribuindo para o efeito 3D.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Personalização</strong>:</p>
+            <ul>
+                <li>Os valores de <code>text-shadow</code> podem ser ajustados para alterar a profundidade, distância e
+                    cores das camadas.</li>
+            </ul>
+        </li>
+    </ol>
+    <h4 id="código-css"><strong>Código CSS</strong></h4>
+    <pre><code class="language-css">body {
+    background: #313859; /* Fundo escuro para destacar o texto */
+}
+
+h1 {
+    -webkit-text-stroke: 4px #fff; /* Contorno branco de 4px */
+    font-size: 10rem; /* Tamanho grande da fonte */
+    text-align: center; /* Centralizar texto */
+    color: transparent; /* Texto transparente (apenas o contorno aparece) */
+    font-family: sans-serif; /* Fonte sem serifa */
+    font-style: italic; /* Texto em itálico */
+    text-shadow: 10px 10px 0px #66bbb2, /* Primeira camada */
+                 15px 15px 0px #c53b3d, /* Segunda camada */
+                 20px 20px 0px #6a2032, /* Terceira camada */
+                 35px 35px 18px #1b1f33; /* Sombra final com desfoque */
+}
+</code></pre>
+    <h4 id="html-básico"><strong>HTML Básico</strong></h4>
+    <pre><code class="language-html">&lt;h1&gt;Fofinho&lt;/h1&gt;
+</code></pre>
+    <h4 id="resultado"><strong>Resultado</strong></h4>
+    <ul>
+        <li>O texto &quot;Fofinho&quot; aparecerá com um contorno branco e várias camadas de sombras coloridas, criando
+            um efeito 3D empilhado.</li>
+        <li>O fundo escuro (<code>#313859</code>) ajuda a destacar o efeito.</li>
+    </ul>
+    <p><img src="fofinho.png" alt="fofinho"></p>
+    <h4 id="considerações"><strong>Considerações</strong></h4>
+    <ol>
+        <li>
+            <p><strong>Prefixo <code>-webkit</code></strong>:</p>
+            <ul>
+                <li>A propriedade <code>-webkit-text-stroke</code> ainda não é uma especificação oficial do W3C, então o
+                    prefixo <code>-webkit</code> é necessário para compatibilidade com navegadores baseados no WebKit
+                    (como Chrome e Safari).</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Personalização</strong>:</p>
+            <ul>
+                <li>Experimente ajustar os valores de <code>text-shadow</code> para criar diferentes efeitos de
+                    profundidade e cores.</li>
+                <li>Por exemplo, aumentar o desfoque (<code>blur-radius</code>) ou alterar as cores das sombras pode
+                    resultar em designs únicos.</li>
+            </ul>
+        </li>
+    </ol>
+    <h4 id="conclusão"><strong>Conclusão</strong></h4>
+    <ul>
+        <li>Esse efeito de texto 3D em camadas é um exemplo poderoso do que pode ser alcançado apenas com CSS.</li>
+        <li>Com técnicas criativas e um pouco de experimentação, é possível criar designs impressionantes que elevam a
+            experiência visual de qualquer projeto.</li>
+    </ul>
+    <hr>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

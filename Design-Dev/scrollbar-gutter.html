@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h3 id="evitando-saltos-no-layout-com-scrollbar-gutter-stable"><strong>Evitando Saltos no Layout com
+            <code>scrollbar-gutter: stable</code></strong></h3>
+    <ul>
+        <li>Um problema comum em páginas da web é a mudança irritante no layout quando a barra de rolagem aparece ou
+            desaparece.</li>
+        <li>Isso acontece porque os navegadores adicionam barras de rolagem dinamicamente, alterando a largura do
+            conteúdo da página.</li>
+        <li>A propriedade CSS <strong><code>scrollbar-gutter: stable</code></strong> resolve esse problema, reservando
+            espaço para a barra de rolagem, independentemente do tamanho do conteúdo.</li>
+    </ul>
+    <hr>
+    <h4 id="como-funciona"><strong>Como Funciona?</strong></h4>
+    <ul>
+        <li><strong><code>scrollbar-gutter: stable</code></strong>:<ul>
+                <li>Reserva um espaço fixo para a barra de rolagem, mesmo quando ela não está visível.</li>
+                <li>Isso evita que o conteúdo &quot;salte&quot; quando a barra de rolagem aparece ou desaparece.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="implementação"><strong>Implementação</strong></h4>
+    <p>Aqui está como usar a propriedade:</p>
+    <pre><code class="language-css">.container {
+    scrollbar-gutter: stable;
+}
+</code></pre>
+    <ul>
+        <li>Aplique a propriedade ao contêiner que pode ter conteúdo rolável.</li>
+        <li>Isso garante que o layout permaneça consistente, independentemente da visibilidade da barra de rolagem.</li>
+    </ul>
+    <hr>
+    <h4 id="benefícios"><strong>Benefícios</strong></h4>
+    <ol>
+        <li>
+            <p><strong>Layout Consistente</strong>:</p>
+            <ul>
+                <li>Elimina os saltos irritantes no layout, proporcionando uma experiência mais suave ao usuário.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Melhoria na Experiência do Usuário</strong>:</p>
+            <ul>
+                <li>A página não parece &quot;pular&quot; quando o conteúdo é carregado ou alterado dinamicamente.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Simplicidade</strong>:</p>
+            <ul>
+                <li>A solução é simples e direta, sem a necessidade de hacks ou cálculos complexos de largura.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h4 id="considerações"><strong>Considerações</strong></h4>
+    <ol>
+        <li>
+            <p><strong>Suporte a Navegadores</strong>:</p>
+            <ul>
+                <li>A propriedade <code>scrollbar-gutter</code> é relativamente nova e pode não ser suportada em
+                    navegadores mais antigos.</li>
+                <li>Verifique a compatibilidade em <a href="https://caniuse.com/">Can I use</a>.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Uso em Projetos Modernos</strong>:</p>
+            <ul>
+                <li>Ideal para projetos que visam navegadores modernos e buscam uma experiência de usuário mais
+                    refinada.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h4 id="exemplo-prático"><strong>Exemplo Prático</strong></h4>
+    <pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+    &lt;p&gt;Este é um conteúdo que pode exceder a altura da janela e exigir uma barra de rolagem.&lt;/p&gt;
+    &lt;p&gt;Com `scrollbar-gutter: stable`, o layout não salta quando a barra de rolagem aparece.&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+    <pre><code class="language-css">.container {
+    scrollbar-gutter: stable;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+</code></pre>
+    <hr>
+    <h4 id="conclusão"><strong>Conclusão</strong></h4>
+    <ul>
+        <li>A propriedade <strong><code>scrollbar-gutter: stable</code></strong> é uma solução eficaz para evitar saltos
+            no layout causados pela barra de rolagem.</li>
+        <li>Ao reservar espaço para a barra de rolagem, ela garante um layout consistente e uma experiência de usuário
+            mais suave.</li>
+        <li>Considere adotar essa propriedade em projetos modernos para melhorar a qualidade do seu design.</li>
+    </ul>
+    <hr>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

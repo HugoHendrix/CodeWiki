@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h3 id="criando-animações-interessantes-com-css-exemplo-de-efeito-de-olhos-brilhantes"><strong>Criando Animações Interessantes com CSS: Exemplo de Efeito de Olhos Brilhantes</strong></h3>
+<h4 id="introdução"><strong>Introdução</strong></h4>
+<ul>
+<li>O <strong>CSS</strong> pode ser uma ferramenta poderosa para criar animações e efeitos visuais impressionantes, sem a necessidade de JavaScript.</li>
+<li>Um exemplo criativo é o efeito de <strong>olhos brilhantes</strong> ao passar o mouse sobre o logotipo do site <strong>Build Tier List</strong>, que utiliza pseudoelementos e transições CSS.</li>
+</ul>
+<h4 id="como-funciona"><strong>Como Funciona?</strong></h4>
+<ol>
+<li><p><strong>Pseudoelementos <code>::before</code> e <code>::after</code></strong>:</p>
+<ul>
+<li>São usados para criar os &quot;olhos&quot; que aparecem ao passar o mouse.</li>
+<li>Eles são posicionados de forma absoluta e estilizados com bordas arredondadas (<code>border-radius</code>), cores e desfoque (<code>filter: blur</code>).</li>
+</ul>
+</li>
+<li><p><strong>Efeito de Brilho</strong>:</p>
+<ul>
+<li>A opacidade dos olhos é controlada pela propriedade <code>opacity</code>.</li>
+<li>A transição suave é alcançada com <code>transition: opacity 0.4s ease-in-out</code>.</li>
+</ul>
+</li>
+<li><p><strong>Posicionamento e Rotação</strong>:</p>
+<ul>
+<li>Os olhos são posicionados com <code>top</code>, <code>left</code> e <code>right</code>.</li>
+<li>A rotação é aplicada com <code>transform: rotate()</code> para dar um ângulo natural.</li>
+</ul>
+</li>
+<li><p><strong>Efeito de Hover</strong>:</p>
+<ul>
+<li>Quando o mouse passa sobre o logotipo (<code>a#logo:hover</code>), a opacidade dos olhos muda de <code>0</code> para <code>1</code>, criando o efeito de aparecimento.</li>
+</ul>
+</li>
+</ol>
+<h4 id="código-css"><strong>Código CSS</strong></h4>
+<pre><code class="language-css">a#logo, a#logo:visited {
+    position: relative;
+}
+
+/* Olhos brilhantes */
+a#logo::before, a#logo::after {
+    content: &quot;&quot;;
+    width: 10px;
+    height: 6px;
+    border-radius: 100%;
+    background-color: orange;
+    display: block;
+    opacity: 0;
+    filter: blur(3px);
+    position: absolute;
+    top: 37px;
+    z-index: 2;
+    transition: opacity 0.4s ease-in-out;
+}
+
+a#logo::before {
+    transform: rotate(27deg);
+    left: 37px;
+}
+
+a#logo::after {
+    transform: rotate(-27deg);
+    right: 37px;
+}
+
+/* Efeito de hover */
+a#logo:hover::before,
+a#logo:hover::after {
+    opacity: 1;
+}
+</code></pre>
+<h4 id="exemplo-prático"><strong>Exemplo Prático</strong></h4>
+<ul>
+<li>Para ver o efeito em ação, visite o site:<br><a href="https://buildtierlist.com/">Build Tier List</a></li>
+</ul>
+<h4 id="conclusão"><strong>Conclusão</strong></h4>
+<ul>
+<li>Esse exemplo demonstra como o CSS pode ser usado de forma criativa para adicionar interatividade e detalhes visuais impressionantes a um design.</li>
+<li>Com técnicas simples como pseudoelementos, transições e transformações, é possível criar efeitos que chamam a atenção e melhoram a experiência do usuário.</li>
+</ul>
+<hr>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

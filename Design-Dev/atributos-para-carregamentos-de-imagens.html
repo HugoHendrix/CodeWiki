@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="atributo-loading-no-html">Atributo loading no HTML</h1>
+    <p><img src="carregamento-img.png" alt="carregamento com loading"></p>
+    <hr>
+    <h3 id="-explica-o-detalhada-"><strong>Explicação Detalhada</strong></h3>
+    <h4 id="-1-o-atributo-loading-no-html-"><strong>1. O atributo <code>loading</code> no HTML</strong></h4>
+    <p>O atributo <code>loading</code> é um recurso experimental (mas já amplamente suportado pelos navegadores
+        modernos) que permite controlar como os recursos, como imagens, são carregados em uma página web. Ele pode
+        receber três valores:</p>
+    <ul>
+        <li>
+            <p><strong><code>lazy</code></strong>: Carrega o recurso (por exemplo, uma imagem) apenas quando ele está
+                prestes a entrar na área visível da tela (viewport). Isso é útil para imagens que estão em partes da
+                página que o usuário precisa rolar para ver.</p>
+        </li>
+        <li>
+            <p><strong><code>eager</code></strong>: Carrega o recurso imediatamente, independentemente de onde ele está
+                na página. Esse é o comportamento padrão quando o atributo <code>loading</code> não é especificado.</p>
+        </li>
+        <li>
+            <p><strong><code>auto</code></strong>: Deixa o navegador decidir o melhor comportamento para carregar o
+                recurso. Pode variar dependendo do navegador e das configurações do usuário.</p>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="-2-por-que-isso-importante-"><strong>2. Por que isso é importante?</strong></h4>
+    <p>Quando uma página web é carregada, o navegador precisa baixar e renderizar diversos recursos, como folhas de
+        estilo (CSS), scripts (JavaScript), fontes e imagens. Se a página contiver muitas imagens ou recursos pesados,
+        isso pode criar um gargalo, tornando o carregamento da página lento e prejudicando a experiência do usuário.</p>
+    <p>Ao usar o atributo <code>loading=&quot;lazy&quot;</code>, você pode adiar o carregamento de imagens que não são
+        visíveis imediatamente (por exemplo, imagens que estão no final da página). Isso permite que o navegador
+        priorize o carregamento de recursos mais críticos, como o conteúdo acima da dobra (acima do viewport),
+        melhorando o desempenho e a velocidade de carregamento da página.</p>
+    <hr>
+    <h4 id="-3-exemplo-de-uso-"><strong>3. Exemplo de uso</strong></h4>
+    <p>Aqui está um exemplo de como você pode usar o atributo <code>loading</code> em uma tag <code>&lt;img&gt;</code>:
+    </p>
+    <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">img</span> src=<span class="hljs-string">"imagem.jpg"</span> alt=<span class="hljs-string">"Descrição da imagem"</span> loading=<span class="hljs-string">"lazy"</span>&gt;
+</code></pre>
+    <p>Nesse caso, a imagem só será carregada quando o usuário rolar a página e ela estiver próxima de entrar na área
+        visível da tela.</p>
+    <hr>
+    <h4 id="-4-quando-usar-loading-lazy-"><strong>4. Quando usar <code>loading=&quot;lazy&quot;</code>?</strong></h4>
+    <ul>
+        <li><strong>Imagens abaixo da dobra</strong>: Use <code>loading=&quot;lazy&quot;</code> para imagens que estão
+            em partes da página que o usuário precisa rolar para ver.</li>
+        <li><strong>Páginas longas</strong>: Em páginas com muito conteúdo, como blogs ou galerias de imagens, o uso de
+            <code>lazy</code> pode melhorar significativamente o desempenho.</li>
+        <li><strong>Dispositivos móveis</strong>: Em conexões mais lentas, como em dispositivos móveis, o carregamento
+            lento pode economizar banda e melhorar a experiência do usuário.</li>
+    </ul>
+    <hr>
+    <h4 id="-5-quando-n-o-usar-loading-lazy-"><strong>5. Quando NÃO usar <code>loading=&quot;lazy&quot;</code>?</strong>
+    </h4>
+    <ul>
+        <li><strong>Imagens acima da dobra</strong>: Para imagens que estão no topo da página e são visíveis
+            imediatamente, use <code>loading=&quot;eager&quot;</code> ou omita o atributo.</li>
+        <li><strong>Imagens críticas</strong>: Se uma imagem é essencial para a experiência do usuário (por exemplo, um
+            banner principal), é melhor carregá-la imediatamente.</li>
+    </ul>
+    <hr>
+    <h3 id="-organizando-como-anota-o-de-estudo-"><strong>Organizando como Anotação de Estudo</strong></h3>
+    <p>Aqui está um resumo organizado para você consultar:</p>
+    <hr>
+    <h4 id="-atributo-loading-no-html-"><strong>Atributo <code>loading</code> no HTML</strong></h4>
+    <p><strong>O que é?</strong></p>
+    <ul>
+        <li>Atributo experimental para controlar o carregamento de recursos (como imagens).</li>
+        <li>Valores possíveis: <code>lazy</code>, <code>eager</code>, <code>auto</code>.</li>
+    </ul>
+    <p><strong>Para que serve?</strong></p>
+    <ul>
+        <li>Melhorar o desempenho de carregamento de páginas web.</li>
+        <li>Priorizar o carregamento de recursos críticos.</li>
+    </ul>
+    <p><strong>Como usar?</strong></p>
+    <ul>
+        <li><strong><code>loading=&quot;lazy&quot;</code></strong>: Carrega o recurso apenas quando ele está próximo de
+            entrar na área visível.
+            <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">img</span> src=<span class="hljs-string">"imagem.jpg"</span> alt=<span class="hljs-string">"Descrição"</span> loading=<span class="hljs-string">"lazy"</span>&gt;
+</code></pre>
+        </li>
+        <li><strong><code>loading=&quot;eager&quot;</code></strong>: Carrega o recurso imediatamente (comportamento
+            padrão).
+            <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">img</span> src=<span class="hljs-string">"imagem.jpg"</span> alt=<span class="hljs-string">"Descrição"</span> loading=<span class="hljs-string">"eager"</span>&gt;
+</code></pre>
+        </li>
+        <li><strong><code>loading=&quot;auto&quot;</code></strong>: Deixa o navegador decidir o melhor comportamento.
+        </li>
+    </ul>
+    <p><strong>Quando usar?</strong></p>
+    <ul>
+        <li>Use <code>lazy</code> para imagens abaixo da dobra ou em páginas longas.</li>
+        <li>Use <code>eager</code> para imagens críticas ou acima da dobra.</li>
+    </ul>
+    <p><strong>Benefícios</strong></p>
+    <ul>
+        <li>Reduz o tempo de carregamento inicial da página.</li>
+        <li>Economiza banda em dispositivos móveis.</li>
+        <li>Melhora a experiência do usuário.</li>
+    </ul>
+    <p><strong>Cuidados</strong></p>
+    <ul>
+        <li>Não use <code>lazy</code> para imagens críticas ou acima da dobra.</li>
+        <li>Verifique a compatibilidade com navegadores antigos (embora a maioria dos navegadores modernos já suporte).
+        </li>
+    </ul>
+    <hr>
+    <h3 id="-pr-ximos-passos-"><strong>Próximos Passos</strong></h3>
+    <ol>
+        <li><strong>Teste em seus projetos</strong>: Adicione o atributo <code>loading=&quot;lazy&quot;</code> em
+            imagens de páginas longas e observe a diferença no desempenho.</li>
+        <li><strong>Ferramentas de análise</strong>: Use ferramentas como o Lighthouse (do Chrome DevTools) para medir o
+            impacto no desempenho.</li>
+        <li><strong>Estude mais sobre otimização</strong>: Explore outros conceitos de otimização, como compressão de
+            imagens, uso de CDNs e carregamento assíncrono de scripts.</li>
+    </ol>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

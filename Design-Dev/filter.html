@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h1 id="a-propriedade-css-filter">A propriedade CSS <strong><code>filter</code></strong></h1>
+    <p>Como ela funciona e como você pode usá-la para aplicar efeitos visuais em imagens. </p>
+    <hr>
+    <p>Um truque de CSS menos conhecido é usar a propriedade <strong><code>filter</code></strong> para aplicar efeitos
+        gráficos, como desfoque ou mudança de cores, a uma imagem. A propriedade <code>filter</code> é muito poderosa e
+        versátil, permitindo uma ampla gama de efeitos diretamente no código CSS, sem a necessidade de editores gráficos
+        externos.</p>
+    <p>Aqui está um exemplo de como você poderia usá-la para aplicar um efeito de escala de cinza:</p>
+    <pre><code class="language-css">img {
+filter: grayscale(100%);
+}
+</code></pre>
+    <p>Neste caso, a imagem será completamente convertida para escala de cinza. Você pode ajustar a porcentagem para
+        controlar a intensidade do efeito.</p>
+    <p>Essa propriedade também pode ser combinada com outros efeitos CSS para criar modificações visuais mais complexas.
+        Por exemplo, você poderia combinar desfoque e brilho para um efeito &quot;dreamy&quot;:</p>
+    <pre><code class="language-css">img {
+filter: blur(4px) brightness(150%);
+}
+</code></pre>
+    <hr>
+    <h3 id="explicação-detalhada"><strong>Explicação Detalhada</strong></h3>
+    <h4 id="1-o-que-é-a-propriedade-filter"><strong>1. O que é a propriedade <code>filter</code>?</strong></h4>
+    <ul>
+        <li><strong>Definição</strong>: A propriedade <code>filter</code> aplica efeitos visuais, como desfoque, brilho,
+            contraste e escala de cinza, a elementos HTML (principalmente imagens).</li>
+        <li><strong>Vantagens</strong>:<ul>
+                <li>Efeitos aplicados diretamente no navegador, sem necessidade de editar imagens externamente.</li>
+                <li>Combinação de múltiplos efeitos em uma única declaração.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="2-efeitos-disponíveis"><strong>2. Efeitos disponíveis</strong></h4>
+    <p>Aqui estão alguns dos efeitos mais comuns que você pode aplicar com a propriedade <code>filter</code>:</p>
+    <ul>
+        <li>
+            <p><strong><code>grayscale()</code></strong>: Converte a imagem para escala de cinza.</p>
+            <pre><code class="language-css">filter: grayscale(100%);
+</code></pre>
+        </li>
+        <li>
+            <p><strong><code>blur()</code></strong>: Aplica um desfoque à imagem.</p>
+            <pre><code class="language-css">filter: blur(4px);
+</code></pre>
+        </li>
+        <li>
+            <p><strong><code>brightness()</code></strong>: Ajusta o brilho da imagem.</p>
+            <pre><code class="language-css">filter: brightness(150%);
+</code></pre>
+        </li>
+        <li>
+            <p><strong><code>contrast()</code></strong>: Ajusta o contraste da imagem.</p>
+            <pre><code class="language-css">filter: contrast(200%);
+</code></pre>
+        </li>
+        <li>
+            <p><strong><code>sepia()</code></strong>: Aplica um efeito sépia à imagem.</p>
+            <pre><code class="language-css">filter: sepia(100%);
+</code></pre>
+        </li>
+        <li>
+            <p><strong><code>hue-rotate()</code></strong>: Rotaciona a matiz (hue) das cores da imagem.</p>
+            <pre><code class="language-css">filter: hue-rotate(90deg);
+</code></pre>
+        </li>
+        <li>
+            <p><strong><code>invert()</code></strong>: Inverte as cores da imagem.</p>
+            <pre><code class="language-css">filter: invert(100%);
+</code></pre>
+        </li>
+        <li>
+            <p><strong><code>opacity()</code></strong>: Ajusta a opacidade da imagem.</p>
+            <pre><code class="language-css">filter: opacity(50%);
+</code></pre>
+        </li>
+        <li>
+            <p><strong><code>saturate()</code></strong>: Ajusta a saturação das cores da imagem.</p>
+            <pre><code class="language-css">filter: saturate(200%);
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="3-como-combinar-efeitos"><strong>3. Como combinar efeitos</strong></h4>
+    <p>Você pode combinar vários efeitos em uma única declaração <code>filter</code>. Por exemplo:</p>
+    <pre><code class="language-css">img {
+filter: grayscale(50%) blur(2px) brightness(120%);
+}
+</code></pre>
+    <p>Isso aplicará:</p>
+    <ul>
+        <li>50% de escala de cinza.</li>
+        <li>Um desfoque de 2 pixels.</li>
+        <li>Aumento de 20% no brilho.</li>
+    </ul>
+    <hr>
+    <h3 id="organizando-como-anotação-de-estudo"><strong>Organizando como Anotação de Estudo</strong></h3>
+    <p>Aqui está um resumo organizado para você consultar:</p>
+    <hr>
+    <h4 id="propriedade-css-filter"><strong>Propriedade CSS: <code>filter</code></strong></h4>
+    <p><strong>O que é?</strong></p>
+    <ul>
+        <li>Propriedade que aplica efeitos visuais a elementos HTML, como imagens.</li>
+    </ul>
+    <p><strong>Efeitos disponíveis</strong></p>
+    <ul>
+        <li><strong><code>grayscale()</code></strong>: Converte para escala de cinza.
+            <pre><code class="language-css">filter: grayscale(100%);
+</code></pre>
+        </li>
+        <li><strong><code>blur()</code></strong>: Aplica desfoque.
+            <pre><code class="language-css">filter: blur(4px);
+</code></pre>
+        </li>
+        <li><strong><code>brightness()</code></strong>: Ajusta o brilho.
+            <pre><code class="language-css">filter: brightness(150%);
+</code></pre>
+        </li>
+        <li><strong><code>contrast()</code></strong>: Ajusta o contraste.
+            <pre><code class="language-css">filter: contrast(200%);
+</code></pre>
+        </li>
+        <li><strong><code>sepia()</code></strong>: Aplica efeito sépia.
+            <pre><code class="language-css">filter: sepia(100%);
+</code></pre>
+        </li>
+        <li><strong><code>hue-rotate()</code></strong>: Rotaciona a matiz das cores.
+            <pre><code class="language-css">filter: hue-rotate(90deg);
+</code></pre>
+        </li>
+        <li><strong><code>invert()</code></strong>: Inverte as cores.
+            <pre><code class="language-css">filter: invert(100%);
+</code></pre>
+        </li>
+        <li><strong><code>opacity()</code></strong>: Ajusta a opacidade.
+            <pre><code class="language-css">filter: opacity(50%);
+</code></pre>
+        </li>
+        <li><strong><code>saturate()</code></strong>: Ajusta a saturação.
+            <pre><code class="language-css">filter: saturate(200%);
+</code></pre>
+        </li>
+    </ul>
+    <p><strong>Como combinar efeitos</strong></p>
+    <ul>
+        <li>Use múltiplos efeitos em uma única declaração:
+            <pre><code class="language-css">img {
+filter: grayscale(50%) blur(2px) brightness(120%);
+}
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="exemplos-práticos"><strong>Exemplos Práticos</strong></h4>
+    <ol>
+        <li>
+            <p><strong>Efeito de escala de cinza</strong>:</p>
+            <pre><code class="language-css">img {
+filter: grayscale(100%);
+}
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Efeito &quot;dreamy&quot; (desfoque + brilho)</strong>:</p>
+            <pre><code class="language-css">img {
+filter: blur(4px) brightness(150%);
+}
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Efeito vintage (sépia + contraste)</strong>:</p>
+            <pre><code class="language-css">img {
+filter: sepia(80%) contrast(120%);
+}
+</code></pre>
+        </li>
+    </ol>
+    <hr>
+    <h4 id="próximos-passos"><strong>Próximos Passos</strong></h4>
+    <ol>
+        <li><strong>Experimente no seu projeto</strong>: Aplique efeitos <code>filter</code> em imagens do seu site.
+        </li>
+        <li><strong>Combine efeitos</strong>: Crie combinações únicas para diferentes estilos visuais.</li>
+        <li><strong>Teste em navegadores</strong>: Verifique a compatibilidade com <a
+                href="https://caniuse.com/css-filters">Can I Use</a>.</li>
+    </ol>
+    <hr>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

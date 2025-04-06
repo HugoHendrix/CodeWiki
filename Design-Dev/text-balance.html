@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h2 id="propriedade-css-text-wrap-balance">Propriedade CSS <code>text-wrap: balance;</code></h2>
+    <hr>
+    <p>Há uma propriedade experimental do CSS que ainda não tem suporte completo em todos os navegadores, mas vale a
+        pena ficar de olho. Você pode até testá-la no <strong>Chrome Canary</strong> agora mesmo.</p>
+    <p>Digamos que você está criando um site de portfólio e tem um título como este:</p>
+    <p><strong>Exemplo de título</strong></p>
+    <p>A quebra de texto está muito desajeitada aqui. Você poderia editar manualmente o HTML com uma tag
+        <code>&lt;br&gt;</code> no meio do texto ou reduzir o <code>max-width</code> no CSS. No entanto, isso pode ser
+        trabalhoso, especialmente se você tiver vários títulos para ajustar ou quiser editar o texto com frequência.</p>
+    <p>É aqui que o <code>text-wrap: balance;</code> salva o dia. Usando exatamente o mesmo HTML e texto de antes, agora
+        temos algo que parece assim:</p>
+    <p><strong>Exemplo de título</strong></p>
+    <p>Claro, isso não se limita a títulos e pode ser usado de várias maneiras. Pense em como isso poderia melhorar a
+        aparência de trechos de blog, citações de depoimentos, textos publicitários e muito mais.</p>
+    <p>O CSS está ficando mais poderoso a cada dia, e você pode se manter atualizado conferindo os documentos mais
+        recentes no <a href="https://webreference.com">WebReference.com</a>.</p>
+    <hr>
+    <h3 id="explicação-detalhada"><strong>Explicação Detalhada</strong></h3>
+    <h4 id="1-o-que-é-text-wrap-balance"><strong>1. O que é <code>text-wrap: balance;</code>?</strong></h4>
+    <ul>
+        <li><strong>Propósito</strong>: A propriedade <code>text-wrap: balance;</code> é uma nova funcionalidade do CSS
+            que busca equilibrar a distribuição do texto em várias linhas, evitando quebras de texto desagradáveis ou
+            desproporcionais.</li>
+        <li><strong>Funcionamento</strong>: Ela ajusta automaticamente o espaçamento e a quebra de texto para que as
+            linhas tenham um comprimento mais uniforme, melhorando a legibilidade e a estética.</li>
+    </ul>
+    <hr>
+    <h4 id="2-problema-que-ela-resolve"><strong>2. Problema que ela resolve</strong></h4>
+    <ul>
+        <li><strong>Quebra de texto desajeitada</strong>: Em textos curtos, como títulos ou citações, é comum que a
+            quebra de texto resulte em uma linha muito longa e outra muito curta, o que pode parecer desleixado.</li>
+        <li><strong>Soluções tradicionais</strong>:<ul>
+                <li>Usar <code>&lt;br&gt;</code> no HTML para forçar uma quebra manual.</li>
+                <li>Ajustar o <code>max-width</code> no CSS para controlar o comprimento das linhas.</li>
+                <li>Essas soluções são trabalhosas e pouco escaláveis, especialmente em projetos com muitos textos ou
+                    que exigem atualizações frequentes.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="3-como-usar-text-wrap-balance"><strong>3. Como usar <code>text-wrap: balance;</code></strong></h4>
+    <ul>
+        <li><strong>Sintaxe</strong>:
+            <pre><code class="language-css">.heading {
+  text-wrap: balance;
+}
+</code></pre>
+        </li>
+        <li><strong>Exemplo prático</strong>:<ul>
+                <li>Sem <code>text-wrap: balance;</code>:
+                    <pre><code class="language-html">&lt;h1&gt;Exemplo de título&lt;/h1&gt;
+</code></pre>
+                    Resultado:
+                    <pre><code>Exemplo de
+título
+</code></pre>
+                </li>
+                <li>Com <code>text-wrap: balance;</code>:
+                    <pre><code class="language-html">&lt;h1 style=&quot;text-wrap: balance;&quot;&gt;Exemplo de título&lt;/h1&gt;
+</code></pre>
+                    Resultado:
+                    <pre><code>Exemplo
+de título
+</code></pre>
+                    (As linhas terão comprimentos mais equilibrados.)
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="4-casos-de-uso"><strong>4. Casos de uso</strong></h4>
+    <ul>
+        <li><strong>Títulos e cabeçalhos</strong>: Melhora a aparência de títulos em layouts responsivos.</li>
+        <li><strong>Citações e depoimentos</strong>: Ajusta o texto para que as citações pareçam mais organizadas.</li>
+        <li><strong>Trechos de blog</strong>: Uniformiza a exibição de resumos ou previews de posts.</li>
+        <li><strong>Textos publicitários</strong>: Melhora a legibilidade de textos curtos em banners ou anúncios.</li>
+    </ul>
+    <hr>
+    <h4 id="5-suporte-do-navegador"><strong>5. Suporte do navegador</strong></h4>
+    <ul>
+        <li><strong>Experimental</strong>: A propriedade ainda não tem suporte completo em todos os navegadores.</li>
+        <li><strong>Como testar</strong>:<ul>
+                <li>Use o <strong>Chrome Canary</strong> (versão experimental do Chrome) para experimentar a
+                    funcionalidade.</li>
+                <li>Verifique o suporte atual em <a href="https://caniuse.com/">Can I Use</a>.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h3 id="organizando-como-anotação-de-estudo"><strong>Organizando como Anotação de Estudo</strong></h3>
+    <p>Aqui está um resumo organizado para você consultar:</p>
+    <hr>
+    <h4 id="propriedade-css-experimental-text-wrap-balance"><strong>Propriedade CSS Experimental:
+            <code>text-wrap: balance;</code></strong></h4>
+    <p><strong>O que é?</strong></p>
+    <ul>
+        <li>Uma propriedade CSS que equilibra a distribuição do texto em várias linhas, melhorando a legibilidade e a
+            estética.</li>
+    </ul>
+    <p><strong>Problema que resolve</strong></p>
+    <ul>
+        <li>Evita quebras de texto desproporcionais em títulos, citações e textos curtos.</li>
+    </ul>
+    <p><strong>Como usar</strong></p>
+    <ul>
+        <li>Aplique a propriedade <code>text-wrap: balance;</code> ao elemento desejado:
+            <pre><code class="language-css">.heading {
+  text-wrap: balance;
+}
+</code></pre>
+        </li>
+    </ul>
+    <p><strong>Exemplo prático</strong></p>
+    <ul>
+        <li>
+            <p>Sem <code>text-wrap: balance;</code>:</p>
+            <pre><code class="language-html">&lt;h1&gt;Exemplo de título&lt;/h1&gt;
+</code></pre>
+            <p>Resultado:</p>
+            <pre><code>Exemplo de
+título
+</code></pre>
+        </li>
+        <li>
+            <p>Com <code>text-wrap: balance;</code>:</p>
+            <pre><code class="language-html">&lt;h1 style=&quot;text-wrap: balance;&quot;&gt;Exemplo de título&lt;/h1&gt;
+</code></pre>
+            <p>Resultado:</p>
+            <pre><code>Exemplo
+de título
+</code></pre>
+        </li>
+    </ul>
+    <p><strong>Casos de uso</strong></p>
+    <ul>
+        <li>Títulos e cabeçalhos.</li>
+        <li>Citações e depoimentos.</li>
+        <li>Trechos de blog ou resumos.</li>
+        <li>Textos publicitários.</li>
+    </ul>
+    <p><strong>Suporte do navegador</strong></p>
+    <ul>
+        <li>Disponível atualmente no <strong>Chrome Canary</strong>.</li>
+        <li>Verifique o suporte em <a href="https://caniuse.com/">Can I Use</a>.</li>
+    </ul>
+    <hr>
+    <h4 id="próximos-passos"><strong>Próximos Passos</strong></h4>
+    <ol>
+        <li><strong>Experimente no Chrome Canary</strong>: Teste a propriedade em projetos pessoais.</li>
+        <li><strong>Acompanhe atualizações</strong>: Fique de olho na documentação oficial para saber quando o suporte
+            completo será implementado.</li>
+        <li><strong>Use fallbacks</strong>: Enquanto a propriedade não é amplamente suportada, continue usando soluções
+            como <code>&lt;br&gt;</code> ou ajustes de <code>max-width</code>.</li>
+    </ol>
+    <hr>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

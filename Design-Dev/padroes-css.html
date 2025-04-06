@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="padrões-de-fundo-criados-com-css-puro">Padrões de fundo criados com CSS puro</h1>
+    <hr>
+    <p>É incrível o que o CSS pode fazer atualmente, e temos uma demonstração divertida de padrões de fundo criados com
+        CSS puro para você. Este exemplo é um pouco mais avançado, usando variáveis CSS e múltiplos
+        <code>radial-gradient</code>, mas eles são fáceis de dominar com um pouco de prática.</p>
+    <p>Se você experimentar este código, recomendamos brincar primeiro com as variáveis de tamanho e cor, pois elas
+        rapidamente fornecerão novos padrões variados.</p>
+    <p>Código
+        <img src="padrao-css.png" alt="Codigo CSS">
+    </p>
+    <p>Imagem
+        <img src="padrao-css2.png" alt="Padrao CSS">
+    </p>
+    <hr>
+    <h3 id="explicação-detalhada"><strong>Explicação Detalhada</strong></h3>
+    <h4 id="1-o-que-é-o-exemplo"><strong>1. O que é o exemplo?</strong></h4>
+    <ul>
+        <li><strong>Objetivo</strong>: Criar padrões de fundo complexos usando apenas CSS.</li>
+        <li><strong>Técnicas utilizadas</strong>:<ul>
+                <li><strong>Variáveis CSS</strong>: Para facilitar a personalização de cores e tamanhos.</li>
+                <li><strong>Múltiplos <code>radial-gradient</code></strong>: Para criar efeitos visuais interessantes.
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="2-como-funciona"><strong>2. Como funciona?</strong></h4>
+    <ul>
+        <li>
+            <p><strong>Variáveis CSS</strong>:</p>
+            <ul>
+                <li>Permitem definir valores reutilizáveis, como cores e tamanhos.</li>
+                <li>Exemplo:
+                    <pre><code class="language-css">:root {
+  --color1: #ff9f43;
+  --color2: #ff6b6b;
+  --size: 50px;
+}
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Radial Gradients</strong>:</p>
+            <ul>
+                <li>Criam gradientes circulares que podem ser combinados para formar padrões.</li>
+                <li>Exemplo:
+                    <pre><code class="language-css">background: radial-gradient(circle, var(--color1), var(--color2));
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Combinação de múltiplos gradientes</strong>:</p>
+            <ul>
+                <li>Vários <code>radial-gradient</code> podem ser sobrepostos para criar efeitos complexos.</li>
+                <li>Exemplo:
+                    <pre><code class="language-css">background:
+  radial-gradient(circle at 25% 25%, var(--color1), transparent),
+  radial-gradient(circle at 75% 75%, var(--color2), transparent);
+</code></pre>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="3-como-experimentar"><strong>3. Como experimentar?</strong></h4>
+    <ul>
+        <li><strong>Passo 1</strong>: Comece ajustando as variáveis de cor (<code>--color1</code>, <code>--color2</code>
+            etc.).</li>
+        <li><strong>Passo 2</strong>: Altere o tamanho (<code>--size</code>) para ver como o padrão se comporta.</li>
+        <li><strong>Passo 3</strong>: Adicione ou remova gradientes para criar novos efeitos.</li>
+    </ul>
+    <hr>
+    <h3 id="exemplo-de-código"><strong>Exemplo de Código</strong></h3>
+    <p>Aqui está um exemplo de código para criar um padrão de fundo com CSS:</p>
+    <pre><code class="language-css">:root {
+  --color1: #ff9f43; /* Cor 1 */
+  --color2: #ff6b6b; /* Cor 2 */
+  --size: 50px;      /* Tamanho do padrão */
+}
+
+body {
+  background:
+    radial-gradient(circle at 25% 25%, var(--color1), transparent),
+    radial-gradient(circle at 75% 75%, var(--color2), transparent);
+  background-size: var(--size) var(--size);
+  height: 100vh;
+  margin: 0;
+}
+</code></pre>
+    <hr>
+    <h3 id="organizando-como-anotação-de-estudo"><strong>Organizando como Anotação de Estudo</strong></h3>
+    <p>Aqui está um resumo organizado para você consultar:</p>
+    <hr>
+    <h4 id="padrões-de-fundo-com-css-puro"><strong>Padrões de Fundo com CSS Puro</strong></h4>
+    <p><strong>O que é?</strong></p>
+    <ul>
+        <li>Técnica para criar padrões de fundo complexos usando apenas CSS.</li>
+    </ul>
+    <p><strong>Técnicas utilizadas</strong></p>
+    <ul>
+        <li><strong>Variáveis CSS</strong>: Para definir cores e tamanhos reutilizáveis.</li>
+        <li><strong>Múltiplos <code>radial-gradient</code></strong>: Para criar efeitos visuais interessantes.</li>
+    </ul>
+    <p><strong>Como funciona?</strong></p>
+    <ol>
+        <li>Defina variáveis CSS para cores e tamanhos:
+            <pre><code class="language-css">:root {
+  --color1: #ff9f43;
+  --color2: #ff6b6b;
+  --size: 50px;
+}
+</code></pre>
+        </li>
+        <li>Use <code>radial-gradient</code> para criar gradientes circulares:
+            <pre><code class="language-css">background: radial-gradient(circle, var(--color1), var(--color2));
+</code></pre>
+        </li>
+        <li>Combine múltiplos gradientes para formar padrões:
+            <pre><code class="language-css">background:
+  radial-gradient(circle at 25% 25%, var(--color1), transparent),
+  radial-gradient(circle at 75% 75%, var(--color2), transparent);
+</code></pre>
+        </li>
+    </ol>
+    <p><strong>Como experimentar?</strong></p>
+    <ul>
+        <li>Ajuste as variáveis de cor (<code>--color1</code>, <code>--color2</code>).</li>
+        <li>Altere o tamanho (<code>--size</code>).</li>
+        <li>Adicione ou remova gradientes para criar novos efeitos.</li>
+    </ul>
+    <p><strong>Exemplo de Código</strong></p>
+    <pre><code class="language-css">:root {
+  --color1: #ff9f43;
+  --color2: #ff6b6b;
+  --size: 50px;
+}
+
+body {
+  background:
+    radial-gradient(circle at 25% 25%, var(--color1), transparent),
+    radial-gradient(circle at 75% 75%, var(--color2), transparent);
+  background-size: var(--size) var(--size);
+  height: 100vh;
+  margin: 0;
+}
+</code></pre>
+    <hr>
+    <h4 id="próximos-passos"><strong>Próximos Passos</strong></h4>
+    <ol>
+        <li><strong>Experimente no CodePen</strong>: Crie um projeto no <a href="https://codepen.io">CodePen</a> para
+            testar o código.</li>
+        <li><strong>Explore outras técnicas</strong>: Pesquise sobre <code>linear-gradient</code>,
+            <code>conic-gradient</code> e outras funções CSS.</li>
+        <li><strong>Compartilhe seus designs</strong>: Mostre seus padrões criados para a comunidade!</li>
+    </ol>
+    <hr>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

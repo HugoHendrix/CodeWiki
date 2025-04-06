@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="documentação-propriedade-css-content-visibility"><strong>Documentação: Propriedade CSS
+            <code>content-visibility</code></strong></h1>
+    <h2 id="o-que-é-content-visibility"><strong>O que é <code>content-visibility</code>?</strong></h2>
+    <p>A propriedade <code>content-visibility</code> é uma funcionalidade CSS que permite controlar a renderização de
+        elementos na página, melhorando o desempenho ao adiar a renderização de conteúdos que não estão visíveis no
+        viewport (área visível da tela). Isso é especialmente útil em páginas com muito conteúdo, como longas listas ou
+        artigos extensos.</p>
+    <hr>
+    <h2 id="sintaxe"><strong>Sintaxe</strong></h2>
+    <pre><code class="language-css">.elemento {
+  content-visibility: auto | visible | hidden;
+}
+</code></pre>
+    <h3 id="valores-possíveis"><strong>Valores Possíveis</strong></h3>
+    <ol>
+        <li>
+            <p><strong><code>auto</code></strong>:</p>
+            <ul>
+                <li>O navegador otimiza a renderização do elemento.</li>
+                <li>Se o elemento estiver fora do viewport, o navegador não renderiza seu conteúdo, mas mantém o layout
+                    (tamanho e posição).</li>
+                <li>Quando o elemento entra no viewport, o conteúdo é renderizado.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>visible</code></strong>:</p>
+            <ul>
+                <li>Comportamento padrão. O conteúdo do elemento é renderizado normalmente, sem otimizações.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>hidden</code></strong>:</p>
+            <ul>
+                <li>O conteúdo do elemento é ocultado e não é renderizado.</li>
+                <li>O layout do elemento é mantido, mas o conteúdo não é exibido.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="como-funciona"><strong>Como Funciona?</strong></h2>
+    <ul>
+        <li>
+            <p>Quando <code>content-visibility: auto</code> é aplicado a um elemento, o navegador faz o seguinte:</p>
+            <ol>
+                <li>Verifica se o elemento está dentro do viewport.</li>
+                <li>Se estiver fora do viewport, o navegador <strong>pula a renderização do conteúdo</strong>, mas
+                    mantém o layout (tamanho e posição) para evitar mudanças bruscas ao rolar a página.</li>
+                <li>Quando o elemento entra no viewport (por exemplo, ao rolar a página), o conteúdo é renderizado
+                    dinamicamente.</li>
+            </ol>
+        </li>
+        <li>
+            <p>Isso reduz o trabalho inicial de renderização, melhorando o desempenho e o tempo de carregamento da
+                página.</p>
+        </li>
+    </ul>
+    <hr>
+    <h2 id="benefícios"><strong>Benefícios</strong></h2>
+    <ul>
+        <li><strong>Melhoria de desempenho</strong>: Reduz o tempo de renderização inicial, especialmente em páginas com
+            muito conteúdo.</li>
+        <li><strong>Otimização de recursos</strong>: O navegador não gasta recursos renderizando elementos que não estão
+            visíveis.</li>
+        <li><strong>Experiência do usuário</strong>: Mantém a suavidade ao rolar a página, evitando travamentos.</li>
+    </ul>
+    <hr>
+    <h2 id="exemplo-de-uso"><strong>Exemplo de Uso</strong></h2>
+    <p>Aqui está um exemplo prático de como usar <code>content-visibility</code>:</p>
+    <pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;item&quot;&gt;Item 1&lt;/div&gt;
+  &lt;div class=&quot;item&quot;&gt;Item 2&lt;/div&gt;
+  &lt;div class=&quot;item&quot;&gt;Item 3&lt;/div&gt;
+  &lt;!-- Muitos outros itens --&gt;
+&lt;/div&gt;
+</code></pre>
+    <pre><code class="language-css">.item {
+  content-visibility: auto;
+  contain-intrinsic-size: 100px 50px; /* Define um tamanho intrínseco para o layout */
+}
+</code></pre>
+    <h3 id="explicação-do-exemplo"><strong>Explicação do Exemplo</strong></h3>
+    <ul>
+        <li>Cada <code>.item</code> terá sua renderização adiada se estiver fora do viewport.</li>
+        <li>A propriedade <code>contain-intrinsic-size</code> é usada para definir um tamanho aproximado do elemento,
+            evitando mudanças bruscas no layout ao rolar a página.</li>
+    </ul>
+    <hr>
+    <h2 id="propriedade-relacionada-contain-intrinsic-size"><strong>Propriedade Relacionada:
+            <code>contain-intrinsic-size</code></strong></h2>
+    <ul>
+        <li>A propriedade <code>contain-intrinsic-size</code> é usada em conjunto com <code>content-visibility</code>
+            para definir um tamanho intrínseco para o elemento.</li>
+        <li>Isso ajuda o navegador a manter o layout correto, mesmo quando o conteúdo ainda não foi renderizado.</li>
+    </ul>
+    <h3 id="sintaxe-1"><strong>Sintaxe</strong></h3>
+    <pre><code class="language-css">.elemento {
+  contain-intrinsic-size: largura altura;
+}
+</code></pre>
+    <h3 id="exemplo"><strong>Exemplo</strong></h3>
+    <pre><code class="language-css">.item {
+  content-visibility: auto;
+  contain-intrinsic-size: 200px 100px; /* Define um tamanho intrínseco de 200x100 pixels */
+}
+</code></pre>
+    <hr>
+    <h2 id="casos-de-uso"><strong>Casos de Uso</strong></h2>
+    <ol>
+        <li>
+            <p><strong>Listas longas</strong>:</p>
+            <ul>
+                <li>Use <code>content-visibility: auto</code> em itens de listas longas para melhorar o desempenho ao
+                    rolar.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Páginas com muito conteúdo</strong>:</p>
+            <ul>
+                <li>Aplique <code>content-visibility</code> em seções que não estão visíveis inicialmente.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Conteúdo dinâmico</strong>:</p>
+            <ul>
+                <li>Use <code>content-visibility: hidden</code> para ocultar temporariamente elementos que serão
+                    exibidos posteriormente.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="compatibilidade"><strong>Compatibilidade</strong></h2>
+    <ul>
+        <li>A propriedade <code>content-visibility</code> é suportada na maioria dos navegadores modernos, como Chrome,
+            Edge e Firefox.</li>
+        <li>Verifique a compatibilidade no <a href="https://caniuse.com/?search=content-visibility">Can I Use</a> antes
+            de usar em produção.</li>
+    </ul>
+    <hr>
+    <h2 id="considerações-finais"><strong>Considerações Finais</strong></h2>
+    <ul>
+        <li><strong>Teste sempre</strong>: Embora <code>content-visibility</code> melhore o desempenho, é importante
+            testar em diferentes dispositivos e navegadores.</li>
+        <li><strong>Combine com outras técnicas</strong>: Use junto com lazy loading de imagens e outras otimizações
+            para obter o máximo de desempenho.</li>
+    </ul>
+    <hr>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
