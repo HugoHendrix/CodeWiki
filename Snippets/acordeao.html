@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h3 id="-criando-um-acorde-o-com-details-e-summary-sem-javascript-"><strong>Criando um Acordeão com
+            <code>&lt;details&gt;</code> e <code>&lt;summary&gt;</code> sem JavaScript</strong></h3>
+    <p>Neste tutorial, você aprenderá a criar um acordeão retrátil usando apenas HTML e CSS, sem a necessidade de
+        JavaScript. A combinação das tags <code>&lt;details&gt;</code> e <code>&lt;summary&gt;</code> do HTML, junto com
+        o atributo <code>name</code>, permite criar uma funcionalidade de acordeão de forma simples e eficiente.</p>
+    <hr>
+    <h2 id="-como-funciona-"><strong>Como Funciona?</strong></h2>
+    <ul>
+        <li><strong><code>&lt;details&gt;</code></strong>: Um elemento que pode ser expandido ou recolhido para mostrar
+            ou ocultar conteúdo.</li>
+        <li><strong><code>&lt;summary&gt;</code></strong>: Define o título ou o cabeçalho do elemento
+            <code>&lt;details&gt;</code>.</li>
+        <li><strong>Atributo <code>name</code></strong>: Quando vários elementos <code>&lt;details&gt;</code>
+            compartilham o mesmo valor no atributo <code>name</code>, apenas um pode estar aberto por vez, criando um
+            comportamento de acordeão.</li>
+    </ul>
+    <hr>
+    <h2 id="-estrutura-html-"><strong>Estrutura HTML</strong></h2>
+    <p>Aqui está um exemplo básico de um acordeão com três seções:</p>
+    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">details</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"acordeao"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>Seção 1<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Conteúdo da Seção 1. Aqui você pode adicionar texto, imagens, links, etc.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">details</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"acordeao"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>Seção 2<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Conteúdo da Seção 2. Mais informações podem ser colocadas aqui.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">details</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"acordeao"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>Seção 3<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Conteúdo da Seção 3. Este é o último item do acordeão.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span>
+</code></pre>
+    <hr>
+    <h2 id="-explica-o-do-html-"><strong>Explicação do HTML</strong></h2>
+    <ol>
+        <li>
+            <p><strong><code>&lt;details&gt;</code></strong>:</p>
+            <ul>
+                <li>Cada seção do acordeão é um elemento <code>&lt;details&gt;</code>.</li>
+                <li>O atributo <code>name=&quot;acordeao&quot;</code> é usado para agrupar os elementos, garantindo que
+                    apenas um possa estar aberto por vez.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>&lt;summary&gt;</code></strong>:</p>
+            <ul>
+                <li>Define o título clicável de cada seção.</li>
+                <li>Quando clicado, o conteúdo associado é exibido ou ocultado.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Conteúdo</strong>:</p>
+            <ul>
+                <li>O conteúdo dentro de <code>&lt;details&gt;</code> (após o <code>&lt;summary&gt;</code>) é exibido ou
+                    ocultado conforme o estado do acordeão.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="-estilizando-com-css-"><strong>Estilizando com CSS</strong></h2>
+    <p>Você pode personalizar a aparência do acordeão usando CSS. Aqui está um exemplo básico:</p>
+    <pre><code class="lang-css"><span class="hljs-comment">/* Estilo básico para o acordeão */</span>
+<span class="hljs-selector-tag">details</span> {
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ccc</span>;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+}
+
+<span class="hljs-comment">/* Estilo do título (summary) */</span>
+<span class="hljs-selector-tag">summary</span> {
+    <span class="hljs-attribute">font-weight</span>: bold;
+    <span class="hljs-attribute">cursor</span>: pointer;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f9f9f9</span>;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+}
+
+<span class="hljs-comment">/* Estilo quando o acordeão está aberto */</span>
+<span class="hljs-selector-tag">details</span><span class="hljs-selector-attr">[open]</span> <span class="hljs-selector-tag">summary</span> {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#007BFF</span>;
+    <span class="hljs-attribute">color</span>: white;
+}
+
+<span class="hljs-comment">/* Estilo do conteúdo */</span>
+<span class="hljs-selector-tag">details</span> <span class="hljs-selector-tag">p</span> {
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f1f1f1</span>;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+}
+</code></pre>
+    <hr>
+    <h2 id="-explica-o-do-css-"><strong>Explicação do CSS</strong></h2>
+    <ol>
+        <li>
+            <p><strong><code>details</code></strong>:</p>
+            <ul>
+                <li>Define o estilo do contêiner de cada seção do acordeão, com borda, margem e padding.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>summary</code></strong>:</p>
+            <ul>
+                <li>Estiliza o título do acordeão, com fonte em negrito, cursor de ponteiro e fundo claro.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>details[open] summary</code></strong>:</p>
+            <ul>
+                <li>Aplica um estilo diferente ao título quando o acordeão está aberto (usando o seletor
+                    <code>[open]</code>).</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>details p</code></strong>:</p>
+            <ul>
+                <li>Estiliza o conteúdo dentro do acordeão, com margem, padding e fundo claro.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="-exemplo-completo-"><strong>Exemplo Completo</strong></h2>
+    <p>Aqui está o código completo para você testar:</p>
+    <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"pt-BR"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Acordeão com HTML e CSS<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <span class="hljs-comment">/* Estilo básico para o acordeão */</span>
+        <span class="hljs-selector-tag">details</span> {
+            <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ccc</span>;
+            <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+            <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">10px</span>;
+            <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+        }
+
+        <span class="hljs-comment">/* Estilo do título (summary) */</span>
+        <span class="hljs-selector-tag">summary</span> {
+            <span class="hljs-attribute">font-weight</span>: bold;
+            <span class="hljs-attribute">cursor</span>: pointer;
+            <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+            <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f9f9f9</span>;
+            <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+        }
+
+        <span class="hljs-comment">/* Estilo quando o acordeão está aberto */</span>
+        <span class="hljs-selector-tag">details</span><span class="hljs-selector-attr">[open]</span> <span class="hljs-selector-tag">summary</span> {
+            <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#007BFF</span>;
+            <span class="hljs-attribute">color</span>: white;
+        }
+
+        <span class="hljs-comment">/* Estilo do conteúdo */</span>
+        <span class="hljs-selector-tag">details</span> <span class="hljs-selector-tag">p</span> {
+            <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">10px</span>;
+            <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+            <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f1f1f1</span>;
+            <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">details</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"acordeao"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>Seção 1<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Conteúdo da Seção 1. Aqui você pode adicionar texto, imagens, links, etc.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">details</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"acordeao"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>Seção 2<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Conteúdo da Seção 2. Mais informações podem ser colocadas aqui.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">details</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"acordeao"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>Seção 3<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Conteúdo da Seção 3. Este é o último item do acordeão.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+    <hr>
+    <h2 id="-funcionalidades-adicionais-"><strong>Funcionalidades Adicionais</strong></h2>
+    <ol>
+        <li>
+            <p><strong>Ícones Personalizados</strong>:</p>
+            <ul>
+                <li>Adicione ícones (como setas) ao <code>&lt;summary&gt;</code> para indicar o estado do acordeão
+                    (aberto/fechado).</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Transições Suaves</strong>:</p>
+            <ul>
+                <li>Use <code>transition</code> no CSS para animar a abertura e o fechamento do acordeão.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Acessibilidade</strong>:</p>
+            <ul>
+                <li>Certifique-se de que o acordeão seja acessível, usando atributos como <code>aria-expanded</code> e
+                    <code>aria-controls</code> (embora o <code>&lt;details&gt;</code> já seja acessível por padrão).
+                </li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="-conclus-o-"><strong>Conclusão</strong></h2>
+    <p>Usar <code>&lt;details&gt;</code> e <code>&lt;summary&gt;</code> é uma maneira simples e eficaz de criar
+        acordeões sem a necessidade de JavaScript. Com um pouco de CSS, você pode personalizar a aparência e o
+        comportamento para atender às necessidades do seu projeto.</p>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
