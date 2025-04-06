@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h2 id="como-adicionar-um-botão-de-voltar-ao-topo"><strong>Como Adicionar um Botão de Voltar ao Topo</strong></h2>
+    <p>Um botão de &quot;voltar ao topo&quot; melhora a navegação, permitindo que o usuário volte rapidamente ao início
+        da página. Abaixo estão os passos para implementá-lo:</p>
+    <hr>
+    <h4 id="1-estrutura-html"><strong>1. Estrutura HTML</strong></h4>
+    <p>Adicione um botão ao final do corpo da página:</p>
+    <pre><code class="language-html">&lt;button id=&quot;back-to-top&quot; title=&quot;Voltar ao topo&quot;&gt;&amp;uarr;&lt;/button&gt;
+</code></pre>
+    <ul>
+        <li><strong><code>id=&quot;back-to-top&quot;</code></strong>: Um identificador único para personalizar o botão e
+            controlá-lo com JavaScript.</li>
+        <li><strong>Conteúdo <code>&amp;uarr;</code></strong>: Um símbolo de seta para cima. Você pode trocar por outro
+            caractere ou ícone, como uma imagem.</li>
+    </ul>
+    <hr>
+    <h4 id="2-estilo-css"><strong>2. Estilo CSS</strong></h4>
+    <p>Crie o design do botão com o seguinte CSS:</p>
+    <pre><code class="language-css">#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none; /* Oculto inicialmente */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease;
+}
+
+#back-to-top:hover {
+    background-color: #0056b3;
+}
+</code></pre>
+    <ul>
+        <li><strong>Posição fixa (<code>position: fixed</code>)</strong>: Permite que o botão permaneça visível no canto
+            da tela ao rolar.</li>
+        <li><strong><code>display: none;</code></strong>: O botão só aparece quando a rolagem atinge uma posição
+            específica.</li>
+        <li><strong>Efeitos visuais</strong>: <code>box-shadow</code> adiciona profundidade, e <code>transition</code>
+            suaviza as mudanças.</li>
+    </ul>
+    <hr>
+    <h4 id="3-lógica-em-javascript"><strong>3. Lógica em JavaScript</strong></h4>
+    <p>Implemente a funcionalidade com este script:</p>
+    <pre><code class="language-javascript">// Obtenha o botão
+const backToTopButton = document.getElementById(&quot;back-to-top&quot;);
+
+// Mostrar ou esconder o botão com base na rolagem
+window.onscroll = function () {
+    if (window.scrollY &gt; 300) { // Mostra após 300px de rolagem
+        backToTopButton.style.display = &quot;block&quot;;
+    } else {
+        backToTopButton.style.display = &quot;none&quot;;
+    }
+};
+
+// Rolar para o topo quando o botão for clicado
+backToTopButton.onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: &quot;smooth&quot; // Suaviza o movimento
+    });
+};
+</code></pre>
+    <ul>
+        <li><strong><code>window.scrollY</code></strong>: Detecta a posição de rolagem vertical.</li>
+        <li><strong><code>window.scrollTo</code></strong>: Rola para o topo da página de forma suave
+            (<code>behavior: &quot;smooth&quot;</code>).</li>
+    </ul>
+    <hr>
+    <h4 id="4-onde-inserir"><strong>4. Onde Inserir</strong></h4>
+    <ul>
+        <li><strong>HTML</strong>: Coloque o botão dentro do <code>&lt;body&gt;</code>.</li>
+        <li><strong>CSS</strong>: Inclua no arquivo de estilos principal ou dentro de uma tag
+            <code>&lt;style&gt;</code>.</li>
+        <li><strong>JavaScript</strong>: Adicione o código em um arquivo <code>.js</code> externo ou em uma tag
+            <code>&lt;script&gt;</code> ao final do HTML.</li>
+    </ul>
+    <hr>
+    <h4 id="5-personalização"><strong>5. Personalização</strong></h4>
+    <ul>
+        <li><strong>Tamanho</strong>: Ajuste as propriedades <code>width</code> e <code>height</code> no CSS.</li>
+        <li><strong>Posição</strong>: Modifique os valores de <code>bottom</code> e <code>right</code>.</li>
+        <li><strong>Ícone</strong>: Substitua o conteúdo <code>&amp;uarr;</code> por um ícone de biblioteca como Font
+            Awesome ou Material Icons.</li>
+    </ul>
+    <hr>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

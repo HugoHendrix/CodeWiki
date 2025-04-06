@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h3 id="função-copiartextoporididelemento">Função: <code>copiarTextoPorId(idElemento)</code></h3>
+    <p><strong>Descrição:</strong><br>Esta função copia o conteúdo de um elemento HTML (como um
+        <code>&lt;textarea&gt;</code>) para a área de transferência do usuário. O elemento é identificado pelo seu
+        <code>id</code>. Se o elemento não for encontrado, uma mensagem de erro será exibida no console.</p>
+    <hr>
+    <p><strong>Parâmetros:</strong> </p>
+    <ul>
+        <li><code>idElemento</code> (String): O <code>id</code> do elemento HTML que contém o texto a ser copiado. Por
+            exemplo, <code>&quot;ocorrencia1&quot;</code>.</li>
+    </ul>
+    <hr>
+    <p><strong>Retorno:</strong> </p>
+    <ul>
+        <li>A função não retorna nenhum valor explicitamente. Ela copia o texto do elemento para a área de transferência
+            do usuário.</li>
+    </ul>
+    <hr>
+    <p><strong>Exceções:</strong> </p>
+    <ul>
+        <li>Se o elemento com o <code>id</code> especificado não for encontrado, a função exibirá uma mensagem de erro
+            no console:<br><code>Elemento com ID &#39;${idElemento}&#39; não encontrado.</code></li>
+    </ul>
+    <hr>
+    <p><strong>Exemplo de Uso:</strong><br>A função pode ser usada em conjunto com um botão para copiar o conteúdo de um
+        <code>&lt;textarea&gt;</code> ou qualquer outro elemento de texto. Por exemplo:</p>
+    <pre><code class="language-html">&lt;textarea id=&quot;ocorrencia1&quot;&gt;
+Identificamos que o veículo apresenta um defeito no atuador de bloqueio...
+&lt;/textarea&gt;
+&lt;button class=&quot;btn btn-primary&quot; onclick=&quot;copiarTextoPorId(&#39;ocorrencia1&#39;)&quot;&gt;Copiar&lt;/button&gt;
+</code></pre>
+    <p>Quando o botão &quot;Copiar&quot; for clicado, o texto dentro do <code>&lt;textarea&gt;</code> com o
+        <code>id=&quot;ocorrencia1&quot;</code> será copiado para a área de transferência.</p>
+    <hr>
+    <p><strong>Notas:</strong> </p>
+    <ol>
+        <li>A função utiliza o método <code>document.execCommand(&quot;copy&quot;)</code>, que é uma abordagem
+            tradicional para copiar texto. No entanto, esse método está obsoleto em navegadores modernos. Para uma
+            solução mais atual, considere usar a API <code>Clipboard</code> (navigator.clipboard.writeText).</li>
+        <li>Certifique-se de que o elemento referenciado pelo <code>id</code> seja um elemento de texto (como
+            <code>&lt;textarea&gt;</code> ou <code>&lt;input type=&quot;text&quot;&gt;</code>) para garantir que o
+            método <code>select()</code> funcione corretamente.</li>
+    </ol>
+    <hr>
+    <h3 id="exemplo-de-código-completo">Exemplo de Código Completo</h3>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Copiar Texto&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;textarea id=&quot;ocorrencia1&quot;&gt;
+        Identificamos que o veículo apresenta um defeito no atuador de bloqueio...
+    &lt;/textarea&gt;
+    &lt;button class=&quot;btn btn-primary&quot; onclick=&quot;copiarTextoPorId(&#39;ocorrencia1&#39;)&quot;&gt;Copiar&lt;/button&gt;
+
+    &lt;script&gt;
+        function copiarTextoPorId(idElemento) {
+            const elemento = document.getElementById(idElemento);
+            if (elemento) {
+                elemento.select();
+                document.execCommand(&quot;copy&quot;);
+            } else {
+                console.error(`Elemento com ID &#39;${idElemento}&#39; não encontrado.`);
+            }
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    <hr>
+    <h3 id="alternativa-moderna-api-clipboard">Alternativa Moderna (API Clipboard)</h3>
+    <p>Se você quiser usar uma abordagem mais moderna e recomendada, pode substituir a função
+        <code>copiarTextoPorId</code> por esta versão, que utiliza a API <code>Clipboard</code>:</p>
+    <pre><code class="language-javascript">function copiarTextoPorId(idElemento) {
+    const elemento = document.getElementById(idElemento);
+    if (elemento) {
+        navigator.clipboard.writeText(elemento.value)
+            .then(() =&gt; console.log(&quot;Texto copiado com sucesso!&quot;))
+            .catch((err) =&gt; console.error(&quot;Erro ao copiar texto:&quot;, err));
+    } else {
+        console.error(`Elemento com ID &#39;${idElemento}&#39; não encontrado.`);
+    }
+}
+</code></pre>
+    <p><strong>Vantagens:</strong> </p>
+    <ul>
+        <li>Mais confiável e compatível com navegadores modernos.</li>
+        <li>Não depende de métodos obsoletos como <code>document.execCommand</code>.</li>
+    </ul>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

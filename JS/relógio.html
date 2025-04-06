@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="função-relógio-com-saudação">FUNÇÃO RELÓGIO COM SAUDAÇÃO</h1>
+    <pre><code class="language-javascript">function updateTime() {
+    const dateTimeElement = document.querySelector(&#39;.datetime&#39;);
+    const dateElement = document.getElementById(&#39;date&#39;);
+    const timeElement = document.getElementById(&#39;time&#39;);
+    const greetingElement = document.getElementById(&#39;greeting&#39;);
+
+    const horaAtual = new Date();
+    const hora = horaAtual.getHours();
+
+    let saudacao = &quot;&quot;;
+
+    if (hora &gt;= 5 &amp;&amp; hora &lt; 12) {
+        saudacao = &quot;Bom dia!&quot;;
+    } else if (hora &gt;= 12 &amp;&amp; hora &lt; 18) {
+        saudacao = &quot;Boa tarde!&quot;;
+    } else if (hora &gt;= 18 &amp;&amp; hora &lt;= 23) {
+        saudacao = &quot;Boa noite!&quot;;
+    } else {
+        saudacao = &quot;Boa madrugada!&quot;;
+    }
+
+    const options = { weekday: &#39;long&#39;, year: &#39;numeric&#39;, month: &#39;long&#39;, day: &#39;numeric&#39; };
+    const dataFormatada = horaAtual.toLocaleDateString(&#39;pt-BR&#39;, options);
+    const horaFormatada = horaAtual.toLocaleTimeString();
+
+    dateElement.textContent = `Hoje é ${dataFormatada}.`;
+    timeElement.textContent = `São: ${horaFormatada}`;
+    greetingElement.textContent = saudacao;
+
+    dateTimeElement.style.display = &#39;block&#39;;
+}
+
+updateTime();
+
+setInterval(updateTime, 1000);
+</code></pre>
+    <hr>
+    <h3 id="função-updatetime"><strong>Função <code>updateTime</code></strong></h3>
+    <p>A função <code>updateTime</code> é usada para atualizar elementos HTML exibindo a data, a hora atual e uma
+        saudação personalizada com base no período do dia.</p>
+    <hr>
+    <h3 id="detalhamento-do-código"><strong>Detalhamento do código</strong></h3>
+    <h4 id="1-selecionando-elementos-do-dom">1. <strong>Selecionando Elementos do DOM</strong></h4>
+    <pre><code class="language-javascript">const dateTimeElement = document.querySelector(&#39;.datetime&#39;);
+const dateElement = document.getElementById(&#39;date&#39;);
+const timeElement = document.getElementById(&#39;time&#39;);
+const greetingElement = document.getElementById(&#39;greeting&#39;);
+</code></pre>
+    <p>Essas linhas utilizam seletores do DOM para capturar elementos HTML específicos:</p>
+    <ul>
+        <li><code>dateTimeElement</code>: Seleciona o elemento com a classe <code>datetime</code>.</li>
+        <li><code>dateElement</code>: Seleciona o elemento com o ID <code>date</code> para mostrar a data.</li>
+        <li><code>timeElement</code>: Seleciona o elemento com o ID <code>time</code> para mostrar a hora.</li>
+        <li><code>greetingElement</code>: Seleciona o elemento com o ID <code>greeting</code> para exibir uma saudação.
+        </li>
+    </ul>
+    <h4 id="2-obtendo-a-hora-atual">2. <strong>Obtendo a Hora Atual</strong></h4>
+    <pre><code class="language-javascript">const horaAtual = new Date();
+const hora = horaAtual.getHours();
+</code></pre>
+    <ul>
+        <li><code>new Date()</code>: Cria um objeto <code>Date</code> contendo a data e hora atuais.</li>
+        <li><code>horaAtual.getHours()</code>: Extrai a hora atual (de 0 a 23) do objeto <code>Date</code>.</li>
+    </ul>
+    <h4 id="3-definindo-a-saudação">3. <strong>Definindo a Saudação</strong></h4>
+    <pre><code class="language-javascript">let saudacao = &quot;&quot;;
+
+if (hora &gt;= 5 &amp;&amp; hora &lt; 12) {
+    saudacao = &quot;Bom dia!&quot;;
+} else if (hora &gt;= 12 &amp;&amp; hora &lt; 18) {
+    saudacao = &quot;Boa tarde!&quot;;
+} else if (hora &gt;= 18 &amp;&amp; hora &lt;= 23) {
+    saudacao = &quot;Boa noite!&quot;;
+} else {
+    saudacao = &quot;Boa madrugada!&quot;;
+}
+</code></pre>
+    <p>Aqui é definido um texto de saudação baseado no intervalo da hora atual:</p>
+    <ul>
+        <li><code>5 &lt;= hora &lt; 12</code>: &quot;Bom dia!&quot;</li>
+        <li><code>12 &lt;= hora &lt; 18</code>: &quot;Boa tarde!&quot;</li>
+        <li><code>18 &lt;= hora &lt;= 23</code>: &quot;Boa noite!&quot;</li>
+        <li>Fora desses intervalos (0-4): &quot;Boa madrugada!&quot;</li>
+    </ul>
+    <h4 id="4-formatando-data-e-hora">4. <strong>Formatando Data e Hora</strong></h4>
+    <pre><code class="language-javascript">const options = { weekday: &#39;long&#39;, year: &#39;numeric&#39;, month: &#39;long&#39;, day: &#39;numeric&#39; };
+const dataFormatada = horaAtual.toLocaleDateString(&#39;pt-BR&#39;, options);
+const horaFormatada = horaAtual.toLocaleTimeString();
+</code></pre>
+    <ul>
+        <li><code>options</code>: Especifica o formato da data:<ul>
+                <li><code>weekday: &#39;long&#39;</code>: Nome completo do dia da semana (ex.:
+                    &quot;segunda-feira&quot;).</li>
+                <li><code>year: &#39;numeric&#39;</code>: Ano completo.</li>
+                <li><code>month: &#39;long&#39;</code>: Nome completo do mês (ex.: &quot;dezembro&quot;).</li>
+                <li><code>day: &#39;numeric&#39;</code>: Dia do mês.</li>
+            </ul>
+        </li>
+        <li><code>horaAtual.toLocaleDateString(&#39;pt-BR&#39;, options)</code>: Formata a data no estilo brasileiro.
+        </li>
+        <li><code>horaAtual.toLocaleTimeString()</code>: Formata a hora no estilo brasileiro (com horas, minutos e
+            segundos).</li>
+    </ul>
+    <h4 id="5-atualizando-o-conteúdo-html">5. <strong>Atualizando o Conteúdo HTML</strong></h4>
+    <pre><code class="language-javascript">dateElement.textContent = `Hoje é ${dataFormatada}.`;
+timeElement.textContent = `São: ${horaFormatada}`;
+greetingElement.textContent = saudacao;
+</code></pre>
+    <ul>
+        <li>Altera o texto interno dos elementos selecionados:<ul>
+                <li><code>dateElement</code>: Exibe a data formatada.</li>
+                <li><code>timeElement</code>: Exibe a hora formatada.</li>
+                <li><code>greetingElement</code>: Exibe a saudação personalizada.</li>
+            </ul>
+        </li>
+    </ul>
+    <h4 id="6-tornando-o-elemento-visível">6. <strong>Tornando o Elemento Visível</strong></h4>
+    <pre><code class="language-javascript">dateTimeElement.style.display = &#39;block&#39;;
+</code></pre>
+    <ul>
+        <li>Garante que o elemento <code>dateTimeElement</code> (com classe <code>datetime</code>) esteja visível.</li>
+    </ul>
+    <hr>
+    <h3 id="chamando-a-função"><strong>Chamando a Função</strong></h3>
+    <pre><code class="language-javascript">updateTime();
+</code></pre>
+    <ul>
+        <li>A função é chamada para executar todo o processo imediatamente quando o código é carregado.</li>
+    </ul>
+    <hr>
+    <h3 id="funcionamento-no-html"><strong>Funcionamento no HTML</strong></h3>
+    <p>Para que esse código funcione, é necessário que os elementos com as classes e IDs mencionados estejam no HTML.
+        Exemplo básico:</p>
+    <pre><code class="language-html">&lt;div class=&quot;datetime&quot;&gt;
+    &lt;div id=&quot;date&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;time&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;greeting&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    <hr>
+    <ul>
+        <li><strong>Atualizar continuamente a hora</strong>: Use <code>setInterval</code> para atualizar o relógio em
+            tempo real.</li>
+    </ul>
+    <pre><code class="language-javascript">setInterval(updateTime, 1000); // Atualiza a cada 1 segundo
+</code></pre>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

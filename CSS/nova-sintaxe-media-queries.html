@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="nova-sintaxe-de-consultas-de-mídia">Nova Sintaxe de Consultas de Mídia</h1>
+    <ul>
+        <li><a href="https://caniuse.com/?search=media%20queries">Can I Use</a></li>
+        <li><a href="https://dev.to/perisicnikola37/new-css-media-queries-syntax-45og?ref=dailydev">Dev.to - Link do
+                artigo</a></li>
+    </ul>
+    <p>As consultas de mídia (media queries) são um recurso do CSS que permite aplicar estilos condicionais com base em
+        características do dispositivo ou do ambiente do usuário, como o tipo de dispositivo, largura da tela,
+        resolução, orientação e preferências do usuário. Elas são fundamentais para o design responsivo, garantindo que
+        a apresentação do conteúdo se adapte a diferentes tamanhos e tipos de tela.</p>
+    <p><strong>Sintaxe Tradicional das Consultas de Mídia</strong></p>
+    <p>Historicamente, as consultas de mídia utilizam as regras <code>@media</code> combinadas com operadores como
+        <code>min-width</code> e <code>max-width</code> para definir pontos de interrupção (breakpoints) específicos.
+        Por exemplo, para aplicar estilos a telas com largura mínima de 600 pixels, a sintaxe seria:</p>
+    <pre><code class="language-css">@media (min-width: 600px) {
+  /* Estilos para telas com largura mínima de 600px */
+}
+</code></pre>
+    <p>De forma semelhante, para aplicar estilos a telas com largura máxima de 800 pixels:</p>
+    <pre><code class="language-css">@media (max-width: 800px) {
+  /* Estilos para telas com largura máxima de 800px */
+}
+</code></pre>
+    <p><strong>Nova Sintaxe de Consultas de Mídia (Media Queries Level 4)</strong></p>
+    <p>Com a evolução das especificações do CSS, a sintaxe das consultas de mídia foi aprimorada para se tornar mais
+        intuitiva e menos verbosa. A especificação Media Queries Level 4 introduziu operadores de comparação direta,
+        permitindo uma escrita mais clara e concisa. Por exemplo, a consulta anterior para larguras mínimas de 600
+        pixels pode ser reescrita da seguinte forma:</p>
+    <pre><code class="language-css">@media (width &gt;= 600px) {
+  /* Estilos para telas com largura mínima de 600px */
+}
+</code></pre>
+    <p>Para definir estilos entre um intervalo de larguras, como entre 600px e 1200px, a nova sintaxe permite:</p>
+    <pre><code class="language-css">@media (600px &lt;= width &lt;= 1200px) {
+  /* Estilos para telas com largura entre 600px e 1200px */
+}
+</code></pre>
+    <p>Essa abordagem elimina a necessidade de combinar múltiplas condições com operadores lógicos, tornando o código
+        mais legível e menos propenso a erros. </p>
+    <p><strong>Suporte dos Navegadores</strong></p>
+    <p>A adoção da nova sintaxe de consultas de mídia varia entre os navegadores. É essencial verificar a
+        compatibilidade antes de implementá-la em projetos de produção. De acordo com o site &quot;Can I use&quot;, que
+        fornece tabelas de suporte para tecnologias web modernas, a sintaxe de intervalo para consultas de mídia possui
+        suporte em navegadores modernos, mas é recomendável confirmar a compatibilidade específica para cada caso. </p>
+    <p><strong>Exemplos Práticos</strong></p>
+    <ul>
+        <li><strong>Aplicando estilos para dispositivos de toque com telas largas:</strong></li>
+    </ul>
+    <pre><code class="language-css">@media (pointer: coarse) and (width &gt; 1024px) {
+  /* Estilos para dispositivos de toque com largura superior a 1024px */
+}
+</code></pre>
+    <ul>
+        <li><strong>Estilos específicos para telas em modo paisagem com alta resolução:</strong></li>
+    </ul>
+    <pre><code class="language-css">@media (orientation: landscape) and (resolution &gt; 2dppx) {
+  /* Estilos para telas em modo paisagem com resolução superior a 2dppx */
+}
+</code></pre>
+    <p><strong>Considerações Finais</strong></p>
+    <p>A evolução das consultas de mídia no CSS reflete a necessidade de ferramentas mais eficientes e intuitivas para o
+        desenvolvimento de designs responsivos. A nova sintaxe oferece uma maneira mais clara de definir condições
+        baseadas em características do dispositivo, simplificando o código e melhorando a legibilidade. No entanto, é
+        crucial estar atento ao suporte dos navegadores para garantir uma experiência consistente aos usuários.</p>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

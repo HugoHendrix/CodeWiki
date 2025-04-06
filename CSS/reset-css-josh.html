@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h1 id="análise-do-css-reset-de-josh-comeau">Análise do CSS Reset de Josh Comeau</h1>
+    <p>Vou explicar em detalhes o CSS Reset proposto por Josh Comeau, que é uma abordagem moderna para normalizar
+        estilos entre navegadores. Este reset é mais sofisticado que os tradicionais (como o de Eric Meyer) porque leva
+        em conta particularidades de acessibilidade e renderização moderna.</p>
+    <h2 id="o-reset-completo">O Reset Completo</h2>
+    <pre><code class="language-css">/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+
+/*
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+</code></pre>
+    <h2 id="explicação-detalhada-de-cada-parte">Explicação Detalhada de Cada Parte</h2>
+    <h3 id="1-modelo-box-sizing-intuitivo">1. Modelo Box-Sizing Intuitivo</h3>
+    <pre><code class="language-css">*, *::before, *::after {
+  box-sizing: border-box;
+}
+</code></pre>
+    <ul>
+        <li><strong>O que faz</strong>: Define que o tamanho (<code>width/height</code>) de todos os elementos inclui
+            padding e borda, não apenas o conteúdo.</li>
+        <li><strong>Por quê</strong>: O modelo padrão (<code>content-box</code>) é contra-intuitivo pois adiciona
+            padding e borda ao tamanho total. Com <code>border-box</code>, um elemento com <code>width: 100px</code> e
+            <code>padding: 20px</code> terá 100px no total.</li>
+    </ul>
+    <h3 id="2-remoção-de-margem-padrão">2. Remoção de Margem Padrão</h3>
+    <pre><code class="language-css">* {
+  margin: 0;
+}
+</code></pre>
+    <ul>
+        <li><strong>O que faz</strong>: Remove todas as margens padrão dos elementos.</li>
+        <li><strong>Por quê</strong>: Diferentes navegadores aplicam margens diferentes em elementos como
+            <code>&lt;body&gt;</code>, <code>&lt;h1&gt;-&lt;h6&gt;</code>, <code>&lt;p&gt;</code>, etc.</li>
+    </ul>
+    <h3 id="3-alturas-baseadas-em-porcentagem">3. Alturas Baseadas em Porcentagem</h3>
+    <pre><code class="language-css">html, body {
+  height: 100%;
+}
+</code></pre>
+    <ul>
+        <li><strong>O que faz</strong>: Permite que elementos filhos usem porcentagem na propriedade
+            <code>height</code>.</li>
+        <li><strong>Por quê</strong>: Por padrão, o elemento <code>body</code> não tem altura definida, então
+            <code>height: 100%</code> em elementos filhos não funciona sem isso.</li>
+    </ul>
+    <h3 id="4-line-hand-acessível-e-suavização-de-fonte">4. Line-Hand Acessível e Suavização de Fonte</h3>
+    <pre><code class="language-css">body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+</code></pre>
+    <ul>
+        <li><strong>O que faz</strong>:<ul>
+                <li><code>line-height: 1.5</code> define um espaçamento entre linhas acessível (em vez do padrão ~1.2)
+                </li>
+                <li><code>-webkit-font-smoothing: antialiased</code> suaviza fontes em macOS</li>
+            </ul>
+        </li>
+        <li><strong>Por quê</strong>: Melhora a legibilidade e aparência do texto.</li>
+    </ul>
+    <h3 id="5-padrões-melhorados-para-mídia">5. Padrões Melhorados para Mídia</h3>
+    <pre><code class="language-css">img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+</code></pre>
+    <ul>
+        <li><strong>O que faz</strong>:<ul>
+                <li>Torna elementos de mídia <code>block</code> (evita espaço extra abaixo de imagens)</li>
+                <li>Impede que excedam o container</li>
+            </ul>
+        </li>
+        <li><strong>Por quê</strong>: Elementos como <code>&lt;img&gt;</code> são <code>inline</code> por padrão, o que
+            pode causar espaçamento indesejado.</li>
+    </ul>
+    <h3 id="6-reset-de-tipografia-em-formulários">6. Reset de Tipografia em Formulários</h3>
+    <pre><code class="language-css">input, button, textarea, select {
+  font: inherit;
+}
+</code></pre>
+    <ul>
+        <li><strong>O que faz</strong>: Faz com que elementos de formulário herdem estilos de fonte do pai.</li>
+        <li><strong>Por quê</strong>: Por padrão, esses elementos não herdam estilos de tipografia, o que pode quebrar a
+            consistência visual.</li>
+    </ul>
+    <h3 id="7-prevenção-de-overflow-de-texto">7. Prevenção de Overflow de Texto</h3>
+    <pre><code class="language-css">p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+</code></pre>
+    <ul>
+        <li><strong>O que faz</strong>: Permite que palavras longas quebrem e evitem overflow horizontal.</li>
+        <li><strong>Por quê</strong>: Melhora a responsividade, especialmente em mobile.</li>
+    </ul>
+    <h3 id="8-contexto-de-empilhamento-raiz">8. Contexto de Empilhamento Raiz</h3>
+    <pre><code class="language-css">#root, #__next {
+  isolation: isolate;
+}
+</code></pre>
+    <ul>
+        <li><strong>O que faz</strong>: Cria um novo contexto de empilhamento (stacking context) para aplicações
+            React/Next.js.</li>
+        <li><strong>Por quê</strong>: Previne problemas com z-index quando se usa bibliotecas/modais.</li>
+    </ul>
+    <h2 id="vantagens-deste-reset">Vantagens Deste Reset</h2>
+    <ol>
+        <li><strong>Mais moderno</strong> que resets tradicionais</li>
+        <li><strong>Focado em acessibilidade</strong> (line-height, text rendering)</li>
+        <li><strong>Melhor experiência mobile</strong> (overflow handling)</li>
+        <li><strong>Mais intuitivo</strong> (box-model)</li>
+        <li><strong>Otimizado para frameworks modernos</strong> (React/Next.js)</li>
+    </ol>
+    <h2 id="quando-usar">Quando Usar</h2>
+    <p>Este reset é ideal para:</p>
+    <ul>
+        <li>Projetos novos</li>
+        <li>Aplicações React/Next.js</li>
+        <li>Projetos que priorizam acessibilidade</li>
+        <li>Sites responsivos</li>
+    </ul>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="documentação-media-queries-e-clamp-function-no-css">Documentação: Media Queries e CLAMP FUNCTION no CSS</h1>
+    <h2 id="introdução">Introdução</h2>
+    <p>Esta documentação aborda dois recursos poderosos do CSS para criação de designs responsivos: <strong>Media
+            Queries</strong> e a função <strong><code>clamp()</code></strong>. Ambos são utilizados para adaptar layouts
+        e estilos a diferentes dispositivos e tamanhos de tela, mas possuem propósitos e aplicações distintas.</p>
+    <hr>
+    <h2 id="1-media-queries">1. Media Queries</h2>
+    <h3 id="o-que-são-media-queries">O que são Media Queries?</h3>
+    <p>As <strong>Media Queries</strong> são uma funcionalidade do CSS que permite aplicar estilos condicionais com base
+        nas características do dispositivo, como largura da tela, altura, orientação (retrato/paisagem) e resolução.</p>
+    <h3 id="sintaxe-básica">Sintaxe Básica</h3>
+    <pre><code class="language-css">@media (condição) {
+    /* Estilos aplicados se a condição for verdadeira */
+}
+</code></pre>
+    <h3 id="condições-comuns">Condições Comuns</h3>
+    <ul>
+        <li><strong>Largura da tela</strong>:
+            <pre><code class="language-css">@media (max-width: 600px) { ... } /* Telas com até 600px de largura */
+@media (min-width: 1200px) { ... } /* Telas com no mínimo 1200px de largura */
+</code></pre>
+        </li>
+        <li><strong>Orientação</strong>:
+            <pre><code class="language-css">@media (orientation: portrait) { ... } /* Modo retrato */
+@media (orientation: landscape) { ... } /* Modo paisagem */
+</code></pre>
+        </li>
+        <li><strong>Resolução</strong>:
+            <pre><code class="language-css">@media (min-resolution: 300dpi) { ... } /* Telas de alta resolução */
+</code></pre>
+        </li>
+    </ul>
+    <h3 id="exemplo-prático">Exemplo Prático</h3>
+    <p>Ajustar o tamanho da fonte e o layout para diferentes tamanhos de tela:</p>
+    <pre><code class="language-css">/* Estilos padrão */
+body {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Telas grandes (desktops) */
+@media (min-width: 1200px) {
+    body {
+        font-size: 18px;
+    }
+}
+</code></pre>
+    <h3 id="quando-usar-media-queries">Quando Usar Media Queries?</h3>
+    <ul>
+        <li>Para mudanças drásticas no layout (ex.: mudar de uma coluna para várias colunas).</li>
+        <li>Para ajustar estilos específicos para dispositivos ou tamanhos de tela.</li>
+    </ul>
+    <hr>
+    <h2 id="2-função-clamp">2. Função <code>clamp()</code></h2>
+    <h3 id="o-que-é-a-função-clamp">O que é a função <code>clamp()</code>?</h3>
+    <p>A função <strong><code>clamp()</code></strong> é uma função do CSS que permite definir um valor fluido, limitado
+        por um mínimo e um máximo. Ela é útil para criar designs responsivos sem a necessidade de Media Queries.</p>
+    <h3 id="sintaxe">Sintaxe</h3>
+    <pre><code class="language-css">clamp(min, ideal, max);
+</code></pre>
+    <ul>
+        <li><strong>min</strong>: Valor mínimo que a propriedade pode assumir.</li>
+        <li><strong>ideal</strong>: Valor preferencial (geralmente em unidades relativas, como <code>vw</code> ou
+            <code>%</code>).</li>
+        <li><strong>max</strong>: Valor máximo que a propriedade pode assumir.</li>
+    </ul>
+    <h3 id="exemplo-prático-1">Exemplo Prático</h3>
+    <p>Ajustar o tamanho da fonte de forma fluida:</p>
+    <pre><code class="language-css">h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+</code></pre>
+    <p>Neste exemplo:</p>
+    <ul>
+        <li>O tamanho da fonte nunca será menor que <code>1.5rem</code>.</li>
+        <li>O tamanho ideal é <code>4vw</code> (4% da largura da viewport).</li>
+        <li>O tamanho máximo é <code>2.5rem</code>.</li>
+    </ul>
+    <h3 id="quando-usar-clamp">Quando Usar <code>clamp()</code>?</h3>
+    <ul>
+        <li>Para ajustes fluidos e contínuos de valores numéricos (tamanhos de fonte, larguras, alturas, margens, etc.).
+        </li>
+        <li>Para evitar o uso excessivo de Media Queries.</li>
+    </ul>
+    <hr>
+    <h2 id="3-comparação-media-queries-vs-clamp">3. Comparação: Media Queries vs. <code>clamp()</code></h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Característica</th>
+                <th>Media Queries</th>
+                <th>CLAMP FUNCTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Propósito</strong></td>
+                <td>Aplicar estilos condicionais com base no tamanho da tela.</td>
+                <td>Criar valores fluidos e responsivos.</td>
+            </tr>
+            <tr>
+                <td><strong>Uso</strong></td>
+                <td>Ideal para mudanças drásticas no layout.</td>
+                <td>Ideal para ajustes fluidos e contínuos.</td>
+            </tr>
+            <tr>
+                <td><strong>Complexidade</strong></td>
+                <td>Pode exigir várias regras para diferentes breakpoints.</td>
+                <td>Mais simples e direta.</td>
+            </tr>
+            <tr>
+                <td><strong>Flexibilidade</strong></td>
+                <td>Permite controle total sobre estilos em diferentes tamanhos de tela.</td>
+                <td>Limitada a valores numéricos (tamanhos, margens, etc.).</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h2 id="4-combinando-media-queries-e-clamp">4. Combinando Media Queries e <code>clamp()</code></h2>
+    <p>Em muitos casos, é possível combinar <strong>Media Queries</strong> e <strong><code>clamp()</code></strong> para
+        criar designs responsivos e eficientes. Por exemplo:</p>
+    <pre><code class="language-css">h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+@media (max-width: 600px) {
+    h1 {
+        margin-top: 2rem; /* Ajuste específico para telas pequenas */
+    }
+}
+</code></pre>
+    <p>Neste exemplo:</p>
+    <ul>
+        <li>O tamanho da fonte é ajustado fluidamente com <code>clamp()</code>.</li>
+        <li>A margem superior é ajustada apenas para telas pequenas usando Media Queries.</li>
+    </ul>
+    <hr>
+    <h2 id="5-exemplos-práticos">5. Exemplos Práticos</h2>
+    <h3 id="exemplo-1-layout-responsivo-com-media-queries">Exemplo 1: Layout Responsivo com Media Queries</h3>
+    <pre><code class="language-css">.container {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+}
+</code></pre>
+    <h3 id="exemplo-2-tamanho-de-fonte-fluido-com-clamp">Exemplo 2: Tamanho de Fonte Fluido com <code>clamp()</code>
+    </h3>
+    <pre><code class="language-css">p {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+</code></pre>
+    <h3 id="exemplo-3-combinação-de-media-queries-e-clamp">Exemplo 3: Combinação de Media Queries e <code>clamp()</code>
+    </h3>
+    <pre><code class="language-css">header {
+    padding: clamp(1rem, 5vw, 3rem);
+}
+
+@media (max-width: 600px) {
+    header {
+        text-align: center;
+    }
+}
+</code></pre>
+    <hr>
+    <h2 id="6-boas-práticas">6. Boas Práticas</h2>
+    <ol>
+        <li><strong>Use Media Queries</strong> para mudanças estruturais no layout.</li>
+        <li><strong>Use <code>clamp()</code></strong> para ajustes fluidos de valores numéricos.</li>
+        <li><strong>Combine ambas</strong> quando necessário para criar designs responsivos e eficientes.</li>
+        <li><strong>Teste em diferentes dispositivos</strong> para garantir a compatibilidade.</li>
+    </ol>
+    <hr>
+    <h2 id="conclusão">Conclusão</h2>
+    <p>Tanto <strong>Media Queries</strong> quanto a função <strong><code>clamp()</code></strong> são ferramentas
+        essenciais para criar designs responsivos no CSS. Enquanto as Media Queries permitem ajustes condicionais e
+        mudanças drásticas no layout, a função <code>clamp()</code> oferece uma maneira simples e eficiente de criar
+        valores fluidos e adaptáveis. Combinar essas técnicas pode resultar em designs mais robustos e eficientes.</p>
+    <p>Para mais informações, consulte a <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS">documentação oficial
+            do CSS</a>.</p>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
