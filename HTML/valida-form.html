@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h3 id="validação-de-formulários-com-atributos-html-nativos"><strong>Validação de Formulários com Atributos HTML
+            Nativos</strong></h3>
+    <p>Os navegadores modernos possuem uma validação de formulários interna poderosa, que pode ser usada para garantir
+        que os dados inseridos pelos usuários sejam válidos antes de enviar o formulário. Isso elimina a necessidade de
+        bibliotecas JavaScript pesadas para validação básica. Vamos explorar os principais atributos HTML nativos que
+        você pode usar para validar formulários.</p>
+    <hr>
+    <h2 id="atributos-de-validação-nativos"><strong>Atributos de Validação Nativos</strong></h2>
+    <p>Aqui estão alguns dos atributos HTML mais úteis para validação de formulários:</p>
+    <h3 id="1-required"><strong>1. <code>required</code></strong></h3>
+    <ul>
+        <li><strong>O que faz</strong>: Define que o campo é obrigatório.</li>
+        <li><strong>Exemplo</strong>:
+            <pre><code class="language-html">&lt;input type=&quot;text&quot; name=&quot;nome&quot; required&gt;
+    </code></pre>
+        </li>
+    </ul>
+    <h3 id="2-type"><strong>2. <code>type</code></strong></h3>
+    <ul>
+        <li><strong>O que faz</strong>: Define o tipo de entrada esperada (e-mail, número, URL, etc.).</li>
+        <li><strong>Exemplos</strong>:
+            <pre><code class="language-html">&lt;input type=&quot;email&quot; name=&quot;email&quot; required&gt;
+    &lt;input type=&quot;number&quot; name=&quot;idade&quot; min=&quot;18&quot; max=&quot;99&quot;&gt;
+    &lt;input type=&quot;url&quot; name=&quot;website&quot;&gt;
+    </code></pre>
+        </li>
+    </ul>
+    <h3 id="3-min-e-max"><strong>3. <code>min</code> e <code>max</code></strong></h3>
+    <ul>
+        <li><strong>O que fazem</strong>: Define os valores mínimo e máximo para campos numéricos ou de data.</li>
+        <li><strong>Exemplos</strong>:
+            <pre><code class="language-html">&lt;input type=&quot;number&quot; name=&quot;quantidade&quot; min=&quot;1&quot; max=&quot;10&quot;&gt;
+    &lt;input type=&quot;date&quot; name=&quot;data&quot; min=&quot;2023-01-01&quot; max=&quot;2023-12-31&quot;&gt;
+    </code></pre>
+        </li>
+    </ul>
+    <h3 id="4-minlength-e-maxlength"><strong>4. <code>minlength</code> e <code>maxlength</code></strong></h3>
+    <ul>
+        <li><strong>O que fazem</strong>: Define o comprimento mínimo e máximo do texto.</li>
+        <li><strong>Exemplos</strong>:
+            <pre><code class="language-html">&lt;input type=&quot;text&quot; name=&quot;senha&quot; minlength=&quot;8&quot; maxlength=&quot;20&quot; required&gt;
+    </code></pre>
+        </li>
+    </ul>
+    <h3 id="5-pattern"><strong>5. <code>pattern</code></strong></h3>
+    <ul>
+        <li><strong>O que faz</strong>: Define uma expressão regular para validar o formato do campo.</li>
+        <li><strong>Exemplo</strong>:
+            <pre><code class="language-html">&lt;input type=&quot;text&quot; name=&quot;cep&quot; pattern=&quot;\d{5}-\d{3}&quot; placeholder=&quot;12345-678&quot; required&gt;
+    </code></pre>
+        </li>
+    </ul>
+    <h3 id="6-step"><strong>6. <code>step</code></strong></h3>
+    <ul>
+        <li><strong>O que faz</strong>: Define o incremento para campos numéricos ou de data/hora.</li>
+        <li><strong>Exemplo</strong>:
+            <pre><code class="language-html">&lt;input type=&quot;number&quot; name=&quot;quantidade&quot; min=&quot;0&quot; max=&quot;100&quot; step=&quot;5&quot;&gt;
+    </code></pre>
+        </li>
+    </ul>
+    <h3 id="7-novalidate"><strong>7. <code>novalidate</code></strong></h3>
+    <ul>
+        <li><strong>O que faz</strong>: Desativa a validação nativa do formulário (útil para formulários que usam
+            validação personalizada).</li>
+        <li><strong>Exemplo</strong>:
+            <pre><code class="language-html">&lt;form novalidate&gt;
+      &lt;input type=&quot;email&quot; name=&quot;email&quot; required&gt;
+      &lt;button type=&quot;submit&quot;&gt;Enviar&lt;/button&gt;
+    &lt;/form&gt;
+    </code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h2 id="exemplo-completo-de-formulário-validado"><strong>Exemplo Completo de Formulário Validado</strong></h2>
+    <p>Aqui está um exemplo de formulário que usa vários atributos de validação nativos:</p>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;pt-BR&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        &lt;title&gt;Formulário com Validação Nativa&lt;/title&gt;
+        &lt;style&gt;
+            input:invalid {
+                border-color: #ff0000;
+            }
+            input:valid {
+                border-color: #00ff00;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;form&gt;
+            &lt;label for=&quot;nome&quot;&gt;Nome:&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;nome&quot; name=&quot;nome&quot; required minlength=&quot;3&quot; maxlength=&quot;50&quot;&gt;
+            &lt;br&gt;
+    
+            &lt;label for=&quot;email&quot;&gt;E-mail:&lt;/label&gt;
+            &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required&gt;
+            &lt;br&gt;
+    
+            &lt;label for=&quot;idade&quot;&gt;Idade:&lt;/label&gt;
+            &lt;input type=&quot;number&quot; id=&quot;idade&quot; name=&quot;idade&quot; min=&quot;18&quot; max=&quot;99&quot; required&gt;
+            &lt;br&gt;
+    
+            &lt;label for=&quot;senha&quot;&gt;Senha:&lt;/label&gt;
+            &lt;input type=&quot;password&quot; id=&quot;senha&quot; name=&quot;senha&quot; minlength=&quot;8&quot; maxlength=&quot;20&quot; required&gt;
+            &lt;br&gt;
+    
+            &lt;label for=&quot;website&quot;&gt;Website:&lt;/label&gt;
+            &lt;input type=&quot;url&quot; id=&quot;website&quot; name=&quot;website&quot; placeholder=&quot;https://exemplo.com&quot;&gt;
+            &lt;br&gt;
+    
+            &lt;label for=&quot;cep&quot;&gt;CEP:&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;cep&quot; name=&quot;cep&quot; pattern=&quot;\d{5}-\d{3}&quot; placeholder=&quot;12345-678&quot; required&gt;
+            &lt;br&gt;
+    
+            &lt;button type=&quot;submit&quot;&gt;Enviar&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+    </code></pre>
+    <hr>
+    <h2 id="explicação-do-código"><strong>Explicação do Código</strong></h2>
+    <ol>
+        <li>
+            <p><strong>Validação Nativa</strong>:</p>
+            <ul>
+                <li>O navegador valida automaticamente os campos com base nos atributos definidos.</li>
+                <li>Campos inválidos são destacados com uma borda vermelha (estilo personalizado com
+                    <code>:invalid</code>).</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Estilos Personalizados</strong>:</p>
+            <ul>
+                <li>Use <code>:invalid</code> e <code>:valid</code> para estilizar campos inválidos e válidos,
+                    respectivamente.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Mensagens de Erro</strong>:</p>
+            <ul>
+                <li>O navegador exibe mensagens de erro padrão quando um campo é inválido. Você pode personalizar essas
+                    mensagens usando JavaScript, se necessário.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="vantagens-da-validação-nativa"><strong>Vantagens da Validação Nativa</strong></h2>
+    <ol>
+        <li>
+            <p><strong>Simplicidade</strong>:</p>
+            <ul>
+                <li>Não é necessário adicionar bibliotecas externas ou scripts complexos.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Desempenho</strong>:</p>
+            <ul>
+                <li>A validação é feita diretamente pelo navegador, sem sobrecarregar o JavaScript.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Acessibilidade</strong>:</p>
+            <ul>
+                <li>Os navegadores fornecem mensagens de erro acessíveis para usuários com deficiência visual.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Compatibilidade</strong>:</p>
+            <ul>
+                <li>Funciona em todos os navegadores modernos.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="personalizando-mensagens-de-erro"><strong>Personalizando Mensagens de Erro</strong></h2>
+    <p>Se você quiser personalizar as mensagens de erro, pode usar JavaScript:</p>
+    <pre><code class="language-javascript">document.querySelector(&#39;form&#39;).addEventListener(&#39;submit&#39;, (event) =&gt; {
+        const campo = document.getElementById(&#39;cep&#39;);
+        if (!campo.validity.valid) {
+            campo.setCustomValidity(&#39;Por favor, insira um CEP válido no formato 12345-678.&#39;);
+            campo.reportValidity();
+            event.preventDefault(); // Impede o envio do formulário
+        } else {
+            campo.setCustomValidity(&#39;&#39;); // Limpa a mensagem de erro
+        }
+    });
+    </code></pre>
+    <hr>
+    <h2 id="conclusão"><strong>Conclusão</strong></h2>
+    <p>A validação de formulários com atributos HTML nativos é uma maneira eficiente e poderosa de garantir que os dados
+        inseridos pelos usuários sejam válidos. Use esses atributos para simplificar seu código e melhorar a experiência
+        do usuário.</p>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

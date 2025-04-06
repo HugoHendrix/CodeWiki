@@ -1,6 +1,3 @@
-Claro! Vou explicar os conceitos de **`preconnect`**, **`prefetch`**, e **`preload`**, que são dicas de carregamento de recursos que podem melhorar significativamente o desempenho de uma página. Depois, vou criar uma documentação completa para você consultar sempre que precisar.
-
----
 
 ### **O que são `preconnect`, `prefetch`, e `preload`?**
 Essas são diretivas que você pode adicionar ao HTML para otimizar o carregamento de recursos críticos e melhorar a experiência do usuário. Cada uma tem um propósito específico:

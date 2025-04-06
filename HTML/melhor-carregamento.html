@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h3 id="o-que-são-preconnect-prefetch-e-preload"><strong>O que são <code>preconnect</code>, <code>prefetch</code>, e
+            <code>preload</code>?</strong></h3>
+    <p>Essas são diretivas que você pode adicionar ao HTML para otimizar o carregamento de recursos críticos e melhorar
+        a experiência do usuário. Cada uma tem um propósito específico:</p>
+    <ol>
+        <li>
+            <p><strong><code>preconnect</code></strong>:</p>
+            <ul>
+                <li>Estabelece conexões (DNS, TCP, TLS) com um servidor antecipadamente, antes que o recurso seja
+                    realmente solicitado.</li>
+                <li>Útil para recursos de terceiros, como APIs externas, fontes ou scripts.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>prefetch</code></strong>:</p>
+            <ul>
+                <li>Carrega recursos em segundo plano que podem ser necessários para navegações futuras.</li>
+                <li>Ideal para pré-carregar páginas ou recursos que o usuário provavelmente acessará em seguida.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>preload</code></strong>:</p>
+            <ul>
+                <li>Carrega recursos críticos com alta prioridade, antes que o navegador os descubra naturalmente.</li>
+                <li>Usado para recursos essenciais, como fontes, scripts ou estilos que são necessários no carregamento
+                    inicial da página.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="por-que-usar-essas-dicas"><strong>Por que usar essas dicas?</strong></h3>
+    <ul>
+        <li><strong>Melhoria de desempenho</strong>: Reduz o tempo de carregamento de recursos críticos.</li>
+        <li><strong>Melhor experiência do usuário</strong>: Páginas carregam mais rápido e a navegação se torna mais
+            suave.</li>
+        <li><strong>Otimização de recursos</strong>: O navegador prioriza o que é mais importante, evitando gargalos.
+        </li>
+    </ul>
+    <hr>
+    <h2 id="documentação-preconnect-prefetch-e-preload"><strong>Documentação: <code>preconnect</code>,
+            <code>prefetch</code>, e <code>preload</code></strong></h2>
+    <h3 id="1-preconnect"><strong>1. <code>preconnect</code></strong></h3>
+    <h4 id="o-que-faz"><strong>O que faz?</strong></h4>
+    <p>Estabelece conexões antecipadas com um servidor, economizando tempo quando o recurso for realmente necessário.
+    </p>
+    <h4 id="quando-usar"><strong>Quando usar?</strong></h4>
+    <ul>
+        <li>Para recursos de terceiros, como APIs, fontes externas ou CDNs.</li>
+        <li>Quando você sabe que o usuário precisará de um recurso, mas ainda não o solicitou.</li>
+    </ul>
+    <h4 id="sintaxe"><strong>Sintaxe</strong></h4>
+    <pre><code class="language-html">&lt;link rel=&quot;preconnect&quot; href=&quot;https://exemplo.com&quot;&gt;
+</code></pre>
+    <h4 id="exemplo"><strong>Exemplo</strong></h4>
+    <pre><code class="language-html">&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
+</code></pre>
+    <h4 id="dicas"><strong>Dicas</strong></h4>
+    <ul>
+        <li>Use <code>crossorigin</code> para recursos que exigem permissões CORS (como fontes).</li>
+    </ul>
+    <hr>
+    <h3 id="2-prefetch"><strong>2. <code>prefetch</code></strong></h3>
+    <h4 id="o-que-faz-1"><strong>O que faz?</strong></h4>
+    <p>Pré-carrega recursos em segundo plano que podem ser necessários para navegações futuras.</p>
+    <h4 id="quando-usar-1"><strong>Quando usar?</strong></h4>
+    <ul>
+        <li>Para pré-carregar páginas ou recursos que o usuário provavelmente acessará em seguida (por exemplo, links na
+            página atual).</li>
+    </ul>
+    <h4 id="sintaxe-1"><strong>Sintaxe</strong></h4>
+    <pre><code class="language-html">&lt;link rel=&quot;prefetch&quot; href=&quot;https://exemplo.com/recurso.js&quot; as=&quot;script&quot;&gt;
+</code></pre>
+    <h4 id="exemplo-1"><strong>Exemplo</strong></h4>
+    <pre><code class="language-html">&lt;link rel=&quot;prefetch&quot; href=&quot;/proxima-pagina.html&quot; as=&quot;document&quot;&gt;
+&lt;link rel=&quot;prefetch&quot; href=&quot;/imagens/logo.png&quot; as=&quot;image&quot;&gt;
+</code></pre>
+    <h4 id="dicas-1"><strong>Dicas</strong></h4>
+    <ul>
+        <li>Use o atributo <code>as</code> para especificar o tipo de recurso (<code>script</code>, <code>style</code>,
+            <code>image</code>, <code>document</code>, etc.).</li>
+        <li>Não use para recursos críticos da página atual (use <code>preload</code> para isso).</li>
+    </ul>
+    <hr>
+    <h3 id="3-preload"><strong>3. <code>preload</code></strong></h3>
+    <h4 id="o-que-faz-2"><strong>O que faz?</strong></h4>
+    <p>Carrega recursos críticos com alta prioridade, antes que o navegador os descubra naturalmente.</p>
+    <h4 id="quando-usar-2"><strong>Quando usar?</strong></h4>
+    <ul>
+        <li>Para recursos essenciais que são necessários no carregamento inicial da página, como fontes, scripts ou
+            estilos.</li>
+    </ul>
+    <h4 id="sintaxe-2"><strong>Sintaxe</strong></h4>
+    <pre><code class="language-html">&lt;link rel=&quot;preload&quot; href=&quot;https://exemplo.com/recurso.css&quot; as=&quot;style&quot;&gt;
+</code></pre>
+    <h4 id="exemplo-2"><strong>Exemplo</strong></h4>
+    <pre><code class="language-html">&lt;link rel=&quot;preload&quot; href=&quot;/styles/main.css&quot; as=&quot;style&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;/scripts/app.js&quot; as=&quot;script&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;/fonts/roboto.woff2&quot; as=&quot;font&quot; type=&quot;font/woff2&quot; crossorigin&gt;
+</code></pre>
+    <h4 id="dicas-2"><strong>Dicas</strong></h4>
+    <ul>
+        <li>Sempre use o atributo <code>as</code> para especificar o tipo de recurso.</li>
+        <li>Para fontes, use <code>crossorigin</code> e o atributo <code>type</code> para garantir o carregamento
+            correto.</li>
+    </ul>
+    <hr>
+    <h3 id="comparação-entre-preconnect-prefetch-e-preload"><strong>Comparação entre <code>preconnect</code>,
+            <code>prefetch</code>, e <code>preload</code></strong></h3>
+    <table>
+        <thead>
+            <tr>
+                <th><strong>Diretiva</strong></th>
+                <th><strong>Prioridade</strong></th>
+                <th><strong>Uso</strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>preconnect</code></td>
+                <td>Média</td>
+                <td>Estabelece conexões antecipadas com servidores externos.</td>
+            </tr>
+            <tr>
+                <td><code>prefetch</code></td>
+                <td>Baixa</td>
+                <td>Pré-carrega recursos para navegações.</td>
+            </tr>
+            <tr>
+                <td><code>preload</code></td>
+                <td>Alta</td>
+                <td>Carrega recursos críticos necessários no carregamento inicial da.</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h3 id="boas-práticas"><strong>Boas Práticas</strong></h3>
+    <ol>
+        <li>
+            <p><strong>Use <code>preconnect</code> para recursos de terceiros</strong>:</p>
+            <ul>
+                <li>Fontes externas, APIs ou CDNs.</li>
+                <li>Combine com <code>dns-prefetch</code> para otimização adicional.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Use <code>prefetch</code> para navegações futuras</strong>:</p>
+            <ul>
+                <li>Pré-carregue páginas ou recursos que o usuário provavelmente acessará.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Use <code>preload</code> para recursos críticos</strong>:</p>
+            <ul>
+                <li>Fontes, estilos ou scripts essenciais para o carregamento inicial.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Evite abusar</strong>:</p>
+            <ul>
+                <li>Usar muitas diretivas pode sobrecarregar a rede e prejudicar o desempenho.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="exemplo-completo"><strong>Exemplo Completo</strong></h3>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Exemplo de Otimização&lt;/title&gt;
+
+  &lt;!-- Preconnect para fontes externas --&gt;
+  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
+
+  &lt;!-- Preload para recursos críticos --&gt;
+  &lt;link rel=&quot;preload&quot; href=&quot;/styles/main.css&quot; as=&quot;style&quot;&gt;
+  &lt;link rel=&quot;preload&quot; href=&quot;/scripts/app.js&quot; as=&quot;script&quot;&gt;
+  &lt;link rel=&quot;preload&quot; href=&quot;/fonts/roboto.woff2&quot; as=&quot;font&quot; type=&quot;font/woff2&quot; crossorigin&gt;
+
+  &lt;!-- Prefetch para navegações futuras --&gt;
+  &lt;link rel=&quot;prefetch&quot; href=&quot;/proxima-pagina.html&quot; as=&quot;document&quot;&gt;
+  &lt;link rel=&quot;prefetch&quot; href=&quot;/imagens/logo.png&quot; as=&quot;image&quot;&gt;
+
+  &lt;!-- CSS principal --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;/styles/main.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Página Otimizada&lt;/h1&gt;
+  &lt;script src=&quot;/scripts/app.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    <hr>
+    <h3 id="considerações-finais"><strong>Considerações Finais</strong></h3>
+    <ul>
+        <li>Essas diretivas são poderosas, mas devem ser usadas com cuidado para evitar sobrecarregar a rede.</li>
+        <li>Sempre teste o desempenho da página usando ferramentas como <strong>Lighthouse</strong> ou
+            <strong>WebPageTest</strong>.</li>
+    </ul>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

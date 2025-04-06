@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="documentação-html-skeleton-esqueleto-html">Documentação: HTML Skeleton (Esqueleto HTML)</h1>
+    <p>Baseado no artigo de Josh W. Comeau: <a href="https://www.joshwcomeau.com/snippets/html/html-skeleton/">HTML
+            Skeleton</a></p>
+    <h2 id="visão-geral">Visão Geral</h2>
+    <p>Este documento descreve a estrutura básica (esqueleto) de um documento HTML moderno, incluindo metadados
+        essenciais e configurações recomendadas para melhor desempenho e compatibilidade.</p>
+    <h2 id="estrutura-básica">Estrutura Básica</h2>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Conteúdo da página aqui --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    <h2 id="elementos-explicados">Elementos Explicados</h2>
+    <h3 id="1-doctype-html">1. <code>&lt;!DOCTYPE html&gt;</code></h3>
+    <ul>
+        <li>Define o tipo de documento como HTML5</li>
+        <li>Deve ser a primeira linha em qualquer documento HTML</li>
+        <li>Não é uma tag HTML, mas uma instrução para o navegador</li>
+    </ul>
+    <h3 id="2-html-langen">2. <code>&lt;html lang=&quot;en&quot;&gt;</code></h3>
+    <ul>
+        <li>Elemento raiz do documento</li>
+        <li>O atributo <code>lang</code> define o idioma principal da página (neste caso, inglês)</li>
+        <li>Para português, use <code>lang=&quot;pt&quot;</code> ou <code>lang=&quot;pt-BR&quot;</code></li>
+    </ul>
+    <h3 id="3-seção-head">3. Seção <code>&lt;head&gt;</code></h3>
+    <p>Contém metadados e configurações que não são exibidos diretamente na página:</p>
+    <h4 id="meta-charsetutf-8"><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></h4>
+    <ul>
+        <li>Define a codificação de caracteres como UTF-8</li>
+        <li>Essencial para exibir caracteres especiais e acentos corretamente</li>
+    </ul>
+    <h4 id="meta-nameviewport-contentwidthdevice-width-initial-scale10">
+        <code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</code>
+    </h4>
+    <ul>
+        <li>Configura a viewport para layouts responsivos</li>
+        <li><code>width=device-width</code> faz a página corresponder à largura da tela</li>
+        <li><code>initial-scale=1.0</code> define o nível de zoom inicial</li>
+    </ul>
+    <h4 id="meta-http-equivx-ua-compatible-contentieedge">
+        <code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</code></h4>
+    <ul>
+        <li>Força o Internet Explorer a usar o motor de renderização mais recente</li>
+        <li>Menos relevante hoje em dia, mas ainda usado para compatibilidade</li>
+    </ul>
+    <h4 id="titledocumenttitle"><code>&lt;title&gt;Document&lt;/title&gt;</code></h4>
+    <ul>
+        <li>Define o título da página (mostrado na aba do navegador)</li>
+        <li>Importante para SEO e acessibilidade</li>
+        <li>Substitua &quot;Document&quot; pelo título apropriado da sua página</li>
+    </ul>
+    <h3 id="4-body">4. <code>&lt;body&gt;</code></h3>
+    <ul>
+        <li>Contém todo o conteúdo visível da página</li>
+        <li>Onde você coloca textos, imagens, links e outros elementos HTML</li>
+    </ul>
+    <h2 id="recomendações-adicionais">Recomendações Adicionais</h2>
+    <h3 id="favicon">Favicon</h3>
+    <p>Adicione um favicon (ícone exibido na aba do navegador):</p>
+    <pre><code class="language-html">&lt;link rel=&quot;icon&quot; href=&quot;/favicon.ico&quot; sizes=&quot;any&quot;&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;/icon.svg&quot; type=&quot;image/svg+xml&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;/apple-touch-icon.png&quot;&gt;
+</code></pre>
+    <h3 id="metatags-para-seo">Metatags para SEO</h3>
+    <p>Metadados básicos para melhorar a descoberta:</p>
+    <pre><code class="language-html">&lt;meta name=&quot;description&quot; content=&quot;Uma descrição concisa da sua página&quot;&gt;
+&lt;meta name=&quot;author&quot; content=&quot;Nome do autor&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Título para compartilhamento em redes sociais&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Descrição para compartilhamento&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;imagem-para-compartilhamento.jpg&quot;&gt;
+</code></pre>
+    <h3 id="css-e-javascript">CSS e JavaScript</h3>
+    <ul>
+        <li>Coloque links para CSS no <code>&lt;head&gt;</code></li>
+        <li>Coloque scripts JavaScript antes do fechamento <code>&lt;/body&gt;</code> (a menos que precise carregar
+            antes)</li>
+    </ul>
+    <pre><code class="language-html">&lt;head&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- conteúdo --&gt;
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+    <h2 id="exemplo-completo">Exemplo Completo</h2>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;title&gt;Your Page Title&lt;/title&gt;
+
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+
+  &lt;meta name=&quot;author&quot; content=&quot;Your name&quot;&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;Brief description&quot;&gt;
+
+  &lt;meta property=&quot;og:title&quot; content=&quot;Your Page Title&quot;&gt;
+  &lt;meta property=&quot;og:description&quot; content=&quot;Brief description&quot;&gt;
+  &lt;meta property=&quot;og:image&quot; content=&quot;/some-image.png&quot;&gt;
+  &lt;meta property=&quot;og:url&quot; content=&quot;/this-page.html&quot;&gt;
+  &lt;meta property=&quot;og:site_name&quot; content=&quot;Your Site Name&quot;&gt;
+  &lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+  &lt;meta name=&quot;twitter:image:alt&quot; content=&quot;image description&quot;&gt;
+
+  &lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+  &lt;link rel=&quot;icon&quot; type=&quot;image/svg+xml&quot; href=&quot;/favicon.svg&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;h1&gt;Your content here!&lt;/h1&gt;
+
+  &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;/html&gt;
+</code></pre>
+    <h2 id="observações">Observações</h2>
+    <ul>
+        <li>Este esqueleto é um ponto de partida e pode ser expandido conforme necessário</li>
+        <li>Para projetos mais complexos, considere adicionar mais metatags e recursos</li>
+        <li>Sempre valide seu HTML usando ferramentas como o <a href="https://validator.w3.org/">W3C Validator</a></li>
+    </ul>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
