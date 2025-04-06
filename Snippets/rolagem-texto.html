@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h3 id="rolagem-de-texto-ao-passar-o-mouse">Rolagem de Texto ao Passar o Mouse</h3>
+    <p>Este código cria uma série de &quot;piadas&quot; (ou textos) que, ao passar o mouse, rolam horizontalmente para
+        revelar o conteúdo completo. É uma técnica útil para exibir textos longos em espaços limitados, como manchetes,
+        trechos ou comentários.</p>
+    <p><a href="https://codepen.io/themolitor/live/Jjzxvma/4a4e4787ebd4aad2a91909debef126e6?utm_source=design.dev">Exemplo
+            do código</a></p>
+    <hr>
+    <h2 id="-1-estrutura-html-"><strong>1. Estrutura HTML</strong></h2>
+    <p>O HTML define a estrutura básica da caixa de piadas.</p>
+    <pre><code class="lang-html">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"joke-box"</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"jokes"</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"joke1"</span>&gt;Why can't CSS devs clean their desk?&amp;nbsp; Because everything <span class="hljs-keyword">is</span> !important. 😅&lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"jokes"</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"joke2"</span>&gt;Why did <span class="hljs-keyword">the</span> dev quit their job?&amp;nbsp; They didn't <span class="hljs-keyword">get</span> arrays. 🤣&lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"jokes"</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"joke3"</span>&gt;How do you comfort a JS dev?&amp;nbsp; You console them. 😄&lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;!<span class="hljs-comment">-- Outras piadas seguem a mesma estrutura --&gt;</span>
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    <h3 id="-explica-o-"><strong>Explicação:</strong></h3>
+    <ul>
+        <li><strong><code>#joke-box</code></strong>: Contêiner principal que envolve todas as piadas.</li>
+        <li><strong><code>.jokes</code></strong>: Cada piada é um elemento dentro do contêiner. O texto é exibido em uma
+            única linha.</li>
+        <li><strong><code>&amp;nbsp;</code></strong>: Espaço não quebrável para garantir que o texto não seja dividido
+            em linhas.</li>
+    </ul>
+    <hr>
+    <h2 id="-2-estilos-css-"><strong>2. Estilos CSS</strong></h2>
+    <p>O CSS define o layout e a aparência das piadas.</p>
+    <h3 id="-estilos-globais-"><strong>Estilos Globais</strong></h3>
+    <pre><code class="lang-css">* {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>; <span class="hljs-comment">/* Remove margens padrão */</span>
+}
+
+<span class="hljs-selector-id">#joke-box</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">12px</span>; <span class="hljs-comment">/* Adiciona margem ao contêiner */</span>
+}
+</code></pre>
+    <h3 id="-estilo-das-piadas-"><strong>Estilo das Piadas</strong></h3>
+    <pre><code class="lang-css"><span class="hljs-selector-class">.jokes</span> {
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">60px</span>; <span class="hljs-comment">/* Altura da linha */</span>
+  <span class="hljs-attribute">font-family</span>: sans-serif; <span class="hljs-comment">/* Fonte */</span>
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>; <span class="hljs-comment">/* Bordas arredondadas */</span>
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">26px</span>; <span class="hljs-comment">/* Tamanho da fonte */</span>
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">60px</span>; <span class="hljs-comment">/* Altura fixa */</span>
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">4px</span>; <span class="hljs-comment">/* Margem entre as piadas */</span>
+  <span class="hljs-attribute">display</span>: inline-block; <span class="hljs-comment">/* Exibe as piadas em linha */</span>
+  <span class="hljs-attribute">cursor</span>: help; <span class="hljs-comment">/* Cursor de ajuda ao passar o mouse */</span>
+  <span class="hljs-attribute">box-sizing</span>: border-box; <span class="hljs-comment">/* Inclui padding e borda no cálculo do tamanho */</span>
+  <span class="hljs-attribute">max-width</span>: <span class="hljs-number">100%</span>; <span class="hljs-comment">/* Largura máxima */</span>
+}
+</code></pre>
+    <h3 id="-estilos-individuais-para-cada-piada-"><strong>Estilos Individuais para Cada Piada</strong></h3>
+    <p>Cada piada tem uma largura, cor de texto e fundo personalizados.</p>
+    <pre><code class="lang-css"><span class="hljs-selector-id">#joke1</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">470px</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#1E90FF</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#1E90FF33</span>;
+}
+<span class="hljs-selector-id">#joke2</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">378px</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#FF9D1E</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#FF9D1E36</span>;
+}
+<span class="hljs-selector-id">#joke3</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">380px</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#FF1EDC</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#FF1EDC40</span>;
+}
+<span class="hljs-comment">/* Outras piadas seguem a mesma estrutura */</span>
+</code></pre>
+    <h3 id="-explica-o-"><strong>Explicação:</strong></h3>
+    <ul>
+        <li><strong><code>line-height</code> e <code>height</code></strong>: Garantem que o texto fique centralizado
+            verticalmente.</li>
+        <li><strong><code>display: inline-block;</code></strong>: Permite que as piadas fiquem em linha, mas ainda
+            possam ter largura e altura definidas.</li>
+        <li><strong><code>cursor: help;</code></strong>: Altera o cursor ao passar o mouse, indicando interatividade.
+        </li>
+    </ul>
+    <hr>
+    <h2 id="-3-javascript-"><strong>3. JavaScript</strong></h2>
+    <p>O JavaScript adiciona a funcionalidade de rolagem horizontal ao passar o mouse.</p>
+    <h3 id="-fun-o-principal-"><strong>Função Principal</strong></h3>
+    <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">scrollMeTheWay</span>(<span class="hljs-params">selector, buffer = <span class="hljs-number">20</span>, speed = <span class="hljs-number">2</span></span>) </span>{
+    <span class="hljs-keyword">const</span> elements = <span class="hljs-built_in">document</span>.querySelectorAll(selector);
+
+    elements.forEach(<span class="hljs-function"><span class="hljs-params">element</span> =&gt;</span> {
+        <span class="hljs-comment">// Cria um span para envolver o conteúdo do texto</span>
+        <span class="hljs-keyword">const</span> textContent = element.innerHTML;
+        <span class="hljs-keyword">const</span> textWrapper = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'span'</span>);
+        textWrapper.innerHTML = textContent;
+        textWrapper.style.display = <span class="hljs-string">'inline-block'</span>;
+        textWrapper.style.whiteSpace = <span class="hljs-string">'nowrap'</span>;
+        textWrapper.style.padding = <span class="hljs-string">'0 15px'</span>;
+        element.innerHTML = <span class="hljs-string">''</span>;
+        element.appendChild(textWrapper);
+
+        <span class="hljs-comment">// Aplica estilos ao contêiner</span>
+        element.style.overflow = <span class="hljs-string">'hidden'</span>;
+        element.style.whiteSpace = <span class="hljs-string">'nowrap'</span>;
+        element.style.textOverflow = <span class="hljs-string">'ellipsis'</span>;
+        element.style.position = <span class="hljs-string">'relative'</span>;
+
+        <span class="hljs-keyword">let</span> currentIndent = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">let</span> animationFrameId = <span class="hljs-literal">null</span>;
+
+        <span class="hljs-keyword">const</span> startAnimation = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            <span class="hljs-keyword">const</span> contentWidth = textWrapper.scrollWidth;
+            <span class="hljs-keyword">const</span> containerWidth = element.offsetWidth;
+            <span class="hljs-keyword">const</span> maxIndent = contentWidth - containerWidth + buffer;
+
+            <span class="hljs-keyword">const</span> animate = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                <span class="hljs-keyword">if</span> (currentIndent &lt; maxIndent) {
+                    currentIndent += speed;
+                    textWrapper.style.transform = <span class="hljs-string">`translateX(-<span class="hljs-subst">${currentIndent}</span>px)`</span>;
+                    animationFrameId = requestAnimationFrame(animate);
+                } <span class="hljs-keyword">else</span> {
+                    <span class="hljs-comment">// Para a animação ao chegar ao final</span>
+                    cancelAnimationFrame(animationFrameId);
+                }
+            };
+
+            animationFrameId = requestAnimationFrame(animate);
+        };
+
+        <span class="hljs-keyword">const</span> resetIndent = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            currentIndent = <span class="hljs-number">0</span>;
+            textWrapper.style.transform = <span class="hljs-string">`translateX(0px)`</span>;
+        };
+
+        <span class="hljs-keyword">const</span> stopAnimation = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            <span class="hljs-keyword">if</span> (animationFrameId !== <span class="hljs-literal">null</span>) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = <span class="hljs-literal">null</span>;
+            }
+            resetIndent();
+        };
+
+        element.addEventListener(<span class="hljs-string">'mouseenter'</span>, startAnimation);
+        element.addEventListener(<span class="hljs-string">'mouseleave'</span>, stopAnimation);
+    });
+}
+</code></pre>
+    <h3 id="-inicializa-o-"><strong>Inicialização</strong></h3>
+    <pre><code class="lang-javascript"><span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">'DOMContentLoaded'</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    const jokes = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.jokes'</span>);
+    <span class="hljs-keyword">if</span> (jokes.length &gt; <span class="hljs-number">0</span>) {
+        scrollMeTheWay(<span class="hljs-string">'.jokes'</span>, <span class="hljs-number">20</span>, <span class="hljs-number">2</span>);
+    }
+});
+</code></pre>
+    <h3 id="-explica-o-"><strong>Explicação:</strong></h3>
+    <ol>
+        <li>
+            <p><strong><code>scrollMeTheWay()</code></strong>:</p>
+            <ul>
+                <li>Envolve o conteúdo de cada piada em um <code>&lt;span&gt;</code> para facilitar a animação.</li>
+                <li>Calcula a largura do conteúdo e do contêiner para determinar o ponto final da rolagem.</li>
+                <li>Usa <code>requestAnimationFrame</code> para criar uma animação suave.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Eventos</strong>:</p>
+            <ul>
+                <li><strong><code>mouseenter</code></strong>: Inicia a animação de rolagem.</li>
+                <li><strong><code>mouseleave</code></strong>: Para a animação e retorna o texto à posição inicial.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Parâmetros</strong>:</p>
+            <ul>
+                <li><strong><code>buffer</code></strong>: Espaço adicional após o término do texto.</li>
+                <li><strong><code>speed</code></strong>: Velocidade da rolagem.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="-4-como-funciona-a-rolagem-"><strong>4. Como Funciona a Rolagem?</strong></h2>
+    <ul>
+        <li>Ao passar o mouse sobre uma piada, o texto rola horizontalmente para revelar o conteúdo completo.</li>
+        <li>Quando o mouse é retirado, o texto retorna à posição inicial.</li>
+    </ul>
+    <hr>
+    <h2 id="-5-exemplo-completo-"><strong>5. Exemplo Completo</strong></h2>
+    <p>Aqui está o código completo para você testar:</p>
+    <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"pt-BR"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Rolagem de Texto ao Passar o Mouse<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        * {
+            <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+        }
+        <span class="hljs-selector-id">#joke-box</span> {
+            <span class="hljs-attribute">margin</span>: <span class="hljs-number">12px</span>;
+        }
+        <span class="hljs-selector-class">.jokes</span> {
+            <span class="hljs-attribute">line-height</span>: <span class="hljs-number">60px</span>;
+            <span class="hljs-attribute">font-family</span>: sans-serif;
+            <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+            <span class="hljs-attribute">font-size</span>: <span class="hljs-number">26px</span>;
+            <span class="hljs-attribute">height</span>: <span class="hljs-number">60px</span>;
+            <span class="hljs-attribute">margin</span>: <span class="hljs-number">4px</span>;
+            <span class="hljs-attribute">display</span>: inline-block;
+            <span class="hljs-attribute">cursor</span>: help;
+            <span class="hljs-attribute">box-sizing</span>: border-box;
+            <span class="hljs-attribute">max-width</span>: <span class="hljs-number">100%</span>;
+        }
+        <span class="hljs-selector-id">#joke1</span> { <span class="hljs-attribute">width</span>: <span class="hljs-number">470px</span>; <span class="hljs-attribute">color</span>: <span class="hljs-number">#1E90FF</span>; <span class="hljs-attribute">background</span>: <span class="hljs-number">#1E90FF33</span>; }
+        <span class="hljs-selector-id">#joke2</span> { <span class="hljs-attribute">width</span>: <span class="hljs-number">378px</span>; <span class="hljs-attribute">color</span>: <span class="hljs-number">#FF9D1E</span>; <span class="hljs-attribute">background</span>: <span class="hljs-number">#FF9D1E36</span>; }
+        <span class="hljs-selector-id">#joke3</span> { <span class="hljs-attribute">width</span>: <span class="hljs-number">380px</span>; <span class="hljs-attribute">color</span>: <span class="hljs-number">#FF1EDC</span>; <span class="hljs-attribute">background</span>: <span class="hljs-number">#FF1EDC40</span>; }
+        <span class="hljs-comment">/* Adicione mais estilos para outras piadas */</span>
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"joke-box"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"jokes"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"joke1"</span>&gt;</span>Why can't CSS devs clean their desk?&amp;nbsp; Because everything is !important. 😅<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"jokes"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"joke2"</span>&gt;</span>Why did the dev quit their job?&amp;nbsp; They didn't get arrays. 🤣<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"jokes"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"joke3"</span>&gt;</span>How do you comfort a JS dev?&amp;nbsp; You console them. 😄<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- Adicione mais piadas aqui --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">scrollMeTheWay</span>(<span class="hljs-params">selector, buffer = <span class="hljs-number">20</span>, speed = <span class="hljs-number">2</span></span>) </span>{
+            <span class="hljs-keyword">const</span> elements = <span class="hljs-built_in">document</span>.querySelectorAll(selector);
+
+            elements.forEach(<span class="hljs-function"><span class="hljs-params">element</span> =&gt;</span> {
+                <span class="hljs-keyword">const</span> textContent = element.innerHTML;
+                <span class="hljs-keyword">const</span> textWrapper = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'span'</span>);
+                textWrapper.innerHTML = textContent;
+                textWrapper.style.display = <span class="hljs-string">'inline-block'</span>;
+                textWrapper.style.whiteSpace = <span class="hljs-string">'nowrap'</span>;
+                textWrapper.style.padding = <span class="hljs-string">'0 15px'</span>;
+                element.innerHTML = <span class="hljs-string">''</span>;
+                element.appendChild(textWrapper);
+
+                element.style.overflow = <span class="hljs-string">'hidden'</span>;
+                element.style.whiteSpace = <span class="hljs-string">'nowrap'</span>;
+                element.style.textOverflow = <span class="hljs-string">'ellipsis'</span>;
+                element.style.position = <span class="hljs-string">'relative'</span>;
+
+                <span class="hljs-keyword">let</span> currentIndent = <span class="hljs-number">0</span>;
+                <span class="hljs-keyword">let</span> animationFrameId = <span class="hljs-literal">null</span>;
+
+                <span class="hljs-keyword">const</span> startAnimation = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                    <span class="hljs-keyword">const</span> contentWidth = textWrapper.scrollWidth;
+                    <span class="hljs-keyword">const</span> containerWidth = element.offsetWidth;
+                    <span class="hljs-keyword">const</span> maxIndent = contentWidth - containerWidth + buffer;
+
+                    <span class="hljs-keyword">const</span> animate = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                        <span class="hljs-keyword">if</span> (currentIndent &lt; maxIndent) {
+                            currentIndent += speed;
+                            textWrapper.style.transform = <span class="hljs-string">`translateX(-<span class="hljs-subst">${currentIndent}</span>px)`</span>;
+                            animationFrameId = requestAnimationFrame(animate);
+                        } <span class="hljs-keyword">else</span> {
+                            cancelAnimationFrame(animationFrameId);
+                        }
+                    };
+
+                    animationFrameId = requestAnimationFrame(animate);
+                };
+
+                <span class="hljs-keyword">const</span> resetIndent = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                    currentIndent = <span class="hljs-number">0</span>;
+                    textWrapper.style.transform = <span class="hljs-string">`translateX(0px)`</span>;
+                };
+
+                <span class="hljs-keyword">const</span> stopAnimation = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+                    <span class="hljs-keyword">if</span> (animationFrameId !== <span class="hljs-literal">null</span>) {
+                        cancelAnimationFrame(animationFrameId);
+                        animationFrameId = <span class="hljs-literal">null</span>;
+                    }
+                    resetIndent();
+                };
+
+                element.addEventListener(<span class="hljs-string">'mouseenter'</span>, startAnimation);
+                element.addEventListener(<span class="hljs-string">'mouseleave'</span>, stopAnimation);
+            });
+        }
+
+        <span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">'DOMContentLoaded'</span>, () =&gt; {
+            <span class="hljs-keyword">const</span> jokes = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.jokes'</span>);
+            <span class="hljs-keyword">if</span> (jokes.length &gt; <span class="hljs-number">0</span>) {
+                scrollMeTheWay(<span class="hljs-string">'.jokes'</span>, <span class="hljs-number">20</span>, <span class="hljs-number">2</span>);
+            }
+        });
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+    <hr>
+    <h2 id="-6-considera-es-finais-"><strong>6. Considerações Finais</strong></h2>
+    <ul>
+        <li><strong>Responsividade</strong>: O código já é responsivo, mas você pode ajustar os tamanhos das piadas para
+            diferentes dispositivos.</li>
+        <li><strong>Desempenho</strong>: Teste a animação em dispositivos móveis para garantir que seja suave.</li>
+        <li><strong>Personalização</strong>: Altere a velocidade da rolagem, as cores ou o efeito de hover para se
+            adequar ao seu projeto.</li>
+    </ul>
+    <hr>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
