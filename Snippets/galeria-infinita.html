@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h3 id="galeria-de-imagens-com-rolagem-infinita">Galeria de Imagens com Rolagem Infinita</h3>
+    <p>Este código cria uma galeria de imagens com rolagem infinita, onde as imagens se movem continuamente da direita
+        para
+        a esquerda. Vamos detalhar cada parte do código (HTML, CSS e JavaScript) para entender como ele funciona.</p>
+    <p><a href="https://hugohendrix.github.io/galeria-one-piece/">Galeria One Piece</a></p>
+    <hr>
+    <h2 id="-1-estrutura-html-"><strong>1. Estrutura HTML</strong></h2>
+    <p>O HTML define a estrutura básica da galeria de imagens.</p>
+    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"photo-gallery-container"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"photo-gallery"</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- Imagens com links --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"photo-link"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"URL_IMAGEM_LARGA"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"photo"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"URL_THUMBNAIL"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Descrição da Imagem"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- Outras imagens seguem a mesma estrutura --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+    <h3 id="-explica-o-"><strong>Explicação:</strong></h3>
+    <ul>
+        <li><strong><code>#photo-gallery-container</code></strong>: Contêiner principal que envolve a galeria.</li>
+        <li><strong><code>#photo-gallery</code></strong>: Contêiner que hospeda as imagens e seus links.</li>
+        <li><strong><code>.photo-link</code></strong>: Links que envolvem as imagens. Cada link contém uma imagem
+            (<code>&lt;img&gt;</code>).</li>
+        <li><strong><code>.photo</code></strong>: As imagens em si, que são exibidas como thumbnails.</li>
+    </ul>
+    <hr>
+    <h2 id="-2-estilos-css-"><strong>2. Estilos CSS</strong></h2>
+    <p>O CSS define o layout e a aparência da galeria.</p>
+    <h3 id="-configura-o-b-sica-"><strong>Configuração Básica</strong></h3>
+    <pre><code class="lang-css"><span class="hljs-selector-id">#photo-gallery-container</span> {
+    <span class="hljs-attribute">white-space</span>: nowrap; <span class="hljs-comment">/* Impede que as imagens quebrem para a próxima linha */</span>
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100vw</span>; <span class="hljs-comment">/* Ocupa toda a largura da viewport */</span>
+    <span class="hljs-attribute">position</span>: fixed; <span class="hljs-comment">/* Fixa o contêiner na tela */</span>
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>; <span class="hljs-comment">/* Centraliza verticalmente */</span>
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(-50%); <span class="hljs-comment">/* Ajusta a centralização */</span>
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">3vh</span> <span class="hljs-number">0</span>; <span class="hljs-comment">/* Adiciona padding vertical */</span>
+}
+
+<span class="hljs-selector-id">#photo-gallery</span> {
+    <span class="hljs-attribute">display</span>: inline-block; <span class="hljs-comment">/* Permite que as imagens fiquem em linha */</span>
+    <span class="hljs-attribute">width</span>: max-content; <span class="hljs-comment">/* A largura se ajusta ao conteúdo */</span>
+}
+</code></pre>
+    <h3 id="-estilo-das-imagens-"><strong>Estilo das Imagens</strong></h3>
+    <pre><code class="lang-css"><span class="hljs-selector-class">.photo-link</span> {
+    <span class="hljs-attribute">display</span>: inline-block; <span class="hljs-comment">/* Exibe os links em linha */</span>
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">33vh</span>; <span class="hljs-comment">/* Largura fixa para cada imagem */</span>
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">33vh</span>; <span class="hljs-comment">/* Altura fixa para cada imagem */</span>
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">3vh</span>; <span class="hljs-comment">/* Margem entre as imagens */</span>
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>; <span class="hljs-comment">/* Bordas arredondadas */</span>
+    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">12.5px</span> <span class="hljs-number">12.5px</span> <span class="hljs-built_in">rgba</span>(0, 0, 0, .15); <span class="hljs-comment">/* Sombra */</span>
+    <span class="hljs-attribute">overflow</span>: hidden; <span class="hljs-comment">/* Esconde partes da imagem que ultrapassam o contêiner */</span>
+    <span class="hljs-attribute">transition</span>: transform <span class="hljs-number">0.3s</span>; <span class="hljs-comment">/* Animação de escala ao passar o mouse */</span>
+}
+
+<span class="hljs-selector-class">.photo-link</span><span class="hljs-selector-pseudo">:hover</span> {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(1.15); <span class="hljs-comment">/* Aumenta a imagem ao passar o mouse */</span>
+}
+
+<span class="hljs-selector-class">.photo</span> {
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>; <span class="hljs-comment">/* Ocupa 100% da largura do link */</span>
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>; <span class="hljs-comment">/* Ocupa 100% da altura do link */</span>
+    <span class="hljs-attribute">object-fit</span>: cover; <span class="hljs-comment">/* Garante que a imagem cubra o espaço sem distorcer */</span>
+}
+</code></pre>
+    <h3 id="-explica-o-"><strong>Explicação:</strong></h3>
+    <ul>
+        <li><strong><code>white-space: nowrap;</code></strong>: Mantém as imagens em uma única linha.</li>
+        <li><strong><code>position: fixed;</code></strong>: Fixa a galeria na tela, independente da rolagem da página.
+        </li>
+        <li><strong><code>transform: translateY(-50%);</code></strong>: Centraliza verticalmente o contêiner.</li>
+        <li><strong><code>object-fit: cover;</code></strong>: Garante que as imagens cubram o espaço sem distorcer.</li>
+    </ul>
+    <hr>
+    <h2 id="-3-javascript-"><strong>3. JavaScript</strong></h2>
+    <p>O JavaScript cria a rolagem infinita e replica os itens da galeria para criar um efeito contínuo.</p>
+    <h3 id="-fun-o-principal-"><strong>Função Principal</strong></h3>
+    <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initInfiniteCarousel</span>(<span class="hljs-params">selector, speed</span>) </span>{
+    <span class="hljs-keyword">const</span> carousel = <span class="hljs-built_in">document</span>.querySelector(selector);
+    <span class="hljs-keyword">if</span> (!carousel) <span class="hljs-keyword">return</span>;
+
+    <span class="hljs-keyword">const</span> originalItems = <span class="hljs-built_in">Array</span>.from(carousel.querySelectorAll(<span class="hljs-string">'a'</span>));
+    <span class="hljs-keyword">let</span> totalScroll = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">let</span> singleCycleWidth = <span class="hljs-number">0</span>;
+
+    <span class="hljs-comment">// Clonar itens até preencher a tela</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fillCarousel</span>(<span class="hljs-params"></span>) </span>{
+        singleCycleWidth = originalItems.reduce(<span class="hljs-function">(<span class="hljs-params">acc, item</span>) =&gt;</span> {
+            <span class="hljs-keyword">return</span> acc + item.offsetWidth + <span class="hljs-built_in">parseFloat</span>(getComputedStyle(item).marginRight);
+        }, <span class="hljs-number">0</span>);
+
+        <span class="hljs-keyword">const</span> numClones = <span class="hljs-built_in">Math</span>.ceil(<span class="hljs-built_in">window</span>.innerWidth / singleCycleWidth) * <span class="hljs-number">2</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; numClones; i++) {
+            originalItems.forEach(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> {
+                <span class="hljs-keyword">const</span> clone = item.cloneNode(<span class="hljs-literal">true</span>);
+                clone.classList.add(<span class="hljs-string">'clone'</span>);
+                carousel.appendChild(clone);
+            });
+        }
+    }
+
+    <span class="hljs-comment">// Animar a rolagem</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">animateScroll</span>(<span class="hljs-params"></span>) </span>{
+        totalScroll += speed;
+        <span class="hljs-keyword">if</span> (totalScroll &gt;= singleCycleWidth) totalScroll = <span class="hljs-number">0</span>;
+        carousel.style.transform = <span class="hljs-string">`translateX(-<span class="hljs-subst">${totalScroll}</span>px)`</span>;
+        requestAnimationFrame(animateScroll);
+    }
+
+    fillCarousel();
+    animateScroll();
+}
+</code></pre>
+    <h3 id="-configura-o-"><strong>Configuração</strong></h3>
+    <pre><code class="lang-javascript"><span class="hljs-selector-tag">initInfiniteCarousel</span>(<span class="hljs-string">'#photo-gallery'</span>, <span class="hljs-number">1</span>);
+</code></pre>
+    <h3 id="-debounce-opcional-"><strong>Debounce (Opcional)</strong></h3>
+    <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">debounce</span>(<span class="hljs-params">func, wait</span>) </span>{
+    <span class="hljs-keyword">let</span> timeout;
+    <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">...args</span>) =&gt;</span> {
+        clearTimeout(timeout);
+        timeout = setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> func.apply(<span class="hljs-keyword">this</span>, args), wait);
+    };
+}
+</code></pre>
+    <h3 id="-explica-o-"><strong>Explicação:</strong></h3>
+    <ol>
+        <li>
+            <p><strong><code>fillCarousel()</code></strong>:</p>
+            <ul>
+                <li>Calcula a largura total de um ciclo de imagens (<code>singleCycleWidth</code>).</li>
+                <li>Clona os itens originais para preencher a tela e criar o efeito de rolagem infinita.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>animateScroll()</code></strong>:</p>
+            <ul>
+                <li>Move a galeria para a esquerda (<code>translateX</code>) continuamente.</li>
+                <li>Quando a rolagem atinge o final de um ciclo, ela reinicia.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>initInfiniteCarousel()</code></strong>:</p>
+            <ul>
+                <li>Inicializa a galeria com a velocidade de rolagem especificada.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>debounce()</code></strong>:</p>
+            <ul>
+                <li>Evita execuções excessivas em eventos como redimensionamento da tela (<code>resize</code>).</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="-4-como-funciona-o-efeito-de-rolagem-infinita-"><strong>4. Como Funciona o Efeito de Rolagem
+            Infinita?</strong>
+    </h2>
+    <ul>
+        <li>As imagens são clonadas várias vezes para criar uma sequência contínua.</li>
+        <li>A galeria é movida para a esquerda usando <code>transform: translateX</code>.</li>
+        <li>Quando a rolagem atinge o final de um ciclo, ela reinicia, criando a ilusão de uma rolagem infinita.</li>
+    </ul>
+    <hr>
+    <h2 id="-5-exemplo-pr-tico-"><strong>5. Exemplo Prático</strong></h2>
+    <p>Aqui está o código completo para você testar:</p>
+    <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"pt-BR"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Galeria com Rolagem Infinita<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <span class="hljs-selector-id">#photo-gallery-container</span> {
+            <span class="hljs-attribute">white-space</span>: nowrap;
+            <span class="hljs-attribute">width</span>: <span class="hljs-number">100vw</span>;
+            <span class="hljs-attribute">position</span>: fixed;
+            <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;
+            <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(-50%);
+            <span class="hljs-attribute">padding</span>: <span class="hljs-number">3vh</span> <span class="hljs-number">0</span>;
+        }
+        <span class="hljs-selector-id">#photo-gallery</span> {
+            <span class="hljs-attribute">display</span>: inline-block;
+            <span class="hljs-attribute">width</span>: max-content;
+        }
+        <span class="hljs-selector-class">.photo-link</span> {
+            <span class="hljs-attribute">display</span>: inline-block;
+            <span class="hljs-attribute">width</span>: <span class="hljs-number">33vh</span>;
+            <span class="hljs-attribute">height</span>: <span class="hljs-number">33vh</span>;
+            <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">3vh</span>;
+            <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+            <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">12.5px</span> <span class="hljs-number">12.5px</span> <span class="hljs-built_in">rgba</span>(0, 0, 0, .15);
+            <span class="hljs-attribute">overflow</span>: hidden;
+            <span class="hljs-attribute">transition</span>: transform <span class="hljs-number">0.3s</span>;
+        }
+        <span class="hljs-selector-class">.photo-link</span><span class="hljs-selector-pseudo">:hover</span> {
+            <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(1.15);
+        }
+        <span class="hljs-selector-class">.photo</span> {
+            <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+            <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+            <span class="hljs-attribute">object-fit</span>: cover;
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"photo-gallery-container"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"photo-gallery"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"photo-link"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"URL_IMAGEM_LARGA"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"photo"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"URL_THUMBNAIL"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Descrição da Imagem"</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+            <span class="hljs-comment">&lt;!-- Adicione mais imagens aqui --&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initInfiniteCarousel</span>(<span class="hljs-params">selector, speed</span>) </span>{
+            <span class="hljs-keyword">const</span> carousel = <span class="hljs-built_in">document</span>.querySelector(selector);
+            <span class="hljs-keyword">if</span> (!carousel) <span class="hljs-keyword">return</span>;
+
+            <span class="hljs-keyword">const</span> originalItems = <span class="hljs-built_in">Array</span>.from(carousel.querySelectorAll(<span class="hljs-string">'a'</span>));
+            <span class="hljs-keyword">let</span> totalScroll = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">let</span> singleCycleWidth = <span class="hljs-number">0</span>;
+
+            <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fillCarousel</span>(<span class="hljs-params"></span>) </span>{
+                singleCycleWidth = originalItems.reduce(<span class="hljs-function">(<span class="hljs-params">acc, item</span>) =&gt;</span> {
+                    <span class="hljs-keyword">return</span> acc + item.offsetWidth + <span class="hljs-built_in">parseFloat</span>(getComputedStyle(item).marginRight);
+                }, <span class="hljs-number">0</span>);
+
+                <span class="hljs-keyword">const</span> numClones = <span class="hljs-built_in">Math</span>.ceil(<span class="hljs-built_in">window</span>.innerWidth / singleCycleWidth) * <span class="hljs-number">2</span>;
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; numClones; i++) {
+                    originalItems.forEach(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> {
+                        <span class="hljs-keyword">const</span> clone = item.cloneNode(<span class="hljs-literal">true</span>);
+                        clone.classList.add(<span class="hljs-string">'clone'</span>);
+                        carousel.appendChild(clone);
+                    });
+                }
+            }
+
+            <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">animateScroll</span>(<span class="hljs-params"></span>) </span>{
+                totalScroll += speed;
+                <span class="hljs-keyword">if</span> (totalScroll &gt;= singleCycleWidth) totalScroll = <span class="hljs-number">0</span>;
+                carousel.style.transform = <span class="hljs-string">`translateX(-<span class="hljs-subst">${totalScroll}</span>px)`</span>;
+                requestAnimationFrame(animateScroll);
+            }
+
+            fillCarousel();
+            animateScroll();
+        }
+
+        initInfiniteCarousel(<span class="hljs-string">'#photo-gallery'</span>, <span class="hljs-number">1</span>);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+    <hr>
+    <h2 id="-6-considera-es-finais-"><strong>6. Considerações Finais</strong></h2>
+    <ul>
+        <li><strong>Responsividade</strong>: O código já é responsivo, mas você pode ajustar os tamanhos das imagens e
+            margens para diferentes dispositivos.</li>
+        <li><strong>Desempenho</strong>: Em dispositivos móveis ou com muitas imagens, teste o desempenho para garantir
+            que
+            a animação seja suave.</li>
+        <li><strong>Personalização</strong>: Altere a velocidade da rolagem, o tamanho das imagens ou o efeito de hover
+            para
+            se adequar ao seu projeto.</li>
+    </ul>
+    <hr>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
