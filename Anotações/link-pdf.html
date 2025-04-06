@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h3 id="como-adicionar-link-para-pdf-no-seu-site">Como Adicionar Link para PDF no Seu Site</h3>
+    <p>Você tem duas opções principais para disponibilizar um PDF:</p>
+    <h4 id="1-link-para-download-do-pdf-">1. Link para Download do PDF:</h4>
+    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"caminho/do/arquivo.pdf"</span> <span class="hljs-attr">download</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button"</span>&gt;</span>
+   📥 Baixar Relatório Completo (PDF)
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+    <h4 id="2-link-para-abrir-pdf-em-nova-aba-">2. Link para Abrir PDF em Nova Aba:</h4>
+    <pre><code class="lang-html">&lt;<span class="hljs-keyword">a</span> href=<span class="hljs-string">"caminho/do/arquivo.pdf"</span> target=<span class="hljs-string">"_blank"</span> <span class="hljs-built_in">rel</span>=<span class="hljs-string">"noopener noreferrer"</span> class=<span class="hljs-string">"button"</span>&gt;
+   📄 Ver Relatório Completo (PDF)
+&lt;/<span class="hljs-keyword">a</span>&gt;
+</code></pre>
+    <p><strong>Observação</strong>: Certifique-se que o arquivo PDF está na pasta do seu site ou num local acessível
+        pela web. Teste sempre os links após publicar o site.</p>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
