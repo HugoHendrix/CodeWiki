@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h1 id="tutorial-c-digo-para-desligar-o-computador-usando-vbscript">Tutorial: Código para Desligar o Computador
+        usando VBScript</h1>
+    <p>Este tutorial explica um script simples em VBScript que desliga o computador imediatamente.</p>
+    <h2 id="o-c-digo-completo">O Código Completo</h2>
+    <pre><code class="lang-vbscript"><span class="hljs-keyword">Set</span> objShell <span class="hljs-comment">= CreateObject(</span><span class="hljs-comment">"WScript.Shell"</span><span class="hljs-comment">)</span>
+objShell.Run <span class="hljs-comment">"shutdown -s -t 0"</span><span class="hljs-comment">, 0, False</span>
+</code></pre>
+    <h2 id="explica-o-linha-por-linha">Explicação Linha por Linha</h2>
+    <h3 id="linha-1-set-objshell-createobject-wscript-shell-">Linha 1:
+        <code>Set objShell = CreateObject(&quot;WScript.Shell&quot;)</code></h3>
+    <ul>
+        <li><strong><code>CreateObject(&quot;WScript.Shell&quot;)</code></strong>: Cria um objeto que permite interagir
+            com o shell (interface de sistema) do Windows.</li>
+        <li><strong><code>Set objShell =</code></strong>: Atribui este objeto à variável <code>objShell</code> para que
+            possamos usá-lo posteriormente.</li>
+        <li>Esta linha basicamente nos dá acesso a funções do sistema operacional.</li>
+    </ul>
+    <h3 id="linha-2-objshell-run-shutdown-s-t-0-0-false-">Linha 2:
+        <code>objShell.Run &quot;shutdown -s -t 0&quot;, 0, False</code></h3>
+    <p>Esta linha executa o comando de desligamento com três parâmetros:</p>
+    <ol>
+        <li>
+            <p><strong><code>&quot;shutdown -s -t 0&quot;</code></strong>: O comando a ser executado</p>
+            <ul>
+                <li><code>shutdown</code>: Comando do Windows para desligar/reniciar</li>
+                <li><code>-s</code>: Flag para desligar (shutdown)</li>
+                <li><code>-t 0</code>: Define o tempo de espera em segundos (0 = imediatamente)</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>0</code></strong>: Define como a janela será exibida</p>
+            <ul>
+                <li><code>0</code> = Janela oculta (não será mostrada para o usuário)</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>False</code></strong>: Indica que o script não deve esperar o comando terminar para
+                continuar</p>
+            <ul>
+                <li>Se fosse <code>True</code>, o script esperaria o computador desligar antes de continuar (o que não
+                    faria sentido neste caso)</li>
+            </ul>
+        </li>
+    </ol>
+    <h2 id="como-usar">Como Usar</h2>
+    <ol>
+        <li>Abra o Bloco de Notas ou outro editor de texto simples</li>
+        <li>Copie e cole o código acima</li>
+        <li>Salve o arquivo com extensão <code>.vbs</code> (por exemplo: <code>desligar.vbs</code>)</li>
+        <li>Execute o arquivo salvo (dê duplo clique)</li>
+    </ol>
+    <h2 id="avisos-importantes">Avisos Importantes</h2>
+    <ul>
+        <li>Este script desliga o computador <strong>imediatamente</strong> sem dar chance de salvar trabalhos não
+            salvos.</li>
+        <li>O desligamento é forçado - programas podem não ter tempo de fechar corretamente.</li>
+        <li>Para uso seguro, considere alterar <code>-t 0</code> para <code>-t 60</code> (dá 1 minuto antes de
+            desligar).</li>
+    </ul>
+    <h2 id="alternativas-teis">Alternativas Úteis</h2>
+    <p>Para reiniciar em vez de desligar:</p>
+    <pre><code class="lang-vbscript">objShell.<span class="hljs-built_in">Run</span> <span class="hljs-string">"shutdown -r -t 0"</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">False</span>
+</code></pre>
+    <p>Para desligar com tempo de espera (30 segundos):</p>
+    <pre><code class="lang-vbscript">objShell.<span class="hljs-built_in">Run</span> <span class="hljs-string">"shutdown -s -t 30"</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">False</span>
+</code></pre>
+    <p>Para cancelar um desligamento programado:</p>
+    <pre><code class="lang-vbscript">objShell.<span class="hljs-built_in">Run</span> <span class="hljs-string">"shutdown -a"</span>, <span class="hljs-number">0</span>, <span class="hljs-literal">False</span>
+</code></pre>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

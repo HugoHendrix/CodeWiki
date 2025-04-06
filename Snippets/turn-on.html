@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h1 id="documenta-o-do-script-batch">Documentação do Script Batch</h1>
+    <h2 id="vis-o-geral">Visão Geral</h2>
+    <p>Este script batch automatiza a abertura de diversos aplicativos e altera diretórios de trabalho para garantir que
+        os programas sejam iniciados corretamente.</p>
+    <pre><code class="lang-batch">@<span class="hljs-built_in">ECHO</span> OFF
+<span class="hljs-comment">
+REM Alterando o diretório e iniciando o "Trafegus"</span>
+<span class="hljs-built_in">CD</span> "C:\Users<span class="hljs-variable">%username%</span>\Documents\Trafegus"
+<span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXIST</span> "trafegus.exe" (
+<span class="hljs-built_in">start</span> trafegus.exe
+) <span class="hljs-keyword">ELSE</span> (
+<span class="hljs-built_in">ECHO</span> "O arquivo trafegus.exe não foi encontrado!"
+)
+<span class="hljs-comment">
+REM Executando "OnixClientV4" do Trucks Control</span>
+<span class="hljs-built_in">CD</span> "C:\Program Files (x86)\Trucks Control\New Enterprise"
+<span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXIST</span> "OnixClientV4.exe" (
+<span class="hljs-built_in">start</span> OnixClientV4.exe
+) <span class="hljs-keyword">ELSE</span> (
+<span class="hljs-built_in">ECHO</span> "O arquivo OnixClientV4.exe não foi encontrado!"
+)
+<span class="hljs-comment">
+REM Instalando o Software SASGC</span>
+<span class="hljs-built_in">CD</span> "C:\Users\Operador\Desktop\Setup_SASGC_4.<span class="hljs-number">10</span>.<span class="hljs-number">0</span>"
+<span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXIST</span> "sasgc-<span class="hljs-number">4</span>.<span class="hljs-number">10</span>.<span class="hljs-number">0</span>.exe" (
+<span class="hljs-built_in">start</span> sasgc-<span class="hljs-number">4</span>.<span class="hljs-number">10</span>.<span class="hljs-number">0</span>.exe
+) <span class="hljs-keyword">ELSE</span> (
+<span class="hljs-built_in">ECHO</span> "O arquivo sasgc-<span class="hljs-number">4</span>.<span class="hljs-number">10</span>.<span class="hljs-number">0</span>.exe não foi encontrado!"
+)
+<span class="hljs-comment">
+REM Executando "EZModRas" do SAVER2000</span>
+<span class="hljs-built_in">CD</span> "C:\SAVER2000\MR"
+<span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXIST</span> "EZModRas.exe" (
+<span class="hljs-built_in">start</span> EZModRas.exe
+) <span class="hljs-keyword">ELSE</span> (
+<span class="hljs-built_in">ECHO</span> "O arquivo EZModRas.exe não foi encontrado!"
+)
+<span class="hljs-comment">
+REM Executando "MicroSIP"</span>
+<span class="hljs-built_in">CD</span> "C:\Users\Operador\AppData\Local\MicroSIP"
+<span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXIST</span> "microsip.exe" (
+<span class="hljs-built_in">start</span> microsip.exe
+) <span class="hljs-keyword">ELSE</span> (
+<span class="hljs-built_in">ECHO</span> "O arquivo microsip.exe não foi encontrado!"
+)
+<span class="hljs-comment">
+REM Abrindo Aplicativos Gerais</span>
+<span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXIST</span> "C:\Program Files\Google\Chrome\Application\chrome.exe" (
+<span class="hljs-built_in">start</span> CHROME.EXE
+) <span class="hljs-keyword">ELSE</span> (
+<span class="hljs-built_in">ECHO</span> "Google Chrome não encontrado!"
+)
+
+<span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXIST</span> "C:\Program Files\Microsoft Office\root\Office16\OUTLOOK.EXE" (
+<span class="hljs-built_in">start</span> OUTLOOK.EXE
+) <span class="hljs-keyword">ELSE</span> (
+<span class="hljs-built_in">ECHO</span> "Microsoft Outlook não encontrado!"
+)
+</code></pre>
+    <h2 id="explica-o-linha-por-linha">Explicação Linha por Linha</h2>
+    <h3 id="1-supress-o-da-exibi-o-de-comandos">1. Supressão da Exibição de Comandos</h3>
+    <pre><code class="lang-batch"><span class="hljs-meta">@ECHO</span> OFF
+</code></pre>
+    <p>Este comando impede que cada linha do script seja exibida na tela, tornando a execução mais limpa e focada nos
+        resultados.</p>
+    <h3 id="2-alterando-o-diret-rio-e-iniciando-o-trafegus-">2. Alterando o Diretório e Iniciando o &quot;Trafegus&quot;
+    </h3>
+    <pre><code class="lang-batch">CD "C:<span class="hljs-symbol">\U</span>sers<span class="hljs-variable">%username%</span><span class="hljs-symbol">\D</span>ocuments<span class="hljs-symbol">\T</span>rafegus"
+start trafegus.exe
+</code></pre>
+    <ul>
+        <li><code>CD</code> altera o diretório de trabalho para &quot;Trafegus&quot; na pasta &quot;Documents&quot; do
+            usuário logado.</li>
+        <li><code>start</code> executa o arquivo &quot;trafegus.exe&quot;.</li>
+    </ul>
+    <h3 id="3-tentativa-repetida-de-execu-o-do-trafegus-">3. Tentativa Repetida de Execução do &quot;Trafegus&quot;</h3>
+    <pre><code class="lang-batch">CD "C:<span class="hljs-symbol">\U</span>sers<span class="hljs-variable">%username%</span><span class="hljs-symbol">\D</span>ocuments<span class="hljs-symbol">\T</span>rafegus"
+start trafegus.exe
+</code></pre>
+    <p>Esse trecho é redundante, pois o programa &quot;trafegus.exe&quot; já foi iniciado anteriormente.</p>
+    <h3 id="4-executando-onixclientv4-do-trucks-control">4. Executando &quot;OnixClientV4&quot; do Trucks Control</h3>
+    <pre><code class="lang-batch">CD "C:<span class="hljs-symbol">\P</span>rogram Files (x86)<span class="hljs-symbol">\T</span>rucks Control<span class="hljs-symbol">\N</span>ew Enterprise"
+start OnixClientV4.exe
+</code></pre>
+    <ul>
+        <li>Muda para o diretório onde &quot;OnixClientV4.exe&quot; está localizado.</li>
+        <li>Executa &quot;OnixClientV4.exe&quot;.</li>
+    </ul>
+    <h3 id="5-instalando-o-software-sasgc">5. Instalando o Software SASGC</h3>
+    <pre><code class="lang-batch"><span class="hljs-selector-tag">CD</span> "<span class="hljs-selector-tag">C</span>:\<span class="hljs-selector-tag">Users</span>\<span class="hljs-selector-tag">Operador</span>\<span class="hljs-selector-tag">Desktop</span>\<span class="hljs-selector-tag">Setup_SASGC_4</span><span class="hljs-selector-class">.10</span><span class="hljs-selector-class">.0</span>"
+<span class="hljs-selector-tag">start</span> <span class="hljs-selector-tag">sasgc-4</span><span class="hljs-selector-class">.10</span><span class="hljs-selector-class">.0</span><span class="hljs-selector-class">.exe</span>
+</code></pre>
+    <ul>
+        <li>Muda para o diretório onde o instalador &quot;sasgc-4.10.0.exe&quot; está localizado.</li>
+        <li>Executa o instalador &quot;sasgc-4.10.0.exe&quot;.</li>
+    </ul>
+    <h3 id="6-executando-ezmodras-do-saver2000">6. Executando &quot;EZModRas&quot; do SAVER2000</h3>
+    <pre><code class="lang-batch">CD <span class="hljs-string">"C:\SAVER2000\MR"</span>
+<span class="hljs-literal">start</span> EZModRas.exe
+</code></pre>
+    <ul>
+        <li>Muda para o diretório &quot;C:\SAVER2000\MR&quot;.</li>
+        <li>Executa &quot;EZModRas.exe&quot;.</li>
+    </ul>
+    <h3 id="7-executando-microsip-">7. Executando &quot;MicroSIP&quot;</h3>
+    <pre><code class="lang-batch">CD "C:<span class="hljs-symbol">\U</span>sers<span class="hljs-symbol">\O</span>perador<span class="hljs-symbol">\A</span>ppData<span class="hljs-symbol">\L</span>ocal<span class="hljs-symbol">\M</span>icroSIP"
+start microsip.exe
+</code></pre>
+    <ul>
+        <li>Muda para a pasta onde &quot;microsip.exe&quot; está localizado.</li>
+        <li>Executa &quot;microsip.exe&quot;.</li>
+    </ul>
+    <h3 id="8-abrindo-aplicativos-gerais">8. Abrindo Aplicativos Gerais</h3>
+    <pre><code class="lang-batch"><span class="hljs-literal">start</span> CHROME.EXE
+<span class="hljs-literal">start</span> OUTLOOK.EXE
+</code></pre>
+    <ul>
+        <li><code>start CHROME.EXE</code> abre o navegador Google Chrome.</li>
+        <li><code>start OUTLOOK.EXE</code> abre o Microsoft Outlook.</li>
+    </ul>
+    <h2 id="melhorias-sugeridas">Melhorias Sugeridas</h2>
+    <ul>
+        <li><strong>Remover repetições</strong> (exemplo: segunda execução de &quot;trafegus.exe&quot;).</li>
+        <li><strong>Verificar se os arquivos existem antes de executá-los</strong>, evitando erros se algum programa não
+            estiver instalado.</li>
+        <li><strong>Inserir mensagens informativas</strong> para facilitar o entendimento do progresso da execução do
+            script.</li>
+    </ul>
+    <p>Exemplo de verificação antes de executar um programa:</p>
+    <pre><code class="lang-batch"><span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXIST</span> "C:\Users<span class="hljs-variable">%username%</span>\Documents\Trafegus\trafegus.exe" (
+    <span class="hljs-built_in">start</span> trafegus.exe
+) <span class="hljs-keyword">ELSE</span> (
+    <span class="hljs-built_in">ECHO</span> "O arquivo trafegus.exe não foi encontrado!"
+)
+</code></pre>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
