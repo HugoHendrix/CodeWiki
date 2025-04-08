@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h1 id="como-ocorre-a-conexão-entre-cliente-e-servidor-o-papel-do-modem-e-os-conceitos-de-modulação-e-demodulação">
+        Como ocorre a conexão entre <strong>cliente e servidor</strong>, o papel do <strong>modem</strong> e os
+        conceitos de <strong>modulação e demodulação</strong>.</h1>
+    <hr>
+    <h3 id="conexão-cliente-x-servidor"><strong>Conexão Cliente x Servidor</strong></h3>
+    <p><strong>Definição:</strong><br>A comunicação entre <strong>cliente</strong> e <strong>servidor</strong> é a base
+        da internet e de muitas redes modernas. O cliente solicita recursos (como páginas web, arquivos ou emails), e o
+        servidor fornece esses recursos.</p>
+    <p><strong>Como funciona:</strong></p>
+    <ol>
+        <li>
+            <p><strong>Cliente:</strong> </p>
+            <ul>
+                <li>É o dispositivo que faz a requisição (computador, celular, tablet). </li>
+                <li>Exemplos de clientes: navegadores (Chrome, Firefox), aplicativos de email, programas de FTP.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Servidor:</strong> </p>
+            <ul>
+                <li>É o computador ou sistema que armazena e fornece os recursos solicitados. </li>
+                <li>Exemplos de servidores: servidores web (que hospedam sites), servidores de email, servidores de
+                    arquivos.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Protocolos de comunicação:</strong> </p>
+            <ul>
+                <li>A comunicação entre cliente e servidor é feita usando protocolos como <strong>HTTP/HTTPS</strong>
+                    (para web), <strong>FTP</strong> (para transferência de arquivos), <strong>SMTP/POP3/IMAP</strong>
+                    (para email).</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Exemplo de fluxo:</strong> </p>
+            <ul>
+                <li>O cliente (navegador) envia uma requisição HTTP para o servidor. </li>
+                <li>O servidor processa a requisição e envia uma resposta HTTP com o conteúdo solicitado (ex.: a página
+                    HTML do site). </li>
+                <li>O cliente exibe o conteúdo para o usuário.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="modem"><strong>Modem</strong></h3>
+    <p><strong>Definição:</strong><br>O <strong>modem</strong> (Modulador/Demodulador) é um dispositivo que converte
+        sinais digitais do computador em sinais analógicos para transmissão pela rede telefônica (ou outro meio) e
+        vice-versa.</p>
+    <p><strong>Função principal:</strong> </p>
+    <ul>
+        <li>Permitir a comunicação entre o computador (cliente) e a rede do provedor de internet (servidor).</li>
+    </ul>
+    <p><strong>Como funciona:</strong></p>
+    <ol>
+        <li>
+            <p><strong>Modulação:</strong> </p>
+            <ul>
+                <li>O modem converte os dados digitais do computador (bits: 0s e 1s) em sinais analógicos (ondas) que
+                    podem ser transmitidos pela linha telefônica, cabo ou fibra óptica.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Demodulação:</strong> </p>
+            <ul>
+                <li>O modem converte os sinais analógicos recebidos da rede de volta em dados digitais que o computador
+                    pode entender.</li>
+            </ul>
+        </li>
+    </ol>
+    <p><strong>Tipos de modem:</strong></p>
+    <ol>
+        <li>
+            <p><strong>Modem DSL:</strong> </p>
+            <ul>
+                <li>Usa a linha telefônica para transmitir dados em alta velocidade. </li>
+                <li>Permite usar a internet e o telefone ao mesmo tempo.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Modem a cabo:</strong> </p>
+            <ul>
+                <li>Usa a rede de TV a cabo para transmitir dados. </li>
+                <li>Oferece velocidades mais altas que o DSL.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Modem fibra óptica:</strong> </p>
+            <ul>
+                <li>Usa luz para transmitir dados em alta velocidade. </li>
+                <li>É a tecnologia mais rápida disponível atualmente.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Modem 3G/4G/5G:</strong> </p>
+            <ul>
+                <li>Usa redes móveis para conectar dispositivos à internet. </li>
+                <li>Comum em smartphones e roteadores móveis.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="modulação-e-demodulação"><strong>Modulação e Demodulação</strong></h3>
+    <p><strong>Modulação:</strong> </p>
+    <ul>
+        <li>É o processo de converter dados digitais (bits) em sinais analógicos (ondas) para transmissão por um meio
+            físico (como cabos ou ondas de rádio). </li>
+        <li>Exemplo: Um modem converte os bits &quot;1010&quot; em uma onda senoidal que pode ser enviada pela linha
+            telefônica.</li>
+    </ul>
+    <p><strong>Demodulação:</strong> </p>
+    <ul>
+        <li>É o processo de converter sinais analógicos de volta em dados digitais. </li>
+        <li>Exemplo: O modem recebe uma onda senoidal e a converte de volta em bits &quot;1010&quot;.</li>
+    </ul>
+    <p><strong>Técnicas de modulação:</strong></p>
+    <ol>
+        <li>
+            <p><strong>AM (Amplitude Modulation):</strong> </p>
+            <ul>
+                <li>Varia a amplitude da onda para representar dados. </li>
+                <li>Usada em transmissões de rádio AM.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>FM (Frequency Modulation):</strong> </p>
+            <ul>
+                <li>Varia a frequência da onda para representar dados. </li>
+                <li>Usada em transmissões de rádio FM.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>PM (Phase Modulation):</strong> </p>
+            <ul>
+                <li>Varia a fase da onda para representar dados. </li>
+                <li>Usada em comunicações digitais.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>QAM (Quadrature Amplitude Modulation):</strong> </p>
+            <ul>
+                <li>Combina variações de amplitude e fase para transmitir mais dados em menos tempo. </li>
+                <li>Usada em modems DSL e a cabo.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="resumo-do-processo-de-conexão"><strong>Resumo do Processo de Conexão</strong></h3>
+    <ol>
+        <li>
+            <p><strong>Cliente faz uma requisição:</strong> </p>
+            <ul>
+                <li>Exemplo: Você digita &quot;<a href="http://www.google.com">www.google.com</a>&quot; no navegador.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Modem modula os dados:</strong> </p>
+            <ul>
+                <li>O modem converte a requisição digital em sinais analógicos para transmissão.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Dados são enviados ao servidor:</strong> </p>
+            <ul>
+                <li>Os sinais viajam pela rede (linha telefônica, cabo, fibra) até o servidor.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Servidor processa a requisição:</strong> </p>
+            <ul>
+                <li>O servidor recebe os dados, demodula e processa a requisição.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Servidor envia a resposta:</strong> </p>
+            <ul>
+                <li>O servidor envia a página solicitada de volta ao cliente.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Modem demodula os dados:</strong> </p>
+            <ul>
+                <li>O modem converte os sinais analógicos de volta em dados digitais.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Cliente exibe o conteúdo:</strong> </p>
+            <ul>
+                <li>O navegador recebe os dados e exibe a página para o usuário.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="resumo"><strong>Resumo</strong></h3>
+    <ul>
+        <li><strong>Cliente x Servidor:</strong> O cliente solicita recursos, e o servidor os fornece. </li>
+        <li><strong>Modem:</strong> Converte dados digitais em analógicos (modulação) e vice-versa (demodulação). </li>
+        <li><strong>Modulação e Demodulação:</strong> Processos essenciais para transmitir dados pela rede.</li>
+    </ul>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

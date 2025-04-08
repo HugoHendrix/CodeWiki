@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h2 id="ftp-file-transfer-protocol"><strong>FTP (File Transfer Protocol)</strong></h2>
+    <hr>
+    <p><strong>FTP</strong>, <strong>SMTP</strong>, <strong>POP3</strong> e <strong>IMAP</strong></p>
+    <p><strong>Definição:</strong><br>O FTP é um protocolo usado para transferir arquivos entre um cliente e um servidor
+        em uma rede, como a internet.</p>
+    <p><strong>Como funciona:</strong></p>
+    <ol>
+        <li>
+            <p><strong>Conexão:</strong> </p>
+            <ul>
+                <li>O cliente FTP se conecta ao servidor FTP usando um nome de usuário e senha (ou acesso anônimo).
+                </li>
+                <li>A conexão ocorre na porta <strong>21</strong>.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Transferência de arquivos:</strong> </p>
+            <ul>
+                <li>O cliente pode enviar (upload) ou baixar (download) arquivos do servidor. </li>
+                <li>Também é possível renomear, excluir e gerenciar arquivos no servidor.</li>
+            </ul>
+        </li>
+    </ol>
+    <p><strong>Modos de transferência:</strong></p>
+    <ul>
+        <li><strong>ASCII:</strong> Para arquivos de texto. </li>
+        <li><strong>Binário:</strong> Para arquivos como imagens, vídeos e programas.</li>
+    </ul>
+    <p><strong>Exemplo de uso:</strong> </p>
+    <ul>
+        <li>Publicar arquivos de um site no servidor de hospedagem. </li>
+        <li>Compartilhar arquivos grandes entre usuários.</li>
+    </ul>
+    <p><strong>Ferramentas populares:</strong> </p>
+    <ul>
+        <li><strong>FileZilla:</strong> Cliente FTP gratuito e de código aberto. </li>
+        <li><strong>WinSCP:</strong> Cliente FTP para Windows com interface gráfica.</li>
+    </ul>
+    <p><strong>Segurança:</strong><br>O FTP tradicional não é seguro, pois os dados são transmitidos em texto claro.
+        Para segurança, usa-se: </p>
+    <ul>
+        <li><strong>SFTP (SSH File Transfer Protocol):</strong> Criptografa a transferência de arquivos. </li>
+        <li><strong>FTPS (FTP Secure):</strong> Adiciona uma camada de criptografia SSL/TLS ao FTP.</li>
+    </ul>
+    <hr>
+    <h3 id="smtp-simple-mail-transfer-protocol"><strong>SMTP (Simple Mail Transfer Protocol)</strong></h3>
+    <p><strong>Definição:</strong><br>O SMTP é o protocolo usado para enviar emails de um cliente (como Outlook ou
+        Gmail) para um servidor de email ou entre servidores.</p>
+    <p><strong>Como funciona:</strong></p>
+    <ol>
+        <li>
+            <p><strong>Envio de email:</strong> </p>
+            <ul>
+                <li>O cliente de email (por exemplo, Outlook) se conecta ao servidor SMTP (porta <strong>25</strong>,
+                    <strong>465</strong> ou <strong>587</strong>). </li>
+                <li>O servidor SMTP encaminha o email para o servidor de destino.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Comandos SMTP:</strong> </p>
+            <ul>
+                <li><strong>HELO/EHLO:</strong> Inicia a comunicação com o servidor. </li>
+                <li><strong>MAIL FROM:</strong> Especifica o remetente. </li>
+                <li><strong>RCPT TO:</strong> Especifica o destinatário. </li>
+                <li><strong>DATA:</strong> Envia o conteúdo do email. </li>
+                <li><strong>QUIT:</strong> Encerra a conexão.</li>
+            </ul>
+        </li>
+    </ol>
+    <p><strong>Exemplo de uso:</strong><br>Quando você envia um email, o SMTP é responsável por entregá-lo ao servidor
+        do destinatário.</p>
+    <p><strong>Segurança:</strong> </p>
+    <ul>
+        <li><strong>SMTP sobre SSL/TLS:</strong> Criptografa a comunicação entre o cliente e o servidor. </li>
+        <li><strong>Portas seguras:</strong> 465 (SMTPS) e 587 (SMTP com STARTTLS).</li>
+    </ul>
+    <hr>
+    <h3 id="pop3-post-office-protocol-version-3"><strong>POP3 (Post Office Protocol version 3)</strong></h3>
+    <p><strong>Definição:</strong><br>O POP3 é um protocolo usado para baixar emails de um servidor para um cliente de
+        email (como Outlook ou Thunderbird).</p>
+    <p><strong>Como funciona:</strong></p>
+    <ol>
+        <li>
+            <p><strong>Conexão:</strong> </p>
+            <ul>
+                <li>O cliente de email se conecta ao servidor POP3 (porta <strong>110</strong> ou <strong>995</strong>
+                    para SSL/TLS). </li>
+                <li>Autentica-se com nome de usuário e senha.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Download de emails:</strong> </p>
+            <ul>
+                <li>Os emails são baixados do servidor para o dispositivo do usuário. </li>
+                <li>Por padrão, os emails são excluídos do servidor após o download.</li>
+            </ul>
+        </li>
+    </ol>
+    <p><strong>Características principais:</strong></p>
+    <ul>
+        <li><strong>Offline:</strong> Os emails são armazenados localmente, permitindo acesso sem internet. </li>
+        <li><strong>Simplicidade:</strong> Ideal para usuários que usam um único dispositivo.</li>
+    </ul>
+    <p><strong>Exemplo de uso:</strong><br>Baixar emails para um computador pessoal e acessá-los offline.</p>
+    <p><strong>Segurança:</strong> </p>
+    <ul>
+        <li><strong>POP3 sobre SSL/TLS:</strong> Usa a porta <strong>995</strong> para criptografar a comunicação.</li>
+    </ul>
+    <hr>
+    <h3 id="imap-internet-message-access-protocol"><strong>IMAP (Internet Message Access Protocol)</strong></h3>
+    <p><strong>Definição:</strong><br>O IMAP é um protocolo usado para acessar e gerenciar emails diretamente no
+        servidor, sem precisar baixá-los.</p>
+    <p><strong>Como funciona:</strong></p>
+    <ol>
+        <li>
+            <p><strong>Conexão:</strong> </p>
+            <ul>
+                <li>O cliente de email se conecta ao servidor IMAP (porta <strong>143</strong> ou <strong>993</strong>
+                    para SSL/TLS). </li>
+                <li>Autentica-se com nome de usuário e senha.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Gerenciamento de emails:</strong> </p>
+            <ul>
+                <li>Os emails permanecem no servidor e podem ser acessados de vários dispositivos. </li>
+                <li>O usuário pode organizar emails em pastas, marcar como lido/não lido e realizar outras ações.</li>
+            </ul>
+        </li>
+    </ol>
+    <p><strong>Características principais:</strong></p>
+    <ul>
+        <li><strong>Sincronização:</strong> Alterações feitas em um dispositivo são refletidas em todos os outros. </li>
+        <li><strong>Acesso multiplataforma:</strong> Ideal para quem usa vários dispositivos (computador, celular,
+            tablet).</li>
+    </ul>
+    <p><strong>Exemplo de uso:</strong><br>Acessar emails no Gmail de um computador e de um celular, mantendo a
+        sincronização.</p>
+    <p><strong>Segurança:</strong> </p>
+    <ul>
+        <li><strong>IMAP sobre SSL/TLS:</strong> Usa a porta <strong>993</strong> para criptografar a comunicação.</li>
+    </ul>
+    <hr>
+    <h3 id="resumo-dos-protocolos"><strong>Resumo dos Protocolos</strong></h3>
+    <ol>
+        <li><strong>FTP:</strong> Para transferência de arquivos entre cliente e servidor. </li>
+        <li><strong>SMTP:</strong> Para envio de emails. </li>
+        <li><strong>POP3:</strong> Para baixar emails do servidor para um dispositivo local. </li>
+        <li><strong>IMAP:</strong> Para acessar e gerenciar emails diretamente no servidor.</li>
+    </ol>
+    <hr>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

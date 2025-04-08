@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h3 id="1-significado-de-semântica"><strong>1. Significado de Semântica</strong></h3>
+<p>Semântica, no contexto de HTML, refere-se ao significado ou propósito de um elemento dentro de uma página web. Em vez de focar apenas na aparência (como o texto ficará visualmente), a semântica prioriza o <strong>significado do conteúdo</strong> para os navegadores, motores de busca e tecnologias assistivas (como leitores de tela).</p>
+<ul>
+<li><strong>Exemplo</strong>: Usar <code>&lt;header&gt;</code> para o cabeçalho da página, <code>&lt;nav&gt;</code> para a área de navegação e <code>&lt;footer&gt;</code> para o rodapé, em vez de apenas <code>&lt;div&gt;</code> para tudo.</li>
+</ul>
+<hr>
+<h3 id="2-por-que-usar-tags-semânticas"><strong>2. Por que usar tags semânticas?</strong></h3>
+<ul>
+<li><strong>Acessibilidade</strong>: Facilita a interpretação do conteúdo por leitores de tela, ajudando usuários com deficiência visual.</li>
+<li><strong>SEO (Search Engine Optimization)</strong>: Motores de busca, como o Google, entendem melhor a estrutura e o significado do conteúdo, melhorando o posicionamento do site.</li>
+<li><strong>Manutenção do código</strong>: Código mais organizado e legível, facilitando a manutenção e colaboração em equipe.</li>
+<li><strong>Compatibilidade futura</strong>: Tags semânticas são padrões modernos e garantem que o site funcione bem em navegadores atuais e futuros.</li>
+</ul>
+<hr>
+<h3 id="3-migração-do-html4-para-o-html5"><strong>3. Migração do HTML4 para o HTML5</strong></h3>
+<p>A maior mudança do HTML4 para o HTML5 foi a introdução de <strong>elementos semânticos</strong>. Enquanto o HTML4 focava em estruturas genéricas (como <code>&lt;div&gt;</code> e <code>&lt;span&gt;</code>), o HTML5 trouxe tags específicas para diferentes partes de uma página, como:</p>
+<ul>
+<li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+</ul>
+<h4 id="tags-obsoletas--não-conformidade"><strong>Tags obsoletas / não conformidade</strong></h4>
+<ul>
+<li><strong>Tags obsoletas</strong>: Algumas tags do HTML4 não são mais recomendadas ou foram removidas no HTML5. Exemplos:<ul>
+<li><code>&lt;font&gt;</code>: Usada para definir fontes (substituída por CSS).</li>
+<li><code>&lt;center&gt;</code>: Usada para centralizar conteúdo (substituída por CSS).</li>
+<li><code>&lt;blink&gt;</code>: Fazia o texto piscar (removida por ser considerada má prática).</li>
+<li><code>&lt;applet&gt;</code>: Usada para embedar applets Java (substituída por <code>&lt;object&gt;</code>).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="4-negrito-e-itálico"><strong>4. Negrito e Itálico</strong></h3>
+<ul>
+<li><strong>Negrito</strong>:<ul>
+<li><code>&lt;strong&gt;</code>: Indica que o texto é <strong>importante</strong> (semântico).</li>
+<li><code>&lt;b&gt;</code>: Apenas deixa o texto em negrito (não semântico).</li>
+</ul>
+</li>
+<li><strong>Itálico</strong>:<ul>
+<li><code>&lt;em&gt;</code>: Indica <strong>ênfase</strong> no texto (semântico).</li>
+<li><code>&lt;i&gt;</code>: Apenas deixa o texto em itálico (não semântico).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="5-outras-tags-semânticas-e-de-formatação"><strong>5. Outras tags semânticas e de formatação</strong></h3>
+<ul>
+<li><strong><code>&lt;mark&gt;</code></strong>: Destaca parte do texto, como um marcador de texto.</li>
+<li><strong><code>&lt;small&gt;</code></strong>: Usada para textos secundários ou de menor importância (a tag <code>&lt;big&gt;</code> foi removida no HTML5).</li>
+<li><strong><code>&lt;del&gt;</code></strong>: Indica texto <strong>excluído</strong> (riscado).</li>
+<li><strong><code>&lt;ins&gt;</code></strong>: Indica texto <strong>inserido</strong> (sublinhado).</li>
+<li><strong><code>&lt;sub&gt;</code></strong>: Texto subscrito (exemplo: H<sub>2</sub>O).</li>
+<li><strong><code>&lt;sup&gt;</code></strong>: Texto sobrescrito (exemplo: 2<sup>2</sup> = 4).</li>
+</ul>
+<hr>
+<h3 id="6-tags-para-código-e-citações"><strong>6. Tags para código e citações</strong></h3>
+<ul>
+<li><strong><code>&lt;pre&gt;</code></strong>: Mantém o formato pré-formatado do texto (útil para exibir código ou texto com espaçamento específico).</li>
+<li><strong><code>&lt;code&gt;</code></strong>: Usada para destacar trechos de código.</li>
+<li><strong><code>&lt;q&gt;</code></strong>: Usada para citações curtas (adiciona aspas automaticamente).</li>
+<li><strong><code>&lt;blockquote&gt;</code></strong>: Usada para citações longas. Pode incluir o atributo <code>cite</code> para referenciar a fonte da citação.<ul>
+<li>Exemplo: <code>&lt;blockquote cite=&quot;https://exemplo.com&quot;&gt;Texto citado&lt;/blockquote&gt;</code>.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="7-abreviações"><strong>7. Abreviações</strong></h3>
+<ul>
+<li><strong><code>&lt;abbr&gt;</code></strong>: Usada para definir abreviações ou siglas. O atributo <code>title</code> pode ser usado para explicar o significado.<ul>
+<li>Exemplo: <code>&lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt;</code>.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="8-direção-do-texto"><strong>8. Direção do texto</strong></h3>
+<ul>
+<li><strong><code>&lt;bdo&gt;</code></strong>: Usada para definir a direção do texto. Os atributos <code>rtl</code> (right-to-left) e <code>ltr</code> (left-to-right) controlam a direção.<ul>
+<li>Exemplo: <code>&lt;bdo dir=&quot;rtl&quot;&gt;Texto invertido&lt;/bdo&gt;</code>.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="resumo"><strong>Resumo</strong></h3>
+<p>A migração do HTML4 para o HTML5 trouxe uma abordagem mais semântica, com foco em melhorar a estrutura, acessibilidade e SEO. Tags obsoletas foram substituídas por alternativas modernas, e novas tags semânticas foram introduzidas para organizar melhor o conteúdo. Além disso, tags como <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;mark&gt;</code>, <code>&lt;del&gt;</code>, <code>&lt;ins&gt;</code>, <code>&lt;sub&gt;</code>, <code>&lt;sup&gt;</code>, <code>&lt;pre&gt;</code>, <code>&lt;code&gt;</code>, <code>&lt;q&gt;</code>, <code>&lt;blockquote&gt;</code>, <code>&lt;abbr&gt;</code> e <code>&lt;bdo&gt;</code> ajudam a dar significado e formatação ao texto de forma eficiente.</p>
+<hr>
+<h1 id="exemplos-práticos-de-uso-para-cada-uma-das-tags-mencionadas">Exemplos práticos de uso para cada uma das tags mencionadas.</h1>
+<hr>
+<h3 id="1-tags-semânticas-estruturais"><strong>1. Tags Semânticas Estruturais</strong></h3>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Exemplo de Tags Semânticas&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Meu Site&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contato&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;Título do Artigo&lt;/h2&gt;
+            &lt;p&gt;Este é um exemplo de artigo.&lt;/p&gt;
+        &lt;/article&gt;
+
+        &lt;aside&gt;
+            &lt;h3&gt;Informações Adicionais&lt;/h3&gt;
+            &lt;p&gt;Conteúdo relacionado ao artigo.&lt;/p&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2023 Meu Site&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<hr>
+<h3 id="2-negrito-e-itálico"><strong>2. Negrito e Itálico</strong></h3>
+<pre><code class="language-html">&lt;p&gt;
+    Este é um exemplo de texto com &lt;strong&gt;importância&lt;/strong&gt; e &lt;em&gt;ênfase&lt;/em&gt;.
+    Também podemos usar &lt;b&gt;negrito&lt;/b&gt; e &lt;i&gt;itálico&lt;/i&gt; sem significado semântico.
+&lt;/p&gt;
+</code></pre>
+<hr>
+<h3 id="3-mark"><strong>3. <code>&lt;mark&gt;</code></strong></h3>
+<pre><code class="language-html">&lt;p&gt;
+    Este é um exemplo de texto com &lt;mark&gt;destaque&lt;/mark&gt;.
+&lt;/p&gt;
+</code></pre>
+<hr>
+<h3 id="4-small"><strong>4. <code>&lt;small&gt;</code></strong></h3>
+<pre><code class="language-html">&lt;p&gt;
+    Texto principal &lt;small&gt;com texto secundário menor&lt;/small&gt;.
+&lt;/p&gt;
+</code></pre>
+<hr>
+<h3 id="5-del-e-ins"><strong>5. <code>&lt;del&gt;</code> e <code>&lt;ins&gt;</code></strong></h3>
+<pre><code class="language-html">&lt;p&gt;
+    O preço original era &lt;del&gt;R$ 100,00&lt;/del&gt;, mas agora é &lt;ins&gt;R$ 80,00&lt;/ins&gt;.
+&lt;/p&gt;
+</code></pre>
+<hr>
+<h3 id="6-sub-e-sup"><strong>6. <code>&lt;sub&gt;</code> e <code>&lt;sup&gt;</code></strong></h3>
+<pre><code class="language-html">&lt;p&gt;
+    Fórmula da água: H&lt;sub&gt;2&lt;/sub&gt;O.
+    Potência: 2&lt;sup&gt;3&lt;/sup&gt; = 8.
+&lt;/p&gt;
+</code></pre>
+<hr>
+<h3 id="7-pre-e-code"><strong>7. <code>&lt;pre&gt;</code> e <code>&lt;code&gt;</code></strong></h3>
+<pre><code class="language-html">&lt;pre&gt;
+    &lt;code&gt;
+        function helloWorld() {
+            console.log(&quot;Hello, World!&quot;);
+        }
+    &lt;/code&gt;
+&lt;/pre&gt;
+</code></pre>
+<hr>
+<h3 id="8-q-e-blockquote"><strong>8. <code>&lt;q&gt;</code> e <code>&lt;blockquote&gt;</code></strong></h3>
+<pre><code class="language-html">&lt;p&gt;
+    Como dizia o poeta: &lt;q&gt;A vida é feita de pequenos momentos.&lt;/q&gt;
+&lt;/p&gt;
+
+&lt;blockquote cite=&quot;https://exemplo.com/frase-famosa&quot;&gt;
+    &lt;p&gt;
+        Esta é uma citação longa de um autor famoso.
+    &lt;/p&gt;
+&lt;/blockquote&gt;
+</code></pre>
+<hr>
+<h3 id="9-abbr"><strong>9. <code>&lt;abbr&gt;</code></strong></h3>
+<pre><code class="language-html">&lt;p&gt;
+    O &lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt; é a base da web.
+&lt;/p&gt;
+</code></pre>
+<hr>
+<h3 id="10-bdo"><strong>10. <code>&lt;bdo&gt;</code></strong></h3>
+<pre><code class="language-html">&lt;p&gt;
+    Texto normal: &lt;bdo dir=&quot;ltr&quot;&gt;Este texto está da esquerda para a direita.&lt;/bdo&gt;
+    Texto invertido: &lt;bdo dir=&quot;rtl&quot;&gt;Este texto está da direita para a esquerda.&lt;/bdo&gt;
+&lt;/p&gt;
+</code></pre>
+<hr>
+<h3 id="exemplo-completo"><strong>Exemplo Completo</strong></h3>
+<p>Aqui está um exemplo completo que combina várias tags:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Exemplo Completo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Bem-vindo ao Meu Site&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contato&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;Artigo Principal&lt;/h2&gt;
+            &lt;p&gt;
+                Este é um exemplo de texto com &lt;strong&gt;importância&lt;/strong&gt; e &lt;em&gt;ênfase&lt;/em&gt;.
+                Também podemos usar &lt;b&gt;negrito&lt;/b&gt; e &lt;i&gt;itálico&lt;/i&gt; sem significado semântico.
+            &lt;/p&gt;
+            &lt;p&gt;
+                Aqui está um exemplo de texto com &lt;mark&gt;destaque&lt;/mark&gt;.
+            &lt;/p&gt;
+            &lt;p&gt;
+                Texto principal &lt;small&gt;com texto secundário menor&lt;/small&gt;.
+            &lt;/p&gt;
+            &lt;p&gt;
+                O preço original era &lt;del&gt;R$ 100,00&lt;/del&gt;, mas agora é &lt;ins&gt;R$ 80,00&lt;/ins&gt;.
+            &lt;/p&gt;
+            &lt;p&gt;
+                Fórmula da água: H&lt;sub&gt;2&lt;/sub&gt;O. Potência: 2&lt;sup&gt;3&lt;/sup&gt; = 8.
+            &lt;/p&gt;
+            &lt;pre&gt;
+                &lt;code&gt;
+                    function helloWorld() {
+                        console.log(&quot;Hello, World!&quot;);
+                    }
+                &lt;/code&gt;
+            &lt;/pre&gt;
+            &lt;p&gt;
+                Como dizia o poeta: &lt;q&gt;A vida é feita de pequenos momentos.&lt;/q&gt;
+            &lt;/p&gt;
+            &lt;blockquote cite=&quot;https://exemplo.com/frase-famosa&quot;&gt;
+                &lt;p&gt;
+                    Esta é uma citação longa de um autor famoso.
+                &lt;/p&gt;
+            &lt;/blockquote&gt;
+            &lt;p&gt;
+                O &lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt; é a base da web.
+            &lt;/p&gt;
+            &lt;p&gt;
+                Texto normal: &lt;bdo dir=&quot;ltr&quot;&gt;Este texto está da esquerda para a direita.&lt;/bdo&gt;
+                Texto invertido: &lt;bdo dir=&quot;rtl&quot;&gt;Este texto está da direita para a esquerda.&lt;/bdo&gt;
+            &lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2023 Meu Site&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<hr>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

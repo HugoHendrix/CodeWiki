@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h3 id="1-como-inserir-imagens-em-html"><strong>1. Como Inserir Imagens em HTML</strong></h3>
+    <p>A tag <code>&lt;img&gt;</code> é usada para inserir imagens em uma página HTML. Ela é uma tag
+        <strong>autofechável</strong> (não precisa de tag de fechamento).</p>
+    <h4 id="sintaxe-básica"><strong>Sintaxe básica:</strong></h4>
+    <pre><code class="language-html">&lt;img src=&quot;caminho/da/imagem.jpg&quot; alt=&quot;Descrição da imagem&quot;&gt;
+</code></pre>
+    <h4 id="atributos-importantes"><strong>Atributos importantes:</strong></h4>
+    <ol>
+        <li>
+            <p><strong><code>src</code> (source):</strong> </p>
+            <ul>
+                <li>Define o caminho da imagem (URL ou caminho local). </li>
+                <li>Exemplo:
+                    <pre><code class="language-html">&lt;img src=&quot;https://www.exemplo.com/imagem.jpg&quot; alt=&quot;Imagem de exemplo&quot;&gt;
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>alt</code> (alternate text):</strong> </p>
+            <ul>
+                <li>Fornece um texto alternativo para a imagem, que é exibido se a imagem não carregar ou para
+                    acessibilidade (leitores de tela). </li>
+                <li>Exemplo:
+                    <pre><code class="language-html">&lt;img src=&quot;logo.png&quot; alt=&quot;Logo da Empresa&quot;&gt;
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>width</code> e <code>height</code>:</strong> </p>
+            <ul>
+                <li>Define a largura e altura da imagem (em pixels ou porcentagem). </li>
+                <li>Exemplo:
+                    <pre><code class="language-html">&lt;img src=&quot;foto.jpg&quot; alt=&quot;Foto&quot; width=&quot;300&quot; height=&quot;200&quot;&gt;
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>title</code>:</strong> </p>
+            <ul>
+                <li>Adiciona uma dica de ferramenta (tooltip) que aparece quando o usuário passa o mouse sobre a imagem.
+                </li>
+                <li>Exemplo:
+                    <pre><code class="language-html">&lt;img src=&quot;icone.png&quot; alt=&quot;Ícone&quot; title=&quot;Clique para mais informações&quot;&gt;
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>loading=&quot;lazy&quot;</code>:</strong> </p>
+            <ul>
+                <li>Carrega a imagem apenas quando ela estiver próxima à área visível do usuário, melhorando o
+                    desempenho da página. </li>
+                <li>Exemplo:
+                    <pre><code class="language-html">&lt;img src=&quot;imagem-grande.jpg&quot; alt=&quot;Imagem grande&quot; loading=&quot;lazy&quot;&gt;
+</code></pre>
+                </li>
+            </ul>
+        </li>
+    </ol>
+    <h4 id="exemplo-completo"><strong>Exemplo completo:</strong></h4>
+    <pre><code class="language-html">&lt;img src=&quot;https://www.exemplo.com/imagem.jpg&quot; alt=&quot;Paisagem bonita&quot; width=&quot;600&quot; height=&quot;400&quot; title=&quot;Uma paisagem incrível&quot; loading=&quot;lazy&quot;&gt;
+</code></pre>
+    <hr>
+    <h3 id="2-direitos-autorais-de-imagens"><strong>2. Direitos Autorais de Imagens</strong></h3>
+    <p>Ao usar imagens na web, é crucial respeitar os <strong>direitos autorais</strong>. Usar imagens protegidas sem
+        permissão pode resultar em penalidades legais.</p>
+    <h4 id="o-que-considerar"><strong>O que considerar:</strong></h4>
+    <ol>
+        <li>
+            <p><strong>Licenças de uso:</strong> </p>
+            <ul>
+                <li><strong>Domínio público:</strong> Imagens sem direitos autorais, livres para uso. </li>
+                <li><strong>Creative Commons:</strong> Imagens com licenças que permitem uso gratuito, mas com
+                    restrições (ex.: atribuição ao autor). </li>
+                <li><strong>Direitos reservados:</strong> Imagens que exigem permissão ou pagamento para uso.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Atribuição:</strong> </p>
+            <ul>
+                <li>Se a licença exigir, dê crédito ao autor da imagem. </li>
+                <li>Exemplo:
+                    <pre><code class="language-html">&lt;p&gt;Imagem por &lt;a href=&quot;https://www.exemplo.com/autor&quot;&gt;Nome do Autor&lt;/a&gt;&lt;/p&gt;
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Verifique a licença:</strong> </p>
+            <ul>
+                <li>Sempre confira os termos de uso da imagem antes de utilizá-la.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="3-bancos-de-imagens-recomendados"><strong>3. Bancos de Imagens Recomendados</strong></h3>
+    <p>Aqui estão alguns bancos de imagens gratuitos e que oferecem fotos de alta qualidade:</p>
+    <h4 id="gratuitos"><strong>Gratuitos:</strong></h4>
+    <ol>
+        <li>
+            <p><strong>Unsplash</strong> (<a href="https://unsplash.com/" target="_blank" rel="noopener noreferrer" >unsplash.com</a>) </p>
+            <ul>
+                <li>Imagens de alta resolução, sem necessidade de atribuição. </li>
+                <li>Ideal para projetos pessoais e comerciais.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Pexels</strong> (<a href="https://www.pexels.com/" target="_blank" rel="noopener noreferrer" >pexels.com</a>) </p>
+            <ul>
+                <li>Banco de imagens e vídeos gratuitos. </li>
+                <li>Licenças liberadas para uso comercial.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Pixabay</strong> (<a href="https://pixabay.com/" target="_blank" rel="noopener noreferrer" >pixabay.com</a>) </p>
+            <ul>
+                <li>Oferece imagens, ilustrações e vetores gratuitos. </li>
+                <li>Sem necessidade de atribuição.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Freepik</strong> (<a href="https://www.freepik.com/" target="_blank" rel="noopener noreferrer" >freepik.com</a>) </p>
+            <ul>
+                <li>Vetores, fotos e PSDs gratuitos (com atribuição necessária na versão gratuita).</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="4-busca-de-imagens-no-google"><strong>4. Busca de Imagens no Google</strong></h3>
+    <p>O <strong>Google Imagens</strong> é uma ferramenta poderosa para encontrar imagens, mas é essencial filtrar os
+        resultados para garantir que você está usando imagens com licenças adequadas.</p>
+    <h4 id="como-refinar-a-busca-no-google-imagens"><strong>Como refinar a busca no Google Imagens:</strong></h4>
+    <p> <strong>Acesse o Google Imagens:</strong> </p>
+    <ul>
+        <li><a href="https://images.google.com">https://images.google.com</a>.</li>
+    </ul>
+    <p> <strong>Use a caixa de ferramentas:</strong> </p>
+    <ul>
+        <li>Após fazer uma busca, clique em <strong>&quot;Ferramentas&quot;</strong> (abaixo da barra de pesquisa).
+        </li>
+        <li>Selecione <strong>&quot;Direitos de uso&quot;</strong> e escolha uma opção, como: <ul>
+                <li><strong>&quot;Marcadas para reutilização&quot;</strong> </li>
+                <li><strong>&quot;Marcadas para reutilização com modificação&quot;</strong> </li>
+                <li><strong>&quot;Marcadas para uso não comercial&quot;</strong></li>
+            </ul>
+        </li>
+    </ul>
+    <h3 id="1-marcadas-para-reutilização"><strong>1. Marcadas para Reutilização</strong></h3>
+    <p><strong>O que significa:</strong> </p>
+    <ul>
+        <li>As imagens marcadas como <strong>&quot;Marcadas para reutilização&quot;</strong> podem ser usadas
+            livremente, sem a necessidade de pedir permissão ao autor. </li>
+        <li>Você pode compartilhar, copiar e distribuir essas imagens, desde que siga os termos da licença (que podem
+            variar).</li>
+    </ul>
+    <p><strong>Quando usar:</strong> </p>
+    <ul>
+        <li>Quando você precisa de imagens para projetos pessoais, comerciais ou educacionais, sem a necessidade de
+            fazer modificações. </li>
+        <li>Exemplo: Usar uma foto em um blog, site ou apresentação.</li>
+    </ul>
+    <p><strong>Licenças comuns associadas:</strong> </p>
+    <ul>
+        <li><strong>Domínio público:</strong> Imagens sem direitos autorais. </li>
+        <li><strong>Creative Commons (CC0):</strong> Imagens que podem ser usadas livremente, sem atribuição.</li>
+    </ul>
+    <hr>
+    <h3 id="2-marcadas-para-reutilização-com-modificação"><strong>2. Marcadas para Reutilização com Modificação</strong>
+    </h3>
+    <p><strong>O que significa:</strong> </p>
+    <ul>
+        <li>As imagens marcadas como <strong>&quot;Marcadas para reutilização com modificação&quot;</strong> permitem
+            que você não apenas as use, mas também as modifique (recortar, editar, aplicar filtros, etc.). </li>
+        <li>Ainda assim, é importante verificar se a licença exige atribuição ao autor.</li>
+    </ul>
+    <p><strong>Quando usar:</strong> </p>
+    <ul>
+        <li>Quando você precisa personalizar as imagens para se adequar ao seu projeto. </li>
+        <li>Exemplo: Editar uma foto para criar uma capa de livro ou um banner de site.</li>
+    </ul>
+    <p><strong>Licenças comuns associadas:</strong> </p>
+    <ul>
+        <li><strong>Creative Commons (CC BY):</strong> Permite uso e modificação, mas exige atribuição ao autor. </li>
+        <li><strong>Creative Commons (CC BY-SA):</strong> Permite uso e modificação, mas exige que obras derivadas sejam
+            compartilhadas sob a mesma licença.</li>
+    </ul>
+    <hr>
+    <h3 id="3-marcadas-para-uso-não-comercial"><strong>3. Marcadas para Uso Não Comercial</strong></h3>
+    <p><strong>O que significa:</strong> </p>
+    <ul>
+        <li>As imagens marcadas como <strong>&quot;Marcadas para uso não comercial&quot;</strong> podem ser usadas
+            gratuitamente, mas <strong>apenas para fins não comerciais</strong>. </li>
+        <li>Isso significa que você não pode usá-las em projetos que gerem lucro direto ou indireto (ex.: anúncios,
+            produtos à venda). </li>
+        <li>A licença pode ou não permitir modificações, então verifique os detalhes.</li>
+    </ul>
+    <p><strong>Quando usar:</strong> </p>
+    <ul>
+        <li>Quando você precisa de imagens para projetos pessoais, educacionais ou sem fins lucrativos. </li>
+        <li>Exemplo: Usar uma foto em um trabalho escolar, blog pessoal ou apresentação acadêmica.</li>
+    </ul>
+    <p><strong>Licenças comuns associadas:</strong> </p>
+    <ul>
+        <li><strong>Creative Commons (CC BY-NC):</strong> Permite uso não comercial, com atribuição ao autor. </li>
+        <li><strong>Creative Commons (CC BY-NC-SA):</strong> Permite uso não comercial e modificação, mas exige
+            atribuição e compartilhamento sob a mesma licença.</li>
+    </ul>
+    <hr>
+    <h3 id="4-marcadas-para-reutilização-não-comercial-com-modificação"><strong>4. Marcadas para Reutilização Não
+            Comercial com Modificação</strong></h3>
+    <p><strong>O que significa:</strong> </p>
+    <ul>
+        <li>As imagens marcadas como <strong>&quot;Marcadas para reutilização não comercial com
+                modificação&quot;</strong> permitem que você as use e modifique, mas <strong>apenas para fins não
+                comerciais</strong>. </li>
+        <li>A licença pode exigir atribuição ao autor.</li>
+    </ul>
+    <p><strong>Quando usar:</strong> </p>
+    <ul>
+        <li>Quando você precisa personalizar imagens para projetos não comerciais. </li>
+        <li>Exemplo: Editar uma foto para criar um pôster para um evento sem fins lucrativos.</li>
+    </ul>
+    <p><strong>Licenças comuns associadas:</strong> </p>
+    <ul>
+        <li><strong>Creative Commons (CC BY-NC):</strong> Permite uso não comercial e modificação, com atribuição ao
+            autor. </li>
+        <li><strong>Creative Commons (CC BY-NC-SA):</strong> Permite uso não comercial e modificação, mas exige
+            atribuição e compartilhamento sob a mesma licença.</li>
+    </ul>
+    <hr>
+    <h3 id="dicas-importantes"><strong>Dicas Importantes</strong></h3>
+    <ol>
+        <li>
+            <p><strong>Sempre verifique a licença:</strong> </p>
+            <ul>
+                <li>Mesmo com o filtro do Google, confirme os termos de uso no site de origem da imagem. </li>
+                <li>Algumas licenças podem exigir atribuição ou ter outras restrições.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Atribuição correta:</strong> </p>
+            <ul>
+                <li>Se a licença exigir, dê crédito ao autor da imagem. </li>
+                <li>Exemplo:
+                    <pre><code class="language-html">&lt;p&gt;Foto por &lt;a href=&quot;https://www.exemplo.com/autor&quot;&gt;Nome do Autor&lt;/a&gt; no &lt;a href=&quot;https://www.exemplo.com&quot;&gt;Site&lt;/a&gt;&lt;/p&gt;
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Use bancos de imagens confiáveis:</strong> </p>
+            <ul>
+                <li>Bancos como Unsplash, Pexels e Pixabay oferecem imagens com licenças claras e fáceis de entender.
+                </li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="exemplo-de-uso"><strong>Exemplo de Uso</strong></h3>
+    <p>Se você encontrar uma imagem no Google Imagens marcada como <strong>&quot;Marcadas para reutilização com
+            modificação&quot;</strong>, pode usá-la assim:</p>
+    <pre><code class="language-html">&lt;img src=&quot;https://www.exemplo.com/imagem.jpg&quot; alt=&quot;Paisagem bonita&quot;&gt;
+&lt;p&gt;Foto por &lt;a href=&quot;https://www.exemplo.com/autor&quot;&gt;Nome do Autor&lt;/a&gt; no &lt;a href=&quot;https://www.exemplo.com&quot;&gt;Site&lt;/a&gt;&lt;/p&gt;
+</code></pre>
+    <hr>
+    <h3 id="resumo"><strong>Resumo</strong></h3>
+    <ul>
+        <li><strong>Inserir imagens em HTML:</strong> Use a tag <code>&lt;img&gt;</code> com os atributos
+            <code>src</code>, <code>alt</code>, <code>width</code>, <code>height</code> e <code>loading</code>. </li>
+        <li><strong>Direitos autorais:</strong> Respeite as licenças e dê crédito quando necessário. </li>
+        <li><strong>Bancos de imagens:</strong> Unsplash, Pexels, Pixabay (gratuitos); Shutterstock, Adobe Stock
+            (pagos). </li>
+        <li><strong>Google Imagens:</strong> Use a ferramenta de filtro para encontrar imagens com licenças adequadas.
+        </li>
+        <li><strong>Busca em inglês:</strong> Pode retornar mais resultados, especialmente em bancos internacionais.
+        </li>
+    </ul>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

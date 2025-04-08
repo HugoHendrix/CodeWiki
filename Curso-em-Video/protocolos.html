@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h3 id="💾-tcpip-transmission-control-protocolinternet-protocol">💾 <strong>TCP/IP (Transmission Control
+            Protocol/Internet Protocol)</strong></h3>
+    <hr>
+    <p><strong>Definição:</strong><br>TCP/IP é um conjunto de protocolos de comunicação que permite a transmissão de
+        dados entre dispositivos em uma rede, como a internet. Ele é a base de toda a comunicação online.</p>
+    <p><strong>Como funciona:</strong></p>
+    <ol>
+        <li>
+            <p><strong>TCP (Transmission Control Protocol):</strong> </p>
+            <ul>
+                <li>Responsável por dividir os dados em pacotes, garantir que eles cheguem corretamente ao destino e
+                    remontá-los na ordem certa. </li>
+                <li>É um protocolo <strong>orientado a conexão</strong>, ou seja, estabelece uma conexão entre o
+                    remetente e o destinatário antes de enviar os dados.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>IP (Internet Protocol):</strong> </p>
+            <ul>
+                <li>Responsável por endereçar e rotear os pacotes de dados para que eles cheguem ao destino correto.
+                </li>
+                <li>Cada dispositivo na internet tem um endereço IP único, que funciona como um &quot;CEP&quot; para a
+                    entrega de dados.</li>
+            </ul>
+        </li>
+    </ol>
+    <p><strong>Exemplo de uso:</strong><br>Quando você envia um email ou acessa um site, o TCP/IP garante que os dados
+        sejam transmitidos de forma confiável e eficiente.</p>
+    <p><strong>Importância:</strong><br>O TCP/IP é a espinha dorsal da internet. Sem ele, não seria possível conectar
+        dispositivos e transmitir dados globalmente.</p>
+    <hr>
+    <h3 id="http-hypertext-transfer-protocol"><strong>HTTP (HyperText Transfer Protocol)</strong></h3>
+    <p><strong>Definição:</strong><br>HTTP é o protocolo usado para transferir dados na web, como páginas HTML, imagens
+        e arquivos. Ele permite a comunicação entre clientes (navegadores) e servidores (onde os sites estão
+        hospedados).</p>
+    <p><strong>Como funciona:</strong></p>
+    <ol>
+        <li>
+            <p><strong>Requisição e Resposta:</strong> </p>
+            <ul>
+                <li>O cliente (navegador) envia uma <strong>requisição HTTP</strong> ao servidor, pedindo um recurso
+                    (como uma página web). </li>
+                <li>O servidor processa a requisição e envia uma <strong>resposta HTTP</strong> com o recurso
+                    solicitado.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Stateless (sem estado):</strong> </p>
+            <ul>
+                <li>O HTTP não mantém informações sobre requisições anteriores. Cada requisição é independente. </li>
+                <li>Para manter o estado (como logins), são usados cookies e sessões.</li>
+            </ul>
+        </li>
+    </ol>
+    <p><strong>Exemplo de requisição HTTP:</strong></p>
+    <pre><code>GET /index.html HTTP/1.1
+Host: www.exemplo.com
+</code></pre>
+    <p><strong>Exemplo de resposta HTTP:</strong></p>
+    <pre><code>HTTP/1.1 200 OK
+Content-Type: text/html
+&lt;html&gt;...&lt;/html&gt;
+</code></pre>
+    <p><strong>Uso comum:</strong><br>O HTTP é usado para carregar páginas web, enviar formulários e acessar APIs.</p>
+    <hr>
+    <h3 id="https-hypertext-transfer-protocol-secure"><strong>HTTPS (HyperText Transfer Protocol Secure)</strong></h3>
+    <p><strong>Definição:</strong><br>HTTPS é uma versão segura do HTTP, que criptografa os dados transmitidos entre o
+        cliente e o servidor. Ele usa o protocolo <strong>TLS/SSL</strong> para garantir a segurança.</p>
+    <p><strong>Como funciona:</strong></p>
+    <ol>
+        <li>
+            <p><strong>Criptografia:</strong> </p>
+            <ul>
+                <li>Os dados são criptografados antes de serem enviados, o que impede que terceiros interceptem e leiam
+                    as informações. </li>
+                <li>Isso é especialmente importante para proteger senhas, dados bancários e informações pessoais.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Certificados SSL/TLS:</strong> </p>
+            <ul>
+                <li>Para usar HTTPS, o servidor precisa de um certificado digital, que verifica a identidade do site e
+                    permite a criptografia. </li>
+                <li>Os navegadores mostram um ícone de cadeado ao lado da URL para indicar que a conexão é segura.</li>
+            </ul>
+        </li>
+    </ol>
+    <p><strong>Exemplo de URL HTTPS:</strong></p>
+    <pre><code>https://www.exemplo.com
+</code></pre>
+    <p><strong>Vantagens do HTTPS:</strong></p>
+    <ul>
+        <li>Segurança: Protege os dados dos usuários. </li>
+        <li>Confiança: Os usuários sabem que o site é autêntico. </li>
+        <li>SEO: Sites com HTTPS têm melhor rankeamento nos mecanismos de busca.</li>
+    </ul>
+    <hr>
+    <h3 id="resumo-dos-protocolos"><strong>Resumo dos Protocolos</strong></h3>
+    <ol>
+        <li><strong>TCP/IP:</strong> A base da comunicação na internet, responsável por enviar e receber dados. </li>
+        <li><strong>HTTP:</strong> O protocolo usado para transferir dados na web, mas sem segurança. </li>
+        <li><strong>HTTPS:</strong> A versão segura do HTTP, que criptografa os dados para proteger a privacidade.</li>
+    </ol>
+    <hr>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

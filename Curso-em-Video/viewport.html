@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1
+        id="viewport-um-conceito-essencial-para-o-desenvolvimento-de-sites-responsivos-e-a-experiência-do-usuário-em-dispositivos-móveis">
+        Viewport, um conceito essencial para o desenvolvimento de sites responsivos e a experiência do usuário em
+        dispositivos móveis.</h1>
+    <hr>
+    <h3 id="o-que-é-viewport"><strong>O que é Viewport?</strong></h3>
+    <p><strong>Definição:</strong><br>O viewport é a área visível de uma página web na tela do usuário. Em dispositivos
+        móveis, o viewport é menor do que em desktops, o que pode causar problemas de layout se não for configurado
+        corretamente.</p>
+    <p><strong>Problema sem viewport:</strong> </p>
+    <ul>
+        <li>Sem uma configuração adequada, os navegadores móveis tentam exibir a página como se estivessem em uma tela
+            grande, comprimindo o conteúdo e tornando-o ilegível. </li>
+        <li>O usuário precisa dar zoom para ler textos ou interagir com elementos.</li>
+    </ul>
+    <p><strong>Solução:</strong> </p>
+    <ul>
+        <li>A tag <code>&lt;meta viewport&gt;</code> permite controlar a largura e a escala da página em dispositivos
+            móveis.</li>
+    </ul>
+    <hr>
+    <h3 id="a-tag-meta-viewport"><strong>A Tag <code>&lt;meta viewport&gt;</code></strong></h3>
+    <p>A tag <code>&lt;meta viewport&gt;</code> é usada para configurar como a página deve ser exibida em dispositivos
+        móveis. Ela é colocada dentro da seção <code>&lt;head&gt;</code> do HTML.</p>
+    <p><strong>Sintaxe básica:</strong></p>
+    <pre><code class="language-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+</code></pre>
+    <p><strong>Explicação dos atributos:</strong></p>
+    <ol>
+        <li>
+            <p><strong><code>width=device-width</code>:</strong> </p>
+            <ul>
+                <li>Define a largura do viewport como a largura do dispositivo (em pixels CSS). </li>
+                <li>Isso garante que a página se ajuste à tela do dispositivo.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>initial-scale=1.0</code>:</strong> </p>
+            <ul>
+                <li>Define o nível de zoom inicial como 100%. </li>
+                <li>Impede que a página seja exibida com zoom padrão.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Outros atributos opcionais:</strong> </p>
+            <ul>
+                <li><strong><code>minimum-scale</code>:</strong> Define o nível mínimo de zoom (ex.: <code>0.5</code>
+                    para 50%). </li>
+                <li><strong><code>maximum-scale</code>:</strong> Define o nível máximo de zoom (ex.: <code>2.0</code>
+                    para 200%). </li>
+                <li><strong><code>user-scalable</code>:</strong> Define se o usuário pode dar zoom (<code>yes</code> ou
+                    <code>no</code>).</li>
+            </ul>
+        </li>
+    </ol>
+    <p><strong>Exemplo completo:</strong></p>
+    <pre><code class="language-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;&gt;
+</code></pre>
+    <hr>
+    <h3 id="por-que-o-viewport-é-importante"><strong>Por que o Viewport é importante?</strong></h3>
+    <ol>
+        <li>
+            <p><strong>Responsividade:</strong> </p>
+            <ul>
+                <li>Garante que o layout da página se ajuste a diferentes tamanhos de tela. </li>
+                <li>Melhora a experiência do usuário em dispositivos móveis.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Leitura e interação:</strong> </p>
+            <ul>
+                <li>Textos e elementos interativos (como botões) são exibidos em tamanhos adequados, sem necessidade de
+                    zoom.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>SEO (Search Engine Optimization):</strong> </p>
+            <ul>
+                <li>O Google prioriza sites responsivos (mobile-friendly) em suas classificações de busca. </li>
+                <li>A configuração correta do viewport é um fator importante para o SEO.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="viewport-e-design-responsivo"><strong>Viewport e Design Responsivo</strong></h3>
+    <p>O viewport é a base para o design responsivo, que usa técnicas como:</p>
+    <ol>
+        <li>
+            <p><strong>Media Queries (CSS):</strong> </p>
+            <ul>
+                <li>Permite aplicar estilos diferentes dependendo do tamanho da tela. </li>
+                <li>Exemplo:
+                    <pre><code class="language-css">@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+}
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Unidades relativas (CSS):</strong> </p>
+            <ul>
+                <li>Usar <code>%</code>, <code>em</code>, <code>rem</code>, <code>vw</code> e <code>vh</code> em vez de
+                    pixels fixos. </li>
+                <li>Exemplo:
+                    <pre><code class="language-css">.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Imagens responsivas:</strong> </p>
+            <ul>
+                <li>Usar a tag <code>&lt;img&gt;</code> com <code>srcset</code> ou a propriedade CSS
+                    <code>max-width: 100%</code>. </li>
+                <li>Exemplo:
+                    <pre><code class="language-html">&lt;img src=&quot;imagem.jpg&quot; alt=&quot;Descrição&quot; style=&quot;max-width: 100%; height: auto;&quot;&gt;
+</code></pre>
+                </li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="exemplo-prático"><strong>Exemplo Prático</strong></h3>
+    <p>Aqui está um exemplo de HTML com viewport configurado e design responsivo básico:</p>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Exemplo de Viewport&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            font-size: 2rem;
+        }
+        p {
+            font-size: 1rem;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;h1&gt;Bem-vindo ao Meu Site&lt;/h1&gt;
+        &lt;p&gt;Este é um exemplo de página com viewport configurado e design responsivo.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    <hr>
+   
+    <h3 id="resumo"><strong>Resumo</strong></h3>
+    <ul>
+        <li><strong>Viewport:</strong> Área visível da página no dispositivo do usuário. </li>
+        <li><strong>Tag <code>&lt;meta viewport&gt;</code>:</strong> Configura a largura e a escala da página em
+            dispositivos móveis. </li>
+        <li><strong>Importância:</strong> Fundamental para responsividade, usabilidade e SEO. </li>
+        <li><strong>Design Responsivo:</strong> Combine viewport com media queries e unidades relativas para criar sites
+            que funcionam em qualquer dispositivo.</li>
+    </ul>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

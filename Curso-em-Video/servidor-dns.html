@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h2
+        id="servidor-dns-domain-name-system--rotas-da-internet--url-uniform-resource-locator--domínio--hospedagem--tld-top-level-domain--gtld-generic-top-level-domain--domínio-e-da-hospedagem">
+        Servidor DNS (Domain Name System) / Rotas da Internet / URL (Uniform Resource Locator) / Domínio / Hospedagem /
+        TLD (Top-Level Domain) / gTLD (Generic Top-Level Domain) / Domínio e da Hospedagem</h2>
+    <hr>
+    <h3 id="1-servidor-dns-domain-name-system"><strong>1. Servidor DNS (Domain Name System)</strong></h3>
+    <p>O DNS é o sistema que traduz nomes de domínio (ex: <code>google.com</code>) para endereços IP (ex:
+        <code>142.250.190.46</code>). Isso acontece porque os computadores se comunicam por IPs, mas as pessoas preferem
+        usar nomes fáceis de lembrar. </p>
+    <p><strong>Exemplo de funcionamento:</strong> </p>
+    <ol>
+        <li>Você digita <code>google.com</code> no navegador. </li>
+        <li>O navegador pergunta a um servidor DNS qual é o IP desse domínio. </li>
+        <li>O servidor DNS responde com o IP correto. </li>
+        <li>O navegador acessa o servidor do Google usando esse IP.</li>
+    </ol>
+    <p>Existem diferentes tipos de servidores DNS: </p>
+    <ul>
+        <li><strong>Recursivos</strong>: Fazem a busca pelo IP de um domínio. </li>
+        <li><strong>Autoritativos</strong>: Guardam os IPs reais dos domínios. </li>
+        <li><strong>Root Servers</strong>: São a base da estrutura DNS e direcionam as consultas para os servidores
+            autoritativos corretos.</li>
+    </ul>
+    <hr>
+    <h3 id="2-rotas-da-internet"><strong>2. Rotas da Internet</strong></h3>
+    <p>As rotas da internet definem como os pacotes de dados trafegam entre servidores e dispositivos. Quando você
+        acessa um site, seu pedido passa por vários roteadores ao longo do caminho até chegar ao servidor de destino.
+    </p>
+    <p><strong>Exemplo:</strong><br>Se você acessa um site hospedado nos EUA, os pacotes de dados podem passar por
+        vários países antes de chegar ao destino. Esse caminho é definido por protocolos como o <strong>BGP (Border
+            Gateway Protocol)</strong>. </p>
+    <p>Você pode ver as rotas dos pacotes da sua conexão usando o comando: </p>
+    <pre><code class="language-sh">traceroute google.com  # No Linux/macOS
+tracert google.com     # No Windows
+</code></pre>
+    <hr>
+    <h3 id="3-url-uniform-resource-locator"><strong>3. URL (Uniform Resource Locator)</strong></h3>
+    <p>A URL é o endereço completo de um recurso na web. Um exemplo de URL é: </p>
+    <pre><code>https://www.exemplo.com/pagina?query=teste#secao1
+</code></pre>
+    <p>Ela é composta por várias partes: </p>
+    <ul>
+        <li><strong>Protocolo</strong>: <code>https://</code> → Define como os dados serão transferidos (HTTP ou HTTPS).
+        </li>
+        <li><strong>Subdomínio</strong>: <code>www.</code> → Nem sempre é necessário. </li>
+        <li><strong>Domínio</strong>: <code>exemplo.com</code> → Nome registrado. </li>
+        <li><strong>Caminho</strong>: <code>/pagina</code> → Página específica do site. </li>
+        <li><strong>Query String</strong>: <code>?query=teste</code> → Parâmetros adicionais. </li>
+        <li><strong>Fragmento</strong>: <code>#secao1</code> → Ponto específico dentro da página.</li>
+    </ul>
+    <hr>
+    <h3 id="4-domínio"><strong>4. Domínio</strong></h3>
+    <p>O domínio é o nome do site (ex: <code>exemplo.com</code>). Ele precisa ser registrado em um <strong>registrador
+            de domínios</strong>, como GoDaddy, Namecheap, Registro.br, etc. </p>
+    <p>Os domínios são divididos em níveis: </p>
+    <ul>
+        <li><strong>Domínio de Primeiro Nível (TLD)</strong>: <code>.com</code>, <code>.org</code>, <code>.net</code>,
+            <code>.br</code>, etc. </li>
+        <li><strong>Domínio de Segundo Nível</strong>: <code>exemplo.com</code>. </li>
+        <li><strong>Subdomínio</strong>: <code>blog.exemplo.com</code>, <code>loja.exemplo.com</code>.</li>
+    </ul>
+    <p>Cada domínio registrado aponta para servidores DNS, que indicam qual servidor hospedará o site.</p>
+    <hr>
+    <h3 id="5-hospedagem"><strong>5. Hospedagem</strong></h3>
+    <p>A hospedagem é onde os arquivos do site ficam armazenados. Existem vários tipos de hospedagem: </p>
+    <ul>
+        <li><strong>Compartilhada</strong>: Vários sites no mesmo servidor (mais barato, mas menos desempenho). </li>
+        <li><strong>VPS (Servidor Virtual Privado)</strong>: Cada site tem um ambiente isolado dentro de um servidor.
+        </li>
+        <li><strong>Dedicada</strong>: Um servidor inteiro para um único site. </li>
+        <li><strong>Cloud Hosting</strong>: Usa vários servidores na nuvem para garantir alta disponibilidade.</li>
+    </ul>
+    <p>Empresas como HostGator, DigitalOcean, AWS e Vercel oferecem diferentes tipos de hospedagem.</p>
+    <hr>
+    <h3 id="6-tld-top-level-domain"><strong>6. TLD (Top-Level Domain)</strong></h3>
+    <p>O <strong>TLD</strong> é a parte final de um domínio (<code>.com</code>, <code>.org</code>, <code>.net</code>,
+        <code>.br</code>). Ele é controlado por entidades como a <strong>ICANN (Internet Corporation for Assigned Names
+            and Numbers)</strong>. </p>
+    <p>Os TLDs podem ser: </p>
+    <ul>
+        <li><strong>gTLDs (Generic TLDs)</strong>: <code>.com</code>, <code>.org</code>, <code>.net</code>,
+            <code>.info</code>. </li>
+        <li><strong>ccTLDs (Country-Code TLDs)</strong>: São específicos por país, como <code>.br</code> (Brasil),
+            <code>.jp</code> (Japão), <code>.uk</code> (Reino Unido). </li>
+        <li><strong>TLDs novos</strong>: <code>.tech</code>, <code>.blog</code>, <code>.store</code>, <code>.dev</code>,
+            etc.</li>
+    </ul>
+    <hr>
+    <h3 id="7-gtld-generic-top-level-domain"><strong>7. gTLD (Generic Top-Level Domain)</strong></h3>
+    <p>Os <strong>gTLDs</strong> são TLDs genéricos, ou seja, não pertencem a um país específico. Exemplos: </p>
+    <ul>
+        <li><strong>.com</strong> → Comercial (mais popular). </li>
+        <li><strong>.org</strong> → Organizações. </li>
+        <li><strong>.net</strong> → Redes e infraestrutura. </li>
+        <li><strong>.info</strong> → Informação.</li>
+    </ul>
+    <p>Hoje em dia, existem gTLDs específicos para nichos, como <code>.shop</code>, <code>.art</code>,
+        <code>.app</code>, <code>.dev</code>.</p>
+    <hr>
+    <h3 id="8-detalhes-do-domínio-e-da-hospedagem"><strong>8. Detalhes do Domínio e da Hospedagem</strong></h3>
+    <p>Ao registrar um domínio, alguns detalhes são importantes: </p>
+    <ul>
+        <li><strong>WHOIS</strong>: Banco de dados que mostra quem registrou um domínio. </li>
+        <li><strong>Proteção de Privacidade</strong>: Esconde suas informações do WHOIS. </li>
+        <li><strong>Zona DNS</strong>: Configuração que define para onde o domínio aponta. </li>
+        <li><strong>SSL/TLS</strong>: Certificado de segurança para HTTPS.</li>
+    </ul>
+    <p>Já na hospedagem, é importante observar: </p>
+    <ul>
+        <li><strong>Espaço de armazenamento</strong>: Quanto espaço para arquivos. </li>
+        <li><strong>Largura de banda</strong>: Quantidade de tráfego suportado. </li>
+        <li><strong>Banco de dados</strong>: Suporte para MySQL, PostgreSQL, etc. </li>
+        <li><strong>Backup automático</strong>: Se há backups para evitar perda de dados.</li>
+    </ul>
+    <hr>
+    <h3 id="resumo"><strong>Resumo</strong></h3>
+    <table>
+        <thead>
+            <tr>
+                <th><strong>Tópico</strong></th>
+                <th><strong>Explicação Resumida</strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>DNS</strong></td>
+                <td>Traduz nomes de domínio para IPs.</td>
+            </tr>
+            <tr>
+                <td><strong>Rotas da Internet</strong></td>
+                <td>Define o caminho que os dados percorrem na rede.</td>
+            </tr>
+            <tr>
+                <td><strong>URL</strong></td>
+                <td>Endereço completo de um site na web.</td>
+            </tr>
+            <tr>
+                <td><strong>Domínio</strong></td>
+                <td>Nome registrado para acessar um site.</td>
+            </tr>
+            <tr>
+                <td><strong>Hospedagem</strong></td>
+                <td>Local onde os arquivos do site são armazenados.</td>
+            </tr>
+            <tr>
+                <td><strong>TLD</strong></td>
+                <td>Extensão do domínio (<code>.com</code>, <code>.org</code>, <code>.br</code>).</td>
+            </tr>
+            <tr>
+                <td><strong>gTLD</strong></td>
+                <td>TLDs genéricos, como <code>.com</code>, <code>.net</code>, <code>.blog</code>.</td>
+            </tr>
+            <tr>
+                <td><strong>Detalhes do Domínio</strong></td>
+                <td>Configurações e informações de um domínio e sua hospedagem.</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

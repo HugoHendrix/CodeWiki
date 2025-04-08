@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="emojis-e-caracteres-especiais">Emojis e Caracteres Especiais</h1>
+    <hr>
+    <p>Os emojis são caracteres especiais que fazem parte do padrão <strong>Unicode</strong>. Eles podem ser usados
+        diretamente em textos ou por meio de códigos HTML.</p>
+    <h4 id="como-usar-emojis"><strong>Como usar emojis:</strong></h4>
+    <ol>
+        <li>
+            <p><strong>Diretamente no texto:</strong> </p>
+            <ul>
+                <li>Basta copiar e colar o emoji no seu código ou documento. </li>
+                <li>Exemplo:
+                    <pre><code class="language-html">&lt;p&gt;Olá! 😊&lt;/p&gt;</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Usando códigos HTML:</strong> </p>
+            <ul>
+                <li>Cada emoji tem um código Unicode que pode ser usado em HTML. </li>
+                <li>Formato: <code>&amp;#x[código hexadecimal];</code> ou <code>&amp;#[código decimal];</code>. </li>
+                <li>Exemplo:
+                    <pre><code class="language-html">&lt;p&gt;Olá! &amp;#x1F60A;&lt;/p&gt; &lt;!-- Emoji &quot;😊&quot; --&gt;
+&lt;p&gt;Olá! &amp;#128522;&lt;/p&gt;   &lt;!-- Mesmo emoji em decimal --&gt;</code></pre>
+                </li>
+            </ul>
+        </li>
+    </ol>
+    <h4 id="tabela-de-emojis-html"><strong>Tabela de Emojis (HTML):</strong></h4>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Emoji</th>
+                <th>Código Hexadecimal</th>
+                <th>Código Decimal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>😊</td>
+                <td><code>&amp;#x1F60A;</code></td>
+                <td><code>&amp;#128522;</code></td>
+            </tr>
+            <tr>
+                <td>❤️</td>
+                <td><code>&amp;#x2764;</code></td>
+                <td><code>&amp;#10084;</code></td>
+            </tr>
+            <tr>
+                <td>🌍</td>
+                <td><code>&amp;#x1F30D;</code></td>
+                <td><code>&amp;#127757;</code></td>
+            </tr>
+            <tr>
+                <td>🚀</td>
+                <td><code>&amp;#x1F680;</code></td>
+                <td><code>&amp;#128640;</code></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h3 id="2-símbolos-especiais"><strong>2. Símbolos Especiais</strong></h3>
+    <p>Além dos emojis, o Unicode inclui uma variedade de símbolos especiais, como marcas registradas, setas, moedas,
+        matemáticos, etc.</p>
+    <h4 id="como-usar-símbolos-especiais"><strong>Como usar símbolos especiais:</strong></h4>
+    <ol>
+        <li>
+            <p><strong>Diretamente no texto:</strong> </p>
+            <ul>
+                <li>Copie e cole o símbolo no seu código ou documento. </li>
+                <li>Exemplo:
+                    <pre><code class="language-html">&lt;p&gt;Marca registrada: ®&lt;/p&gt;</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Usando códigos HTML:</strong> </p>
+            <ul>
+                <li>Cada símbolo tem um código Unicode que pode ser usado em HTML. </li>
+                <li>Formato: <code>&amp;#x[código hexadecimal];</code> ou <code>&amp;#[código decimal];</code>. </li>
+                <li>Exemplo:
+                    <pre><code class="language-html">&lt;p&gt;Marca registrada: &amp;#x00AE;&lt;/p&gt; &lt;!-- Símbolo &quot;®&quot; --&gt;
+&lt;p&gt;Marca registrada: &amp;#174;&lt;/p&gt;    &lt;!-- Mesmo símbolo em decimal --&gt;</code></pre>
+                </li>
+            </ul>
+        </li>
+    </ol>
+    <h4 id="tabela-de-símbolos-especiais-html"><strong>Tabela de Símbolos Especiais (HTML):</strong></h4>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Símbolo</th>
+                <th>Descrição</th>
+                <th>Código Hexadecimal</th>
+                <th>Código Decimal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>®</td>
+                <td>Marca registrada</td>
+                <td><code>&amp;#x00AE;</code></td>
+                <td><code>&amp;#174;</code></td>
+            </tr>
+            <tr>
+                <td>©</td>
+                <td>Copyright</td>
+                <td><code>&amp;#x00A9;</code></td>
+                <td><code>&amp;#169;</code></td>
+            </tr>
+            <tr>
+                <td>™</td>
+                <td>Trade Mark (Marca comercial)</td>
+                <td><code>&amp;#x2122;</code></td>
+                <td><code>&amp;#8482;</code></td>
+            </tr>
+            <tr>
+                <td>€</td>
+                <td>Euro</td>
+                <td><code>&amp;#x20AC;</code></td>
+                <td><code>&amp;#8364;</code></td>
+            </tr>
+            <tr>
+                <td>¥</td>
+                <td>Iene/Juan</td>
+                <td><code>&amp;#x00A5;</code></td>
+                <td><code>&amp;#165;</code></td>
+            </tr>
+            <tr>
+                <td>→</td>
+                <td>Seta para a direita</td>
+                <td><code>&amp;#x2192;</code></td>
+                <td><code>&amp;#8594;</code></td>
+            </tr>
+            <tr>
+                <td>♥</td>
+                <td>Coração</td>
+                <td><code>&amp;#x2665;</code></td>
+                <td><code>&amp;#9829;</code></td>
+            </tr>
+            <tr>
+                <td>★</td>
+                <td>Estrela</td>
+                <td><code>&amp;#x2605;</code></td>
+                <td><code>&amp;#9733;</code></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h3 id="3-caracteres-especiais-em-html"><strong>3. Caracteres Especiais em HTML</strong></h3>
+    <p>Alguns caracteres têm significados especiais em HTML (como <code>&lt;</code>, <code>&gt;</code>,
+        <code>&amp;</code>). Para exibi-los corretamente, você precisa usar <strong>entidades HTML</strong>.</p>
+    <h4 id="exemplos-de-entidades-html"><strong>Exemplos de entidades HTML:</strong></h4>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Caractere</th>
+                <th>Entidade HTML</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&lt;</td>
+                <td><code>&amp;lt;</code></td>
+            </tr>
+            <tr>
+                <td>&gt;</td>
+                <td><code>&amp;gt;</code></td>
+            </tr>
+            <tr>
+                <td>&amp;</td>
+                <td><code>&amp;amp;</code></td>
+            </tr>
+            <tr>
+                <td>&quot;</td>
+                <td><code>&amp;quot;</code></td>
+            </tr>
+            <tr>
+                <td>&apos;</td>
+                <td><code>&amp;apos;</code></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h3 id="4-como-inserir-caracteres-especiais-no-css"><strong>4. Como Inserir Caracteres Especiais no CSS</strong>
+    </h3>
+    <p>No CSS, você pode usar códigos Unicode para adicionar símbolos ou emojis ao conteúdo de um elemento.</p>
+    <p><strong>Exemplo:</strong></p>
+    <pre><code class="language-css">/* Adiciona um coração antes de um parágrafo */
+p::before {
+    content: "\2665"; /* Código Unicode para "♥" */
+    color: red;
+    margin-right: 5px;
+}</code></pre>
+    <hr>
+    <h3 id="5-como-inserir-caracteres-especiais-no-javascript"><strong>5. Como Inserir Caracteres Especiais no
+            JavaScript</strong></h3>
+    <p>No JavaScript, você pode usar códigos Unicode diretamente em strings.</p>
+    <p><strong>Exemplo:</strong></p>
+    <pre><code class="language-javascript">let emoji = "😊";
+let simbolo = "®";
+
+console.log("Olá! " + emoji); // Exibe: Olá! 😊
+console.log("Marca registrada: " + simbolo); // Exibe: Marca registrada: ®</code></pre>
+    <hr>
+    <h3 id="resumo"><strong>Resumo</strong></h3>
+    <ul>
+        <li><strong>Emojis:</strong> Use códigos Unicode ou copie e cole diretamente. </li>
+        <li><strong>Símbolos especiais:</strong> Use códigos Unicode ou entidades HTML. </li>
+        <li><strong>Caracteres especiais em HTML:</strong> Use entidades HTML para exibir <code>&lt;</code>,
+            <code>&gt;</code>, <code>&amp;</code>, etc. </li>
+        <li><strong>CSS e JavaScript:</strong> Use códigos Unicode para adicionar símbolos dinamicamente.</li>
+    </ul>
+    <p><strong>Ferramentas úteis:</strong></p>
+    <ul>
+        <li><a href="https://emojipedia.org/" target="_blank" rel="noopener noreferrer">Emojipedia</a> para emojis. </li>
+        <li><a href="https://unicode-table.com/" target="_blank" rel="noopener noreferrer">Unicode Table</a> para símbolos especiais. </li>
+        <li><a href="https://www.w3schools.com/html/html_entities.asp" target="_blank" rel="noopener noreferrer">HTML Entities</a> para entidades HTML.</li>
+        <li><a href="https://www.w3schools.com/charsets/ref_utf_symbols.asp" target="_blank" rel="noopener noreferrer">UTF-8 Miscellaneous Symbols</a> Tabela de
+            simbolos W3Schools.</li>
+        <li><a href="curso-em-video-aulas-em-pdf/05.pdf" target="_blank" rel="noopener noreferrer">PDF Aula 05</a></li>
+    </ul>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
