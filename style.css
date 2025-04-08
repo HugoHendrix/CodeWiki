@@ -11,11 +11,12 @@
     height: 100vh;
     overflow-y: auto;
     border-right: 3px solid rgba(49, 45, 45, 0.486);
+    
 
 }
 
 .content {
-    margin-left: 14%;
+    margin-left: 17%;
     padding: 20px;
     flex-grow: 1;
 }

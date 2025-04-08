@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h1 id="documentação-de-alinhamento-vertical-em-css">Documentação de Alinhamento Vertical em CSS</h1>
+    <h2 id="introdução">Introdução</h2>
+    <p>O alinhamento vertical em CSS pode ser desafiador para desenvolvedores, especialmente iniciantes. Esta
+        documentação aborda várias técnicas para alinhar elementos verticalmente, complementando as informações do
+        artigo original do LogRocket.</p>
+    <h2 id="métodos-de-alinhamento-vertical">Métodos de Alinhamento Vertical</h2>
+    <h3 id="1-usando-vertical-align">1. Usando <code>vertical-align</code></h3>
+    <p>A propriedade <code>vertical-align</code> é usada principalmente para:</p>
+    <ul>
+        <li>Alinhar elementos inline (como texto ou imagens) dentro de elementos de linha</li>
+        <li>Alinhar células em tabelas</li>
+    </ul>
+    <pre><code class="language-css">img {
+  vertical-align: middle; /* top | middle | bottom | baseline */
+}
+</code></pre>
+    <p><strong>Limitações</strong>: Não funciona diretamente para alinhar elementos block-level.</p>
+    <h3 id="2-usando-flexbox-recomendado-para-layouts-modernos">2. Usando Flexbox (Recomendado para layouts modernos)
+    </h3>
+    <p>Flexbox é a maneira mais moderna e eficiente para alinhamento vertical e horizontal.</p>
+    <pre><code class="language-css">.container {
+  display: flex;
+  align-items: center; /* Alinha verticalmente */
+  justify-content: center; /* Alinha horizontalmente */
+}
+</code></pre>
+    <p><strong>Variações</strong>:</p>
+    <ul>
+        <li><code>align-items: flex-start</code> - alinha no topo</li>
+        <li><code>align-items: flex-end</code> - alinha na base</li>
+        <li><code>align-items: stretch</code> - estica para preencher (padrão)</li>
+    </ul>
+    <h3 id="3-usando-grid-css">3. Usando Grid CSS</h3>
+    <p>CSS Grid também oferece excelentes opções de alinhamento:</p>
+    <pre><code class="language-css">.container {
+  display: grid;
+  place-items: center; /* Centraliza vertical e horizontalmente */
+}
+</code></pre>
+    <p>Ou separadamente:</p>
+    <pre><code class="language-css">.container {
+  display: grid;
+  align-items: center; /* Vertical */
+  justify-items: center; /* Horizontal */
+}
+</code></pre>
+    <h3 id="4-usando-position-e-transform">4. Usando <code>position</code> e <code>transform</code></h3>
+    <p>Técnica útil para centralização absoluta:</p>
+    <pre><code class="language-css">.element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</code></pre>
+    <h3 id="5-usando-line-height-para-texto">5. Usando <code>line-height</code> para texto</h3>
+    <p>Para elementos de linha única, você pode definir <code>line-height</code> igual à altura:</p>
+    <pre><code class="language-css">.button {
+  height: 40px;
+  line-height: 40px; /* Centraliza o texto verticalmente */
+}
+</code></pre>
+    <h3 id="6-usando-tabelas-método-legado">6. Usando tabelas (método legado)</h3>
+    <pre><code class="language-css">.container {
+  display: table;
+}
+
+.child {
+  display: table-cell;
+  vertical-align: middle;
+}
+</code></pre>
+    <h2 id="alinhamento-vertical-em-contextos-específicos">Alinhamento Vertical em Contextos Específicos</h2>
+    <h3 id="alinhar-imagens-com-texto">Alinhar imagens com texto</h3>
+    <pre><code class="language-css">img {
+  vertical-align: middle; /* Alinha a imagem com o texto ao lado */
+}
+</code></pre>
+    <h3 id="centralizar-um-elemento-na-página-inteira">Centralizar um elemento na página inteira</h3>
+    <pre><code class="language-css">body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+</code></pre>
+    <h3 id="alinhar-vários-itens-em-um-container">Alinhar vários itens em um container</h3>
+    <pre><code class="language-css">.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribui espaço entre itens */
+  height: 300px;
+}
+</code></pre>
+    <h2 id="técnicas-avançadas">Técnicas Avançadas</h2>
+    <h3 id="alinhamento-com-margin-auto-em-flexbox">Alinhamento com <code>margin: auto</code> em Flexbox</h3>
+    <pre><code class="language-css">.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.child {
+  margin: auto; /* Centraliza vertical e horizontalmente */
+}
+</code></pre>
+    <h3 id="usando-calc-para-posicionamento-preciso">Usando <code>calc()</code> para posicionamento preciso</h3>
+    <pre><code class="language-css">.element {
+  position: absolute;
+  top: calc(50% - 20px); /* 20px é metade da altura do elemento */
+}
+</code></pre>
+    <h2 id="considerações-sobre-responsividade">Considerações sobre Responsividade</h2>
+    <ul>
+        <li>Flexbox e Grid são naturalmente mais responsivos</li>
+        <li>Evite usar valores fixos de altura quando possível</li>
+        <li>Considere usar unidades relativas como <code>vh</code>, <code>%</code> ou <code>em</code></li>
+    </ul>
+    <h2 id="compatibilidade-entre-navegadores">Compatibilidade entre Navegadores</h2>
+    <ul>
+        <li>Flexbox tem suporte em todos os navegadores modernos (IE10+ com prefixos)</li>
+        <li>Grid tem suporte em navegadores mais recentes</li>
+        <li>Para suporte mais amplo, considere usar técnicas de fallback</li>
+    </ul>
+    <h2 id="conclusão">Conclusão</h2>
+    <p>Para layouts modernos, Flexbox e Grid CSS são as abordagens mais recomendadas para alinhamento vertical. Técnicas
+        mais antigas como <code>vertical-align</code> e métodos baseados em tabelas ainda têm seu lugar em contextos
+        específicos, mas geralmente são menos flexíveis.</p>
+    <p>Escolha o método baseado em:</p>
+    <ol>
+        <li>Suporte necessário de navegadores</li>
+        <li>Complexidade do layout</li>
+        <li>Manutenibilidade do código</li>
+    </ol>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
