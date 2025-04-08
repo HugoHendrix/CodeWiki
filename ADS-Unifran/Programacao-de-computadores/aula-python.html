@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h2 id="📝-documentação-conceitos-básicos-de-python"><strong>📝 Documentação: Conceitos Básicos de Python</strong>
+    </h2>
+    <h3 id="1-origem-do-nome-python"><strong>1. Origem do Nome &quot;Python&quot;</strong></h3>
+    <ul>
+        <li><strong>Curiosidade:</strong> O nome foi inspirado no programa de TV britânico <strong>&quot;Monty
+                Python&#39;s Flying Circus&quot;</strong>, e não na cobra. </li>
+        <li><strong>Por quê?</strong> Guido van Rossum (criador do Python) era fã do humor surreal do grupo.</li>
+    </ul>
+    <hr>
+    <h3 id="2-linguagem-com-tipagem-dinâmica-duck-typing"><strong>2. Linguagem com Tipagem Dinâmica (Duck
+            Typing)</strong></h3>
+    <ul>
+        <li><strong>Definição:</strong> Python não exige a declaração explícita de tipos de variáveis. O tipo é inferido
+            em tempo de execução. </li>
+        <li><strong>Duck Typing:</strong>
+            <ul>
+                <li><em>&quot;Se anda como um pato e faz &#39;quack&#39; como um pato, então é um pato.&quot;</em> </li>
+                <li>Em Python, se um objeto tem os métodos necessários, ele pode ser usado como esperado,
+                    independentemente do tipo. </li>
+                <li><strong>Exemplo:</strong>
+                    <pre><code class="language-python">def cumprimentar(objeto):
+    objeto.falar()  # Não importa se é um Personagem, Animal etc., desde que tenha .falar()
+
+class Pessoa:
+    def falar(self):
+        print(&quot;Olá!&quot;)
+
+class Papagaio:
+    def falar(self):
+        print(&quot;Repete!&quot;)
+
+cumprimentar(Pessoa())   # Saída: &quot;Olá!&quot;  
+cumprimentar(Papagaio()) # Saída: &quot;Repete!&quot;  
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Vantagem:</strong> Flexibilidade e código mais enxuto.</li>
+    </ul>
+    <hr>
+    <h3 id="3-frameworks-para-desenvolvimento-web"><strong>3. Frameworks para Desenvolvimento Web</strong></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Framework</th>
+                <th>Uso Principal</th>
+                <th>Dificuldade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Django</strong></td>
+                <td>Aplicações completas (admin, ORM, segurança)</td>
+                <td>Intermediário</td>
+            </tr>
+            <tr>
+                <td><strong>Flask</strong></td>
+                <td>Microservices e APIs leves</td>
+                <td>Iniciante</td>
+            </tr>
+            <tr>
+                <td><strong>FastAPI</strong></td>
+                <td>APIs modernas (rápido e assíncrono)</td>
+                <td>Intermediário</td>
+            </tr>
+        </tbody>
+    </table>
+    <ul>
+        <li><strong>Melhor para iniciantes:</strong> <strong>Flask</strong> (simplicidade) ou <strong>FastAPI</strong>
+            (se focar em APIs).</li>
+    </ul>
+    <hr>
+    <h3 id="4-variáveis-em-python"><strong>4. Variáveis em Python</strong></h3>
+    <ul>
+        <li><strong>Definição:</strong> Espaços na memória que armazenam dados. </li>
+        <li><strong>Declaração:</strong>
+            <pre><code class="language-python">nome = &quot;Hugo&quot;  # String  
+idade = 34      # Inteiro  
+altura = 1.75   # Float  
+</code></pre>
+        </li>
+        <li><strong>Case-sensitive:</strong> <code>idade ≠ Idade ≠ IDADE</code>.</li>
+    </ul>
+    <hr>
+    <h3 id="5-regras-para-nomear-variáveis"><strong>5. Regras para Nomear Variáveis</strong></h3>
+    <ul>
+        <li>✅ Pode começar com letra ou <code>_</code>. </li>
+        <li>✅ Aceita números, mas não no início (<code>var1</code> ✔, <code>1var</code> ✖). </li>
+        <li>❌ Não pode usar espaços ou símbolos (<code>@</code>, <code>#</code>). </li>
+        <li>❌ Não pode ser <strong>palavra reservada</strong> (veja tabela abaixo).</li>
+    </ul>
+    <hr>
+    <h3 id="6-palavras-reservadas-do-python"><strong>6. Palavras Reservadas do Python</strong></h3>
+    <ul>
+        <li><code>and</code> </li>
+        <li><code>as</code> </li>
+        <li><code>assert</code></li>
+        <li><code>break</code> </li>
+        <li><code>class</code> </li>
+        <li><code>def</code> </li>
+        <li><code>if</code> </li>
+        <li><code>else</code> </li>
+        <li><code>for</code> </li>
+        <li><code>while</code> </li>
+        <li><code>import</code> </li>
+        <li><code>return</code></li>
+    </ul>
+    <p><em>(Lista completa: <a href="https://docs.python.org/3/reference/lexical_analysis.html#keywords">Python
+                Docs</a>)</em> </p>
+    <hr>
+    <h3 id="7-exemplos-práticos"><strong>7. Exemplos Práticos</strong></h3>
+    <h4 id="atribuição-e-manipulação"><strong>Atribuição e Manipulação</strong></h4>
+    <pre><code class="language-python">a = 5  
+b = 3  
+soma = a + b  # 8  
+</code></pre>
+    <h4 id="entrada-de-dados"><strong>Entrada de Dados</strong></h4>
+    <pre><code class="language-python">nome = input(&quot;Digite seu nome: &quot;)          # Lê string  
+idade = int(input(&quot;Digite sua idade: &quot;))   # Converte para int  
+</code></pre>
+    <h4 id="conversão-de-tipos"><strong>Conversão de Tipos</strong></h4>
+    <pre><code class="language-python">numero_str = &quot;10&quot;  
+numero_int = int(numero_str)   # String → Inteiro  
+numero_float = float(&quot;3.14&quot;)   # String → Float  
+</code></pre>
+    <hr>
+    <h3 id="8-dicas-para-usar-o-idle-shell"><strong>8. Dicas para Usar o IDLE Shell</strong></h3>
+    <ul>
+        <li><strong>Atalhos úteis:</strong>
+            <ul>
+                <li><code>Alt + P</code> (comando anterior) / <code>Alt + N</code> (próximo comando). </li>
+                <li><code>Tab</code> (autocompletar).</li>
+            </ul>
+        </li>
+        <li><strong>Teste rápido:</strong> Use como uma calculadora ou para testes de sintaxe. </li>
+        <li><strong>Limitação:</strong> Para projetos grandes, prefira editores como <strong>VS Code</strong> ou
+            <strong>PyCharm</strong>.</li>
+    </ul>
+    <hr>
+    <h3 id="9-tipos-de-dados-básicos"><strong>9. Tipos de Dados Básicos</strong></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Exemplo</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>int</code></td>
+                <td><code>42</code></td>
+                <td>Números inteiros</td>
+            </tr>
+            <tr>
+                <td><code>float</code></td>
+                <td><code>3.14</code></td>
+                <td>Números decimais</td>
+            </tr>
+            <tr>
+                <td><code>str</code></td>
+                <td><code>&quot;Python&quot;</code></td>
+                <td>Texto (entre aspas)</td>
+            </tr>
+            <tr>
+                <td><code>bool</code></td>
+                <td><code>True</code>/<code>False</code></td>
+                <td>Valores</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h3 id="🔗-links-úteis"><strong>🔗 Links Úteis</strong></h3>
+    <ul>
+        <li><a href="https://www.python.org/">Python Oficial</a> </li>
+        <li><a href="https://docs.python.org/pt-br/3/tutorial/">Tutorial Python (Docs)</a> </li>
+        <li><a href="https://python.org.br/">Python para Iniciantes (Python Brasil)</a></li>
+    </ul>
+    <hr>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

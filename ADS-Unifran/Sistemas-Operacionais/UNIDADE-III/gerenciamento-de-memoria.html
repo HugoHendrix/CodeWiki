@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h2 id="gerenciamento-de-memória">Gerenciamento de Memória</h2>
+    <hr>
+    <p>O documento <strong>&quot;Gerenciamento de Memória&quot;</strong> aborda conceitos fundamentais sobre a gestão de
+        memória em sistemas operacionais, com foco em memória virtual, paginação e segmentação. Abaixo estão as ideias
+        principais:</p>
+    <h3 id="1-memória-e-hierarquia-de-memória">1. <strong>Memória e Hierarquia de Memória</strong></h3>
+    <ul>
+        <li><strong>Memória Principal (RAM)</strong>: Volátil e de acesso aleatório, usada para armazenar dados e
+            instruções temporariamente.</li>
+        <li><strong>Memória Secundária (HD, SSD)</strong>: Mais lenta, mas com maior capacidade e persistência de dados.
+        </li>
+        <li><strong>Registradores e Cache</strong>: Memórias de alta velocidade localizadas no processador. A cache (L1,
+            L2, L3) atua como intermediária entre o processador e a memória principal, reduzindo a latência.</li>
+    </ul>
+    <h3 id="2-gerência-de-memória">2. <strong>Gerência de Memória</strong></h3>
+    <ul>
+        <li><strong>Gerenciador de Memória</strong>: Responsável por alocar e liberar memória para processos, além de
+            lidar com problemas como fragmentação e <em>swapping</em>.</li>
+        <li><strong>Algoritmos de Alocação</strong>:<ul>
+                <li><strong>Melhor Escolha (Best Fit)</strong>: Aloca o processo na menor região livre disponível.</li>
+                <li><strong>Pior Escolha (Worst Fit)</strong>: Aloca o processo na maior região livre.</li>
+                <li><strong>Primeira Escolha (First Fit)</strong>: Aloca o processo na primeira região livre encontrada.
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <h3 id="3-memória-virtual">3. <strong>Memória Virtual</strong></h3>
+    <ul>
+        <li><strong>Conceito</strong>: Combina memória física (RAM) e memória secundária (HD) para criar uma memória
+            aparentemente maior.</li>
+        <li><strong>Paginação</strong>: Divide a memória em blocos chamados páginas, que podem ser armazenados na
+            memória principal ou secundária. A <strong>Tabela de Páginas</strong> mapeia endereços virtuais para
+            endereços físicos.</li>
+        <li><strong>Swapping</strong>: Técnica que move dados entre a memória RAM e o HD para liberar espaço na memória
+            principal.</li>
+    </ul>
+    <h3 id="4-segmentação">4. <strong>Segmentação</strong></h3>
+    <ul>
+        <li><strong>Conceito</strong>: Divide o programa em segmentos (dados, instruções) que podem ser armazenados em
+            diferentes áreas da memória.</li>
+        <li><strong>Vantagens</strong>: Facilita a compilação, permite mudanças no tamanho dos segmentos sem afetar
+            outros, e facilita o compartilhamento de dados entre processos.</li>
+        <li><strong>Desvantagem</strong>: Dependência do hardware e do tamanho dos blocos de memória.</li>
+    </ul>
+    <h3 id="5-material-complementar-e-atividades">5. <strong>Material Complementar e Atividades</strong></h3>
+    <ul>
+        <li>O documento sugere a exploração de comandos para gerenciar memória virtual no Windows e oferece atividades
+            de fixação para testar o entendimento dos conceitos.</li>
+    </ul>
+    <h3 id="6-referências">6. <strong>Referências</strong></h3>
+    <ul>
+        <li>Baseado em obras como <strong>&quot;Sistemas Operacionais&quot;</strong> de Deitel e <strong>&quot;Sistemas
+                Operacionais Modernos&quot;</strong> de Tanenbaum.</li>
+    </ul>
+    <h3 id="ideias-chave">Ideias Chave:</h3>
+    <ul>
+        <li>A memória é hierárquica, com diferentes níveis de velocidade e capacidade.</li>
+        <li>O gerenciamento de memória é crucial para otimizar o uso da memória física e virtual.</li>
+        <li>Técnicas como paginação e segmentação permitem que sistemas operacionais lidem com a limitação de memória
+            física.</li>
+        <li>A memória virtual é uma extensão da memória RAM, usando o disco rígido para armazenar dados temporariamente.
+        </li>
+    </ul>
+    <p>Este resumo destaca os principais pontos do documento, focando nos conceitos de gerenciamento de memória e suas
+        aplicações práticas em sistemas operacionais.</p>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

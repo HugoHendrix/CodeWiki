@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h2 id="gerenciador-de-arquivos"><strong>Gerenciador de Arquivos</strong></h2>
+    <ul>
+        <li><strong>Objetivo</strong>: Estudar o gerenciador de arquivos em sistemas operacionais (SO), compreendendo a
+            organização, controle e acesso aos dados armazenados.</li>
+        <li><strong>Problema</strong>: Aplicações precisam armazenar e recuperar informações, muitas vezes além do
+            espaço disponível no processo em execução. Além disso, informações podem precisar ser retidas por longos
+            períodos e acessadas por múltiplos processos.</li>
+    </ul>
+    <h4 id="2-arquivo"><strong>2. Arquivo</strong></h4>
+    <ul>
+        <li><strong>Definição</strong>: Um arquivo é uma coleção nomeada de dados, que pode consistir em um ou mais
+            registros (blocos físicos).</li>
+        <li><strong>Registros</strong>: Podem ser de tamanho fixo ou variável, dependendo do sistema.</li>
+        <li><strong>Nomeação</strong>:<ul>
+                <li>Nomes de arquivos variam entre SOs, mas geralmente permitem cadeias de até 256 caracteres.</li>
+                <li>Extensões de arquivos (ex: <code>.txt</code>, <code>.doc</code>) indicam o tipo de arquivo e o
+                    programa associado.</li>
+            </ul>
+        </li>
+        <li><strong>Operações com arquivos</strong>:<ul>
+                <li><strong>Básicas</strong>: Abrir, fechar, criar, destruir, copiar, renomear, listar.</li>
+                <li><strong>Manipulação de dados</strong>: Ler, escrever, atualizar, apagar.</li>
+            </ul>
+        </li>
+        <li><strong>Atributos de arquivos</strong>: Tamanho, localização, acessibilidade, tipo, volatilidade, atividade.
+        </li>
+    </ul>
+    <h4 id="3-sistema-de-arquivos"><strong>3. Sistema de Arquivos</strong></h4>
+    <ul>
+        <li><strong>Função</strong>: Organizar e gerenciar o acesso aos dados, garantindo disponibilidade,
+            compartilhamento e segurança.</li>
+        <li><strong>Interfaces</strong>:<ul>
+                <li><strong>Texto</strong>: Comandos diretos (ex: <code>copy</code>, <code>del</code> no Windows;
+                    <code>cp</code>, <code>rm</code> no Unix).</li>
+                <li><strong>Gráfica</strong>: Interface visual para manipulação de arquivos.</li>
+            </ul>
+        </li>
+        <li><strong>Características</strong>:<ul>
+                <li><strong>Independência do dispositivo</strong>: Usuários referenciam arquivos por nomes simbólicos
+                    (ex: <code>MeuArquivo.txt</code>), não por localizações físicas.</li>
+                <li><strong>Segurança</strong>: Mecanismos de criptografia e backup são essenciais para proteger dados.
+                </li>
+                <li><strong>Compartilhamento</strong>: Permite acesso controlado a arquivos por múltiplos usuários.</li>
+            </ul>
+        </li>
+    </ul>
+    <h4 id="4-diretórios"><strong>4. Diretórios</strong></h4>
+    <ul>
+        <li><strong>Função</strong>: Organizar e localizar arquivos.</li>
+        <li><strong>Tipos de diretórios</strong>:<ul>
+                <li><strong>Nível único (diretório-raiz)</strong>: Todos os arquivos em um único diretório (raro hoje em
+                    dia).</li>
+                <li><strong>Hierárquico</strong>: Estrutura de árvore com diretórios e subdiretórios.<ul>
+                        <li><strong>Exemplos</strong>:<ul>
+                                <li><strong>Windows</strong>: <code>C:\Users\Claudiney\Documents</code></li>
+                                <li><strong>Unix</strong>: <code>/usr/Claudiney/Documents</code></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Caminhos</strong>:<ul>
+                <li><strong>Absoluto</strong>: Começa no diretório-raiz (ex: <code>/usr/ast/dicionário</code>).</li>
+                <li><strong>Relativo</strong>: Baseado no diretório atual (ex: <code>../blb/dicionário</code>).</li>
+            </ul>
+        </li>
+        <li><strong>Links</strong>:<ul>
+                <li><strong>Simbólicos (flexíveis)</strong>: Apontam para o caminho de outro arquivo (ex: atalhos no
+                    Windows).</li>
+                <li><strong>Estritos</strong>: Apontam diretamente para o bloco físico no dispositivo de armazenamento.
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <h4 id="5-metadados"><strong>5. Metadados</strong></h4>
+    <ul>
+        <li><strong>Definição</strong>: Informações sobre os arquivos, como localização de blocos livres, data de
+            modificação, e identificação única (superbloco).</li>
+        <li><strong>Importância</strong>: Protegem a integridade dos arquivos e não podem ser modificados diretamente
+            pelos usuários.</li>
+        <li><strong>Superbloco</strong>: Contém informações críticas sobre o sistema de arquivos. Cópias redundantes são
+            mantidas para evitar perdas.</li>
+    </ul>
+    <h4 id="6-montagem"><strong>6. Montagem</strong></h4>
+    <ul>
+        <li><strong>Definição</strong>: Processo de integrar sistemas de arquivos adicionais (ex: segundo HD) ao sistema
+            de arquivos principal.</li>
+        <li><strong>Exemplos</strong>:<ul>
+                <li><strong>Windows</strong>: Letras de unidade (ex: <code>C:</code>, <code>D:</code>).</li>
+                <li><strong>Unix</strong>: Pontos de montagem (ex: <code>/mnt/</code>).</li>
+            </ul>
+        </li>
+        <li><strong>Tabelas de montagem</strong>: Armazenam informações sobre os sistemas de arquivos montados.</li>
+        <li><strong>Comandos</strong>: <code>montar</code> e <code>desmontar</code> para gerenciar sistemas de arquivos.
+        </li>
+    </ul>
+    <h4 id="7-material-complementar"><strong>7. Material Complementar</strong></h4>
+    <ul>
+        <li><strong>Gerenciamento de arquivos no Linux</strong>: Comandos para criar, mover, copiar e gerenciar arquivos
+            e diretórios.</li>
+    </ul>
+    <h4 id="8-atividades-de-fixação"><strong>8. Atividades de Fixação</strong></h4>
+    <ul>
+        <li><strong>Gerenciador de arquivos</strong>: Software que permite criar, organizar e manipular arquivos e
+            pastas.</li>
+        <li><strong>Metadados</strong>: Informações descritivas sobre outros dados, como origem, formato e conteúdo.
+        </li>
+    </ul>
+    <h4 id="referências"><strong>Referências</strong></h4>
+    <ul>
+        <li><strong>Deitel, H. M.</strong> (2005). <em>Sistemas Operacionais</em>.</li>
+        <li><strong>Tanenbaum, A. S.</strong> (2009). <em>Sistemas Operacionais Modernos</em>.</li>
+    </ul>
+    <hr>
+    <h3 id="pontos-chave"><strong>Pontos Chave</strong>:</h3>
+    <ul>
+        <li><strong>Arquivos</strong>: Coleções nomeadas de dados, com operações básicas como criar, copiar e renomear.
+        </li>
+        <li><strong>Sistema de Arquivos</strong>: Gerencia o armazenamento e acesso aos dados, com interfaces gráficas e
+            de texto.</li>
+        <li><strong>Diretórios</strong>: Estruturas hierárquicas para organizar arquivos, com caminhos absolutos e
+            relativos.</li>
+        <li><strong>Metadados</strong>: Informações críticas sobre arquivos, como localização e data de modificação.
+        </li>
+        <li><strong>Montagem</strong>: Integração de sistemas de arquivos adicionais ao sistema principal.</li>
+    </ul>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

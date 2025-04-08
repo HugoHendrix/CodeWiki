@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="gerenciamento-de-processos">Gerenciamento de Processos</h1>
+    <p><strong>Gerenciamento de Processos</strong> em Sistemas Operacionais (SOs).</p>
+    <h3 id="1-introdução-ao-gerenciamento-de-processos">1. <strong>Introdução ao Gerenciamento de Processos</strong>
+    </h3>
+    <ul>
+        <li>O gerenciamento de processos é uma das principais funções de um SO, especialmente em sistemas
+            multiprogramados, onde vários programas precisam compartilhar a CPU de forma eficiente.</li>
+        <li>Um <strong>processo</strong> é um programa em execução, que inclui o código, dados e o contexto de execução
+            (como registradores, estado, prioridade, etc.).</li>
+        <li>O SO gerencia processos para garantir que a CPU seja utilizada de forma eficiente, criando a ilusão de que
+            vários programas estão sendo executados simultaneamente.</li>
+    </ul>
+    <h3 id="2-estados-de-um-processo">2. <strong>Estados de um Processo</strong></h3>
+    <ul>
+        <li>Um processo pode estar em diferentes estados durante sua execução:<ul>
+                <li><strong>Criação</strong>: Quando o processo é criado pelo SO.</li>
+                <li><strong>Pronto</strong>: Quando o processo está pronto para ser executado, aguardando a CPU.</li>
+                <li><strong>Execução</strong>: Quando o processo está sendo executado pela CPU.</li>
+                <li><strong>Bloqueado</strong>: Quando o processo está esperando por um recurso ou evento (como E/S).
+                </li>
+                <li><strong>Encerrado</strong>: Quando o processo termina sua execução.</li>
+            </ul>
+        </li>
+        <li>O SO gerencia a transição entre esses estados, utilizando filas de processos prontos e bloqueados.</li>
+    </ul>
+    <h3 id="3-escalonamento-de-processos">3. <strong>Escalonamento de Processos</strong></h3>
+    <ul>
+        <li>O <strong>escalonador</strong> (ou <strong>scheduler</strong>) é responsável por decidir qual processo deve
+            ser executado pela CPU em um determinado momento.</li>
+        <li>Existem diferentes <strong>algoritmos de escalonamento</strong>, cada um com suas características:<ul>
+                <li><strong>FIFO (First In, First Out)</strong>: Executa os processos na ordem em que chegam.</li>
+                <li><strong>Round Robin</strong>: Cada processo recebe uma fatia de tempo (quantum) para executar, e
+                    depois é colocado no final da fila.</li>
+                <li><strong>Escalonamento por Prioridade</strong>: Processos com maior prioridade são executados
+                    primeiro.</li>
+                <li><strong>Shortest Job First (SJF)</strong>: Executa o processo com o menor tempo de execução
+                    previsto.</li>
+                <li><strong>Escalonamento por Prazo (Deadline)</strong>: Usado em sistemas de tempo real, onde os
+                    processos têm prazos para serem executados.</li>
+            </ul>
+        </li>
+    </ul>
+    <h3 id="4-interrupções">4. <strong>Interrupções</strong></h3>
+    <ul>
+        <li>As <strong>interrupções</strong> são mecanismos que permitem ao SO interromper a execução de um processo
+            para realizar outras tarefas, como o escalonamento de outro processo.</li>
+        <li>Existem diferentes tipos de interrupções:<ul>
+                <li><strong>Interrupções de hardware</strong>: Geradas por dispositivos como o clock do sistema.</li>
+                <li><strong>Interrupções de software</strong>: Quando um processo solicita um serviço do SO.</li>
+                <li><strong>Interrupções de E/S</strong>: Geradas por dispositivos de entrada e saída.</li>
+                <li><strong>Traps</strong>: Interrupções causadas por erros na execução de programas (como divisão por
+                    zero).</li>
+            </ul>
+        </li>
+    </ul>
+    <h3 id="5-threads">5. <strong>Threads</strong></h3>
+    <ul>
+        <li><strong>Threads</strong> são unidades de execução dentro de um processo, permitindo que diferentes partes de
+            um programa sejam executadas de forma concorrente.</li>
+        <li>Enquanto um processo tradicional tem uma única thread, o uso de múltiplas threads permite que um programa
+            execute várias tarefas simultaneamente, melhorando a eficiência e a responsividade.</li>
+    </ul>
+    <h3 id="6-material-complementar-e-atividades">6. <strong>Material Complementar e Atividades</strong></h3>
+    <ul>
+        <li>O material complementar sugere a prática de gerenciamento de processos no Linux, utilizando comandos
+            específicos para criar, monitorar e eliminar processos.</li>
+        <li>As atividades de fixação reforçam os conceitos aprendidos, como a função do escalonador e os diferentes
+            algoritmos de escalonamento.</li>
+    </ul>
+    <h3 id="7-referências">7. <strong>Referências</strong></h3>
+    <ul>
+        <li>O conteúdo é baseado em livros clássicos de Sistemas Operacionais, como os de Deitel e Tanenbaum, que são
+            referências importantes na área.</li>
+    </ul>
+    <h3 id="resumo-das-ideias-principais">Resumo das Ideias Principais:</h3>
+    <ul>
+        <li><strong>Processos</strong> são programas em execução, gerenciados pelo SO para garantir o uso eficiente da
+            CPU.</li>
+        <li>O <strong>escalonador</strong> decide qual processo deve ser executado, utilizando algoritmos como FIFO,
+            Round Robin e SJF.</li>
+        <li><strong>Interrupções</strong> permitem que o SO gerencie a execução de processos de forma dinâmica.</li>
+        <li><strong>Threads</strong> permitem a execução concorrente dentro de um mesmo processo, aumentando a
+            eficiência.</li>
+        <li>O gerenciamento de processos é essencial para sistemas multitarefa, garantindo que múltiplos programas
+            possam ser executados de forma justa e eficiente.</li>
+    </ul>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

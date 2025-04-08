@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="anotações-da-aula">Anotações da Aula</h1>
+    <h3 id="1-o-que-é-um-sistema-operacional-so">1. <strong>O que é um Sistema Operacional (SO)?</strong></h3>
+    <ul>
+        <li>Um <strong>Sistema Operacional (SO)</strong> é um software que atua como intermediário entre o hardware
+            (parte física do computador) e o usuário (ou outros programas). Ele gerencia os recursos do computador, como
+            processador, memória, armazenamento e dispositivos de entrada/saída, permitindo que os programas funcionem
+            de forma eficiente.</li>
+        <li><strong>Funções principais:</strong>
+            <ul>
+                <li>Gerenciar processos (execução de programas).</li>
+                <li>Controlar a memória RAM.</li>
+                <li>Gerenciar arquivos e dispositivos de armazenamento.</li>
+                <li>Facilitar a comunicação com periféricos (impressoras, teclados, etc.).</li>
+                <li>Garantir segurança e proteção dos dados.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h3 id="2-evolução-histórica-dos-sistemas-operacionais">2. <strong>Evolução histórica dos Sistemas
+            Operacionais</strong></h3>
+    <ul>
+        <li><strong>Antes dos SOs (anos 1940-1950):</strong>
+            <ul>
+                <li>As pessoas que operavam as máquinas precisavam conhecer profundamente a <strong>arquitetura do
+                        hardware</strong> e programar diretamente em <strong>linguagem de máquina</strong> (códigos
+                    binários). Era um processo complexo e demorado.</li>
+            </ul>
+        </li>
+        <li><strong>Primeiros sistemas (1955):</strong>
+            <ul>
+                <li>Surgiram os primeiros SOs simples, como o <strong>GM-NAA I/O</strong>, que permitiam a execução de
+                    um programa por vez. O termo <strong>processamento de dados</strong> começou a ser usado para
+                    descrever a execução de tarefas em computadores.</li>
+            </ul>
+        </li>
+        <li><strong>Processamento em lote (batch processing):</strong>
+            <ul>
+                <li>Os programas eram agrupados em &quot;lotes&quot; (batch) e executados sequencialmente, sem interação
+                    do usuário durante a execução.</li>
+            </ul>
+        </li>
+        <li><strong>SPOOLING (Simultaneous Peripheral Operations On-Line):</strong>
+            <ul>
+                <li>Técnica que permitia compartilhar recursos, como impressoras, entre vários usuários ou programas.
+                </li>
+            </ul>
+        </li>
+        <li><strong>Multiprogramação e multitarefa:</strong>
+            <ul>
+                <li>A <strong>multiprogramação</strong> permitia que vários programas fossem carregados na memória ao
+                    mesmo tempo, mas apenas um usava o processador por vez.</li>
+                <li>A <strong>multitarefa</strong> permitiu que vários programas fossem executados simultaneamente,
+                    dividindo o tempo do processador entre eles.</li>
+            </ul>
+        </li>
+        <li><strong>Anos 1970: Sistemas Operacionais para computadores pessoais:</strong>
+            <ul>
+                <li>Surgiram SOs como o <strong>MS-DOS</strong> (Microsoft Disk Operating System), que era um sistema de
+                    linha de comando usado nos primeiros PCs.</li>
+            </ul>
+        </li>
+        <li><strong>Sistemas modernos:</strong>
+            <ul>
+                <li>Hoje temos SOs avançados como <strong>Windows</strong>, <strong>Linux</strong>,
+                    <strong>macOS</strong>, <strong>Android</strong> e <strong>iOS</strong>, com interfaces gráficas,
+                    multitarefa e suporte a redes.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h3 id="3-como-funciona-o-software-com-o-hardware">3. <strong>Como funciona o software com o hardware?</strong></h3>
+    <ul>
+        <li>O <strong>hardware</strong> é a parte física do computador (processador, memória, disco rígido, etc.).</li>
+        <li>O <strong>software</strong> são os programas que rodam no computador (SO, aplicativos, etc.).</li>
+        <li>O <strong>Sistema Operacional</strong> atua como uma camada intermediária entre o hardware e o software. Ele
+            abstrai a complexidade do hardware, fornecendo uma interface padronizada para os programas.<ul>
+                <li>Exemplo: Quando você abre um arquivo no Word, o SO gerencia a leitura do arquivo do disco rígido e a
+                    exibição na tela, sem que o Word precise saber detalhes específicos do hardware.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h3 id="4-antes-dos-sos-operadores-precisavam-conhecer-a-arquitetura-da-máquina">4. <strong>Antes dos SOs:
+            Operadores precisavam conhecer a arquitetura da máquina</strong></h3>
+    <ul>
+        <li>Antes dos SOs, os operadores precisavam programar diretamente em <strong>linguagem de máquina</strong>
+            (códigos binários) e entender detalhes do hardware, como endereços de memória e instruções do processador.
+        </li>
+        <li>Isso tornava o processo de operação e programação extremamente complexo e limitado a especialistas.</li>
+    </ul>
+    <hr>
+    <h3 id="5-primeiros-sistemas-em-1955">5. <strong>Primeiros sistemas em 1955</strong></h3>
+    <ul>
+        <li>Os primeiros SOs surgiram na década de 1950, como o <strong>GM-NAA I/O</strong>, que permitia a execução de
+            um programa por vez.</li>
+        <li>O termo <strong>processamento de dados</strong> começou a ser usado para descrever a execução de tarefas em
+            computadores.</li>
+    </ul>
+    <hr>
+    <h3 id="6-processamento-em-lote-batch-processing">6. <strong>Processamento em lote (batch processing)</strong></h3>
+    <ul>
+        <li>No processamento em lote, os programas eram agrupados em &quot;lotes&quot; e executados sequencialmente, sem
+            interação do usuário durante a execução.</li>
+        <li>Isso era comum em mainframes, onde os programas eram submetidos em cartões perfurados.</li>
+    </ul>
+    <hr>
+    <h3 id="7-spooling-multiprogramação-e-multitarefa">7. <strong>SPOOLING, multiprogramação e multitarefa</strong></h3>
+    <ul>
+        <li><strong>SPOOLING:</strong> Técnica que permitia compartilhar recursos, como impressoras, entre vários
+            usuários ou programas.</li>
+        <li><strong>Multiprogramação:</strong> Vários programas eram carregados na memória ao mesmo tempo, mas apenas um
+            usava o processador por vez.</li>
+        <li><strong>Multitarefa:</strong> Vários programas são executados simultaneamente, dividindo o tempo do
+            processador entre eles.</li>
+    </ul>
+    <hr>
+    <h3 id="8-sistemas-operacionais-para-computadores-pessoais-1970">8. <strong>Sistemas Operacionais para computadores
+            pessoais (1970)</strong></h3>
+    <ul>
+        <li>Nos anos 1970, surgiram SOs para computadores pessoais, como o <strong>MS-DOS</strong>, que era um sistema
+            de linha de comando usado nos primeiros PCs.</li>
+    </ul>
+    <hr>
+    <h3 id="9-sistemas-seriais-e-hardware-monoprogramados-ou-multiprogramados">9. <strong>Sistemas Seriais e Hardware
+            Monoprogramados ou Multiprogramados</strong></h3>
+    <ul>
+        <li><strong>Sistemas Seriais:</strong> Executam um programa por vez, sem compartilhamento de recursos.</li>
+        <li><strong>Hardware Monoprogramado:</strong> Apenas um programa pode ser executado por vez.</li>
+        <li><strong>Hardware Multiprogramado:</strong> Vários programas podem ser carregados na memória ao mesmo tempo,
+            mas apenas um usa o processador por vez.</li>
+    </ul>
+    <hr>
+    <h3 id="10-sistemas-com-tempo-de-resposta--job-ordem-de-execução-até-o-término">10. <strong>Sistemas com tempo de
+            resposta / Job (ordem de execução até o término)</strong></h3>
+    <ul>
+        <li><strong>Sistemas com tempo de resposta:</strong> São sistemas que precisam responder a eventos em tempo
+            real, como controle de tráfego aéreo ou robótica.</li>
+        <li><strong>Job:</strong> Refere-se a uma tarefa ou programa que é executado pelo SO. Em sistemas antigos, os
+            jobs eram executados em sequência até o término.</li>
+    </ul>
+    <hr>
+    <h3 id="11-máquinas-virtuais">11. <strong>Máquinas Virtuais</strong></h3>
+    <ul>
+        <li>Uma <strong>máquina virtual</strong> é um software que simula um computador completo, permitindo a execução
+            de um SO dentro de outro SO.<ul>
+                <li>Exemplo: Usar o <strong>VirtualBox</strong> para rodar um sistema Linux dentro do Windows.</li>
+            </ul>
+        </li>
+        <li>As máquinas virtuais são usadas para testes, desenvolvimento de software e execução de múltiplos SOs em um
+            único hardware.</li>
+    </ul>
+    <hr>
+    <h3 id="resumo">Resumo:</h3>
+    <ul>
+        <li>O <strong>Sistema Operacional</strong> é um software que gerencia os recursos do computador e facilita a
+            interação entre hardware e software.</li>
+        <li>A <strong>evolução histórica</strong> dos SOs passou de sistemas simples (1950) para sistemas complexos com
+            interfaces gráficas e multitarefa.</li>
+        <li>Antes dos SOs, os operadores precisavam programar diretamente em linguagem de máquina, o que era complexo.
+        </li>
+        <li>Conceitos como <strong>processamento em lote</strong>, <strong>SPOOLING</strong>,
+            <strong>multiprogramação</strong> e <strong>multitarefa</strong> foram fundamentais para a evolução dos SOs.
+        </li>
+        <li><strong>Máquinas virtuais</strong> permitem a execução de um SO dentro de outro, ampliando as possibilidades
+            de uso.</li>
+    </ul>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

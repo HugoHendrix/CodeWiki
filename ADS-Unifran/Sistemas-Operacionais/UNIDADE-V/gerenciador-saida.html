@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+   
+    <h2 id="revisão-do-conteúdo"><strong>Revisão do Conteúdo</strong></h3>
+    <h4 id="1-introdução-ao-gerenciamento-de-entrada-e-saída-es"><strong>1. Introdução ao Gerenciamento de Entrada e
+            Saída (E/S)</strong></h4>
+    <p>O gerenciamento de dispositivos de E/S é uma das principais funções de um sistema operacional. Ele controla o
+        acesso a todos os dispositivos de E/S, como teclados, monitores, impressoras, discos rígidos, etc. O objetivo
+        principal é facilitar o acesso do usuário a esses dispositivos, sem que ele precise se preocupar com detalhes
+        técnicos do hardware.</p>
+    <ul>
+        <li><strong>Função do SO</strong>: O sistema operacional envia comandos para os dispositivos, trata erros,
+            atende interrupções e fornece uma interface simples entre os dispositivos e o resto do sistema.</li>
+        <li><strong>Complexidade</strong>: Gerenciar E/S é uma tarefa complexa devido à grande variedade de dispositivos
+            e suas diferenças eletromecânicas. Além disso, muitos dispositivos, como discos, podem ser usados por vários
+            usuários simultaneamente, e o SO deve garantir a integridade dos dados compartilhados.</li>
+    </ul>
+    <h4 id="2-classificação-dos-dispositivos-de-es"><strong>2. Classificação dos Dispositivos de E/S</strong></h4>
+    <p>Os dispositivos de E/S podem ser classificados em duas categorias principais:</p>
+    <ul>
+        <li><strong>Dispositivos de Bloco</strong>: Armazenam informações em blocos de tamanho fixo (por exemplo, 512
+            bytes a 32.768 bytes). Cada bloco pode ser lido ou escrito independentemente. Exemplos comuns incluem discos
+            rígidos.</li>
+        <li><strong>Dispositivos de Caractere</strong>: Enviam e recebem um fluxo de caracteres sem considerar
+            estruturas de bloco. Eles não são endereçáveis e não permitem operações de acesso aleatório. Exemplos
+            incluem teclados, mouses e impressoras.</li>
+    </ul>
+    <p>No entanto, essa classificação não é perfeita, pois alguns dispositivos, como relógios (timers) e vídeos mapeados
+        na memória, não se encaixam nessas categorias.</p>
+    <h4 id="3-velocidades-dos-dispositivos-de-es"><strong>3. Velocidades dos Dispositivos de E/S</strong></h4>
+    <p>Os dispositivos de E/S variam muito em termos de velocidade. Por exemplo:</p>
+    <ul>
+        <li><strong>Teclado</strong>: 10 bytes/s</li>
+        <li><strong>Disco IDE</strong>: 5 MB/s</li>
+        <li><strong>Ethernet Gigabit</strong>: 125 MB/s</li>
+        <li><strong>Barramento PCI</strong>: 528 MB/s</li>
+    </ul>
+    <p>Essa variação de velocidades exige que o sistema operacional gerencie diferentes ordens de magnitude de
+        transferência de dados.</p>
+    <h4 id="4-rotina-de-es"><strong>4. Rotina de E/S</strong></h4>
+    <p>A rotina de E/S é o processo pelo qual o sistema operacional gerencia as operações de entrada e saída. Quando um
+        programa solicita uma operação de E/S (por exemplo, imprimir um documento), o SO traduz essa solicitação em
+        comandos específicos para o dispositivo.</p>
+    <ul>
+        <li><strong>Níveis de E/S</strong>: O software de E/S é dividido em camadas, como E/S em nível de usuário, E/S
+            independente de dispositivo, drivers de dispositivo, rotinas de interrupção e controladores.</li>
+        <li><strong>Interrupções</strong>: Quando um dispositivo completa uma operação de E/S, ele gera uma interrupção
+            para informar ao SO que a tarefa foi concluída.</li>
+    </ul>
+    <h4 id="5-controladores-de-es"><strong>5. Controladores de E/S</strong></h4>
+    <p>Os controladores são componentes eletrônicos que conectam os dispositivos de E/S ao sistema. Eles são
+        responsáveis por enviar comandos para os dispositivos e gerenciar a comunicação entre o hardware e o SO.</p>
+    <ul>
+        <li><strong>Placas Controladoras</strong>: Em computadores pessoais, os controladores são frequentemente
+            encontrados na forma de placas controladoras, como placas de vídeo, placas de rede, etc.</li>
+        <li><strong>Registradores</strong>: Os controladores possuem registradores que o SO usa para enviar comandos e
+            verificar o estado do dispositivo.</li>
+    </ul>
+    <h4 id="6-direct-memory-access-dma"><strong>6. Direct Memory Access (DMA)</strong></h4>
+    <p>O DMA é uma técnica que permite que os controladores de E/S transfiram dados diretamente para a memória
+        principal, sem a necessidade de intervenção da CPU. Isso libera a CPU para realizar outras tarefas enquanto a
+        transferência de dados ocorre.</p>
+    <ul>
+        <li><strong>Funcionamento</strong>: O controlador lê os dados do dispositivo, transfere-os para a memória e, em
+            seguida, gera uma interrupção para informar ao SO que a operação foi concluída.</li>
+    </ul>
+    <h4 id="7-drivers-de-dispositivo-device-drivers"><strong>7. Drivers de Dispositivo (Device Drivers)</strong></h4>
+    <p>Os drivers de dispositivo são programas específicos que permitem que o sistema operacional se comunique com
+        dispositivos de hardware. Eles traduzem comandos abstratos do SO em comandos específicos para o dispositivo.</p>
+    <ul>
+        <li><strong>Função</strong>: Quando um programa solicita uma operação de E/S (por exemplo, imprimir em negrito),
+            o driver converte essa solicitação em comandos específicos para a impressora.</li>
+        <li><strong>Atualização</strong>: Quando novos dispositivos são lançados, os fabricantes fornecem drivers
+            atualizados para garantir a compatibilidade com o SO.</li>
+    </ul>
+    <h3 id="conclusão"><strong>Conclusão</strong></h3>
+    <p>O gerenciamento de entrada e saída é uma parte essencial dos sistemas operacionais, responsável por garantir que
+        os dispositivos de hardware funcionem de maneira eficiente e segura. Através de controladores, drivers e
+        técnicas como o DMA, o SO facilita a comunicação entre o hardware e o software, permitindo que os usuários
+        interajam com os dispositivos de forma simples e intuitiva.</p>
+    <h3 id="dicas-para-fortalecer-seu-conhecimento-em-ti"><strong>Dicas para Fortalecer seu Conhecimento em TI</strong>
+    </h3>
+    <ol>
+        <li><strong>Pratique com Sistemas Operacionais</strong>: Instale e configure diferentes sistemas operacionais
+            (Linux, Windows, macOS) para entender como cada um gerencia dispositivos de E/S.</li>
+        <li><strong>Estude Programação de Baixo Nível</strong>: Aprenda linguagens como Assembly e C para entender como
+            os programas interagem diretamente com o hardware.</li>
+        <li><strong>Explore Drivers de Dispositivo</strong>: Tente desenvolver um driver simples para um dispositivo de
+            hardware, como uma impressora ou um teclado.</li>
+        <li><strong>Aprofunde-se em Redes e Armazenamento</strong>: Entenda como os dispositivos de rede e armazenamento
+            são gerenciados pelo SO, especialmente em ambientes de servidor.</li>
+        <li><strong>Leia Documentação Técnica</strong>: Consulte manuais e documentações técnicas de controladores e
+            dispositivos para entender como eles funcionam em nível de hardware.</li>
+    </ol>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

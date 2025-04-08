@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h2 id="gerenciamento-de-memória">Gerenciamento de Memória</h2>
+    <h3 id="glossário-de-gerenciamento-de-memória"><strong>Glossário de Gerenciamento de Memória</strong></h3>
+    <ol>
+        <li>
+            <p><strong>Memória</strong>: </p>
+            <ul>
+                <li><strong>Definição</strong>: Em computação, refere-se a todos os dispositivos que permitem armazenar
+                    dados temporariamente ou permanentemente. Pode ser usada para armazenar dados ou programas. </li>
+                <li><strong>Exemplo</strong>: Memória RAM, memória cache, memória secundária (HD).</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Cache (L1, L2 e L3)</strong>: </p>
+            <ul>
+                <li><strong>Definição</strong>: Memória de alta velocidade localizada no processador, usada para
+                    armazenar dados temporariamente e reduzir a latência de acesso à memória principal. <ul>
+                        <li><strong>L1</strong>: Mais rápida e menor, localizada dentro do processador. </li>
+                        <li><strong>L2</strong>: Um pouco mais lenta que L1, mas com maior capacidade. </li>
+                        <li><strong>L3</strong>: Compartilhada entre os núcleos do processador, maior capacidade, mas
+                            mais lenta que L1 e L2.</li>
+                    </ul>
+                </li>
+                <li><strong>Função</strong>: Antecipar o uso de dados para acelerar o processamento.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Latência</strong>: </p>
+            <ul>
+                <li><strong>Definição</strong>: Tempo decorrido entre uma solicitação de dados e o momento em que esses
+                    dados estão disponíveis para uso. </li>
+                <li><strong>Medida</strong>: Em nanossegundos ou ciclos de clock. </li>
+                <li><strong>Exemplo</strong>: A latência da cache L1 é de 2-3 ciclos, enquanto a da cache L2 é de ~10
+                    ciclos.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>RAM (Random Access Memory)</strong>: </p>
+            <ul>
+                <li><strong>Definição</strong>: Memória volátil de acesso aleatório, usada para armazenar dados e
+                    instruções temporariamente enquanto o computador está em funcionamento. </li>
+                <li><strong>Característica</strong>: Dados são perdidos quando o computador é desligado.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Caching</strong>: </p>
+            <ul>
+                <li><strong>Definição</strong>: Técnica de armazenar cópias de dados em locais de acesso rápido (como a
+                    cache) para reduzir o tempo de acesso. </li>
+                <li><strong>Exemplo</strong>: Deixar um lápis e papel na mesa para acesso rápido é uma forma de caching
+                    no mundo real.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>SIMM (Single In-line Memory Module)</strong>: </p>
+            <ul>
+                <li><strong>Definição</strong>: Tipo de pente de memória onde os chips de memória são soldados em apenas
+                    um lado da placa. </li>
+                <li><strong>Uso</strong>: Comum em computadores antigos.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>DIMM (Double In-line Memory Module)</strong>: </p>
+            <ul>
+                <li><strong>Definição</strong>: Tipo de pente de memória onde os chips de memória são soldados em ambos
+                    os lados da placa. </li>
+                <li><strong>Uso</strong>: Mais comum em computadores modernos.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>SDRAM (Synchronous Dynamic Random Access Memory)</strong>: </p>
+            <ul>
+                <li><strong>Definição</strong>: Tipo de memória RAM que opera em sincronia com o clock do processador,
+                    oferecendo maior velocidade de transferência de dados. </li>
+                <li><strong>Característica</strong>: Sincronizada com o barramento do sistema.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>DRAM (Dynamic Random Access Memory)</strong>: </p>
+            <ul>
+                <li><strong>Definição</strong>: Tipo de memória RAM que requer atualização constante (refresh) para
+                    manter os dados. </li>
+                <li><strong>Característica</strong>: Mais lenta que a SDRAM, mas com maior capacidade de armazenamento.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Swapping</strong>: </p>
+            <ul>
+                <li><strong>Definição</strong>: Técnica de mover dados entre a memória RAM e a memória secundária (HD)
+                    para liberar espaço na memória principal. </li>
+                <li><strong>Uso</strong>: Usado quando a memória física está cheia, permitindo que mais processos sejam
+                    executados.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Lei de Parkinson</strong>: </p>
+            <ul>
+                <li><strong>Definição</strong>: Princípio que afirma que &quot;os programas tendem a se expandir e
+                    ocupar toda a memória disponível&quot;. </li>
+                <li><strong>Aplicação</strong>: Explica por que a memória é sempre um recurso crítico, mesmo com grandes
+                    quantidades disponíveis.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Espaço de Endereçamento Virtual</strong>: </p>
+            <ul>
+                <li><strong>Definição</strong>: Conjunto de endereços que um programa pode referenciar,
+                    independentemente da memória física disponível. </li>
+                <li><strong>Uso</strong>: Permite que programas funcionem como se tivessem acesso a uma grande
+                    quantidade de memória.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Espaço de Endereçamento Físico</strong>: </p>
+            <ul>
+                <li><strong>Definição</strong>: Endereços reais da memória física (RAM) onde os dados são armazenados.
+                </li>
+                <li><strong>Uso</strong>: Mapeado a partir do espaço de endereçamento virtual.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Tabela de Páginas</strong>: </p>
+            <ul>
+                <li><strong>Definição</strong>: Estrutura que mapeia endereços virtuais para endereços físicos na
+                    memória. </li>
+                <li><strong>Função</strong>: Usada em sistemas de paginação para traduzir endereços virtuais em
+                    endereços reais.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>MMU (Memory Management Unit)</strong>: </p>
+            <ul>
+                <li><strong>Definição</strong>: Unidade de hardware responsável por traduzir endereços virtuais em
+                    endereços físicos. </li>
+                <li><strong>Função</strong>: Acelera o processo de tradução de endereços, melhorando o desempenho do
+                    sistema.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>DAT (Dynamic Address Translation)</strong>: </p>
+            <ul>
+                <li><strong>Definição</strong>: Mecanismo que converte endereços virtuais em endereços físicos durante a
+                    execução de um programa. </li>
+                <li><strong>Uso</strong>: Usado em sistemas de memória virtual para permitir o acesso a endereços que
+                    não estão na memória física.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="resumo-do-glossário"><strong>Resumo do Glossário</strong></h3>
+    <ul>
+        <li><strong>Memória</strong>: Armazenamento temporário ou permanente de dados e programas.</li>
+        <li><strong>Cache</strong>: Memória rápida que reduz a latência de acesso à RAM.</li>
+        <li><strong>Latência</strong>: Tempo de espera para acessar dados.</li>
+        <li><strong>RAM</strong>: Memória volátil de acesso aleatório.</li>
+        <li><strong>Caching</strong>: Técnica de armazenar cópias de dados para acesso rápido.</li>
+        <li><strong>SIMM/DIMM</strong>: Tipos de pentes de memória.</li>
+        <li><strong>SDRAM/DRAM</strong>: Tipos de memória RAM com diferentes características de velocidade e
+            sincronização.</li>
+        <li><strong>Swapping</strong>: Movimentação de dados entre RAM e HD.</li>
+        <li><strong>Lei de Parkinson</strong>: Programas expandem-se para ocupar toda a memória disponível.</li>
+        <li><strong>Espaço de Endereçamento Virtual/Físico</strong>: Endereços virtuais vs. endereços reais.</li>
+        <li><strong>Tabela de Páginas</strong>: Mapeia endereços virtuais para físicos.</li>
+        <li><strong>MMU/DAT</strong>: Hardware e mecanismos para tradução de endereços.</li>
+    </ul>
+    <p>Este glossário cobre os principais conceitos relacionados ao gerenciamento de memória em sistemas operacionais.
+    </p>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
