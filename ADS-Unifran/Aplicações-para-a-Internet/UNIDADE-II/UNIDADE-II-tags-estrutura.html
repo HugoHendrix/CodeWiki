@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="introdução-ao-html5-e-principais-tags-de-estrutura">Introdução ao HTML5 e Principais Tags de Estrutura</h1>
+    <h2 id="📝-conceitos-básicos">📝 Conceitos Básicos</h2>
+    <p>A linguagem HTML, desde sua primeira especificação, teve como objetivo principal <strong>estruturar
+            documentos</strong>. Sua especificação <strong>não visa a formatação ou a função de apresentação
+            visual</strong>, como cor de fonte, aspectos de layout, etc.</p>
+    <ul>
+        <li><strong>Formatação Visual</strong>: Para formatação, o HTML precisa do <strong>CSS</strong> (Cascading Style
+            Sheets). O <strong>CSS</strong> é responsável por determinar o estilo visual da página.</li>
+        <li><strong>Interatividade</strong>: Para adicionar interatividade aos elementos HTML, utilizamos o
+            <strong>JavaScript</strong>.</li>
+    </ul>
+    <p>Embora o HTML5 possua algumas tags que aplicam uma formatação simples, a principal função continua sendo a
+        <strong>estruturação</strong> do conteúdo.</p>
+    <h3 id="🖼️-exemplo">🖼️ Exemplo:</h3>
+    <ul>
+        <li>Duas páginas podem ter o mesmo código HTML, mas uma delas aplica <strong>CSS</strong> para formatação,
+            enquanto a outra não.</li>
+    </ul>
+    <hr>
+    <h2 id="📚-tags-detalhes-importantes">📚 Tags: Detalhes Importantes</h2>
+    <ul>
+        <li>
+            <p><strong>Tags com Fechamento</strong>: Geralmente, as tags HTML são formadas por um
+                <strong>início</strong> e um <strong>fim</strong>, como no exemplo abaixo:</p>
+            <pre><code class="language-html">&lt;p&gt;Esta tag define um parágrafo.&lt;/p&gt;
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Tags sem Fechamento</strong>: Algumas tags não precisam de um fechamento. Um exemplo de tag sem
+                fechamento é a tag <code>&lt;br /&gt;</code>, que serve para <strong>quebrar a linha</strong>. Ela não
+                possui uma tag de fechamento:</p>
+            <pre><code class="language-html">Está tag quebra a linha. &lt;br /&gt;
+</code></pre>
+        </li>
+    </ul>
+    <h3 id="🧩-estrutura-das-tags">🧩 Estrutura das Tags:</h3>
+    <ul>
+        <li>
+            <p>As tags HTML são delimitadas pelos sinais <strong>&quot;&lt;&quot;** e **&quot;&gt;&quot;</strong>. Um
+                exemplo de estrutura básica é:</p>
+            <pre><code class="language-html">&lt;html&gt; .... &lt;/html&gt;
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h2 id="🚫-tags-obsoletas">🚫 Tags Obsoletas</h2>
+    <p>Com o uso de <strong>CSS</strong> para estilização e <strong>JavaScript</strong> para funcionalidade, algumas
+        tags do HTML mais antigo não são mais utilizadas. Elas foram substituídas por práticas mais eficientes, que se
+        concentram em separar <strong>estrutura</strong> (HTML), <strong>estilo</strong> (CSS) e
+        <strong>comportamento</strong> (JavaScript).</p>
+    <hr>
+    <h2 id="📑-estrutura-básica-de-um-documento-html">📑 Estrutura Básica de um Documento HTML</h2>
+    <p>A estrutura básica de um documento HTML inclui:</p>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-br&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Título da Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Bem-vindo à minha página!&lt;/h1&gt;
+  &lt;p&gt;Este é um exemplo básico de página HTML5.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    <ul>
+        <li><code>&lt;!DOCTYPE html&gt;</code>: Declara o tipo de documento como HTML5.</li>
+        <li><code>&lt;html lang=&quot;pt-br&quot;&gt;</code>: Define o idioma da página como português.</li>
+        <li><code>&lt;head&gt;</code>: Contém informações sobre o documento (metadados, links para CSS, etc.).</li>
+        <li><code>&lt;body&gt;</code>: Contém o conteúdo visível da página.</li>
+    </ul>
+    <hr>
+    <h1 id="elementos-de-uma-página-html">Elementos de uma Página HTML</h1>
+    <h2 id="🧩-o-que-são-elementos">🧩 O que são Elementos?</h2>
+    <p>Os <strong>elementos</strong> em uma página HTML são todas as partes que ocupam um <strong>espaço na
+            tela</strong> quando a página é exibida. Cada elemento ocupa um espaço retangular, com <strong>largura e
+            altura</strong>.</p>
+    <h3 id="características-dos-elementos">Características dos Elementos:</h3>
+    <ul>
+        <li><strong>Espaço na tela</strong>: Cada elemento ocupa um espaço quadrado ou retangular que pode ser
+            manipulado em termos de tamanho e posição (usando CSS).</li>
+        <li><strong>Elementos aninhados</strong>: Elementos podem conter outros elementos. Por exemplo, um
+            <strong>bloco</strong> pode conter <strong>dois blocos menores</strong> dentro dele.</li>
+    </ul>
+    <h3 id="tipos-de-elementos">Tipos de Elementos:</h3>
+    <ul>
+        <li>
+            <p><strong>Elementos com conteúdo</strong>: Devem ter uma <strong>tag principal</strong> e uma <strong>tag
+                    de fechamento</strong>. Exemplo:</p>
+            <pre><code class="language-html">&lt;p&gt;Este é um parágrafo.&lt;/p&gt;
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Elementos sem conteúdo</strong>: Não possuem tag de fechamento. Exemplo:</p>
+            <pre><code class="language-html">&lt;br /&gt; &lt;!-- quebra de linha --&gt;
+&lt;hr /&gt; &lt;!-- linha horizontal --&gt;
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h2 id="⚙️-padrões-na-criação-do-código-html">⚙️ Padrões na Criação do Código HTML</h2>
+    <p>Para garantir que nossos documentos HTML sejam bem estruturados e compatíveis, devemos seguir algumas
+        <strong>boas práticas</strong> e <strong>padrões</strong>.</p>
+    <h3 id="boas-práticas">Boas Práticas:</h3>
+    <ul>
+        <li>
+            <p><strong>Documentos bem-formados</strong>: O código HTML deve estar estruturado corretamente, sem erros de
+                sintaxe.</p>
+        </li>
+        <li>
+            <p><strong>Uso de letras minúsculas</strong>: Todas as <strong>tags</strong> e <strong>atributos</strong>
+                devem ser escritos com <strong>letras minúsculas</strong>.</p>
+        </li>
+        <li>
+            <p><strong>Uso obrigatório de tags de fechamento</strong>: As tags de abertura devem sempre ser seguidas por
+                tags de fechamento, exceto em casos específicos como <code>&lt;br /&gt;</code> e
+                <code>&lt;hr /&gt;</code>.</p>
+        </li>
+        <li>
+            <p><strong>Elementos vazios</strong>: Para tags vazias como <code>&lt;br /&gt;</code>,
+                <code>&lt;hr /&gt;</code>, é permitido o uso de <strong>&quot;/&quot;</strong> para fechar a tag. Por
+                exemplo, <code>&lt;br /&gt;</code>.</p>
+        </li>
+        <li>
+            <p><strong>Atributos com letras minúsculas</strong>: Os <strong>atributos</strong> devem ser escritos com
+                <strong>letras minúsculas</strong>, como por exemplo: <code>class=&quot;exemplo&quot;</code>.</p>
+        </li>
+        <li>
+            <p><strong>Valores de atributos</strong>: Os <strong>valores dos atributos</strong> devem ser
+                <strong>escritos entre aspas</strong> (ex: <code>class=&quot;minhaClasse&quot;</code>).</p>
+        </li>
+        <li>
+            <p><strong>Associação de nome e valor nos atributos</strong>: Cada atributo deve ter um
+                <strong>nome</strong> e um <strong>valor</strong> associados. Exemplo:</p>
+            <pre><code class="language-html">&lt;a href=&quot;https://www.exemplo.com&quot;&gt;Clique aqui&lt;/a&gt;
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h1 id="caracteres-especiais">Caracteres Especiais</h1>
+    <p>Alguns caracteres têm um significado especial no HTML e não podem ser usados diretamente no conteúdo, pois podem
+        ser confundidos com as <strong>tags</strong> do documento. Para evitar esse problema, utilizamos
+        <strong>entidades de caracteres</strong>, que são representações especiais dos caracteres reservados.</p>
+    <h3 id="caracteres-reservados-e-suas-entidades">Caracteres Reservados e suas Entidades:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Caracter</th>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>&quot;</code></td>
+                <td>&#34;</td>
+                <td>&quot;</td>
+                <td>Aspas (quotation mark)</td>
+            </tr>
+            <tr>
+                <td><code>&#39;</code></td>
+                <td>&#39;</td>
+                <td>&apos;</td>
+                <td>Apóstrofe</td>
+            </tr>
+            <tr>
+                <td><code>&amp;</code></td>
+                <td>&#38;</td>
+                <td>&amp;</td>
+                <td>&quot;E&quot; comercial (ampersand)</td>
+            </tr>
+            <tr>
+                <td><code>&lt;</code></td>
+                <td>&#60;</td>
+                <td>&lt;</td>
+                <td>Menor que (less-than)</td>
+            </tr>
+            <tr>
+                <td><code>&gt;</code></td>
+                <td>&#62;</td>
+                <td>&gt;</td>
+                <td>Maior que (greater-than)</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h1 id="tags-especiais-de-organização-de-texto">Tags Especiais de Organização de Texto</h1>
+    <h2 id="✨-p---delimita-um-parágrafo">✨ <code>&lt;p&gt;</code> - Delimita um Parágrafo</h2>
+    <p>A tag <code>&lt;p&gt;</code> é utilizada para definir um parágrafo em HTML. Todo conteúdo dentro dessa tag será
+        exibido como um parágrafo.</p>
+    <h3 id="exemplo">Exemplo:</h3>
+    <pre><code class="language-html">&lt;p&gt;Este conteúdo foi definido como um parágrafo.&lt;/p&gt;
+</code></pre>
+    <hr>
+    <h2 id="✨-br---quebra-de-linha">✨ <code>&lt;br&gt;</code> - Quebra de Linha</h2>
+    <p>A tag <code>&lt;br&gt;</code> é usada para inserir uma quebra de linha no texto. Ela não gera um espaço extra,
+        apenas move o conteúdo para a linha seguinte.</p>
+    <h3 id="exemplo-1">Exemplo:</h3>
+    <pre><code class="language-html">Linha 1 &lt;br/&gt;
+Linha 2
+</code></pre>
+    <h3 id="o-que-ele-tem-de-especial">O que ele tem de especial?</h3>
+    <p>É a única tag que não representa um elemento no sentido de que não ocupa um espaço específico na tela. Apenas
+        cria uma nova linha.</p>
+    <hr>
+    <h1 id="elementos-de-estilo">Elementos de Estilo</h1>
+    <p>Apesar de ser uma linguagem de <strong>estruturação</strong>, o HTML oferece algumas tags para formatação rápida
+        de texto &quot;in line&quot; (diretamente no código). No entanto, muitas dessas tags foram substituídas pelo uso
+        do <strong>CSS</strong>.</p>
+    <h2 id="✨-tags-de-formatação-in-line">✨ Tags de Formatação &quot;In Line&quot;:</h2>
+    <ul>
+        <li><code>&lt;b&gt;</code> - Negrito</li>
+        <li><code>&lt;i&gt;</code> - Itálico</li>
+        <li><code>&lt;u&gt;</code> - Sublinhado</li>
+        <li><code>&lt;hr&gt;</code> - Quebra temática de linha (horizontal)</li>
+    </ul>
+    <h3 id="exemplos">Exemplos:</h3>
+    <pre><code class="language-html">&lt;b&gt;em negrito&lt;/b&gt;
+&lt;i&gt;em itálico&lt;/i&gt;
+&lt;u&gt;sublinhado&lt;/u&gt;
+&lt;hr/&gt;
+</code></pre>
+    <p>Essas tags são usadas para fazer ajustes rápidos no conteúdo, mas devem ser evitadas em favor de técnicas de
+        estilização com <strong>CSS</strong>.</p>
+    <hr>
+    <h1 id="listas">Listas</h1>
+    <p>Em HTML, você pode criar dois tipos de listas:</p>
+    <ul>
+        <li><strong>Listas Ordenadas</strong> (com números, letras, etc.)</li>
+        <li><strong>Listas Não Ordenadas</strong> (com marcadores, como pontos ou imagens)</li>
+    </ul>
+    <h2 id="✨-ol---lista-ordenada">✨ <code>&lt;ol&gt;</code> - Lista Ordenada</h2>
+    <p>Usada para listas onde a ordem dos itens é importante.</p>
+    <h3 id="exemplo-2">Exemplo:</h3>
+    <pre><code class="language-html">&lt;ol&gt;
+  &lt;li&gt;item 1&lt;/li&gt;
+  &lt;li&gt;item 2&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+    <h2 id="✨-ul---lista-não-ordenada">✨ <code>&lt;ul&gt;</code> - Lista Não Ordenada</h2>
+    <p>Usada para listas sem uma ordem específica.</p>
+    <h3 id="exemplo-3">Exemplo:</h3>
+    <pre><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;item 1&lt;/li&gt;
+  &lt;li&gt;item 2&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+    <hr>
+    <h1 id="tabelas">Tabelas</h1>
+    <p>As tabelas em HTML são compostas por várias tags que ajudam a definir a estrutura das linhas e colunas.</p>
+    <h2 id="✨-table---define-uma-tabela">✨ <code>&lt;table&gt;</code> - Define uma Tabela</h2>
+    <h2 id="✨-tr---define-uma-linha">✨ <code>&lt;tr&gt;</code> - Define uma Linha</h2>
+    <h2 id="✨-td---define-uma-coluna-ou-célula-dentro-de-uma-linha">✨ <code>&lt;td&gt;</code> - Define uma Coluna (ou
+        célula) dentro de uma linha</h2>
+    <h3 id="exemplo-4">Exemplo:</h3>
+    <pre><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Linha 1 – Coluna 1&lt;/td&gt;
+    &lt;td&gt;Linha 1 – Coluna 2&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Linha 2 – Coluna 1&lt;/td&gt;
+    &lt;td&gt;Linha 2 – Coluna 2&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+    <hr>
+    <h1 id="referências-absolutas-e-relativas">Referências Absolutas e Relativas</h1>
+    <h2 id="🌐-referências-absolutas">🌐 Referências Absolutas</h2>
+    <p>Uma referência <strong>absoluta</strong> é aquela que inclui o caminho completo de um arquivo, incluindo o
+        protocolo de comunicação (como <code>http</code>). Essa referência é válida enquanto o arquivo estiver no mesmo
+        diretório e estrutura.</p>
+    <h3 id="exemplo-5">Exemplo:</h3>
+    <pre><code class="language-html">&lt;img src=&quot;http://www.alexandergobbato.com/img/imagem1.png&quot; /&gt;
+</code></pre>
+    <hr>
+    <h2 id="🌐-referências-relativas">🌐 Referências Relativas</h2>
+    <p>Uma referência <strong>relativa</strong> é aquela que se refere a um arquivo com base no diretório atual da
+        página. Isso é usado para arquivos dentro do mesmo projeto.</p>
+    <h3 id="exemplos-1">Exemplos:</h3>
+    <ul>
+        <li>Quando o arquivo está no mesmo diretório:
+            <pre><code class="language-html">&lt;img src=&quot;imagem1.png&quot; /&gt;
+</code></pre>
+        </li>
+        <li>Quando o arquivo está em uma pasta (por exemplo, <code>img</code>):
+            <pre><code class="language-html">&lt;img src=&quot;img/imagem1.png&quot; /&gt;
+</code></pre>
+        </li>
+        <li>Caso a pasta <code>img</code> esteja um nível acima:
+            <pre><code class="language-html">&lt;img src=&quot;../img/imagem1.png&quot; /&gt;
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h1 id="imagens">Imagens</h1>
+    <p>As imagens suportadas nas páginas Web incluem os seguintes formatos:</p>
+    <ul>
+        <li><strong>GIF</strong> (com ou sem animação)</li>
+        <li><strong>JPG</strong></li>
+        <li><strong>PNG</strong></li>
+    </ul>
+    <h3 id="exemplo-6">Exemplo:</h3>
+    <pre><code class="language-html">&lt;img src=&quot;imagem1.png&quot; /&gt;
+</code></pre>
+    <hr>
+    <h1 id="tag-para-links">Tag para Links</h1>
+    <p>A tag <code>&lt;a&gt;</code> é utilizada para criar links que conectam uma página a outra, seja dentro do mesmo
+        site ou apontando para páginas externas.</p>
+    <h2 id="🌐-link-para-um-arquivo-dentro-do-mesmo-diretório">🌐 Link para um Arquivo dentro do mesmo diretório:</h2>
+    <pre><code class="language-html">&lt;a href=&quot;imagens/pagina1.html&quot;&gt;Clique aqui&lt;/a&gt;
+</code></pre>
+    <h2 id="🌐-link-para-um-arquivo-em-um-nível-acima">🌐 Link para um Arquivo em um Nível Acima:</h2>
+    <pre><code class="language-html">&lt;a href=&quot;../pagina2.html&quot;&gt;Clique aqui&lt;/a&gt;
+</code></pre>
+    <h2 id="🌐-link-para-um-arquivo-externo">🌐 Link para um Arquivo Externo:</h2>
+    <pre><code class="language-html">&lt;a href=&quot;http://www.google.com.br/index.html&quot;&gt;Clique aqui&lt;/a&gt;
+</code></pre>
+    <h3 id="atenção">Atenção:</h3>
+    <p>Evite usar o caminho físico do arquivo no sistema, como <code>C:\projetoweb\index.html</code>, pois isso pode
+        gerar erros quando o site for disponibilizado na web.</p>
+    <hr>
+    <h1 id="elementos-de-semântica">Elementos de Semântica</h1>
+    <p>Os <strong>elementos semânticos</strong> são usados para transmitir o significado do conteúdo dentro de um site,
+        melhorando a acessibilidade e a compreensão do código.</p>
+    <h2 id="🌐-elementos-de-linha-inline">🌐 Elementos de Linha (Inline)</h2>
+    <p>Esses elementos não quebram o fluxo do texto e geralmente são usados para aplicar estilos ao conteúdo:</p>
+    <ul>
+        <li>
+            <p><strong><code>&lt;strong&gt;</code></strong> - Representa conteúdo importante.</p>
+            <ul>
+                <li>Exemplo: <code>&lt;strong&gt;aparece em negrito&lt;/strong&gt;</code></li>
+            </ul>
+        </li>
+        <li>
+            <p><strong><code>&lt;em&gt;</code></strong> - Representa conteúdo enfatizado.</p>
+            <ul>
+                <li>Exemplo: <code>&lt;em&gt;aparece em itálico&lt;/em&gt;</code></li>
+            </ul>
+        </li>
+    </ul>
+    <h2 id="🌐-elementos-de-bloco">🌐 Elementos de Bloco</h2>
+    <p>São usados para definir blocos de conteúdo, como o <code>&lt;div&gt;</code>, mas com um significado semântico.
+        Eles ajudam a identificar o papel de cada parte do conteúdo:</p>
+    <ul>
+        <li><strong><code>&lt;header&gt;</code></strong> - Define a seção de cabeçalho de um documento.</li>
+        <li><strong><code>&lt;nav&gt;</code></strong> - Define uma seção de navegação.</li>
+        <li><strong><code>&lt;section&gt;</code></strong> - Define uma seção genérica de um documento.</li>
+        <li><strong><code>&lt;article&gt;</code></strong> - Define um conteúdo independente e autossuficiente.</li>
+        <li><strong><code>&lt;aside&gt;</code></strong> - Define conteúdo lateral relacionado, como uma barra lateral.
+        </li>
+        <li><strong><code>&lt;footer&gt;</code></strong> - Define o rodapé do documento.</li>
+    </ul>
+    <hr>
+    <h2 id="indicações-para-saber-mais-sobre-os-assuntos-abordados-nesta-unidade">Indicações para saber mais sobre os
+        assuntos abordados nesta Unidade:</h2>
+    <p>Esses links são recursos valiosos para quem deseja entender as especificações do HTML, acompanhar as diferenças
+        entre versões ou até mesmo lidar com problemas de compatibilidade entre navegadores.</p>
+    <table>
+        <thead>
+            <tr>
+                <th><strong>Link</strong></th>
+                <th><strong>Descrição</strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="https://www.w3.org/TR/html5-diff/" target="_blank" rel="noopener noreferrer">W3C HTML5 Differences</a></td>
+                <td>Este documento apresenta as diferenças entre a especificação HTML5 (atualmente adotada como padrão)
+                    e versões anteriores do HTML. Ele é útil para quem está migrando de versões anteriores (como HTML
+                    4.01) para HTML5, destacando as mudanças na sintaxe, nos comportamentos das tags e nos recursos
+                    adicionados.</td>
+            </tr>
+            <tr>
+                <td><a
+                        href="https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/?redirectedfrom=MSDN" target="_blank" rel="noopener noreferrer">Microsoft
+                        IE Developer Docs</a></td>
+                <td>Este link leva à documentação antiga dos desenvolvedores para o Internet Explorer. Embora o IE tenha
+                    sido descontinuado, esses documentos são úteis para entender como o browser tratava várias questões
+                    de desenvolvimento web, como suporte a padrões e recursos específicos, além de mostrar as limitações
+                    das versões mais antigas do navegador.</td>
+            </tr>
+            <tr>
+                <td><a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">WHATWG HTML Living Standard</a></td>
+                <td>O WHATWG (Web Hypertext Application Technology Working Group) mantém um &quot;standard vivo&quot;
+                    para o HTML, ou seja, uma especificação contínua e em atualização constante. Este é o documento
+                    central sobre HTML, fornecendo a definição mais atualizada sobre como o HTML deve funcionar e quais
+                    práticas são recomendadas para os desenvolvedores.</td>
+            </tr>
+            <tr>
+                <td><a href="https://html.spec.whatwg.org/#is-this-html5" target="_blank" rel="noopener noreferrer">HTML5 or Not?</a></td>
+                <td>Este link é uma seção específica da especificação do WHATWG, que define o que constitui HTML5. Ele
+                    aborda se um conjunto de características é considerado parte do HTML5, ajudando a esclarecer dúvidas
+                    sobre o que caracteriza essa versão do HTML em comparação com versões anteriores.</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

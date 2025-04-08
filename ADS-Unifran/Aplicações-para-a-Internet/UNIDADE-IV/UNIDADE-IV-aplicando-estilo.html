@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="aplicando-estilo-à-estrutura-do-documento">Aplicando Estilo à Estrutura do Documento</h1>
+    <h3 id="o-que-é-css-cascading-style-sheets-ou-folha-de-estilo-em-cascata">O que é CSS (Cascading Style Sheets) ou
+        Folha de Estilo em Cascata?</h3>
+    <p>CSS é uma linguagem utilizada para definir a apresentação visual de páginas web. Com ela, podemos estilizar
+        elementos HTML, alterando propriedades como fontes, cores, espaçamentos e layouts. </p>
+    <h3 id="evolução-do-css">Evolução do CSS</h3>
+    <p>A especificação do CSS é desenvolvida pela W3C (World Wide Web Consortium). A cada nova versão, mais
+        funcionalidades são adicionadas: </p>
+    <ul>
+        <li><strong>CSS1</strong>: Primeira versão, introduziu estilos básicos como cores, fontes e espaçamentos. </li>
+        <li><strong>CSS2</strong>: Expandiu os recursos do CSS1, incluindo layouts de múltiplas colunas e estilos para
+            impressão. </li>
+        <li><strong>CSS3</strong>: Introduziu módulos individuais, permitindo que os navegadores implementem novos
+            recursos gradualmente, como animações, gradientes e flexbox.</li>
+    </ul>
+    <h3 id="diferença-entre-html-e-css">Diferença entre HTML e CSS</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Característica</th>
+                <th>HTML</th>
+                <th>CSS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Função</strong></td>
+                <td>Define a estrutura do conteúdo</td>
+                <td>Define o estilo e aparência</td>
+            </tr>
+            <tr>
+                <td><strong>Uso</strong></td>
+                <td>Parágrafos, listas, tabelas, links</td>
+                <td>Cores, fontes, margens, layout</td>
+            </tr>
+            <tr>
+                <td><strong>Exemplo</strong></td>
+                <td><code>&lt;h1&gt;Olá, mundo!&lt;/h1&gt;</code></td>
+                <td><code>h1 { color: blue; }</code></td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 id="por-que-usar-css">Por que usar CSS?</h3>
+    <ul>
+        <li><strong>Separação de conteúdo e estilo</strong>: HTML cuida da estrutura, enquanto CSS cuida do design.
+        </li>
+        <li><strong>Reutilização de código</strong>: Podemos aplicar um mesmo estilo em várias páginas, economizando
+            tempo. </li>
+        <li><strong>Facilidade de manutenção</strong>: Alterações de design podem ser feitas de forma centralizada.
+        </li>
+        <li><strong>Melhor experiência do usuário</strong>: Permite criar layouts responsivos e modernos.</li>
+    </ul>
+    <h3 id="métodos-para-aplicar-css">Métodos para aplicar CSS</h3>
+    <ol>
+        <li>
+            <p><strong>CSS Inline</strong> (no próprio elemento) </p>
+            <pre><code class="language-html">&lt;p style=&quot;color: red;&quot;&gt;Este é um texto vermelho.&lt;/p&gt;
+</code></pre>
+            <p><strong>Vantagem</strong>: Aplicação rápida em um único elemento.<br><strong>Desvantagem</strong>:
+                Difícil de manter e reutilizar. </p>
+        </li>
+        <li>
+            <p><strong>CSS Incorporado</strong> (no <code>&lt;head&gt;</code> da página) </p>
+            <pre><code class="language-html">&lt;style&gt;
+  p { color: red; }
+&lt;/style&gt;
+</code></pre>
+            <p><strong>Vantagem</strong>: Permite estilizar vários elementos sem precisar repetir
+                código.<br><strong>Desvantagem</strong>: Ainda está dentro do próprio HTML, dificultando a reutilização.
+            </p>
+        </li>
+        <li>
+            <p><strong>CSS Externo</strong> (arquivo separado, recomendado) </p>
+            <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+</code></pre>
+            <p><strong>Vantagem</strong>: Organização, reutilização e fácil manutenção.</p>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="prioridade-dos-estilos-css">Prioridade dos Estilos CSS</h2>
+    <p>Quando utilizamos múltiplas formas de aplicar CSS em um documento HTML, é importante entender a hierarquia de
+        prioridade entre elas. </p>
+    <h3 id="ordem-de-prioridade-da-menor-para-a-maior">Ordem de Prioridade (da menor para a maior):</h3>
+    <ol>
+        <li><strong>CSS Externo</strong>
+            (<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;</code>) </li>
+        <li><strong>CSS Incorporado</strong> (<code>&lt;style&gt;</code> dentro do <code>&lt;head&gt;</code>) </li>
+        <li><strong>CSS Inline</strong> (atributo <code>style=&quot;&quot;</code> dentro do próprio elemento)</li>
+    </ol>
+    <p>Se houver conflito entre os estilos, a regra mais específica e recente será aplicada. </p>
+    <h3 id="exemplo-prático">Exemplo prático:</h3>
+    <h4 id="código-html">Código HTML:</h4>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Prioridade do CSS&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt; &lt;!-- CSS externo --&gt;
+    &lt;style&gt;
+        p {
+            color: blue; /* CSS incorporado */
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p style=&quot;color: red;&quot;&gt;Este é um parágrafo.&lt;/p&gt; &lt;!-- CSS inline --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    <h4 id="código-css-externo-stylescss">Código CSS Externo (<code>styles.css</code>):</h4>
+    <pre><code class="language-css">p {
+    color: green;
+}
+</code></pre>
+    <h3 id="resultado-esperado">Resultado esperado:</h3>
+    <p>O texto do <code>&lt;p&gt;</code> será vermelho. </p>
+    <h4 id="explicação">Explicação:</h4>
+    <ul>
+        <li>O CSS externo define <code>color: green;</code>, mas é sobrescrito pelo CSS incorporado
+            (<code>color: blue;</code>). </li>
+        <li>O CSS inline (<code>style=&quot;color: red;&quot;</code>) tem a maior prioridade, então o parágrafo será
+            vermelho.</li>
+    </ul>
+    <p>Se o CSS inline fosse removido, o parágrafo ficaria azul. Se tanto o inline quanto o incorporado fossem
+        removidos, o estilo externo (verde) prevaleceria. </p>
+    <hr>
+    <h1 id="seletores-css"><strong>Seletores CSS</strong></h1>
+    <p>Um seletor CSS é um padrão utilizado para aplicar estilos a elementos específicos dentro do HTML. </p>
+    <h2 id="tipos-de-seletores"><strong>Tipos de Seletores</strong></h2>
+    <ol>
+        <li><strong>Seletor Universal (<code>*</code>)</strong> – Aplica estilos a todos os elementos da página. </li>
+        <li><strong>Seletor de Tipo</strong> – Aplica estilos a um elemento HTML específico. </li>
+        <li><strong>Seletor Agrupado</strong> – Aplica um mesmo estilo a vários elementos. </li>
+        <li><strong>Seletor Descendente</strong> – Aplica estilos a elementos dentro de um outro elemento específico.
+        </li>
+        <li><strong>Seletor de Classe (<code>.</code>)</strong> – Aplica estilos a elementos que possuem uma determinada
+            classe. </li>
+        <li><strong>Seletor de ID (<code>#</code>)</strong> – Aplica estilos a um único elemento identificado por um ID.
+        </li>
+        <li><strong>Seletor de Filho (<code>&gt;</code>)</strong> – Aplica estilos apenas aos filhos diretos de um
+            elemento.</li>
+    </ol>
+    <hr>
+    <h2 id="1️⃣-seletor-universal-"><strong>1️⃣ Seletor Universal (<code>*</code>)</strong></h2>
+    <p>Aplica a mesma configuração para <strong>todos os elementos</strong> da página. </p>
+    <h3 id="sintaxe"><strong>Sintaxe</strong></h3>
+    <pre><code class="language-css">* {
+    font-size: 22px;
+    color: blue;
+}
+</code></pre>
+    <h3 id="explicação-1"><strong>Explicação</strong></h3>
+    <ul>
+        <li><code>*</code> → Seleciona todos os elementos da página. </li>
+        <li><code>font-size: 22px;</code> → Define o tamanho da fonte como 22 pixels. </li>
+        <li><code>color: blue;</code> → Define a cor do texto como azul.</li>
+    </ul>
+    <h3 id="exemplo-prático-1"><strong>Exemplo Prático</strong></h3>
+    <h4 id="código-html-1">Código HTML:</h4>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Seletor Universal&lt;/title&gt;
+    &lt;style&gt;
+        * {
+            font-size: 22px;
+            color: blue;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Título Principal&lt;/h1&gt;
+    &lt;p&gt;Este é um parágrafo.&lt;/p&gt;
+    &lt;span&gt;Este é um span.&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    <p>🟢 <strong>Todos os elementos (<code>h1</code>, <code>p</code>, <code>span</code>) terão texto azul e tamanho
+            22px</strong>. </p>
+    <hr>
+    <h2 id="2️⃣-seletor-de-tipo"><strong>2️⃣ Seletor de Tipo</strong></h2>
+    <p>Aplica estilos a um elemento HTML específico. </p>
+    <h3 id="sintaxe-1"><strong>Sintaxe</strong></h3>
+    <pre><code class="language-css">p {
+    color: red;
+}
+</code></pre>
+    <h3 id="explicação-2"><strong>Explicação</strong></h3>
+    <ul>
+        <li><code>p</code> → Seleciona todos os parágrafos. </li>
+        <li><code>color: red;</code> → Define a cor do texto dos parágrafos como vermelho.</li>
+    </ul>
+    <h3 id="exemplo-prático-2"><strong>Exemplo Prático</strong></h3>
+    <pre><code class="language-css">h1 {
+    text-align: center;
+}
+p {
+    font-style: italic;
+}
+</code></pre>
+    <p>✅ <strong>O <code>h1</code> será centralizado e o <code>p</code> ficará em itálico.</strong> </p>
+    <hr>
+    <h2 id="3️⃣-seletor-agrupado"><strong>3️⃣ Seletor Agrupado</strong></h2>
+    <p>Permite aplicar um mesmo estilo a diferentes elementos ao mesmo tempo. </p>
+    <h3 id="sintaxe-2"><strong>Sintaxe</strong></h3>
+    <pre><code class="language-css">h1, h2, p {
+    color: green;
+}
+</code></pre>
+    <h3 id="explicação-3"><strong>Explicação</strong></h3>
+    <ul>
+        <li><code>h1, h2, p</code> → Seleciona todos os elementos <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code> e
+            <code>&lt;p&gt;</code>. </li>
+        <li><code>color: green;</code> → Define a cor do texto desses elementos como verde.</li>
+    </ul>
+    <hr>
+    <h2 id="4️⃣-seletor-descendente"><strong>4️⃣ Seletor Descendente</strong></h2>
+    <p>Aplica estilos a elementos que estão <strong>dentro de outro elemento específico</strong>. </p>
+    <h3 id="sintaxe-3"><strong>Sintaxe</strong></h3>
+    <pre><code class="language-css">div p {
+    color: blue;
+}
+</code></pre>
+    <h3 id="explicação-4"><strong>Explicação</strong></h3>
+    <ul>
+        <li><code>div p</code> → Seleciona todos os parágrafos (<code>&lt;p&gt;</code>) que <strong>estão
+                dentro</strong> de uma <code>&lt;div&gt;</code>. </li>
+        <li><code>color: blue;</code> → Define a cor do texto desses <code>&lt;p&gt;</code> como azul.</li>
+    </ul>
+    <h3 id="exemplo-prático-3"><strong>Exemplo Prático</strong></h3>
+    <h4 id="código-html-2">Código HTML:</h4>
+    <pre><code class="language-html">&lt;div&gt;
+    &lt;p&gt;Este parágrafo estará azul.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Este parágrafo estará na cor padrão.&lt;/p&gt;
+</code></pre>
+    <p>✅ <strong>Somente o <code>&lt;p&gt;</code> dentro da <code>&lt;div&gt;</code> ficará azul.</strong> </p>
+    <hr>
+    <h2 id="5️⃣-seletor-de-classe-"><strong>5️⃣ Seletor de Classe (<code>.</code>)</strong></h2>
+    <p>Permite aplicar estilos a elementos que possuem um determinado atributo <code>class</code>. </p>
+    <h3 id="sintaxe-4"><strong>Sintaxe</strong></h3>
+    <pre><code class="language-css">.texto-vermelho {
+    color: red;
+}
+</code></pre>
+    <h3 id="exemplo-prático-4"><strong>Exemplo Prático</strong></h3>
+    <pre><code class="language-html">&lt;p class=&quot;texto-vermelho&quot;&gt;Este parágrafo ficará vermelho.&lt;/p&gt;
+&lt;p&gt;Este outro parágrafo manterá a cor padrão.&lt;/p&gt;
+</code></pre>
+    <p>✅ <strong>Somente o <code>&lt;p&gt;</code> com <code>class=&quot;texto-vermelho&quot;</code> ficará
+            vermelho.</strong> </p>
+    <hr>
+    <h2 id="6️⃣-seletor-de-id-"><strong>6️⃣ Seletor de ID (<code>#</code>)</strong></h2>
+    <p>Aplica estilos a um elemento específico identificado por um <code>id</code>. </p>
+    <h3 id="sintaxe-5"><strong>Sintaxe</strong></h3>
+    <pre><code class="language-css">#titulo {
+    font-size: 30px;
+    color: purple;
+}
+</code></pre>
+    <h3 id="exemplo-prático-5"><strong>Exemplo Prático</strong></h3>
+    <pre><code class="language-html">&lt;h1 id=&quot;titulo&quot;&gt;Este título terá 30px e cor roxa.&lt;/h1&gt;
+</code></pre>
+    <p>✅ <strong>Como o <code>id</code> deve ser único, esse estilo será aplicado apenas a esse
+            <code>&lt;h1&gt;</code>.</strong> </p>
+    <hr>
+    <h2 id="7️⃣-seletor-de-filho-direto-"><strong>7️⃣ Seletor de Filho Direto (<code>&gt;</code>)</strong></h2>
+    <p>Aplica estilos <strong>apenas</strong> aos elementos que são filhos diretos de um determinado elemento pai. </p>
+    <h3 id="sintaxe-6"><strong>Sintaxe</strong></h3>
+    <pre><code class="language-css">div &gt; p {
+    color: orange;
+}
+</code></pre>
+    <h3 id="exemplo-prático-6"><strong>Exemplo Prático</strong></h3>
+    <h4 id="código-html-3">Código HTML:</h4>
+    <pre><code class="language-html">&lt;div&gt;
+    &lt;p&gt;Este parágrafo será laranja.&lt;/p&gt;
+    &lt;span&gt;
+        &lt;p&gt;Este parágrafo **não** será laranja, pois está dentro de um `&lt;span&gt;`.&lt;/p&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+    <p>✅ <strong>Somente os <code>&lt;p&gt;</code> que são filhos diretos de <code>&lt;div&gt;</code> ficarão
+            laranja.</strong> </p>
+    <hr>
+    <h2 id="resumo-dos-seletores"><strong>Resumo dos Seletores</strong></h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Seletor</th>
+                <th>Sintaxe</th>
+                <th>O que faz?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Universal (<code>*</code>)</strong></td>
+                <td><code>* {}</code></td>
+                <td>Aplica estilos a todos os elementos.</td>
+            </tr>
+            <tr>
+                <td><strong>Tipo</strong></td>
+                <td><code>h1 {}</code></td>
+                <td>Aplica estilos a todos os elementos de um tipo específico.</td>
+            </tr>
+            <tr>
+                <td><strong>Agrupado</strong></td>
+                <td><code>h1, p {}</code></td>
+                <td>Aplica o mesmo estilo a vários elementos.</td>
+            </tr>
+            <tr>
+                <td><strong>Descendente</strong></td>
+                <td><code>div p {}</code></td>
+                <td>Aplica estilo a elementos dentro de outro elemento.</td>
+            </tr>
+            <tr>
+                <td><strong>Classe (<code>.</code>)</strong></td>
+                <td><code>.classe {}</code></td>
+                <td>Aplica estilo a elementos com determinada classe.</td>
+            </tr>
+            <tr>
+                <td><strong>ID (<code>#</code>)</strong></td>
+                <td><code>#id {}</code></td>
+                <td>Aplica estilo a um elemento específico.</td>
+            </tr>
+            <tr>
+                <td><strong>Filho Direto (<code>&gt;</code>)</strong></td>
+                <td><code>div &gt; p {}</code></td>
+                <td>Aplica estilo apenas aos filhos diretos de um elemento.</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1 id="guia-de-css---estrutura-e-seletores">Guia de CSS - Estrutura e Seletores</h1>
+    <h2 id="prioridade-no-css">Prioridade no CSS</h2>
+    <p>Quando utilizamos diferentes formas de inserir CSS em um documento HTML, é importante entender a ordem de
+        prioridade dos estilos aplicados:</p>
+    <ol>
+        <li><strong>CSS Inline (Maior prioridade)</strong> - Definido diretamente no elemento HTML usando o atributo
+            <code>style</code>.</li>
+        <li><strong>CSS Incorporado</strong> - Definido dentro da tag <code>&lt;style&gt;</code> no próprio documento
+            HTML.</li>
+        <li><strong>CSS Externo</strong> - Definido em um arquivo separado <code>.css</code> e vinculado ao HTML.</li>
+        <li><strong>Estilos padrão do HTML (Menor prioridade)</strong> - O estilo padrão do navegador.</li>
+    </ol>
+    <p>Se houver conflito entre os estilos, a regra com maior prioridade será aplicada.</p>
+    <hr>
+    <h2 id="seletores-css-1">Seletores CSS</h2>
+    <p>Um <strong>seletor CSS</strong> é um padrão utilizado para aplicar estilos aos elementos desejados no HTML.</p>
+    <h3 id="1-seletor-universal-">1. Seletor Universal (<code>*</code>)</h3>
+    <p>Aplica um estilo a todos os elementos da página.</p>
+    <pre><code class="language-css">* {
+    font-size: 22pt;
+}
+</code></pre>
+    <h3 id="2-seletor-tipo-elemento-específico">2. Seletor Tipo (Elemento Específico)</h3>
+    <p>Aplica estilos a um elemento específico.</p>
+    <pre><code class="language-css">p {
+    color: red;
+}
+h1 {
+    font-size: 24px;
+}
+</code></pre>
+    <h3 id="3-seletores-agrupados">3. Seletores Agrupados</h3>
+    <p>Aplicam o mesmo estilo a vários elementos.</p>
+    <pre><code class="language-css">p, h1, h2 {
+    color: blue;
+}
+</code></pre>
+    <h3 id="4-seletor-descendente">4. Seletor Descendente</h3>
+    <p>Aplica estilos a um elemento dentro de outro elemento específico.</p>
+    <pre><code class="language-css">div p {
+    color: blue;
+}
+p b {
+    color: red;
+}
+</code></pre>
+    <h3 id="5-seletor-classe">5. Seletor Classe</h3>
+    <p>Aplica estilos a elementos que possuem a mesma classe.</p>
+    <pre><code class="language-css">.destacado {
+    font-weight: bold;
+    color: green;
+}
+</code></pre>
+    <p>Uso no HTML:</p>
+    <pre><code class="language-html">&lt;p class=&quot;destacado&quot;&gt;Este é um texto destacado.&lt;/p&gt;
+</code></pre>
+    <h3 id="6-seletor-id">6. Seletor ID</h3>
+    <p>Aplica estilos a um único elemento com um identificador único.</p>
+    <pre><code class="language-css">#titulo-principal {
+    font-size: 30px;
+    color: blue;
+}
+</code></pre>
+    <p>Uso no HTML:</p>
+    <pre><code class="language-html">&lt;h1 id=&quot;titulo-principal&quot;&gt;Título Principal&lt;/h1&gt;
+</code></pre>
+    <h3 id="7-seletor-filho">7. Seletor Filho</h3>
+    <p>Aplica estilos apenas aos elementos que são <strong>filhos diretos</strong> de um elemento específico.</p>
+    <pre><code class="language-css">div &gt; p {
+    color: blue;
+}
+</code></pre>
+    <hr>
+    <h2 id="comentários-no-css">Comentários no CSS</h2>
+    <p>Comentários são usados para documentar o código e não afetam o estilo da página.</p>
+    <pre><code class="language-css">/* Este é um comentário no CSS */
+</code></pre>
+    <hr>
+    <h2 id="tags-div-span-e-estrutura-semântica">Tags DIV, SPAN e Estrutura Semântica</h2>
+    <ul>
+        <li><strong><code>&lt;div&gt;</code></strong>: Usada para agrupar elementos e criar layouts.</li>
+        <li><strong><code>&lt;span&gt;</code></strong>: Usada para estilizar partes específicas do texto.</li>
+        <li><strong>Tags semânticas</strong>: <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>,
+            <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, etc.</li>
+    </ul>
+    <pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+    &lt;span class=&quot;destaque&quot;&gt;Texto destacado&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+    <hr>
+    <h2 id="cores-no-css">Cores no CSS</h2>
+    <h3 id="valores-hexadecimais">Valores Hexadecimais</h3>
+    <ul>
+        <li><code>#FF0000</code> ou <code>#F00</code> → Vermelho</li>
+        <li><code>#00FF00</code> ou <code>#0F0</code> → Verde</li>
+        <li><code>#0000FF</code> ou <code>#00F</code> → Azul</li>
+    </ul>
+    <h3 id="rgb">RGB</h3>
+    <pre><code class="language-css">color: rgb(255, 0, 0); /* Vermelho */
+</code></pre>
+    <hr>
+    <h2 id="recursos-complementares">Recursos Complementares</h2>
+    <ul>
+        <li><a href="https://mzl.la/2GYqrCc" target="_blank" rel="noopener noreferrer">Documentação CSS - MDN</a></li>
+        <li><a href="https://www.css3.info/selectors-test/" target="_blank" rel="noopener noreferrer">CSS3 Selectors Test</a></li>
+        <li><a href="https://css3generator.com/" target="_blank" rel="noopener noreferrer">CSS3 Generator</a></li>
+    </ul>
+    <hr>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

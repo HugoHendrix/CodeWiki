@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="formulários-no-html"><strong>Formulários no HTML</strong></h1>
+    <p>Os formulários são amplamente utilizados na web para coletar informações dos usuários, seja para cadastro, envio
+        de mensagens ou qualquer outro tipo de interação. Sua principal função é capturar os dados inseridos e
+        processá-los, seja no servidor ou diretamente no cliente, utilizando JavaScript. </p>
+    <p>No HTML, podemos criar formulários utilizando a tag <code>&lt;form&gt;</code>, além de diversos elementos de
+        entrada de dados, como campos de texto, botões, checkboxes e seletores. Com o HTML5, novas funcionalidades foram
+        adicionadas para facilitar a validação dos formulários sem a necessidade de scripts adicionais. Isso permite,
+        por exemplo, validar automaticamente campos de e-mail ou URLs sem precisar recorrer ao JavaScript. </p>
+    <p>Contudo, como o HTML5 ainda está em constante evolução, alguns atributos podem não ser compatíveis com todos os
+        navegadores. Para garantir uma melhor experiência, é recomendável utilizar apenas recursos compatíveis com os
+        principais navegadores, como <strong>Google Chrome</strong> e <strong>Firefox</strong>. </p>
+    <hr>
+    <h2 id="criando-um-formulário-no-html"><strong>Criando um Formulário no HTML</strong></h2>
+    <p>A estrutura básica de um formulário é definida pela tag <code>&lt;form&gt;</code>: </p>
+    <pre><code class="language-html">&lt;form name=&quot;form1&quot; method=&quot;post&quot; action=&quot;&quot;&gt;
+    &lt;!-- Elementos do formulário --&gt;
+&lt;/form&gt;
+</code></pre>
+    <p>Dentro do <code>&lt;form&gt;</code>, podemos inserir diferentes tipos de campos para coletar informações do
+        usuário. Veja alguns exemplos: </p>
+    <pre><code class="language-html">Nome: &lt;input type=&quot;text&quot; name=&quot;nome&quot; /&gt;  
+Senha: &lt;input type=&quot;password&quot; name=&quot;senha&quot; /&gt;  
+E-mail: &lt;input type=&quot;email&quot; name=&quot;usermail&quot; /&gt; &lt;!-- Valida automaticamente se é um e-mail válido --&gt;  
+URL: &lt;input type=&quot;url&quot; name=&quot;homepage&quot; /&gt; &lt;!-- Aceita apenas URLs válidas --&gt;  
+&lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt; &lt;!-- Botão para enviar os dados do formulário --&gt;  
+</code></pre>
+    <hr>
+    <h2 id="outros-elementos-de-formulário"><strong>Outros Elementos de Formulário</strong></h2>
+    <h3 id="1-campo-oculto-hidden"><strong>1. Campo Oculto (<code>hidden</code>)</strong></h3>
+    <p>Um campo oculto é utilizado para armazenar dados que não devem ser visíveis para o usuário, mas que ainda
+        precisam ser enviados com o formulário. </p>
+    <pre><code class="language-html">&lt;input type=&quot;hidden&quot; name=&quot;oculto&quot; value=&quot;algumacoisa&quot;&gt;
+</code></pre>
+    <h3 id="2-checkbox-seleção-múltipla"><strong>2. Checkbox (Seleção Múltipla)</strong></h3>
+    <p>O checkbox permite que o usuário selecione <strong>mais de uma opção</strong> ao mesmo tempo. </p>
+    <pre><code class="language-html">&lt;input type=&quot;checkbox&quot; name=&quot;carros&quot; value=&quot;Camaro&quot; /&gt; Camaro &lt;br/&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;carros&quot; value=&quot;Ferrari&quot; /&gt; Ferrari  
+</code></pre>
+    <h3 id="3-botão-para-executar-funções-em-javascript"><strong>3. Botão para Executar Funções em JavaScript</strong>
+    </h3>
+    <p>Podemos usar um botão para chamar funções em <strong>JavaScript</strong>, como exibir um alerta ao usuário: </p>
+    <pre><code class="language-html">&lt;input type=&quot;button&quot; value=&quot;Clique aqui&quot; onclick=&quot;alert(&#39;Oi!&#39;)&quot; /&gt;
+</code></pre>
+    <h3 id="4-upload-de-arquivos"><strong>4. Upload de Arquivos</strong></h3>
+    <p>Para permitir que o usuário envie arquivos, utilizamos o elemento
+        <code>&lt;input type=&quot;file&quot;&gt;</code>: </p>
+    <pre><code class="language-html">&lt;input type=&quot;file&quot; name=&quot;arquivo&quot;&gt;
+</code></pre>
+    <h3 id="5-botão-de-imagem"><strong>5. Botão de Imagem</strong></h3>
+    <p>Um botão pode ser representado por uma imagem para personalizar a interface do usuário: </p>
+    <pre><code class="language-html">&lt;input type=&quot;image&quot; src=&quot;images.jpg&quot; name=&quot;imagem&quot;&gt;
+</code></pre>
+    <h3 id="6-radio-button-seleção-única"><strong>6. Radio Button (Seleção Única)</strong></h3>
+    <p>Diferente do checkbox, o <strong>radio button</strong> permite que o usuário selecione apenas <strong>uma
+            opção</strong> dentro de um grupo. </p>
+    <pre><code class="language-html">&lt;input type=&quot;radio&quot; name=&quot;sexo&quot; value=&quot;F&quot;&gt; Feminino &lt;br/&gt;
+&lt;input type=&quot;radio&quot; name=&quot;sexo&quot; value=&quot;M&quot;&gt; Masculino  
+</code></pre>
+    <hr>
+    <h2 id="checkbox-vs-radio-button"><strong>Checkbox vs. Radio Button</strong></h2>
+    <ul>
+        <li>O <strong>checkbox</strong> permite <strong>selecionar múltiplas opções</strong> ao mesmo tempo. </li>
+        <li>O <strong>radio button</strong> permite <strong>selecionar apenas uma opção</strong> por vez dentro de um
+            grupo.</li>
+    </ul>
+    <p>Além disso, o campo <code>hidden</code> (<code>&lt;input type=&quot;hidden&quot;&gt;</code>) não é visível no
+        navegador, mas ele <strong>existe no formulário</strong> e pode ser útil para armazenar dados que serão
+        processados no backend. </p>
+    <hr>
+    <h1 id="elementos-de-formulários-no-html"><strong>Elementos de Formulários no HTML</strong></h1>
+    <p>Os formulários são fundamentais para interação na web, permitindo que os usuários enviem dados para processamento
+        no servidor ou no cliente. Abaixo, exploramos diversos elementos essenciais para a construção de formulários no
+        HTML.</p>
+    <hr>
+    <h2 id="tag-datalist"><strong>Tag <code>&lt;datalist&gt;</code></strong></h2>
+    <p>A tag <code>&lt;datalist&gt;</code> define uma lista de opções sugeridas para um campo de entrada
+        (<code>&lt;input&gt;</code>). O usuário pode selecionar uma das sugestões ou digitar um valor diferente.</p>
+    <pre><code class="language-html">&lt;input list=&quot;frutas&quot; name=&quot;fruta&quot; /&gt;
+&lt;datalist id=&quot;frutas&quot;&gt;
+    &lt;option value=&quot;Maçã&quot;&gt;
+    &lt;option value=&quot;Banana&quot;&gt;
+    &lt;option value=&quot;Morango&quot;&gt;
+    &lt;option value=&quot;Abacaxi&quot;&gt;
+    &lt;option value=&quot;Melancia&quot;&gt;
+    &lt;option value=&quot;Pera&quot;&gt;
+    &lt;option value=&quot;Uva&quot;&gt;
+&lt;/datalist&gt;
+</code></pre>
+    <h3 id="dica"><strong>Dica:</strong></h3>
+    <p>A tag <code>&lt;datalist&gt;</code> melhora a usabilidade, pois oferece sugestões ao usuário sem restringi-lo a
+        elas.</p>
+    <hr>
+    <h2 id="tag-button"><strong>Tag <code>&lt;button&gt;</code></strong></h2>
+    <p>A tag <code>&lt;button&gt;</code> permite criar botões clicáveis contendo texto ou imagens. Pode ser utilizada
+        dentro ou fora de formulários.</p>
+    <pre><code class="language-html">&lt;button type=&quot;button&quot;&gt;
+    &lt;img src=&quot;images.jpg&quot; width=&quot;204&quot; height=&quot;204&quot; alt=&quot;Imagem do botão&quot;&gt;
+&lt;/button&gt;
+</code></pre>
+    <hr>
+    <h2 id="tag-select-combobox"><strong>Tag <code>&lt;select&gt;</code> (Combobox)</strong></h2>
+    <p>A tag <code>&lt;select&gt;</code> cria um menu suspenso com várias opções.</p>
+    <pre><code class="language-html">&lt;form&gt;
+    &lt;select name=&quot;linguagem&quot;&gt;
+        &lt;option value=&quot;Java&quot;&gt;Java&lt;/option&gt;
+        &lt;option value=&quot;PHP&quot;&gt;PHP&lt;/option&gt;
+        &lt;option value=&quot;JSP&quot;&gt;JSP&lt;/option&gt;
+        &lt;option value=&quot;HTML&quot;&gt;HTML&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/form&gt;
+</code></pre>
+    <hr>
+    <h2 id="tag-textarea"><strong>Tag <code>&lt;textarea&gt;</code></strong></h2>
+    <p>A tag <code>&lt;textarea&gt;</code> define um campo de texto de múltiplas linhas.</p>
+    <pre><code class="language-html">&lt;form&gt;
+    &lt;textarea rows=&quot;8&quot; cols=&quot;70&quot;&gt;&lt;/textarea&gt;
+&lt;/form&gt;
+</code></pre>
+    <p><strong>Dica:</strong> Permite configurar o tamanho do campo, diferente do
+        <code>&lt;input type=&quot;text&quot;&gt;</code>, que é sempre de linha única.</p>
+    <hr>
+    <h2 id="atributo-required"><strong>Atributo <code>required</code></strong></h2>
+    <p>O atributo <code>required</code> torna obrigatório o preenchimento de um campo antes do envio do formulário.</p>
+    <pre><code class="language-html">&lt;input name=&quot;nome&quot; required /&gt;
+&lt;input type=&quot;submit&quot; /&gt;
+</code></pre>
+    <p>Se o usuário tentar enviar o formulário sem preencher o campo, o navegador exibirá um aviso.</p>
+    <hr>
+    <h2 id="atributo-autofocus"><strong>Atributo <code>autofocus</code></strong></h2>
+    <p>O atributo <code>autofocus</code> define qual campo receberá foco automaticamente ao carregar a página.</p>
+    <pre><code class="language-html">&lt;form action=&quot;x.php&quot;&gt;
+    Nome: &lt;input type=&quot;text&quot; name=&quot;nome&quot; autofocus /&gt;&lt;br /&gt;
+    Idade: &lt;input type=&quot;text&quot; name=&quot;idade&quot; /&gt;&lt;br /&gt;
+    &lt;input type=&quot;submit&quot; /&gt;
+&lt;/form&gt;
+</code></pre>
+    <hr>
+    <h2 id="atributo-placeholder"><strong>Atributo <code>placeholder</code></strong></h2>
+    <p>O atributo <code>placeholder</code> exibe um texto de dica dentro do campo de entrada. Ele desaparece quando o
+        usuário começa a digitar.</p>
+    <pre><code class="language-html">&lt;form action=&quot;demo_form.asp&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;user&quot; placeholder=&quot;Digite seu Usuário&quot; /&gt;&lt;br /&gt;
+    &lt;input type=&quot;password&quot; name=&quot;senha&quot; placeholder=&quot;Digite sua Senha&quot; /&gt;&lt;br /&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;
+&lt;/form&gt;
+</code></pre>
+    <p><strong>Dica:</strong> Ajuda na usabilidade, indicando ao usuário qual informação inserir no campo.</p>
+    <hr>
+    <h2 id="envio-de-dados-ao-servidor"><strong>Envio de Dados ao Servidor</strong></h2>
+    <p>Podemos utilizar um formulário para capturar e enviar dados ao servidor por meio do atributo <code>action</code>.
+    </p>
+    <pre><code class="language-html">&lt;form action=&quot;processa.php&quot; method=&quot;post&quot;&gt;
+    Nome: &lt;input type=&quot;text&quot; name=&quot;nome&quot; required /&gt;&lt;br /&gt;
+    Sexo: &lt;input type=&quot;radio&quot; name=&quot;sexo&quot; value=&quot;M&quot;&gt; Masculino
+          &lt;input type=&quot;radio&quot; name=&quot;sexo&quot; value=&quot;F&quot;&gt; Feminino&lt;br /&gt;
+    E-mail: &lt;input type=&quot;email&quot; name=&quot;email&quot; required /&gt;&lt;br /&gt;
+    Assunto: &lt;input type=&quot;text&quot; name=&quot;assunto&quot; /&gt;&lt;br /&gt;
+    Curso: &lt;select name=&quot;curso&quot;&gt;
+                &lt;option value=&quot;HTML&quot;&gt;HTML&lt;/option&gt;
+                &lt;option value=&quot;CSS&quot;&gt;CSS&lt;/option&gt;
+                &lt;option value=&quot;JavaScript&quot;&gt;JavaScript&lt;/option&gt;
+           &lt;/select&gt;&lt;br /&gt;
+    Mensagem:&lt;br /&gt;
+    &lt;textarea name=&quot;mensagem&quot; rows=&quot;5&quot; cols=&quot;50&quot;&gt;&lt;/textarea&gt;&lt;br /&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Enviar&quot; /&gt;
+&lt;/form&gt;
+</code></pre>
+    <p>No servidor, um arquivo PHP pode processar os dados recebidos:</p>
+    <pre><code class="language-php">&lt;?php
+header(&#39;Content-Type: text/html; charset=utf-8&#39;);
+
+echo &quot;Dados recebidos do formulário!!!&lt;br/&gt;&lt;br/&gt;&quot;;
+echo &quot;Você digitou:&lt;br/&gt;&quot;;
+echo &quot;Nome: &quot; . $_POST[&quot;nome&quot;] . &quot;&lt;br /&gt;&quot;;
+echo &quot;Sexo: &quot; . $_POST[&quot;sexo&quot;] . &quot;&lt;br /&gt;&quot;;
+echo &quot;E-mail: &quot; . $_POST[&quot;email&quot;] . &quot;&lt;br /&gt;&quot;;
+echo &quot;Assunto: &quot; . $_POST[&quot;assunto&quot;] . &quot;&lt;br /&gt;&quot;;
+echo &quot;Curso: &quot; . $_POST[&quot;curso&quot;] . &quot;&lt;br /&gt;&quot;;
+echo &quot;Mensagem: &quot; . $_POST[&quot;mensagem&quot;] . &quot;&lt;br /&gt;&quot;;
+?&gt;
+</code></pre>
+    <hr>
+    <h1 id="áudio-no-html5"><strong>Áudio no HTML5</strong></h1>
+    <p>Antes do surgimento do HTML5, não havia um padrão para reprodução de áudio diretamente no navegador. Para
+        executar sons, era necessário o uso de plug-ins externos, como o Flash. </p>
+    <p>Com a chegada do HTML5, foi introduzida a tag <code>&lt;audio&gt;</code>, que permite incorporar arquivos de
+        áudio diretamente em uma página web sem a necessidade de plug-ins. </p>
+    <h2 id="implementação-da-tag-audio"><strong>Implementação da Tag <code>&lt;audio&gt;</code></strong></h2>
+    <p>A estrutura básica da tag <code>&lt;audio&gt;</code> é: </p>
+    <pre><code class="language-html">&lt;audio src=&quot;audio.mp3&quot; controls&gt;&lt;/audio&gt;
+</code></pre>
+    <p>O atributo <code>controls</code> exibe um player de áudio com controles para reprodução, pausa e ajuste de
+        volume. </p>
+    <h2 id="compatibilidade-de-formatos-de-áudio"><strong>Compatibilidade de Formatos de Áudio</strong></h2>
+    <p>A compatibilidade dos formatos de áudio varia entre os navegadores. Por isso, é recomendável fornecer múltiplas
+        versões do arquivo usando a tag <code>&lt;source&gt;</code>, garantindo que o áudio seja reproduzido
+        corretamente em diferentes navegadores. </p>
+    <h3 id="tabela-de-compatibilidade"><strong>Tabela de Compatibilidade</strong></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Navegador</th>
+                <th>MP3</th>
+                <th>WAV</th>
+                <th>OGG</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Internet Explorer</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>❌</td>
+            </tr>
+            <tr>
+                <td>Firefox</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+            </tr>
+            <tr>
+                <td>Google Chrome</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+            </tr>
+            <tr>
+                <td>Apple Safari</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>❌</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 id="exemplo-com-múltiplos-formatos"><strong>Exemplo com Múltiplos Formatos</strong></h3>
+    <pre><code class="language-html">&lt;audio controls&gt;
+    &lt;source src=&quot;audio.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+    &lt;source src=&quot;audio.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+    &lt;source src=&quot;audio.wav&quot; type=&quot;audio/vnd.wave&quot;&gt;
+    Seu navegador não suporta a tag de áudio.
+&lt;/audio&gt;
+</code></pre>
+    <p>Caso o navegador não suporte nenhum dos formatos fornecidos, será exibida a mensagem &quot;Seu navegador não
+        suporta a tag de áudio&quot;. </p>
+    <h2 id="controlando-áudio-com-javascript"><strong>Controlando Áudio com JavaScript</strong></h2>
+    <p>Além dos controles nativos do navegador, também podemos manipular a reprodução do áudio via JavaScript. </p>
+    <h3 id="exemplo-play-e-pause-via-javascript"><strong>Exemplo: Play e Pause via JavaScript</strong></h3>
+    <pre><code class="language-html">&lt;audio id=&quot;som&quot;&gt;
+    &lt;source src=&quot;audio.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+    &lt;source src=&quot;audio.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+    &lt;source src=&quot;audio.wav&quot; type=&quot;audio/vnd.wave&quot;&gt;
+&lt;/audio&gt;
+
+&lt;button id=&quot;play&quot;&gt;Play&lt;/button&gt;
+&lt;button id=&quot;pause&quot;&gt;Pause&lt;/button&gt;
+
+&lt;script&gt;
+    var som = document.getElementById(&quot;som&quot;);
+
+    document.getElementById(&quot;play&quot;).addEventListener(&quot;click&quot;, function() {
+        som.play();
+    });
+
+    document.getElementById(&quot;pause&quot;).addEventListener(&quot;click&quot;, function() {
+        som.pause();
+    });
+&lt;/script&gt;
+</code></pre>
+    <p>Esse exemplo adiciona dois botões para iniciar (<code>Play</code>) e pausar (<code>Pause</code>) a reprodução do
+        áudio por meio de eventos JavaScript. </p>
+    <hr>
+    <h1 id="vídeo-no-html5"><strong>Vídeo no HTML5</strong></h1>
+    <p>Antes do surgimento do HTML5, não existia um padrão para reprodução de vídeos diretamente no navegador. Para
+        exibir vídeos, era necessário o uso de plug-ins externos, como o Adobe Flash. </p>
+    <p>Com a introdução do HTML5, foi criada a tag <code>&lt;video&gt;</code>, que permite incorporar arquivos de vídeo
+        diretamente em uma página web sem a necessidade de plug-ins. </p>
+    <h2 id="implementação-da-tag-video"><strong>Implementação da Tag <code>&lt;video&gt;</code></strong></h2>
+    <p>A estrutura básica da tag <code>&lt;video&gt;</code> é: </p>
+    <pre><code class="language-html">&lt;video src=&quot;video.mp4&quot; controls width=&quot;400&quot;&gt;&lt;/video&gt;
+</code></pre>
+    <p>O atributo <code>controls</code> exibe um player de vídeo com botões de reprodução, pausa, volume e tela cheia.
+    </p>
+    <h2 id="compatibilidade-de-formatos-de-vídeo"><strong>Compatibilidade de Formatos de Vídeo</strong></h2>
+    <p>Assim como nos arquivos de áudio, a compatibilidade dos formatos de vídeo varia entre os navegadores. Para
+        garantir que o vídeo seja reproduzido corretamente, é recomendável fornecer diferentes versões usando a tag
+        <code>&lt;source&gt;</code>. </p>
+    <h3 id="tabela-de-compatibilidade-1"><strong>Tabela de Compatibilidade</strong></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Navegador</th>
+                <th>MP4</th>
+                <th>WebM</th>
+                <th>OGG</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Internet Explorer</td>
+                <td>✅</td>
+                <td>❌</td>
+                <td>❌</td>
+            </tr>
+            <tr>
+                <td>Firefox</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+            </tr>
+            <tr>
+                <td>Google Chrome</td>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+            </tr>
+            <tr>
+                <td>Apple Safari</td>
+                <td>✅</td>
+                <td>❌</td>
+                <td>❌</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 id="codecs-de-vídeo"><strong>Codecs de Vídeo</strong></h3>
+    <p>Cada formato de vídeo utiliza diferentes codecs de compressão: </p>
+    <ul>
+        <li><strong>MP4</strong> → Codec de vídeo MPEG4 (H.264 para MPEG) </li>
+        <li><strong>WebM</strong> → Codec de vídeo VP8 </li>
+        <li><strong>Ogg</strong> → Codec de vídeo Theora</li>
+    </ul>
+    <h2 id="exemplo-com-múltiplos-formatos-1"><strong>Exemplo com Múltiplos Formatos</strong></h2>
+    <pre><code class="language-html">&lt;video poster=&quot;thumbnail.jpg&quot; controls width=&quot;400&quot;&gt;
+    &lt;source src=&quot;video.ogv&quot; type=&quot;video/ogg&quot;&gt;
+    &lt;source src=&quot;video.webm&quot; type=&quot;video/webm&quot;&gt;
+    &lt;source src=&quot;video.mp4&quot; type=&quot;video/mp4&quot;&gt;
+    Seu navegador não suporta a tag de vídeo.
+&lt;/video&gt;
+</code></pre>
+    <ul>
+        <li>O atributo <code>poster=&quot;thumbnail.jpg&quot;</code> define uma imagem exibida antes do vídeo começar a
+            ser reproduzido. </li>
+        <li>Caso o navegador não suporte nenhum dos formatos fornecidos, será exibida a mensagem &quot;Seu navegador não
+            suporta a tag de vídeo&quot;.</li>
+    </ul>
+    <h2 id="controlando-vídeo-com-javascript"><strong>Controlando Vídeo com JavaScript</strong></h2>
+    <p>Além dos controles nativos, podemos manipular a reprodução do vídeo com JavaScript. </p>
+    <h3 id="exemplo-play-e-pause-via-javascript-1"><strong>Exemplo: Play e Pause via JavaScript</strong></h3>
+    <pre><code class="language-html">&lt;video id=&quot;meu_video&quot; width=&quot;400&quot;&gt;
+    &lt;source src=&quot;video.ogv&quot; type=&quot;video/ogg&quot;&gt;
+    &lt;source src=&quot;video.webm&quot; type=&quot;video/webm&quot;&gt;
+    &lt;source src=&quot;video.mp4&quot; type=&quot;video/mp4&quot;&gt;
+    Seu navegador não suporta a tag de vídeo.
+&lt;/video&gt;
+
+&lt;button id=&quot;play&quot;&gt;Play&lt;/button&gt;
+&lt;button id=&quot;pause&quot;&gt;Pause&lt;/button&gt;
+
+&lt;script&gt;
+    var video = document.getElementById(&quot;meu_video&quot;);
+
+    document.getElementById(&quot;play&quot;).addEventListener(&quot;click&quot;, function() {
+        video.play();
+    });
+
+    document.getElementById(&quot;pause&quot;).addEventListener(&quot;click&quot;, function() {
+        video.pause();
+    });
+&lt;/script&gt;
+</code></pre>
+    <p>Esse exemplo adiciona botões para iniciar (<code>Play</code>) e pausar (<code>Pause</code>) a reprodução do vídeo
+        utilizando eventos JavaScript. </p>
+    <hr>
+    <h1 id="outros-recursos-do-html5"><strong>Outros Recursos do HTML5</strong></h1>
+    <p>O HTML5 trouxe diversas novas funcionalidades avançadas que permitem maior interação e dinamismo nas páginas web.
+        Alguns desses recursos incluem: </p>
+    <ul>
+        <li><strong>Geolocalização</strong> → API que permite localizar o usuário por GPS, endereço IP, redes sem fio ou
+            sinal de telefone. </li>
+        <li><strong>Armazenamento de Dados no Cliente</strong> → Técnicas como Web Storage e WebSQL permitem salvar
+            dados no navegador. </li>
+        <li><strong>Web Messaging</strong> → Comunicação entre aplicações hospedadas em diferentes origens. </li>
+        <li><strong>Web Socket</strong> → Permite comunicação bidirecional em tempo real entre cliente e servidor. </li>
+        <li><strong>Web Workers</strong> → Permite executar múltiplos scripts JavaScript em paralelo, rodando em segundo
+            plano.</li>
+    </ul>
+    <p>Esses recursos são amplamente utilizados para criar aplicações web modernas e interativas. </p>
+    <hr>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

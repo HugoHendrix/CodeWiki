@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="anotações-aula-02">ANOTAÇÕES AULA 02</h1>
+    <h2 id="1-como-criar-um-html-bem-estruturado"><strong>1. Como Criar um HTML Bem Estruturado</strong></h2>
+    <p>Para criar um HTML bem estruturado, você precisa seguir algumas boas práticas:</p>
+    <h3 id="a-comece-com-a-estrutura-básica"><strong>A) Comece com a Estrutura Básica</strong></h3>
+    <p>Todo documento HTML deve ter a estrutura mínima, que inclui o <code>DOCTYPE</code>, a
+        <code>tag &lt;html&gt;</code>, o <code>head</code> e o <code>body</code>:</p>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Meu Site Bem Estruturado&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Bem-vindo ao Meu Site&lt;/h1&gt;
+    &lt;p&gt;Este é um exemplo de um HTML bem estruturado.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    <p><strong>Explicação:</strong></p>
+    <ul>
+        <li><code>&lt;!DOCTYPE html&gt;</code> → Define que o documento usa HTML5.</li>
+        <li><code>&lt;html lang=&quot;pt-BR&quot;&gt;</code> → Define o idioma do site (importante para acessibilidade e
+            SEO).</li>
+        <li><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code> → Garante suporte a caracteres especiais, como
+            &quot;ç&quot; e &quot;ã&quot;.</li>
+        <li><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</code>
+            → Torna o site responsivo.</li>
+        <li><code>&lt;title&gt;</code> → Define o título da aba do navegador.</li>
+    </ul>
+    <hr>
+    <h3 id="b-organize-o-conteúdo-com-elementos-semânticos"><strong>B) Organize o Conteúdo com Elementos
+            Semânticos</strong></h3>
+    <p>Usar <strong>elementos semânticos</strong> melhora a estrutura do código e facilita a acessibilidade.</p>
+    <p>Exemplo de estrutura bem organizada:</p>
+    <pre><code class="language-html">&lt;header&gt;
+    &lt;h1&gt;Meu Blog&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Início&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contato&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Título do Artigo&lt;/h2&gt;
+        &lt;p&gt;Conteúdo do artigo...&lt;/p&gt;
+    &lt;/article&gt;
+    
+    &lt;aside&gt;
+        &lt;h3&gt;Links Relacionados&lt;/h3&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Artigo 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Artigo 2&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;&amp;copy; 2025 Meu Blog&lt;/p&gt;
+&lt;/footer&gt;
+</code></pre>
+    <p><strong>Explicação dos elementos semânticos:</strong></p>
+    <ul>
+        <li><code>&lt;header&gt;</code> → Cabeçalho da página, pode conter logo, título e menu de navegação.</li>
+        <li><code>&lt;nav&gt;</code> → Agrupa links de navegação.</li>
+        <li><code>&lt;main&gt;</code> → Parte principal do conteúdo.</li>
+        <li><code>&lt;article&gt;</code> → Representa um artigo independente.</li>
+        <li><code>&lt;aside&gt;</code> → Barra lateral com informações complementares.</li>
+        <li><code>&lt;footer&gt;</code> → Rodapé da página.</li>
+    </ul>
+    <hr>
+    <h2 id="2-elementos-semânticos"><strong>2. Elementos Semânticos</strong></h2>
+    <p>Os <strong>elementos semânticos</strong> são aqueles que dão significado ao conteúdo da página, tornando o código
+        mais organizado e compreensível para navegadores, motores de busca e tecnologias assistivas (como leitores de
+        tela).</p>
+    <p>Exemplos de elementos semânticos importantes:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Elemento</th>
+                <th>Uso</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>&lt;header&gt;</code></td>
+                <td>Cabeçalho da página ou seção</td>
+            </tr>
+            <tr>
+                <td><code>&lt;nav&gt;</code></td>
+                <td>Agrupa links de navegação</td>
+            </tr>
+            <tr>
+                <td><code>&lt;main&gt;</code></td>
+                <td>Indica a área principal do conteúdo</td>
+            </tr>
+            <tr>
+                <td><code>&lt;section&gt;</code></td>
+                <td>Agrupa conteúdos relacionados dentro do <code>&lt;main&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;article&gt;</code></td>
+                <td>Representa um artigo independente, como um post de blog</td>
+            </tr>
+            <tr>
+                <td><code>&lt;aside&gt;</code></td>
+                <td>Conteúdo complementar, como barras laterais</td>
+            </tr>
+            <tr>
+                <td><code>&lt;footer&gt;</code></td>
+                <td>Rodapé da página, pode conter informações de contato, direitos autorais, etc.</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><strong>Exemplo de um site estruturado com esses elementos:</strong></p>
+    <pre><code class="language-html">&lt;header&gt;
+    &lt;h1&gt;Loja Online&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Produtos&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contato&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;section&gt;
+        &lt;h2&gt;Produtos em Destaque&lt;/h2&gt;
+        &lt;article&gt;
+            &lt;h3&gt;Produto 1&lt;/h3&gt;
+            &lt;p&gt;Descrição do produto...&lt;/p&gt;
+        &lt;/article&gt;
+        &lt;article&gt;
+            &lt;h3&gt;Produto 2&lt;/h3&gt;
+            &lt;p&gt;Descrição do produto...&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;© 2025 Loja Online&lt;/p&gt;
+&lt;/footer&gt;
+</code></pre>
+    <p>Isso ajuda na <strong>SEO (Otimização para Motores de Busca)</strong> e melhora a experiência do usuário.</p>
+    <hr>
+    <h2 id="3-acessibilidade-a11y"><strong>3. Acessibilidade (A11Y)</strong></h2>
+    <p>A acessibilidade no HTML é essencial para permitir que <strong>todas as pessoas</strong>, incluindo aquelas com
+        deficiências visuais, motoras ou cognitivas, possam navegar na web de forma eficiente.</p>
+    <p>Aqui estão algumas boas práticas:</p>
+    <h3 id="a-adicione-textos-alternativos-alt-em-imagens"><strong>A) Adicione Textos Alternativos (<code>alt</code>) em
+            Imagens</strong></h3>
+    <p>Usuários com deficiência visual utilizam leitores de tela que leem o conteúdo da página. Se uma imagem não
+        carregar ou o usuário não puder vê-la, o atributo <code>alt</code> é lido pelo leitor de tela.</p>
+    <p><strong>Exemplo correto:</strong></p>
+    <pre><code class="language-html">&lt;img src=&quot;cachorro.jpg&quot; alt=&quot;Um cachorro feliz brincando no parque&quot;&gt;
+</code></pre>
+    <p><strong>Exemplo errado:</strong></p>
+    <pre><code class="language-html">&lt;img src=&quot;cachorro.jpg&quot;&gt;
+</code></pre>
+    <p>Sem o <code>alt</code>, usuários cegos não terão ideia do que a imagem representa.</p>
+    <hr>
+    <h3 id="b-use-cabeçalhos-h1-a-h6-na-ordem-correta"><strong>B) Use Cabeçalhos (<code>h1</code> a <code>h6</code>) na
+            Ordem Correta</strong></h3>
+    <p>Os cabeçalhos ajudam a organizar o conteúdo e são essenciais para navegabilidade por leitores de tela.</p>
+    <p><strong>Errado:</strong></p>
+    <pre><code class="language-html">&lt;h3&gt;Sobre Mim&lt;/h3&gt;
+&lt;h1&gt;Contato&lt;/h1&gt;
+</code></pre>
+    <p>(Aqui a hierarquia está confusa.)</p>
+    <p><strong>Certo:</strong></p>
+    <pre><code class="language-html">&lt;h1&gt;Sobre Mim&lt;/h1&gt;
+&lt;h2&gt;Minha História&lt;/h2&gt;
+&lt;h3&gt;Infância&lt;/h3&gt;
+</code></pre>
+    <hr>
+    <h3 id="c-evite-apenas-cores-para-transmitir-informação"><strong>C) Evite Apenas Cores para Transmitir
+            Informação</strong></h3>
+    <p>Pessoas daltônicas podem não distinguir certas cores. Se um botão tiver apenas a cor como indicação, elas podem
+        não perceber sua função.</p>
+    <p><strong>Errado:</strong></p>
+    <pre><code class="language-html">&lt;p style=&quot;color: red;&quot;&gt;Este campo é obrigatório&lt;/p&gt;
+</code></pre>
+    <p>(Não deixa claro para quem não enxerga vermelho.)</p>
+    <p><strong>Certo:</strong></p>
+    <pre><code class="language-html">&lt;p&gt;&lt;strong&gt;Atenção:&lt;/strong&gt; Este campo é obrigatório&lt;/p&gt;
+</code></pre>
+    <p>(O texto <strong>&quot;Atenção&quot;</strong> transmite o significado mesmo sem cor.)</p>
+    <hr>
+    <h3 id="d-use-elementos-semânticos-em-formulários"><strong>D) Use Elementos Semânticos em Formulários</strong></h3>
+    <p>Os formulários precisam ser acessíveis para que leitores de tela consigam interpretar os campos corretamente.</p>
+    <p><strong>Errado:</strong></p>
+    <pre><code class="language-html">&lt;input type=&quot;text&quot; placeholder=&quot;Digite seu nome&quot;&gt;
+</code></pre>
+    <p>(Usuários de leitores de tela não saberão que campo é esse.)</p>
+    <p><strong>Certo:</strong></p>
+    <pre><code class="language-html">&lt;label for=&quot;nome&quot;&gt;Nome:&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;nome&quot; name=&quot;nome&quot;&gt;
+</code></pre>
+    <p>(O <code>&lt;label&gt;</code> associa o texto ao campo corretamente.)</p>
+    <hr>
+    <h2 id="resumo"><strong>Resumo</strong></h2>
+    <ol>
+        <li><strong>HTML bem estruturado</strong>: Use <code>DOCTYPE</code>, defina <code>lang</code>, use
+            <code>&lt;head&gt;</code> corretamente, e organize o <code>&lt;body&gt;</code>.</li>
+        <li><strong>Elementos semânticos</strong>: Use <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>,
+            <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code>,
+            <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>, etc.</li>
+        <li><strong>Acessibilidade (A11Y)</strong>:<ul>
+                <li>Use <code>alt</code> nas imagens.</li>
+                <li>Organize os títulos corretamente (<code>h1</code> a <code>h6</code>).</li>
+                <li>Não dependa apenas de cores para transmitir informação.</li>
+                <li>Use <code>&lt;label&gt;</code> para formulários.</li>
+            </ul>
+        </li>
+    </ol>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

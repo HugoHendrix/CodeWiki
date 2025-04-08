@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+
+    <h3 id="introdução"><strong>Introdução</strong></h3>
+    <p>Nesta unidade, exploraremos o conceito de <strong>CMS (Content Management System)</strong>, também conhecido como
+        <strong>WCMS (Web Content Management System)</strong>. Um CMS é uma aplicação web que permite a criação, edição
+        e gerenciamento de conteúdo de sites sem a necessidade de conhecimentos avançados em HTML. Ele oferece recursos
+        para diferentes níveis de usuários, com permissões variadas, facilitando a colaboração e a administração de
+        sites.</p>
+    <h4 id="o-que-é-gerenciamento-de-conteúdo"><strong>O que é Gerenciamento de Conteúdo?</strong></h4>
+    <p>Refere-se ao processo de criar, editar, arquivar, publicar e gerenciar informações em um site. Um CMS simplifica
+        essas tarefas, permitindo que até mesmo usuários sem experiência técnica possam administrar um site de forma
+        eficiente.</p>
+    <hr>
+    <h3 id="opções-de-cms-no-mercado"><strong>Opções de CMS no Mercado</strong></h3>
+    <p>Existem várias opções de CMS disponíveis, cada uma com suas características e vantagens. Abaixo, destacamos
+        algumas das principais:</p>
+    <h4 id="1-drupal"><strong>1. Drupal</strong></h4>
+    <ul>
+        <li><strong>Descrição:</strong> Um CMS robusto, frequentemente chamado de <em>Framework de Gerenciamento de
+                Conteúdo</em>. </li>
+        <li><strong>Diferencial:</strong> Oferece APIs poderosas e uma estrutura modular, facilitando a criação de
+            módulos personalizados. </li>
+        <li><strong>Indicação:</strong> Ideal para projetos que exigem alta customização e escalabilidade.</li>
+    </ul>
+    <h4 id="2-redaxscript"><strong>2. Redaxscript</strong></h4>
+    <ul>
+        <li><strong>Descrição:</strong> Um CMS de código aberto, leve e repleto de recursos. </li>
+        <li><strong>Diferencial:</strong> Já vem otimizado para dispositivos móveis e SEO, essencial para o sucesso de
+            qualquer projeto. </li>
+        <li><strong>Tecnologias:</strong> Desenvolvido em PHP e utiliza MySQL como banco de dados.</li>
+    </ul>
+    <h4 id="3-joomla"><strong>3. Joomla</strong></h4>
+    <ul>
+        <li><strong>Descrição:</strong> Um dos CMS mais populares, criado em 2006. </li>
+        <li><strong>Diferencial:</strong> Amplamente utilizado, com uma grande comunidade de suporte e diversos recursos
+            disponíveis. </li>
+        <li><strong>Indicação:</strong> Perfeito para sites dinâmicos e de médio porte.</li>
+    </ul>
+    <h4 id="4-pimcore"><strong>4. Pimcore</strong></h4>
+    <ul>
+        <li><strong>Descrição:</strong> Uma plataforma completa para criação de portais, lojas virtuais e gestão de
+            marketing. </li>
+        <li><strong>Diferencial:</strong> Oferece ferramentas avançadas para engajamento de clientes e análise de
+            campanhas. </li>
+        <li><strong>Indicação:</strong> Ideal para projetos que exigem integração com estratégias de marketing.</li>
+    </ul>
+    <h4 id="5-mambo"><strong>5. Mambo</strong></h4>
+    <ul>
+        <li><strong>Descrição:</strong> Criado em 2000, foi um dos primeiros CMS de código aberto. </li>
+        <li><strong>Diferencial:</strong> Desenvolvido com foco em ser uma solução robusta e competitiva, mesmo sendo
+            open source. </li>
+        <li><strong>Tecnologias:</strong> Baseado no conjunto AMP (Apache, MySQL e PHP).</li>
+    </ul>
+    <h4 id="6-wordpress"><strong>6. WordPress</strong></h4>
+    <ul>
+        <li><strong>Descrição:</strong> O CMS mais popular do mundo, voltado para criação de sites e blogs. </li>
+        <li><strong>Diferencial:</strong> Fácil de usar, com uma vasta biblioteca de temas e plugins. </li>
+        <li><strong>Tecnologias:</strong> Desenvolvido em PHP com banco de dados MySQL.</li>
+    </ul>
+    <h4 id="7-opencart"><strong>7. OpenCart</strong></h4>
+    <ul>
+        <li><strong>Descrição:</strong> Um sistema de e-commerce open source. </li>
+        <li><strong>Diferencial:</strong> Focado em facilidade de instalação e uso, ideal para lojas virtuais. </li>
+        <li><strong>Licença:</strong> Distribuído sob a GNU General Public License.</li>
+    </ul>
+    <hr>
+    <h3 id="conceitos-da-arquitetura-clienteservidor"><strong>Conceitos da Arquitetura Cliente/Servidor</strong></h3>
+    <p>Na arquitetura cliente/servidor, o <strong>cliente</strong> (navegador) envia uma solicitação ao
+        <strong>servidor</strong> através de uma conexão de rede. O servidor processa a solicitação e retorna uma
+        resposta ao cliente. A internet é baseada nesse modelo, onde servidores web atendem a múltiplos clientes
+        simultaneamente, fornecendo serviços como acesso a sites.</p>
+    <ul>
+        <li><strong>Exemplo:</strong> Quando você digita um URL (Uniform Resource Locator) no navegador, ele envia uma
+            requisição ao servidor, que responde com o conteúdo da página.</li>
+    </ul>
+    <hr>
+    <h3 id="o-que-é-php"><strong>O que é PHP?</strong></h3>
+    <p>PHP (Hypertext Preprocessor) é uma linguagem de script open source, amplamente utilizada para desenvolvimento
+        web. Ela pode ser embutida diretamente no HTML, permitindo a criação de páginas dinâmicas.</p>
+    <ul>
+        <li><strong>Exemplo de uso:</strong>
+            <pre><code class="language-php">&lt;?php
+    echo &quot;Olá, mundo!&quot;;
+?&gt;
+</code></pre>
+            O código PHP é processado no servidor, enquanto o navegador recebe apenas o HTML resultante.
+        </li>
+    </ul>
+    <hr>
+    <h3 id="servidor-apache"><strong>Servidor Apache</strong></h3>
+    <p>O <strong>Apache</strong> é o servidor web mais utilizado no mundo. Criado em 1995, ele é compatível com o
+        protocolo HTTP e suporta uma variedade de sistemas operacionais, como Windows, Linux e macOS.</p>
+    <ul>
+        <li><strong>Diferencial:</strong> Sua estrutura modular permite a personalização através de módulos adicionais.
+        </li>
+        <li><strong>Estatísticas:</strong> Em 2010, o Apache atendia cerca de 54,68% de todos os sites ativos.</li>
+    </ul>
+    <hr>
+    <h3 id="servidor-de-banco-de-dados-mysql"><strong>Servidor de Banco de Dados: MySQL</strong></h3>
+    <p>O <strong>MySQL</strong> é o banco de dados open source mais popular do mundo. Conhecido por sua confiabilidade e
+        desempenho, ele é amplamente utilizado em aplicações web, incluindo sites como Facebook e Twitter.</p>
+    <ul>
+        <li><strong>Diferencial:</strong> Facilidade de uso e integração com outras tecnologias, como PHP e Apache.</li>
+    </ul>
+    <hr>
+    <h3 id="ferramentas-necessárias-para-utilizar-um-cms"><strong>Ferramentas Necessárias para Utilizar um CMS</strong>
+    </h3>
+    <p>Para configurar um CMS como o WordPress, é necessário instalar e configurar as seguintes ferramentas no servidor:
+    </p>
+    <ol>
+        <li><strong>Servidor Web:</strong> Apache ou Nginx. </li>
+        <li><strong>Banco de Dados:</strong> MySQL. </li>
+        <li><strong>Linguagem de Programação:</strong> PHP.</li>
+    </ol>
+    <p>Para facilitar a instalação, você pode usar pacotes como:</p>
+    <ul>
+        <li><strong>WAMP</strong> (Windows) </li>
+        <li><strong>XAMPP</strong> (Multiplataforma) </li>
+        <li><strong>EasyPHP</strong> (Windows)</li>
+    </ul>
+    <hr>
+    <h3 id="iniciando-com-o-wordpress"><strong>Iniciando com o WordPress</strong></h3>
+    <p>Siga os passos abaixo para instalar e configurar o WordPress:</p>
+    <ol>
+        <li>
+            <p><strong>Baixar o WordPress:</strong><br>Acesse <a
+                    href="https://br.wordpress.org/">https://br.wordpress.org/</a> e baixe a última versão.</p>
+        </li>
+        <li>
+            <p><strong>Criar uma Pasta no Servidor:</strong><br>Dentro da pasta <code>www</code> do WAMP, crie uma pasta
+                para o seu projeto (ex.: <code>projeto1</code>).</p>
+        </li>
+        <li>
+            <p><strong>Iniciar o Servidor:</strong><br>Inicie o WAMP e verifique se o ícone na barra de tarefas está
+                verde.</p>
+        </li>
+        <li>
+            <p><strong>Descompactar o WordPress:</strong><br>Descompacte os arquivos do WordPress na pasta do projeto.
+            </p>
+        </li>
+        <li>
+            <p><strong>Acessar a Instalação:</strong><br>No navegador, acesse <code>http://localhost:85/projeto1/</code>
+                (ajuste a porta conforme necessário).</p>
+        </li>
+        <li>
+            <p><strong>Criar o Banco de Dados:</strong><br>Acesse o phpMyAdmin
+                (<code>http://localhost:85/phpmyadmin</code>) e crie um banco de dados para o projeto.</p>
+        </li>
+        <li>
+            <p><strong>Configurar o WordPress:</strong><br>Siga as instruções na tela de instalação, informando os dados
+                do banco de dados.</p>
+        </li>
+        <li>
+            <p><strong>Acessar o Painel Administrativo:</strong><br>Após a instalação, acesse o painel em
+                <code>http://localhost:85/projeto1/wp-login.php</code>.</p>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="conceitos-básicos-do-wordpress"><strong>Conceitos Básicos do WordPress</strong></h3>
+    <p>No painel administrativo, você pode:</p>
+    <ul>
+        <li><strong>Modificar Temas:</strong> Personalizar o design do site. </li>
+        <li><strong>Criar Páginas:</strong> Adicionar conteúdo ao site. </li>
+        <li><strong>Exportar/Importar Conteúdo:</strong> Migrar dados entre instalações do WordPress.</li>
+    </ul>
+    <hr>
+    <h3 id="material-complementar"><strong>Material Complementar</strong></h3>
+    <p>Para aprofundar seus conhecimentos, confira os seguintes recursos:</p>
+    <ul>
+        <li><strong>Diretório de Temas do WordPress:</strong> <a
+                href="http://wordpress.org/themes/">http://wordpress.org/themes/</a> </li>
+        <li><strong>40+ Free Responsive WordPress Themes:</strong> <a
+                href="http://www.hongkiat.com/blog/free-responsive-wordpress-themes/">http://www.hongkiat.com/blog/free-responsive-wordpress-themes/</a>
+        </li>
+    </ul>
+    <hr>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

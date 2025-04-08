@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="elementos-de-formulários"><strong>Elementos de Formulários</strong></h1>
+    <p>O HTML fornece várias tags para criação de formulários, permitindo a interação do usuário com a página. </p>
+    <h3 id="principais-elementos"><strong>Principais Elementos</strong></h3>
+    <ol>
+        <li><strong><code>&lt;form&gt;</code></strong> → Define o formulário. </li>
+        <li><strong><code>&lt;input&gt;</code></strong> → Campo de entrada de dados. </li>
+        <li><strong><code>&lt;textarea&gt;</code></strong> → Área de texto de múltiplas linhas. </li>
+        <li><strong><code>&lt;button&gt;</code></strong> → Botão para envio ou ação no formulário. </li>
+        <li><strong><code>&lt;select&gt;</code></strong> → Caixa de seleção (dropdown). </li>
+        <li><strong><code>&lt;option&gt;</code></strong> → Opção dentro do <code>&lt;select&gt;</code>. </li>
+        <li><strong><code>&lt;label&gt;</code></strong> → Rótulo para os campos de entrada. </li>
+        <li><strong><code>&lt;fieldset&gt;</code></strong> → Agrupa elementos relacionados dentro do formulário. </li>
+        <li><strong><code>&lt;legend&gt;</code></strong> → Define uma legenda para o <code>&lt;fieldset&gt;</code>.
+        </li>
+        <li><strong><code>&lt;datalist&gt;</code></strong> → Fornece sugestões de preenchimento automático para
+            <code>&lt;input&gt;</code>. </li>
+        <li><strong><code>&lt;output&gt;</code></strong> → Exibe o resultado de um cálculo ou ação no formulário.</li>
+    </ol>
+    <hr>
+    <h1 id="atributos-dos-formulários"><strong>Atributos dos Formulários</strong></h1>
+    <p>Os atributos são usados para configurar o comportamento dos formulários e seus elementos. </p>
+    <h3 id="principais-atributos"><strong>Principais Atributos</strong></h3>
+    <ul>
+        <li><strong><code>action</code></strong> → Define o destino (URL) para onde os dados do formulário serão
+            enviados. </li>
+        <li><strong><code>method</code></strong> → Define o método de envio (<code>GET</code> ou <code>POST</code>).
+        </li>
+        <li><strong><code>name</code></strong> → Identifica o campo para envio dos dados. </li>
+        <li><strong><code>id</code></strong> → Identificador único do elemento. </li>
+        <li><strong><code>placeholder</code></strong> → Texto exibido no campo antes do usuário digitar algo. </li>
+        <li><strong><code>required</code></strong> → Indica que o campo é obrigatório. </li>
+        <li><strong><code>disabled</code></strong> → Desativa o campo, impedindo interação. </li>
+        <li><strong><code>readonly</code></strong> → Torna o campo somente leitura. </li>
+        <li><strong><code>autocomplete</code></strong> → Controla o preenchimento automático do navegador
+            (<code>on</code> ou <code>off</code>).</li>
+    </ul>
+    <hr>
+    <h1 id="novos-tipos-de-input-no-html5"><strong>Novos Tipos de <code>&lt;input&gt;</code> no HTML5</strong></h1>
+    <p>O HTML5 introduziu novos tipos de campos para melhorar a experiência do usuário e a validação dos dados. </p>
+    <table>
+        <thead>
+            <tr>
+                <th><strong>Tipo</strong></th>
+                <th><strong>Descrição</strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong><code>email</code></strong></td>
+                <td>Campo para entrada de e-mail (valida formato automaticamente).</td>
+            </tr>
+            <tr>
+                <td><strong><code>url</code></strong></td>
+                <td>Campo para entrada de URLs.</td>
+            </tr>
+            <tr>
+                <td><strong><code>tel</code></strong></td>
+                <td>Campo para números de telefone.</td>
+            </tr>
+            <tr>
+                <td><strong><code>number</code></strong></td>
+                <td>Permite apenas números (pode definir <code>min</code>, <code>max</code> e <code>step</code>).</td>
+            </tr>
+            <tr>
+                <td><strong><code>date</code></strong></td>
+                <td>Seletor de data.</td>
+            </tr>
+            <tr>
+                <td><strong><code>time</code></strong></td>
+                <td>Seletor de horário.</td>
+            </tr>
+            <tr>
+                <td><strong><code>range</code></strong></td>
+                <td>Controle deslizante para definir um valor dentro de um intervalo.</td>
+            </tr>
+            <tr>
+                <td><strong><code>search</code></strong></td>
+                <td>Campo otimizado para buscas.</td>
+            </tr>
+            <tr>
+                <td><strong><code>color</code></strong></td>
+                <td>Seletor de cores.</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h1 id="exemplo-completo-de-formulário"><strong>Exemplo Completo de Formulário</strong></h1>
+    <pre><code class="language-html">&lt;form action=&quot;/enviar&quot; method=&quot;post&quot;&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Cadastro&lt;/legend&gt;
+
+        &lt;label for=&quot;nome&quot;&gt;Nome:&lt;/label&gt;
+        &lt;input type=&quot;text&quot; id=&quot;nome&quot; name=&quot;nome&quot; required placeholder=&quot;Digite seu nome&quot;&gt;
+
+        &lt;label for=&quot;email&quot;&gt;E-mail:&lt;/label&gt;
+        &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required placeholder=&quot;seu@email.com&quot;&gt;
+
+        &lt;label for=&quot;telefone&quot;&gt;Telefone:&lt;/label&gt;
+        &lt;input type=&quot;tel&quot; id=&quot;telefone&quot; name=&quot;telefone&quot; placeholder=&quot;(00) 00000-0000&quot;&gt;
+
+        &lt;label for=&quot;cor&quot;&gt;Escolha uma cor:&lt;/label&gt;
+        &lt;input type=&quot;color&quot; id=&quot;cor&quot; name=&quot;cor&quot;&gt;
+
+        &lt;label for=&quot;data&quot;&gt;Data de nascimento:&lt;/label&gt;
+        &lt;input type=&quot;date&quot; id=&quot;data&quot; name=&quot;data&quot;&gt;
+
+        &lt;label for=&quot;nota&quot;&gt;Nota:&lt;/label&gt;
+        &lt;input type=&quot;range&quot; id=&quot;nota&quot; name=&quot;nota&quot; min=&quot;0&quot; max=&quot;10&quot;&gt;
+
+        &lt;label for=&quot;pais&quot;&gt;País:&lt;/label&gt;
+        &lt;select id=&quot;pais&quot; name=&quot;pais&quot;&gt;
+            &lt;option value=&quot;br&quot;&gt;Brasil&lt;/option&gt;
+            &lt;option value=&quot;us&quot;&gt;Estados Unidos&lt;/option&gt;
+            &lt;option value=&quot;pt&quot;&gt;Portugal&lt;/option&gt;
+        &lt;/select&gt;
+
+        &lt;label for=&quot;busca&quot;&gt;Pesquisar:&lt;/label&gt;
+        &lt;input type=&quot;search&quot; id=&quot;busca&quot; name=&quot;busca&quot;&gt;
+
+        &lt;button type=&quot;submit&quot;&gt;Enviar&lt;/button&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+</code></pre>
+    <p>Esse formulário inclui diferentes tipos de <code>&lt;input&gt;</code> e elementos de formulário do HTML5. </p>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

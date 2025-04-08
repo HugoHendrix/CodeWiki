@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="unidade---conceitos-básicos-do-html">UNIDADE - Conceitos Básicos do HTML</h1>
+    <p>Objetivo de aprendizado, conhecer:</p>
+    <ul>
+        <li>Conceitos básicos de Internet e Sua História.</li>
+        <li>Tecnologias atuais e emergentes para desenvolvimento de aplicações para internet.</li>
+        <li>Conceitos básicos da Arquitetura cliente servidor</li>
+        <li>O que é o HTML?</li>
+        <li>O W3C e suas especificações</li>
+        <li>Estruturação e conteúdo.</li>
+        <li>Corpo Básico.</li>
+    </ul>
+    <hr>
+    <h2 id="introdução">Introdução</h2>
+    <p>O que preciso saber para desenvolver aplicações para a WEB?</p>
+    <ul>
+        <li>Entender o funcionamento básico da execução dessa aplicação</li>
+        <li>Conhecer as linguagens que são executadas na máquina cliente (HTML, CSS, JavaScript)</li>
+        <li>Conhecer alguma linguagem que rode no servidor para aplicações mais robustas (PHP,
+            ASPX, JSP, etc)</li>
+        <li>Saber trabalhar com banco de dados (MySQL, Oracle, SQLServer, etc)</li>
+        <li>Ter um pouco de criatividade para se trabalhar com os layouts das suas aplicações</li>
+    </ul>
+    <h2 id="pesquisa-de-links-relacionados-para-leitura">Pesquisa de Links relacionados para leitura</h2>
+    <ul>
+        <li><a href="https://mittechreview.com.br/web-1-2-3-e-web-5-cade-a-web-4/" target="_blank" rel="noopener noreferrer">Web 1, 2, 3 e… Web 5?! Cadê a Web
+                4?</a></li>
+    </ul>
+    
+    <p>Importante destacar, aqui, que uma das bibliotecas de programação mais populares usadas para escrever o código
+        Ethereum é chamada web3.js. E existe também uma fundação, a Web3 Foundation, que é dirigida pelos fundadores da
+        rede Polkadot.</p>
+    <ul>
+        <li><a href="https://web3js.readthedocs.io/en/v1.2.1/" target="_blank" rel="noopener noreferrer">Web3 JS</a></li>
+        <li><a href="https://web3.foundation/" target="_blank" rel="noopener noreferrer">Web3 Foundaution</a></li>
+    </ul>
+    <p>Em termos gerais, o principal objetivo da Web 3 é tenta resolver o maior problema da Web 2: a coleta de dados
+        pessoais por redes privadas que possibilitam o capitalismo de vigilância, um verdadeiro marketplace de
+        comportamentos futuros.</p>
+    <ul>
+        <li><a href="https://pt.wikipedia.org/wiki/apitalismo_de_vigil%C3%A2ncia" target="_blank" rel="noopener noreferrer">Capitalismo de Vigilância</a></li>
+    </ul>
+    <h2 id="resumo-do-artigo-sobre-a-web">Resumo do artigo sobre a WEB</h2>
+    <p> artigo &quot;Web 1, 2, 3 e... Web 5?! Cadê a Web 4?&quot; da MIT Technology Review explora a evolução da Web
+        desde sua criação até as propostas mais recentes, destacando as características de cada fase e esclarecendo a
+        ausência de uma &quot;Web 4&quot; amplamente reconhecida.
+        <strong>Evolução da Web:</strong>
+    </p>
+    <ol>
+        <li><strong>Web 1.0 (Web Estática):</strong> caracterizada por páginas estáticas onde os usuários apenas
+            consumiam conteúdo sem possibilidade de interação ou contribuição.</li>
+        <li><strong>Web 2.0 (Web Colaborativa):</strong> introduziu a interação e colaboração entre usuários, permitindo
+            a criação e compartilhamento de conteúdo por meio de blogs, redes sociais e outras plataformas
+            participativas.</li>
+        <li><strong>Web 3.0:</strong> focada na descentralização utilizando tecnologias como blockchain, visando
+            devolver aos usuários o controle sobre seus dados e promover uma internet mais segura e privada.
+            <strong>E a Web 4.0?</strong>
+        </li>
+    </ol>
+    <p> artigo esclarece que, embora menos discutida, a <strong>Web 4.0</strong> é concebida como a &quot;Web
+        Móvel&quot;, integrando o mundo real e virtual em tempo real.la possibilita a interação contínua entre humanos e
+        máquinas, promovendo uma relação simbiótica onde dispositivos móveis e assistentes virtuais desempenham papéis
+        centrais.</p>
+    <p><strong>A Proposta da Web 5:</strong></p>
+    <p>Recentemente, Jack Dorsey, cofundador do Twitter, anunciou a iniciativa da <strong>Web 5</strong> através da sua
+        empresa TBD.sta proposta visa criar uma plataforma extra descentralizada, onde os usuários têm controle total
+        sobre seus dados e identidades digitais, abordando a falta de uma camada de &quot;identidade&quot; na internet
+        atual.
+        importante notar que o conceito de <strong>Web 5</strong> não é totalmente novo.m 2009, Tim Berners-Lee,
+        inventor da Web, mencionou uma &quot;Web Emocional&quot; ou &quot;Simbiótica&quot;, onde a interação entre
+        humanos e computadores seria mais intuitiva e emocional, utilizando tecnologias avançadas para criar
+        experiências mais imersivas.
+        Em resumo, o artigo traça a trajetória da Web desde suas fases iniciais até as propostas futuras, esclarecendo o
+        papel e as características de cada etapa, incluindo a menos discutida Web 4.0, e apresentando as visões para a
+        Web 5.</p>
+    <hr>
+    <h1 id="ambiente-clienteservidor">Ambiente Cliente/Servidor</h1>
+    <h2 id="introdução-1">Introdução</h2>
+    <p>No desenvolvimento web, podemos programar no <strong>Client Side</strong> (lado do cliente) e/ou no
+        <strong>Server Side</strong> (lado do servidor). </p>
+    <hr>
+    <h2 id="🖥️-client-side-lado-cliente">🖥️ Client Side (Lado Cliente)</h2>
+    <ul>
+        <li>O código é executado diretamente no <strong>navegador do usuário</strong>. </li>
+        <li>Principais linguagens usadas: <ul>
+                <li><strong>HTML</strong> → estrutura da página. </li>
+                <li><strong>CSS</strong> → estilização e layout. </li>
+                <li><strong>JavaScript</strong> → interatividade e dinamicidade.</li>
+            </ul>
+        </li>
+        <li>Responsabilidade do navegador → <strong>interpretação e exibição do conteúdo</strong>. </li>
+        <li>Exemplos práticos: <ul>
+                <li>Animações e efeitos visuais. </li>
+                <li>Validação de formulários sem recarregar a página. </li>
+                <li>Manipulação do DOM (Document Object Model).</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h2 id="🌐-server-side-lado-servidor">🌐 Server Side (Lado Servidor)</h2>
+    <ul>
+        <li>O código é executado no <strong>servidor antes de ser enviado ao cliente</strong>. </li>
+        <li>Necessário um <strong>servidor</strong> para processar os arquivos, como: <ul>
+                <li><strong>Apache</strong> </li>
+                <li><strong>IIS (Microsoft)</strong> </li>
+                <li><strong>GlassFish</strong></li>
+            </ul>
+        </li>
+        <li>Linguagens utilizadas: <ul>
+                <li><strong>PHP</strong> </li>
+                <li><strong>ASPX (ASP.NET)</strong> </li>
+                <li><strong>JSP (Java Server Pages)</strong> </li>
+                <li><strong>Python (Django, Flask)</strong> </li>
+                <li><strong>Node.js</strong></li>
+            </ul>
+        </li>
+        <li>O servidor também pode gerenciar <strong>bancos de dados</strong>, responsáveis pelo <strong>armazenamento
+                de informações</strong> organizadas em tabelas e relacionamentos.</li>
+    </ul>
+    <hr>
+    <h2 id="🔄-resumo">🔄 Resumo</h2>
+    <ul>
+        <li><strong>Client Side</strong> → Interação visual e execução no navegador. </li>
+        <li><strong>Server Side</strong> → Processamento de dados e regras de negócio no servidor. </li>
+        <li><strong>Podemos combinar ambos</strong> para criar aplicações completas e dinâmicas.</li>
+    </ul>
+    <hr>
+    <h1 id="📌-o-que-é-html">📌 O que é HTML?</h1>
+    <h2 id="🔹-introdução">🔹 Introdução</h2>
+    <p>O <strong>HTML (Hypertext Markup Language)</strong> é uma <strong>Linguagem de Marcação de Hipertexto</strong>
+        utilizada para estruturar páginas web. Ele permite a distribuição global de informações e pode ser interpretado
+        por diversos navegadores. </p>
+    <ul>
+        <li>Desenvolvido por <strong>Tim Berners-Lee</strong>. </li>
+        <li>Processado por navegadores como <strong>Chrome, Firefox e Edge</strong>. </li>
+        <li>Define um conjunto de <strong>elementos (tags)</strong> para estruturar conteúdos como <strong>cabeçalhos,
+                parágrafos, listas e tabelas</strong>.</li>
+    </ul>
+    <hr>
+    <h2 id="📜-estrutura-de-um-documento-html">📜 Estrutura de um Documento HTML</h2>
+    <p>Um documento HTML é um arquivo de texto que pode ser criado com qualquer editor de texto. </p>
+    <h3 id="exemplo-básico-de-html"><strong>Exemplo básico de HTML:</strong></h3>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Minha Página HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Olá, Mundo!&lt;/h1&gt;
+    &lt;p&gt;Este é um parágrafo em HTML.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    <hr>
+    <h2 id="🛠️-ferramentas-para-criar-e-testar-html">🛠️ Ferramentas para Criar e Testar HTML</h2>
+    <h3 id="🔎-navegadores-compatíveis"><strong>🔎 Navegadores Compatíveis</strong></h3>
+    <p>Para visualizar e testar arquivos HTML, utilize navegadores atualizados, como: </p>
+    <ul>
+        <li>🌍 <strong>Google Chrome</strong> </li>
+        <li>🦊 <strong>Mozilla Firefox</strong> </li>
+        <li>🖥️ <strong>Microsoft Edge</strong></li>
+    </ul>
+    <h3 id="📝-editores-de-texto-e-ides"><strong>📝 Editores de Texto e IDEs</strong></h3>
+    <p>Para criar códigos HTML, podemos utilizar: </p>
+    <ul>
+        <li><strong>Bloco de Notas</strong> (simples e nativo do Windows). </li>
+        <li><strong>Notepad++</strong> (gratuito e mais avançado). </li>
+        <li><strong>Brackets</strong> (gratuito, desenvolvido pela Adobe) ➝ <a href="http://brackets.io/">Baixar
+                Brackets</a>. </li>
+        <li><strong>Microsoft Expression Web 4</strong> (ferramenta especializada da Microsoft). </li>
+        <li><strong>NetBeans</strong> (IDE completa para desenvolvimento web).</li>
+    </ul>
+    <hr>
+    <h2 id="📌-versões-do-html">📌 Versões do HTML</h2>
+    <h2 id="🔹-html-401">🔹 HTML 4.01</h2>
+    <ul>
+        <li>Publicado como uma <strong>recomendação do W3C</strong> em <strong>1999</strong>. </li>
+        <li>Foi uma das versões mais significativas para a web moderna.</li>
+    </ul>
+    <h2 id="🔹-html-5">🔹 HTML 5</h2>
+    <ul>
+        <li>Especificação iniciada em <strong>2008</strong>. </li>
+        <li>Atualmente está <strong>praticamente finalizada</strong>, mas o <strong>W3C ainda analisa algumas
+                tags</strong>. </li>
+        <li>Introduziu diversas melhorias, como: <ul>
+                <li>Suporte a <strong>vídeos e áudios nativos</strong> (<code>&lt;video&gt;</code> e
+                    <code>&lt;audio&gt;</code>). </li>
+                <li>Novas <strong>tags semânticas</strong> (<code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>,
+                    <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, etc.). </li>
+                <li>Melhor suporte a <strong>APIs e interatividade</strong> com JavaScript.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h1 id="🌍-sobre-a-w3c">🌍 Sobre a W3C</h1>
+    <p>O <strong>World Wide Web Consortium (W3C)</strong> é um <strong>consórcio internacional</strong> que desenvolve
+        padrões para a Web. </p>
+    <h3 id="🔹-missão">🔹 Missão</h3>
+    <ul>
+        <li>Liderado por <strong>Tim Berners-Lee</strong> (criador da Web) e <strong>Jeffrey Jaffe</strong> (CEO). </li>
+        <li>Objetivo: <strong>Garantir o crescimento e evolução da Web</strong>, estabelecendo protocolos e diretrizes.
+        </li>
+    </ul>
+    <p>🔗 <strong>Mais informações:</strong> <a href="https://bit.ly/3yj9i4v" target="_blank" rel="noopener noreferrer">W3C Website</a> </p>
+    <hr>
+    <h1 id="🖥️-renderização-de-páginas-html-nos-navegadores">🖥️ Renderização de Páginas HTML nos Navegadores</h1>
+    <h2 id="📌-como-os-navegadores-interpretam-o-html">📌 Como os Navegadores Interpretam o HTML</h2>
+    <ul>
+        <li>Ao abrir uma página <strong>HTML</strong>, o navegador <strong>analisa e interpreta</strong> as
+            <strong>tags</strong> para definir a apresentação do conteúdo. </li>
+        <li>Um problema recorrente é a <strong>compatibilidade entre navegadores</strong> e dispositivos. </li>
+        <li>Exemplo: Uma página <strong>HTML5</strong> pode rodar corretamente no <strong>Chrome</strong>, mas
+            apresentar diferenças no <strong>Firefox</strong> ou <strong>Internet Explorer</strong>. </li>
+        <li>A exibição pode variar também entre <strong>desktops</strong> e <strong>dispositivos móveis</strong>.</li>
+    </ul>
+    <hr>
+    <h2 id="⚙️-motores-de-renderização">⚙️ Motores de Renderização</h2>
+    <p>Os navegadores utilizam <strong>motores de renderização</strong> para processar o código das páginas web. Os
+        principais motores são:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>🖥️ Navegador</th>
+                <th>🔧 Motor de Renderização</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Chrome, Safari</strong></td>
+                <td>WebKit</td>
+            </tr>
+            <tr>
+                <td><strong>Firefox</strong></td>
+                <td>Gecko</td>
+            </tr>
+            <tr>
+                <td><strong>Internet Explorer</strong></td>
+                <td>Trident</td>
+            </tr>
+        </tbody>
+    </table>
+    <ul>
+        <li><strong>WebKit</strong>: Motor utilizado nos navegadores <strong>Safari</strong> e <strong>Chrome</strong>.
+        </li>
+        <li><strong>Gecko</strong>: Motor de layout <strong>open-source</strong> da <strong>Mozilla</strong> (usado no
+            <strong>Firefox</strong> e <strong>SeaMonkey</strong>). </li>
+        <li><strong>Trident</strong>: Motor do antigo <strong>Internet Explorer</strong>.</li>
+    </ul>
+    <p>Para garantir a <strong>compatibilidade</strong>, devemos escrever códigos que funcionem corretamente nesses
+        motores. </p>
+    <hr>
+    <h2 id="🎨-compatibilidade-no-css">🎨 Compatibilidade no CSS</h2>
+    <p>Para que um efeito tenha o <strong>mesmo resultado em todos os navegadores</strong>, usamos <strong>prefixos
+            específicos</strong> para cada motor de renderização no CSS. </p>
+    <p>Exemplo de código para aplicar <strong>bordas arredondadas</strong> compatíveis com diferentes navegadores: </p>
+    <pre><code class="language-css">div {
+  -webkit-border-radius: 10px; /* Chrome, Safari */
+  -moz-border-radius: 10px;    /* Firefox */
+  -ms-border-radius: 10px;     /* Internet Explorer */
+  -o-border-radius: 10px;      /* Opera */
+  border-radius: 10px;         /* Padrão */
+  height: 50px;
+  width: 150px;
+  text-align: center;
+  background-color: green;
+}
+</code></pre>
+    <h1 id="📜-evolução-do-html">📜 Evolução do HTML</h1>
+    <p>O <strong>HTML (Hypertext Markup Language)</strong> é a linguagem base da web, utilizada para estruturar páginas
+        e exibir conteúdo nos navegadores. Desde sua criação, passou por diversas versões para acompanhar a evolução da
+        internet. </p>
+    <hr>
+    <h2 id="🏛️-origens-do-html">🏛️ <strong>Origens do HTML</strong></h2>
+    <ul>
+        <li>Criado por <strong>Tim Berners-Lee</strong> no início dos anos 90. </li>
+        <li>Primeira versão foi desenvolvida para compartilhar documentos científicos na <strong>World Wide Web
+                (WWW)</strong>. </li>
+        <li>Inicialmente, era <strong>simples e estático</strong>, sem suporte a estilos avançados ou interatividade.
+        </li>
+    </ul>
+    <hr>
+    <h2 id="🔄-principais-versões-do-html">🔄 <strong>Principais Versões do HTML</strong></h2>
+    <h3 id="📌-html-10-1993">📌 <strong>HTML 1.0 (1993)</strong></h3>
+    <ul>
+        <li>Primeira versão oficial, muito limitada. </li>
+        <li>Suportava apenas <strong>textos simples e links</strong>.</li>
+    </ul>
+    <h3 id="📌-html-20-1995">📌 <strong>HTML 2.0 (1995)</strong></h3>
+    <ul>
+        <li>Introduziu <strong>formulários</strong> e elementos interativos. </li>
+        <li>Ainda sem suporte a <strong>estilos visuais avançados</strong>.</li>
+    </ul>
+    <h3 id="📌-html-32-1997">📌 <strong>HTML 3.2 (1997)</strong></h3>
+    <ul>
+        <li>Melhor suporte para <strong>tabelas, scripts e applets Java</strong>. </li>
+        <li><strong>Frames</strong> foram adicionados, permitindo dividir a tela em seções.</li>
+    </ul>
+    <h3 id="📌-html-401-1999">📌 <strong>HTML 4.01 (1999)</strong></h3>
+    <ul>
+        <li>Uma das versões mais influentes. </li>
+        <li>Introduziu <strong>CSS</strong>, separando conteúdo da aparência. </li>
+        <li>Melhor suporte a <strong>tabelas, scripts e formulários avançados</strong>. </li>
+        <li>Popularizou o <strong>padrão W3C</strong>, garantindo maior compatibilidade.</li>
+    </ul>
+    <h3 id="📌-xhtml-10-2000">📌 <strong>XHTML 1.0 (2000)</strong></h3>
+    <ul>
+        <li>Variante mais <strong>estrita e estruturada</strong> do HTML 4.01. </li>
+        <li>Requeria <strong>tags sempre fechadas corretamente</strong>.</li>
+    </ul>
+    <h3 id="📌-html5-2014---atual">📌 <strong>HTML5 (2014 - Atual)</strong></h3>
+    <ul>
+        <li>Revolucionou o desenvolvimento web com suporte para:<br>✅ <strong>Tags semânticas</strong>
+            (<code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code>).<br>✅
+            <strong>Multimídia nativa</strong> (<code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>).<br>✅
+            <strong>Canvas e SVG</strong> para gráficos dinâmicos.<br>✅ Melhor integração com <strong>JavaScript e APIs
+                modernas</strong>.<br>✅ Maior compatibilidade com <strong>dispositivos móveis</strong>.</li>
+    </ul>
+    <hr>
+    <h2 id="🌐-o-papel-do-w3c-na-evolução-do-html">🌐 <strong>O Papel do W3C na Evolução do HTML</strong></h2>
+    <ul>
+        <li>O <strong>World Wide Web Consortium (W3C)</strong> define os padrões do HTML. </li>
+        <li>Fundado por <strong>Tim Berners-Lee</strong>, tem como missão garantir o crescimento da web. </li>
+        <li>Trabalha na evolução do HTML junto com o <strong>WHATWG</strong>.</li>
+    </ul>
+    <p>🔗 Para mais informações: <a href="https://www.w3.org/" target="_blank" rel="noopener noreferrer">W3C Website</a> </p>
+    <hr>
+    <h1 id="🆚-diferença-entre-html-e-html5">🆚 Diferença entre HTML e HTML5</h1>
+    <p>O <strong>HTML5</strong> é uma evolução do <strong>HTML (HyperText Markup Language)</strong>, trazendo melhorias
+        em semântica, interatividade e compatibilidade com dispositivos modernos. </p>
+    <hr>
+    <h2 id="🔍-principais-diferenças">🔍 <strong>Principais Diferenças</strong></h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Característica</th>
+                <th>HTML</th>
+                <th>HTML5</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Semântica</strong></td>
+                <td>Uso limitado de tags semânticas.</td>
+                <td>Novas tags semânticas (<code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>,
+                    <code>&lt;nav&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>).</td>
+            </tr>
+            <tr>
+                <td><strong>Suporte a Multimídia</strong></td>
+                <td>Requer <strong>plugins externos</strong> como Flash para vídeos e áudio.</td>
+                <td>Suporte nativo para <code>&lt;audio&gt;</code> e <code>&lt;video&gt;</code>, sem necessidade de
+                    plugins.</td>
+            </tr>
+            <tr>
+                <td><strong>Compatibilidade com Dispositivos</strong></td>
+                <td>Pouco adaptável a dispositivos móveis.</td>
+                <td>Projetado para ser <strong>responsivo e adaptável</strong>.</td>
+            </tr>
+            <tr>
+                <td><strong>APIs Nativas</strong></td>
+                <td>Suporte limitado para interatividade e armazenamento local.</td>
+                <td>APIs avançadas como <strong>Geolocalização, Web Storage, Canvas, WebSockets, Web Workers</strong>.
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Formulários</strong></td>
+                <td>Campos básicos de entrada (<code>&lt;input type=&quot;text&quot;&gt;</code>).</td>
+                <td>Novos tipos de input (<code>&lt;input type=&quot;email&quot;&gt;</code>,
+                    <code>&lt;input type=&quot;date&quot;&gt;</code>,
+                    <code>&lt;input type=&quot;range&quot;&gt;</code>).</td>
+            </tr>
+            <tr>
+                <td><strong>Gráficos e Animações</strong></td>
+                <td>Dependência de plugins como Flash e Java Applets.</td>
+                <td><strong>Canvas</strong> e <strong>SVG</strong> para gráficos dinâmicos e animações.</td>
+            </tr>
+            <tr>
+                <td><strong>Compatibilidade com JavaScript</strong></td>
+                <td>Funciona, mas sem muitos recursos específicos.</td>
+                <td>Melhor integração com <strong>JavaScript e APIs modernas</strong>.</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h2 id="🎯-principais-benefícios-do-html5">🎯 <strong>Principais Benefícios do HTML5</strong></h2>
+    <p>✅ <strong>Código mais limpo e organizado</strong> com tags semânticas.<br>✅ <strong>Melhor desempenho e
+            compatibilidade</strong> com dispositivos móveis.<br>✅ <strong>Menos dependência de plugins</strong>,
+        tornando a web mais segura.<br>✅ <strong>Maior suporte para desenvolvimento de aplicativos web
+            interativos</strong>. </p>
+    <hr>
+    <h1 id="📌-html-semântico">📌 HTML Semântico</h1>
+    <h2 id="🔍-o-que-é-html-semântico">🔍 O que é HTML Semântico?</h2>
+    <p>O <strong>HTML Semântico</strong> refere-se ao uso de tags que possuem <strong>significado próprio</strong>,
+        tornando o código mais compreensível tanto para desenvolvedores quanto para navegadores e motores de busca. </p>
+    <p>💡 <strong>Benefícios:</strong><br>✔ Código mais <strong>organizado e legível</strong><br>✔ Melhora a
+        <strong>acessibilidade</strong> (leitores de tela entendem melhor)<br>✔ SEO aprimorado (<strong>motores de busca
+            identificam melhor o conteúdo</strong>) </p>
+    <hr>
+    <h2 id="🏗-principais-tags-semânticas">🏗 <strong>Principais Tags Semânticas</strong></h2>
+    <table>
+        <thead>
+            <tr>
+                <th><strong>Tag</strong></th>
+                <th><strong>Descrição</strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>&lt;header&gt;</code></td>
+                <td>Cabeçalho da página ou de uma seção.</td>
+            </tr>
+            <tr>
+                <td><code>&lt;nav&gt;</code></td>
+                <td>Define uma seção de navegação (links do site).</td>
+            </tr>
+            <tr>
+                <td><code>&lt;section&gt;</code></td>
+                <td>Define uma seção genérica de conteúdo.</td>
+            </tr>
+            <tr>
+                <td><code>&lt;article&gt;</code></td>
+                <td>Representa um conteúdo independente, como posts e artigos.</td>
+            </tr>
+            <tr>
+                <td><code>&lt;aside&gt;</code></td>
+                <td>Define conteúdo secundário, como barras laterais.</td>
+            </tr>
+            <tr>
+                <td><code>&lt;footer&gt;</code></td>
+                <td>Rodapé da página ou de uma seção.</td>
+            </tr>
+            <tr>
+                <td><code>&lt;figure&gt;</code></td>
+                <td>Agrupa elementos de mídia, como imagens e legendas.</td>
+            </tr>
+            <tr>
+                <td><code>&lt;figcaption&gt;</code></td>
+                <td>Define a legenda de um <code>&lt;figure&gt;</code>.</td>
+            </tr>
+            <tr>
+                <td><code>&lt;main&gt;</code></td>
+                <td>Representa o conteúdo principal da página.</td>
+            </tr>
+            <tr>
+                <td><code>&lt;mark&gt;</code></td>
+                <td>Destaca partes do texto (exemplo: marcações importantes).</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h2 id="🎯-exemplo-de-código">🎯 <strong>Exemplo de Código</strong></h2>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Exemplo de HTML Semântico&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;header&gt;
+        &lt;h1&gt;Meu Site&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Início&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contato&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section&gt;
+            &lt;article&gt;
+                &lt;h2&gt;O que é HTML Semântico?&lt;/h2&gt;
+                &lt;p&gt;HTML Semântico melhora a acessibilidade e organização do código.&lt;/p&gt;
+            &lt;/article&gt;
+        &lt;/section&gt;
+        &lt;aside&gt;
+            &lt;p&gt;Conteúdo secundário, como anúncios e links.&lt;/p&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2025 Meu Site&lt;/p&gt;
+    &lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    <hr>
+    <h2 id="🚀-por-que-usar-html-semântico">🚀 <strong>Por que Usar HTML Semântico?</strong></h2>
+    <p>✅ <strong>Melhor organização do código</strong><br>✅ <strong>SEO aprimorado</strong> (Google entende melhor o
+        conteúdo)<br>✅ <strong>Maior acessibilidade</strong> para leitores de tela<br>✅ <strong>Facilita a manutenção do
+            código</strong> </p>
+    <hr>
+    <h1 id="📌-html-vs-xml">📌 HTML vs XML</h1>
+    <h2 id="🔍-o-que-é-html">🔍 O que é HTML?</h2>
+    <p>O <strong>HTML (HyperText Markup Language)</strong> é uma <strong>linguagem de marcação</strong> usada para
+        estruturar páginas na Web. Ele define elementos como títulos, parágrafos, imagens, links e outros componentes
+        visuais. </p>
+    <p>✅ <strong>Objetivo:</strong> Exibir informações na Web<br>✅ <strong>Foco:</strong> Estruturar e formatar páginas
+        web<br>✅ <strong>Flexível:</strong> Tolerante a erros </p>
+    <hr>
+    <h2 id="🔍-o-que-é-xml">🔍 O que é XML?</h2>
+    <p>O <strong>XML (Extensible Markup Language)</strong> é uma <strong>linguagem de marcação</strong> usada para
+        armazenar e transportar dados de maneira estruturada e organizada. </p>
+    <p>✅ <strong>Objetivo:</strong> Armazenamento e transporte de dados<br>✅ <strong>Foco:</strong> Organização e
+        intercâmbio de informações<br>✅ <strong>Rígido:</strong> Sensível a erros de sintaxe </p>
+    <hr>
+    <h2 id="📊-principais-diferenças-entre-html-e-xml">📊 <strong>Principais Diferenças entre HTML e XML</strong></h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Característica</th>
+                <th>HTML</th>
+                <th>XML</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Significado</strong></td>
+                <td>Linguagem de marcação para exibir conteúdo na Web</td>
+                <td>Linguagem para armazenar e transportar dados</td>
+            </tr>
+            <tr>
+                <td><strong>Objetivo</strong></td>
+                <td>Estruturar e formatar páginas</td>
+                <td>Estruturar e transportar dados</td>
+            </tr>
+            <tr>
+                <td><strong>Sintaxe</strong></td>
+                <td>Mais flexível e tolerante a erros</td>
+                <td>Estrito, erros impedem a execução</td>
+            </tr>
+            <tr>
+                <td><strong>Case Sensitive</strong></td>
+                <td>Não diferencia maiúsculas de minúsculas (<code>&lt;body&gt;</code> = <code>&lt;BODY&gt;</code>)</td>
+                <td>Diferencia (<code>&lt;nome&gt;</code> ≠ <code>&lt;NOME&gt;</code>)</td>
+            </tr>
+            <tr>
+                <td><strong>Extensibilidade</strong></td>
+                <td>Possui tags fixas e padronizadas</td>
+                <td>Permite criar tags personalizadas</td>
+            </tr>
+            <tr>
+                <td><strong>Formato de dados</strong></td>
+                <td>Apresentação visual</td>
+                <td>Estruturação e organização de dados</td>
+            </tr>
+            <tr>
+                <td><strong>Fechamento de tags</strong></td>
+                <td>Algumas tags não precisam de fechamento (<code>&lt;br&gt;</code>, <code>&lt;img&gt;</code>)</td>
+                <td>Todas as tags devem ser fechadas corretamente</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h2 id="🎯-exemplo-de-código-1">🎯 <strong>Exemplo de Código</strong></h2>
+    <h3 id="📌-exemplo-de-html">📌 Exemplo de HTML</h3>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Exemplo HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Olá, Mundo!&lt;/h1&gt;
+    &lt;p&gt;HTML estrutura o conteúdo da Web.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+    <h3 id="📌-exemplo-de-xml">📌 Exemplo de XML</h3>
+    <pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;livro&gt;
+    &lt;titulo&gt;Aprendendo XML&lt;/titulo&gt;
+    &lt;autor&gt;João Silva&lt;/autor&gt;
+    &lt;preco&gt;39.90&lt;/preco&gt;
+&lt;/livro&gt;
+</code></pre>
+    <hr>
+    <h2 id="🚀-quando-usar-cada-um">🚀 <strong>Quando Usar Cada um?</strong></h2>
+    <p>✅ <strong>HTML</strong> → Quando o foco for a apresentação de informações em páginas web.<br>✅
+        <strong>XML</strong> → Quando o objetivo for armazenar e transferir dados de forma estruturada. </p>
+    <p>💡 <strong>Conclusão:</strong> O HTML e o XML são linguagens de marcação, mas com finalidades diferentes.
+        Enquanto o HTML se concentra na exibição do conteúdo, o XML é usado para transportar e organizar informações.
+    </p>
+    <hr>
+    <h1 id="📌-elementos-em-bloco-vs-elementos-em-linha">📌 Elementos em Bloco vs. Elementos em Linha</h1>
+    <h2 id="🔍-o-que-são-elementos-em-bloco">🔍 O que são elementos em <strong>Bloco</strong>?</h2>
+    <p>Elementos <strong>em bloco</strong> são aqueles que <strong>ocupam toda a largura disponível</strong> e
+        <strong>sempre começam em uma nova linha</strong>. Esses elementos geralmente são usados para estruturar o
+        conteúdo de uma página. Ao usar um elemento em bloco, ele empurra o conteúdo subsequente para a linha seguinte.
+    </p>
+    <p>✅ <strong>Características:</strong> </p>
+    <ul>
+        <li>Ocupa 100% da largura disponível</li>
+        <li>Sempre começa em uma nova linha</li>
+        <li>Pode conter outros elementos em bloco e em linha</li>
+        <li>Exemplo: <code>&lt;div&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>,
+            <code>&lt;p&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>,
+            <code>&lt;h1&gt; - &lt;h6&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>,
+            <code>&lt;li&gt;</code></li>
+    </ul>
+    <h3 id="📌-exemplos-de-elementos-em-bloco">📌 Exemplos de Elementos em Bloco:</h3>
+    <pre><code class="language-html">&lt;div&gt;Este é um elemento em bloco&lt;/div&gt;
+&lt;p&gt;Este parágrafo ocupa toda a largura da página e começa em uma nova linha.&lt;/p&gt;
+&lt;section&gt;O conteúdo dentro dessa seção vai ocupar uma linha inteira.&lt;/section&gt;
+</code></pre>
+    <hr>
+    <h2 id="🔍-o-que-são-elementos-em-linha">🔍 O que são elementos em <strong>Linha</strong>?</h2>
+    <p>Elementos <strong>em linha</strong> são aqueles que <strong>não quebram a linha</strong> e apenas ocupam o espaço
+        necessário para o seu conteúdo. Eles são usados para definir partes específicas de uma linha de texto e não
+        afetam o layout geral da página.</p>
+    <p>✅ <strong>Características:</strong> </p>
+    <ul>
+        <li>Apenas ocupa o espaço necessário</li>
+        <li>Não inicia uma nova linha</li>
+        <li>Pode ser inserido dentro de elementos em bloco</li>
+        <li>Exemplo: <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>,
+            <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;b&gt;</code>,
+            <code>&lt;code&gt;</code></li>
+    </ul>
+    <h3 id="📌-exemplos-de-elementos-em-linha">📌 Exemplos de Elementos em Linha:</h3>
+    <pre><code class="language-html">&lt;p&gt;Este é um &lt;span&gt;exemplo&lt;/span&gt; de texto com &lt;strong&gt;negrito&lt;/strong&gt; dentro de um parágrafo.&lt;/p&gt;
+&lt;a href=&quot;#&quot;&gt;Este é um link em linha&lt;/a&gt;
+</code></pre>
+    <hr>
+    <h2 id="🆚-diferenças-principais-entre-elementos-em-bloco-e-em-linha">🆚 <strong>Diferenças Principais entre
+            Elementos em Bloco e em Linha</strong></h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Característica</th>
+                <th>Elementos em Bloco</th>
+                <th>Elementos em Linha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Quebra de Linha</strong></td>
+                <td>Sempre começa em uma nova linha</td>
+                <td>Não quebra a linha</td>
+            </tr>
+            <tr>
+                <td><strong>Largura</strong></td>
+                <td>Ocupa 100% da largura disponível</td>
+                <td>Ocupa apenas o espaço necessário para o conteúdo</td>
+            </tr>
+            <tr>
+                <td><strong>Uso Comum</strong></td>
+                <td>Para estruturar o layout da página</td>
+                <td>Para estilizar e formatar partes do conteúdo</td>
+            </tr>
+            <tr>
+                <td><strong>Exemplo Comum</strong></td>
+                <td><code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;header&gt;</code>,
+                    <code>&lt;section&gt;</code></td>
+                <td><code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>,
+                    <code>&lt;strong&gt;</code></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h2 id="💡-quando-usar-cada-um">💡 <strong>Quando Usar Cada um?</strong></h2>
+    <ul>
+        <li>Use <strong>elementos em bloco</strong> quando precisar criar seções ou áreas principais da página, como
+            parágrafos, cabeçalhos, menus ou seções.</li>
+        <li>Use <strong>elementos em linha</strong> quando quiser formatar ou estilizar partes específicas do conteúdo
+            dentro de um bloco, como trechos de texto, links e imagens dentro de um parágrafo.</li>
+    </ul>
+    <hr>
+    <h1 id="📌-imagens-links-caracteres-especiais-e-símbolos-em-html">📌 Imagens, Links, Caracteres Especiais e Símbolos
+        em HTML</h1>
+    <h2 id="🔍-imagens-em-html">🔍 <strong>Imagens em HTML</strong></h2>
+    <p>Para inserir imagens em uma página HTML, utilizamos a tag <code>&lt;img&gt;</code>. A tag
+        <code>&lt;img&gt;</code> é um <strong>elemento em linha</strong> e possui o atributo <strong>src</strong> que
+        define o caminho da imagem. A tag também pode ter o atributo <strong>alt</strong>, que descreve a imagem para
+        leitores de tela e quando a imagem não pode ser carregada.</p>
+    <h3 id="📌-sintaxe">📌 Sintaxe:</h3>
+    <pre><code class="language-html">&lt;img src=&quot;caminho-da-imagem.jpg&quot; alt=&quot;Descrição da imagem&quot;&gt;
+</code></pre>
+    <h3 id="📌-exemplos">📌 Exemplos:</h3>
+    <pre><code class="language-html">&lt;img src=&quot;logo.png&quot; alt=&quot;Logo da empresa&quot;&gt;
+</code></pre>
+    <h3 id="📌-atributos-importantes-da-tag-img">📌 Atributos importantes da tag <code>&lt;img&gt;</code>:</h3>
+    <ul>
+        <li><strong>src</strong>: Caminho ou URL da imagem.</li>
+        <li><strong>alt</strong>: Texto alternativo que descreve a imagem.</li>
+        <li><strong>width</strong>: Largura da imagem (pode ser em px ou %).</li>
+        <li><strong>height</strong>: Altura da imagem (pode ser em px ou %).</li>
+    </ul>
+    <hr>
+    <h2 id="🔍-links-em-html">🔍 <strong>Links em HTML</strong></h2>
+    <p>Links são criados com a tag <code>&lt;a&gt;</code>, e o atributo <strong>href</strong> define o destino do link.
+        O conteúdo da tag <code>&lt;a&gt;</code> pode ser qualquer coisa, como texto ou imagens.</p>
+    <h3 id="📌-sintaxe-1">📌 Sintaxe:</h3>
+    <pre><code class="language-html">&lt;a href=&quot;https://www.exemplo.com&quot;&gt;Texto do Link&lt;/a&gt;
+</code></pre>
+    <h3 id="📌-exemplos-1">📌 Exemplos:</h3>
+    <pre><code class="language-html">&lt;a href=&quot;https://www.google.com&quot;&gt;Visite o Google&lt;/a&gt;
+</code></pre>
+    <h3 id="📌-atributos-importantes-da-tag-a">📌 Atributos importantes da tag <code>&lt;a&gt;</code>:</h3>
+    <ul>
+        <li><strong>href</strong>: URL para onde o link irá.</li>
+        <li><strong>target</strong>: Define onde abrir o link. Exemplo: <code>target=&quot;_blank&quot;</code> abre o
+            link em uma nova aba.</li>
+        <li><strong>title</strong>: Texto exibido quando o cursor passa sobre o link.</li>
+    </ul>
+    <hr>
+    <h2 id="🔍-caracteres-especiais-e-símbolos-em-html">🔍 <strong>Caracteres Especiais e Símbolos em HTML</strong></h2>
+    <p>Em HTML, alguns caracteres têm significados especiais (como <code>&lt;</code>, <code>&gt;</code>,
+        <code>&amp;</code>). Para exibi-los como texto na página, usamos entidades de caracteres, que são representações
+        codificadas dos caracteres especiais.</p>
+    <h3 id="📌-exemplos-de-caracteres-especiais">📌 Exemplos de Caracteres Especiais:</h3>
+    <ul>
+        <li><strong>Menor que</strong> (<code>&lt;</code>): <code>&amp;lt;</code></li>
+        <li><strong>Maior que</strong> (<code>&gt;</code>): <code>&amp;gt;</code></li>
+        <li><strong>E comercial</strong> (<code>&amp;</code>): <code>&amp;amp;</code></li>
+        <li><strong>Aspas duplas</strong> (<code>&quot;</code>): <code>&amp;quot;</code></li>
+        <li><strong>Aspas simples</strong> (<code>&#39;</code>): <code>&amp;apos;</code></li>
+        <li><strong>Coração</strong> (<code>♥</code>): <code>&amp;hearts;</code></li>
+        <li><strong>Copyright</strong> (<code>©</code>): <code>&amp;copy;</code></li>
+        <li><strong>Registrado</strong> (<code>®</code>): <code>&amp;reg;</code></li>
+    </ul>
+    <h3 id="📌-exemplo-de-uso-de-caracteres-especiais">📌 Exemplo de uso de caracteres especiais:</h3>
+    <pre><code class="language-html">&lt;p&gt;Este símbolo de &amp;amp; é utilizado para representar o e comercial.&lt;/p&gt;
+&lt;p&gt;O símbolo de copyright é representado por &amp;copy;.&lt;/p&gt;
+&lt;p&gt;Eu adoro HTML5 &amp;hearts;&lt;/p&gt;
+</code></pre>
+    <hr>
+    <h2 id="💡-dicas-importantes">💡 <strong>Dicas Importantes</strong>:</h2>
+    <ul>
+        <li>Sempre use a tag <code>&lt;img&gt;</code> com o atributo <strong>alt</strong> para garantir acessibilidade.
+        </li>
+        <li>Utilize a tag <code>&lt;a&gt;</code> para criar links interativos, tornando o conteúdo navegável.</li>
+        <li>Use entidades de caracteres quando for necessário exibir símbolos que são reservados no HTML.</li>
+    </ul>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

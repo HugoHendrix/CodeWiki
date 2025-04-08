@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h3 id="1-box-model-modelo-de-caixa">1. <strong>Box Model (Modelo de Caixa)</strong></h3>
+    <p>O <strong>Box Model</strong> é um conceito fundamental no CSS que descreve como os elementos HTML são
+        estruturados e como eles ocupam espaço na página. Cada elemento é tratado como uma caixa composta por quatro
+        partes:</p>
+    <ul>
+        <li><strong>Conteúdo (Content):</strong> O conteúdo real do elemento, como texto ou imagens.</li>
+        <li><strong>Preenchimento (Padding):</strong> Espaço entre o conteúdo e a borda. Aumenta o espaço interno da
+            caixa.</li>
+        <li><strong>Borda (Border):</strong> A linha que envolve o conteúdo e o padding.</li>
+        <li><strong>Margem (Margin):</strong> Espaço fora da borda, que separa o elemento de outros elementos.</li>
+    </ul>
+    <p>Exemplo:</p>
+    <pre><code class="language-css">div {
+    width: 200px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 10px;
+}
+</code></pre>
+    <p>Neste exemplo, a largura total do elemento será
+        <code>200px (conteúdo) + 40px (padding) + 10px (borda) + 20px (margem)</code>.</p>
+    <hr>
+    <h3 id="2-layouts">2. <strong>Layouts</strong></h3>
+    <p>Layouts em CSS referem-se à organização dos elementos na página. Existem várias técnicas para criar layouts, mas
+        as mais comuns são:</p>
+    <ul>
+        <li>
+            <p><strong>Flexbox:</strong> Ideal para criar layouts flexíveis e alinhar itens em uma única dimensão (linha
+                ou coluna). É muito usado para menus, grids simples e alinhamento de conteúdo.</p>
+            <pre><code class="language-css">.container {
+    display: flex;
+    justify-content: space-between;
+}
+</code></pre>
+        </li>
+        <li>
+            <p><strong>CSS Grid:</strong> Permite criar layouts complexos em duas dimensões (linhas e colunas). É
+                perfeito para designs mais elaborados.</p>
+            <pre><code class="language-css">.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Positioning:</strong> Usado para posicionar elementos de forma precisa, com propriedades como
+                <code>position: relative</code>, <code>absolute</code>, <code>fixed</code> e <code>sticky</code>.</p>
+        </li>
+    </ul>
+    <hr>
+    <h3 id="3-responsividade">3. <strong>Responsividade</strong></h3>
+    <p>Responsividade é a capacidade de um site se adaptar a diferentes tamanhos de tela, como desktops, tablets e
+        celulares. Isso é feito com:</p>
+    <ul>
+        <li>
+            <p><strong>Media Queries:</strong> Permite aplicar estilos específicos dependendo do tamanho da tela.</p>
+            <pre><code class="language-css">@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Unidades Relativas:</strong> Usar unidades como <code>%</code>, <code>em</code>,
+                <code>rem</code>, <code>vh</code> e <code>vw</code> ajuda a criar designs flexíveis.</p>
+            <pre><code class="language-css">.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Imagens Flexíveis:</strong> Usar <code>max-width: 100%</code> em imagens para que elas não
+                ultrapassem o tamanho do contêiner.</p>
+            <pre><code class="language-css">img {
+    max-width: 100%;
+    height: auto;
+}
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h3 id="4-animações-e-transições">4. <strong>Animações e Transições</strong></h3>
+    <p>Animações e transições permitem adicionar movimento e interatividade aos elementos da página.</p>
+    <ul>
+        <li>
+            <p><strong>Transições:</strong> Mudanças suaves entre estados, como hover ou foco.</p>
+            <pre><code class="language-css">button {
+    background-color: blue;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: red;
+}
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Animações:</strong> Cria movimentos mais complexos e controlados com <code>@keyframes</code>.</p>
+            <pre><code class="language-css">@keyframes slide {
+    from { transform: translateX(0); }
+    to { transform: translateX(100px); }
+}
+.box {
+    animation: slide 2s infinite;
+}
+</code></pre>
+        </li>
+    </ul>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

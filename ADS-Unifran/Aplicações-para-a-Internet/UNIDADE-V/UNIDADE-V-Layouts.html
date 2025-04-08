@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h3 id="1-construindo-layouts-e-mesclando-estilos"><strong>1. Construindo Layouts e Mesclando Estilos</strong></h3>
+    <p><strong>O que é?</strong>
+        Construir layouts é a base do design web. Envolve organizar elementos (como textos, imagens e botões) na página
+        de forma harmoniosa e funcional. Mesclar estilos significa combinar diferentes técnicas de CSS para criar um
+        design único.</p>
+    <p><strong>Como funciona?</strong></p>
+    <ul>
+        <li>Use <strong>HTML</strong> para estruturar o conteúdo (ex.: <code>&lt;header&gt;</code>,
+            <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>).</li>
+        <li>Use <strong>CSS</strong> para estilizar e posicionar os elementos (ex.: <code>display: flex</code>,
+            <code>grid</code>, <code>margin</code>, <code>padding</code>).</li>
+        <li>Mescle técnicas como <strong>Flexbox</strong> e <strong>CSS Grid</strong> para criar layouts complexos.</li>
+    </ul>
+    <p><strong>Exemplo prático:</strong></p>
+    <pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+    &lt;header&gt;Cabeçalho&lt;/header&gt;
+    &lt;main&gt;Conteúdo Principal&lt;/main&gt;
+    &lt;footer&gt;Rodapé&lt;/footer&gt;
+&lt;/div&gt;
+</code></pre>
+    <pre><code class="language-css">.container {
+    display: flex;
+    flex-direction: column;
+}
+header, footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+main {
+    flex: 1;
+    padding: 20px;
+}
+</code></pre>
+    <hr>
+    <h3 id="2-frameworks-de-grid"><strong>2. Frameworks de Grid</strong></h3>
+    <p><strong>O que é?</strong>
+        Frameworks de grid são ferramentas que ajudam a criar layouts organizados usando sistemas de colunas. Eles são
+        úteis para garantir consistência e agilidade no desenvolvimento.</p>
+    <p><strong>Exemplos de frameworks:</strong></p>
+    <ul>
+        <li><strong>Bootstrap:</strong> Um dos mais populares, com um sistema de 12 colunas.</li>
+        <li><strong>Foundation:</strong> Outro framework robusto, com foco em responsividade.</li>
+        <li><strong>960 Grid System:</strong> Um dos primeiros frameworks, mas menos usado hoje.</li>
+    </ul>
+    <p><strong>Como funciona?</strong></p>
+    <ul>
+        <li>O layout é dividido em colunas (ex.: 12 colunas).</li>
+        <li>Você define quantas colunas cada elemento deve ocupar.</li>
+    </ul>
+    <p><strong>Exemplo com Bootstrap:</strong></p>
+    <pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-6&quot;&gt;Coluna 1&lt;/div&gt;
+        &lt;div class=&quot;col-md-6&quot;&gt;Coluna 2&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    <p>Neste exemplo, as duas colunas ocupam metade da largura cada uma em dispositivos médios (<code>md</code>).</p>
+    <hr>
+    <h3 id="3-a-regra-css-para-mídia-media"><strong>3. A Regra CSS para Mídia: @media</strong></h3>
+    <p><strong>O que é?</strong>
+        A regra <code>@media</code> permite aplicar estilos CSS específicos dependendo do tamanho da tela ou do
+        dispositivo. É essencial para criar layouts <strong>responsivos</strong> (que se adaptam a diferentes telas).
+    </p>
+    <p><strong>Como funciona?</strong></p>
+    <ul>
+        <li>Use <code>@media</code> para definir &quot;breakpoints&quot; (pontos de quebra) onde o layout muda.</li>
+        <li>Exemplo de breakpoints comuns:<ul>
+                <li>Celulares: <code>max-width: 767px</code></li>
+                <li>Tablets: <code>min-width: 768px</code> e <code>max-width: 1023px</code></li>
+                <li>Desktops: <code>min-width: 1024px</code></li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Exemplo prático:</strong></p>
+    <pre><code class="language-css">/* Estilo padrão */
+.container {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Celulares */
+@media (max-width: 767px) {
+    .container {
+        padding: 5px;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+/* Desktops */
+@media (min-width: 1024px) {
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+</code></pre>
+    <hr>
+    <h3 id="objetivo-de-aprendizado"><strong>Objetivo de Aprendizado</strong></h3>
+    <h4 id="1-web-standards"><strong>1. Web Standards</strong></h4>
+    <ul>
+        <li>São as regras e boas práticas definidas por organizações como o <strong>W3C</strong> para garantir que a web
+            funcione de forma consistente em todos os navegadores.</li>
+        <li>Exemplos: HTML semântico, CSS organizado e JavaScript compatível.</li>
+    </ul>
+    <h4 id="2-wireframe"><strong>2. Wireframe</strong></h4>
+    <ul>
+        <li>É um esboço visual (como um rascunho) que define a estrutura de uma página ou aplicação.</li>
+        <li>Ferramentas populares: <strong>Figma</strong>, <strong>Adobe XD</strong>, <strong>Sketch</strong>.</li>
+    </ul>
+    <h4 id="3-modelagem-de-aplicação-web"><strong>3. Modelagem de Aplicação WEB</strong></h4>
+    <ul>
+        <li>Envolve planejar a estrutura e o fluxo de uma aplicação web.</li>
+        <li>Inclui definir páginas, funcionalidades e como os usuários interagem com o sistema.</li>
+    </ul>
+    <h4 id="4-criação-de-layouts"><strong>4. Criação de Layouts</strong></h4>
+    <ul>
+        <li>É o processo de transformar wireframes em designs funcionais usando HTML e CSS.</li>
+        <li>Foque em técnicas como <strong>Flexbox</strong> e <strong>CSS Grid</strong> para layouts modernos.</li>
+    </ul>
+    <h4 id="5-layouts-responsivos-e-adaptativos"><strong>5. Layouts Responsivos e Adaptativos</strong></h4>
+    <ul>
+        <li><strong>Responsivo:</strong> O layout se ajusta automaticamente ao tamanho da tela (usando
+            <code>@media</code> e unidades relativas como <code>%</code>).</li>
+        <li><strong>Adaptativo:</strong> Diferentes layouts são carregados dependendo do dispositivo (menos comum hoje
+            em dia).</li>
+    </ul>
+    <hr>
+    <h3 id="resumo-final"><strong>Resumo Final</strong></h3>
+    <ul>
+        <li><strong>Layouts</strong> são a base do design web, e você pode usar <strong>Flexbox</strong> e <strong>CSS
+                Grid</strong> para criá-los.</li>
+        <li><strong>Frameworks de grid</strong> (como Bootstrap) agilizam o desenvolvimento.</li>
+        <li>A regra <strong><code>@media</code></strong> é essencial para layouts responsivos.</li>
+        <li>Foque em <strong>Web Standards</strong>, <strong>wireframes</strong>, <strong>modelagem</strong> e
+            <strong>layouts responsivos</strong> para criar aplicações web modernas e funcionais.</li>
+    </ul>
+    <hr>
+    <h3 id="1-media-queries"><strong>1. Media Queries</strong></h3>
+    <p><strong>Link:</strong> <a href="https://goo.gl/QVaXya" target="_blank" rel="noopener noreferrer">Media Queries</a><br><strong>O que você vai
+            aprender:</strong> </p>
+    <ul>
+        <li>O que são media queries e como elas funcionam. </li>
+        <li>Como usar media queries para criar designs responsivos. </li>
+        <li>Exemplos práticos de aplicação de <code>@media</code> em CSS.</li>
+    </ul>
+    <p><strong>Por que é útil?</strong><br>Media queries são essenciais para criar layouts que se adaptam a diferentes
+        dispositivos, como celulares, tablets e desktops.</p>
+    <hr>
+    <h3 id="2-criar-um-site-responsivo-com-html5-e-css3---parte-13"><strong>2. Criar um site responsivo com HTML5 e CSS3
+            - Parte 1/3</strong></h3>
+    <p><strong>Link:</strong> <a href="https://bit.ly/3WMhtQ6" target="_blank" rel="noopener noreferrer">Parte 1/3</a><br><strong>O que você vai
+            aprender:</strong> </p>
+    <ul>
+        <li>Introdução ao design responsivo. </li>
+        <li>Como estruturar um site usando HTML5. </li>
+        <li>Noções básicas de CSS3 para estilização.</li>
+    </ul>
+    <p><strong>Por que é útil?</strong><br>Este material é um guia passo a passo para iniciantes, mostrando como começar
+        um projeto responsivo do zero.</p>
+    <hr>
+    <h3 id="3-criar-um-site-responsivo-com-html5-e-css3---parte-23"><strong>3. Criar um site responsivo com HTML5 e CSS3
+            - Parte 2/3</strong></h3>
+    <p><strong>Link:</strong> <a href="https://bit.ly/3WWWhqV" target="_blank" rel="noopener noreferrer">Parte 2/3</a><br><strong>O que você vai
+            aprender:</strong> </p>
+    <ul>
+        <li>Técnicas avançadas de CSS3 para layouts responsivos. </li>
+        <li>Como usar media queries para ajustar o layout em diferentes dispositivos. </li>
+        <li>Boas práticas para organização de código.</li>
+    </ul>
+    <p><strong>Por que é útil?</strong><br>Aprofunda os conceitos da Parte 1, mostrando como tornar o layout mais
+        flexível e adaptável.</p>
+    <hr>
+    <h3 id="4-dominando-design-responsivo-com-html5-e-css3"><strong>4. Dominando Design Responsivo com HTML5 e
+            CSS3</strong></h3>
+    <p><strong>Link:</strong> <a href="https://bit.ly/3YoQGe1" target="_blank" rel="noopener noreferrer">Dominando Design Responsivo</a><br><strong>O que você vai
+            aprender:</strong> </p>
+    <ul>
+        <li>Conceitos avançados de design responsivo. </li>
+        <li>Como usar unidades relativas (%, em, rem, vh, vw) para layouts flexíveis. </li>
+        <li>Técnicas para imagens e vídeos responsivos.</li>
+    </ul>
+    <p><strong>Por que é útil?</strong><br>Este material é ideal para quem quer dominar a criação de layouts que
+        funcionam perfeitamente em qualquer dispositivo.</p>
+    <hr>
+    <h3 id="5-visão-geral-do-flexible-box-model"><strong>5. Visão geral do Flexible Box Model</strong></h3>
+    <p><strong>Link:</strong> <a href="https://goo.gl/mvSlkC" target="_blank" rel="noopener noreferrer">Flexible Box Model</a><br><strong>O que você vai
+            aprender:</strong> </p>
+    <ul>
+        <li>O que é o modelo Flexbox e como ele funciona. </li>
+        <li>Propriedades como <code>display: flex</code>, <code>justify-content</code>, <code>align-items</code> e
+            <code>flex-direction</code>. </li>
+        <li>Exemplos práticos de uso do Flexbox.</li>
+    </ul>
+    <p><strong>Por que é útil?</strong><br>Flexbox é uma das ferramentas mais poderosas do CSS para criar layouts
+        alinhados e distribuídos de forma eficiente.</p>
+    <hr>
+    <h3 id="6-usando-css-flexible-boxes-caixas-flexíveis"><strong>6. Usando CSS flexible boxes (Caixas
+            Flexíveis)</strong></h3>
+    <p><strong>Link:</strong> <a href="https://bit.ly/3WvoymF" target="_blank" rel="noopener noreferrer">Usando CSS Flexible Boxes</a><br><strong>O que você vai
+            aprender:</strong> </p>
+    <ul>
+        <li>Como aplicar Flexbox em projetos reais. </li>
+        <li>Dicas para resolver problemas comuns de alinhamento e espaçamento. </li>
+        <li>Combinação de Flexbox com outras técnicas de CSS.</li>
+    </ul>
+    <p><strong>Por que é útil?</strong><br>Este material complementa o anterior, mostrando como usar Flexbox na prática
+        para criar layouts modernos e responsivos.</p>
+    <hr>
+    <h3 id="como-usar-esses-materiais"><strong>Como usar esses materiais?</strong></h3>
+    <ol>
+        <li><strong>Comece pelo básico:</strong>
+            <ul>
+                <li>Leia sobre <strong>Media Queries</strong> e <strong>Flexbox</strong> para entender os fundamentos.
+                </li>
+            </ul>
+        </li>
+        <li><strong>Pratique:</strong>
+            <ul>
+                <li>Siga os tutoriais de criação de sites responsivos (Parte 1/3 e Parte 2/3).</li>
+            </ul>
+        </li>
+        <li><strong>Aprofunde-se:</strong>
+            <ul>
+                <li>Explore o guia <strong>Dominando Design Responsivo</strong> para técnicas avançadas.</li>
+            </ul>
+        </li>
+        <li><strong>Consolide o conhecimento:</strong>
+            <ul>
+                <li>Use os exemplos práticos de Flexbox para criar seus próprios layouts.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="dica-extra"><strong>Dica extra:</strong></h3>
+    <ul>
+        <li>Experimente criar um projeto pessoal aplicando o que aprender nesses materiais. </li>
+        <li>Use ferramentas como <strong>Figma</strong> para criar wireframes antes de codificar. </li>
+        <li>Teste seus layouts em diferentes dispositivos para garantir que sejam realmente responsivos.</li>
+    </ul>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

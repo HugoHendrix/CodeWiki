@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="anotações-aula-01">ANOTAÇÕES AULA 01</h1>
+    <h3 id="1-requisições-e-respostas-http">1. <strong>Requisições e Respostas HTTP</strong></h3>
+    <p>Quando você acessa uma página na internet, o seu navegador faz uma <strong>requisição HTTP</strong> para o
+        servidor onde o site está hospedado. Essa requisição solicita o conteúdo da página (como texto, imagens,
+        scripts, etc.).</p>
+    <ul>
+        <li>
+            <p><strong>Requisição HTTP</strong>: É a mensagem enviada pelo cliente (geralmente seu navegador) para o
+                servidor, pedindo algum recurso (como uma página HTML). A requisição é composta por várias partes, como
+                o <strong>método</strong> (GET, POST, etc.), o <strong>caminho</strong> do recurso (ex:
+                <code>/index.html</code>), e os <strong>cabeçalhos</strong> com informações sobre o que o cliente está
+                pedindo.</p>
+        </li>
+        <li>
+            <p><strong>Resposta HTTP</strong>: Após processar a requisição, o servidor envia uma resposta HTTP. Ela
+                contém o status da requisição (como <code>200 OK</code> ou <code>404 Not Found</code>), e os dados
+                solicitados (como o conteúdo HTML da página).</p>
+        </li>
+    </ul>
+    <h3 id="2-tcpip-transmission-control-protocolinternet-protocol">2. <strong>TCP/IP (Transmission Control
+            Protocol/Internet Protocol)</strong></h3>
+    <p>O <strong>TCP/IP</strong> é um conjunto de protocolos que define como os dados são enviados e recebidos pela
+        internet. Ele é a espinha dorsal da comunicação entre dispositivos conectados à rede.</p>
+    <ul>
+        <li>
+            <p><strong>IP (Internet Protocol)</strong>: Ele é responsável por endereçar os pacotes de dados. Cada
+                dispositivo na internet possui um endereço IP único, assim como uma casa tem um endereço único.</p>
+        </li>
+        <li>
+            <p><strong>TCP (Transmission Control Protocol)</strong>: Este protocolo garante que os dados sejam entregues
+                corretamente e na ordem certa. Quando você acessa um site, o TCP divide os dados em pacotes, envia-os e
+                garante que todos os pacotes sejam recebidos e reorganizados corretamente pelo destinatário.</p>
+        </li>
+    </ul>
+    <h3 id="3-processamento-da-requisição-e-retorno-ao-cliente">3. <strong>Processamento da Requisição e Retorno ao
+            Cliente</strong></h3>
+    <p>Quando um servidor recebe uma requisição, ele passa por um processo para entender o que o cliente está pedindo,
+        buscar os dados necessários e montar uma resposta.</p>
+    <ul>
+        <li><strong>Recebimento da requisição</strong>: O servidor recebe a requisição HTTP e a interpreta para entender
+            o que está sendo pedido.</li>
+        <li><strong>Processamento</strong>: O servidor então busca os dados no banco de dados ou no sistema de arquivos
+            (por exemplo, ele pode buscar um arquivo HTML ou executar um script PHP).</li>
+        <li><strong>Resposta ao Cliente</strong>: Depois de processar a requisição, o servidor envia de volta ao cliente
+            uma resposta HTTP, que pode conter o conteúdo solicitado (como a página HTML) ou uma mensagem de erro.</li>
+    </ul>
+    <h3 id="4-protocolo-http-e-https">4. <strong>Protocolo HTTP e HTTPS</strong></h3>
+    <ul>
+        <li>
+            <p><strong>HTTP (HyperText Transfer Protocol)</strong>: É o protocolo usado para transferir páginas da web.
+                Ele define como os dados são formatados e transmitidos entre o cliente e o servidor. Por exemplo, ao
+                acessar um site como <code>http://www.exemplo.com</code>, o navegador utiliza o HTTP para comunicar com
+                o servidor.</p>
+        </li>
+        <li>
+            <p><strong>HTTPS (HTTP Secure)</strong>: É a versão segura do HTTP. Ele utiliza criptografia para proteger
+                os dados transmitidos, de modo que ninguém possa interceptar ou modificar os dados enquanto eles estão
+                sendo transferidos. HTTPS é uma camada extra de segurança que utiliza o <strong>SSL/TLS</strong> (Secure
+                Sockets Layer / Transport Layer Security) para garantir que a comunicação seja segura. Ao acessar um
+                site como <code>https://www.exemplo.com</code>, a comunicação entre o seu navegador e o servidor será
+                criptografada.</p>
+        </li>
+    </ul>
+    <p><strong>Diferença entre HTTP e HTTPS</strong>:</p>
+    <ul>
+        <li>HTTP: Não é seguro, pois os dados são transmitidos sem criptografia.</li>
+        <li>HTTPS: É seguro, porque a comunicação é criptografada, protegendo os dados de interceptação.</li>
+    </ul>
+    <h3 id="resumo">Resumo</h3>
+    <ol>
+        <li><strong>Requisição HTTP</strong>: Enviada pelo cliente para o servidor.</li>
+        <li><strong>Resposta HTTP</strong>: Enviada pelo servidor para o cliente com os dados solicitados.</li>
+        <li><strong>TCP/IP</strong>: Conjunto de protocolos que permite a comunicação entre dispositivos na internet.
+        </li>
+        <li><strong>HTTP</strong>: Protocolo padrão para transferência de páginas web, mas sem segurança.</li>
+        <li><strong>HTTPS</strong>: Protocolo seguro, utiliza criptografia para proteger os dados trocados.</li>
+    </ol>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
