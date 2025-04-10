@@ -5,32 +5,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
-    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
     <title>CodeWiki</title>
 </head>
 
 <body>
 
-    <div class="section">
-        <h2>Risco ao usar target_blank</h2>
-        <p>O uso do atributo target=&quot;_blank&quot; pode introduzir riscos de segurança, especialmente devido a
-            vulnerabilidades conhecidas como tabnabbing. Isso ocorre quando o site que você abriu em uma nova guia obtém
-            acesso à window.opener da guia original e pode redirecioná-la para outro endereço malicioso.</p>
-        <p>Para tornar o link mais seguro, siga estas práticas:</p>
-        <p>Use o atributo <code>rel=&quot;noopener noreferrer&quot;</code>
-            Adicione o atributo <code>rel=&quot;noopener noreferrer&quot;</code> ao link para evitar que a página aberta obtenha acesso
-            ao objeto window.opener.</p>
-        <p>Exemplo:</p>
-        <pre><code class="lang-html">&lt;<span class="hljs-keyword">a</span> href=<span class="hljs-string">"https://www.example.com/manual.pdf"</span> target=<span class="hljs-string">"_blank"</span> <span class="hljs-built_in">rel</span>=<span class="hljs-string">"noopener noreferrer"</span>&gt;
-        Clique aqui para acessar o manual
-        &lt;/<span class="hljs-keyword">a</span>&gt;
-        </code></pre>
-        <ul>
-            <li>noopener: Garante que o objeto window.opener não será exposto.</li>
-            <li>noreferrer: Além de impedir o acesso ao window.opener, ele também remove informações de referência (como o
-                URL de origem).</li>
-        </ul>
-    </div>
+    <article class="html-security">
+        <header>
+          <h1>Perigo ao Usar target="_blank" no HTML</h1>
+          <p class="article-meta">
+            Fonte: <a href="https://minerabits.com/perigo-ao-usar-target-_blank-no-html/" target="_blank" rel="noopener noreferrer">MineraBits</a>
+          </p>
+        </header>
+      
+        <section>
+          <h2>1. Introdução</h2>
+          <p>O artigo <strong>"Perigo ao usar target=_blank no HTML"</strong> alerta sobre vulnerabilidades de segurança ao usar links com <code>target="_blank"</code> sem proteção adequada, permitindo que páginas abertas em novas abas manipulem a página original.</p>
+        </section>
+      
+        <section>
+          <h2>2. Riscos do <code>target="_blank"</code></h2>
+          
+          <h3>2.1. Ataque Tabnabbing</h3>
+          <p>Técnica onde a nova aba pode acessar <code>window.opener</code> e redirecionar a página original para phishing.</p>
+          
+          <h3>2.2. Exemplo de Exploração</h3>
+          <pre><code class="language-html">&lt;!-- Página maliciosa pode executar: --&gt;
+      &lt;script&gt;
+        window.opener.location = "https://site-falso.com";
+      &lt;/script&gt;</code></pre>
+        </section>
+      
+        <section>
+          <h2>3. Como Proteger Seus Links</h2>
+          
+          <h3>3.1. Solução Padrão (<code>rel="noopener"</code>)</h3>
+          <pre><code class="language-html">&lt;a href="https://externo.com" target="_blank" rel="noopener"&gt;Link Seguro&lt;/a&gt;</code></pre>
+          
+          <h3>3.2. Solução Completa (recomendada)</h3>
+          <pre><code class="language-html">&lt;a href="https://externo.com" target="_blank" rel="noopener noreferrer"&gt;Link Ultra-Seguro&lt;/a&gt;</code></pre>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Atributo</th>
+                <th>Efeito</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>noopener</code></td>
+                <td>Remove acesso à <code>window.opener</code> (mitiga Tabnabbing).</td>
+              </tr>
+              <tr>
+                <td><code>noreferrer</code></td>
+                <td>Oculta a URL de origem (protege informações de referência).</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      
+        <div class="article-references">
+          <h2>4. Referências</h2>
+          <ul>
+            <li><a href="https://owasp.org/www-community/attacks/Reverse_Tabnabbing" target="_blank" rel="noopener noreferrer">OWASP: Tabnabbing</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types" target="_blank" rel="noopener noreferrer">MDN: Link Types</a></li>
+          </ul>
+        </div>
+      </article>
 
     <footer class="p-1"> 
         <button class="accent">

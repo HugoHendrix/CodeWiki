@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <article class="css-image-effects">
+        <header>
+            <h1>CSS Image Effects</h1>
+            <p class="article-meta">
+                Fonte: <a href="https://prismic.io/blog/css-image-effects?ref=dailydev" target="_blank"
+                    rel="noopener noreferrer">Prismic Blog</a>
+            </p>
+        </header>
+
+        <section>
+            <h2>1. Introdução</h2>
+            <p>O artigo <strong>"CSS Image Effects"</strong> explora técnicas modernas de CSS para criar efeitos visuais
+                impressionantes em imagens, sem depender de editores gráficos ou JavaScript.</p>
+        </section>
+
+        <section>
+            <h2>2. Efeitos Demonstrados</h2>
+
+            <h3>2.1. Efeitos Básicos</h3>
+            <ul>
+                <li><strong>Bordas Arredondadas</strong>:
+                    <pre><code class="language-css">img { border-radius: 50%; } /* Circle */</code></pre>
+                </li>
+                <li><strong>Sombra</strong>:
+                    <pre><code class="language-css">img { box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }</code></pre>
+                </li>
+            </ul>
+
+            <h3>2.2. Efeitos Avançados</h3>
+            <ul>
+                <li><strong>Máscaras CSS (<code>clip-path</code>)</strong>:
+                    <pre><code class="language-css">img { clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); } /* Diamond */</code></pre>
+                </li>
+                <li><strong>Filtros (<code>filter</code>)</strong>:
+                    <pre><code class="language-css">img { filter: grayscale(100%) blur(1px); }</code></pre>
+                </li>
+            </ul>
+
+            <h3>2.3. Blend Modes (<code>mix-blend-mode</code>)</h3>
+            <ul>
+                <li>Sobreposição criativa de imagens:
+                    <pre><code class="language-css">.overlay { mix-blend-mode: multiply; }</code></pre>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Exemplo Prático: Efeito de Hover</h2>
+            <pre><code class="language-css">.card img {
+        transition: all 0.3s;
+        filter: brightness(100%);
+      }
+      
+      .card:hover img {
+        filter: brightness(70%) sepia(50%);
+        transform: scale(1.05);
+      }</code></pre>
+        </section>
+
+        <div class="article-references">
+            <h2>4. Referências</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter" target="_blank"
+                        rel="noopener noreferrer">MDN: CSS Filter</a></li>
+                <li><a href="https://css-tricks.com/almanac/properties/c/clip-path/" target="_blank"
+                        rel="noopener noreferrer">CSS Tricks: Clip-Path</a></li>
+            </ul>
+        </div>
+    </article>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
