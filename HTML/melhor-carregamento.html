@@ -61,11 +61,11 @@
         <li>Quando você sabe que o usuário precisará de um recurso, mas ainda não o solicitou.</li>
     </ul>
     <h4 id="sintaxe"><strong>Sintaxe</strong></h4>
-    <pre><code class="language-html"><link rel=&quot;preconnect&quot; href=&quot;https://exemplo.com&quot;>;
+    <pre><code class="language-html">&lt;link rel=&quot;preconnect&quot; href=&quot;https://exemplo.com&quot;&gt;
 </code></pre>
     <h4 id="exemplo"><strong>Exemplo</strong></h4>
-    <pre><code class="language-html"><link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;>;
-<link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin>;
+    <pre><code class="language-html">&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
 </code></pre>
     <h4 id="dicas"><strong>Dicas</strong></h4>
     <ul>
@@ -81,11 +81,11 @@
             página atual).</li>
     </ul>
     <h4 id="sintaxe-1"><strong>Sintaxe</strong></h4>
-    <pre><code class="language-html"><link rel=&quot;prefetch&quot; href=&quot;https://exemplo.com/recurso.js&quot; as=&quot;script&quot;>;
+    <pre><code class="language-html">&lt;link rel=&quot;prefetch&quot; href=&quot;https://exemplo.com/recurso.js&quot; as=&quot;script&quot;&gt;
 </code></pre>
     <h4 id="exemplo-1"><strong>Exemplo</strong></h4>
-    <pre><code class="language-html"><link rel=&quot;prefetch&quot; href=&quot;/proxima-pagina.html&quot; as=&quot;document&quot;>;
-<link rel=&quot;prefetch&quot; href=&quot;/imagens/logo.png&quot; as=&quot;image&quot;>;
+    <pre><code class="language-html">&lt;link rel=&quot;prefetch&quot; href=&quot;/proxima-pagina.html&quot; as=&quot;document&quot;&gt;
+&lt;link rel=&quot;prefetch&quot; href=&quot;/imagens/logo.png&quot; as=&quot;image&quot;&gt;
 </code></pre>
     <h4 id="dicas-1"><strong>Dicas</strong></h4>
     <ul>
@@ -103,12 +103,12 @@
             estilos.</li>
     </ul>
     <h4 id="sintaxe-2"><strong>Sintaxe</strong></h4>
-    <pre><code class="language-html"><link rel=&quot;preload&quot; href=&quot;https://exemplo.com/recurso.css&quot; as=&quot;style&quot;>;
+    <pre><code class="language-html">&lt;link rel=&quot;preload&quot; href=&quot;https://exemplo.com/recurso.css&quot; as=&quot;style&quot;&gt;
 </code></pre>
     <h4 id="exemplo-2"><strong>Exemplo</strong></h4>
-    <pre><code class="language-html"><link rel=&quot;preload&quot; href=&quot;/styles/main.css&quot; as=&quot;style&quot;>;
-<link rel=&quot;preload&quot; href=&quot;/scripts/app.js&quot; as=&quot;script&quot;>;
-<link rel=&quot;preload&quot; href=&quot;/fonts/roboto.woff2&quot; as=&quot;font&quot; type=&quot;font/woff2&quot; crossorigin>;
+    <pre><code class="language-html">&lt;link rel=&quot;preload&quot; href=&quot;/styles/main.css&quot; as=&quot;style&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;/scripts/app.js&quot; as=&quot;script&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;/fonts/roboto.woff2&quot; as=&quot;font&quot; type=&quot;font/woff2&quot; crossorigin&gt;
 </code></pre>
     <h4 id="dicas-2"><strong>Dicas</strong></h4>
     <ul>
@@ -176,34 +176,34 @@
     </ol>
     <hr>
     <h3 id="exemplo-completo"><strong>Exemplo Completo</strong></h3>
-    <pre><code class="language-html"><!DOCTYPE html>;
-<html lang=&quot;pt-BR&quot;>;
-<head>;
-  <meta charset=&quot;UTF-8&quot;>;
-  <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>;
-  <title>;Exemplo de Otimização</title>;
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Exemplo de Otimização&lt;/title&gt;
 
-  <!-- Preconnect para fontes externas -->;
-  <link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;>;
-  <link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin>;
+  &lt;!-- Preconnect para fontes externas --&gt;
+  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
 
-  <!-- Preload para recursos críticos -->;
-  <link rel=&quot;preload&quot; href=&quot;/styles/main.css&quot; as=&quot;style&quot;>;
-  <link rel=&quot;preload&quot; href=&quot;/scripts/app.js&quot; as=&quot;script&quot;>;
-  <link rel=&quot;preload&quot; href=&quot;/fonts/roboto.woff2&quot; as=&quot;font&quot; type=&quot;font/woff2&quot; crossorigin>;
+  &lt;!-- Preload para recursos críticos --&gt;
+  &lt;link rel=&quot;preload&quot; href=&quot;/styles/main.css&quot; as=&quot;style&quot;&gt;
+  &lt;link rel=&quot;preload&quot; href=&quot;/scripts/app.js&quot; as=&quot;script&quot;&gt;
+  &lt;link rel=&quot;preload&quot; href=&quot;/fonts/roboto.woff2&quot; as=&quot;font&quot; type=&quot;font/woff2&quot; crossorigin&gt;
 
-  <!-- Prefetch para navegações futuras -->;
-  <link rel=&quot;prefetch&quot; href=&quot;/proxima-pagina.html&quot; as=&quot;document&quot;>;
-  <link rel=&quot;prefetch&quot; href=&quot;/imagens/logo.png&quot; as=&quot;image&quot;>;
+  &lt;!-- Prefetch para navegações futuras --&gt;
+  &lt;link rel=&quot;prefetch&quot; href=&quot;/proxima-pagina.html&quot; as=&quot;document&quot;&gt;
+  &lt;link rel=&quot;prefetch&quot; href=&quot;/imagens/logo.png&quot; as=&quot;image&quot;&gt;
 
-  <!-- CSS principal -->;
-  <link rel=&quot;stylesheet&quot; href=&quot;/styles/main.css&quot;>;
-</head>;
-<body>;
-  <h1>;Página Otimizada</h1>;
-  <script src=&quot;/scripts/app.js&quot;>;</script>;
-</body>;
-</html>;
+  &lt;!-- CSS principal --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;/styles/main.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Página Otimizada&lt;/h1&gt;
+  &lt;script src=&quot;/scripts/app.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
     <hr>
     <h3 id="considerações-finais"><strong>Considerações Finais</strong></h3>
