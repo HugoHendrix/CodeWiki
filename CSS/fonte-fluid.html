@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <article class="fluid-type-docs">
+        <header>
+            <h1>Fluid Typography (Tipografia Fluida)</h1>
+            <p class="article-meta">
+                Fonte: <a href="https://www.oddbird.net/2025/02/12/fluid-type/" target="_blank" rel="noopener noreferrer">OddBird</a> |
+                Data: 12/02/2025
+            </p>
+        </header>
+
+        <section>
+            <h2>1. Introdução</h2>
+            <p>A <strong>tipografia fluida (fluid typography)</strong> é uma técnica de CSS que permite que os tamanhos
+                de fonte se ajustem dinamicamente conforme o tamanho da tela, melhorando a legibilidade e a experiência
+                do usuário em diferentes dispositivos.</p>
+        </section>
+
+        <section>
+            <h2>2. Problemas das Abordagens Tradicionais</h2>
+            <ul>
+                <li><strong>Fontes fixas (<code>px</code>)</strong> não se adaptam bem a diferentes viewports.</li>
+                <li><strong>Uso direto de <code>vw</code></strong> pode levar a textos muito pequenos (em mobile) ou
+                    muito grandes (em desktop).</li>
+                <li><strong>Cálculos manuais (<code>calc()</code>)</strong> exigem manutenção complexa.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Solução Moderna: <code>clamp()</code> e Variáveis CSS</h2>
+
+            <h3>3.1. Sintaxe Básica</h3>
+            <pre><code class="language-css">:root {
+        --min-font: 1rem;    /* Tamanho mínimo */
+        --max-font: 1.5rem;  /* Tamanho máximo */
+        font-size: clamp(var(--min-font), 2vw + 1rem, var(--max-font));
+      }</code></pre>
+
+            <h3>3.2. Parâmetros do <code>clamp()</code></h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Função</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong><code>min</code></strong></td>
+                        <td>Valor mínimo (ex.: <code>1rem</code> para mobile).</td>
+                    </tr>
+                    <tr>
+                        <td><strong><code>valor ideal</code></strong></td>
+                        <td>Fórmula responsiva (ex.: <code>2vw + 1rem</code>).</td>
+                    </tr>
+                    <tr>
+                        <td><strong><code>max</code></strong></td>
+                        <td>Valor máximo (ex.: <code>1.5rem</code> para desktop).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>4. Vantagens</h2>
+            <ul class="checklist">
+                <li>✅ <strong>Adaptação suave</strong> (sem quebras bruscas entre breakpoints).</li>
+                <li>✅ <strong>Acessibilidade</strong> (evita textos ilegíveis em telas pequenas/grandes).</li>
+                <li>✅ <strong>Manutenção simplificada</strong> (usa variáveis CSS para controle centralizado).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. Boas Práticas</h2>
+
+            <h3>5.1. Escolha de Valores</h3>
+            <ul>
+                <li>Use <strong><code>rem</code></strong> em vez de <code>px</code> para respeitar preferências do
+                    usuário.</li>
+                <li>Defina <strong>limites razoáveis</strong> (<code>min</code> e <code>max</code>) para evitar
+                    extremos.</li>
+            </ul>
+
+            <h3>5.2. Ferramentas Úteis</h3>
+            <ul>
+                <li><strong>Geradores de escala fluida:</strong> <a href="https://www.fluid-type-scale.com/"
+                        target="_blank" rel="noopener noreferrer">Fluid Type Scale Calculator</a></li>
+                <li><strong>Pré-processadores:</strong> Use SASS/PostCSS para automatizar cálculos.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>6. Exemplo Completo</h2>
+            <pre><code class="language-css">:root {
+        --min-font: 1rem;
+        --max-font: 1.8rem;
+        --ideal-font: 0.5vw + 1rem; /* Ajuste conforme necessário */
+      }
+      
+      body {
+        font-size: clamp(var(--min-font), var(--ideal-font), var(--max-font));
+      }
+      
+      h1 {
+        --min-font: 2rem;
+        --max-font: 3.5rem;
+        font-size: clamp(var(--min-font), 3vw + 1rem, var(--max-font));
+      }</code></pre>
+        </section>
+
+        <div>
+            <h2>7. Referências</h2>
+            <ul>
+                <li>Artigo original: <a href="https://www.oddbird.net/2025/02/12/fluid-type/" target="_blank" rel="noopener noreferrer">OddBird –
+                        Fluid Type</a></li>
+                <li>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clamp" target="_blank" rel="noopener noreferrer">Documentação
+                        do <code>clamp()</code></a></li>
+            </ul>
+
+            <div class="notes">
+                <h3>Notas</h3>
+                <ul>
+                    <li>Teste sempre em <strong>diferentes viewports</strong> para garantir legibilidade.</li>
+                    <li>Combine com <strong>media queries</strong> para ajustes finos em breakpoints críticos.</li>
+                </ul>
+                <p>✏️ <em>Atualizações futuras:</em> Esta documentação pode ser expandida com exemplos de frameworks
+                    (Tailwind, CSS-in-JS).</p>
+            </div>
+        </div>
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
