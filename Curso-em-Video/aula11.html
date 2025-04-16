@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="/img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="documentação-imagens-dinâmicas-áudio-e-vídeo-em-html">Documentação: Imagens Dinâmicas, Áudio e Vídeo em HTML
+    </h1>
+    <p><em>Baseado no <a href="curso-em-video-aulas-em-pdf/11.pdf" target="_blank" rel="noopener noreferrer">Capítulo 11</a> do Curso de HTML/CSS do Prof. Gustavo Guanabara</em> </p>
+    <hr>
+    <h2 id="1-imagens-dinâmicas"><strong>1. Imagens Dinâmicas</strong></h2>
+    <h3 id="conceito">Conceito</h3>
+    <p>Imagens que se adaptam automaticamente ao tamanho da tela do usuário, melhorando a performance e a experiência em
+        dispositivos móveis. </p>
+    <h3 id="tags-e-atributos">Tags e Atributos</h3>
+    <ul>
+        <li><strong><code>&lt;picture&gt;</code></strong>: Contêiner para definir múltiplas fontes de imagem. </li>
+        <li><strong><code>&lt;source&gt;</code></strong>: Define condições para carregar diferentes imagens. <ul>
+                <li><strong>Atributos</strong>: <ul>
+                        <li><code>media</code>: Define a condição de tamanho da tela (ex:
+                            <code>(max-width: 750px)</code>). </li>
+                        <li><code>srcset</code>: Caminho da imagem a ser carregada. </li>
+                        <li><code>type</code>: Formato da imagem (ex: <code>image/png</code>).</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><strong><code>&lt;img&gt;</code></strong>: Imagem padrão (fallback).</li>
+    </ul>
+    <h3 id="exemplo-de-código">Exemplo de Código</h3>
+    <pre><code class="language-html">&lt;picture&gt;
+    &lt;source media=&quot;(max-width: 750px)&quot; srcset=&quot;imagem-pequena.png&quot; type=&quot;image/png&quot;&gt;
+    &lt;source media=&quot;(max-width: 1050px)&quot; srcset=&quot;imagem-media.png&quot; type=&quot;image/png&quot;&gt;
+    &lt;img src=&quot;imagem-grande.png&quot; alt=&quot;Imagem flexível&quot;&gt;
+&lt;/picture&gt;
+</code></pre>
+    <h3 id="boas-práticas">Boas Práticas</h3>
+    <ul>
+        <li>Use imagens em <strong>três tamanhos</strong> (ex: 300px, 700px, 1000px). </li>
+        <li>Reduza o tamanho do arquivo (em bytes) para evitar sites lentos. </li>
+        <li>Teste a ordem das tags <code>&lt;source&gt;</code> (do menor para o maior tamanho).</li>
+    </ul>
+    <hr>
+    <h2 id="2-áudio-em-html"><strong>2. Áudio em HTML</strong></h2>
+    <h3 id="tag-audio">Tag <code>&lt;audio&gt;</code></h3>
+    <p>Reproduz arquivos de áudio diretamente no navegador. </p>
+    <h3 id="atributos-principais">Atributos Principais</h3>
+    <ul>
+        <li><code>controls</code>: Exibe controles de play/pause. </li>
+        <li><code>autoplay</code>: Inicia a reprodução automaticamente. </li>
+        <li><code>loop</code>: Repete o áudio indefinidamente. </li>
+        <li><code>preload</code>: Define o pré-carregamento: <ul>
+                <li><code>metadata</code>: Carrega apenas informações básicas. </li>
+                <li><code>none</code>: Não carrega até o usuário interagir. </li>
+                <li><code>auto</code> (padrão): Carrega o arquivo inteiro.</li>
+            </ul>
+        </li>
+    </ul>
+    <h3 id="formatos-suportados">Formatos Suportados</h3>
+    <ul>
+        <li><strong>MP3</strong> (mais compatível), <strong>OGG</strong>, <strong>WAV</strong>.</li>
+    </ul>
+    <h3 id="exemplo-de-código-1">Exemplo de Código</h3>
+    <pre><code class="language-html">&lt;audio controls preload=&quot;metadata&quot;&gt;
+    &lt;source src=&quot;audio.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+    &lt;source src=&quot;audio.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+    &lt;p&gt;Seu navegador não suporta áudio. &lt;a href=&quot;audio.mp3&quot;&gt;Baixe o arquivo&lt;/a&gt;&lt;/p&gt;
+&lt;/audio&gt;
+</code></pre>
+    <hr>
+    <h2 id="3-vídeo-em-html"><strong>3. Vídeo em HTML</strong></h2>
+    <h3 id="tag-video">Tag <code>&lt;video&gt;</code></h3>
+    <p>Reproduz vídeos hospedados localmente. </p>
+    <h3 id="atributos-principais-1">Atributos Principais</h3>
+    <ul>
+        <li><code>width</code>: Define a largura do vídeo. </li>
+        <li><code>poster</code>: Imagem de capa antes da reprodução. </li>
+        <li><code>controls</code>: Exibe controles de reprodução. </li>
+        <li><code>autoplay</code>: Inicia automaticamente (pode ser bloqueado por navegadores).</li>
+    </ul>
+    <h3 id="formatos-suportados-1">Formatos Suportados</h3>
+    <ul>
+        <li><strong>MP4</strong> (recomendado), <strong>WEBM</strong>, <strong>OGG</strong>.</li>
+    </ul>
+    <h3 id="exemplo-de-código-2">Exemplo de Código</h3>
+    <pre><code class="language-html">&lt;video width=&quot;600&quot; poster=&quot;capa.jpg&quot; controls&gt;
+    &lt;source src=&quot;video.mp4&quot; type=&quot;video/mp4&quot;&gt;
+    &lt;source src=&quot;video.webm&quot; type=&quot;video/webm&quot;&gt;
+    &lt;p&gt;Seu navegador não suporta vídeos.&lt;/p&gt;
+&lt;/video&gt;
+</code></pre>
+    <hr>
+    <h2 id="4-hospedagem-externa-de-vídeos"><strong>4. Hospedagem Externa de Vídeos</strong></h2>
+    <h3 id="por-que-usar">Por que usar?</h3>
+    <ul>
+        <li>Reduz consumo de banda do servidor. </li>
+        <li>Melhora a compatibilidade com dispositivos.</li>
+    </ul>
+    <h3 id="serviços-recomendados">Serviços Recomendados</h3>
+    <ul>
+        <li><strong>YouTube</strong>: <ul>
+                <li>Gratuito, mas vídeos públicos. </li>
+                <li>Use <code>&lt;iframe&gt;</code> para incorporar.</li>
+            </ul>
+        </li>
+        <li><strong>Vimeo</strong>: <ul>
+                <li>Permite vídeos privados (pago). </li>
+                <li>Ideal para conteúdos exclusivos.</li>
+            </ul>
+        </li>
+    </ul>
+    <h3 id="exemplo-de-incorporação-youtube">Exemplo de Incorporação (YouTube)</h3>
+    <pre><code class="language-html">&lt;iframe 
+    width=&quot;560&quot; 
+    height=&quot;315&quot; 
+    src=&quot;https://www.youtube.com/embed/ID_DO_VIDEO&quot; 
+    frameborder=&quot;0&quot; 
+    allowfullscreen&gt;
+&lt;/iframe&gt;
+</code></pre>
+    <hr>
+    <h2 id="5-ferramentas-úteis"><strong>5. Ferramentas Úteis</strong></h2>
+    <ul>
+        <li><strong>GIMP</strong>: Editor de imagens gratuito para redimensionar e otimizar arquivos. </li>
+        <li><strong>Handbrake</strong>: Conversor de vídeos para formatos compatíveis (MP4, WEBM).</li>
+    </ul>
+    <hr>
+    <h2 id="6-impacto-no-seo-e-experiência-do-usuário"><strong>6. Impacto no SEO e Experiência do Usuário</strong></h2>
+    <ul>
+        <li><strong>Sites lentos</strong> penalizam a indexação no Google. </li>
+        <li>Imagens/vídeos não otimizados aumentam a <strong>taxa de rejeição</strong> (usuários abandonam o site).
+        </li>
+        <li>Sempre priorize: <ul>
+                <li>Balanceamento entre qualidade e tamanho de arquivo. </li>
+                <li>Uso de <em>media queries</em> e tags semânticas.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <blockquote>
+        <p><strong>Dica Final</strong>: Acesse o <a href="https://github.com/gustavoguanabara" target="_blank" rel="noopener noreferrer">repositório do curso</a>
+            para exercícios práticos e desafios! 🚀</p>
+    </blockquote>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="cursohtml.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
