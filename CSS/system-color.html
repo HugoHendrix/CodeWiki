@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<article class="css-system-colors">
+    <header>
+        <h1>Cores de Sistema CSS: Aproveitando o Estilo do Sistema Operacional</h1>
+        <p class="article-meta">
+            Fonte: <a href="https://anto.pt/articles/css-system-colors?ref=dailydev" target="_blank" rel="noopener noreferrer">Anto.pt</a>
+        </p>
+    </header>
+
+    <section>
+        <h2>1. O Que São Cores de Sistema CSS?</h2>
+        <p>As cores de sistema CSS são valores pré-definidos que correspondem às cores utilizadas pelo sistema operacional do usuário, permitindo que seus sites se integrem visualmente ao ambiente do usuário.</p>
+    </section>
+
+    <section>
+        <h2>2. Cores de Sistema Principais</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Valor CSS</th>
+                    <th>Descrição</th>
+                    <th>Exemplo de Uso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>Canvas</code></td>
+                    <td>Cor de fundo de aplicativos</td>
+                    <td><code>background: Canvas;</code></td>
+                </tr>
+                <tr>
+                    <td><code>CanvasText</code></td>
+                    <td>Cor do texto sobre Canvas</td>
+                    <td><code>color: CanvasText;</code></td>
+                </tr>
+                <tr>
+                    <td><code>ButtonFace</code></td>
+                    <td>Cor de fundo de botões</td>
+                    <td><code>background: ButtonFace;</code></td>
+                </tr>
+                <tr>
+                    <td><code>ButtonText</code></td>
+                    <td>Cor do texto em botões</td>
+                    <td><code>color: ButtonText;</code></td>
+                </tr>
+                <tr>
+                    <td><code>Highlight</code></td>
+                    <td>Cor de seleção de itens</td>
+                    <td><code>background: Highlight;</code></td>
+                </tr>
+                <tr>
+                    <td><code>HighlightText</code></td>
+                    <td>Cor do texto sobre Highlight</td>
+                    <td><code>color: HighlightText;</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>3. Benefícios das Cores de Sistema</h2>
+        <ul>
+            <li><strong>Compatibilidade com modo escuro/claro</strong> - Adaptam-se automaticamente</li>
+            <li><strong>Experiência nativa</strong> - Familiaridade para o usuário</li>
+            <li><strong>Acessibilidade</strong> - Respeita as preferências do sistema</li>
+            <li><strong>Manutenção simplificada</strong> - Não precisa definir cores manualmente</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Exemplo Prático</h2>
+        <pre><code>&lt;style&gt;
+    body {
+        background: Canvas;
+        color: CanvasText;
+        font-family: system-ui;
+    }
+    
+    button {
+        background: ButtonFace;
+        color: ButtonText;
+        padding: 0.5rem 1rem;
+        border: 1px solid ButtonBorder;
+    }
+    
+    ::selection {
+        background: Highlight;
+        color: HighlightText;
+    }
+&lt;/style&gt;</code></pre>
+    </section>
+
+    <section>
+        <h2>5. Boas Práticas</h2>
+        <div class="warning">
+            <strong>Atenção:</strong> Algumas cores de sistema estão depreciadas na CSS3. Use com cautela.
+        </div>
+        <ol>
+            <li>Sempre defina pares de foreground/background (ex: Canvas + CanvasText)</li>
+            <li>Teste em diferentes sistemas operacionais</li>
+            <li>Forneça fallbacks para navegadores antigos</li>
+            <li>Combine com <code>@media (prefers-color-scheme)</code> para melhor controle</li>
+        </ol>
+    </section>
+
+    <div class="references">
+        <h2>6. Referências</h2>
+        <ul>
+            <li><a href="https://www.w3.org/TR/css-color-4/#system-colors" target="_blank" rel="noopener noreferrer">Especificação CSS Color Module Level 4</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#system_colors" target="_blank" rel="noopener noreferrer">Documentação MDN</a></li>
+            <li><a href="https://webkit.org/blog/8840/dark-mode-support-in-webkit/" target="_blank" rel="noopener noreferrer">Suporte a Modo Escuro no WebKit</a></li>
+        </ul>
+    </div>
+</article>
+
+<body>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../Design-Dev/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
