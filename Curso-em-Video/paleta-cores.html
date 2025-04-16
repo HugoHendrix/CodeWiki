@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="documentação-teoria-das-cores-e-aplicação-em-web-design">Documentação: Teoria das Cores e Aplicação em Web
+        Design</h1>
+    <p><em>Baseado no Capítulo 13 do Curso de HTML/CSS do Prof. Gustavo Guanabara</em> </p>
+    <hr>
+    <h2 id="1-psicologia-das-cores"><strong>1. Psicologia das Cores</strong></h2>
+    <h3 id="conceito">Conceito</h3>
+    <p>As cores influenciam emoções, decisões e percepções dos usuários. Por exemplo: </p>
+    <ul>
+        <li><strong>Azul</strong>: Transmite confiança e profissionalismo (usado por Facebook, LinkedIn). </li>
+        <li><strong>Vermelho</strong>: Associado a energia e urgência (comum em call-to-action). </li>
+        <li><strong>Verde</strong>: Relacionado à natureza e saúde.</li>
+    </ul>
+    <h3 id="tabela-de-significados">Tabela de Significados</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Cor</th>
+                <th>Emoções/Significados</th>
+                <th>Aplicações Recomendadas</th>
+                <th>Evitar em</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Azul</strong></td>
+                <td>Confiança, calma, tecnologia</td>
+                <td>Sites corporativos, medicina</td>
+                <td>Comida (reduz apetite)</td>
+            </tr>
+            <tr>
+                <td><strong>Vermelho</strong></td>
+                <td>Paixão, perigo, energia</td>
+                <td>Promoções, saúde emergencial</td>
+                <td>Luxo, serviços gerais</td>
+            </tr>
+            <tr>
+                <td><strong>Verde</strong></td>
+                <td>Natureza, saúde, finanças</td>
+                <td>Sustentabilidade, turismo</td>
+                <td>Produtos adolescentes</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><strong>Observação:</strong> </p>
+    <ul>
+        <li>Não siga regras rigidamente. Contexto e público-alvo são essenciais.</li>
+    </ul>
+    <hr>
+    <h2 id="2-círculo-cromático-e-harmonia"><strong>2. Círculo Cromático e Harmonia</strong></h2>
+    <h3 id="componentes-do-círculo">Componentes do Círculo</h3>
+    <ol>
+        <li><strong>Primárias</strong>: Vermelho, azul, amarelo. </li>
+        <li><strong>Secundárias</strong>: Laranja (vermelho+amarelo), verde (azul+amarelo), violeta (azul+vermelho).
+        </li>
+        <li><strong>Terciárias</strong>: Combinações de primárias e secundárias (ex: vermelho-alaranjado).</li>
+    </ol>
+    <h3 id="esquemas-harmônicos">Esquemas Harmônicos</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Descrição</th>
+                <th>Exemplo Visual</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Complementares</strong></td>
+                <td>Cores opostas no círculo (alto contraste).</td>
+                <td>Azul + Laranja</td>
+            </tr>
+            <tr>
+                <td><strong>Análogas</strong></td>
+                <td>Cores vizinhas (harmonia suave).</td>
+                <td>Verde + Azul-esverdeado</td>
+            </tr>
+            <tr>
+                <td><strong>Triádicas</strong></td>
+                <td>Três cores equidistantes (equilíbrio e riqueza).</td>
+                <td>Vermelho, Azul, Amarelo</td>
+            </tr>
+            <tr>
+                <td><strong>Monocromia</strong></td>
+                <td>Variações de uma mesma cor (degradê).</td>
+                <td>Tons de Azul</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h2 id="3-ferramentas-práticas"><strong>3. Ferramentas Práticas</strong></h2>
+    <h3 id="adobe-color">Adobe Color</h3>
+    <ul>
+        <li><strong>Link</strong>: <a href="https://color.adobe.com/pt/" target="_blank" rel="noopener noreferrer">https://color.adobe.com/pt/</a> </li>
+        <li><strong>Função</strong>: Criar paletas baseadas em esquemas harmônicos (complementar, triádico, etc.). </li>
+        <li><strong>Modos</strong>: <ul>
+                <li><em>Criar</em>: Defina regras de harmonia e ajuste cores manualmente. </li>
+                <li><em>Explorar</em>: Paletas prontas para inspiração.</li>
+            </ul>
+        </li>
+    </ul>
+    <h3 id="colorzilla-extensão-chrome">Colorzilla (Extensão Chrome)</h3>
+    <ul>
+        <li><strong>Link</strong>: <a href="https://chrome.google.com/webstore/" target="_blank" rel="noopener noreferrer">https://chrome.google.com/webstore/</a>
+        </li>
+        <li><strong>Função</strong>: Capturar cores de qualquer site e obter códigos em <code>hex</code>,
+            <code>rgb</code>, etc.</li>
+    </ul>
+    <hr>
+    <h2 id="4-representação-de-cores-em-css"><strong>4. Representação de Cores em CSS</strong></h2>
+    <h3 id="formatos">Formatos</h3>
+    <ol>
+        <li><strong>Hexadecimal</strong>: <code>#FF5733</code> (vermelho: FF, verde: 57, azul: 33). </li>
+        <li><strong>RGB</strong>: <code>rgb(255, 87, 51)</code>. </li>
+        <li><strong>HSL</strong>: <code>hsl(12, 100%, 60%)</code> (matiz, saturação, luminância). </li>
+        <li><strong>RGBA/HSLA</strong>: Adiciona transparência (ex: <code>rgba(255, 87, 51, 0.5)</code>).</li>
+    </ol>
+    <h3 id="gradientes">Gradientes</h3>
+    <pre><code class="language-css">body {
+  background-image: linear-gradient(90deg, yellow, red); /* Gradiente linear */
+  background-image: radial-gradient(circle, red, yellow); /* Gradiente radial */
+}
+</code></pre>
+    <hr>
+    <h2 id="5-acessibilidade-e-ferramentas-w3c"><strong>5. Acessibilidade e Ferramentas W3C</strong></h2>
+    <p> <a href="https://www.w3.org/WAI/test-evaluate/tools/list/" target="_blank" rel="noopener noreferrer">https://www.w3.org/WAI/test-evaluate/tools/list/</a>
+    </p>
+    <ul>
+        <li><strong>O que é?</strong>: Lista de ferramentas da W3C para testar acessibilidade em sites. </li>
+        <li><strong>Relevância para Cores</strong>: <ul>
+                <li>Verifica contraste entre texto/fundo (ex: texto preto em fundo branco é acessível). </li>
+                <li>Identifica problemas para daltonismo.</li>
+            </ul>
+        </li>
+        <li><strong>Ferramentas Recomendadas</strong>: <ul>
+                <li><strong>Color Contrast Checker</strong>: Garante legibilidade. </li>
+                <li><strong>Simuladores de Daltonismo</strong>: Teste como cores são percebidas.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h2 id="6-links-para-leitura"><strong>6. Links para Leitura</strong></h2>
+    <ol>
+        <li><a
+                href="https://neilpatel.com/br/blog/psicologia-das-cores-como-usar-cores-para-aumentar-sua-taxa-de-conversao/" target="_blank" rel="noopener noreferrer">Psicologia
+                das Cores - Neil Patel</a> </li>
+        <li><a href="https://www.matildefilmes.com.br/psicologia-das-cores-guia-avancado-para-profissionais/" target="_blank" rel="noopener noreferrer">Guia
+                Avançado de Cores - Matilde Filmes</a> </li>
+        <li><a href="https://rockcontent.com/br/blog/psicologia-das-cores/" target="_blank" rel="noopener noreferrer">Rock Content - Psicologia das Cores</a></li>
+    </ol>
+    <hr>
+    <h2 id="7-exercícios-práticos"><strong>7. Exercícios Práticos</strong></h2>
+    <ol>
+        <li>Crie uma paleta no Adobe Color usando cores triádicas. </li>
+        <li>Aplique gradientes em CSS usando <code>linear-gradient</code> e <code>radial-gradient</code>. </li>
+        <li>Use o Colorzilla para extrair cores de um site favorito.</li>
+    </ol>
+    <blockquote>
+        <p><strong>Dica</strong>: Acesse o <a href="https://github.com/gustavoguanabara" target="_blank" rel="noopener noreferrer" >repositório do curso</a> para
+            desafios e exercícios detalhados! 🎨</p>
+    </blockquote>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="cursohtml.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
