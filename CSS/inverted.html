@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <article class="css-inverted-radius">
+        <header>
+            <h1>Efeito Hover com Raio Invertido em CSS</h1>
+            <p class="article-meta">
+                Fonte: <a href="https://css-tip.com/inverted-radius-hover/?ref=dailydev" target="_blank"
+                    rel="noopener noreferrer">CSS-Tip</a>
+            </p>
+        </header>
+
+        <section>
+            <h2>1. O que é Raio Invertido?</h2>
+            <p>Uma técnica para criar cantos "recuados" usando border-radius negativo, ideal para:</p>
+            <ul>
+                <li>Efeitos de hover modernos</li>
+                <li>Transições suaves entre elementos</li>
+                <li>Designs orgânicos e fluidos</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. Implementação Básica</h2>
+            <pre><code>.elemento {
+        border-radius: 15px;
+        transition: all 0.3s ease;
+    }
+    
+    .elemento:hover {
+        clip-path: inset(0 round 15px 0 15px 0);
+    }</code></pre>
+        </section>
+
+        <section>
+            <h2>3. Técnicas Principais</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Método</th>
+                        <th>Vantagens</th>
+                        <th>Código</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>clip-path</td>
+                        <td>Performance otimizada</td>
+                        <td><code>clip-path: inset(0 round X);</code></td>
+                    </tr>
+                    <tr>
+                        <td>mask-image</td>
+                        <td>Mais personalização</td>
+                        <td><code>mask-image: radial-gradient(...);</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>4. Exemplo Completo</h2>
+            <pre><code>&lt;div class="card"&gt;
+        &lt;div class="card-content"&gt;
+            &lt;h3&gt;Título&lt;/h3&gt;
+            &lt;p&gt;Conteúdo do card com efeito hover&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;style&gt;
+    .card {
+        border-radius: 20px;
+        overflow: hidden;
+        transition: clip-path 0.4s;
+    }
+    
+    .card:hover {
+        clip-path: inset(10px round 0 20px 0 20px);
+    }
+    &lt;/style&gt;</code></pre>
+        </section>
+
+        <section>
+            <h2>5. Compatibilidade</h2>
+            <ul>
+                <li>Chrome 55+ ✅</li>
+                <li>Firefox 54+ ✅</li>
+                <li>Safari 13.1+ ✅</li>
+                <li>Edge 79+ ✅</li>
+            </ul>
+            <div class="note">
+                <strong>Nota:</strong> Para suporte mais amplo, use prefixo <code>-webkit-</code>
+            </div>
+        </section>
+
+        <section>
+            <h2>6. Aplicações Práticas</h2>
+            <h3>6.1 Cards Interativos</h3>
+            <pre><code>.product-card:hover {
+        clip-path: inset(8px round 0 25px 0 25px);
+    }</code></pre>
+
+            <h3>6.2 Menu de Navegação</h3>
+            <pre><code>.nav-item:hover {
+        clip-path: inset(5px round 15px 0 15px 0);
+    }</code></pre>
+
+            <h3>6.3 Progress Bars</h3>
+            <pre><code>.progress-bar:hover {
+        clip-path: inset(2px round 10px 10px 0 0);
+    }</code></pre>
+        </section>
+
+        <div class="references">
+            <h2>7. Referências</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path" target="_blank"
+                        rel="noopener noreferrer">Documentação MDN</a></li>
+                <li><a href="https://caniuse.com/css-clip-path" target="_blank" rel="noopener noreferrer">Suporte em
+                        Navegadores</a></li>
+            </ul>
+        </div>
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
