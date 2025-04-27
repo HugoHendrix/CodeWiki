@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1>Efeito Isométrico com CSS</h1>
+    <pre><code class="language-css">/* Efeito Isométrico Simplificado */
+
+        .isometric-text {
+            font-size: 8rem;
+            color: #00f0ff;
+            transform: rotateX(45deg) rotateZ(45deg);
+            text-shadow: 
+                1px 1px 0 #00d2e6,
+                3px 3px 0 #00bcd1,
+                5px 5px 0 #00a6bc,
+                7px 7px 0 #0090a7,
+                9px 9px 0 #007a92,
+                11px 11px 0 #00647d,
+                13px 13px 0 #004e68,
+                15px 15px 0 #003853,
+                17px 17px 0 #00223e;
+        
+        }
+</code></pre>
+    <h3 id="como-usar"><strong>Como usar:</strong></h3>
+    <ol>
+        <li>
+            <p><strong>Aplique a classe</strong> no seu HTML:</p>
+            <pre><code class="language-html">&lt;h1 class=&quot;isometric-text&quot;&gt;TEXTO&lt;/h1&gt;
+</code></pre>
+        </li>
+        <li>
+            <p><strong>Ajuste básico:</strong></p>
+            <ul>
+                <li><code>color</code>: Escolha sua cor principal</li>
+                <li><code>text-shadow</code>: Use 3 tons da mesma cor, cada um mais escuro</li>
+                <li><code>font-size</code>: Adapte ao seu layout</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Dicas rápidas:</strong></p>
+            <ul>
+                <li>Use <a href="https://coolors.co/" target="_blank" rel="noopener noreferrer">gerador de paleta</a> para criar os tons</li>
+                <li>Para menos profundidade: reduza o número de sombras</li>
+                <li>Para texto maior: aumente os valores em px das sombras</li>
+            </ul>
+        </li>
+    </ol>
+    <p><strong>Exemplo visual:</strong><br><img src="isometric-text.png" alt="Texto com efeito isométrico simples mostrando  camadas de sombra"></p>
+            
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
