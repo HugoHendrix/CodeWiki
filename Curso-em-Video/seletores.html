@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+
+        <h2 id="documentação-css-seletores-personalizados-e-combinações">Documentação CSS: Seletores Personalizados e
+            Combinações</h2>
+        <h3 id="id-vs-classe">ID vs. Classe</h3>
+        <ul>
+            <li><strong>ID (<code>#</code>):</strong>
+                <ul>
+                    <li>Usado para identificar <strong>um único elemento</strong> na página HTML.</li>
+                    <li>No CSS, um ID é referenciado usando o símbolo cerquilha (<code>#</code>) antes do nome do ID.
+                    </li>
+                    <li>Exemplo CSS: <code>#titulo-principal { color: blue; }</code> - Aplica a cor azul ao elemento com
+                        <code>id=&quot;titulo-principal&quot;</code>.
+                    </li>
+                    <li><strong>Regra:</strong> Um ID deve ser único em toda a página HTML; não podem existir dois
+                        elementos com o mesmo ID.</li>
+                </ul>
+            </li>
+            <li><strong>Classe (<code>.</code>):</strong>
+                <ul>
+                    <li>Usada para agrupar <strong>múltiplos elementos</strong> que compartilham características ou
+                        estilos semelhantes.</li>
+                    <li>No CSS, uma classe é referenciada usando um ponto (<code>.</code>) antes do nome da classe.</li>
+                    <li>Exemplo CSS: <code>.topico { text-align: right; }</code> - Aplica alinhamento à direita a todos
+                        os elementos com <code>class=&quot;topico&quot;</code>.</li>
+                    <li>Um mesmo elemento pode ter várias classes, e várias classes podem ser aplicadas a diferentes
+                        elementos.</li>
+                </ul>
+            </li>
+        </ul>
+        <h3 id="nomeando-ids-e-classes-boas-práticas">Nomeando IDs e Classes (Boas Práticas)</h3>
+        <ul>
+            <li><strong>Semântica:</strong> Use nomes que descrevam o propósito ou a função do elemento, não sua
+                aparência (ex: <code>.menu-navegacao</code> em vez de <code>.caixa-azul</code>).</li>
+            <li><strong>Consistência:</strong> Escolha um padrão (como BEM - Block Element Modifier, ou OOCSS -
+                Object-Oriented CSS) e mantenha-o em todo o projeto.</li>
+            <li><strong>Formato:</strong>
+                <ul>
+                    <li>Use letras minúsculas.</li>
+                    <li>Separe palavras com hífen (<code>-</code>), conhecido como kebab-case (ex:
+                        <code>main-content</code>, <code>profile-picture</code>). Evite underscores (<code>_</code>) ou
+                        CamelCase, ou use-os consistentemente se for a convenção do projeto.
+                    </li>
+                    <li>Evite nomes muito curtos ou genéricos como <code>x</code> ou <code>box</code>.</li>
+                </ul>
+            </li>
+        </ul>
+        <h3 id="pseudo-classes-">Pseudo-classes (<code>:</code>)</h3>
+        <ul>
+            <li>Adicionam estilos a elementos baseados em um <strong>estado especial</strong> ou posição, sem precisar
+                de classes ou IDs adicionais.</li>
+            <li>São indicadas por um único sinal de dois pontos (<code>:</code>) após o seletor.</li>
+            <li><strong>Exemplos Comuns:</strong>
+                <ul>
+                    <li><code>:link</code>: Estiliza links não visitados.</li>
+                    <li><code>:visited</code>: Estiliza links que o usuário já visitou. Exemplo CSS:
+                        <code>a:visited { color: darkred; }</code>.
+                    </li>
+                    <li><code>:hover</code>: Aplica estilo quando o ponteiro do mouse está sobre o elemento. Exemplo
+                        CSS: <code>a:hover { text-decoration: underline; }</code>.</li>
+                    <li><code>:active</code>: Aplica estilo enquanto o elemento está sendo ativado (ex: clicado).</li>
+                    <li><code>:focus</code>: Aplica estilo quando o elemento recebe foco (ex: campo de formulário
+                        selecionado).</li>
+                    <li><code>:checked</code>: Aplica estilo a elementos de formulário como checkboxes ou radio buttons
+                        que estão marcados.</li>
+                    <li><code>:disabled</code>: Seleciona elementos de formulário que estão desabilitados.</li>
+                    <li><code>:enabled</code>: Seleciona elementos de formulário que estão habilitados.</li>
+                    <li><code>:first-child</code>: Seleciona o primeiro elemento filho de seu pai.</li>
+                    <li><code>:last-child</code>: Seleciona o último elemento filho de seu pai.</li>
+                    <li><code>:nth-child(n)</code>: Seleciona elementos baseados em sua posição (ex:
+                        <code>:nth-child(2)</code> seleciona o segundo filho, <code>:nth-child(odd)</code> seleciona
+                        filhos ímpares).
+                    </li>
+                    <li><code>:empty</code>: Seleciona elementos que não têm filhos (incluindo nós de texto).</li>
+                    <li><code>:not(selector)</code>: Seleciona elementos que <em>não</em> correspondem ao seletor
+                        interno.</li>
+                </ul>
+            </li>
+        </ul>
+        <h3 id="pseudo-elementos-">Pseudo-elementos (<code>::</code>)</h3>
+        <ul>
+            <li>Permitem estilizar <strong>partes específicas</strong> de um elemento, como a primeira letra ou linha,
+                ou inserir conteúdo antes ou depois do conteúdo real do elemento.</li>
+            <li>São indicados por dois sinais de dois pontos (<code>::</code>) após o seletor (embora a sintaxe antiga
+                com um <code>:</code> ainda funcione para compatibilidade com navegadores mais antigos em alguns casos
+                como <code>::before</code> e <code>::after</code>).</li>
+            <li><strong>Exemplos Comuns:</strong>
+                <ul>
+                    <li><code>::before</code>: Insere conteúdo <em>antes</em> do conteúdo do elemento selecionado.
+                        Exemplo CSS: <code>.especial::before { content: &#39;▶ &#39;; }</code>. A propriedade
+                        <code>content</code> é obrigatória.
+                    </li>
+                    <li><code>::after</code>: Insere conteúdo <em>depois</em> do conteúdo do elemento selecionado.
+                        Exemplo CSS: <code>.especial::after { content: &#39; ◀&#39;; }</code>. A propriedade
+                        <code>content</code> é obrigatória.
+                    </li>
+                    <li><code>::first-letter</code>: Estiliza a primeira letra do texto dentro de um elemento de bloco.
+                    </li>
+                    <li><code>::first-line</code>: Estiliza a primeira linha do texto dentro de um elemento de bloco.
+                    </li>
+                    <li><code>::marker</code>: Estiliza o marcador de itens de lista (ex: <code>&lt;li&gt;</code>).</li>
+                    <li><code>::selection</code>: Aplica estilos ao texto que foi selecionado (destacado) pelo usuário.
+                    </li>
+                    <li><code>::placeholder</code>: Estiliza o texto de placeholder em campos de formulário
+                        (<code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>).</li>
+                </ul>
+            </li>
+        </ul>
+        <h3 id="definindo-seletores-e-seus-significados">Definindo Seletores e Seus Significados</h3>
+        <ul>
+            <li><strong>Seletor de Descendente (espaço):</strong>
+                <ul>
+                    <li>Representado por um espaço entre dois seletores.</li>
+                    <li>Seleciona elementos que são descendentes (filhos, netos, etc.) de um elemento específico.</li>
+                    <li>Exemplo: <code>article p</code> seleciona <strong>todos</strong> os elementos
+                        <code>&lt;p&gt;</code> que estão dentro de um elemento <code>&lt;article&gt;</code>, não importa
+                        o quão aninhados estejam.
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Seletor de Filho Direto (<code>&gt;</code>):</strong>
+                <ul>
+                    <li>Seleciona elementos que são <strong>filhos diretos</strong> (primeiro nível de descendência) de
+                        um elemento específico.</li>
+                    <li>Exemplo: <code>div &gt; p</code> seleciona apenas os elementos <code>&lt;p&gt;</code> que são
+                        filhos diretos de um <code>&lt;div&gt;</code>. Um <code>&lt;p&gt;</code> dentro de outro
+                        elemento que por sua vez está dentro do <code>&lt;div&gt;</code> não seria selecionado por esta
+                        regra.</li>
+                </ul>
+            </li>
+            <li><strong>Agrupamento de Seletores (<code>,</code>):</strong>
+                <ul>
+                    <li>Permite aplicar o <strong>mesmo conjunto de regras CSS a múltiplos seletores</strong>
+                        diferentes, separando-os por vírgula.</li>
+                    <li>Pense na vírgula como um &quot;OU&quot;.</li>
+                    <li>Exemplo: <code>h1, h2, .destaque { color: navy; }</code> aplica a cor <code>navy</code> a todos
+                        os elementos <code>&lt;h1&gt;</code>, todos os elementos <code>&lt;h2&gt;</code> e a todos os
+                        elementos com a classe <code>destaque</code>.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3 id="pseudo-classes-dando-vida-à-interatividade-no-css">Pseudo-classes: Dando Vida à Interatividade no CSS
+        </h3>
+        <p>Embora &quot;IO&quot; (Input/Output) não seja um termo técnico padrão em CSS, ele captura a ideia fundamental
+            de como os elementos da sua página <strong>reagem à interação do usuário</strong>. Essa capacidade de
+            resposta é majoritariamente implementada através das <strong>pseudo-classes</strong>.</p>
+        <p>As pseudo-classes permitem aplicar estilos específicos a um elemento não com base em atributos fixos como
+            <code>id</code> ou <code>class</code>, mas sim com base em seu <strong>estado atual</strong> ou em
+            <strong>como o usuário está interagindo com ele</strong>. Elas são essenciais para criar interfaces
+            dinâmicas e intuitivas.</p>
+        <p>Vamos detalhar as pseudo-classes mais importantes para interatividade:</p>
+        <ol>
+            <li>
+                <p><strong><code>:hover</code> - A Resposta ao Cursor:</strong></p>
+                <ul>
+                    <li><strong>O que faz:</strong> Aplica estilos quando o ponteiro do mouse (cursor) está posicionado
+                        sobre o elemento[cite: 79]. É talvez a pseudo-classe interativa mais comum.</li>
+                    <li><strong>Exemplo Prático (do PDF):</strong> Mudar a aparência de um link quando o mouse passa
+                        sobre ele, como adicionar um sublinhado [cite: 76] ou alterar cores e fundo[cite: 81].</li>
+                    <li><strong>Outro Exemplo (do PDF):</strong> Fazer um conteúdo oculto (como um parágrafo dentro de
+                        uma <code>div</code>) aparecer quando o mouse passa sobre a <code>div</code>[cite: 88, 89, 95].
+                    </li>
+                    <li><strong>Uso:</strong> Ideal para indicar visualmente que um elemento é clicável ou interativo,
+                        fornecer feedback imediato ou revelar informações contextuais.</li>
+                </ul>
+            </li>
+            <li>
+                <p><strong><code>:active</code> - O Momento da Ativação:</strong></p>
+                <ul>
+                    <li><strong>O que faz:</strong> Aplica estilos <strong>durante</strong> o momento em que o elemento
+                        está sendo ativado pelo usuário – tipicamente, enquanto o botão do mouse está pressionado sobre
+                        ele ou enquanto está sendo &quot;tocado&quot; em uma tela sensível ao toque.</li>
+                    <li><strong>Exemplo Prático:</strong> Mudar a cor de fundo ou a aparência de um botão
+                        <em>exatamente</em> no instante em que ele é clicado, dando um feedback visual de
+                        &quot;pressionado&quot;.
+                        <pre><code class="language-css">button:active {
+  background-color: darkblue;
+  transform: translateY(2px); /* Simula o botão sendo pressionado */
+}
+</code></pre>
+                    </li>
+                    <li><strong>Uso:</strong> Fornece feedback visual instantâneo de que a ação do usuário
+                        (clique/toque) foi registrada.</li>
+                </ul>
+            </li>
+            <li>
+                <p><strong><code>:focus</code> - Indicando Onde a Atenção Está:</strong></p>
+                <ul>
+                    <li><strong>O que faz:</strong> Aplica estilos a um elemento que recebeu <strong>foco</strong>.
+                        Elementos como links, botões e campos de formulário (<code>&lt;input&gt;</code>,
+                        <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>) podem receber foco, seja através de
+                        um clique do mouse, toque ou navegação pelo teclado (como usar a tecla Tab).</li>
+                    <li><strong>Exemplo Prático:</strong> Destacar um campo de formulário com uma borda colorida quando
+                        o usuário clica nele ou navega até ele com o teclado, indicando onde a digitação ocorrerá.
+                        <pre><code class="language-css">input:focus {
+  border-color: dodgerblue;
+  box-shadow: 0 0 5px dodgerblue;
+  outline: none; /* Remove o contorno padrão para usar o box-shadow */
+}
+</code></pre>
+                    </li>
+                    <li><strong>Uso:</strong> Crucial para acessibilidade (indicando o elemento ativo para usuários de
+                        teclado) e usabilidade (mostrando claramente qual campo de formulário está pronto para receber
+                        entrada).</li>
+                </ul>
+            </li>
+            <li>
+                <p><strong>Pseudo-classes de Estado de Formulário (<code>:checked</code>, <code>:disabled</code>,
+                        <code>:enabled</code>, <code>:valid</code>, <code>:invalid</code>, etc.):</strong></p>
+                <ul>
+                    <li><strong>O que fazem:</strong> Refletem o estado específico de elementos de formulário.<ul>
+                            <li><code>:checked</code>: Aplica estilo a checkboxes ou radio buttons marcados.</li>
+                            <li><code>:disabled</code> / <code>:enabled</code>: Estiliza campos que estão desabilitados
+                                ou habilitados para interação.</li>
+                            <li><code>:valid</code> / <code>:invalid</code>: Estiliza campos de input com base na
+                                validação de dados (ex: um campo de email com formato válido ou inválido).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Exemplo Prático:</strong> Mudar a aparência de um rótulo (<code>&lt;label&gt;</code>)
+                        associado a um checkbox quando ele está marcado, ou tornar um botão desabilitado visualmente
+                        distinto (ex: cinza e sem resposta ao <code>:hover</code>).
+                        <pre><code class="language-css">input[type=&quot;checkbox&quot;]:checked + label {
+  font-weight: bold;
+  color: green;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+</code></pre>
+                    </li>
+                    <li><strong>Uso:</strong> Fornecem feedback visual claro sobre o estado dos controles de formulário,
+                        guiando o usuário no preenchimento e indicando quais ações são possíveis.</li>
+                </ul>
+            </li>
+        </ol>
+        <p>Em resumo, as <strong>pseudo-classes</strong> são a ferramenta fundamental no CSS para responder
+            dinamicamente às ações e estados do usuário, tornando as páginas web interativas e mais fáceis de usar. Elas
+            permitem que seus estilos se adaptem ao contexto da interação, sem a necessidade de JavaScript para muitas
+            tarefas comuns de feedback visual.</p>
+
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="cursohtml.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
