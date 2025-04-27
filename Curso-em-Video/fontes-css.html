@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <p><strong>1. Indicar Fontes em CSS: Sintaxe e Tipos</strong></p>
+    <p>Para especificar fontes em CSS, utiliza-se a propriedade <code>font-family</code>. A sintaxe básica envolve
+        listar um ou mais nomes de fontes, separados por vírgula. O navegador tentará usar a primeira fonte da lista; se
+        não estiver disponível no sistema do usuário, tentará a próxima, e assim por diante.</p>
+    <ul>
+        <li><strong>Sintaxe:</strong>
+            <pre><code class="language-css">seletor {
+  font-family: &quot;Nome da Fonte 1&quot;, &quot;Nome da Fonte 2&quot;, nome-generico-da-familia;
+}
+</code></pre>
+        </li>
+        <li><strong>Nomes de Fontes:</strong> Se o nome da fonte contiver espaços, deve ser colocado entre aspas
+            (simples ou duplas). Ex: <code>&quot;Times New Roman&quot;</code>.</li>
+        <li><strong>Font Stack (Pilha de Fontes):</strong> É a prática de listar múltiplas fontes. A última fonte na
+            lista deve ser sempre uma <em>família genérica</em>.</li>
+        <li><strong>Famílias Genéricas:</strong> São categorias de fontes com características visuais semelhantes. As
+            principais são:<ul>
+                <li><code>serif</code>: Fontes com pequenos traços decorativos nas extremidades das letras (ex: Times
+                    New Roman, Georgia).</li>
+                <li><code>sans-serif</code>: Fontes sem serifas, com traços limpos (ex: Arial, Verdana, Helvetica).
+                    Geralmente preferidas para telas digitais pela legibilidade.</li>
+                <li><code>monospace</code>: Fontes onde todos os caracteres ocupam a mesma largura horizontal (ex:
+                    Courier New, Consolas). Comum para código.</li>
+                <li><code>cursive</code>: Fontes que simulam escrita à mão (ex: Brush Script MT).</li>
+                <li><code>fantasy</code>: Fontes decorativas, mais estilizadas (ex: Papyrus).</li>
+            </ul>
+        </li>
+        <li><strong>Tipos de Fontes:</strong>
+            <ul>
+                <li><strong>Fontes Seguras para Web (Web Safe Fonts):</strong> Fontes comuns pré-instaladas na maioria
+                    dos sistemas operacionais (Windows, macOS, Linux, Android, iOS). Exemplos: Arial, Verdana,
+                    Helvetica, Georgia, Times New Roman, Courier New. Usá-las garante maior consistência visual sem
+                    necessidade de carregar arquivos extras.</li>
+                <li><strong>Fontes da Web (Web Fonts):</strong> Fontes que não são pré-instaladas e precisam ser
+                    baixadas pelo navegador. Podem ser hospedadas externamente (como no Google Fonts) ou auto-hospedadas
+                    usando a regra <code>@font-face</code> (detalhado no ponto 9). Permitem maior liberdade criativa.
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Exemplo:</strong></p>
+    <pre><code class="language-css">body {
+  /* Tenta usar Open Sans, se não der, tenta Arial, se não der, usa qualquer sans-serif disponível */
+  font-family: &quot;Open Sans&quot;, Arial, sans-serif;
+}
+
+h1 {
+  /* Tenta usar Merriweather, se não der, tenta Georgia, se não der, usa qualquer serifada */
+  font-family: Merriweather, Georgia, serif;
+}
+</code></pre>
+    <hr>
+    <p><strong>2. Teoria das Cores no Design de Websites e Melhores Práticas</strong></p>
+    <p>A teoria das cores estuda como as cores interagem e como podem ser combinadas para criar harmonia visual e
+        transmitir mensagens. No design de websites, ela é crucial para a estética, usabilidade, acessibilidade e
+        identidade da marca.</p>
+    <ul>
+        <li><strong>Conceitos Básicos:</strong>
+            <ul>
+                <li><strong>Círculo Cromático:</strong> Ferramenta visual que organiza as cores (primárias, secundárias,
+                    terciárias).</li>
+                <li><strong>Esquemas de Cores:</strong> Combinações harmônicas (monocromático, análogo, complementar,
+                    triádico, tetrádico).</li>
+                <li><strong>Psicologia das Cores:</strong> Cores evocam emoções e associações culturais (ex: azul
+                    transmite confiança, vermelho urgência, verde natureza/sucesso).</li>
+            </ul>
+        </li>
+        <li><strong>Melhores Práticas para Fontes e Fundo:</strong>
+            <ul>
+                <li><strong>Contraste:</strong> É fundamental garantir contraste suficiente entre a cor do texto e a cor
+                    de fundo para assegurar a <strong>legibilidade</strong>. As diretrizes WCAG (Web Content
+                    Accessibility Guidelines) recomendam uma taxa de contraste mínima de 4.5:1 para texto normal e 3:1
+                    para texto grande. Existem ferramentas online (contrast checkers) para verificar isso. Fundo branco
+                    com texto preto oferece o maior contraste, mas combinações como azul escuro sobre branco ou texto
+                    cinza escuro sobre fundo claro também funcionam bem. Evite combinações de baixo contraste (ex: texto
+                    cinza claro sobre fundo branco, texto vermelho sobre fundo verde).</li>
+                <li><strong>Hierarquia Visual:</strong> Use cores para diferenciar elementos (títulos, links, botões,
+                    texto normal) e guiar o olhar do usuário.</li>
+                <li><strong>Identidade da Marca:</strong> Utilize as cores da marca de forma consistente.</li>
+                <li><strong>Limitação da Paleta:</strong> Não use cores em excesso. Uma paleta principal (2-3 cores) e
+                    algumas cores de destaque (para alertas, ações) costuma ser suficiente.</li>
+                <li><strong>Acessibilidade:</strong> Além do contraste, considere o daltonismo. Não confie
+                    <em>apenas</em> na cor para transmitir informação importante (use também ícones, texto,
+                    sublinhados).</li>
+                <li><strong>Estado dos Elementos:</strong> Use variações de cor para indicar estados como
+                    <code>:hover</code> (mouse sobre), <code>:focus</code> (elemento selecionado via teclado),
+                    <code>:active</code> (clicado).</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <p><strong>3. Medidas Absolutas em CSS (cm, mm, in, px, pt, pc)</strong></p>
+    <p>Medidas absolutas definem um tamanho fixo, que não depende de outros elementos ou do tamanho da janela do
+        navegador.</p>
+    <ul>
+        <li><code>cm</code> (Centímetros), <code>mm</code> (Milímetros), <code>in</code> (Inches - Polegadas):<ul>
+                <li><strong>O que são:</strong> Unidades de medida físicas.</li>
+                <li><strong>Uso:</strong> Raramente usadas para design de tela devido à variação de densidade de pixels
+                    (DPI) entre dispositivos. Um centímetro físico pode corresponder a um número diferente de pixels em
+                    telas diferentes. Podem ser úteis em <em>stylesheets</em> específicos para impressão
+                    (<code>@media print</code>).</li>
+            </ul>
+        </li>
+        <li><code>px</code> (Pixels):<ul>
+                <li><strong>O que é:</strong> A unidade absoluta mais comum para telas. Teoricamente, representa um
+                    pixel (ponto) na tela do dispositivo.</li>
+                <li><strong>Uso:</strong> Frequentemente usado para definir espessuras de borda
+                    (<code>border: 1px solid black;</code>), larguras/alturas fixas de elementos que não devem escalar,
+                    ou gaps pequenos e precisos. <strong>Não é recomendado para <code>font-size</code></strong> se a
+                    acessibilidade for uma prioridade, pois pode impedir que usuários redimensionem o texto nas
+                    configurações do navegador.</li>
+            </ul>
+        </li>
+        <li><code>pt</code> (Points - Pontos):<ul>
+                <li><strong>O que é:</strong> Unidade tipográfica tradicional (1pt = 1/72 de polegada).</li>
+                <li><strong>Uso:</strong> Comum em design gráfico e impressão, mas menos usual na web pelo mesmo motivo
+                    das outras unidades físicas.</li>
+            </ul>
+        </li>
+        <li><code>pc</code> (Picas):<ul>
+                <li><strong>O que é:</strong> Outra unidade tipográfica (1pc = 12pt).</li>
+                <li><strong>Uso:</strong> Muito rara em desenvolvimento web.</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Por que usar (com cautela):</strong> <code>px</code> é útil quando se precisa de um controle preciso
+        sobre o tamanho de elementos que não devem mudar, como bordas finas ou ícones com dimensões exatas. As unidades
+        físicas são mais adequadas para definir estilos de impressão.</p>
+    <hr>
+    <p><strong>4. Medidas Relativas em CSS (em, ex, rem, vw, vh, %)</strong></p>
+    <p>Medidas relativas têm seu tamanho definido em relação a outro valor, tornando-as ideais para designs responsivos
+        e acessíveis.</p>
+    <ul>
+        <li><code>em</code>:<ul>
+                <li><strong>O que é:</strong> Relativa ao <code>font-size</code> do <em>elemento pai</em> (ou do próprio
+                    elemento, se estiver definindo <code>font-size</code>).</li>
+                <li><strong>Uso:</strong> Útil para criar componentes escaláveis, onde o padding, margin, etc., se
+                    ajustam proporcionalmente ao tamanho do texto. Ex: <code>padding: 1em;</code> significa um padding
+                    igual ao <code>font-size</code> atual. <strong>Cuidado:</strong> O valor pode &quot;compor&quot; em
+                    elementos aninhados, tornando o cálculo complexo (se um pai tem <code>font-size: 1.2em</code> e o
+                    filho também, o filho terá <code>1.2 * 1.2 = 1.44</code> vezes o <code>font-size</code> do avô).
+                </li>
+            </ul>
+        </li>
+        <li><code>ex</code>:<ul>
+                <li><strong>O que é:</strong> Relativa à altura-x (a altura da letra &quot;x&quot; minúscula) da fonte
+                    atual.</li>
+                <li><strong>Uso:</strong> Raro, mas pode ser útil para alinhamentos finos baseados na métrica da fonte.
+                </li>
+            </ul>
+        </li>
+        <li><code>rem</code> (Root em):<ul>
+                <li><strong>O que é:</strong> Relativa ao <code>font-size</code> do <em>elemento raiz</em>
+                    (<code>&lt;html&gt;</code>). Por padrão, nos navegadores, isso é <code>16px</code>, mas o usuário
+                    pode alterar.</li>
+                <li><strong>Uso:</strong> <strong>Altamente recomendada para <code>font-size</code>,
+                        <code>padding</code>, <code>margin</code> e <code>width</code>/<code>height</code> em
+                        layouts</strong>. Evita o problema de composição do <code>em</code>. Permite que todo o layout e
+                    texto escalem proporcionalmente se o usuário alterar o tamanho da fonte base no navegador,
+                    melhorando a <strong>acessibilidade</strong>. Ex: <code>font-size: 1.5rem;</code> (será
+                    <code>24px</code> se a raiz for <code>16px</code>).</li>
+            </ul>
+        </li>
+        <li><code>vw</code> (Viewport Width):<ul>
+                <li><strong>O que é:</strong> 1vw = 1% da largura da <em>viewport</em> (a área visível da janela do
+                    navegador).</li>
+                <li><strong>Uso:</strong> Ótimo para criar elementos que ocupam uma largura relativa à tela, como fontes
+                    que se ajustam ao tamanho da janela (<code>font-size: 5vw;</code>) ou seções de largura total.</li>
+            </ul>
+        </li>
+        <li><code>vh</code> (Viewport Height):<ul>
+                <li><strong>O que é:</strong> 1vh = 1% da altura da <em>viewport</em>.</li>
+                <li><strong>Uso:</strong> Ideal para criar elementos com altura relativa à tela, como um banner
+                    &quot;hero&quot; que ocupa toda a altura visível (<code>height: 100vh;</code>).</li>
+            </ul>
+        </li>
+        <li><code>%</code> (Percentagem):<ul>
+                <li><strong>O que é:</strong> Relativa à mesma propriedade do <em>elemento pai</em>. Se usada para
+                    <code>font-size</code>, é relativa ao <code>font-size</code> do pai. Se usada para
+                    <code>width</code>, é relativa à <code>width</code> do pai.</li>
+                <li><strong>Uso:</strong> Muito comum para larguras e alturas de elementos dentro de um contêiner
+                    (<code>width: 50%;</code>), margens e paddings.</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Benefícios:</strong> Criação de layouts fluidos, adaptáveis a diferentes tamanhos de tela
+        (responsividade) e que respeitam as preferências de tamanho de fonte do usuário (acessibilidade).</p>
+    <hr>
+    <p><strong>5. Recomendações da W3C sobre Fontes e Unidades</strong></p>
+    <p>O W3C (World Wide Web Consortium), através de suas especificações (CSS) e diretrizes (WCAG), estabelece padrões e
+        boas práticas:</p>
+    <ul>
+        <li><strong>Unidades:</strong>
+            <ul>
+                <li><strong>Acessibilidade (WCAG):</strong> Recomenda o uso de unidades relativas (<code>rem</code>,
+                    <code>em</code>, <code>%</code>) para tamanhos de fonte e espaçamentos. Isso permite que usuários
+                    com baixa visão possam aumentar o tamanho do texto através das configurações do navegador sem
+                    quebrar o layout. Evitar <code>px</code> para <code>font-size</code> é uma prática chave.</li>
+                <li><strong>CSS:</strong> Define a funcionalidade de todas as unidades, mas não prescreve rigidamente
+                    qual usar, embora as vantagens das unidades relativas para flexibilidade e acessibilidade sejam
+                    implícitas nas especificações modernas como CSS Values and Units Module.</li>
+            </ul>
+        </li>
+        <li><strong>Fontes:</strong>
+            <ul>
+                <li><strong>Font Stacks:</strong> Recomenda o uso de pilhas de fontes (<code>font-family</code>)
+                    terminando com uma família genérica para garantir que o texto seja sempre renderizado de forma
+                    legível.</li>
+                <li><strong>Web Fonts (<code>@font-face</code>):</strong> Padroniza o uso de <code>@font-face</code>
+                    para incorporar fontes personalizadas. Recomenda o uso de formatos otimizados para web como WOFF e
+                    WOFF2 para melhor desempenho. A especificação CSS Fonts Module detalha isso.</li>
+                <li><strong>Performance:</strong> Sugere carregar apenas os pesos e estilos de fonte necessários e
+                    considerar estratégias como <code>font-display</code> para controlar como o texto é exibido enquanto
+                    a fonte carrega.</li>
+            </ul>
+        </li>
+        <li><strong>Contraste de Cor (WCAG):</strong> Define níveis mínimos de contraste entre texto e fundo (AA e AAA)
+            para garantir legibilidade para pessoas com deficiências visuais ou em condições de iluminação variadas.
+        </li>
+    </ul>
+    <p>Em resumo, o W3C promove o uso de tecnologias web de forma semântica, acessível e interoperável, favorecendo
+        unidades relativas, fontes da web otimizadas e design consciente da acessibilidade.</p>
+    <hr>
+    <p><strong>6. Fontes Modernas e Fluidas para Websites</strong></p>
+    <p>Fontes &quot;modernas e fluidas&quot; são aquelas que:</p>
+    <ul>
+        <li>Possuem boa legibilidade em diferentes tamanhos e resoluções de tela.</li>
+        <li>Oferecem vários pesos (light, regular, bold, black) e estilos (italic).</li>
+        <li>Frequentemente são <code>sans-serif</code> para interfaces e texto curto, mas <code>serif</code> bem
+            desenhadas também funcionam bem para leitura longa.</li>
+        <li>Podem incluir <em>Variable Fonts</em>, que permitem ajustes finos em peso, largura e outros eixos em um
+            único arquivo, oferecendo grande flexibilidade e performance.</li>
+    </ul>
+    <p><strong>Recomendações Atuais e Exemplos Populares (Muitas disponíveis no Google Fonts):</strong></p>
+    <ul>
+        <li><strong>Sans-serif:</strong>
+            <ul>
+                <li><strong>Inter:</strong> Excelente para UI, muito legível, com muitos pesos e recursos OpenType. É
+                    uma fonte variável.</li>
+                <li><strong>Roboto:</strong> Padrão do Android, muito versátil e legível.</li>
+                <li><strong>Open Sans:</strong> Uma escolha muito popular, neutra e amigável.</li>
+                <li><strong>Lato:</strong> Sensação amigável e quente, boa legibilidade.</li>
+                <li><strong>Montserrat:</strong> Geométrica, boa para títulos e texto curto.</li>
+                <li><strong>Nunito / Nunito Sans:</strong> Bordas arredondadas, visual moderno e amigável.</li>
+            </ul>
+        </li>
+        <li><strong>Serif:</strong>
+            <ul>
+                <li><strong>Merriweather:</strong> Projetada para leitura em tela, boa legibilidade.</li>
+                <li><strong>Playfair Display:</strong> Elegante, alto contraste, ótima para títulos grandes.</li>
+                <li><strong>Lora:</strong> Serifada contemporânea, boa para corpo de texto.</li>
+                <li><strong>PT Serif:</strong> Projetada para funcionar bem com PT Sans, boa para textos longos.</li>
+            </ul>
+        </li>
+        <li><strong>Considerações:</strong>
+            <ul>
+                <li><strong>Licença:</strong> Verifique se a licença permite uso na web (a maioria do Google Fonts
+                    permite).</li>
+                <li><strong>Performance:</strong> Carregue apenas os pesos/estilos necessários. Use WOFF2.</li>
+                <li><strong>Combinação:</strong> Escolha fontes que se complementem (ex: uma sans-serif para UI/títulos
+                    e uma serif para corpo de texto).</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <p><strong>7. Propriedade <code>font</code> (Shorthand)</strong></p>
+    <p>A propriedade <code>font</code> é um atalho (shorthand) para definir várias propriedades de fonte em uma única
+        declaração CSS. Ela pode definir: <code>font-style</code>, <code>font-variant</code>, <code>font-weight</code>,
+        <code>font-stretch</code>, <code>font-size</code>, <code>line-height</code> e <code>font-family</code>.</p>
+    <ul>
+        <li><strong>Sintaxe:</strong>
+            <pre><code class="language-css">seletor {
+  /* Ordem recomendada: style variant weight stretch size/line-height family */
+  font: [font-style] [font-variant] [font-weight] [font-stretch] font-size [/line-height] font-family;
+}
+</code></pre>
+        </li>
+        <li><strong>Valores Obrigatórios:</strong> <code>font-size</code> e <code>font-family</code> DEVEM ser
+            especificados.</li>
+        <li><strong>Valores Opcionais:</strong> <code>font-style</code>, <code>font-variant</code>,
+            <code>font-weight</code>, <code>font-stretch</code>, <code>line-height</code>. Se omitidos, são redefinidos
+            para seus valores iniciais (<code>normal</code>, <code>normal</code>, <code>normal</code>,
+            <code>normal</code>, <code>normal</code>, respectivamente).</li>
+        <li><strong><code>line-height</code>:</strong> Se incluído, deve vir imediatamente após <code>font-size</code>,
+            separado por uma barra (<code>/</code>).</li>
+        <li><strong><code>font-stretch</code>:</strong> É menos comum e nem todas as fontes o suportam.</li>
+    </ul>
+    <p><strong>Exemplos:</strong></p>
+    <pre><code class="language-css">p {
+  /* Define: italic, normal variant, bold weight, normal stretch, 1em size, 1.5 line-height, Arial family (ou sans-serif) */
+  font: italic bold 1em/1.5 Arial, sans-serif;
+}
+
+h1 {
+  /* Define apenas o obrigatório: normal style/variant/weight/stretch, 2.5rem size, normal line-height, Georgia family (ou serif) */
+  font: 2.5rem Georgia, serif;
+}
+
+.special-text {
+  /* Define: normal style, small-caps variant, 400 weight, normal stretch, 16px size, 1.4 line-height, &quot;Open Sans&quot; family (ou sans-serif) */
+  font: small-caps 400 16px/1.4 &quot;Open Sans&quot;, sans-serif;
+}
+</code></pre>
+    <p><strong>Atenção:</strong> Usar o shorthand <code>font</code> redefine todas as propriedades que ele pode
+        controlar para seus valores iniciais, a menos que você as especifique explicitamente na declaração.</p>
+    <hr>
+    <p><strong>8. Repositórios Externos de Fontes Gratuitas</strong></p>
+    <p>Existem vários sites que oferecem fontes de alta qualidade, muitas delas gratuitas para uso em projetos web:</p>
+    <ul>
+        <li><strong>Google Fonts (fonts.google.com):</strong>
+            <ul>
+                <li><strong>Descrição:</strong> O mais popular e amplamente utilizado. Oferece uma vasta biblioteca de
+                    fontes open-source, otimizadas para web. Fácil de implementar via link <code>&lt;link&gt;</code> no
+                    HTML ou <code>@import</code> no CSS, ou baixando os arquivos para auto-hospedagem.</li>
+                <li><strong>Qualidade:</strong> Geralmente alta, com boa cobertura de caracteres e vários pesos/estilos.
+                </li>
+            </ul>
+        </li>
+        <li><strong>Font Squirrel (fontsquirrel.com):</strong>
+            <ul>
+                <li><strong>Descrição:</strong> Curadoria de fontes gratuitas, com foco em licenças que permitem uso
+                    comercial. Muitas fontes de alta qualidade. Oferece um útil &quot;Webfont Generator&quot; para criar
+                    kits <code>@font-face</code> a partir de arquivos de fonte que você possui (respeitando a licença).
+                </li>
+                <li><strong>Qualidade:</strong> Boa seleção, mas verifique sempre a licença individual de cada fonte.
+                </li>
+            </ul>
+        </li>
+        <li><strong>Adobe Fonts (fonts.adobe.com):</strong>
+            <ul>
+                <li><strong>Descrição:</strong> Anteriormente Typekit. Oferece uma grande coleção de fontes premium.
+                    Possui um plano gratuito (limitado) e acesso completo para assinantes da Adobe Creative Cloud.
+                    Integração fácil em projetos web.</li>
+                <li><strong>Qualidade:</strong> Muito alta, fontes de fundições renomadas.</li>
+            </ul>
+        </li>
+        <li><strong>DaFont (dafont.com) / FontSpace (fontspace.com):</strong>
+            <ul>
+                <li><strong>Descrição:</strong> Grandes coleções de fontes, incluindo muitas decorativas e
+                    experimentais.</li>
+                <li><strong>Qualidade:</strong> Variável. É <strong>crucial verificar cuidadosamente a licença</strong>
+                    de cada fonte antes de usar, especialmente para fins comerciais, pois muitas são apenas para uso
+                    pessoal ou demonstração.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <p><strong>9. <code>@font-face</code>, <code>font-family</code>, Formatos e Fontes Personalizadas</strong></p>
+    <p>Para usar fontes que não são &quot;web safe&quot; e que você mesmo hospeda (em vez de usar um serviço como Google
+        Fonts), você utiliza a regra CSS <code>@font-face</code>.</p>
+    <ul>
+        <li><strong><code>@font-face</code>:</strong>
+            <ul>
+                <li><strong>Conceito:</strong> Permite que você especifique um nome para uma fonte personalizada e
+                    informe ao navegador onde encontrar o arquivo (ou arquivos) dessa fonte.</li>
+                <li><strong>Sintaxe:</strong>
+                    <pre><code class="language-css">@font-face {
+  font-family: &#39;NomeDaMinhaFonte&#39;; /* Nome que você usará no CSS */
+  src: url(&#39;caminho/para/minhafonte.woff2&#39;) format(&#39;woff2&#39;), /* Formato moderno e preferido */
+       url(&#39;caminho/para/minhafonte.woff&#39;) format(&#39;woff&#39;); /* Formato fallback */
+  /* Opcional: definir peso e estilo para esta fonte específica */
+  font-weight: 400; /* ou bold, 700, etc. */
+  font-style: normal; /* ou italic */
+  font-display: swap; /* Controla como o texto é exibido durante o carregamento */
+}
+</code></pre>
+                </li>
+                <li><strong><code>font-display</code>:</strong> Propriedade importante para performance e experiência do
+                    usuário. <code>swap</code> mostra o texto com uma fonte fallback imediatamente e troca pela fonte
+                    personalizada quando ela carregar. Outras opções incluem <code>block</code>, <code>fallback</code>,
+                    <code>optional</code>.</li>
+            </ul>
+        </li>
+        <li><strong><code>font-family</code> (dentro e fora de <code>@font-face</code>):</strong>
+            <ul>
+                <li>Dentro de <code>@font-face</code>: Define o nome que você dará à fonte personalizada (ex:
+                    <code>&#39;NomeDaMinhaFonte&#39;</code>).</li>
+                <li>Fora de <code>@font-face</code>: Usa o nome definido para aplicar a fonte a elementos HTML (ex:
+                    <code>body { font-family: &#39;NomeDaMinhaFonte&#39;, sans-serif; }</code>).</li>
+            </ul>
+        </li>
+        <li><strong>Formatos de Arquivo de Fonte:</strong>
+            <ul>
+                <li><strong><code>TTF</code> (TrueType Font) / <code>OTF</code> (OpenType Font):</strong> Formatos de
+                    desktop comuns. Funcionam na web, mas os arquivos podem ser grandes. OTF geralmente tem mais
+                    recursos (ligaturas, etc.).</li>
+                <li><strong><code>WOFF</code> (Web Open Font Format):</strong> Criado especificamente para a web. É um
+                    contêiner comprimido para fontes TTF/OTF. Amplo suporte de navegadores.</li>
+                <li><strong><code>WOFF2</code> (Web Open Font Format 2):</strong> Evolução do WOFF com compressão
+                    significativamente melhor (arquivos menores, carregamento mais rápido). <strong>É o formato
+                        preferido para navegadores modernos.</strong></li>
+                <li><code>EOT</code> (Embedded OpenType): Formato antigo da Microsoft para IE. Praticamente obsoleto.
+                </li>
+                <li><code>SVG</code> (Scalable Vector Graphics) Fonts: Formato vetorial, usado em versões antigas do
+                    Safari móvel. Também obsoleto para texto.</li>
+            </ul>
+        </li>
+        <li><strong>Como Utilizar Fontes Personalizadas:</strong>
+            <ol>
+                <li><strong>Obtenha os Arquivos:</strong> Compre ou baixe os arquivos da fonte (TTF, OTF).
+                    <strong>Verifique a licença</strong> para garantir que permite o uso em <code>@font-face</code> (web
+                    embedding).</li>
+                <li><strong>Converta para Formatos Web:</strong> Use ferramentas (como o gerador do Font Squirrel ou
+                    conversores online/offline) para gerar as versões <code>WOFF2</code> e <code>WOFF</code> da sua
+                    fonte.</li>
+                <li><strong>Defina <code>@font-face</code> no CSS:</strong> Crie regras <code>@font-face</code> para
+                    cada variação (peso/estilo) da sua fonte, apontando para os arquivos <code>WOFF2</code> e
+                    <code>WOFF</code>. Coloque <code>WOFF2</code> primeiro na declaração <code>src</code> para que
+                    navegadores modernos o usem.</li>
+                <li><strong>Aplique a Fonte:</strong> Use o <code>font-family</code> definido nas suas regras CSS
+                    normais.</li>
+            </ol>
+        </li>
+    </ul>
+    <hr>
+    <p><strong>10. Extensões de Navegador: ColorZilla e Font Ninja</strong></p>
+    <p>São ferramentas (extensões/add-ons para navegadores como Chrome, Firefox) que auxiliam desenvolvedores e
+        designers a inspecionar elementos visuais em páginas web.</p>
+    <ul>
+        <li><strong>ColorZilla:</strong>
+            <ul>
+                <li><strong>Função Principal:</strong> Identificar cores em qualquer ponto de uma página web.</li>
+                <li><strong>Recursos:</strong> Possui um conta-gotas (Eyedropper) para clicar em um pixel e obter seu
+                    código de cor (Hex, RGB, HSL). Também inclui um seletor de cores, histórico de cores selecionadas,
+                    analisador de cores da página, e um gerador de gradientes CSS.</li>
+                <li><strong>Utilidade:</strong> Agiliza a descoberta de cores exatas usadas em um site, seja para
+                    replicar um estilo, verificar contraste ou obter inspiração, sem precisar inspecionar o código CSS
+                    manualmente.</li>
+            </ul>
+        </li>
+        <li><strong>Font Ninja (ou alternativas como WhatFont):</strong>
+            <ul>
+                <li><strong>Função Principal:</strong> Identificar as fontes usadas no texto de uma página web.</li>
+                <li><strong>Recursos:</strong> Ao ativar a extensão e passar o mouse sobre o texto, ela exibe o nome da
+                    <code>font-family</code>, <code>font-size</code>, <code>font-weight</code>, <code>line-height</code>
+                    e a cor (<code>color</code>) aplicados àquele texto. Algumas versões permitem testar fontes
+                    diretamente na página.</li>
+                <li><strong>Utilidade:</strong> Facilita a identificação de tipografia interessante em outros sites,
+                    depuração de quais estilos de fonte estão sendo realmente aplicados a um elemento, e verificação de
+                    hierarquia tipográfica.</li>
+            </ul>
+        </li>
+    </ul>
+    <p>Ambas as extensões otimizam o fluxo de trabalho, permitindo identificar rapidamente estilos visuais sem mergulhar
+        profundamente no DevTools do navegador.</p>
+    <hr>
+    <p><strong>11. Propriedades CSS para Alinhamento de Texto</strong></p>
+    <p>CSS oferece diversas propriedades para controlar a disposição e apresentação do texto dentro de seus elementos
+        contêineres:</p>
+    <ul>
+        <li><strong><code>text-align</code>:</strong>
+            <ul>
+                <li><strong>Descrição:</strong> Controla o alinhamento horizontal do texto dentro de um elemento de
+                    bloco.</li>
+                <li><strong>Valores Comuns:</strong> <code>left</code> (alinha à esquerda, padrão para idiomas LTR como
+                    português), <code>right</code> (alinha à direita), <code>center</code> (centraliza),
+                    <code>justify</code> (justifica o texto, alinhando ambas as margens esquerda e direita, exceto
+                    geralmente a última linha).</li>
+                <li><strong>Valores Lógicos:</strong> <code>start</code> (alinha no início da direção do texto -
+                    esquerda em LTR), <code>end</code> (alinha no fim da direção do texto - direita em LTR). São
+                    preferíveis para internacionalização.</li>
+            </ul>
+        </li>
+        <li><strong><code>text-indent</code>:</strong>
+            <ul>
+                <li><strong>Descrição:</strong> Aplica um recuo (indentação) à primeira linha de texto de um bloco.</li>
+                <li><strong>Valores:</strong> Pode ser uma medida (ex: <code>2em</code>, <code>30px</code>) ou
+                    percentagem (relativa à largura do contêiner). Valores negativos criam um recuo
+                    &quot;pendurado&quot;. Ex: <code>text-indent: 2em;</code>.</li>
+            </ul>
+        </li>
+        <li><strong><code>line-height</code>:</strong>
+            <ul>
+                <li><strong>Descrição:</strong> Define a altura da caixa de linha, controlando o espaçamento vertical
+                    entre as linhas de texto (conhecido como &quot;leading&quot; ou entrelinha).</li>
+                <li><strong>Valores:</strong> Pode ser um número <em>sem unidade</em> (ex: <code>1.5</code> -
+                    recomendado, pois é relativo ao <code>font-size</code> do próprio elemento), uma medida (ex:
+                    <code>24px</code>), ou uma percentagem (relativa ao <code>font-size</code>). Uma
+                    <code>line-height</code> adequada (geralmente entre <code>1.4</code> e <code>1.8</code>) melhora
+                    muito a legibilidade.</li>
+            </ul>
+        </li>
+        <li><strong><code>vertical-align</code>:</strong>
+            <ul>
+                <li><strong>Descrição:</strong> Controla o alinhamento vertical de elementos <em>inline</em> ou
+                    <em>inline-block</em> (como imagens ou <code>&lt;span&gt;</code> dentro de um parágrafo) e células
+                    de tabela (<code>&lt;td&gt;</code>, <code>&lt;th&gt;</code>) dentro de sua linha ou célula.
+                    <strong>Não alinha elementos de bloco verticalmente dentro de seu contêiner</strong> (para isso,
+                    usa-se Flexbox, Grid ou outras técnicas).</li>
+                <li><strong>Valores Comuns:</strong> <code>baseline</code> (padrão), <code>top</code>,
+                    <code>middle</code>, <code>bottom</code>, <code>text-top</code>, <code>text-bottom</code>, além de
+                    valores de comprimento (px, em) e percentagem.</li>
+            </ul>
+        </li>
+        <li><strong><code>text-decoration</code>:</strong>
+            <ul>
+                <li><strong>Descrição:</strong> Aplica linhas decorativas ao texto. É um shorthand para
+                    <code>text-decoration-line</code>, <code>text-decoration-color</code>,
+                    <code>text-decoration-style</code>, <code>text-decoration-thickness</code>.</li>
+                <li><strong>Valores Comuns (para <code>text-decoration-line</code>):</strong> <code>none</code> (remove
+                    decoração, útil para links), <code>underline</code>, <code>overline</code>,
+                    <code>line-through</code>.</li>
+            </ul>
+        </li>
+        <li><strong><code>text-transform</code>:</strong>
+            <ul>
+                <li><strong>Descrição:</strong> Controla a capitalização do texto.</li>
+                <li><strong>Valores:</strong> <code>none</code> (padrão), <code>capitalize</code> (primeira letra de
+                    cada palavra maiúscula), <code>uppercase</code> (tudo maiúsculo), <code>lowercase</code> (tudo
+                    minúsculo).</li>
+            </ul>
+        </li>
+        <li><strong><code>letter-spacing</code>:</strong>
+            <ul>
+                <li><strong>Descrição:</strong> Ajusta o espaço entre os caracteres do texto.</li>
+                <li><strong>Valores:</strong> Medidas como <code>px</code>, <code>em</code>. Pode ser negativo para
+                    aproximar as letras.</li>
+            </ul>
+        </li>
+        <li><strong><code>word-spacing</code>:</strong>
+            <ul>
+                <li><strong>Descrição:</strong> Ajusta o espaço entre as palavras.</li>
+                <li><strong>Valores:</strong> Medidas como <code>px</code>, <code>em</code>.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="cursohtml.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
