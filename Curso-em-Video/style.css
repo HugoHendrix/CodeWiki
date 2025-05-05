@@ -91,20 +91,20 @@ h6 {
 }
 
 header {
-    background-image: linear-gradient(to right, var(--cor1), var(--cor2), var(--cor3), var(--cor4), var(--cor5));
+    background-image: linear-gradient(to bottom, var(--cor1), var(--cor2), var(--cor3), var(--cor4), var(--cor5));
     min-height: 15rem;
     text-align: center;
-    padding-top: 4rem;
+    padding-block: 4rem;
 }
 
 header>h1 {
-    font-size: 3rem;
+    font-size: 4.5rem;
     color: var(--cor5);
     text-shadow: 2px 2px 4px var(--cor0);
 }
 
 header>p {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: #fff;
     max-width: 60rem;
     margin: 0 auto;
@@ -114,8 +114,7 @@ header>p {
 nav {
     background-color: var(--cor5);
     padding: 1rem 0;
-    text-align: center;
-    box-shadow: 0 0 10px var(--cor4);
+    text-align: center;    
 }
 
 nav>a {
@@ -146,14 +145,14 @@ main {
 }
 
 main h1, h2 { 
-    color: var(--cor5);
-    font-family: var(--font-android);
     background-image: linear-gradient(to right, var(--cor1), transparent); 
     margin-bottom: 2rem;
+    font-family: var(--font-android);
+    color: var(--cor5);
 }
 
 main p {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: var(--cor4);
     text-align: justify;
     text-indent: 2rem;
@@ -204,7 +203,7 @@ aside>ul {
     text-align: left;
 }
 
-button {
+.btn-voltar {
     background-color: var(--cor5);
     color: white;
     font-size: 1.5rem;
@@ -213,4 +212,23 @@ button {
     border-radius: 1rem;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 340px) and (max-width: 480px) {
+
+    header>p {
+        width: 80%;
+    }
+    
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+    }
+
+    aside ul {
+        columns: 2;
+    }
 }
