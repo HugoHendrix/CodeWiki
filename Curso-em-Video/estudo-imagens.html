@@ -9,22 +9,273 @@
     <title>CodeWiki</title>
 </head>
 
-<style>
-    div.quadrado {
-        display: inline-block;
-        border: 2px solid #000;
-        width: 300px;  
-        height: 300px;
-    }
 
-    
-</style>
 
 <body>
 
-    <div class="quadrado"></div>
-    <div class="quadrado"></div>
-    <div class="quadrado"></div>
+    <h1 id="documentação-imagens-de-fundo-em-css">Documentação: Imagens de Fundo em CSS</h1>
+    <h4 id="introdução">Anotações referente a <a href="curso-em-video-aulas-em-pdf/19.pdf" target="_blank" rel="noopener noreferrer">aula 19</a></h4>
+    <p>Imagens de fundo são elementos fundamentais no design de websites modernos, permitindo criar layouts atrativos e
+        imersivos. Quando aplicadas corretamente, podem transformar completamente a experiência visual do usuário,
+        adicionando profundidade e contexto ao conteúdo.</p>
+    <h2 id="propriedades-essenciais-para-imagens-de-fundo">Propriedades Essenciais para Imagens de Fundo</h2>
+    <h3 id="background-image"><code>background-image</code></h3>
+    <p>Define a imagem que será usada como fundo de um elemento.</p>
+    <p><strong>Sintaxe básica:</strong></p>
+    <pre><code class="language-css">background-image: url(&#39;caminho/para/imagem.jpg&#39;);
+</code></pre>
+    <p><strong>Exemplos:</strong></p>
+    <pre><code class="language-css">/* Imagem única */
+.elemento {
+  background-image: url(&#39;imagem.jpg&#39;);
+}
+
+/* Múltiplas imagens (sobrepostas) */
+.elemento-camadas {
+  background-image: url(&#39;primeira.png&#39;), url(&#39;segunda.png&#39;);
+}
+
+/* Gradientes como imagens */
+.gradiente {
+  background-image: linear-gradient(to right, #f6d365, #fda085);
+}
+</code></pre>
+    <p><strong>Observações importantes:</strong></p>
+    <ul>
+        <li>Use caminhos relativos ou URLs completas</li>
+        <li>Pode combinar múltiplas imagens (a primeira declarada fica no topo)</li>
+        <li>Suporta gradientes como imagens (linear, radial, conic)</li>
+    </ul>
+    <h3 id="background-size"><code>background-size</code></h3>
+    <p>Controla o dimensionamento da imagem de fundo dentro do elemento.</p>
+    <p><strong>Valores comuns:</strong></p>
+    <pre><code class="language-css">/* Tamanhos específicos (largura/altura) */
+background-size: 200px 100px;
+
+/* Cobrir todo o elemento, mantendo proporção */
+background-size: cover;
+
+/* Conter a imagem inteira, mantendo proporção */
+background-size: contain;
+
+/* Tamanho original da imagem */
+background-size: auto;
+</code></pre>
+    <p><strong>Quando usar cada opção:</strong></p>
+    <ul>
+        <li><code>cover</code>: Quando precisa garantir que o elemento esteja totalmente coberto, mesmo que partes da
+            imagem sejam cortadas</li>
+        <li><code>contain</code>: Quando precisa mostrar a imagem inteira, mesmo que sobrem espaços vazios</li>
+        <li>Dimensões específicas: Quando precisa de controle exato sobre o tamanho</li>
+    </ul>
+    <h3 id="background-position"><code>background-position</code></h3>
+    <p>Define a posição inicial da imagem dentro do elemento.</p>
+    <p><strong>Sintaxe:</strong></p>
+    <pre><code class="language-css">/* Palavras-chave */
+background-position: top right;
+
+/* Porcentagens (x% y%) */
+background-position: 25% 75%;
+
+/* Unidades (x y) */
+background-position: 10px 20px;
+</code></pre>
+    <p><strong>Posições comuns:</strong></p>
+    <ul>
+        <li><code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>, <code>center</code></li>
+        <li>Combinações como <code>top left</code>, <code>bottom right</code></li>
+        <li>Valores percentuais (0% 0% = topo esquerdo, 100% 100% = inferior direito)</li>
+    </ul>
+    <h3 id="background-attachment"><code>background-attachment</code></h3>
+    <p>Determina se a imagem de fundo rola junto com o conteúdo ou permanece fixa.</p>
+    <p><strong>Valores:</strong></p>
+    <pre><code class="language-css">/* Rola com o conteúdo (padrão) */
+background-attachment: scroll;
+
+/* Permanece fixo em relação à viewport */
+background-attachment: fixed;
+
+/* Fixo em relação ao elemento (não à viewport) */
+background-attachment: local;
+</code></pre>
+    <p><strong>Aplicações:</strong></p>
+    <ul>
+        <li><code>fixed</code>: Usado para criar efeito parallax</li>
+        <li><code>local</code>: Útil para conteúdo com rolagem interna</li>
+        <li><code>scroll</code>: Comportamento padrão e mais comum</li>
+    </ul>
+    <h3 id="background-shorthand"><code>background</code> (Shorthand)</h3>
+    <p>Permite definir todas as propriedades de fundo em uma única declaração.</p>
+    <p><strong>Sintaxe completa:</strong></p>
+    <pre><code class="language-css">background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [background-size];
+</code></pre>
+    <p><strong>Exemplo prático:</strong></p>
+    <pre><code class="language-css">.header {
+  background: #f5f5f5 url(&#39;header.jpg&#39;) no-repeat fixed center / cover;
+}
+</code></pre>
+    <p><strong>Ordem recomendada:</strong></p>
+    <ol>
+        <li>Cor (<code>background-color</code>)</li>
+        <li>Imagem (<code>background-image</code>)</li>
+        <li>Repetição (<code>background-repeat</code>)</li>
+        <li>Fixação (<code>background-attachment</code>)</li>
+        <li>Posição (<code>background-position</code>)</li>
+        <li>Tamanho (<code>background-size</code>) - após barra (/)</li>
+    </ol>
+    <h2 id="técnicas-avançadas">Técnicas Avançadas</h2>
+    <h3 id="efeito-parallax">Efeito Parallax</h3>
+    <p>O efeito parallax cria uma sensação de profundidade fazendo com que elementos de fundo movam-se em velocidades
+        diferentes durante a rolagem.</p>
+    <p><strong>Implementação básica:</strong></p>
+    <pre><code class="language-css">.parallax {
+  background-image: url(&#39;paisagem.jpg&#39;);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 500px; /* altura definida */
+}
+</code></pre>
+    <p><strong>Dicas para o efeito parallax:</strong></p>
+    <ul>
+        <li>Use imagens de alta qualidade para evitar pixelização</li>
+        <li>Certifique-se de que o conteúdo ainda seja legível sobre a imagem</li>
+        <li>Teste em dispositivos móveis (alguns têm problemas com <code>fixed</code>)</li>
+        <li>Considere desativar para dispositivos móveis via media queries</li>
+    </ul>
+    <h3 id="múltiplas-camadas-de-fundo">Múltiplas Camadas de Fundo</h3>
+    <p>Cria profundidade visual usando várias imagens sobrepostas.</p>
+    <pre><code class="language-css">.cena-profunda {
+  background-image: 
+    url(&#39;primeiro-plano.png&#39;),
+    url(&#39;meio.png&#39;),
+    url(&#39;fundo.png&#39;);
+  background-position: 
+    bottom center,
+    center center,
+    top center;
+  background-size: 
+    100% auto,
+    cover,
+    cover;
+  background-repeat: no-repeat;
+}
+</code></pre>
+    <h3 id="sobreposição-com-gradientes">Sobreposição com Gradientes</h3>
+    <p>Melhora a legibilidade de texto sobre imagens de fundo.</p>
+    <pre><code class="language-css">.texto-sobre-imagem {
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
+    url(&#39;imagem.jpg&#39;);
+  background-size: cover;
+  color: white;
+}
+</code></pre>
+    <h2 id="considerações-para-performance">Considerações para Performance</h2>
+    <ol>
+        <li>
+            <p><strong>Otimize suas imagens:</strong></p>
+            <ul>
+                <li>Comprima imagens (jpg para fotos, png para transparência, webp para melhor compressão)</li>
+                <li>Escolha dimensões apropriadas (não muito maiores que o necessário)</li>
+                <li>Considere versões diferentes para dispositivos móveis (via media queries)</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Técnicas de carregamento:</strong></p>
+            <ul>
+                <li>Pré-carregamento para imagens críticas:
+                    <code>&lt;link rel=&quot;preload&quot; href=&quot;background.jpg&quot; as=&quot;image&quot;&gt;</code>
+                </li>
+                <li>Lazy loading para imagens abaixo da dobra</li>
+                <li>Considere usar placeholders de baixa resolução durante o carregamento</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Acessibilidade:</strong></p>
+            <ul>
+                <li>Garanta contraste suficiente para leitura de texto</li>
+                <li>Não dependa apenas de imagens para transmitir informações importantes</li>
+                <li>Considere preferências de usuários para movimento reduzido</li>
+            </ul>
+        </li>
+    </ol>
+    <h2 id="compatibilidade-entre-navegadores">Compatibilidade entre Navegadores</h2>
+    <p>A maioria das propriedades de background tem boa compatibilidade com navegadores modernos, mas considere:</p>
+    <ul>
+        <li><code>background-size</code> pode precisar de prefixos para navegadores muito antigos</li>
+        <li>Efeitos parallax podem ter comportamentos diferentes em dispositivos móveis</li>
+        <li>Sempre teste em vários navegadores e dispositivos</li>
+    </ul>
+    <h2 id="exemplos-práticos-completos">Exemplos Práticos Completos</h2>
+    <h3 id="hero-section-com-imagem-de-fundo">Hero Section com Imagem de Fundo</h3>
+    <pre><code class="language-css">.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(&#39;hero.jpg&#39;);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+</code></pre>
+    <h3 id="cards-com-imagens-de-fundo">Cards com Imagens de Fundo</h3>
+    <pre><code class="language-css">.card {
+  width: 300px;
+  height: 200px;
+  background-image: url(&#39;card-bg.jpg&#39;);
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 20px;
+}
+</code></pre>
+    <h3 id="seção-com-efeito-parallax">Seção com Efeito Parallax</h3>
+    <pre><code class="language-css">.parallax-section {
+  background-image: url(&#39;paisagem.jpg&#39;);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parallax-content {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+}
+</code></pre>
+    <h2 id="conclusão">Conclusão</h2>
+    <p>O domínio das propriedades de imagem de fundo no CSS permite criar websites visualmente impactantes. Ao
+        compreender como cada propriedade funciona e como combiná-las efetivamente, você pode criar experiências
+        imersivas mantendo a performance e acessibilidade.</p>
+    <p>Lembre-se de sempre considerar:</p>
+    <ul>
+        <li>A relação entre conteúdo e fundo</li>
+        <li>A legibilidade do texto</li>
+        <li>O tempo de carregamento</li>
+        <li>A experiência em diferentes dispositivos</li>
+    </ul>
+    <p>Com prática e experimentação, você descobrirá combinações criativas para utilizar imagens de fundo em seus
+        projetos web.</p>   
 
     <footer class="p-1">
         <button class="accent">
