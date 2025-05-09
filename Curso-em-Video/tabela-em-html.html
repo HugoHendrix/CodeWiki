@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h1 id="a-história-e-o-uso-de-tabelas-em-html">A História e o Uso de Tabelas em HTML</h1>
+    <h2 id="a-era-do-layout-com-tabelas">A Era do Layout com Tabelas</h2>
+    <h3 id="como-era-no-início-da-web-anos-90---início-dos-2000">Como Era no Início da Web (Anos 90 - Início dos 2000)
+    </h3>
+    <p>Nos primórdios da web, antes do CSS se tornar amplamente adotado, as tabelas HTML eram a principal ferramenta
+        para criar layouts de página. Essa prática, hoje considerada ultrapassada, era a norma para qualquer site
+        profissional dos anos 90 e início dos anos 2000.</p>
+    <h4 id="técnicas-comuns-de-layout-com-tabelas">Técnicas Comuns de Layout com Tabelas:</h4>
+    <ol>
+        <li>
+            <p><strong>Estrutura Básica:</strong> Uma tabela principal gigante que continha todo o site</p>
+            <pre><code class="language-html">&lt;table width=&quot;100%&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+      &lt;tr&gt;
+        &lt;td colspan=&quot;3&quot; height=&quot;100&quot;&gt;&lt;!-- CABEÇALHO --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td width=&quot;200&quot;&gt;&lt;!-- MENU LATERAL --&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;!-- CONTEÚDO PRINCIPAL --&gt;&lt;/td&gt;
+        &lt;td width=&quot;150&quot;&gt;&lt;!-- BARRA LATERAL DIREITA --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td colspan=&quot;3&quot; height=&quot;50&quot;&gt;&lt;!-- RODAPÉ --&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+    </code></pre>
+        </li>
+        <li>
+            <p><strong>Tabelas Aninhadas:</strong> Tabelas dentro de tabelas para criar layouts complexos</p>
+            <pre><code class="language-html">&lt;table&gt;
+      &lt;tr&gt;
+        &lt;td&gt;
+          &lt;table&gt;&lt;!-- Menu de navegação --&gt;&lt;/table&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;table&gt;&lt;!-- Conteúdo principal --&gt;&lt;/table&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+    </code></pre>
+        </li>
+        <li>
+            <p><strong>Espaçadores Invisíveis:</strong> Uso de imagens transparentes de 1x1 pixel para controlar
+                espaçamento</p>
+            <pre><code class="language-html">&lt;td&gt;&lt;img src=&quot;transparent.gif&quot; width=&quot;10&quot; height=&quot;1&quot;&gt;&lt;/td&gt;
+    </code></pre>
+        </li>
+        <li>
+            <p><strong>Células com Altura/Largura Fixas:</strong> Para criar grids consistentes</p>
+            <pre><code class="language-html">&lt;table width=&quot;780&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+      &lt;tr&gt;
+        &lt;td width=&quot;150&quot; height=&quot;400&quot;&gt;Menu&lt;/td&gt;
+        &lt;td width=&quot;630&quot;&gt;Conteúdo&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+    </code></pre>
+        </li>
+    </ol>
+    <h3 id="problemas-do-layout-com-tabelas">Problemas do Layout com Tabelas</h3>
+    <ol>
+        <li><strong>Performance:</strong> Documentos HTML mais pesados e renderização mais lenta</li>
+        <li><strong>Manutenção:</strong> Código difícil de ler e atualizar</li>
+        <li><strong>Acessibilidade:</strong> Problemas graves para leitores de tela e tecnologias assistivas</li>
+        <li><strong>SEO:</strong> Estrutura semântica pobre que dificultava a indexação pelos mecanismos de busca</li>
+        <li><strong>Responsividade:</strong> Quase impossível criar designs que se adaptassem a diferentes tamanhos de
+            tela</li>
+        <li><strong>Carga Progressiva:</strong> As páginas só eram exibidas após a tabela inteira ser calculada</li>
+    </ol>
+    <h3 id="a-transição-para-css">A Transição para CSS</h3>
+    <p>A comunidade web gradualmente migrou para layouts baseados em CSS, principalmente com o advento de:</p>
+    <ul>
+        <li>CSS2 (1998) e suporte melhorado em navegadores</li>
+        <li>Técnicas de &quot;CSS Zen Garden&quot; (início dos anos 2000)</li>
+        <li>Layouts com <code>float</code> e posicionamento</li>
+        <li>Mais tarde, Flexbox (2012) e Grid CSS (2017)</li>
+    </ul>
+    <h2 id="tabelas-html-modernas-usadas-para-dados">Tabelas HTML Modernas: Usadas para Dados</h2>
+    <p>Hoje, as tabelas em HTML voltaram ao seu propósito original: apresentar dados tabulares de forma estruturada e
+        acessível.</p>
+    <h3 id="estrutura-semântica-completa">Estrutura Semântica Completa</h3>
+    <pre><code class="language-html">&lt;table&gt;
+      &lt;caption&gt;Título descritivo da tabela&lt;/caption&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th scope=&quot;col&quot;&gt;Cabeçalho 1&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;Cabeçalho 2&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Dado 1&lt;/td&gt;
+          &lt;td&gt;Dado 2&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+      &lt;tfoot&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Rodapé 1&lt;/td&gt;
+          &lt;td&gt;Rodapé 2&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tfoot&gt;
+    &lt;/table&gt;
+    </code></pre>
+    <h3 id="boas-práticas-modernas-para-tabelas">Boas Práticas Modernas para Tabelas</h3>
+    <h4 id="estrutura-semântica">Estrutura Semântica</h4>
+    <ul>
+        <li><strong><code>&lt;caption&gt;</code></strong>: Título descritivo que explica o conteúdo da tabela</li>
+        <li><strong><code>&lt;thead&gt;</code></strong>: Agrupa linhas de cabeçalho</li>
+        <li><strong><code>&lt;tbody&gt;</code></strong>: Contém os dados principais</li>
+        <li><strong><code>&lt;tfoot&gt;</code></strong>: Para resumos, totais ou informações de rodapé</li>
+        <li><strong><code>&lt;th scope=&quot;col|row&quot;&gt;</code></strong>: Identifica células como cabeçalhos de
+            coluna ou linha</li>
+    </ul>
+    <h4 id="acessibilidade-aprimorada">Acessibilidade Aprimorada</h4>
+    <pre><code class="language-html">&lt;table aria-describedby=&quot;table-desc&quot;&gt;
+      &lt;caption&gt;Vendas Trimestrais 2023&lt;/caption&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th scope=&quot;col&quot; id=&quot;quarter&quot;&gt;Trimestre&lt;/th&gt;
+          &lt;th scope=&quot;col&quot; id=&quot;sales&quot;&gt;Vendas ($)&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;th scope=&quot;row&quot; headers=&quot;quarter&quot;&gt;Q1&lt;/th&gt;
+          &lt;td headers=&quot;sales&quot;&gt;12,500&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+    &lt;p id=&quot;table-desc&quot;&gt;Resumo das vendas trimestrais da empresa em 2023.&lt;/p&gt;
+    </code></pre>
+    <h4 id="agrupamento-de-colunas">Agrupamento de Colunas</h4>
+    <pre><code class="language-html">&lt;table&gt;
+      &lt;colgroup&gt;
+        &lt;col span=&quot;1&quot; style=&quot;background-color: #f1f1f1&quot;&gt;
+        &lt;col span=&quot;2&quot; style=&quot;background-color: #e0f7fa&quot;&gt;
+        &lt;col span=&quot;1&quot; style=&quot;background-color: #e8eaf6&quot;&gt;
+      &lt;/colgroup&gt;
+      &lt;thead&gt;&lt;!-- cabeçalhos --&gt;&lt;/thead&gt;
+      &lt;tbody&gt;&lt;!-- dados --&gt;&lt;/tbody&gt;
+    &lt;/table&gt;
+    </code></pre>
+    <h2 id="estilização-moderna-de-tabelas-com-css">Estilização Moderna de Tabelas com CSS</h2>
+    <h3 id="efeito-zebrado-linhas-alternadas">Efeito Zebrado (Linhas Alternadas)</h3>
+    <pre><code class="language-css">/* Com CSS tradicional */
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    
+    /* Ou com pseudoclasses específicas */
+    tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    </code></pre>
+    <h3 id="cabeçalho-fixo-para-tabelas-grandes">Cabeçalho Fixo para Tabelas Grandes</h3>
+    <pre><code class="language-css">thead {
+      position: sticky;
+      top: 0;
+      background-color: #333;
+      color: white;
+      z-index: 1;
+    }
+    </code></pre>
+    <h3 id="bordas-modernas">Bordas Modernas</h3>
+    <pre><code class="language-css">table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      border-bottom: 1px solid #ddd;
+      padding: 12px 15px;
+      text-align: left;
+    }
+    
+    /* Bordas arredondadas na tabela */
+    table {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    </code></pre>
+    <h3 id="hover-effects">Hover Effects</h3>
+    <pre><code class="language-css">tbody tr:hover {
+      background-color: #f5f5f5;
+      transition: background-color 0.3s;
+    }
+    </code></pre>
+    <h3 id="tabelas-responsivas">Tabelas Responsivas</h3>
+    <pre><code class="language-css">/* Wrapper para rolagem horizontal em telas pequenas */
+    .table-container {
+      overflow-x: auto;
+      max-width: 100%;
+    }
+    
+    /* OU transformando tabela em cartões em telas pequenas */
+    @media screen and (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      
+      tr {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+      }
+      
+      td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+      }
+      
+      td:before {
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label);
+        font-weight: bold;
+      }
+    }
+    </code></pre>
+    <h2 id="mesclagem-de-células">Mesclagem de Células</h2>
+    <p>A mesclagem de células permite criar layouts mais complexos dentro das tabelas, combinando células adjacentes:
+    </p>
+    <h3 id="mesclagem-horizontal-colspan">Mesclagem Horizontal (colspan)</h3>
+    <pre><code class="language-html">&lt;tr&gt;
+      &lt;td colspan=&quot;3&quot;&gt;Esta célula ocupa 3 colunas&lt;/td&gt;
+    &lt;/tr&gt;
+    </code></pre>
+    <h3 id="mesclagem-vertical-rowspan">Mesclagem Vertical (rowspan)</h3>
+    <pre><code class="language-html">&lt;tr&gt;
+      &lt;td rowspan=&quot;2&quot;&gt;Esta célula ocupa 2 linhas&lt;/td&gt;
+      &lt;td&gt;Conteúdo normal&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Segunda linha&lt;/td&gt;
+    &lt;/tr&gt;
+    </code></pre>
+    <h2 id="exemplos-práticos-de-tabelas-modernas">Exemplos Práticos de Tabelas Modernas</h2>
+    <h3 id="tabela-financeira-com-cabeçalho-fixo-e-rodapé-de-totais">Tabela Financeira com Cabeçalho Fixo e Rodapé de
+        Totais</h3>
+    <pre><code class="language-html">&lt;div class=&quot;table-container&quot;&gt;
+      &lt;table class=&quot;financial-table&quot;&gt;
+        &lt;caption&gt;Relatório Financeiro Anual 2023&lt;/caption&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th scope=&quot;col&quot;&gt;Mês&lt;/th&gt;
+            &lt;th scope=&quot;col&quot;&gt;Receita&lt;/th&gt;
+            &lt;th scope=&quot;col&quot;&gt;Despesas&lt;/th&gt;
+            &lt;th scope=&quot;col&quot;&gt;Lucro&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;!-- Múltiplas linhas de dados --&gt;
+        &lt;/tbody&gt;
+        &lt;tfoot&gt;
+          &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;TOTAL&lt;/th&gt;
+            &lt;td&gt;$1,234,567&lt;/td&gt;
+            &lt;td&gt;$876,543&lt;/td&gt;
+            &lt;td&gt;$358,024&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tfoot&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+    </code></pre>
+    <pre><code class="language-css">.table-container {
+      max-height: 500px;
+      overflow-y: auto;
+      overflow-x: auto;
+    }
+    
+    .financial-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: Arial, sans-serif;
+    }
+    
+    .financial-table caption {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    
+    .financial-table th, 
+    .financial-table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #ddd;
+      text-align: right;
+    }
+    
+    .financial-table th:first-child,
+    .financial-table td:first-child {
+      text-align: left;
+    }
+    
+    .financial-table thead tr {
+      background-color: #1a237e;
+      color: white;
+      position: sticky;
+      top: 0;
+    }
+    
+    .financial-table tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    
+    .financial-table tfoot {
+      font-weight: bold;
+      background-color: #e8eaf6;
+    }
+    
+    .financial-table tbody tr:hover {
+      background-color: #e3f2fd;
+      cursor: pointer;
+    }
+    </code></pre>
+    <h2 id="conclusão">Conclusão</h2>
+    <p>A evolução das tabelas HTML reflete a história mais ampla do desenvolvimento web:</p>
+    <ol>
+        <li><strong>Anos 90 - Início 2000s</strong>: Tabelas eram usadas incorretamente para layouts de página inteiros
+        </li>
+        <li><strong>Meados dos 2000s</strong>: Transição para layouts CSS com tabelas retornando ao seu propósito
+            original</li>
+        <li><strong>Hoje</strong>: Tabelas semânticas, acessíveis e responsivas para apresentação de dados tabulares
+        </li>
+    </ol>
+    <p>As tabelas modernas destacam a importância de:</p>
+    <ul>
+        <li>Separação entre conteúdo (HTML) e apresentação (CSS)</li>
+        <li>Estrutura semântica e acessibilidade</li>
+        <li>Design responsivo para diversos dispositivos</li>
+        <li>Performance e manutenção do código</li>
+    </ul>
+    <p>Quando utilizadas corretamente para dados tabulares, as tabelas HTML continuam sendo uma ferramenta essencial
+        para desenvolvedores web, agora dentro de um ecossistema mais maduro e organizado.</p>
+
+    <hr>
+
+    <h1>As Akuma no Mi de One Piece</h1>
+    
+    <div class="table-container">
+        <table>
+            <caption>As Akuma no Mi mais legais de One Piece</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Akuma no Mi</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Habilidades</th>
+                    <th scope="col">Usuário Notável</th>
+                    <th scope="col">Curiosidades</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Akuma no Mi">Gomu Gomu no Mi</td>
+                    <td data-label="Tipo">Paramecia</td>
+                    <td data-label="Habilidades">Corpo elástico (como borracha)</td>
+                    <td data-label="Usuário Notável">Monkey D. Luffy</td>
+                    <td data-label="Curiosidades">Na verdade, é a <strong>Hito Hito no Mi, Modelo: Nika</strong> (Mítica Zoan)</td>
+                </tr>
+                <tr>
+                    <td data-label="Akuma no Mi">Mera Mera no Mi</td>
+                    <td data-label="Tipo">Logia</td>
+                    <td data-label="Habilidades">Criar e controlar fogo</td>
+                    <td data-label="Usuário Notável">Portgas D. Ace / Sabo</td>
+                    <td data-label="Curiosidades">Uma das Logias mais cobiçadas</td>
+                </tr>
+                <tr>
+                    <td data-label="Akuma no Mi">Ope Ope no Mi</td>
+                    <td data-label="Tipo">Paramecia</td>
+                    <td data-label="Habilidades">Criar "salas" para manipular espaço</td>
+                    <td data-label="Usuário Notável">Trafalgar Law</td>
+                    <td data-label="Curiosidades">Pode realizar a "Operação da Imortalidade"</td>
+                </tr>
+                <tr>
+                    <td data-label="Akuma no Mi">Gura Gura no Mi</td>
+                    <td data-label="Tipo">Paramecia</td>
+                    <td data-label="Habilidades">Criar terremotos e tsunamis</td>
+                    <td data-label="Usuário Notável">Barba Branca / Barba Negra</td>
+                    <td data-label="Curiosidades">Considerada a "Akuma no Mi mais forte"</td>
+                </tr>
+                <tr>
+                    <td data-label="Akuma no Mi">Yami Yami no Mi</td>
+                    <td data-label="Tipo">Logia</td>
+                    <td data-label="Habilidades">Controlar a escuridão e anular poderes</td>
+                    <td data-label="Usuário Notável">Marshall D. Teach</td>
+                    <td data-label="Curiosidades">Única Logia que não permite intangibilidade</td>
+                </tr>
+                <tr>
+                    <td data-label="Akuma no Mi">Pika Pika no Mi</td>
+                    <td data-label="Tipo">Logia</td>
+                    <td data-label="Habilidades">Transformar-se em luz e disparar lasers</td>
+                    <td data-label="Usuário Notável">Kizaru</td>
+                    <td data-label="Curiosidades">Uma das Logias mais rápidas</td>
+                </tr>
+                <tr>
+                    <td data-label="Akuma no Mi">Magu Magu no Mi</td>
+                    <td data-label="Tipo">Logia</td>
+                    <td data-label="Habilidades">Criar e controlar magma</td>
+                    <td data-label="Usuário Notável">Akainu</td>
+                    <td data-label="Curiosidades">Extremamente ofensiva e letal</td>
+                </tr>
+                <tr>
+                    <td data-label="Akuma no Mi">Hobi Hobi no Mi</td>
+                    <td data-label="Tipo">Paramecia</td>
+                    <td data-label="Habilidades">Apagar memórias e transformar pessoas em brinquedos</td>
+                    <td data-label="Usuário Notável">Sugar</td>
+                    <td data-label="Curiosidades">Efeitos permanentes assustadores</td>
+                </tr>
+                <tr>
+                    <td data-label="Akuma no Mi">Soru Soru no Mi</td>
+                    <td data-label="Tipo">Paramecia</td>
+                    <td data-label="Habilidades">Manipular almas e criar homies</td>
+                    <td data-label="Usuário Notável">Big Mom</td>
+                    <td data-label="Curiosidades">Pode roubar anos de vida de pessoas</td>
+                </tr>
+                <tr>
+                    <td data-label="Akuma no Mi">Tori Tori no Mi, Modelo: Fênix</td>
+                    <td data-label="Tipo">Zoan Mítica</td>
+                    <td data-label="Habilidades">Transformar-se em fênix (cura e chamas azuis)</td>
+                    <td data-label="Usuário Notável">Marco</td>
+                    <td data-label="Curiosidades">Uma das poucas Zoans Míticas</td>
+                </tr>
+                <tr>
+                    <td data-label="Akuma no Mi">Uo Uo no Mi, Modelo: Seiryu</td>
+                    <td data-label="Tipo">Zoan Mítica</td>
+                    <td data-label="Habilidades">Transformar-se em um dragão azul</td>
+                    <td data-label="Usuário Notável">Kaido</td>
+                    <td data-label="Curiosidades">Uma das Akumas no Mi mais poderosas</td>
+                </tr>
+                <tr>
+                    <td data-label="Akuma no Mi">Zushi Zushi no Mi</td>
+                    <td data-label="Tipo">Paramecia</td>
+                    <td data-label="Habilidades">Controlar a gravidade</td>
+                    <td data-label="Usuário Notável">Fujitora</td>
+                    <td data-label="Curiosidades">Pode atrair meteoros do espaço</td>
+                </tr>
+                <tr>
+                    <td data-label="Akuma no Mi">Bari Bari no Mi</td>
+                    <td data-label="Tipo">Paramecia</td>
+                    <td data-label="Habilidades">Criar barreiras indestrutíveis</td>
+                    <td data-label="Usuário Notável">Bartolomeo</td>
+                    <td data-label="Curiosidades">Habilidade defensiva única</td>
+                </tr>
+                <tr>
+                    <td data-label="Akuma no Mi">Mochi Mochi no Mi</td>
+                    <td data-label="Tipo">Paramecia</td>
+                    <td data-label="Habilidades">Criar e controlar mochi (massas pegajosas)</td>
+                    <td data-label="Usuário Notável">Katakuri</td>
+                    <td data-label="Curiosidades">Combina com Haki do Futuro</td>
+                </tr>
+                <tr>
+                    <td data-label="Akuma no Mi">Inu Inu no Mi, Modelo: Okuchi no Makami</td>
+                    <td data-label="Tipo">Zoan Mítica</td>
+                    <td data-label="Habilidades">Transformar-se em um lobo divino</td>
+                    <td data-label="Usuário Notável">Yamato</td>
+                    <td data-label="Curiosidades">Protetora de Wano</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="info-section">
+        <h2>Tipos de Akuma no Mi</h2>
+        <ul>
+            <li><strong>Paramecia:</strong> Concede habilidades sobrenaturais ao usuário</li>
+            <li><strong>Logia:</strong> Permite que o usuário se transforme em um elemento natural</li>
+            <li><strong>Zoan:</strong> Dá ao usuário o poder de transformar-se em um animal</li>
+            <li><strong>Zoan Mítica:</strong> Um tipo raro de Zoan que permite transformação em criaturas mitológicas</li>
+        </ul>
+    </div>
+
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./cursohtml.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
