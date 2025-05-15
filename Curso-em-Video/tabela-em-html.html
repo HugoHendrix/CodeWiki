@@ -10,355 +10,436 @@
 </head>
 
 <body>
-    <h1 id="a-história-e-o-uso-de-tabelas-em-html">A História e o Uso de Tabelas em HTML</h1>
-    <h2 id="a-era-do-layout-com-tabelas">A Era do Layout com Tabelas</h2>
-    <h3 id="como-era-no-início-da-web-anos-90---início-dos-2000">Como Era no Início da Web (Anos 90 - Início dos 2000)
-    </h3>
-    <p>Nos primórdios da web, antes do CSS se tornar amplamente adotado, as tabelas HTML eram a principal ferramenta
-        para criar layouts de página. Essa prática, hoje considerada ultrapassada, era a norma para qualquer site
-        profissional dos anos 90 e início dos anos 2000.</p>
-    <h4 id="técnicas-comuns-de-layout-com-tabelas">Técnicas Comuns de Layout com Tabelas:</h4>
+
+    <h2 id="documentação-tabelas-em-html">Documentação: Tabelas em HTML</h2>
+    <h3 id="introdução-o-papel-das-tabelas-na-web">Introdução: O Papel das Tabelas na Web</h3>
+    <p>No desenvolvimento web, as tabelas HTML (elemento <code>&lt;table&gt;</code>) têm um propósito fundamental:
+        <strong>apresentar dados tabulares</strong>. Isso significa organizar informações em linhas e colunas, de forma
+        que a relação entre elas fique clara e fácil de entender. Pense em planilhas, calendários, listagens
+        comparativas – esses são exemplos perfeitos de dados tabulares.</p>
+    <h3 id="uma-breve-viagem-no-tempo-sites-construídos-com-tabelas-layouts-tabulares">Uma Breve Viagem no Tempo: Sites
+        Construídos com Tabelas (Layouts Tabulares)</h3>
+    <p>No início da web (anos 90 e início dos 2000), antes da popularização e robustez do CSS (Cascading Style Sheets),
+        os desenvolvedores enfrentavam um desafio: como organizar o layout de uma página? A solução que encontraram, na
+        época, foi usar tabelas HTML para criar a estrutura visual dos sites.</p>
+    <p>Imagine &quot;encaixar&quot; o cabeçalho, o menu lateral, o conteúdo principal e o rodapé de um site dentro de
+        células de uma grande tabela invisível. Era comum criar tabelas aninhadas (tabelas dentro de tabelas) para
+        conseguir o design desejado.</p>
+    <p><strong>Desvantagens dessa abordagem:</strong></p>
     <ol>
-        <li>
-            <p><strong>Estrutura Básica:</strong> Uma tabela principal gigante que continha todo o site</p>
-            <pre><code class="language-html">&lt;table width=&quot;100%&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
-      &lt;tr&gt;
-        &lt;td colspan=&quot;3&quot; height=&quot;100&quot;&gt;&lt;!-- CABEÇALHO --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td width=&quot;200&quot;&gt;&lt;!-- MENU LATERAL --&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;!-- CONTEÚDO PRINCIPAL --&gt;&lt;/td&gt;
-        &lt;td width=&quot;150&quot;&gt;&lt;!-- BARRA LATERAL DIREITA --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td colspan=&quot;3&quot; height=&quot;50&quot;&gt;&lt;!-- RODAPÉ --&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/table&gt;
-    </code></pre>
-        </li>
-        <li>
-            <p><strong>Tabelas Aninhadas:</strong> Tabelas dentro de tabelas para criar layouts complexos</p>
-            <pre><code class="language-html">&lt;table&gt;
-      &lt;tr&gt;
-        &lt;td&gt;
-          &lt;table&gt;&lt;!-- Menu de navegação --&gt;&lt;/table&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;table&gt;&lt;!-- Conteúdo principal --&gt;&lt;/table&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/table&gt;
-    </code></pre>
-        </li>
-        <li>
-            <p><strong>Espaçadores Invisíveis:</strong> Uso de imagens transparentes de 1x1 pixel para controlar
-                espaçamento</p>
-            <pre><code class="language-html">&lt;td&gt;&lt;img src=&quot;transparent.gif&quot; width=&quot;10&quot; height=&quot;1&quot;&gt;&lt;/td&gt;
-    </code></pre>
-        </li>
-        <li>
-            <p><strong>Células com Altura/Largura Fixas:</strong> Para criar grids consistentes</p>
-            <pre><code class="language-html">&lt;table width=&quot;780&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
-      &lt;tr&gt;
-        &lt;td width=&quot;150&quot; height=&quot;400&quot;&gt;Menu&lt;/td&gt;
-        &lt;td width=&quot;630&quot;&gt;Conteúdo&lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/table&gt;
-    </code></pre>
-        </li>
+        <li><strong>Semântica Incorreta:</strong> Tabelas eram usadas para layout, não para dados tabulares, o que
+            confundia a &quot;leitura&quot; da página por mecanismos de busca e tecnologias assistivas (leitores de tela
+            para deficientes visuais).</li>
+        <li><strong>Código Complexo e Pesado:</strong> A marcação HTML ficava inflada com muitas tags de tabela,
+            dificultando a manutenção e tornando o carregamento da página mais lento.</li>
+        <li><strong>Falta de Flexibilidade:</strong> Alterar o layout era um pesadelo, pois exigia reestruturar toda a
+            tabela.</li>
+        <li><strong>Problemas de Acessibilidade:</strong> Leitores de tela tentavam interpretar o layout como dados,
+            tornando a navegação confusa para usuários com deficiência visual.</li>
+        <li><strong>Não Responsivo:</strong> Adaptar esses layouts para diferentes tamanhos de tela (como celulares) era
+            extremamente difícil, pois as tabelas têm uma estrutura rígida.</li>
     </ol>
-    <h3 id="problemas-do-layout-com-tabelas">Problemas do Layout com Tabelas</h3>
-    <ol>
-        <li><strong>Performance:</strong> Documentos HTML mais pesados e renderização mais lenta</li>
-        <li><strong>Manutenção:</strong> Código difícil de ler e atualizar</li>
-        <li><strong>Acessibilidade:</strong> Problemas graves para leitores de tela e tecnologias assistivas</li>
-        <li><strong>SEO:</strong> Estrutura semântica pobre que dificultava a indexação pelos mecanismos de busca</li>
-        <li><strong>Responsividade:</strong> Quase impossível criar designs que se adaptassem a diferentes tamanhos de
-            tela</li>
-        <li><strong>Carga Progressiva:</strong> As páginas só eram exibidas após a tabela inteira ser calculada</li>
-    </ol>
-    <h3 id="a-transição-para-css">A Transição para CSS</h3>
-    <p>A comunidade web gradualmente migrou para layouts baseados em CSS, principalmente com o advento de:</p>
+    <p>Com a evolução do CSS, especialmente com módulos como Flexbox e Grid Layout, a prática de usar tabelas para
+        layout foi abandonada em favor de métodos mais semânticos, flexíveis e eficientes. <strong>Hoje, tabelas devem
+            ser usadas exclusivamente para exibir dados tabulares.</strong></p>
+    <h3 id="html5-e-a-evolução-semântica-das-tabelas">HTML5 e a Evolução Semântica das Tabelas</h3>
+    <p>O HTML5 reforçou o uso semântico das tabelas e introduziu (ou padronizou) elementos que ajudam a criar estruturas
+        mais organizadas, acessíveis e fáceis de estilizar. O objetivo é que as tabelas sejam não apenas visualmente
+        claras, mas também compreensíveis por máquinas e tecnologias assistivas.</p>
+    <h3 id="hierarquia-fundamental-de-uma-tabela-html">Hierarquia Fundamental de uma Tabela HTML</h3>
+    <p>Para construir uma tabela em HTML, você utilizará um conjunto específico de tags que definem sua estrutura:</p>
     <ul>
-        <li>CSS2 (1998) e suporte melhorado em navegadores</li>
-        <li>Técnicas de &quot;CSS Zen Garden&quot; (início dos anos 2000)</li>
-        <li>Layouts com <code>float</code> e posicionamento</li>
-        <li>Mais tarde, Flexbox (2012) e Grid CSS (2017)</li>
+        <li><strong><code>&lt;table&gt;</code></strong>: O elemento raiz que define o início e o fim da tabela.<ul>
+                <li>
+                    <p><strong><code>&lt;caption&gt;</code></strong>: (Legenda da Tabela) Fornece um título ou descrição
+                        para a tabela. É importante para a acessibilidade e contexto, aparecendo geralmente acima ou
+                        abaixo da tabela. Ajuda os usuários a entenderem o propósito da tabela rapidamente.</p>
+                    <ul>
+                        <li><em>Exemplo no seu código:</em>
+                            <code>&lt;caption&gt;as Akuma no mi mais legais de One Piece&lt;/caption&gt;</code></li>
+                    </ul>
+                </li>
+                <li>
+                    <p><strong><code>&lt;thead&gt;</code></strong>: (Cabeçalho da Tabela) Agrupa o conteúdo do cabeçalho
+                        da tabela. Geralmente contém uma ou mais linhas (<code>&lt;tr&gt;</code>) com as células de
+                        cabeçalho (<code>&lt;th&gt;</code>). Ajuda a identificar as colunas.</p>
+                    <ul>
+                        <li>
+                            <p><em>Exemplo no seu código:</em> O bloco que envolve a primeira linha com os títulos
+                                &quot;Akuma no Mi&quot;, &quot;Tipo&quot;, etc.</p>
+                        </li>
+                        <li>
+                            <p><strong><code>&lt;tr&gt;</code></strong>: (Linha da Tabela - Table Row) Define uma linha
+                                dentro da tabela.</p>
+                        </li>
+                        <li>
+                            <p><strong><code>&lt;th&gt;</code></strong>: (Célula de Cabeçalho - Table Header) Define uma
+                                célula que funciona como título para uma coluna ou, às vezes, para uma linha. O texto
+                                dentro de um <code>&lt;th&gt;</code> é geralmente exibido em negrito e centralizado por
+                                padrão pelos navegadores.</p>
+                            <ul>
+                                <li><strong>Atributo <code>scope</code></strong>: Essencial para acessibilidade. Indica
+                                    se o cabeçalho se aplica a uma coluna (<code>scope=&quot;col&quot;</code>), a uma
+                                    linha (<code>scope=&quot;row&quot;</code>), a um grupo de colunas
+                                    (<code>scope=&quot;colgroup&quot;</code>) ou a um grupo de linhas
+                                    (<code>scope=&quot;rowgroup&quot;</code>). Isso ajuda leitores de tela a associarem
+                                    corretamente as células de dados aos seus respectivos cabeçalhos.<ul>
+                                        <li><em>Exemplo no seu código:</em>
+                                            <code>&lt;th scope=&quot;col&quot;&gt;&lt;strong&gt;Akuma no Mi&lt;/strong&gt;&lt;/th&gt;</code>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p><strong><code>&lt;tbody&gt;</code></strong>: (Corpo da Tabela) Agrupa o conteúdo principal (os
+                        dados) da tabela. Contém uma ou mais linhas (<code>&lt;tr&gt;</code>) com as células de dados
+                        (<code>&lt;td&gt;</code>).</p>
+                    <ul>
+                        <li>
+                            <p><em>Exemplo no seu código:</em> O bloco que envolve todas as linhas com as informações
+                                das Akuma no Mi.</p>
+                        </li>
+                        <li>
+                            <p><strong><code>&lt;tr&gt;</code></strong>: (Linha da Tabela - Table Row) Define uma linha
+                                de dados.</p>
+                        </li>
+                        <li>
+                            <p><strong><code>&lt;td&gt;</code></strong>: (Célula de Dados - Table Data) Define uma
+                                célula padrão contendo os dados da tabela.</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p><strong><code>&lt;tfoot&gt;</code></strong>: (Rodapé da Tabela) Agrupa o conteúdo do rodapé da
+                        tabela. Pode ser usado para exibir somas, médias ou outras informações resumidas sobre as
+                        colunas. É opcional.</p>
+                    <ul>
+                        <li>Embora <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, e <code>&lt;tfoot&gt;</code>
+                            sejam opcionais em termos de validação HTML (o navegador pode inferi-los), usá-los
+                            explicitamente é uma boa prática para clareza estrutural e permite que os navegadores, por
+                            exemplo, repitam o cabeçalho e o rodapé em páginas impressas longas ou mantenham o cabeçalho
+                            visível ao rolar tabelas grandes.</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
     </ul>
-    <h2 id="tabelas-html-modernas-usadas-para-dados">Tabelas HTML Modernas: Usadas para Dados</h2>
-    <p>Hoje, as tabelas em HTML voltaram ao seu propósito original: apresentar dados tabulares de forma estruturada e
-        acessível.</p>
-    <h3 id="estrutura-semântica-completa">Estrutura Semântica Completa</h3>
+    <p><strong>Estrutura básica visual:</strong></p>
     <pre><code class="language-html">&lt;table&gt;
-      &lt;caption&gt;Título descritivo da tabela&lt;/caption&gt;
-      &lt;thead&gt;
-        &lt;tr&gt;
-          &lt;th scope=&quot;col&quot;&gt;Cabeçalho 1&lt;/th&gt;
-          &lt;th scope=&quot;col&quot;&gt;Cabeçalho 2&lt;/th&gt;
-        &lt;/tr&gt;
-      &lt;/thead&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;Dado 1&lt;/td&gt;
-          &lt;td&gt;Dado 2&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-      &lt;tfoot&gt;
-        &lt;tr&gt;
-          &lt;td&gt;Rodapé 1&lt;/td&gt;
-          &lt;td&gt;Rodapé 2&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tfoot&gt;
-    &lt;/table&gt;
-    </code></pre>
-    <h3 id="boas-práticas-modernas-para-tabelas">Boas Práticas Modernas para Tabelas</h3>
-    <h4 id="estrutura-semântica">Estrutura Semântica</h4>
-    <ul>
-        <li><strong><code>&lt;caption&gt;</code></strong>: Título descritivo que explica o conteúdo da tabela</li>
-        <li><strong><code>&lt;thead&gt;</code></strong>: Agrupa linhas de cabeçalho</li>
-        <li><strong><code>&lt;tbody&gt;</code></strong>: Contém os dados principais</li>
-        <li><strong><code>&lt;tfoot&gt;</code></strong>: Para resumos, totais ou informações de rodapé</li>
-        <li><strong><code>&lt;th scope=&quot;col|row&quot;&gt;</code></strong>: Identifica células como cabeçalhos de
-            coluna ou linha</li>
-    </ul>
-    <h4 id="acessibilidade-aprimorada">Acessibilidade Aprimorada</h4>
-    <pre><code class="language-html">&lt;table aria-describedby=&quot;table-desc&quot;&gt;
-      &lt;caption&gt;Vendas Trimestrais 2023&lt;/caption&gt;
-      &lt;thead&gt;
-        &lt;tr&gt;
-          &lt;th scope=&quot;col&quot; id=&quot;quarter&quot;&gt;Trimestre&lt;/th&gt;
-          &lt;th scope=&quot;col&quot; id=&quot;sales&quot;&gt;Vendas ($)&lt;/th&gt;
-        &lt;/tr&gt;
-      &lt;/thead&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;th scope=&quot;row&quot; headers=&quot;quarter&quot;&gt;Q1&lt;/th&gt;
-          &lt;td headers=&quot;sales&quot;&gt;12,500&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-    &lt;p id=&quot;table-desc&quot;&gt;Resumo das vendas trimestrais da empresa em 2023.&lt;/p&gt;
-    </code></pre>
-    <h4 id="agrupamento-de-colunas">Agrupamento de Colunas</h4>
-    <pre><code class="language-html">&lt;table&gt;
-      &lt;colgroup&gt;
-        &lt;col span=&quot;1&quot; style=&quot;background-color: #f1f1f1&quot;&gt;
-        &lt;col span=&quot;2&quot; style=&quot;background-color: #e0f7fa&quot;&gt;
-        &lt;col span=&quot;1&quot; style=&quot;background-color: #e8eaf6&quot;&gt;
-      &lt;/colgroup&gt;
-      &lt;thead&gt;&lt;!-- cabeçalhos --&gt;&lt;/thead&gt;
-      &lt;tbody&gt;&lt;!-- dados --&gt;&lt;/tbody&gt;
-    &lt;/table&gt;
-    </code></pre>
-    <h2 id="estilização-moderna-de-tabelas-com-css">Estilização Moderna de Tabelas com CSS</h2>
-    <h3 id="efeito-zebrado-linhas-alternadas">Efeito Zebrado (Linhas Alternadas)</h3>
-    <pre><code class="language-css">/* Com CSS tradicional */
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-    
-    /* Ou com pseudoclasses específicas */
-    tr:nth-child(odd) {
-      background-color: #ffffff;
-    }
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-    </code></pre>
-    <h3 id="cabeçalho-fixo-para-tabelas-grandes">Cabeçalho Fixo para Tabelas Grandes</h3>
-    <pre><code class="language-css">thead {
-      position: sticky;
-      top: 0;
-      background-color: #333;
-      color: white;
-      z-index: 1;
-    }
-    </code></pre>
-    <h3 id="bordas-modernas">Bordas Modernas</h3>
-    <pre><code class="language-css">table {
-      border-collapse: collapse;
-      width: 100%;
-    }
-    
-    th, td {
-      border-bottom: 1px solid #ddd;
-      padding: 12px 15px;
-      text-align: left;
-    }
-    
-    /* Bordas arredondadas na tabela */
-    table {
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    </code></pre>
-    <h3 id="hover-effects">Hover Effects</h3>
-    <pre><code class="language-css">tbody tr:hover {
-      background-color: #f5f5f5;
-      transition: background-color 0.3s;
-    }
-    </code></pre>
-    <h3 id="tabelas-responsivas">Tabelas Responsivas</h3>
-    <pre><code class="language-css">/* Wrapper para rolagem horizontal em telas pequenas */
-    .table-container {
-      overflow-x: auto;
-      max-width: 100%;
-    }
-    
-    /* OU transformando tabela em cartões em telas pequenas */
-    @media screen and (max-width: 600px) {
-      table, thead, tbody, th, td, tr {
-        display: block;
-      }
-      
-      thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-      }
-      
-      tr {
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-      }
-      
-      td {
-        border: none;
-        position: relative;
-        padding-left: 50%;
-      }
-      
-      td:before {
-        position: absolute;
-        left: 6px;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-        content: attr(data-label);
-        font-weight: bold;
-      }
-    }
-    </code></pre>
-    <h2 id="mesclagem-de-células">Mesclagem de Células</h2>
-    <p>A mesclagem de células permite criar layouts mais complexos dentro das tabelas, combinando células adjacentes:
-    </p>
-    <h3 id="mesclagem-horizontal-colspan">Mesclagem Horizontal (colspan)</h3>
-    <pre><code class="language-html">&lt;tr&gt;
-      &lt;td colspan=&quot;3&quot;&gt;Esta célula ocupa 3 colunas&lt;/td&gt;
-    &lt;/tr&gt;
-    </code></pre>
-    <h3 id="mesclagem-vertical-rowspan">Mesclagem Vertical (rowspan)</h3>
-    <pre><code class="language-html">&lt;tr&gt;
-      &lt;td rowspan=&quot;2&quot;&gt;Esta célula ocupa 2 linhas&lt;/td&gt;
-      &lt;td&gt;Conteúdo normal&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Segunda linha&lt;/td&gt;
-    &lt;/tr&gt;
-    </code></pre>
-    <h2 id="exemplos-práticos-de-tabelas-modernas">Exemplos Práticos de Tabelas Modernas</h2>
-    <h3 id="tabela-financeira-com-cabeçalho-fixo-e-rodapé-de-totais">Tabela Financeira com Cabeçalho Fixo e Rodapé de
-        Totais</h3>
-    <pre><code class="language-html">&lt;div class=&quot;table-container&quot;&gt;
-      &lt;table class=&quot;financial-table&quot;&gt;
-        &lt;caption&gt;Relatório Financeiro Anual 2023&lt;/caption&gt;
+        &lt;caption&gt;Título da Tabela&lt;/caption&gt;
         &lt;thead&gt;
-          &lt;tr&gt;
-            &lt;th scope=&quot;col&quot;&gt;Mês&lt;/th&gt;
-            &lt;th scope=&quot;col&quot;&gt;Receita&lt;/th&gt;
-            &lt;th scope=&quot;col&quot;&gt;Despesas&lt;/th&gt;
-            &lt;th scope=&quot;col&quot;&gt;Lucro&lt;/th&gt;
-          &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;th scope=&quot;col&quot;&gt;Cabeçalho Coluna 1&lt;/th&gt;
+                &lt;th scope=&quot;col&quot;&gt;Cabeçalho Coluna 2&lt;/th&gt;
+            &lt;/tr&gt;
         &lt;/thead&gt;
         &lt;tbody&gt;
-          &lt;!-- Múltiplas linhas de dados --&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Dado Linha 1, Coluna 1&lt;/td&gt;
+                &lt;td&gt;Dado Linha 1, Coluna 2&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Dado Linha 2, Coluna 1&lt;/td&gt;
+                &lt;td&gt;Dado Linha 2, Coluna 2&lt;/td&gt;
+            &lt;/tr&gt;
         &lt;/tbody&gt;
         &lt;tfoot&gt;
-          &lt;tr&gt;
-            &lt;th scope=&quot;row&quot;&gt;TOTAL&lt;/th&gt;
-            &lt;td&gt;$1,234,567&lt;/td&gt;
-            &lt;td&gt;$876,543&lt;/td&gt;
-            &lt;td&gt;$358,024&lt;/td&gt;
-          &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Rodapé Coluna 1&lt;/td&gt;
+                &lt;td&gt;Rodapé Coluna 2&lt;/td&gt;
+            &lt;/tr&gt;
         &lt;/tfoot&gt;
-      &lt;/table&gt;
-    &lt;/div&gt;
+    &lt;/table&gt;
     </code></pre>
-    <pre><code class="language-css">.table-container {
-      max-height: 500px;
-      overflow-y: auto;
-      overflow-x: auto;
-    }
-    
-    .financial-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-family: Arial, sans-serif;
-    }
-    
-    .financial-table caption {
-      font-size: 1.5em;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-    
-    .financial-table th, 
-    .financial-table td {
-      padding: 12px 15px;
-      border-bottom: 1px solid #ddd;
-      text-align: right;
-    }
-    
-    .financial-table th:first-child,
-    .financial-table td:first-child {
-      text-align: left;
-    }
-    
-    .financial-table thead tr {
-      background-color: #1a237e;
-      color: white;
-      position: sticky;
-      top: 0;
-    }
-    
-    .financial-table tbody tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-    
-    .financial-table tfoot {
-      font-weight: bold;
-      background-color: #e8eaf6;
-    }
-    
-    .financial-table tbody tr:hover {
-      background-color: #e3f2fd;
-      cursor: pointer;
-    }
-    </code></pre>
-    <h2 id="conclusão">Conclusão</h2>
-    <p>A evolução das tabelas HTML reflete a história mais ampla do desenvolvimento web:</p>
+    <h3 id="trabalhando-com-tabelas-grandes-e-melhorando-a-semântica">Trabalhando com Tabelas Grandes e Melhorando a
+        Semântica</h3>
     <ol>
-        <li><strong>Anos 90 - Início 2000s</strong>: Tabelas eram usadas incorretamente para layouts de página inteiros
+        <li>
+            <p><strong><code>&lt;caption&gt;</code> e Escopo de Títulos (<code>scope</code>)</strong>:</p>
+            <ul>
+                <li>Como já mencionado, <code>&lt;caption&gt;</code> dá um título geral à tabela.</li>
+                <li>O atributo <code>scope</code> em <code>&lt;th&gt;</code> (<code>scope=&quot;col&quot;</code> para
+                    cabeçalhos de coluna, <code>scope=&quot;row&quot;</code> para cabeçalhos de linha) é crucial para
+                    que tecnologias assistivas entendam a relação entre os dados e seus títulos.</li>
+            </ul>
         </li>
-        <li><strong>Meados dos 2000s</strong>: Transição para layouts CSS com tabelas retornando ao seu propósito
-            original</li>
-        <li><strong>Hoje</strong>: Tabelas semânticas, acessíveis e responsivas para apresentação de dados tabulares
+        <li>
+            <p><strong>Mesclagem de Células (<code>colspan</code> e <code>rowspan</code>)</strong>:</p>
+            <ul>
+                <li>Às vezes, uma célula precisa ocupar o espaço de múltiplas colunas ou múltiplas linhas.</li>
+                <li><strong><code>colspan=&quot;numero&quot;</code></strong>: Faz uma célula (<code>&lt;th&gt;</code> ou
+                    <code>&lt;td&gt;</code>) se expandir para ocupar <code>numero</code> colunas.
+                    <pre><code class="language-html">&lt;tr&gt;
+        &lt;td colspan=&quot;2&quot;&gt;Esta célula ocupa duas colunas&lt;/td&gt;
+    &lt;/tr&gt;
+    </code></pre>
+                </li>
+                <li><strong><code>rowspan=&quot;numero&quot;</code></strong>: Faz uma célula (<code>&lt;th&gt;</code> ou
+                    <code>&lt;td&gt;</code>) se expandir para ocupar <code>numero</code> linhas.
+                    <pre><code class="language-html">&lt;tr&gt;
+        &lt;td rowspan=&quot;2&quot;&gt;Esta célula ocupa duas linhas&lt;/td&gt;
+        &lt;td&gt;Outra célula&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Mais uma célula&lt;/td&gt;
+    &lt;/tr&gt;
+    </code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Agrupando Colunas com <code>&lt;colgroup&gt;</code> e <code>&lt;col&gt;</code></strong>:</p>
+            <ul>
+                <li>Os elementos <code>&lt;colgroup&gt;</code> e <code>&lt;col&gt;</code> permitem agrupar colunas para
+                    aplicar estilos ou atributos a colunas inteiras de uma vez.</li>
+                <li><code>&lt;colgroup&gt;</code> deve ser filho direto de <code>&lt;table&gt;</code>, posicionado após
+                    <code>&lt;caption&gt;</code> e antes de <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>,
+                    <code>&lt;tfoot&gt;</code>.</li>
+                <li><code>&lt;col&gt;</code> é um elemento vazio (não tem conteúdo) e pode ser usado dentro de
+                    <code>&lt;colgroup&gt;</code> ou diretamente dentro de <code>&lt;table&gt;</code>.</li>
+                <li>O atributo <code>span</code> em <code>&lt;col&gt;</code> pode indicar que ele se aplica a múltiplas
+                    colunas.
+                    <pre><code class="language-html">&lt;table&gt;
+        &lt;caption&gt;Exemplo com colgroup&lt;/caption&gt;
+        &lt;colgroup&gt;
+            &lt;col style=&quot;background-color: #f0f0f0;&quot;&gt; &lt;col span=&quot;2&quot; style=&quot;background-color: #e0e0e0;&quot;&gt; &lt;/colgroup&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Nome&lt;/th&gt;
+                &lt;th&gt;Idade&lt;/th&gt;
+                &lt;th&gt;Cidade&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Ana&lt;/td&gt;
+                &lt;td&gt;30&lt;/td&gt;
+                &lt;td&gt;São Paulo&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+    </code></pre>
+                </li>
+                <li>Embora útil para aplicar estilos diretamente via HTML (que não é a melhor prática), o
+                    <code>&lt;colgroup&gt;</code> é mais usado como um seletor CSS para estilizar colunas.</li>
+            </ul>
         </li>
     </ol>
-    <p>As tabelas modernas destacam a importância de:</p>
+    <h3 id="estilização-de-tabelas-com-css">Estilização de Tabelas com CSS</h3>
+    <p>A aparência das tabelas (cores, bordas, espaçamento, alinhamento) deve ser controlada predominantemente com CSS,
+        e não com atributos HTML (muitos dos quais estão obsoletos, como <code>align</code>, <code>bgcolor</code>,
+        <code>border</code> em <code>&lt;table&gt;</code>).</p>
+    <ol>
+        <li>
+            <p><strong>Estilização Básica</strong>:</p>
+            <ul>
+                <li><strong>Bordas</strong>: <code>border</code>, <code>border-collapse</code> (muito útil:
+                    <code>border-collapse: collapse;</code> para unir as bordas das células).</li>
+                <li><strong>Espaçamento</strong>: <code>padding</code> dentro das células (<code>&lt;th&gt;</code>,
+                    <code>&lt;td&gt;</code>), <code>border-spacing</code> na tabela (se <code>border-collapse</code> não
+                    for <code>collapse</code>).</li>
+                <li><strong>Largura</strong>: <code>width</code> para a tabela ou colunas específicas.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Alinhamento (com CSS)</strong>:</p>
+            <ul>
+                <li><strong>Alinhamento Horizontal</strong>: Use a propriedade CSS <code>text-align</code> nas células
+                    (<code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>) ou em <code>&lt;tr&gt;</code> para herança.
+                    Valores comuns: <code>left</code>, <code>center</code>, <code>right</code>, <code>justify</code>.
+                    <pre><code class="language-css">td {
+        text-align: left;
+    }
+    th {
+        text-align: center;
+    }
+    </code></pre>
+                </li>
+                <li><strong>Alinhamento Vertical</strong>: Use a propriedade CSS <code>vertical-align</code> nas células
+                    (<code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>). Valores comuns: <code>top</code>,
+                    <code>middle</code>, <code>bottom</code>, <code>baseline</code>.
+                    <pre><code class="language-css">td {
+        vertical-align: middle;
+    }
+    </code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Efeito Zebrado (Striped Rows)</strong>:</p>
+            <ul>
+                <li>Melhora a legibilidade de tabelas longas, alternando a cor de fundo das linhas. Isso é feito
+                    facilmente com a pseudo-classe CSS <code>:nth-child()</code>.</li>
+                <li><code>even</code> (par) e <code>odd</code> (ímpar) são palavras-chave que podem ser usadas.
+                    <pre><code class="language-css">tbody tr:nth-child(even) { /* Linhas pares no corpo da tabela */
+        background-color: #f2f2f2; /* Cor de fundo clara */
+    }
+    
+    tbody tr:nth-child(odd) { /* Linhas ímpares no corpo da tabela */
+        background-color: #ffffff; /* Cor de fundo branca (ou outra) */
+    }
+    </code></pre>
+                </li>
+                <li><em>Onde aplicar:</em> Geralmente aplicado às <code>&lt;tr&gt;</code> dentro do
+                    <code>&lt;tbody&gt;</code>.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Cabeçalho Fixo em Tabelas Grandes</strong>:</p>
+            <ul>
+                <li>Manter o cabeçalho (<code>&lt;thead&gt;</code>) visível enquanto o corpo
+                    (<code>&lt;tbody&gt;</code>) da tabela é rolado é um recurso muito útil para tabelas com muitos
+                    dados.</li>
+                <li><strong>Solução com CSS Puro (limitada)</strong>: Para rolagem vertical dentro da própria tabela,
+                    você pode definir uma altura (<code>height</code>) e <code>overflow-y: auto;</code> para o
+                    <code>&lt;tbody&gt;</code>, e <code>display: block;</code> para <code>&lt;thead&gt;</code>,
+                    <code>&lt;tbody&gt;</code>, e <code>&lt;tr&gt;</code>. No entanto, isso pode quebrar o alinhamento
+                    das colunas se as larguras não forem gerenciadas cuidadosamente.</li>
+                <li><strong>CSS <code>position: sticky;</code></strong>: Uma abordagem mais moderna e eficaz. Você pode
+                    aplicar <code>position: sticky; top: 0;</code> aos elementos <code>&lt;th&gt;</code> dentro do
+                    <code>&lt;thead&gt;</code>. Isso fará com que o cabeçalho &quot;grude&quot; no topo do contêiner da
+                    tabela (ou do viewport, dependendo do contexto) quando rolado.
+                    <pre><code class="language-css">thead th {
+        position: sticky;
+        top: 0;
+        background-color: white; /* Para não ficar transparente sobre o conteúdo */
+        z-index: 10; /* Para garantir que fique acima do conteúdo do tbody */
+    }
+    /* É preciso que um ancestral da tabela permita a rolagem e tenha altura definida */
+    .table-container {
+        max-height: 400px; /* Ou a altura desejada */
+        overflow-y: auto;
+    }
+    </code></pre>
+                </li>
+                <li><strong>Soluções com JavaScript</strong>: Para cenários mais complexos ou compatibilidade com
+                    navegadores mais antigos, bibliotecas JavaScript ou código customizado podem ser necessários.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Tabelas Responsivas</strong>:</p>
+            <ul>
+                <li>Garantir que as tabelas sejam bem exibidas em qualquer tamanho de tela é crucial. Tabelas com muitas
+                    colunas podem &quot;quebrar&quot; o layout em telas pequenas.</li>
+                <li><strong>Rolagem Horizontal</strong>: A abordagem mais simples. Envolva a <code>&lt;table&gt;</code>
+                    em um <code>&lt;div&gt;</code> e aplique <code>overflow-x: auto;</code> a esse <code>div</code>.
+                    Isso permitirá que o usuário role horizontalmente a tabela se ela for mais larga que a tela.
+                    <pre><code class="language-html">&lt;div style=&quot;overflow-x:auto;&quot;&gt;
+        &lt;table&gt;
+            &lt;/table&gt;
+    &lt;/div&gt;
+    </code></pre>
+                </li>
+                <li><strong>Reformatar a Tabela (CSS)</strong>: Para telas menores, você pode usar Media Queries em CSS
+                    para transformar cada linha em um formato de &quot;bloco&quot; ou &quot;cartão&quot;, onde os
+                    cabeçalhos são repetidos ou indicados para cada célula de dado. Isso geralmente envolve mudar o
+                    <code>display</code> de <code>table</code>, <code>tr</code>, <code>td</code> para <code>block</code>
+                    ou <code>grid</code>.<ul>
+                        <li><em>Exemplo conceitual (CSS complexo não mostrado aqui):</em>
+                            Em telas grandes:<table>
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Tipo</th>
+                                        <th>Usuário</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Gomu</td>
+                                        <td>Paramecia</td>
+                                        <td>Luffy</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h2 id="em-telas-pequenas---nome-gomu---tipo-paramecia---usuário-luffy"> Em telas pequenas:
+                                <strong>Nome:</strong> Gomu
+                                <strong>Tipo:</strong> Paramecia
+                                <strong>Usuário:</strong> Luffy
+                            </h2>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Ocultar Colunas Menos Importantes</strong>: Em telas pequenas, você pode optar por ocultar
+                    colunas menos essenciais usando CSS (<code>display: none;</code>).</li>
+                <li><strong>Bibliotecas JavaScript</strong>: Existem bibliotecas dedicadas a tornar tabelas responsivas
+                    com funcionalidades mais avançadas.</li>
+            </ul>
+        </li>
+    </ol>
+    <h3 id="analisando-seu-exemplo-de-tabela-akuma-no-mi">Analisando seu Exemplo de Tabela &quot;Akuma no Mi&quot;</h3>
+    <p>Seu exemplo é uma excelente prática de como estruturar uma tabela semanticamente:</p>
+    <pre><code class="language-html">&lt;h1&gt;Praticando tabela&lt;/h1&gt; &lt;table&gt;
+        &lt;caption&gt;as Akuma no mi mais legais de One Piece&lt;/caption&gt; &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th scope=&quot;col&quot;&gt;&lt;strong&gt;Akuma no Mi&lt;/strong&gt;&lt;/th&gt;
+                &lt;th scope=&quot;col&quot;&gt;&lt;strong&gt;Tipo&lt;/strong&gt;&lt;/th&gt;
+                &lt;th scope=&quot;col&quot;&gt;&lt;strong&gt;Habilidades&lt;/strong&gt;&lt;/th&gt;
+                &lt;th scope=&quot;col&quot;&gt;&lt;strong&gt;Usuário Notável&lt;/strong&gt;&lt;/th&gt;
+                &lt;th scope=&quot;col&quot;&gt;&lt;strong&gt;Curiosidades&lt;/strong&gt;&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&lt;strong&gt;Gomu Gomu no Mi&lt;/strong&gt;&lt;/td&gt;
+                &lt;td&gt;Paramecia&lt;/td&gt;
+                &lt;td&gt;Corpo elástico (como borracha)&lt;/td&gt;
+                &lt;td&gt;Monkey D. Luffy&lt;/td&gt;
+                &lt;td&gt;Na verdade, é a &lt;strong&gt;Hito Hito no Mi, Modelo: Nika&lt;/strong&gt; (Mítica Zoan)&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    </code></pre>
+    <p><strong>Pontos Fortes do seu Exemplo:</strong></p>
     <ul>
-        <li>Separação entre conteúdo (HTML) e apresentação (CSS)</li>
-        <li>Estrutura semântica e acessibilidade</li>
-        <li>Design responsivo para diversos dispositivos</li>
-        <li>Performance e manutenção do código</li>
+        <li><strong><code>&lt;caption&gt;</code></strong>: Usado corretamente para descrever a tabela.</li>
+        <li><strong><code>&lt;thead&gt;</code></strong>: Define claramente a seção de cabeçalho.</li>
+        <li><strong><code>&lt;th&gt;</code> com <code>scope=&quot;col&quot;</code></strong>: Perfeito para
+            acessibilidade, indicando que são cabeçalhos de coluna.</li>
+        <li><strong><code>&lt;tbody&gt;</code></strong>: Agrupa corretamente os dados principais.</li>
+        <li><strong><code>&lt;tr&gt;</code> e <code>&lt;td&gt;</code></strong>: Estrutura de linhas e células de dados
+            está correta.</li>
     </ul>
-    <p>Quando utilizadas corretamente para dados tabulares, as tabelas HTML continuam sendo uma ferramenta essencial
-        para desenvolvedores web, agora dentro de um ecossistema mais maduro e organizado.</p>
+    <p><strong>Sugestão para Melhoria (Opcional, dependendo da intenção):</strong></p>
+    <ul>
+        <li>
+            <p>Se a primeira célula de cada linha no <code>&lt;tbody&gt;</code> (ex: &quot;Gomu Gomu no Mi&quot;) for
+                considerada o &quot;título&quot; ou &quot;identificador principal&quot; daquela linha, você poderia usar
+                <code>&lt;th scope=&quot;row&quot;&gt;</code> em vez de
+                <code>&lt;td&gt;&lt;strong&gt;...&lt;/strong&gt;&lt;/td&gt;</code>. Isso melhora ainda mais a semântica
+                para leitores de tela, que anunciariam &quot;Akuma no Mi: Gomu Gomu no Mi&quot;, &quot;Tipo:
+                Paramecia&quot;, etc.</p>
+            <p> Exemplo:</p>
+            <pre><code class="language-html">&lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th scope=&quot;row&quot;&gt;&lt;strong&gt;Gomu Gomu no Mi&lt;/strong&gt;&lt;/th&gt; &lt;td&gt;Paramecia&lt;/td&gt;
+            &lt;td&gt;Corpo elástico (como borracha)&lt;/td&gt;
+            &lt;td&gt;Monkey D. Luffy&lt;/td&gt;
+            &lt;td&gt;Na verdade, é a &lt;strong&gt;Hito Hito no Mi, Modelo: Nika&lt;/strong&gt; (Mítica Zoan)&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/tbody&gt;
+    </code></pre>
+        </li>
+    </ul>
+    <h3 id="conclusão">Conclusão</h3>
+    <p>Dominar as tabelas HTML é essencial para apresentar dados de forma clara e acessível. Lembre-se sempre de:</p>
+    <ol>
+        <li><strong>Usar tabelas APENAS para dados tabulares</strong>, não para layout.</li>
+        <li>Utilizar a <strong>estrutura semântica completa</strong> (<code>&lt;caption&gt;</code>,
+            <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>, <code>&lt;th&gt;</code>
+            com <code>scope</code>).</li>
+        <li>Controlar a <strong>aparência com CSS</strong>.</li>
+        <li>Considerar a <strong>responsividade</strong> para diferentes dispositivos.</li>
+    </ol>
+
 
     <hr>
 
     <h1>As Akuma no Mi de One Piece</h1>
-    
+
     <div class="table-container">
         <table>
             <caption>As Akuma no Mi mais legais de One Piece</caption>
@@ -377,7 +458,8 @@
                     <td data-label="Tipo">Paramecia</td>
                     <td data-label="Habilidades">Corpo elástico (como borracha)</td>
                     <td data-label="Usuário Notável">Monkey D. Luffy</td>
-                    <td data-label="Curiosidades">Na verdade, é a <strong>Hito Hito no Mi, Modelo: Nika</strong> (Mítica Zoan)</td>
+                    <td data-label="Curiosidades">Na verdade, é a <strong>Hito Hito no Mi, Modelo: Nika</strong> (Mítica
+                        Zoan)</td>
                 </tr>
                 <tr>
                     <td data-label="Akuma no Mi">Mera Mera no Mi</td>
@@ -487,7 +569,8 @@
             <li><strong>Paramecia:</strong> Concede habilidades sobrenaturais ao usuário</li>
             <li><strong>Logia:</strong> Permite que o usuário se transforme em um elemento natural</li>
             <li><strong>Zoan:</strong> Dá ao usuário o poder de transformar-se em um animal</li>
-            <li><strong>Zoan Mítica:</strong> Um tipo raro de Zoan que permite transformação em criaturas mitológicas</li>
+            <li><strong>Zoan Mítica:</strong> Um tipo raro de Zoan que permite transformação em criaturas mitológicas
+            </li>
         </ul>
     </div>
 
