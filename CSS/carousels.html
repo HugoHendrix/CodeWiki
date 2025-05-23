@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <p>O artigo <a href="https://css-tricks.com/css-carousels/?ref=dailydev" target="_blank" rel="noopener noreferrer">CSS Carousels</a> do CSS-Tricks apresenta
+        uma abordagem moderna para criar carrosséis utilizando apenas CSS, aproveitando recursos recentes como botões de
+        rolagem e marcadores de rolagem, introduzidos na especificação CSS Overflow Module Level 5.</p>
+    <h3 id="🧱-estrutura-básica">🧱 Estrutura Básica</h3>
+    <p>A estrutura HTML é composta por uma lista não ordenada (<code>&lt;ul&gt;</code>) com itens
+        (<code>&lt;li&gt;</code>) representando os slides:</p>
+    <pre><code class="language-html">&lt;ul class=&quot;carousel&quot;&gt;
+  &lt;li&gt;Slide 1&lt;/li&gt;
+  &lt;li&gt;Slide 2&lt;/li&gt;
+  &lt;li&gt;Slide 3&lt;/li&gt;
+  &lt;!-- ... --&gt;
+&lt;/ul&gt;
+</code></pre>
+    <p>O CSS utiliza <code>display: grid</code> com <code>grid-auto-flow: column</code> para dispor os itens
+        horizontalmente. Cada item pode ocupar, por exemplo, 40% da largura do contêiner, com espaçamento
+        (<code>gap</code>) entre eles:(<a href="https://css-tricks.com/css-carousels/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer"
+            title="CSS Carousels">CSS-Tricks</a>)</p>
+    <pre><code class="language-css">.carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 40%;
+  gap: 2rem;
+}
+</code></pre>
+    <h3 id="🎯-scroll-snapping">🎯 Scroll Snapping</h3>
+    <p>Para garantir que a rolagem pare exatamente em cada slide, utiliza-se o <code>scroll-snap-type</code> no
+        contêiner e <code>scroll-snap-align</code> nos itens:(<a
+            href="https://css-tricks.com/how-to-make-a-css-only-carousel/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer"
+            title="How to Make a CSS-Only Carousel">CSS-Tricks</a>)</p>
+    <pre><code class="language-css">.carousel {
+  scroll-snap-type: x mandatory;
+}
+
+.carousel &gt; li {
+  scroll-snap-align: center;
+}
+</code></pre>
+    <p>Isso proporciona uma experiência de rolagem suave e precisa, alinhando cada slide ao centro do contêiner.</p>
+    <h3 id="🧭-botões-de-rolagem">🧭 Botões de Rolagem</h3>
+    <p>O CSS introduz pseudo-elementos <code>::scroll-button(left)</code> e <code>::scroll-button(right)</code> para
+        criar botões de navegação sem JavaScript:(<a href="https://css-tricks.com/css-carousels/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer"
+            title="CSS Carousels">CSS-Tricks</a>)</p>
+    <pre><code class="language-css">.carousel::scroll-button(left) {
+  content: &quot;←&quot;;
+}
+
+.carousel::scroll-button(right) {
+  content: &quot;→&quot;;
+}
+</code></pre>
+    <p>Esses botões permitem navegar pelos slides, avançando ou retrocedendo. No entanto, é importante notar que essa
+        funcionalidade está atualmente disponível apenas no Chrome, conforme mencionado no artigo.(<a
+            href="https://css-tricks.com/css-only-carousel/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer"
+            title="CSS-Only Carousel">CSS-Tricks</a>)</p>
+    <h3 id="🔘-marcadores-de-rolagem">🔘 Marcadores de Rolagem</h3>
+    <p>Os marcadores de rolagem, semelhantes aos pontos indicadores de slides, são implementados com os pseudo-elementos
+        <code>::scroll-marker-group</code> e <code>::scroll-marker</code>:(<a
+            href="https://css-tricks.com/css-carousels/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" title="CSS Carousels">CSS-Tricks</a>)
+    </p>
+    <pre><code class="language-css">.carousel::scroll-marker-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.carousel::scroll-marker {
+  width: 10px;
+  height: 10px;
+  background-color: gray;
+  border-radius: 50%;
+}
+</code></pre>
+    <p>Esses marcadores permitem que o usuário saiba em qual slide está e navegue diretamente para um slide específico.
+    </p>
+    <h3 id="⚠️-considerações-de-compatibilidade">⚠️ Considerações de Compatibilidade</h3>
+    <p>Embora esses recursos sejam poderosos, é crucial considerar a compatibilidade entre navegadores. Atualmente, os
+        botões e marcadores de rolagem são suportados apenas no Chrome. Para garantir uma experiência consistente em
+        todos os navegadores, pode ser necessário implementar soluções alternativas ou utilizar JavaScript para replicar
+        essas funcionalidades.</p>
+    <h3 id="🔗-recursos-adicionais">🔗 Recursos Adicionais</h3>
+    <ul>
+        <li><a href="https://www.w3.org/TR/css-overflow-3/" target="_blank" rel="noopener noreferrer">CSS Overflow Module Level 5 Specification</a></li>
+        <li><a href="https://css-tricks.com/css-carousels/?ref=dailydev" target="_blank" rel="noopener noreferrer">Artigo Original no CSS-Tricks</a></li>
+    </ul>
+    <p>Essa abordagem demonstra como é possível criar carrosséis interativos e acessíveis utilizando apenas CSS moderno,
+        reduzindo a dependência de JavaScript e melhorando a performance e a manutenção do código.</p>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
