@@ -237,195 +237,234 @@
     </footer>
 
     <script>
-        // Armazenar termos em memória
-        let glossaryTerms = [];
-        let editingId = null;
+    // js/script.js
+document.addEventListener('DOMContentLoaded', () => {
+    // Armazenar termos em memória
+    let glossaryTerms = [];
+    let editingId = null;
 
-        // Inicializar com alguns termos de exemplo
-        const initialTerms = [
-            {
-                id: 1,
-                term: "CDI",
-                definition: "Certificado de Depósito Interbancário. Taxa de juros que os bancos usam para emprestar dinheiro entre si. É uma das principais referências para investimentos de renda fixa no Brasil."
-            },
-            {
-                id: 2,
-                term: "SELIC",
-                definition: "Sistema Especial de Liquidação e Custódia. Taxa básica de juros da economia brasileira, definida pelo Comitê de Política Monetária (COPOM) do Banco Central."
-            },
-            {
-                id: 3,
-                term: "IPO",
-                definition: "Initial Public Offering. Oferta Pública Inicial de ações de uma empresa que está abrindo seu capital na bolsa de valores pela primeira vez."
-            }
-        ];
+    // Chave para o localStorage
+    const LOCAL_STORAGE_KEY = 'glossaryTermsData';
 
-        // Carregar termos iniciais
-        glossaryTerms = [...initialTerms];
+    // Termos iniciais de exemplo (usados apenas se o localStorage estiver vazio)
+    const initialTermsExample = [
+        {
+            id: "initial1", // IDs podem ser strings ou números
+            term: "CDI",
+            definition: "Certificado de Depósito Interbancário. Taxa de juros que os bancos usam para emprestar dinheiro entre si. É uma das principais referências para investimentos de renda fixa no Brasil."
+        },
+        {
+            id: "initial2",
+            term: "SELIC",
+            definition: "Sistema Especial de Liquidação e Custódia. Taxa básica de juros da economia brasileira, definida pelo Comitê de Política Monetária (COPOM) do Banco Central."
+        },
+        {
+            id: "initial3",
+            term: "IPO",
+            definition: "Initial Public Offering. Oferta Pública Inicial de ações de uma empresa que está abrindo seu capital na bolsa de valores pela primeira vez."
+        }
+    ];
 
-        // Elementos DOM
-        const searchInput = document.getElementById('searchInput');
-        const addTermForm = document.getElementById('addTermForm');
-        const termInput = document.getElementById('termInput');
-        const definitionInput = document.getElementById('definitionInput');
-        const glossaryContainer = document.getElementById('glossaryContainer');
-        const termCount = document.getElementById('termCount');
+    // Elementos DOM
+    const searchInput = document.getElementById('searchInput');
+    const addTermForm = document.getElementById('addTermForm');
+    const termInput = document.getElementById('termInput');
+    const definitionInput = document.getElementById('definitionInput');
+    const glossaryContainer = document.getElementById('glossaryContainer');
+    const termCountElement = document.getElementById('termCount'); // Renomeado para evitar conflito
 
-        // Event listeners
-        searchInput.addEventListener('input', filterTerms);
-        addTermForm.addEventListener('submit', handleAddTerm);
+    // --- Funções de Persistência ---
+    function saveTermsToLocalStorage() {
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(glossaryTerms));
+    }
 
-        // Função para gerar ID único
-        function generateId() {
-            return Date.now() + Math.random();
+    function loadTermsFromLocalStorage() {
+        const storedTerms = localStorage.getItem(LOCAL_STORAGE_KEY);
+        if (storedTerms) {
+            glossaryTerms = JSON.parse(storedTerms);
+        } else {
+            // Se não houver nada no localStorage, carrega os exemplos e salva
+            glossaryTerms = [...initialTermsExample];
+            saveTermsToLocalStorage();
+        }
+    }
+
+    // --- Funções Principais ---
+
+    // Função para gerar ID único (mais robusto)
+    function generateId() {
+        return '_' + Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
+    }
+
+    // Função para adicionar/editar termo
+    function handleAddTerm(e) {
+        e.preventDefault();
+
+        const term = termInput.value.trim();
+        const definition = definitionInput.value.trim();
+
+        if (!term || !definition) {
+            alert('Por favor, preencha todos os campos!');
+            return;
         }
 
-        // Função para adicionar/editar termo
-        function handleAddTerm(e) {
-            e.preventDefault();
-            
-            const term = termInput.value.trim();
-            const definition = definitionInput.value.trim();
-            
-            if (!term || !definition) {
-                alert('Por favor, preencha todos os campos!');
-                return;
-            }
-
-            if (editingId) {
-                // Editando termo existente
-                const index = glossaryTerms.findIndex(t => t.id === editingId);
-                if (index !== -1) {
-                    glossaryTerms[index] = {
-                        ...glossaryTerms[index],
-                        term: term,
-                        definition: definition
-                    };
-                }
-                editingId = null;
-                document.querySelector('.add-form h3').textContent = '➕ Adicionar Novo Termo';
-                document.querySelector('button[type="submit"]').textContent = 'Adicionar Termo';
-            } else {
-                // Adicionando novo termo
-                const newTerm = {
-                    id: generateId(),
+        if (editingId) {
+            // Editando termo existente
+            const index = glossaryTerms.findIndex(t => t.id === editingId);
+            if (index !== -1) {
+                glossaryTerms[index] = {
+                    ...glossaryTerms[index],
                     term: term,
                     definition: definition
                 };
-                glossaryTerms.push(newTerm);
             }
-            
-            clearForm();
+            editingId = null;
+            document.querySelector('.add-form h3').textContent = '➕ Adicionar Novo Termo';
+            addTermForm.querySelector('button[type="submit"]').textContent = 'Adicionar Termo';
+        } else {
+            // Adicionando novo termo
+            const newTerm = {
+                id: generateId(),
+                term: term,
+                definition: definition
+            };
+            glossaryTerms.push(newTerm);
+        }
+
+        clearFormInputs(); // Renomeado para evitar conflito com a função global clearForm
+        saveTermsToLocalStorage();
+        renderTerms();
+        updateStats();
+    }
+
+    // Função para limpar campos do formulário (não reseta o estado de edição aqui)
+    function clearFormInputs() {
+        termInput.value = '';
+        definitionInput.value = '';
+        termInput.focus(); // Foca no campo termo após limpar
+    }
+    
+    // Função global para o botão "Limpar" que também reseta o estado de edição
+    window.clearForm = function() {
+        clearFormInputs();
+        if (editingId) {
+            editingId = null;
+            document.querySelector('.add-form h3').textContent = '➕ Adicionar Novo Termo';
+            addTermForm.querySelector('button[type="submit"]').textContent = 'Adicionar Termo';
+        }
+    }
+
+
+    // Função para preparar edição de termo
+    window.editTerm = function(id) { // Expor ao escopo global
+        const termToEdit = glossaryTerms.find(t => t.id === id);
+        if (termToEdit) {
+            termInput.value = termToEdit.term;
+            definitionInput.value = termToEdit.definition;
+            editingId = id;
+            document.querySelector('.add-form h3').textContent = '✏️ Editando Termo';
+            addTermForm.querySelector('button[type="submit"]').textContent = 'Salvar Alterações';
+            termInput.focus();
+            // Rolar para o formulário de edição para melhor UX em páginas longas
+            addTermForm.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    // Função para excluir termo
+    window.deleteTerm = function(id) { // Expor ao escopo global
+        if (confirm('Tem certeza que deseja excluir este termo?')) {
+            glossaryTerms = glossaryTerms.filter(t => t.id !== id);
+            if (editingId === id) { // Se estiver editando o termo que foi excluído
+                clearForm(); // Limpa o formulário completamente
+            }
+            saveTermsToLocalStorage();
             renderTerms();
             updateStats();
         }
+    }
 
-        // Função para limpar formulário
-        function clearForm() {
-            termInput.value = '';
-            definitionInput.value = '';
-            editingId = null;
-            document.querySelector('.add-form h3').textContent = '➕ Adicionar Novo Termo';
-            document.querySelector('button[type="submit"]').textContent = 'Adicionar Termo';
+    // Função para filtrar termos
+    function filterTerms() {
+        const query = searchInput.value.toLowerCase().trim();
+        renderTerms(query);
+    }
+
+    // Função para renderizar termos
+    function renderTerms(searchQuery = '') {
+        let filteredTerms = [...glossaryTerms]; // Cria uma cópia para não modificar o original ao ordenar
+
+        if (searchQuery) {
+            filteredTerms = filteredTerms.filter(term =>
+                term.term.toLowerCase().includes(searchQuery) ||
+                term.definition.toLowerCase().includes(searchQuery)
+            );
         }
 
-        // Função para editar termo
-        function editTerm(id) {
-            const term = glossaryTerms.find(t => t.id === id);
-            if (term) {
-                termInput.value = term.term;
-                definitionInput.value = term.definition;
-                editingId = id;
-                document.querySelector('.add-form h3').textContent = '✏️ Editando Termo';
-                document.querySelector('button[type="submit"]').textContent = 'Salvar Alterações';
-                termInput.focus();
-            }
-        }
+        // Ordenar termos alfabeticamente (sempre)
+        filteredTerms.sort((a, b) => a.term.localeCompare(b.term, 'pt-BR', { sensitivity: 'base' }));
 
-        // Função para excluir termo
-        function deleteTerm(id) {
-            if (confirm('Tem certeza que deseja excluir este termo?')) {
-                glossaryTerms = glossaryTerms.filter(t => t.id !== id);
-                renderTerms();
-                updateStats();
-            }
-        }
-
-        // Função para filtrar termos
-        function filterTerms() {
-            const query = searchInput.value.toLowerCase();
-            renderTerms(query);
-        }
-
-        // Função para renderizar termos
-        function renderTerms(searchQuery = '') {
-            let filteredTerms = glossaryTerms;
-            
+        if (filteredTerms.length === 0) {
             if (searchQuery) {
-                filteredTerms = glossaryTerms.filter(term => 
-                    term.term.toLowerCase().includes(searchQuery) ||
-                    term.definition.toLowerCase().includes(searchQuery)
-                );
-            }
-
-            if (filteredTerms.length === 0) {
-                if (searchQuery) {
-                    glossaryContainer.innerHTML = `
-                        <div class="empty-state">
-                            <h3>🔍 Nenhum resultado encontrado</h3>
-                            <p>Não encontramos termos que correspondam à sua busca: "<strong>${searchQuery}</strong>"</p>
-                        </div>
-                    `;
-                } else {
-                    glossaryContainer.innerHTML = `
-                        <div class="empty-state">
-                            <h3>📝 Nenhum termo cadastrado ainda</h3>
-                            <p>Comece adicionando seus primeiros termos de investimento!</p>
-                        </div>
-                    `;
-                }
-                return;
-            }
-
-            // Ordenar termos alfabeticamente
-            filteredTerms.sort((a, b) => a.term.localeCompare(b.term));
-
-            const termsHTML = filteredTerms.map(term => `
-                <div class="term-card">
-                    <div class="term-header">
-                        <h3 class="term-title">${escapeHtml(term.term)}</h3>
-                        <div class="term-actions">
-                            <button class="btn btn-success" onclick="editTerm(${term.id})" title="Editar">
-                                ✏️
-                            </button>
-                            <button class="btn btn-danger" onclick="deleteTerm(${term.id})" title="Excluir">
-                                🗑️
-                            </button>
-                        </div>
+                glossaryContainer.innerHTML = `
+                    <div class="empty-state">
+                        <h3>🔍 Nenhum resultado encontrado</h3>
+                        <p>Não encontramos termos que correspondam à sua busca: "<strong>${escapeHtml(searchQuery)}</strong>"</p>
                     </div>
-                    <p class="term-definition">${escapeHtml(term.definition)}</p>
+                `;
+            } else {
+                glossaryContainer.innerHTML = `
+                    <div class="empty-state">
+                        <h3>📝 Nenhum termo cadastrado ainda</h3>
+                        <p>Comece adicionando seus primeiros termos de investimento!</p>
+                    </div>
+                `;
+            }
+            return;
+        }
+
+        const termsHTML = filteredTerms.map(term => `
+            <div class="term-card" id="term-${term.id}">
+                <div class="term-header">
+                    <h3 class="term-title">${escapeHtml(term.term)}</h3>
+                    <div class="term-actions">
+                        <button class="btn btn-success" onclick="editTerm('${term.id}')" title="Editar">
+                            ✏️
+                        </button>
+                        <button class="btn btn-danger" onclick="deleteTerm('${term.id}')" title="Excluir">
+                            🗑️
+                        </button>
+                    </div>
                 </div>
-            `).join('');
+                <p class="term-definition">${escapeHtml(term.definition)}</p>
+            </div>
+        `).join('');
 
-            glossaryContainer.innerHTML = `<div class="glossary-grid">${termsHTML}</div>`;
-        }
+        glossaryContainer.innerHTML = `<div class="glossary-grid">${termsHTML}</div>`;
+    }
 
-        // Função para atualizar estatísticas
-        function updateStats() {
-            const count = glossaryTerms.length;
-            termCount.textContent = `${count} termo${count !== 1 ? 's' : ''}`;
-        }
+    // Função para atualizar estatísticas
+    function updateStats() {
+        const count = glossaryTerms.length;
+        termCountElement.textContent = `${count} termo${count !== 1 ? 's' : ''}`;
+    }
 
-        // Função para escapar HTML
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
-        }
+    // Função para escapar HTML (previne XSS)
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
 
-        // Inicializar aplicação
-        renderTerms();
-        updateStats();
+    // --- Inicialização ---
+    // Event listeners
+    searchInput.addEventListener('input', filterTerms);
+    addTermForm.addEventListener('submit', handleAddTerm);
+
+    // Carregar dados e renderizar
+    loadTermsFromLocalStorage();
+    renderTerms();
+    updateStats();
+});
     </script>
 
 </body>
