@@ -177,6 +177,42 @@
             margin-top: 10px;
         }
 
+        .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: white; /* Garante fundo branco no select */
+}
+
+/* Estilos para os Filtros de Categoria */
+.category-filters {
+    margin-bottom: 20px;
+    text-align: center; /* Centraliza os botões de filtro */
+}
+
+.category-filters .btn {
+    margin: 5px; /* Espaçamento entre os botões de filtro */
+}
+
+.category-filters .btn.active {
+    background-color: #0056b3; /* Cor de destaque para o filtro ativo */
+    color: white;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+}
+
+/* Estilos para exibir a categoria no card do termo */
+.term-card .term-category {
+    font-size: 0.8em;
+    color: #888;
+    margin-bottom: 8px;
+    background-color: #e9ecef;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block; /* Para o padding e background funcionarem bem */
+}
+
         footer {
             text-align: right;
             padding: 20px;
@@ -195,18 +231,21 @@
     </style>
 </head>
 <body>
-    <div class="container">
+   <div class="container">
         <div class="header">
             <h1>📊 Glossário de Investimentos</h1>
             <p>Seu dicionário pessoal de termos e siglas do mercado financeiro</p>
         </div>
-        
+
         <div class="stats">
             <strong id="termCount">0 termos</strong> cadastrados
         </div>
-        
+
         <input type="text" class="search-bar" id="searchInput" placeholder="🔍 Buscar termos ou definições...">
-        
+
+        <div id="categoryFiltersContainer" class="category-filters">
+            </div>
+
         <div class="add-form">
             <h3>➕ Adicionar Novo Termo</h3>
             <form id="addTermForm">
@@ -218,50 +257,62 @@
                     <label for="definitionInput">Definição:</label>
                     <textarea id="definitionInput" placeholder="Explicação detalhada do termo..." required></textarea>
                 </div>
+                <div class="form-group">
+                    <label for="categoryInput">Categoria:</label>
+                    <select id="categoryInput" required>
+                        </select>
+                </div>
                 <button type="submit" class="btn btn-primary">Adicionar Termo</button>
                 <button type="button" class="btn btn-secondary" onclick="clearForm()">Limpar</button>
             </form>
         </div>
-        
+
         <div id="glossaryContainer">
-            <div class="empty-state">
-                <h3>📝 Nenhum termo cadastrado ainda</h3>
-                <p>Comece adicionando seus primeiros termos de investimento!</p>
             </div>
-        </div>
     </div>
 
-
     <footer>
-      <a class="btn btn-primary" href="../index.html" type="button" class="accent">Voltar</a>
+        <a class="btn btn-primary" href="../index.html" type="button" class="accent">Voltar</a>
     </footer>
 
     <script>
-    // js/script.js
+
+// js/script.js
 document.addEventListener('DOMContentLoaded', () => {
-    // Armazenar termos em memória
     let glossaryTerms = [];
     let editingId = null;
+    let currentCategoryFilter = 'all'; // Novo: para rastrear o filtro de categoria ativo
 
-    // Chave para o localStorage
     const LOCAL_STORAGE_KEY = 'glossaryTermsData';
 
-    // Termos iniciais de exemplo (usados apenas se o localStorage estiver vazio)
+    // DEFINA AS CATEGORIAS AQUI
+    const availableCategories = [
+        "Renda Fixa",
+        "Renda Variável",
+        "Indicadores Econômicos",
+        "Siglas e Jargões",
+        "Mercado e Operações",
+        "Geral"
+    ];
+
     const initialTermsExample = [
         {
-            id: "initial1", // IDs podem ser strings ou números
+            id: "initial1",
             term: "CDI",
-            definition: "Certificado de Depósito Interbancário. Taxa de juros que os bancos usam para emprestar dinheiro entre si. É uma das principais referências para investimentos de renda fixa no Brasil."
+            definition: "Certificado de Depósito Interbancário...",
+            category: "Renda Fixa" // Adicionada categoria
         },
         {
             id: "initial2",
             term: "SELIC",
-            definition: "Sistema Especial de Liquidação e Custódia. Taxa básica de juros da economia brasileira, definida pelo Comitê de Política Monetária (COPOM) do Banco Central."
+            definition: "Sistema Especial de Liquidação e Custódia...",
+            category: "Indicadores Econômicos" // Adicionada categoria
         },
         {
             id: "initial3",
             term: "IPO",
-            definition: "Initial Public Offering. Oferta Pública Inicial de ações de uma empresa que está abrindo seu capital na bolsa de valores pela primeira vez."
+            definition: "Initial Public Offering...",
+            category: "Mercado e Operações" // Adicionada categoria
         }
     ];
 
@@ -270,8 +321,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const addTermForm = document.getElementById('addTermForm');
     const termInput = document.getElementById('termInput');
     const definitionInput = document.getElementById('definitionInput');
+    const categoryInput = document.getElementById('categoryInput'); // Novo
     const glossaryContainer = document.getElementById('glossaryContainer');
-    const termCountElement = document.getElementById('termCount'); // Renomeado para evitar conflito
+    const termCountElement = document.getElementById('termCount');
+    const categoryFiltersContainer = document.getElementById('categoryFiltersContainer'); // Novo
 
     // --- Funções de Persistência ---
     function saveTermsToLocalStorage() {
@@ -282,69 +335,106 @@ document.addEventListener('DOMContentLoaded', () => {
         const storedTerms = localStorage.getItem(LOCAL_STORAGE_KEY);
         if (storedTerms) {
             glossaryTerms = JSON.parse(storedTerms);
+            // Garantir que termos antigos tenham uma categoria padrão
+            glossaryTerms.forEach(term => {
+                if (!term.category) {
+                    term.category = "Geral"; // Atribui categoria padrão se não existir
+                }
+            });
         } else {
-            // Se não houver nada no localStorage, carrega os exemplos e salva
             glossaryTerms = [...initialTermsExample];
-            saveTermsToLocalStorage();
+            // Garantir que exemplos também tenham categoria padrão se não especificado (já feito acima)
         }
+        saveTermsToLocalStorage(); // Salva caso alguma migração tenha ocorrido
+    }
+    
+    // --- Funções de Inicialização de UI ---
+    function populateCategorySelect() {
+        categoryInput.innerHTML = ''; // Limpa opções existentes
+        availableCategories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category;
+            option.textContent = category;
+            categoryInput.appendChild(option);
+        });
     }
 
-    // --- Funções Principais ---
+    function renderCategoryFilters() {
+        categoryFiltersContainer.innerHTML = ''; // Limpa filtros existentes
+        const allButton = document.createElement('button');
+        allButton.classList.add('btn', 'btn-secondary');
+        allButton.textContent = 'Todas as Categorias';
+        allButton.dataset.category = 'all';
+        if (currentCategoryFilter === 'all') {
+            allButton.classList.add('active');
+        }
+        allButton.addEventListener('click', () => setCategoryFilter('all'));
+        categoryFiltersContainer.appendChild(allButton);
 
-    // Função para gerar ID único (mais robusto)
+        availableCategories.forEach(category => {
+            const button = document.createElement('button');
+            button.classList.add('btn', 'btn-secondary');
+            button.textContent = category;
+            button.dataset.category = category;
+            if (currentCategoryFilter === category) {
+                button.classList.add('active');
+            }
+            button.addEventListener('click', () => setCategoryFilter(category));
+            categoryFiltersContainer.appendChild(button);
+        });
+    }
+    
+    function setCategoryFilter(category) {
+        currentCategoryFilter = category;
+        renderCategoryFilters(); // Re-renderiza botões para atualizar classe 'active'
+        renderTerms(); // Re-renderiza os termos com o novo filtro
+    }
+
+
+    // --- Funções Principais ---
     function generateId() {
         return '_' + Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
     }
 
-    // Função para adicionar/editar termo
     function handleAddTerm(e) {
         e.preventDefault();
-
         const term = termInput.value.trim();
         const definition = definitionInput.value.trim();
+        const category = categoryInput.value; // Novo: pega valor da categoria
 
-        if (!term || !definition) {
-            alert('Por favor, preencha todos os campos!');
+        if (!term || !definition || !category) { // Adicionada verificação de categoria
+            alert('Por favor, preencha todos os campos, incluindo a categoria!');
             return;
         }
 
         if (editingId) {
-            // Editando termo existente
             const index = glossaryTerms.findIndex(t => t.id === editingId);
             if (index !== -1) {
-                glossaryTerms[index] = {
-                    ...glossaryTerms[index],
-                    term: term,
-                    definition: definition
-                };
+                glossaryTerms[index] = { ...glossaryTerms[index], term, definition, category }; // Adicionada categoria
             }
             editingId = null;
             document.querySelector('.add-form h3').textContent = '➕ Adicionar Novo Termo';
             addTermForm.querySelector('button[type="submit"]').textContent = 'Adicionar Termo';
         } else {
-            // Adicionando novo termo
-            const newTerm = {
-                id: generateId(),
-                term: term,
-                definition: definition
-            };
+            const newTerm = { id: generateId(), term, definition, category }; // Adicionada categoria
             glossaryTerms.push(newTerm);
         }
 
-        clearFormInputs(); // Renomeado para evitar conflito com a função global clearForm
+        clearFormInputs();
         saveTermsToLocalStorage();
         renderTerms();
         updateStats();
+        // Opcional: se uma nova categoria for adicionada dinamicamente no futuro,
+        // aqui seria um bom lugar para atualizar availableCategories e repopular os filtros/select.
     }
 
-    // Função para limpar campos do formulário (não reseta o estado de edição aqui)
     function clearFormInputs() {
         termInput.value = '';
         definitionInput.value = '';
-        termInput.focus(); // Foca no campo termo após limpar
+        categoryInput.value = availableCategories.includes("Geral") ? "Geral" : availableCategories[0]; // Reset para "Geral" ou primeira da lista
+        termInput.focus();
     }
     
-    // Função global para o botão "Limpar" que também reseta o estado de edição
     window.clearForm = function() {
         clearFormInputs();
         if (editingId) {
@@ -354,28 +444,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
-    // Função para preparar edição de termo
-    window.editTerm = function(id) { // Expor ao escopo global
+    window.editTerm = function(id) {
         const termToEdit = glossaryTerms.find(t => t.id === id);
         if (termToEdit) {
             termInput.value = termToEdit.term;
             definitionInput.value = termToEdit.definition;
+            categoryInput.value = termToEdit.category || "Geral"; // Novo: preenche categoria
             editingId = id;
             document.querySelector('.add-form h3').textContent = '✏️ Editando Termo';
             addTermForm.querySelector('button[type="submit"]').textContent = 'Salvar Alterações';
             termInput.focus();
-            // Rolar para o formulário de edição para melhor UX em páginas longas
             addTermForm.scrollIntoView({ behavior: 'smooth' });
         }
     }
 
-    // Função para excluir termo
-    window.deleteTerm = function(id) { // Expor ao escopo global
+    window.deleteTerm = function(id) {
         if (confirm('Tem certeza que deseja excluir este termo?')) {
             glossaryTerms = glossaryTerms.filter(t => t.id !== id);
-            if (editingId === id) { // Se estiver editando o termo que foi excluído
-                clearForm(); // Limpa o formulário completamente
+            if (editingId === id) {
+                clearForm();
             }
             saveTermsToLocalStorage();
             renderTerms();
@@ -383,58 +470,55 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Função para filtrar termos
-    function filterTerms() {
-        const query = searchInput.value.toLowerCase().trim();
-        renderTerms(query);
+    function filterTerms() { // Renomeado de handleSearch para ser mais genérico, pois renderTerms fará a busca
+        renderTerms(); // Apenas re-renderiza, renderTerms pega o valor do searchInput
     }
 
-    // Função para renderizar termos
-    function renderTerms(searchQuery = '') {
-        let filteredTerms = [...glossaryTerms]; // Cria uma cópia para não modificar o original ao ordenar
+    function renderTerms() { // Modificada para incluir filtro de categoria e busca
+        let termsToDisplay = [...glossaryTerms];
+        const searchQuery = searchInput.value.toLowerCase().trim();
 
+        // 1. Filtrar por Categoria
+        if (currentCategoryFilter !== 'all') {
+            termsToDisplay = termsToDisplay.filter(term => term.category === currentCategoryFilter);
+        }
+
+        // 2. Filtrar por Texto da Busca (dentro da categoria filtrada, se houver)
         if (searchQuery) {
-            filteredTerms = filteredTerms.filter(term =>
+            termsToDisplay = termsToDisplay.filter(term =>
                 term.term.toLowerCase().includes(searchQuery) ||
                 term.definition.toLowerCase().includes(searchQuery)
             );
         }
 
-        // Ordenar termos alfabeticamente (sempre)
-        filteredTerms.sort((a, b) => a.term.localeCompare(b.term, 'pt-BR', { sensitivity: 'base' }));
+        // Ordenar termos alfabeticamente
+        termsToDisplay.sort((a, b) => a.term.localeCompare(b.term, 'pt-BR', { sensitivity: 'base' }));
 
-        if (filteredTerms.length === 0) {
-            if (searchQuery) {
-                glossaryContainer.innerHTML = `
+        if (termsToDisplay.length === 0) {
+            let message = "<h3>📝 Nenhum termo cadastrado ainda</h3><p>Comece adicionando seus primeiros termos!</p>";
+            if (glossaryTerms.length > 0) { // Se há termos, mas nenhum corresponde aos filtros
+                 message = `
                     <div class="empty-state">
                         <h3>🔍 Nenhum resultado encontrado</h3>
-                        <p>Não encontramos termos que correspondam à sua busca: "<strong>${escapeHtml(searchQuery)}</strong>"</p>
-                    </div>
-                `;
-            } else {
-                glossaryContainer.innerHTML = `
-                    <div class="empty-state">
-                        <h3>📝 Nenhum termo cadastrado ainda</h3>
-                        <p>Comece adicionando seus primeiros termos de investimento!</p>
+                        <p>Não encontramos termos que correspondam à sua busca ${currentCategoryFilter !== 'all' ? `na categoria "<strong>${escapeHtml(currentCategoryFilter)}</strong>"` : ''} ${searchQuery ? `para "<strong>${escapeHtml(searchQuery)}</strong>"` : ''}.</p>
+                        <p>Tente limpar os filtros ou a busca.</p>
                     </div>
                 `;
             }
+            glossaryContainer.innerHTML = message;
             return;
         }
 
-        const termsHTML = filteredTerms.map(term => `
+        const termsHTML = termsToDisplay.map(term => `
             <div class="term-card" id="term-${term.id}">
                 <div class="term-header">
                     <h3 class="term-title">${escapeHtml(term.term)}</h3>
                     <div class="term-actions">
-                        <button class="btn btn-success" onclick="editTerm('${term.id}')" title="Editar">
-                            ✏️
-                        </button>
-                        <button class="btn btn-danger" onclick="deleteTerm('${term.id}')" title="Excluir">
-                            🗑️
-                        </button>
+                        <button class="btn btn-success btn-sm" onclick="editTerm('${term.id}')" title="Editar">✏️</button>
+                        <button class="btn btn-danger btn-sm" onclick="deleteTerm('${term.id}')" title="Excluir">🗑️</button>
                     </div>
                 </div>
+                <div class="term-category">${escapeHtml(term.category || "Geral")}</div>
                 <p class="term-definition">${escapeHtml(term.definition)}</p>
             </div>
         `).join('');
@@ -442,26 +526,28 @@ document.addEventListener('DOMContentLoaded', () => {
         glossaryContainer.innerHTML = `<div class="glossary-grid">${termsHTML}</div>`;
     }
 
-    // Função para atualizar estatísticas
     function updateStats() {
-        const count = glossaryTerms.length;
+        const count = glossaryTerms.length; // Mostra o total de termos, independente do filtro
         termCountElement.textContent = `${count} termo${count !== 1 ? 's' : ''}`;
     }
 
-    // Função para escapar HTML (previne XSS)
     function escapeHtml(text) {
+        if (typeof text !== 'string') {
+            console.warn("escapeHtml recebeu algo que não é string:", text);
+            return ''; // Retorna string vazia ou lida com o erro como preferir
+        }
         const div = document.createElement('div');
         div.textContent = text;
         return div.innerHTML;
     }
 
     // --- Inicialização ---
-    // Event listeners
-    searchInput.addEventListener('input', filterTerms);
     addTermForm.addEventListener('submit', handleAddTerm);
+    searchInput.addEventListener('input', filterTerms); // Mudou para filterTerms que chama renderTerms
 
-    // Carregar dados e renderizar
     loadTermsFromLocalStorage();
+    populateCategorySelect(); // Popula o select de categorias no formulário
+    renderCategoryFilters();  // Renderiza os botões de filtro de categoria
     renderTerms();
     updateStats();
 });
