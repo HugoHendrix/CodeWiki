@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="avaliar-e-montar-uma-carteira-de-fundos-imobiliários-fiis">Avaliar e montar uma carteira de fundos
+        imobiliários (FIIs)</h1>
+    <hr>
+    <h2 id="1-principais-indicadores-para-fiis">1. Principais indicadores para FIIs</h2>
+    <ol>
+        <li>
+            <p><strong>P/VP (Preço sobre Valor Patrimonial)</strong></p>
+            <ul>
+                <li>
+                    <p><strong>O que mede</strong>: compara o preço de mercado (cotação) do FII com seu valor
+                        patrimonial por cota (ativo bruto – passivo dividido pelo número de cotas).</p>
+                </li>
+                <li>
+                    <p><strong>Interpretação</strong>:</p>
+                    <ul>
+                        <li>P/VP &lt; 1,0 → mercado cotando o fundo “com desconto” em relação ao valor contábil dos
+                            imóveis/ativos. Pode sinalizar oportunidade, mas verifique o motivo (ativos antigos,
+                            necessidade de capex, vacância crescente).</li>
+                        <li>P/VP ≈ 1,0 → preço próximo ao valor patrimonial, indica que mercado e contabilidade estão
+                            alinhados.</li>
+                        <li>P/VP &gt; 1,2–1,3 → prêmio em relação ao valor patrimonial, muitas vezes justificado por
+                            portfólio mais atrativo (localização, contratos indexados ao IPCA, gestão dedicada) ou
+                            perspectiva de crescimento de receitas.</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Dividend Yield (Yield de Distribuição mensal/anual)</strong></p>
+            <ul>
+                <li>
+                    <p><strong>O que mede</strong>: percentual de retorno em proventos (alugueis, receitas de locação)
+                        sobre o preço atual da cota.</p>
+                </li>
+                <li>
+                    <p><strong>Fórmula básica (anualizada)</strong>:</p>
+                    <p>$$
+                        \text{DY}<em>{\mathrm{anual}} = \frac{\sum</em>{\text{últimos 12 meses}} \text{Distribuição por
+                        cota}}{\text{Preço da cota}} \times 100%
+                        $$</p>
+                </li>
+                <li>
+                    <p><strong>Interpretação</strong>:</p>
+                    <ul>
+                        <li>DY consistente e estável (por exemplo, 6–8% a.a.) costuma ser atraente.</li>
+                        <li>Um DY muito elevado (&gt; 10%) pode indicar vacância alta ou receitas extraordinárias não
+                            recorrentes — é necessário investigar se esse rendimento é sustentável.</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Taxa de Vacância (Financeira e Física)</strong></p>
+            <ul>
+                <li>
+                    <p><strong>Vacância Física</strong>: percentual da área total (m²) vaga nos imóveis do portfólio.
+                    </p>
+                </li>
+                <li>
+                    <p><strong>Vacância Financeira</strong>: percentual da receita potencial (valor total de aluguéis)
+                        não capturado por imóveis vagos ou contratos subvalorizados.</p>
+                </li>
+                <li>
+                    <p><strong>Por que importa</strong>:</p>
+                    <ul>
+                        <li>Vacância alta (acima de 10–15% em lajes corporativas, acima de 5–7% em logística) reduz
+                            receitas e pode pressionar o DY.</li>
+                        <li>É crucial entender se a vacância é temporária (troca de inquilino) ou estrutural
+                            (localização ruim, crise setorial).</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Preço Médio do Aluguel (R$/m²) e Tipo de Contrato</strong></p>
+            <ul>
+                <li>Inquilinos indexados ao IPCA ou ao IGP-M: oferecem proteção contra inflação. Contratos atrelados ao
+                    CDI refletem o cenário de taxas de juros.</li>
+                <li><strong>Prazo médio de locação (WALT – Weighted Average Lease Term)</strong>: prazo médio ponderado
+                    dos contratos (quanto maior, maior previsibilidade de receita).</li>
+                <li><strong>Inquilinos (rating e solidez)</strong>: fundo atrelado a empresas AAA tem menor risco de
+                    calote, mas geralmente paga aluguel um pouco menor.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Vacância Média vs. Concorrentes/Benchmark</strong></p>
+            <ul>
+                <li>Compare a vacância do fundo com a média do segmento (ex.: vacância de lajes corporativas em São
+                    Paulo, vacância média de galpões logísticos no estado, etc.).</li>
+                <li>Fundos que apresentam vacância abaixo da média setorial tendem a ter mais poder de precificação e
+                    portfólio mais desejado.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Valor de Mercado do Portfólio e diversificação setorial/ geográfica</strong></p>
+            <ul>
+                <li><strong>Diversificação</strong>: lajes corporativas (ex.: fundos de Escritórios), shoppings,
+                    logística (galpões de warehousing), rece’diveis imobiliários (FIDCs ou CRIs), papel (títulos de
+                    dívida imobiliária), híbridos (mix de tijolo + papel).</li>
+                <li>Quanto mais tipos de ativos o fundo possuir (com boa governança), menor o risco específico de um
+                    segmento.</li>
+                <li><strong>Localização geográfica</strong>: fundos cujo portfólio está concentrado numa única
+                    cidade/região têm risco maior que fundos espalhados por várias capitais ou polos logísticos.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Giro Médio de Cotas (Liquidez)</strong></p>
+            <ul>
+                <li>Observe o volume diário/médio de negociações.</li>
+                <li>Fundos muito ilíquidos (volume médio abaixo de R$ 100–200 mil por dia) podem ter spreads grandes
+                    (diferença entre preço de compra e venda) e dificuldade para entrar/ sair em momentos críticos.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Dívida e Alavancagem (em FIIs de Papel/Recebíveis)</strong></p>
+            <ul>
+                <li>
+                    <p>Para FIIs que investem em CRIs, lajes corporativas com endividamento, ou fundos mecanismos de
+                        alavancagem, observe:</p>
+                    <ul>
+                        <li>Grau de alavancagem (LTV – Loan to Value)</li>
+                        <li>Custo da dívida vs. rendimento dos ativos (spread de financiamento)</li>
+                        <li>Monetização de taxas (por exemplo, fenômenos como “taxa referencial negativa” em contratos
+                            de CRI indexados ao TR)</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Gestão e Taxa de Administração/Gestão</strong></p>
+            <ul>
+                <li>Gestoras renomadas (XP, BTG, Kinea, Vinci, etc.) tendem a ter processo de due diligence mais
+                    rigoroso na aquisição de ativos.</li>
+                <li>Taxa de administração/gestão: se muito alta (acima de 1,0% a.a. sobre o patrimônio), corrói parte do
+                    rendimento. Compare com a média do mercado (normalmente 0,7–0,9% a.a.).</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Preço Médio de Negociação nas Últimas Semanas/Meses</strong></p>
+            <ul>
+                <li>Por vezes, um FII pode apresentar oscilações bruscas por conta de notícias ou quedas generalizadas
+                    no setor.</li>
+                <li>Verifique se a cotação atual está em patamares historicamente descontados em relação aos fluxos
+                    distribuídos.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="2-como-usar-esses-indicadores-para-filtrar-fiis">2. Como usar esses indicadores para filtrar FIIs</h2>
+    <ol>
+        <li>
+            <p><strong>Monte um Screener de FIIs</strong> (por exemplo, na plataforma Funds Explorer, Economatica,
+                Status Invest, ou home broker da corretora) e aplique filtros básicos:</p>
+            <ul>
+                <li><strong>P/VP</strong>: entre 0,9 e 1,1 (para eliminar fundos muito exageradamente descontados ou
+                    superfaturados).</li>
+                <li><strong>Dividend Yield (12 meses)</strong>: acima de 6% a.a. (ou o nível que você considerar
+                    mínimo).</li>
+                <li><strong>Vacância média</strong>: abaixo de 10% (para lajes e shoppings; para logística, vacância
+                    abaixo de 5–7%).</li>
+                <li><strong>Liquidez mínima</strong>: volume médio diário &gt; R$ 200 000 (para garantir que você
+                    consiga entrar/ sair facilmente).</li>
+                <li><strong>Taxa de Administração</strong>: &lt; 1,0% a.a.</li>
+                <li><strong>Diversificação</strong>: filtrar por tipo (Escritórios, Logística, Shoppings, CRI/Papel,
+                    Híbridos).</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Liste os principais nomes que atendem aos critérios</strong> e anote para cada um:</p>
+            <ul>
+                <li>Cotação atual, P/VP, DY, vacância, WALT e ocupação, principais inquilinos, localização dos imóveis,
+                    gestora e taxa de administração.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Compare o FII com seus pares</strong>:</p>
+            <ul>
+                <li>Se você selecionou um fundo de logística, veja o P/VP médio e vacância média dos principais fundos
+                    de logística (ex.: HGLG11, XPLG11, LVBI11, RLOG11).</li>
+                <li>Se for laje corporativa, compare com KNRI11, HGBS11, HGRE11, XPPR11, BRCR11.</li>
+                <li>Para CRI/Papel, compare MXRF11, KNCR11, RECT11, CVBI11.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Analise o relatório gerencial mais recente</strong> (disponível no site de Relações com
+                Investidores do fundo):</p>
+            <ul>
+                <li>Cheque se houve reajuste de contratos (IPCA, IGP-M ou CDI).</li>
+                <li>Observe aquisições/alienações no portfólio (comprou ativos melhores? vendeu ativos de menor
+                    qualidade?).</li>
+                <li>Veja direção de fluxo de caixa e se os rendimentos pagos foram decorrentes de receitas operacionais
+                    normais ou de ganho de capital.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="3-exemplos-de-indicadores-na-prática">3. Exemplos de Indicadores na Prática</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Fundo</th>
+                <th>Tipo</th>
+                <th>P/VP</th>
+                <th>DY (12m)</th>
+                <th>Vacância (%)</th>
+                <th>Gestora</th>
+                <th>WALT (anos)</th>
+                <th>Taxa Adm. (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>HGLG11</td>
+                <td>Logística</td>
+                <td>1,05</td>
+                <td>6,5%</td>
+                <td>3,8</td>
+                <td>Hedge</td>
+                <td>4,2</td>
+                <td>0,85</td>
+            </tr>
+            <tr>
+                <td>KNRI11</td>
+                <td>Lajes Corpor.</td>
+                <td>1,00</td>
+                <td>6,3%</td>
+                <td>8,5</td>
+                <td>Kinea</td>
+                <td>3,7</td>
+                <td>0,90</td>
+            </tr>
+            <tr>
+                <td>MXRF11</td>
+                <td>CRI (Papel)</td>
+                <td>0,95</td>
+                <td>9,2%</td>
+                <td>–</td>
+                <td>XP Asset</td>
+                <td>–</td>
+                <td>0,75</td>
+            </tr>
+            <tr>
+                <td>XPML11</td>
+                <td>Shopping</td>
+                <td>0,98</td>
+                <td>7,8%</td>
+                <td>10,2</td>
+                <td>XP Asset</td>
+                <td>5,0</td>
+                <td>0,80</td>
+            </tr>
+            <tr>
+                <td>VISC11</td>
+                <td>Lajes Corpor.</td>
+                <td>0,92</td>
+                <td>8,1%</td>
+                <td>12,5</td>
+                <td>Vinci</td>
+                <td>4,8</td>
+                <td>0,85</td>
+            </tr>
+            <tr>
+                <td>CVBI11</td>
+                <td>CRI (Papel)</td>
+                <td>1,08</td>
+                <td>8,7%</td>
+                <td>–</td>
+                <td>Vinci</td>
+                <td>–</td>
+                <td>0,79</td>
+            </tr>
+        </tbody>
+    </table>
+    <blockquote>
+        <p><strong>Observações</strong>:</p>
+        <ul>
+            <li>Os valores acima são exemplos ilustrativos, mas refletem a forma de comparação entre pares.</li>
+            <li>CRI/papel não tem vacância, mas você deve olhar a qualidade e indexador dos títulos (IPCA, TR, CDI,
+                etc.) e a situação de crédito dos emissores.</li>
+        </ul>
+    </blockquote>
+    <hr>
+    <h2 id="4-estrutura-de-uma-carteira-diversificada-de-fiis">4. Estrutura de uma carteira diversificada de FIIs</h2>
+    <p>Para refletir diferentes fontes de renda e riscos, uma carteira de FIIs costuma combinar:</p>
+    <ol>
+        <li>
+            <p><strong>Fundos de Lajes Corporativas (30–35%)</strong></p>
+            <ul>
+                <li>Exemplo: KNRI11, VISC11, BRCR11</li>
+                <li>Risco: vacância se o mercado de escritórios recuar; porém, oferecem contratos mais longos e
+                    reajustes.</li>
+                <li>Indicadores-chave: vacância física/financeira, WALT, qualidade dos inquilinos (inclusão de empresas
+                    de rating elevado), P/VP próximo de 1, DY estável.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Fundos de Logística (20–25%)</strong></p>
+            <ul>
+                <li>Exemplo: HGLG11, XPLG11, LVBI11</li>
+                <li>Risco: concentração em regiões específicas; porém, o setor de galpões segue forte devido ao
+                    e-commerce.</li>
+                <li>Indicadores-chave: vacância baixa (ideal &lt; 5%), contratos atrelados ao IPCA, localização próxima
+                    a polos logísticos e rodovias, P/VP ≤ 1,1.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Fundos de Shoppings (10–15%)</strong></p>
+            <ul>
+                <li>Exemplo: XPML11, VISC11 (tem shopping + laje), HGBS11 (mix)</li>
+                <li>Risco: sensível ao consumo e à reabertura pós-pandemia; porém, contratos de longo prazo e aumento de
+                    inflação ajudam.</li>
+                <li>Indicadores-chave: vacância nos shoppings (área e receita), reajuste de contratos (contratos
+                    atrelados ao IGP-M/Índice de inflação), foot traffic (fluxo de visitantes).</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Fundos de Recebíveis Imobiliários/CRI (20–25%)</strong></p>
+            <ul>
+                <li>Exemplo: MXRF11, KNCR11, CVBI11</li>
+                <li>Risco: crédito dos emissores, indexador (TR ou CDI).</li>
+                <li>Indicadores-chave: carteira de CRIs com rating elevado, prazo médio de vencimento, concentração
+                    máxima por emissor (quanto menor, menos risco), P/VP entre 0,9 e 1, DY acima de 8% a.a.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Fundos Híbridos ou Setoriais (10%)</strong></p>
+            <ul>
+                <li>Exemplo: VINCI (AFCR11 – agronegócio + logística), BCFF11 (tijolo + papel), FIIB11 (educação +
+                    escritório)</li>
+                <li>Objetivo: equilibrar risco e retorno; a parte de tijolo “suporta” temporada de alta vacância,
+                    enquanto a parte de papel “suporta” retomada de juros.</li>
+            </ul>
+        </li>
+    </ol>
+    <blockquote>
+        <p><strong>Alocação sugerida (exemplo de carteira de R$ 100 000):</strong></p>
+        <ul>
+            <li>Lajes Corporativas: R$ 30 000 (KNRI11 e VISC11 – R$ 15 000 em cada)</li>
+            <li>Logística: R$ 20 000 (HGLG11 – R$ 10 000; XPLG11 – R$ 10 000)</li>
+            <li>Shoppings: R$ 10 000 (XPML11)</li>
+            <li>CRI/Papel: R$ 25 000 (MXRF11 – R$ 12 500; KNCR11 – R$ 12 500)</li>
+            <li>Híbrido/Setorial: R$ 15 000 (BCFF11)</li>
+        </ul>
+    </blockquote>
+    <hr>
+    <h2 id="5-passo-a-passo-para-montar-a-carteira">5. Passo a passo para montar a carteira</h2>
+    <ol>
+        <li>
+            <p><strong>Defina seu objetivo e apetite de risco</strong></p>
+            <ul>
+                <li>Se quiser rendimentos mais estáveis e menor risco, aumente a parcela de CRI/papel e híbridos.</li>
+                <li>Se quiser maior potencial de valorização da cota no longo prazo, aloque mais em lajes e logística,
+                    que têm potencial de redução de vacância e revisão de contratos.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Filtre FIIs pelo screener usando critérios mínimos</strong></p>
+            <ul>
+                <li><strong>P/VP</strong>: 0,9–1,1</li>
+                <li><strong>DY mínimo</strong>: 6% a.a. (ou o nível que deseje)</li>
+                <li><strong>Vacância</strong>: &lt; 10% para lajes e shoppings; &lt; 5% para logística (se possível)
+                </li>
+                <li><strong>Liquidez diária</strong>: volume médio &gt; R$ 200 000–300 000</li>
+                <li><strong>Taxa de administração</strong>: &lt; 0,9–1,0% a.a.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Analise relatórios gerenciais recentes (últimos 3 meses)</strong></p>
+            <ul>
+                <li>Observe se há mudanças nas políticas de aquisição de ativos.</li>
+                <li>Verifique reajustes contratuais; se houve revisão positiva (IPCA, IGP-M ou CDI).</li>
+                <li>Cheque a evolução da vacância: está subindo, está estável ou caiu?</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Selecione 2–3 fundos de cada segmento desejado</strong></p>
+            <ul>
+                <li>Escolha os que estiverem mais alinhados com seu critério de P/VP e DY, mas também olhando vacância e
+                    qualidade de contratos.</li>
+                <li>Anote o histórico de distribuição (crescimento constante nos últimos 12–24 meses).</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Calcule a alocação proporcional no portfólio</strong></p>
+            <ul>
+                <li>Defina porcentagens aproximadas (por exemplo, 30% lajes, 20% logística etc.).</li>
+                <li>Distribua o capital entre os fundos escolhidos de cada segmento (no máximo 2–3 fundos por segmento
+                    para não dispersar demais).</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Acompanhe mensalmente os rendimentos e trimestralmente os relatórios</strong></p>
+            <ul>
+                <li>Se algum indicador (vacância ou DY) passar de um limite de alerta (por exemplo, vacância &gt; 15%),
+                    reavalie se mantém posição.</li>
+                <li>Ajuste pesos se algum fundo cair muito de distribuição ou se surgir um fundo novo com portfólio mais
+                    atrativo.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="6-exemplo-de-montagem-prática-cota-a-cota">6. Exemplo de montagem prática (cota a cota)</h2>
+    <p>Imagine que você tem R$ 10 000 para investir inicialmente. Você decide distribuir em 5 fundos:</p>
+    <ol>
+        <li>
+            <p><strong>KNRI11 (Lajes Corporativas)</strong></p>
+            <ul>
+                <li>Cotação: R$ 130</li>
+                <li>P/VP: 1,00</li>
+                <li>DY (últimos 12 meses): 6,3% a.a. (≈ R$ 8,20/mês por cota)</li>
+                <li>Vacância Financeira: 8,5%</li>
+                <li>WALT: 3,7 anos</li>
+                <li>Alocação: R$ 2 000 → ≈ 15 cotas</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>HGLG11 (Logística)</strong></p>
+            <ul>
+                <li>Cotação: R$ 150</li>
+                <li>P/VP: 1,05</li>
+                <li>DY: 6,5% a.a. (≈ R$ 8,13/mês por cota)</li>
+                <li>Vacância Financeira: 3,8%</li>
+                <li>WALT: 4,2 anos</li>
+                <li>Alocação: R$ 2 000 → ≈ 13 cotas</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>XPML11 (Shoppings)</strong></p>
+            <ul>
+                <li>Cotação: R$ 90</li>
+                <li>P/VP: 0,98</li>
+                <li>DY: 7,8% a.a. (≈ R$ 5,85/mês por cota)</li>
+                <li>Vacância Financeira: 10,2% (setor retomando)</li>
+                <li>WALT: 5,0 anos</li>
+                <li>Alocação: R$ 1 500 → ≈ 16 cotas</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>MXRF11 (Papel – CRI)</strong></p>
+            <ul>
+                <li>Cotação: R$ 10</li>
+                <li>P/VP: 0,95</li>
+                <li>DY: 9,2% a.a. (≈ R$ 0,077/mês por cota)</li>
+                <li>Carteira: CRIs atrelados ao IPCA/TR, prazo médio de 3 anos, emissores de rating elevado</li>
+                <li>Alocação: R$ 2 000 → 200 cotas</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>BCFF11 (Híbrido – Tijolo + Papel)</strong></p>
+            <ul>
+                <li>Cotação: R$ 150</li>
+                <li>P/VP: 1,02</li>
+                <li>DY: 6,0% a.a. (≈ R$ 7,50/mês por cota)</li>
+                <li>Portfólio: mix de lajes em São Paulo e CRIs atrelados ao IPCA, com vacância geral de ≈ 9%</li>
+                <li>Alocação: R$ 2 500 → ≈ 16 cotas</li>
+            </ul>
+        </li>
+    </ol>
+    <blockquote>
+        <p><strong>Total investido</strong>: R$ 10 000.
+            <strong>Alocação aproximada</strong>:
+        </p>
+        <ul>
+            <li>Lajes: 20%</li>
+            <li>Logística: 20%</li>
+            <li>Shoppings: 15%</li>
+            <li>CRI (Papel): 20%</li>
+            <li>Híbrido: 25%</li>
+        </ul>
+    </blockquote>
+    <hr>
+    <h2 id="7-cuidados-e-considerações-finais">7. Cuidados e considerações finais</h2>
+    <ol>
+        <li>
+            <p><strong>Rebalanceamento periódico</strong></p>
+            <ul>
+                <li>A cada 6 meses, reavalie se algum fundo está muito acima ou abaixo do peso inicial (por exemplo, se
+                    BCFF11 subiu 20% de cota, talvez esteja 30% ou mais do portfólio).</li>
+                <li>Realocar parte do capital para manter a alocação aproximada que você definiu.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Impactos de vacância em segmentos específicos</strong></p>
+            <ul>
+                <li>Se a economia entrar em recessão, a vacância de lajes e shoppings tende a subir primeiro. Nesses
+                    casos, a parcela de CRI/papel e híbridos ajuda a proteger o rendimento.</li>
+                <li>Em cenários de inflação alta, fundos com contratos atrelados ao IPCA/IGP-M (principalmente logística
+                    e CRI) tendem a performar melhor.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Monitorar agenda de leilões e possíveis emissões de cotas</strong></p>
+            <ul>
+                <li>Alguns FIIs fazem follow-on (oferta secundária), diluindo levemente o VP e afetando o DY
+                    momentaneamente. A notícia de uma emissão pode levar a queda de preço, mas se o gestor usar os
+                    recursos para comprar ativos interessantes, a longo prazo costuma ser positivo.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Avaliar o cenário macro de juros e inflação</strong></p>
+            <ul>
+                <li>Em juros em queda, FIIs tendem a valorizar (os investidores buscam rendimentos de renda fixa –
+                    CDB/Tesouro – e migram para FIIs).</li>
+                <li>Em juros em alta, renda fixa fica relativamente mais atraente, mas resulta em menor valorização de
+                    cota; entretanto, contratos indexados a CDI (alguns lajes e CRIs) aumentam rendimento.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Diversificação entre gestores e administradores</strong></p>
+            <ul>
+                <li>Evite concentrar 100% do portfólio em FIIs de uma mesma gestora (riscos de governança). Por exemplo,
+                    mesclar fundos da Kinea, Hedge, Vinci e XP Asset.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="resumo">Resumo</h3>
+    <ul>
+        <li><strong>Indicadores principais</strong> para FIIs: P/VP, Dividend Yield (DY), Vacância Física/Financeira,
+            WALT, Liquidez, Diversificação de Ativos, Qualidade de Contratos (indexador e rating dos inquilinos), Taxa
+            de Administração e Gestão.</li>
+        <li><strong>Passos para filtrar</strong>: use um screener, aplique filtros de P/VP (0,9–1,1), DY (&gt; 6% a.a.),
+            Vacância (≤ 10% para lajes/shoppings, ≤ 5–7% para logística) e Liquidez (volume mínimo diário).</li>
+        <li><strong>Carteira diversificada</strong>: combine lajes corporativas (≈ 30%), logística (20%), shoppings
+            (10–15%), CRI/papel (20–25%) e híbridos ou setoriais (10–15%).</li>
+        <li><strong>Exemplo prático</strong>: alocação em cinco FIIs (KNRI11, HGLG11, XPML11, MXRF11 e BCFF11) a partir
+            de R$ 10 000, respeitando a diversificação e os indicadores-chave.</li>
+    </ul>
+    <p>Com esses indicadores e etapas de seleção, você conseguirá construir uma carteira de FIIs equilibrada, focada em
+        boas oportunidades de desconto (P/VP razoável), rendimento consistente (DY) e portfólio saudável (vacância
+        controlada, contratos sólidos). Lembre-se de acompanhar trimestralmente os relatórios gerenciais e rebalancear
+        quando necessário. Bons investimentos!</p>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
