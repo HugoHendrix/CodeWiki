@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h2 id="conceitos-fundamentais-de-modelagem-financeira-e-valuation">Conceitos Fundamentais de Modelagem Financeira e
+        Valuation</h2>
+    <p>A <strong>modelagem financeira</strong> é a arte de construir uma representação matemática do desempenho
+        financeiro de uma empresa, geralmente em planilhas (como Excel), para prever resultados futuros. O
+        <strong>Valuation</strong> é o processo de estimar o valor intrínseco de um ativo ou empresa. Juntos, eles são
+        poderosas ferramentas para a tomada de decisão de investimento.</p>
+    <h3 id="modelagem-financeira">Modelagem Financeira</h3>
+    <p>A modelagem envolve a projeção de demonstrações financeiras (DRE, Balanço, Fluxo de Caixa) com base em premissas
+        e dados históricos.</p>
+    <h3 id="fluxos-de-caixa-livre-free-cash-flow---fcf">Fluxos de Caixa Livre (Free Cash Flow - FCF)</h3>
+    <p>Os <strong>Fluxos de Caixa Livre (FCL)</strong> são o coração do método de Valuation mais utilizado: o Fluxo de
+        Caixa Descontado (FCD). O FCL representa o <strong>caixa que uma empresa gera após cobrir seus custos
+            operacionais e realizar os investimentos necessários para manter ou expandir suas operações</strong>. É o
+        dinheiro que está &quot;livre&quot; para ser distribuído aos acionistas ou pagar dívidas.</p>
+    <ul>
+        <li><strong>FCL para a Firma (FCFF - Free Cash Flow to Firm):</strong> Caixa disponível para todos os provedores
+            de capital (acionistas e credores) após as despesas operacionais e CAPEX.</li>
+        <li><strong>FCL para o Acionista (FCFE - Free Cash Flow to Equity):</strong> Caixa disponível apenas para os
+            acionistas, após todas as despesas, CAPEX e pagamento/recebimento líquido de dívidas.</li>
+    </ul>
+    <h3 id="taxa-de-crescimento-growth-rate">Taxa de Crescimento (Growth Rate)</h3>
+    <p>A <strong>Taxa de Crescimento</strong> é a premissa que usamos para projetar o crescimento futuro das receitas,
+        lucros e, consequentemente, dos fluxos de caixa da empresa. É uma das premissas mais sensíveis em um modelo.</p>
+    <ul>
+        <li><strong>Para o período de projeção:</strong> Geralmente assume-se uma taxa de crescimento mais alta no curto
+            e médio prazo, refletindo as oportunidades de crescimento da empresa.</li>
+        <li><strong>Para a perpetuidade:</strong> No longo prazo, a taxa de crescimento deve ser mais conservadora,
+            geralmente próxima ou inferior à taxa de crescimento do PIB nominal do país, pois empresas não podem crescer
+            acima da economia indefinidamente.</li>
+    </ul>
+    <h3 id="taxa-de-desconto-discount-rate">Taxa de Desconto (Discount Rate)</h3>
+    <p>A <strong>Taxa de Desconto</strong> é a taxa de retorno que um investidor espera obter ao assumir o risco de
+        investir em uma empresa. Ela é usada para trazer os fluxos de caixa futuros (que valem menos no futuro devido ao
+        risco e ao valor do dinheiro no tempo) para o valor presente.</p>
+    <ul>
+        <li>Para o <strong>FCFF</strong>, a taxa de desconto utilizada é o <strong>WACC (Custo Médio Ponderado de
+                Capital)</strong>.</li>
+        <li>Para o <strong>FCFE</strong>, a taxa de desconto utilizada é o <strong>Custo de Capital Próprio</strong>.
+        </li>
+    </ul>
+    <h3 id="valor-na-perpetuidade-terminal-value">Valor na Perpetuidade (Terminal Value)</h3>
+    <p>O <strong>Valor na Perpetuidade</strong> representa o valor de uma empresa após o período explícito de projeção
+        (geralmente 5 a 10 anos). Assume-se que a empresa continuará a operar e gerar fluxos de caixa indefinidamente,
+        mas a uma taxa de crescimento mais estável e madura.</p>
+    <ul>
+        <li><strong>Fórmula (Modelo de Gordon):</strong> $Valor\ na\ Perpetuidade = (FCFL_{\text{último ano da
+            projeção}} * (1 + \text{Taxa de Crescimento na Perpetuidade})) / (\text{Taxa de Desconto} - \text{Taxa de
+            Crescimento na Perpetuidade})$</li>
+    </ul>
+    <h3 id="fluxo-de-caixa-descontado-fcd---discounted-cash-flow---dcf">Fluxo de Caixa Descontado (FCD - Discounted Cash
+        Flow - DCF)</h3>
+    <p>O <strong>Fluxo de Caixa Descontado (FCD)</strong> é o método de Valuation mais robusto e amplamente aceito. Ele
+        estima o <strong>valor intrínseco de uma empresa somando o valor presente de seus fluxos de caixa
+            futuros</strong> (tanto do período de projeção explícita quanto do valor na perpetuidade).</p>
+    <p>[Image of discounted cash flow diagram]</p>
+    <h3 id="valor-por-ação">Valor por Ação</h3>
+    <p>Após calcular o valor total da empresa (Valor da Firma) usando o FCD, é preciso chegar ao <strong>Valor por
+            Ação</strong>.</p>
+    <ul>
+        <li><strong>Para FCFF:</strong> Começa-se com o Valor da Firma (FCFF + Valor na Perpetuidade descontados).
+            Subtrai-se a Dívida Líquida e divide-se pelo número de ações em circulação para chegar ao Valor por Ação.
+        </li>
+        <li><strong>Para FCFE:</strong> O valor dos FCFE já representa o valor para os acionistas. Divide-se esse valor
+            diretamente pelo número de ações.</li>
+    </ul>
+    <hr>
+    <h2 id="projeções-fundamentais">Projeções Fundamentais</h2>
+    <p>A base do Valuation por FCD são as projeções financeiras.</p>
+    <h3 id="projeção-das-receitas">Projeção das Receitas</h3>
+    <p>Prever as vendas futuras é crucial. Isso envolve analisar:</p>
+    <ul>
+        <li><strong>Dados Históricos:</strong> Tendências de crescimento da empresa.</li>
+        <li><strong>Mercado:</strong> Tamanho do mercado, taxa de crescimento do setor (ex: crescimento do PIB).</li>
+        <li><strong>Competição:</strong> Ameaças e oportunidades.</li>
+        <li><strong>Estratégias da Empresa:</strong> Lançamento de novos produtos, expansão, aquisições.</li>
+        <li><strong>Fatores Econômicos:</strong> Inflação, taxa de juros, poder de compra do consumidor.</li>
+    </ul>
+    <h3 id="projeção-dos-custos">Projeção dos Custos</h3>
+    <p>Analisar o comportamento dos custos em relação às receitas:</p>
+    <ul>
+        <li><strong>Custos Variáveis:</strong> Custos que variam proporcionalmente com a produção/vendas (ex:
+            matéria-prima).</li>
+        <li><strong>Custos Fixos:</strong> Custos que não variam com o nível de produção (ex: aluguel, salários
+            administrativos).</li>
+        <li><strong>Ganhos de Escala:</strong> A empresa pode se tornar mais eficiente à medida que cresce, reduzindo o
+            percentual de custos.</li>
+    </ul>
+    <h3 id="projeção-do-capex-capital-expenditure---investimento-em-ativos-fixos">Projeção do CAPEX (Capital Expenditure
+        - Investimento em Ativos Fixos)</h3>
+    <p>O <strong>CAPEX</strong> são os investimentos que a empresa faz em bens de capital (máquinas, equipamentos,
+        imóveis) para manter ou expandir suas operações.</p>
+    <ul>
+        <li><strong>CAPEX de Manutenção:</strong> Necessário para manter a operação atual.</li>
+        <li><strong>CAPEX de Crescimento:</strong> Investimentos para expandir capacidade, desenvolver novos produtos.
+        </li>
+        <li><strong>Projeção:</strong> Geralmente como um percentual da receita ou da depreciação, com base no histórico
+            e planos futuros.</li>
+    </ul>
+    <h3 id="projeção-de-depreciação">Projeção de Depreciação</h3>
+    <p>A <strong>Depreciação</strong> é o registro contábil da perda de valor dos ativos tangíveis ao longo do tempo.
+        Não é uma saída de caixa, mas reduz o lucro tributável.</p>
+    <ul>
+        <li><strong>Projeção:</strong> Baseada no histórico, nos ativos existentes e nas projeções de CAPEX.</li>
+    </ul>
+    <hr>
+    <h2 id="case-real-de-valuation-uma-abordagem-prática">Case Real de Valuation: Uma Abordagem Prática</h2>
+    <p>Vamos simular a construção de um Valuation para uma empresa, focando nos passos e dados necessários.</p>
+    <h3 id="acessando-os-dados-necessários">Acessando os Dados Necessários</h3>
+    <p>Você precisará de:</p>
+    <ul>
+        <li><strong>Demonstrativos Financeiros Históricos:</strong> DRE (Demonstrativo de Resultado do Exercício),
+            Balanço Patrimonial e DFC (Demonstrativo de Fluxo de Caixa) de, no mínimo, 5 anos. Fontes: sites de RI
+            (Relações com Investidores) da empresa, CVM, plataformas como Bloomberg, Refinitiv, Economatica.</li>
+        <li><strong>Dados Macroeconômicos:</strong> PIB, IPCA, Selic, taxas de juros de longo prazo. Fontes: Banco
+            Central, IBGE, IPEA, Trading Economics.</li>
+        <li><strong>Dados do Setor:</strong> Crescimento do setor, dados de concorrentes. Fontes: Associações de setor,
+            relatórios de pesquisa.</li>
+    </ul>
+    <h3 id="apresentação-inicial-da-empresa">Apresentação Inicial da Empresa</h3>
+    <p>Entender o negócio é o primeiro passo:</p>
+    <ul>
+        <li><strong>Setor de Atuação:</strong> Qual o mercado da empresa?</li>
+        <li><strong>Modelo de Negócio:</strong> Como ela gera receita? Qual sua proposta de valor?</li>
+        <li><strong>Vantagens Competitivas (Moats):</strong> O que a diferencia dos concorrentes? (Marca forte,
+            economias de escala, patentes, etc.)</li>
+        <li><strong>Governança Corporativa:</strong> Qualidade da gestão, estrutura de capital.</li>
+    </ul>
+    <h3 id="conhecendo-os-indicadores">Conhecendo os Indicadores</h3>
+    <p>Revise os indicadores fundamentalistas que já vimos:</p>
+    <ul>
+        <li><strong>Rentabilidade:</strong> Margens (Bruta, Líquida, EBIT, EBITDA), ROE, ROIC.</li>
+        <li><strong>Crescimento:</strong> CAGR de receitas e lucros.</li>
+        <li><strong>Endividamento:</strong> Dívida Líquida/EBITDA, Liquidez Corrente.</li>
+        <li><strong>Valuation:</strong> P/L, P/VP, EV/EBITDA (para comparação com pares de mercado).</li>
+    </ul>
+    <h3 id="conhecendo-a-geração-de-receita">Conhecendo a Geração de Receita</h3>
+    <p>Aprofunde na receita:</p>
+    <ul>
+        <li><strong>Dados da Empresa:</strong> Detalhes de produtos/serviços vendidos, volumes, preços.</li>
+        <li><strong>PIB:</strong> Como o crescimento econômico geral impacta as vendas da empresa?</li>
+        <li><strong>Dados de Entrada (Inputs do Modelo):</strong>
+            <ul>
+                <li><strong>Receita Líquida:</strong> Histórico e projeções baseadas no PIB, crescimento de mercado,
+                    participação de mercado.</li>
+                <li><strong>ABL (Área Bruta Locável) / Ocupação e Receita por Shopping (para o setor de Shopping
+                        Centers):</strong> Se for uma empresa de shopping, projete a ABL (expansão), a taxa de ocupação
+                    dos espaços e a receita por metro quadrado/loja. Isso é um detalhamento da projeção de receita.</li>
+            </ul>
+        </li>
+    </ul>
+    <h3 id="construção-do-modelo-detalhes-essenciais">Construção do Modelo: Detalhes Essenciais</h3>
+    <p>A modelagem é uma arte e uma ciência.</p>
+    <h4 id="dados-da-empresa-no-modelo">Dados da Empresa (no Modelo)</h4>
+    <p>Organize todas as demonstrações financeiras históricas (DRE, Balanço, DFC) em abas separadas na sua planilha.</p>
+    <h4 id="cdi-e-ipca-e-taxa-selic">CDI e IPCA (e Taxa Selic)</h4>
+    <p>São dados externos essenciais para o custo de capital e para a projeção de receitas e despesas que são atreladas
+        à inflação.</p>
+    <h4 id="repetição-de-valores--médias">Repetição de Valores / Médias</h4>
+    <p>Ao projetar, muitas vezes começamos repetindo os percentuais históricos (ex: custo do produto vendido como % da
+        receita) e depois ajustamos com base em premissas. Médias históricas também são um bom ponto de partida.</p>
+    <h4 id="dados-de-entrada-inputs-essenciais">Dados de Entrada (Inputs Essenciais)</h4>
+    <p>Crie uma aba separada para os <strong>inputs do seu modelo</strong>, onde você colocará todas as suas premissas:
+    </p>
+    <ul>
+        <li>Taxas de crescimento de receita.</li>
+        <li>Margens operacionais.</li>
+        <li>CAPEX como % da receita.</li>
+        <li>Variação do capital de giro.</li>
+        <li>Taxas de imposto.</li>
+        <li>Estrutura de capital (dívida e capital próprio).</li>
+        <li>Taxa de crescimento na perpetuidade.</li>
+    </ul>
+    <h4 id="balanço-patrimonial">Balanço Patrimonial</h4>
+    <p>Projetar o Balanço Patrimonial garante a consistência do seu modelo (Ativo = Passivo + PL).</p>
+    <h4 id="dívida-e-capital-de-giro">Dívida e Capital de Giro</h4>
+    <ul>
+        <li><strong>Dívida:</strong> Projete novas captações e amortizações.</li>
+        <li><strong>Capital de Giro:</strong> Projete as contas de Ativo e Passivo Circulante (Contas a Receber,
+            Estoques, Contas a Pagar) como percentuais da Receita ou CPV. A <strong>Variação do Capital de Giro</strong>
+            impacta diretamente o Fluxo de Caixa.</li>
+    </ul>
+    <h4 id="receita-e-lucro-dre">Receita e Lucro (DRE)</h4>
+    <p>Projete a DRE linha a linha:</p>
+    <ul>
+        <li><strong>Receita Líquida:</strong> Primeiro a ser projetado.</li>
+        <li><strong>Custos e Despesas:</strong> Como percentual da receita ou fixos.</li>
+        <li><strong>NOPAT (Net Operating Profit After Tax - Lucro Operacional Líquido Após Impostos):</strong> É o EBIT
+            ajustado pelo imposto de renda, sem considerar a estrutura de dívida da empresa. É o ponto de partida para o
+            FCFF.</li>
+        <li><strong>EBITDA:</strong> Lucro antes de juros, impostos, depreciação e amortização. Importante para análise
+            de geração de caixa.</li>
+    </ul>
+    <h4 id="ffo-e-lair-para-fiis-e-empresas-do-setor-imobiliário">FFO e LAIR (para FIIs e Empresas do Setor Imobiliário)
+    </h4>
+    <ul>
+        <li><strong>FFO (Funds From Operations):</strong> É um indicador de fluxo de caixa muito usado para REITs e
+            FIIs, pois ajusta o lucro líquido para itens não-caixa como depreciação e ganhos/perdas com vendas de
+            ativos, e adiciona de volta a amortização de dívidas.</li>
+        <li><strong>LAIR (Lucro Antes do Imposto de Renda):</strong> O lucro da empresa antes de subtrair o IR.</li>
+    </ul>
+    <h4 id="lucro-líquido-e-dividendos">Lucro Líquido e Dividendos</h4>
+    <p>Projete o Lucro Líquido final da DRE. Com base no payout histórico e na política da empresa, projete os
+        dividendos que serão distribuídos.</p>
+    <h4 id="capex-e-variação-de-caixa">CAPEX e Variação de Caixa</h4>
+    <ul>
+        <li><strong>CAPEX:</strong> Já discutido.</li>
+        <li><strong>Variação de Caixa:</strong> Calcular a variação líquida do caixa ao final do período, consolidando
+            todas as entradas e saídas.</li>
+    </ul>
+    <h4 id="taxa-de-crescimento">Taxa de Crescimento</h4>
+    <p>Defina as taxas de crescimento para a receita, lucros e para a perpetuidade.</p>
+    <h4 id="conferência-dos-dados">Conferência dos Dados</h4>
+    <p>É crucial que o modelo seja internamente consistente:</p>
+    <ul>
+        <li>O Balanço Patrimonial precisa fechar (Ativo = Passivo + PL).</li>
+        <li>Os fluxos de caixa do DFC devem ser consistentes com o DRE e o Balanço.</li>
+    </ul>
+    <h3 id="cálculo-do-wacc-weighted-average-cost-of-capital---custo-médio-ponderado-de-capital">Cálculo do WACC
+        (Weighted Average Cost of Capital - Custo Médio Ponderado de Capital)</h3>
+    <p>O <strong>WACC</strong> é a taxa de desconto mais utilizada no Valuation por FCD (FCFF). Representa o custo médio
+        que a empresa tem para levantar capital, considerando tanto o capital próprio (acionistas) quanto o capital de
+        terceiros (dívida).</p>
+    <ul>
+        <li><strong>Fórmula:</strong> $WACC = (% \text{Capital Próprio} \times \text{Custo de Capital Próprio}) + (%
+            \text{Capital de Terceiros} \times \text{Custo de Capital de Terceiros} \times (1 - \text{Taxa de
+            Imposto}))$</li>
+    </ul>
+    <h4 id="custo-de-capital-próprio-ke">Custo de Capital Próprio (Ke)</h4>
+    <p>É a taxa de retorno que os acionistas esperam receber por investir na empresa, considerando o risco do negócio.
+    </p>
+    <ul>
+        <li><strong>Modelo CAPM (Capital Asset Pricing Model):</strong> $Ke = Rf + \beta \times (Rm - Rf)$<ul>
+                <li><strong>Rf (Risk-Free Rate):</strong> Taxa de retorno livre de risco (ex: rendimento de títulos do
+                    Tesouro Americano de longo prazo).</li>
+                <li><strong>$\beta$ (Beta):</strong> Mede a volatilidade da ação em relação ao mercado. Um beta &gt; 1
+                    significa mais volátil que o mercado; &lt; 1 menos volátil.</li>
+                <li><strong>Rm (Market Return):</strong> Retorno esperado do mercado (prêmio de risco de mercado).</li>
+            </ul>
+        </li>
+    </ul>
+    <h4 id="custo-de-capital-de-terceiros-kd">Custo de Capital de Terceiros (Kd)</h4>
+    <p>É a taxa de juros que a empresa paga sobre sua dívida, ajustada pelo benefício fiscal (o juro é uma despesa
+        dedutível do IR).</p>
+    <ul>
+        <li>Geralmente, usa-se a taxa de juros média das dívidas da empresa ou o custo de uma nova emissão de dívida.
+        </li>
+    </ul>
+    <hr>
+    <h2 id="valuation-chegando-ao-valor-intrínseco">Valuation: Chegando ao Valor Intrínseco</h2>
+    <p>Com as projeções e o WACC calculados, é hora de realizar o Valuation.</p>
+    <h3 id="parâmetros">Parâmetros</h3>
+    <p>Revise todos os inputs do seu modelo, garantindo que as premissas sejam realistas e bem fundamentadas.</p>
+    <h3 id="dados-do-mercado">Dados do Mercado</h3>
+    <p>Compare as projeções do seu modelo com as expectativas de mercado e dos analistas para validar suas premissas.
+    </p>
+    <h3 id="fluxo-de-caixa-descontado">Fluxo de Caixa Descontado</h3>
+    <p>Calcule o valor presente de cada ano de FCL projetado e o valor presente do Valor na Perpetuidade. A soma desses
+        valores é o <strong>Valor da Firma</strong>.</p>
+    <h3 id="valuation">Valuation</h3>
+    <p>Com o Valor da Firma em mãos, você pode calcular:</p>
+    <ol>
+        <li><strong>Valor do Patrimônio Líquido:</strong> $Valor\ da\ Firma - \text{Dívida Líquida}$</li>
+        <li><strong>Valor por Ação:</strong> $Valor\ do\ Patrimônio\ Líquido / \text{Número de Ações em Circulação}$
+        </li>
+    </ol>
+    <p>Este é o <strong>valor intrínseco</strong> da empresa, segundo suas premissas. Se o preço da ação no mercado for
+        significativamente menor que seu valor intrínseco, a ação pode ser considerada uma <strong>boa oportunidade de
+            compra</strong>.</p>
+    <h3 id="análise-de-sensibilidade">Análise de Sensibilidade</h3>
+    <p>O Valuation é muito sensível às premissas. A <strong>Análise de Sensibilidade</strong> mostra como o Valor por
+        Ação muda quando você altera suas premissas-chave.</p>
+    <h4 id="análise-da-receita-líquida">Análise da Receita Líquida</h4>
+    <p>Varie a taxa de crescimento da Receita Líquida (ex: cenário otimista, base, pessimista) e veja o impacto no Valor
+        por Ação.</p>
+    <h4 id="análise-do-wacc">Análise do WACC</h4>
+    <p>Varie o WACC (ex: aumentando ou diminuindo em 0,5% ou 1%) e observe como o Valor por Ação reage.</p>
+    <p>Essa análise permite entender a robustez do seu Valuation e os principais drivers de valor da empresa.</p>
+    <hr>
+    <p> seus próprios modelos?</p>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

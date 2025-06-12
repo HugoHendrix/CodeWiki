@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h1 id="guia-completo-day-trading">Guia Completo: Day Trading</h1>
+    <h2 id="🧠-o-que-é-day-trading">🧠 O que é Day Trading?</h2>
+    <p>Day Trading é um estilo de operação no mercado financeiro onde a compra e a venda de ativos são realizadas no
+        mesmo dia. O objetivo é lucrar com pequenas variações de preço, aproveitando movimentos rápidos e a volatilidade
+        do mercado.</p>
+    <blockquote>
+        <p>Exemplo: Comprar ações da PETR4 a R$ 30,00 às 10h e vendê-las a R$ 30,50 às 11h. Lucro de R$ 0,50 por ação.
+        </p>
+    </blockquote>
+    <hr>
+    <h2 id="📄-principais-contratos-usados">📄 Principais Contratos Usados</h2>
+    <h3 id="🟠-mini-contratos-b3">🟠 Mini Contratos (B3):</h3>
+    <h4 id="win---mini-índice-bovespa">WIN - Mini Índice Bovespa</h4>
+    <ul>
+        <li>Código: WINQ25 (Q = agosto, 25 = ano)</li>
+        <li>Referência: Índice Ibovespa</li>
+        <li>Tick (variação mínima): 5 pontos = R$ 1,00</li>
+    </ul>
+    <h4 id="wdo---mini-dólar">WDO - Mini Dólar</h4>
+    <ul>
+        <li>Código: WDOQ25</li>
+        <li>Referência: cotação do dólar</li>
+        <li>Tick: 0,5 ponto = R$ 5,00</li>
+    </ul>
+    <h3 id="🟢-ações">🟢 Ações:</h3>
+    <ul>
+        <li>PETR4, VALE3, BBDC4, etc.</li>
+        <li>Alta liquidez é essencial</li>
+    </ul>
+    <h3 id="🔵-outros">🔵 Outros:</h3>
+    <ul>
+        <li>Contratos cheios (IND, DOL)</li>
+        <li>Opções de ações</li>
+        <li>ETFs como BOVA11, IVVB11 (menos comum para day trade)</li>
+    </ul>
+    <hr>
+    <h2 id="🔎-como-identificar-oportunidades">🔎 Como Identificar Oportunidades</h2>
+    <h3 id="1-análise-técnica">1. Análise Técnica:</h3>
+    <ul>
+        <li>
+            <p><strong>Candlestick</strong>: padrões de vela que indicam reversões ou continuidade</p>
+        </li>
+        <li>
+            <p><strong>Suporte e Resistência</strong>: zonas onde o preço tende a parar</p>
+        </li>
+        <li>
+            <p><strong>Médias Móveis</strong>: mostram a tendência do ativo</p>
+        </li>
+        <li>
+            <p><strong>Indicadores</strong>:</p>
+            <ul>
+                <li>RSI (Força Relativa)</li>
+                <li>MACD</li>
+                <li>Volume</li>
+            </ul>
+        </li>
+    </ul>
+    <h3 id="2-notícias-e-eventos">2. Notícias e Eventos:</h3>
+    <ul>
+        <li>Dados econômicos</li>
+        <li>Discursos de autoridades</li>
+        <li>Fatos relevantes de empresas</li>
+    </ul>
+    <h3 id="3-fluxo-de-ordens">3. Fluxo de Ordens:</h3>
+    <ul>
+        <li>Book de ofertas</li>
+        <li>Times &amp; Trades (volume dos grandes players)</li>
+    </ul>
+    <hr>
+    <h2 id="🛡️-gerenciamento-de-risco-e-proteção-de-lucro">🛡️ Gerenciamento de Risco e Proteção de Lucro</h2>
+    <h3 id="princípios">Princípios:</h3>
+    <ol>
+        <li><strong>Risco por operação</strong>: máximo de 1% do capital</li>
+        <li><strong>Stop Loss</strong>: limite de prejuízo da operação</li>
+        <li><strong>Stop Diário</strong>: parar no dia após certo prejuízo (ex: -R$ 100)</li>
+        <li><strong>Stop Gain</strong>: travar o lucro e sair da operação</li>
+        <li><strong>Tamanho de Posição</strong> ajustado ao risco</li>
+    </ol>
+    <blockquote>
+        <p>Exemplo: Capital de R$ 1.000, risco de R$ 10 por operação (1%), buscar R$ 20 de lucro (alvo 2:1).</p>
+    </blockquote>
+    <h3 id="ferramentas">Ferramentas:</h3>
+    <ul>
+        <li>Ordens <strong>OCO</strong> (One Cancels the Other): definem automaticamente alvo e stop</li>
+        <li><strong>Simulação (demo)</strong> antes de operar com dinheiro real</li>
+        <li>Análise de histórico (backtesting)</li>
+    </ul>
+    <hr>
+    <h2 id="📈-como-realizar-operações-de-compra-e-venda">📈 Como Realizar Operações de Compra e Venda</h2>
+    <h3 id="passo-a-passo">Passo a passo:</h3>
+    <ol>
+        <li><strong>Escolha uma corretora</strong> com boa plataforma (Profit, MetaTrader, Vector)</li>
+        <li><strong>Escolha o ativo</strong>: mini índice, mini dólar, ações, etc.</li>
+        <li><strong>Configure o gráfico</strong> com indicadores</li>
+        <li><strong>Identifique ponto de entrada</strong></li>
+        <li><strong>Envie ordem de compra ou venda</strong> (a mercado ou limitada)</li>
+        <li><strong>Configure stop loss e take profit</strong></li>
+        <li><strong>Monitore a operação</strong></li>
+        <li><strong>Feche todas as posições antes do fim do pregão</strong> (17h55 para mini contratos)</li>
+    </ol>
+    <hr>
+    <h2 id="⚠️-considerações-finais">⚠️ Considerações Finais</h2>
+    <ul>
+        <li>Day trading é uma atividade de <strong>alto risco</strong> e <strong>alta exigência emocional</strong></li>
+        <li>Mais de 90% dos day traders iniciantes <strong>perdem dinheiro</strong> (fonte: CVM)</li>
+        <li>Requer <strong>educação financeira, prática e disciplina emocional</strong></li>
+        <li>Comece com <strong>capital pequeno</strong> e pratique em <strong>conta demo</strong></li>
+        <li>Nunca opere com dinheiro que não pode perder</li>
+    </ul>
+    <hr>
+    <h2 id="📚-recursos-adicionais-sugestão-para-codewiki">📚 Recursos Adicionais (sugestão para CodeWiki)</h2>
+    <ul>
+        <li><a href="https://www.b3.com.br" target="_blank" rel="noopener noreferrer">https://www.b3.com.br</a> - Site oficial da bolsa brasileira</li>
+        <li><a href="https://tradingview.com" target="_blank" rel="noopener noreferrer">https://tradingview.com</a> - Gráficos e análise técnica</li>
+        <li><a href="https://www.cvm.gov.br" target="_blank" rel="noopener noreferrer">https://www.cvm.gov.br</a> - Estudo sobre perfil dos traders no Brasil</li>
+    </ul>
+
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
