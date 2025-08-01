@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>Calculadora de Análise de Ações</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .calculator-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .calculator-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bazin-title {
+            color: #e74c3c;
+        }
+
+        .graham-title {
+            color: #27ae60;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-bazin {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+        }
+
+        .btn-bazin:hover {
+            background: linear-gradient(135deg, #c0392b, #a93226);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.3);
+        }
+
+        .btn-graham {
+            background: linear-gradient(135deg, #27ae60, #229954);
+            color: white;
+        }
+
+        .btn-graham:hover {
+            background: linear-gradient(135deg, #229954, #1e8449);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3);
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .result.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .result-bazin {
+            background: linear-gradient(135deg, #ffebee, #ffcdd2);
+            color: #c62828;
+            border: 2px solid #ef5350;
+        }
+
+        .result-graham {
+            background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+            color: #2e7d32;
+            border: 2px solid #66bb6a;
+        }
+
+        .info-section {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .info-title {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .formula {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 10px;
+        }
+
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            border: 2px solid #ef5350;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .icon {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Calculadora de Análise de Ações</h1>
+            <p>Preço-teto de Bazin & Preço Justo de Benjamin Graham</p>
+        </div>
+
+        <div class="main-content">
+            <!-- Calculadora Bazin -->
+            <div class="calculator-section">
+                <h2 class="section-title bazin-title">
+                    <span class="icon">🎯</span>
+                    Preço-teto de Bazin
+                </h2>
+                
+                <div class="input-group">
+                    <label for="dividendoBazin">Dividendo por Ação (R$)</label>
+                    <input type="number" id="dividendoBazin" step="0.01" placeholder="Ex: 0.50">
+                </div>
+                
+                <div class="input-group">
+                    <label for="yieldDesejado">Yield Desejado (%)</label>
+                    <input type="number" id="yieldDesejado" step="0.1" placeholder="Ex: 6.0">
+                </div>
+                
+                <button class="btn btn-bazin" onclick="calcularBazin()">
+                    Calcular Preço-teto
+                </button>
+                
+                <div id="resultadoBazin" class="result result-bazin"></div>
+            </div>
+
+            <!-- Calculadora Graham -->
+            <div class="calculator-section">
+                <h2 class="section-title graham-title">
+                    <span class="icon">💎</span>
+                    Preço Justo de Graham
+                </h2>
+                
+                <div class="input-group">
+                    <label for="lpaGraham">Lucro por Ação (R$)</label>
+                    <input type="number" id="lpaGraham" step="0.01" placeholder="Ex: 2.50">
+                </div>
+                
+                <div class="input-group">
+                    <label for="vpaGraham">Valor Patrimonial por Ação (R$)</label>
+                    <input type="number" id="vpaGraham" step="0.01" placeholder="Ex: 15.00">
+                </div>
+                
+                <button class="btn btn-graham" onclick="calcularGraham()">
+                    Calcular Preço Justo
+                </button>
+                
+                <div id="resultadoGraham" class="result result-graham"></div>
+            </div>
+        </div>
+
+        <!-- Seção de Informações -->
+        <div class="info-section">
+            <h3 class="info-title">📚 Como Funcionam as Fórmulas</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🎯 Método Bazin</h4>
+                    <p>O Preço-teto de Bazin é baseado no dividend yield desejado. Ele indica o preço máximo que você deveria pagar por uma ação para obter o rendimento em dividendos desejado.</p>
+                    <div class="formula">Preço-teto = Dividendo por Ação ÷ (Yield Desejado ÷ 100)</div>
+                </div>
+                
+                <div class="info-card">
+                    <h4>💎 Método Graham</h4>
+                    <p>A fórmula de Benjamin Graham considera tanto a capacidade de geração de lucro quanto o valor patrimonial da empresa, oferecendo uma visão mais conservadora do valor justo.</p>
+                    <div class="formula">Preço Justo = √(22.5 × LPA × VPA)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calcularBazin() {
+            const dividendo = parseFloat(document.getElementById('dividendoBazin').value);
+            const yieldDesejado = parseFloat(document.getElementById('yieldDesejado').value);
+            const resultadoDiv = document.getElementById('resultadoBazin');
+            
+            // Validação
+            if (isNaN(dividendo) || isNaN(yieldDesejado) || dividendo <= 0 || yieldDesejado <= 0) {
+                mostrarErro(resultadoDiv, 'Por favor, insira valores válidos e positivos!');
+                return;
+            }
+            
+            // Cálculo do Preço-teto de Bazin
+            const precoTeto = dividendo / (yieldDesejado / 100);
+            
+            // Exibir resultado
+            mostrarResultado(resultadoDiv, 
+                `<strong>Preço-teto: R$ ${precoTeto.toFixed(2)}</strong><br>
+                <small>Para um yield de ${yieldDesejado}% com dividendo de R$ ${dividendo.toFixed(2)}</small>`
+            );
+        }
+
+        function calcularGraham() {
+            const lpa = parseFloat(document.getElementById('lpaGraham').value);
+            const vpa = parseFloat(document.getElementById('vpaGraham').value);
+            const resultadoDiv = document.getElementById('resultadoGraham');
+            
+            // Validação
+            if (isNaN(lpa) || isNaN(vpa) || lpa <= 0 || vpa <= 0) {
+                mostrarErro(resultadoDiv, 'Por favor, insira valores válidos e positivos!');
+                return;
+            }
+            
+            // Cálculo do Preço Justo de Graham
+            const precoJusto = Math.sqrt(22.5 * lpa * vpa);
+            
+            // Exibir resultado
+            mostrarResultado(resultadoDiv, 
+                `<strong>Preço Justo: R$ ${precoJusto.toFixed(2)}</strong><br>
+                <small>LPA: R$ ${lpa.toFixed(2)} | VPA: R$ ${vpa.toFixed(2)}</small>`
+            );
+        }
+
+        function mostrarResultado(elemento, conteudo) {
+            elemento.innerHTML = conteudo;
+            elemento.classList.remove('error');
+            elemento.classList.add('show');
+        }
+
+        function mostrarErro(elemento, mensagem) {
+            elemento.innerHTML = `<strong>❌ Erro:</strong> ${mensagem}`;
+            elemento.classList.add('error');
+            elemento.classList.add('show');
+        }
+
+        // Adicionar eventos de Enter nos campos
+        document.addEventListener('DOMContentLoaded', function() {
+            // Campos Bazin
+            document.getElementById('dividendoBazin').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') calcularBazin();
+            });
+            document.getElementById('yieldDesejado').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') calcularBazin();
+            });
+            
+            // Campos Graham
+            document.getElementById('lpaGraham').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') calcularGraham();
+            });
+            document.getElementById('vpaGraham').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') calcularGraham();
+            });
+        });
+    </script>
+</body>
+</html>
