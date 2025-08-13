@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+
+         <h1>📊 Conversão de Arquivos JSON para Formatos Acessíveis</h1>
+
+  <div class="section">
+    <h2>🎯 Objetivo</h2>
+    <p>Facilitar o uso de dados exportados em JSON por diferentes perfis de usuários, convertendo-os para formatos mais adequados.</p>
+  </div>
+
+  <div class="section">
+    <h2>🔄 Formatos de Conversão</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Público-alvo</th>
+          <th>Formato recomendado</th>
+          <th>Ferramenta sugerida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Clientes / Stakeholders</td>
+          <td>CSV (Excel)</td>
+          <td><a href="https://jsoncompare.com/json-to-csv" target="_blank">JSON to CSV – jsoncompare.com</a></td>
+        </tr>
+        <tr>
+          <td>Desenvolvedores</td>
+          <td>JSON original</td>
+          <td>Sem conversão – manter o arquivo como está</td>
+        </tr>
+        <tr>
+          <td>Documentação técnica</td>
+          <td>YAML</td>
+          <td><a href="https://jsoncompare.com/json-to-yaml" target="_blank">JSON to YAML – jsoncompare.com</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>🧙‍♂️ Boas práticas</h2>
+    <ul>
+      <li>Sempre envie o <strong>CSV primeiro</strong> para clientes não técnicos.</li>
+      <li>Mantenha o <strong>JSON original</strong> para desenvolvedores que vão usar os dados em sistemas.</li>
+      <li>Use <strong>YAML</strong> para registrar configurações ou documentações legíveis.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🛠️ Como usar os conversores</h2>
+
+    <h3>✅ JSON para CSV</h3>
+    <ol>
+      <li>Acesse <a href="https://jsoncompare.com/json-to-csv" target="_blank">jsoncompare.com/json-to-csv</a></li>
+      <li>Cole o conteúdo do JSON</li>
+      <li>Clique em “Convert”</li>
+      <li>Baixe o arquivo CSV e envie para o cliente</li>
+    </ol>
+
+    <h3>✅ JSON para YAML</h3>
+    <ol>
+      <li>Acesse <a href="https://jsoncompare.com/json-to-yaml" target="_blank">jsoncompare.com/json-to-yaml</a></li>
+      <li>Cole o conteúdo do JSON</li>
+      <li>Clique em “Convert”</li>
+      <li>Use o YAML em sua documentação ou arquivos de configuração</li>
+    </ol>
+  </div>
+
+    </article>
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
