@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <article>
+        <h2 id="-documenta-o-componente-acorde-o-accordion-">📚 Documentação: Componente Acordeão (Accordion)</h2>
+        <h3 id="-objetivo">🎯 Objetivo</h3>
+        <p>O componente acordeão permite <strong>mostrar ou esconder conteúdo</strong> ao clicar em um cabeçalho. É útil
+            para FAQs, menus, seções colapsáveis ou qualquer área onde o conteúdo precisa ser organizado de forma
+            compacta.</p>
+        <hr>
+        <h3 id="-funcionamento">🧠 Funcionamento</h3>
+        <p>O acordeão é ativado por elementos com a classe <code>.toggleAccordionDefault</code>. Ao clicar, ele alterna
+            a visibilidade do conteúdo imediatamente abaixo.</p>
+        <hr>
+        <h3 id="-estrutura-html-esperada">🧩 Estrutura HTML esperada</h3>
+        <pre><code class="lang-html">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"toggleAccordionDefault"</span>&gt;Título da Seção&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"accordionContent"</span>&gt;Conteúdo escondido&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+        <ul>
+            <li>O primeiro <code>&lt;div&gt;</code> é o <strong>gatilho</strong> do acordeão.</li>
+            <li>O segundo <code>&lt;div&gt;</code> é o <strong>conteúdo</strong> que será expandido ou recolhido.</li>
+        </ul>
+        <hr>
+        <h3 id="-estilo-css-b-sico">🎨 Estilo CSS básico</h3>
+        <pre><code class="lang-css"><span class="hljs-selector-class">.toggleAccordionDefault</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f1f1f1</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">15px</span>;
+  <span class="hljs-attribute">cursor</span>: pointer;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ccc</span>;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">5px</span>;
+}
+
+<span class="hljs-selector-class">.toggleAccordionDefault</span><span class="hljs-selector-class">.active</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#d1e7dd</span>;
+}
+
+<span class="hljs-selector-class">.accordionContent</span> {
+  <span class="hljs-attribute">display</span>: none;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">15px</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ccc</span>;
+  <span class="hljs-attribute">border-top</span>: none;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fafafa</span>;
+}
+
+<span class="hljs-selector-class">.accordionContent</span><span class="hljs-selector-class">.active</span> {
+  <span class="hljs-attribute">display</span>: block;
+}
+</code></pre>
+        <ul>
+            <li>A classe <code>.active</code> é usada para <strong>mostrar o conteúdo</strong> e <strong>destacar o
+                    cabeçalho</strong>.</li>
+        </ul>
+        <hr>
+        <h3 id="-c-digo-javascript">⚙️ Código JavaScript</h3>
+        <pre><code class="lang-js"><span class="hljs-keyword">var</span> activeAccordion = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">".toggleAccordionDefault"</span>);
+
+activeAccordion.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">activeAccordions</span>) </span>{
+  activeAccordions.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+    <span class="hljs-keyword">this</span>.classList.toggle(<span class="hljs-string">"active"</span>); <span class="hljs-comment">// ativa/desativa o cabeçalho</span>
+    <span class="hljs-keyword">this</span>.nextElementSibling.classList.toggle(<span class="hljs-string">"active"</span>); <span class="hljs-comment">// ativa/desativa o conteúdo</span>
+    e.preventDefault(); <span class="hljs-comment">// evita comportamento padrão (se for um link)</span>
+  });
+});
+</code></pre>
+        <h4 id="explica-o-passo-a-passo-">Explicação passo a passo:</h4>
+        <ul>
+            <li>Seleciona todos os elementos com <code>.toggleAccordionDefault</code></li>
+            <li>Para cada um, adiciona um evento de clique</li>
+            <li>Ao clicar:<ul>
+                    <li>Alterna a classe <code>active</code> no cabeçalho</li>
+                    <li>Alterna a classe <code>active</code> no conteúdo logo abaixo</li>
+                    <li>Impede o comportamento padrão do clique</li>
+                </ul>
+            </li>
+        </ul>
+        <hr>
+        <h3 id="-boas-pr-ticas">💡 Boas práticas</h3>
+        <ul>
+            <li>Use títulos claros e objetivos nos cabeçalhos.</li>
+            <li>Mantenha o conteúdo conciso para facilitar a leitura.</li>
+            <li>Evite abrir múltiplos acordeões ao mesmo tempo (se necessário, posso adaptar o JS para isso).</li>
+            <li>Adicione transições suaves com <code>max-height</code> e <code>overflow</code> para uma experiência mais
+                elegante.</li>
+        </ul>
+        <hr>
+    </article>
+
+    <article>
+        <h2 id="-html-css-js-para-o-acorde-o">🧪 HTML + CSS + JS para o acordeão</h2>
+        <h3 id="-exemplo-completo">Exemplo completo</h3>
+        <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"pt-br"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Acordeão Simples<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-tag">body</span> {
+      <span class="hljs-attribute">font-family</span>: Arial, sans-serif;
+      <span class="hljs-attribute">max-width</span>: <span class="hljs-number">600px</span>;
+      <span class="hljs-attribute">margin</span>: <span class="hljs-number">40px</span> auto;
+      <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+    }
+
+    <span class="hljs-selector-class">.toggleAccordionDefault</span> {
+      <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f1f1f1</span>;
+      <span class="hljs-attribute">padding</span>: <span class="hljs-number">15px</span>;
+      <span class="hljs-attribute">cursor</span>: pointer;
+      <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ccc</span>;
+      <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">5px</span>;
+      <span class="hljs-attribute">transition</span>: background-color <span class="hljs-number">0.3s</span> ease;
+    }
+
+    <span class="hljs-selector-class">.toggleAccordionDefault</span><span class="hljs-selector-class">.active</span> {
+      <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#d1e7dd</span>;
+    }
+
+    <span class="hljs-selector-class">.accordionContent</span> {
+      <span class="hljs-attribute">display</span>: none;
+      <span class="hljs-attribute">padding</span>: <span class="hljs-number">15px</span>;
+      <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ccc</span>;
+      <span class="hljs-attribute">border-top</span>: none;
+      <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#fafafa</span>;
+    }
+
+    <span class="hljs-selector-class">.accordionContent</span><span class="hljs-selector-class">.active</span> {
+      <span class="hljs-attribute">display</span>: block;
+    }
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Exemplo de Acordeão<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"toggleAccordionDefault"</span>&gt;</span>Seção 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"accordionContent"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Conteúdo da seção 1. Aqui você pode colocar qualquer informação.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"toggleAccordionDefault"</span>&gt;</span>Seção 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"accordionContent"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Conteúdo da seção 2. Pode ser texto, imagens, ou até formulários.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"toggleAccordionDefault"</span>&gt;</span>Seção 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"accordionContent"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Conteúdo da seção 3. Ideal para FAQs ou menus escondidos.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-comment">/* ACCORDION SCRIPTS */</span>
+    <span class="hljs-keyword">var</span> activeAccordion = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">".toggleAccordionDefault"</span>);
+
+    activeAccordion.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">activeAccordions</span>) </span>{
+      activeAccordions.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+        <span class="hljs-keyword">this</span>.classList.toggle(<span class="hljs-string">"active"</span>);
+        <span class="hljs-keyword">this</span>.nextElementSibling.classList.toggle(<span class="hljs-string">"active"</span>);
+        e.preventDefault();
+      });
+    });
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+
+
+
+    </article>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
