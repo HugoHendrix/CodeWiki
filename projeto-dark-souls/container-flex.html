@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+
+        <h1 id="-documenta-o-layout-responsivo-com-flexbox">📄 Documentação: Layout Responsivo com Flexbox</h1>
+        <h2 id="-objetivo">🎯 Objetivo</h2>
+        <p>Este conjunto de classes CSS define um layout <strong>responsivo em linha (row)</strong> usando
+            <strong>Flexbox</strong>, ideal para organizar blocos de conteúdo lado a lado, com quebra automática em
+            telas menores.</p>
+        <hr>
+        <h2 id="-estrutura-das-classes">📁 Estrutura das Classes</h2>
+        <h3 id="-container-fluid-"><code>.container-fluid</code></h3>
+        <pre><code class="lang-css"><span class="hljs-selector-class">.container-fluid</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">4rem</span> <span class="hljs-number">2rem</span>;
+}
+</code></pre>
+        <ul>
+            <li><strong><code>width: 100%</code></strong>: ocupa toda a largura disponível da tela.</li>
+            <li><strong><code>padding: 4rem 2rem</code></strong>: espaçamento interno generoso — 4rem vertical e 2rem
+                horizontal — para respiro visual.</li>
+        </ul>
+        <hr>
+        <h3 id="-flex-row-"><code>.flex-row</code></h3>
+        <pre><code class="lang-css"><span class="hljs-selector-class">.flex-row</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
+  <span class="hljs-attribute">gap</span>: <span class="hljs-number">2rem</span>;
+  <span class="hljs-attribute">justify-content</span>: space-between;
+}
+</code></pre>
+        <ul>
+            <li><strong><code>display: flex</code></strong>: ativa o modelo Flexbox.</li>
+            <li><strong><code>flex-wrap: wrap</code></strong>: permite que os itens quebrem linha em telas menores.</li>
+            <li><strong><code>gap: 2rem</code></strong>: define o espaçamento entre os itens.</li>
+            <li><strong><code>justify-content: space-between</code></strong>: distribui os itens com espaço entre eles,
+                alinhando o primeiro à esquerda e o último à direita.</li>
+        </ul>
+        <hr>
+        <h3 id="-flex-item-"><code>.flex-item</code></h3>
+        <pre><code class="lang-css"><span class="hljs-selector-class">.flex-item</span> {
+  <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span> <span class="hljs-number">1</span> <span class="hljs-number">45%</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--color-bg-secondary);
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">2rem</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">8px</span>;
+}
+</code></pre>
+        <ul>
+            <li><strong><code>flex: 1 1 45%</code></strong>:<ul>
+                    <li><code>1</code>: o item pode crescer.</li>
+                    <li><code>1</code>: o item pode encolher.</li>
+                    <li><code>45%</code>: base inicial de largura.</li>
+                </ul>
+            </li>
+            <li><strong><code>background-color: var(--color-bg-secondary)</code></strong>: cor de fundo definida por
+                variável CSS.</li>
+            <li><strong><code>padding: 2rem</code></strong>: espaçamento interno.</li>
+            <li><strong><code>border-radius: 8px</code></strong>: cantos arredondados para suavidade visual.</li>
+        </ul>
+        <hr>
+        <h2 id="-exemplo-de-uso-no-html">🧱 Exemplo de Uso no HTML</h2>
+        <pre><code class="lang-html">&lt;section <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"container-fluid"</span>&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex-row"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex-item"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>História<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Resumo da Era dos Ancestrais...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex-item"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Bosses<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Detalhes sobre Gwyn, Nito e outros...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+&lt;<span class="hljs-regexp">/section&gt;</span>
+</code></pre>
+        <hr>
+        <h2 id="-responsividade">📱 Responsividade</h2>
+        <ul>
+            <li>Em telas maiores, os itens aparecem lado a lado (45% cada).</li>
+            <li>Em telas menores, os itens quebram linha automaticamente por causa do <code>flex-wrap: wrap</code>.</li>
+        </ul>
+        <hr>
+
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./README.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

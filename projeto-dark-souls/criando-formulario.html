@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <article>
+        <h2 id="-1-criando-o-formul-rio-html">🧱 1. Criando o Formulário HTML</h2>
+        <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">form</span> id=<span class="hljs-string">"form-contato"</span> action=<span class="hljs-string">"#"</span> method=<span class="hljs-string">"POST"</span>&gt;
+  &lt;<span class="hljs-selector-tag">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"nome"</span>&gt;Nome:&lt;/label&gt;
+  &lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"text"</span> id=<span class="hljs-string">"nome"</span> name=<span class="hljs-string">"nome"</span> required&gt;
+
+  &lt;<span class="hljs-selector-tag">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"email"</span>&gt;Email:&lt;/label&gt;
+  &lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"email"</span> id=<span class="hljs-string">"email"</span> name=<span class="hljs-string">"email"</span> required&gt;
+
+  &lt;<span class="hljs-selector-tag">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"mensagem"</span>&gt;Mensagem:&lt;/label&gt;
+  &lt;<span class="hljs-selector-tag">textarea</span> id=<span class="hljs-string">"mensagem"</span> name=<span class="hljs-string">"mensagem"</span> rows=<span class="hljs-string">"5"</span> required&gt;&lt;/textarea&gt;
+
+  &lt;<span class="hljs-selector-tag">button</span> type=<span class="hljs-string">"submit"</span>&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+        <hr>
+        <h2 id="-github-pages-limita-es">🚫 GitHub Pages: Limitações</h2>
+        <ul>
+            <li>GitHub Pages <strong>não executa código de servidor</strong>.</li>
+            <li>Isso significa que formulários com <code>action=&quot;processa.php&quot;</code> ou
+                <code>action=&quot;/api&quot;</code> <strong>não funcionarão</strong> diretamente.
+            </li>
+        </ul>
+        <hr>
+        <h2 id="-alternativas-para-praticar-envio-de-dados">✅ Alternativas para praticar envio de dados</h2>
+        <h3 id="-1-simular-envio-com-javascript">🔁 1. Simular envio com JavaScript</h3>
+        <p>Você pode interceptar o envio e exibir uma mensagem de sucesso:</p>
+        <pre><code class="lang-javascript"><span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"form-contato"</span>).addEventListener(<span class="hljs-string">"submit"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+  e.preventDefault(); <span class="hljs-comment">// Impede o envio real</span>
+  alert(<span class="hljs-string">"Mensagem enviada com sucesso (simulação)!"</span>);
+});
+</code></pre>
+        <h3 id="-2-usar-servi-os-externos-gratuitos">☁️ 2. Usar serviços externos gratuitos</h3>
+        <p>Esses serviços recebem os dados do formulário e enviam por email ou armazenam:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Serviço</th>
+                    <th>Descrição</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Formspree</td>
+                    <td>Envia dados por email</td>
+                    <td><a href="https://formspree.io">formspree.io</a></td>
+                </tr>
+                <tr>
+                    <td>Getform</td>
+                    <td>Armazena e envia dados</td>
+                    <td><a href="https://getform.io">getform.io</a></td>
+                </tr>
+                <tr>
+                    <td>Google Forms</td>
+                    <td>Integração com planilhas</td>
+                    <td><a href="https://forms.google.com">forms.google.com</a></td>
+                </tr>
+                <tr>
+                    <td>Netlify Forms</td>
+                    <td>Funciona com sites hospedados no Netlify</td>
+                    <td><a href="https://www.netlify.com">netlify.com</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Exemplo com Formspree:</p>
+        <pre><code class="lang-html">&lt;form action=<span class="hljs-string">"https://formspree.io/f/SEU_ID"</span> method=<span class="hljs-string">"<span class="hljs-keyword">POST</span>"</span>&gt;
+  &lt;input type=<span class="hljs-string">"text"</span> name=<span class="hljs-string">"nome"</span> required&gt;
+  &lt;input type=<span class="hljs-string">"email"</span> name=<span class="hljs-string">"email"</span> required&gt;
+  &lt;textarea name=<span class="hljs-string">"mensagem"</span> required&gt;&lt;/textarea&gt;
+  &lt;button type=<span class="hljs-string">"submit"</span>&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+        <hr>
+        <h2 id="-boas-pr-ticas-para-formul-rios">🧠 Boas práticas para formulários</h2>
+        <ul>
+            <li>Use <code>label</code> com <code>for</code> para acessibilidade.</li>
+            <li>Valide campos com <code>required</code>, <code>type=&quot;email&quot;</code>, etc.</li>
+            <li>Dê feedback visual ao usuário (mensagem de sucesso ou erro).</li>
+            <li>Use <code>placeholder</code> com moderação — não substitui o <code>label</code>.</li>
+        </ul>
+        <hr>
+        <h2 id="-dica-para-estudo-avan-ado">🧪 Dica para estudo avançado</h2>
+        <p>Você pode usar o <code>fetch()</code> para enviar dados via JavaScript para APIs externas ou simular envio
+            local:</p>
+        <pre><code class="lang-javascript">fetch(<span class="hljs-string">"https://formspree.io/f/SEU_ID"</span>, {
+  method: <span class="hljs-string">"<span class="hljs-keyword">POST</span>"</span>,
+  headers: { <span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"application/json"</span> },
+  body: JSON.stringify({
+    nome: <span class="hljs-string">"Hugo"</span>,
+    email: <span class="hljs-string">"hugo@email.com"</span>,
+    mensagem: <span class="hljs-string">"Olá!"</span>
+  })
+});
+</code></pre>
+        <hr>
+        <p>Meu formspree</p>
+        <pre><code class="lang-HTML"><span class="hljs-tag">&lt;<span class="hljs-name">form</span>
+  <span class="hljs-attr">action</span>=<span class="hljs-string">"https://formspree.io/f/xzzvykrp"</span>
+  <span class="hljs-attr">method</span>=<span class="hljs-string">"POST"</span>
+&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>
+    Your email:
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"email"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>
+    Your message:
+    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"message"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- your other form fields go here --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>Send<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./README.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+        <h3 id="efeito-de-contorno-drop-shadow-">Efeito de Contorno (<code>drop-shadow</code>)</h3>
+        <p>O efeito de contorno em volta de um personagem em uma imagem, que segue a forma dele, é criado com a
+            propriedade CSS <strong><code>filter</code></strong> e a função <strong><code>drop-shadow()</code></strong>.
+        </p>
+        <p>Essa técnica é ideal para imagens com fundo transparente (como arquivos PNG), pois o <code>drop-shadow</code>
+            ignora as partes transparentes e aplica o efeito apenas aos pixels visíveis.</p>
+        <h4 id="estrutura-b-sica">Estrutura Básica</h4>
+        <p>A sintaxe da função <code>drop-shadow()</code> é a seguinte:</p>
+        <pre><code class="lang-css">filter: <span class="hljs-keyword">drop</span>-shadow(<span class="hljs-keyword">offset</span>-x <span class="hljs-keyword">offset</span>-y blur-radius color);
+</code></pre>
+        <ul>
+            <li><strong><code>offset-x</code></strong>: Deslocamento horizontal da &quot;sombra&quot;. Use
+                <code>0</code> para que a sombra fique centralizada.</li>
+            <li><strong><code>offset-y</code></strong>: Deslocamento vertical da &quot;sombra&quot;. Use <code>0</code>
+                para que a sombra fique centralizada.</li>
+            <li><strong><code>blur-radius</code></strong>: O raio de desfoque. Para criar uma borda sólida e nítida,
+                defina este valor como <strong><code>0</code></strong>. Se você quiser uma borda com efeito de brilho,
+                pode aumentar este valor.</li>
+            <li><strong><code>color</code></strong>: A cor da borda/sombra.</li>
+        </ul>
+        <h4 id="exemplo-pr-tico">Exemplo Prático</h4>
+        <p>Vamos criar um exemplo com uma imagem de um personagem.</p>
+        <p><strong>HTML:</strong></p>
+        <pre><code class="lang-html">&lt;img src=<span class="hljs-string">"caminho/para/sua-imagem.png"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"contorno-personagem"</span> alt=<span class="hljs-string">"Personagem com contorno"</span>&gt;
+</code></pre>
+        <p><strong>CSS:</strong></p>
+        <pre><code class="lang-css"><span class="hljs-selector-class">.contorno-personagem</span> {
+  <span class="hljs-comment">/*
+  Sombra que segue a forma da imagem,
+  criando um contorno azul de 5 pixels.
+  */</span>
+  <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">drop-shadow</span>(0 0 0 5px blue);
+}
+</code></pre>
+        <p>Neste exemplo:</p>
+        <ul>
+            <li><code>0 0</code>: Não há deslocamento horizontal ou vertical.</li>
+            <li><code>0</code>: O raio de desfoque é zero, o que torna a &quot;sombra&quot; uma linha sólida, ou seja,
+                uma borda.</li>
+            <li><code>5px</code>: O tamanho da borda.</li>
+            <li><code>blue</code>: A cor da borda.</li>
+        </ul>
+        <hr>
+        <h4 id="varia-es-comuns">Variações Comuns</h4>
+        <p>Você pode ajustar os valores para criar efeitos diferentes:</p>
+        <ul>
+            <li>
+                <p><strong>Contorno com efeito de brilho (glow):</strong> Aumente o <code>blur-radius</code>.</p>
+                <pre><code class="lang-css"><span class="hljs-attribute">filter</span>: drop-shadow(<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">10px</span> <span class="hljs-number">#ff00ff</span>); <span class="hljs-comment">/* Brilho rosa de 10px */</span>
+</code></pre>
+            </li>
+            <li>
+                <p><strong>Sombra com deslocamento:</strong> Mantenha um <code>blur-radius</code> maior e defina valores
+                    para <code>offset-x</code> e <code>offset-y</code>.</p>
+                <pre><code class="lang-css"><span class="hljs-attribute">filter</span>: drop-shadow(<span class="hljs-number">5px</span> <span class="hljs-number">5px</span> <span class="hljs-number">5px</span> <span class="hljs-number">#333</span>); <span class="hljs-comment">/* Sombra escura de 5px */</span>
+</code></pre>
+            </li>
+        </ul>
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./README.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

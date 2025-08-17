@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+   <article>
+    <h1>🛠 Guia Rápido — Como identificar por que um site está fora do ar</h1>
+
+    <section>
+        <h2>1️⃣ Verificar se é um problema geral ou só no seu dispositivo</h2>
+        <ul>
+            <li>Teste o site em outro computador, celular ou rede de internet (Wi-Fi, 4G).</li>
+            <li>Use ferramentas online:
+                <ul>
+                    <li><a href="https://downforeveryoneorjustme.com" target="_blank">Down for Everyone or Just Me</a></li>
+                    <li><a href="https://www.isitdownrightnow.com/" target="_blank">Is It Down Right Now</a></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2️⃣ Checar se o domínio está ativo</h2>
+        <ul>
+            <li>Acesse:
+                <ul>
+                    <li><a href="https://registro.br" target="_blank">Registro.br</a> (para domínios .br)</li>
+                    <li><a href="https://who.is/" target="_blank">Who.is</a> (para domínios internacionais)</li>
+                </ul>
+            </li>
+            <li>Verifique:
+                <ul>
+                    <li>Data de <strong>expiração</strong> do domínio.</li>
+                    <li>Status (ativo ou expirado).</li>
+                    <li>Servidores DNS configurados.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3️⃣ Testar o DNS</h2>
+        <ul>
+            <li>Use <a href="https://dnschecker.org/" target="_blank">DNS Checker</a> para verificar se o domínio está apontando corretamente.</li>
+            <li>Se não houver registros ou mostrar erros, pode ser problema de configuração ou propagação DNS.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4️⃣ Verificar o servidor</h2>
+        <ul>
+            <li>Peça para executar no terminal ou prompt:
+                <pre><code>ping seu-dominio.com</code></pre>
+                <p>Se não responder, o servidor pode estar offline.</p>
+            </li>
+            <li>Comando de rastreamento:
+                <pre><code>tracert seu-dominio.com   # Windows
+traceroute seu-dominio.com # Mac/Linux</code></pre>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>5️⃣ Conferir status da hospedagem</h2>
+        <ul>
+            <li>Acesse o <strong>painel da hospedagem</strong> (cPanel, Plesk ou outro).</li>
+            <li>Veja se há:
+                <ul>
+                    <li>Mensagens de manutenção.</li>
+                    <li>Bloqueio por falta de pagamento.</li>
+                    <li>Erros nos logs.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>6️⃣ Analisar mensagens de erro no navegador</h2>
+        <ul>
+            <li><strong>ERR_NAME_NOT_RESOLVED</strong> → DNS/domínio.</li>
+            <li><strong>ERR_CONNECTION_REFUSED</strong> → servidor offline.</li>
+            <li><strong>HTTP 500, 502, 503</strong> → erro interno no servidor.</li>
+            <li><strong>Certificado inválido</strong> → problema no SSL.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>7️⃣ Recuperar acesso ao Registro.br (caso tenha perdido o e-mail)</h2>
+        <ul>
+            <li>Se o titular do domínio perdeu o acesso ao e-mail cadastrado no Registro.br, será necessário seguir o procedimento oficial de <strong>reabilitação de conta</strong>.</li>
+            <li>Acesse o link oficial: 
+                <a href="https://registro.br/ajuda/procedimentos-administrativos/reabilitacao-de-conta/" target="_blank">
+                    Reabilitação de Conta – Registro.br
+                </a>
+            </li>
+            <li>O Registro.br solicitará documentos para comprovar a titularidade e atualizar o e-mail de acesso.</li>
+            <li>Esse processo pode levar alguns dias, por isso é recomendável iniciar imediatamente para evitar que o domínio seja liberado para terceiros.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>8️⃣ Próximos passos</h2>
+        <ul>
+            <li>Se for <strong>domínio expirado</strong> → renovar no provedor (Registro.br ou outro).</li>
+            <li>Se for <strong>problema de DNS</strong> → corrigir registros DNS.</li>
+            <li>Se for <strong>servidor</strong> → acionar a hospedagem.</li>
+            <li>Se for <strong>SSL vencido</strong> → renovar o certificado.</li>
+        </ul>
+    </section>
+</article>
+
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="/index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

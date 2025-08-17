@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <article>
+
+
+        <p>A função <code>loadContent(pageName)</code> é usada para <strong>carregar dinamicamente conteúdo
+                HTML</strong> em uma área específica da página —</p>
+        <hr>
+        <h2 id="-fun-o-explicada-passo-a-passo-">🧠 Função explicada passo a passo:</h2>
+        <pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loadContent</span><span class="hljs-params">(pageName)</span> </span>{
+</code></pre>
+        <p>🔹 Define uma função chamada <code>loadContent</code> que recebe um parâmetro <code>pageName</code>.<br>Esse
+            nome será usado para montar o caminho do arquivo HTML que queremos carregar.</p>
+        <hr>
+        <pre><code class="lang-js">    <span class="hljs-keyword">const</span> contentArea = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'content-area'</span>);
+</code></pre>
+        <p>🔹 Busca o elemento HTML com o ID <code>content-area</code> e o armazena na variável
+            <code>contentArea</code>.<br>Esse é o <strong>alvo</strong> onde o conteúdo carregado será inserido.</p>
+        <hr>
+        <pre><code class="lang-js">    <span class="hljs-keyword">const</span> filePath = <span class="hljs-string">`conteudos/<span class="hljs-subst">${pageName}</span>.html`</span>;
+</code></pre>
+        <p>🔹 Cria o caminho do arquivo HTML que será carregado.<br>Se <code>pageName</code> for
+            <code>&quot;sobre&quot;</code>, o caminho será <code>conteudos/sobre.html</code>.</p>
+        <hr>
+        <pre><code class="lang-js">    fetch(<span class="hljs-name">filePath</span>)
+</code></pre>
+        <p>🔹 Usa a função <code>fetch()</code> para buscar o arquivo HTML no caminho definido.<br>É uma chamada
+            assíncrona que retorna uma <strong>Promise</strong>.</p>
+        <hr>
+        <pre><code class="lang-js">.<span class="hljs-keyword">then</span>(response =&gt; {
+</code></pre>
+        <p>🔹 Quando a resposta da requisição chega, este <code>.then()</code> é executado com o objeto
+            <code>response</code>.</p>
+        <hr>
+        <pre><code class="lang-js">    <span class="hljs-keyword">if</span> (!response.ok) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`Erro ao carregar o conteúdo: <span class="hljs-subst">${response.statusText}</span>`</span>);
+    }
+</code></pre>
+        <p>🔹 Verifica se a resposta foi bem-sucedida (<code>response.ok</code> é <code>true</code> para status
+            200–299).<br>Se não for, lança um erro com uma mensagem personalizada.</p>
+        <hr>
+        <pre><code class="lang-js"><span class="hljs-built_in">    return</span> response.<span class="hljs-built_in">text</span>();
+</code></pre>
+        <p>🔹 Converte o conteúdo da resposta para texto (HTML puro).<br>Isso será usado para inserir no DOM.</p>
+        <hr>
+        <pre><code class="lang-js">})
+.<span class="hljs-keyword">then</span>(html =&gt; {
+</code></pre>
+        <p>🔹 Recebe o HTML convertido da resposta anterior.</p>
+        <hr>
+        <pre><code class="lang-js">    contentArea.innerHTML = html<span class="hljs-comment">;</span>
+</code></pre>
+        <p>🔹 Insere o conteúdo HTML dentro da <code>div</code> com ID <code>content-area</code>.<br>Isso atualiza
+            visualmente a página com o novo conteúdo.</p>
+        <hr>
+        <pre><code class="lang-js"><span class="hljs-selector-tag">window</span><span class="hljs-selector-class">.scrollTo</span>({ <span class="hljs-attribute">top</span>: <span class="hljs-number">10</span>, behavior: <span class="hljs-string">'smooth'</span> });
+</code></pre>
+        <p>🔧 Isso faz a página rolar suavemente até 10px do topo.</p>
+        <hr>
+        <pre><code class="lang-js">})
+.<span class="hljs-keyword">catch</span>(<span class="hljs-keyword">error</span> =&gt; {
+</code></pre>
+        <p>🔹 Se qualquer erro ocorrer (na requisição ou no processamento), este bloco será executado.</p>
+        <hr>
+        <pre><code class="lang-js">    console.<span class="hljs-keyword">error</span>(<span class="hljs-keyword">error</span>);
+</code></pre>
+        <p>🔹 Exibe o erro no console do navegador para facilitar o debug.</p>
+        <hr>
+        <pre><code class="lang-js">    contentArea.innerHTML = '<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"color: red; text-align: center; font-size: 20px;"</span>&gt;</span>Erro ao carregar o conteúdo.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>';
+</code></pre>
+        <p>🔹 Mostra uma mensagem de erro visível na tela, estilizada em vermelho e centralizada.</p>
+        <hr>
+        <pre><code class="lang-js">})
+}
+</code></pre>
+        <p>🔹 Fecha o bloco <code>.catch()</code> e encerra a função.</p>
+        <hr>
+
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./README.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

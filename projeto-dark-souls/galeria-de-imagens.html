@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <article>
+
+        <h1 id="-documenta-o-boas-pr-ticas-para-galeria-de-imagens">📁 Documentação: Boas Práticas para Galeria de
+            Imagens</h1>
+        <h2 id="-sobre-o-uso-de-jpg-com-menos-de-100-kb">🖼️ Sobre o uso de <code>.jpg</code> com menos de 100 KB</h2>
+        <ul>
+            <li>✅ <strong>Performance</strong>: páginas carregam mais rápido, especialmente em conexões móveis.</li>
+            <li>✅ <strong>SEO</strong>: sites rápidos têm melhor ranqueamento nos mecanismos de busca.</li>
+            <li>✅ <strong>Experiência do usuário</strong>: menos tempo de espera, navegação mais fluida.</li>
+            <li>✅ <strong>Compatibilidade</strong>: <code>.jpg</code> é amplamente suportado e ideal para fotos e artes
+                complexas.</li>
+        </ul>
+        <h3 id="-dica-extra">🧪 Dica extra</h3>
+        <p>Mesmo com arquivos leves, você pode aplicar <code>loading=&quot;lazy&quot;</code> para adiar o carregamento
+            de imagens fora da tela:</p>
+        <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">img</span> src=<span class="hljs-string">"galeria/bosses.jpg"</span> alt=<span class="hljs-string">"Boss lendário"</span> loading=<span class="hljs-string">"lazy"</span> /&gt;
+</code></pre>
+        <h2 id="-formatos-de-imagem-qual-usar-">🖼️ Formatos de Imagem: Qual usar?</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Formato</th>
+                    <th>Ideal para</th>
+                    <th>Vantagens</th>
+                    <th>Desvantagens</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>.webp</code></td>
+                    <td>Imagens gerais e arte</td>
+                    <td>Alta compressão + qualidade</td>
+                    <td>Nem todos editores suportam nativamente</td>
+                </tr>
+                <tr>
+                    <td><code>.jpg</code></td>
+                    <td>Fotos e artes complexas</td>
+                    <td>Boa qualidade com compressão razoável</td>
+                    <td>Perde qualidade em compressão alta</td>
+                </tr>
+                <tr>
+                    <td><code>.png</code></td>
+                    <td>Ícones, logos, transparência</td>
+                    <td>Alta fidelidade, suporta transparência</td>
+                    <td>Tamanho maior</td>
+                </tr>
+                <tr>
+                    <td><code>.svg</code></td>
+                    <td>Ícones vetoriais</td>
+                    <td>Escalável sem perda de qualidade</td>
+                    <td>Não ideal para fotos ou artes pintadas</td>
+                </tr>
+                <tr>
+                    <td><code>.avif</code></td>
+                    <td>Alta performance moderna</td>
+                    <td>Compressão superior ao WebP</td>
+                    <td>Suporte ainda limitado em alguns navegadores</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Recomendação</strong>: Use <code>.webp</code> sempre que possível para imagens grandes. Mantenha
+            <code>.png</code> para elementos com transparência e <code>.svg</code> para ícones.</p>
+        <hr>
+        <h2 id="-seo-e-acessibilidade">🔍 SEO e Acessibilidade</h2>
+        <ul>
+            <li><strong><code>alt</code> obrigatório</strong>: Sempre descreva a imagem com clareza. Isso ajuda leitores
+                de tela e melhora o SEO.</li>
+            <li><strong><code>figcaption</code></strong>: Use para contextualizar a imagem.</li>
+            <li><strong>Evite nomes genéricos</strong>: Renomeie arquivos com palavras-chave relevantes (ex.:
+                <code>anor-londo-catedral.webp</code>).</li>
+            <li><strong>Use <code>&lt;h2&gt;</code> ou <code>&lt;h3&gt;</code> para títulos de seção</strong>: Isso
+                ajuda os mecanismos de busca a entender a estrutura do conteúdo.</li>
+        </ul>
+        <hr>
+        <h2 id="-responsividade">📱 Responsividade</h2>
+        <ul>
+            <li>Use <code>grid</code> ou <code>flexbox</code> para adaptar a galeria a diferentes tamanhos de tela.</li>
+            <li>Evite fixar larguras em <code>px</code>; prefira <code>minmax</code>, <code>%</code>, <code>vw</code>,
+                ou <code>rem</code>.</li>
+        </ul>
+        <hr>
+        <h2 id="-estrutura-html-b-sica">🧱 Estrutura HTML Básica</h2>
+        <pre><code class="lang-html">&lt;section <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"galeria"</span>&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Galeria de Imagens<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></span>
+  &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"grid-galeria"</span>&gt;
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">figure</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">img</span>
+        <span class="hljs-attr">src</span>=<span class="hljs-string">"assets/images/lordran.webp"</span>
+        <span class="hljs-attr">alt</span>=<span class="hljs-string">"Vista de Lordran ao entardecer"</span>
+      /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span>Lordran em sua glória decadente<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">figure</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">img</span>
+        <span class="hljs-attr">src</span>=<span class="hljs-string">"assets/images/anor-londo.webp"</span>
+        <span class="hljs-attr">alt</span>=<span class="hljs-string">"Catedral de Anor Londo iluminada pelo sol"</span>
+      /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span>Anor Londo — a cidade dos deuses<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Mais imagens --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></span>
+</code></pre>
+        <hr>
+        <h2 id="-estiliza-o-com-css">🎨 Estilização com CSS</h2>
+        <pre><code class="lang-css"><span class="hljs-selector-class">.grid-galeria</span> {
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(auto-fit, minmax(250px, 1fr));
+  <span class="hljs-attribute">gap</span>: <span class="hljs-number">1.5rem</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">2rem</span>;
+}
+
+<span class="hljs-selector-tag">figure</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+}
+
+<span class="hljs-selector-tag">img</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: auto;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">8px</span>;
+  <span class="hljs-attribute">object-fit</span>: cover;
+}
+</code></pre>
+        <hr>
+        <h2 id="-explica-o-detalhada-usando-css-grid-em-galerias">🧱 Explicação Detalhada: Usando CSS Grid em Galerias
+        </h2>
+        <h3 id="-por-que-usar-grid-">🎯 Por que usar Grid?</h3>
+        <p>O <strong>CSS Grid Layout</strong> é uma das ferramentas mais poderosas e flexíveis para criar layouts
+            responsivos e organizados. Ele permite dividir o espaço em linhas e colunas, posicionar elementos com
+            precisão e adaptar o conteúdo automaticamente ao tamanho da tela — ideal para galerias de imagens.</p>
+        <hr>
+        <h3 id="-estrutura-b-sica">🧩 Estrutura Básica</h3>
+        <pre><code class="lang-css"><span class="hljs-selector-class">.grid-galeria</span> {
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(auto-fit, minmax(250px, 1fr));
+  <span class="hljs-attribute">gap</span>: <span class="hljs-number">1.5rem</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">2rem</span>;
+}
+</code></pre>
+        <h4 id="explicando-cada-parte-">Explicando cada parte:</h4>
+        <ul>
+            <li>
+                <p><strong><code>display: grid</code></strong><br>Ativa o modelo de layout Grid para o container.</p>
+            </li>
+            <li>
+                <p><strong><code>grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))</code></strong><br>Cria
+                    colunas automáticas que se ajustam ao espaço disponível:</p>
+                <ul>
+                    <li><code>repeat(...)</code>: repete a definição de coluna.</li>
+                    <li><code>auto-fit</code>: tenta encaixar o máximo de colunas possível.</li>
+                    <li><code>minmax(250px, 1fr)</code>: cada coluna terá no mínimo 250px e pode crescer até ocupar uma
+                        fração (<code>1fr</code>) do espaço restante.</li>
+                </ul>
+            </li>
+            <li>
+                <p><strong><code>gap: 1.5rem</code></strong><br>Define o espaçamento entre as imagens (horizontal e
+                    vertical).</p>
+            </li>
+            <li>
+                <p><strong><code>padding: 2rem</code></strong><br>Adiciona espaçamento interno ao redor da galeria.</p>
+            </li>
+        </ul>
+        <hr>
+        <h3 id="-visualiza-o-responsiva">📐 Visualização Responsiva</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tamanho da tela</th>
+                    <th>Quantidade de colunas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Desktop (&gt;1200px)</td>
+                    <td>4 ou mais</td>
+                </tr>
+                <tr>
+                    <td>Tablet (~768px)</td>
+                    <td>2 a 3</td>
+                </tr>
+                <tr>
+                    <td>Mobile (&lt;480px)</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>O Grid se adapta automaticamente, sem precisar de media queries, graças ao uso de <code>auto-fit</code> e
+            <code>minmax</code>.</p>
+        <hr>
+        <h2 id="-explica-o-do-c-digo-javascript">🧠 Explicação do Código JavaScript</h2>
+        <pre><code class="lang-javascript"><span class="hljs-comment">// CODIGO COMPLETO</span>
+<span class="hljs-comment">// GALERIA</span>
+<span class="hljs-keyword">const</span> modal = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"modal"</span>);
+<span class="hljs-keyword">const</span> modalImg = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"img-modal"</span>);
+<span class="hljs-keyword">const</span> fechar = <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">".fechar"</span>);
+<span class="hljs-keyword">const</span> imagens = <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelectorAll</span>(<span class="hljs-string">".galeria-img"</span>);
+<span class="hljs-keyword">const</span> setaEsquerda = <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">".seta-esquerda"</span>);
+<span class="hljs-keyword">const</span> setaDireita = <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">".seta-direita"</span>);
+
+let indiceAtual = <span class="hljs-number">0</span>;
+
+function abrirModal(indice) {
+  modal.style.display = <span class="hljs-string">"block"</span>;
+  modalImg.src = imagens[indice].src;
+  modalImg.alt = imagens[indice].alt;
+  indiceAtual = indice;
+}
+
+imagens.forEach((img, i) =&gt; {
+  img.addEventListener(<span class="hljs-string">"click"</span>, () =&gt; abrirModal(i));
+});
+
+fechar.addEventListener(<span class="hljs-string">"click"</span>, () =&gt; {
+  modal.style.display = <span class="hljs-string">"none"</span>;
+});
+
+<span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">"click"</span>, e =&gt; {
+  <span class="hljs-keyword">if</span> (e.target === modal) {
+    modal.style.display = <span class="hljs-string">"none"</span>;
+  }
+});
+
+setaDireita.addEventListener(<span class="hljs-string">"click"</span>, () =&gt; {
+  indiceAtual = (indiceAtual + <span class="hljs-number">1</span>) % imagens.length;
+  abrirModal(indiceAtual);
+});
+
+setaEsquerda.addEventListener(<span class="hljs-string">"click"</span>, () =&gt; {
+  indiceAtual = (indiceAtual - <span class="hljs-number">1</span> + imagens.length) % imagens.length;
+  abrirModal(indiceAtual);
+});
+</code></pre>
+        <p>🔹 Código <code>JavaScript</code> completo.</p>
+        <h2 id="-">---</h2>
+        <h3 id="explicando-linha-a-linha">Explicando linha a linha</h3>
+        <pre><code class="lang-javascript"><span class="hljs-comment">// Seleciona o elemento do modal</span>
+<span class="hljs-keyword">const</span> modal = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"modal"</span>);
+</code></pre>
+        <p>🔹 Pega o elemento <code>&lt;div id=&quot;modal&quot;&gt;</code> para poder mostrar ou esconder o modal.</p>
+        <hr>
+        <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> modalImg = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"img-modal"</span>);
+</code></pre>
+        <p>🔹 Seleciona a imagem dentro do modal (<code>&lt;img id=&quot;img-modal&quot;&gt;</code>) que será atualizada
+            com a imagem clicada.</p>
+        <hr>
+        <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> fechar = <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">".fechar"</span>);
+</code></pre>
+        <p>🔹 Seleciona o botão de fechar (<code>&lt;span class=&quot;fechar&quot;&gt;</code>) para permitir que o
+            usuário feche o modal.</p>
+        <hr>
+        <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> imagens = <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelectorAll</span>(<span class="hljs-string">".galeria-img"</span>);
+</code></pre>
+        <p>🔹 Seleciona todas as imagens da galeria que têm a classe <code>.galeria-img</code>. Isso cria uma lista
+            (NodeList) com todas as imagens clicáveis.</p>
+        <hr>
+        <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> setaEsquerda = <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">".seta-esquerda"</span>);
+<span class="hljs-keyword">const</span> setaDireita = <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">".seta-direita"</span>);
+</code></pre>
+        <p>🔹 Seleciona as setas de navegação esquerda e direita dentro do modal.</p>
+        <hr>
+        <pre><code class="lang-javascript"><span class="hljs-attribute">let indiceAtual</span> = 0;
+</code></pre>
+        <p>🔹 Variável que guarda o índice da imagem atualmente exibida no modal. Isso permite saber qual imagem está
+            sendo mostrada e navegar entre elas.</p>
+        <hr>
+        <pre><code class="lang-javascript">function abrirModal(indice) {
+  modal.style.<span class="hljs-keyword">display </span>= <span class="hljs-string">"block"</span><span class="hljs-comment">;</span>
+  modalImg.src = imagens[indice].src<span class="hljs-comment">;</span>
+  modalImg.alt = imagens[indice].alt<span class="hljs-comment">;</span>
+  indiceAtual = indice<span class="hljs-comment">;</span>
+}
+</code></pre>
+        <p>🔍 Função que abre o modal e exibe a imagem correspondente ao índice clicado:</p>
+        <ul>
+            <li><code>modal.style.display = &quot;block&quot;</code>: torna o modal visível.</li>
+            <li><code>modalImg.src = imagens[indice].src</code>: define a imagem do modal com base na imagem clicada.
+            </li>
+            <li><code>modalImg.alt = imagens[indice].alt</code>: copia o texto alternativo (acessibilidade).</li>
+            <li><code>indiceAtual = indice</code>: atualiza a variável para saber qual imagem está sendo exibida.</li>
+        </ul>
+        <hr>
+        <pre><code class="lang-javascript">imagens.forEach(<span class="hljs-function"><span class="hljs-params">(img, i)</span> =&gt;</span> {
+  img.addEventListener(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> abrirModal(i));
+});
+</code></pre>
+        <p>🔹 Para cada imagem da galeria:</p>
+        <ul>
+            <li><code>img</code>: representa a imagem atual.</li>
+            <li><code>i</code>: é o índice da imagem (posição na lista).</li>
+            <li><code>addEventListener(&quot;click&quot;, ...)</code>: adiciona um evento que chama
+                <code>abrirModal(i)</code> quando a imagem é clicada.</li>
+        </ul>
+        <hr>
+        <pre><code class="lang-javascript">fechar.addEventListener(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  modal.style.display = <span class="hljs-string">"none"</span>;
+});
+</code></pre>
+        <p>🔹 Quando o botão de fechar é clicado, o modal é escondido.</p>
+        <hr>
+        <pre><code class="lang-javascript">window.addEventListener(<span class="hljs-string">"click"</span>, <span class="hljs-attr">e</span> =&gt; {
+  <span class="hljs-keyword">if</span> (e.<span class="hljs-attr">target</span> === modal) {
+    modal.style.<span class="hljs-attr">display</span> = <span class="hljs-string">"none"</span>;
+  }
+});
+</code></pre>
+        <p>🔹 Permite fechar o modal ao clicar fora da imagem (na área escura):</p>
+        <ul>
+            <li><code>e.target === modal</code>: verifica se o clique foi diretamente no fundo do modal.</li>
+            <li>Se sim, fecha o modal.</li>
+        </ul>
+        <hr>
+        <pre><code class="lang-javascript">setaDireita.addEventListener(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  indiceAtual = (indiceAtual + <span class="hljs-number">1</span>) % imagens.length;
+  abrirModal(indiceAtual);
+});
+</code></pre>
+        <p>🔹 Quando a seta direita é clicada:</p>
+        <ul>
+            <li><code>indiceAtual + 1</code>: avança para a próxima imagem.</li>
+            <li><code>% imagens.length</code>: garante que, ao chegar no fim, volte para o início (loop infinito).</li>
+            <li><code>abrirModal(indiceAtual)</code>: exibe a nova imagem.</li>
+        </ul>
+        <hr>
+        <pre><code class="lang-javascript">setaEsquerda.addEventListener(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  indiceAtual = (indiceAtual - <span class="hljs-number">1</span> + imagens.length) % imagens.length;
+  abrirModal(indiceAtual);
+});
+</code></pre>
+        <p>🔹 Quando a seta esquerda é clicada:</p>
+        <ul>
+            <li><code>indiceAtual - 1</code>: volta uma imagem.</li>
+            <li><code>+ imagens.length</code>: evita números negativos.</li>
+            <li><code>% imagens.length</code>: garante que, ao chegar no início, volte para o fim.</li>
+            <li><code>abrirModal(indiceAtual)</code>: exibe a nova imagem.</li>
+        </ul>
+        <hr>
+        <h2 id="-resultado">✅ Resultado</h2>
+        <ul>
+            <li>Modal abre ao clicar em qualquer imagem.</li>
+            <li>Setas permitem navegar para frente e para trás.</li>
+            <li>Modal fecha ao clicar fora ou no botão de fechar.</li>
+            <li>O índice é controlado dinamicamente com looping.</li>
+        </ul>
+        <hr>
+
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./README.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

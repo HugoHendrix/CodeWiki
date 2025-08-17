@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+        <h1 id="-parallax-simples">📄 Parallax Simples</h1>
+        <h2 id="-objetivo">🧠 Objetivo</h2>
+        <p>Este projeto demonstra um efeito de <strong>parallax</strong> básico usando apenas <strong>HTML e
+                CSS</strong>, sem JavaScript. O efeito cria uma sensação de profundidade ao rolar a página, com imagens
+            de fundo que permanecem fixas enquanto o conteúdo se move.</p>
+        <hr>
+        <h2 id="-html-estrutura-da-p-gina">🧱 HTML: Estrutura da Página</h2>
+        <p>O HTML é composto por:</p>
+        <ul>
+            <li>Duas seções com efeito parallax (<code>.parallax</code>)</li>
+            <li>Duas seções de conteúdo (<code>.content</code>)</li>
+        </ul>
+        <h3 id="principais-elementos-">Principais elementos:</h3>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"parallax img1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>     <span class="hljs-comment">&lt;!-- Imagem de fundo 1 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"content"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>        <span class="hljs-comment">&lt;!-- Texto sobre o efeito --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"parallax img2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>     <span class="hljs-comment">&lt;!-- Imagem de fundo 2 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"content"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>        <span class="hljs-comment">&lt;!-- Texto adicional --&gt;</span>
+</code></pre>
+        <hr>
+        <h2 id="-css-estiliza-o-e-efeito-parallax">🎨 CSS: Estilização e Efeito Parallax</h2>
+        <h3 id="reset-e-box-model">Reset e Box Model</h3>
+        <pre><code class="lang-css">* {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">box-sizing</span>: border-box;
+}
+</code></pre>
+        <h3 id="se-es-parallax">Seções Parallax</h3>
+        <pre><code class="lang-css"><span class="hljs-selector-class">.parallax</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100vh</span>;                        <span class="hljs-comment">/* Ocupa toda a altura da tela */</span>
+  <span class="hljs-attribute">background-attachment</span>: fixed;        <span class="hljs-comment">/* Mantém a imagem fixa ao rolar */</span>
+  <span class="hljs-attribute">background-position</span>: center;
+  <span class="hljs-attribute">background-repeat</span>: no-repeat;
+  <span class="hljs-attribute">background-size</span>: cover;
+}
+</code></pre>
+        <h3 id="imagens-de-fundo">Imagens de Fundo</h3>
+        <pre><code class="lang-css"><span class="hljs-selector-class">.img1</span> {
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">'https://picsum.photos/1920/1080?nature'</span>);
+}
+
+<span class="hljs-selector-class">.img2</span> {
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">'https://picsum.photos/1920/1080?mountain'</span>);
+}
+</code></pre>
+        <h3 id="se-es-de-conte-do">Seções de Conteúdo</h3>
+        <pre><code class="lang-css"><span class="hljs-selector-class">.content</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">50px</span>;
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#f1f1f1</span>;
+  <span class="hljs-attribute">text-align</span>: center;
+}
+</code></pre>
+        <hr>
+        <h2 id="-como-funciona-o-parallax">🖼️ Como Funciona o Parallax</h2>
+        <ul>
+            <li>O <code>background-attachment: fixed</code> faz com que a imagem de fundo <strong>não se mova</strong>
+                com o conteúdo.</li>
+            <li>Isso cria a ilusão de que o fundo está mais distante, enquanto o conteúdo se move sobre ele.</li>
+            <li>O efeito é mais perceptível em telas grandes e com rolagem vertical.</li>
+        </ul>
+        <hr>
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./README.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+
+        <h2 id="-documenta-o-de-meta-tags">📘 Documentação de Meta Tags</h2>
+        <h3 id="-meta-tags-b-sicas">🔧 Meta Tags Básicas</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Meta Tag</th>
+                    <th>Função</th>
+                    <th>Exemplo de Uso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&lt;meta charset=&quot;utf-8&quot;&gt;</code></td>
+                    <td>Define o conjunto de caracteres usado na página. <code>UTF-8</code> é o padrão moderno que
+                        suporta acentuação e símbolos especiais.</td>
+                    <td>Essencial para evitar problemas com caracteres como <code>ç</code>, <code>ã</code>,
+                        <code>é</code>.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</code>
+                    </td>
+                    <td>Controla o comportamento da página em dispositivos móveis. Garante que o layout seja responsivo.
+                    </td>
+                    <td>Sem ela, o site pode parecer &quot;quebrado&quot; em celulares.</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h3 id="-meta-tags-informativas">🧑‍💻 Meta Tags Informativas</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Meta Tag</th>
+                    <th>Função</th>
+                    <th>Exemplo de Uso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&lt;meta name=&quot;author&quot; content=&quot;Hugo&quot;&gt;</code></td>
+                    <td>Informa quem criou ou mantém o site.</td>
+                    <td>Pode ser seu nome, equipe ou empresa.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;meta name=&quot;description&quot; content=&quot;Projeto inspirado em Dark Souls com visual sombrio e tipografia medieval.&quot;&gt;</code>
+                    </td>
+                    <td>Descreve o conteúdo da página. Usado por motores de busca e redes sociais.</td>
+                    <td>Ideal para SEO e compartilhamento.</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h3 id="-meta-tags-open-graph-facebook-linkedin-etc-">🌐 Meta Tags Open Graph (Facebook, LinkedIn, etc.)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Meta Tag</th>
+                    <th>Função</th>
+                    <th>Exemplo de Uso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&lt;meta property=&quot;og:title&quot; content=&quot;Dark Souls Project&quot;&gt;</code>
+                    </td>
+                    <td>Título exibido ao compartilhar o site.</td>
+                    <td>Deve ser chamativo e direto.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;meta property=&quot;og:description&quot; content=&quot;Explore um universo sombrio com fontes góticas e cores profundas.&quot;&gt;</code>
+                    </td>
+                    <td>Descrição exibida na prévia do link.</td>
+                    <td>Complementa o título com mais contexto.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;meta property=&quot;og:image&quot; content=&quot;https://meusite.com/imagem.jpg&quot;&gt;</code>
+                    </td>
+                    <td>Imagem de destaque ao compartilhar.</td>
+                    <td>Use uma imagem impactante e otimizada.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;meta property=&quot;og:url&quot; content=&quot;https://meusite.com&quot;&gt;</code>
+                    </td>
+                    <td>URL canônica da página.</td>
+                    <td>Garante que o link correto seja compartilhado.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;meta property=&quot;og:site_name&quot; content=&quot;Dark Souls Project&quot;&gt;</code>
+                    </td>
+                    <td>Nome do site ou projeto.</td>
+                    <td>Pode ser o nome da marca ou do projeto.</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h3 id="-meta-tags-para-twitter">🐦 Meta Tags para Twitter</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Meta Tag</th>
+                    <th>Função</th>
+                    <th>Exemplo de Uso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;</code>
+                    </td>
+                    <td>Define o tipo de cartão do Twitter. <code>summary_large_image</code> mostra uma imagem grande.
+                    </td>
+                    <td>Melhora o visual do link compartilhado.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;meta name=&quot;twitter:image:alt&quot; content=&quot;Imagem de capa do projeto Dark Souls&quot;&gt;</code>
+                    </td>
+                    <td>Texto alternativo para a imagem.</td>
+                    <td>Importante para acessibilidade e SEO.</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h2 id="-dicas-de-boas-pr-ticas">✅ Dicas de Boas Práticas</h2>
+        <ul>
+            <li>Preencha todas as tags com <strong>conteúdo relevante e verdadeiro</strong>.</li>
+            <li>Use imagens otimizadas (JPEG/PNG, 1200x630px para Open Graph).</li>
+            <li>Teste como sua página aparece em redes sociais com ferramentas como <a
+                    href="https://developers.facebook.com/tools/debug/">Facebook Sharing Debugger</a> e <a
+                    href="https://cards-dev.twitter.com/validator">Twitter Card Validator</a>.</li>
+        </ul>
+        <hr>
+
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./README.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

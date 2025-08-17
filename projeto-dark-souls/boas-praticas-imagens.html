@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <article>
+        <h2 id="documenta-o-boas-pr-ticas-para-imagens-na-web">Documentação: Boas Práticas para Imagens na Web</h2>
+        <p>Imagens são componentes visuais essenciais em qualquer projeto web, mas seu uso inadequado pode comprometer
+            significativamente a performance, acessibilidade e otimização para motores de busca (SEO). Esta documentação
+            detalha as melhores práticas para gerenciar e implementar imagens de forma eficiente e eficaz.</p>
+        <hr>
+        <h3 id="1-escolha-do-formato-ideal">1. Escolha do Formato Ideal</h3>
+        <p>O formato da imagem deve ser selecionado com base no seu conteúdo e uso, balanceando qualidade e tamanho do
+            arquivo.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="text-align:left">Formato</th>
+                    <th style="text-align:left">Quando Usar</th>
+                    <th style="text-align:left">Vantagens</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align:left"><strong>JPEG</strong></td>
+                    <td style="text-align:left">Fotos, imagens com muitos detalhes e gradientes.</td>
+                    <td style="text-align:left">Boa compressão para fotos, cores ricas.</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left"><strong>PNG</strong></td>
+                    <td style="text-align:left">Imagens com transparência, ilustrações, ícones complexos.</td>
+                    <td style="text-align:left">Suporta transparência (alfa), alta qualidade para gráficos.</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left"><strong>SVG</strong></td>
+                    <td style="text-align:left">Logos, ícones, ilustrações, gráficos vetoriais.</td>
+                    <td style="text-align:left"><strong>Escalável</strong> (não perde qualidade ao ser ampliado),
+                        <strong>leve</strong>, editável via CSS.</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left"><strong>WebP</strong></td>
+                    <td style="text-align:left">Substituto moderno para JPEG e PNG.</td>
+                    <td style="text-align:left">Alta compressão com boa qualidade visual, suporta transparência.</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left"><strong>AVIF</strong></td>
+                    <td style="text-align:left">Novo formato com compressão superior.</td>
+                    <td style="text-align:left">Oferece menor tamanho de arquivo com excelente qualidade visual.</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h3 id="2-otimiza-o-de-tamanho">2. Otimização de Tamanho</h3>
+        <p>Reduzir o tamanho do arquivo das imagens sem comprometer a qualidade é crucial para a performance.</p>
+        <ul>
+            <li><strong>Evite imagens pesadas</strong>:<ul>
+                    <li>Idealmente, <strong>abaixo de 500 KB</strong> para imagens grandes (banners, backgrounds).</li>
+                    <li><strong>Abaixo de 100 KB</strong> para ícones e imagens menores.</li>
+                </ul>
+            </li>
+            <li><strong>Use ferramentas de compressão</strong>:<ul>
+                    <li>Ferramentas online: <strong>TinyPNG</strong>, <strong>Squoosh</strong>.</li>
+                    <li>Plugins de build: <strong>Webpack</strong>, <strong>Vite</strong> (com plugins de otimização de
+                        imagem).</li>
+                </ul>
+            </li>
+            <li><strong>Redimensione para o tamanho de exibição</strong>: Não carregue uma imagem de 3000px de largura
+                se ela será exibida com apenas 600px. Redimensione a imagem para o tamanho máximo que ela será
+                renderizada no layout.</li>
+        </ul>
+        <hr>
+        <h3 id="3-uso-correto-de-atributos-html-na-tag-img-">3. Uso Correto de Atributos HTML na Tag
+            <code>&lt;img&gt;</code></h3>
+        <p>Os atributos da tag <code>&lt;img&gt;</code> fornecem informações cruciais para navegadores, motores de busca
+            e tecnologias assistivas.</p>
+        <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">img</span> src=<span class="hljs-string">"caminho/para/sua-imagem.jpg"</span> alt=<span class="hljs-string">"Descrição da imagem para acessibilidade e SEO"</span> <span class="hljs-attribute">width</span>=<span class="hljs-string">"600"</span> height=<span class="hljs-string">"400"</span> loading=<span class="hljs-string">"lazy"</span>&gt;
+</code></pre>
+        <table>
+            <thead>
+                <tr>
+                    <th style="text-align:left">Atributo</th>
+                    <th style="text-align:left">Função</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align:left"><code>src</code></td>
+                    <td style="text-align:left">Define o caminho para o arquivo da imagem.</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left"><code>alt</code></td>
+                    <td style="text-align:left">Fornece um <strong>texto alternativo descritivo</strong>. Essencial para
+                        acessibilidade (leitores de tela) e SEO (motores de busca). Descreva o conteúdo ou a função da
+                        imagem.</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left"><code>width</code>/<code>height</code></td>
+                    <td style="text-align:left">Define as dimensões intrínsecas da imagem em pixels. Ajuda o navegador a
+                        <strong>reservar o espaço</strong> antes que a imagem seja carregada, prevenindo o
+                        <strong>Layout Shift</strong> (mudanças inesperadas no layout da página) e melhorando o Core Web
+                        Vitals.</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left"><code>loading=&quot;lazy&quot;</code></td>
+                    <td style="text-align:left">Instruí o navegador a carregar a imagem <strong>apenas quando ela
+                            estiver próxima ou visível na tela do usuário</strong>. Melhora significativamente a
+                        performance inicial da página ao adiar o carregamento de imagens &quot;abaixo da dobra&quot;
+                        (off-screen).</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h3 id="4-responsividade-com-srcset-e-sizes-">4. Responsividade com <code>srcset</code> e <code>sizes</code>
+        </h3>
+        <p>Para garantir que a imagem mais adequada seja carregada para diferentes tamanhos de tela e resoluções de
+            dispositivo, utilize os atributos <code>srcset</code> e <code>sizes</code>.</p>
+        <pre><code class="lang-html">&lt;img
+  src=<span class="hljs-string">"caminho/para/imagem-padrao-600.jpg"</span>
+  srcset=<span class="hljs-string">"</span>
+    caminho/para/imagem-<span class="hljs-number">400</span>.jpg <span class="hljs-number">400</span>w,
+    caminho/para/imagem-<span class="hljs-number">800</span>.jpg <span class="hljs-number">800</span>w,
+    caminho/para/imagem-<span class="hljs-number">1200</span>.jpg <span class="hljs-number">1200</span>w
+  <span class="hljs-string">"</span>
+  sizes=<span class="hljs-string">"(max-width: 600px) 400px, (max-width: 1000px) 800px, 1200px"</span>
+  alt=<span class="hljs-string">"Descrição da imagem responsiva"</span>
+&gt;
+</code></pre>
+        <ul>
+            <li><strong><code>srcset</code></strong>: Lista diferentes versões da mesma imagem com suas respectivas
+                larguras (ex: <code>400w</code> para 400 pixels de largura intrínseca). O navegador escolhe a melhor
+                opção.</li>
+            <li><strong><code>sizes</code></strong>: Descreve os tamanhos que a imagem ocupará no layout em diferentes
+                condições de viewport (ex: <code>(max-width: 600px) 400px</code> significa que se a tela tiver até 600px
+                de largura, a imagem ocupará 400px do layout).</li>
+            <li><strong>Benefícios</strong>: O navegador pode carregar a versão mais eficiente da imagem,
+                <strong>economizando banda</strong> para o usuário e <strong>melhorando o tempo de
+                    carregamento</strong>.</li>
+        </ul>
+        <hr>
+        <h3 id="5-acessibilidade-e-seo">5. Acessibilidade e SEO</h3>
+        <p>Imagens contribuem para a acessibilidade e o SEO quando implementadas corretamente.</p>
+        <ul>
+            <li><strong><code>alt</code> descritivo</strong>: <strong>Sempre use o atributo <code>alt</code></strong>
+                com um texto que descreva o conteúdo ou a função da imagem de forma concisa e relevante. Isso é crucial
+                para leitores de tela e para motores de busca entenderem o contexto da imagem.</li>
+            <li><strong>Evite texto em imagens</strong>: Não use imagens como o único meio de transmitir informações
+                textuais importantes. O texto em imagens não é legível por leitores de tela e não é indexável por
+                motores de busca.</li>
+            <li><strong>Imagens decorativas</strong>: Para imagens puramente decorativas que não agregam valor semântico
+                (ex: bordas, ícones de fundo), use <code>alt=&quot;&quot;</code> (vazio) ou
+                <code>aria-hidden=&quot;true&quot;</code> para indicar aos leitores de tela que elas devem ser
+                ignoradas.</li>
+        </ul>
+        <hr>
+        <h3 id="6-ferramentas-teis-para-otimiza-o-de-imagens">6. Ferramentas Úteis para Otimização de Imagens</h3>
+        <ul>
+            <li><strong>ImageOptim</strong> (Mac): Ferramenta desktop para compressão sem perdas.</li>
+            <li><strong>TinyPNG / TinyJPG</strong>: Ferramentas online populares para compressão de imagens.</li>
+            <li><strong>Squoosh</strong>: Ferramenta web do Google para compressão e conversão de formatos de imagem
+                (incluindo WebP e AVIF).</li>
+            <li><strong>Cloudinary / Imgix</strong>: Serviços baseados em nuvem para otimização, transformação e entrega
+                de imagens de forma dinâmica.</li>
+            <li><strong>Lighthouse (Google Chrome)</strong>: Ferramenta de auditoria integrada ao Chrome DevTools que
+                pode identificar oportunidades de otimização de imagem e outros problemas de performance/acessibilidade.
+            </li>
+        </ul>
+        <hr>
+        <h3 id="tratamento-especial-para-o-logo-de-um-site">Tratamento Especial para o Logo de um Site</h3>
+        <p>O logo é uma das imagens mais importantes do seu site. Ele merece uma atenção especial para garantir que seja
+            nítido, carregue rapidamente e seja acessível.</p>
+        <ol>
+            <li>
+                <h4><strong>Formato Ideal</strong>:</h4>
+                <ul>
+                    <li><strong>SVG</strong>: <strong>É o formato mais recomendado para logos.</strong> Como um gráfico
+                        vetorial, ele é <strong>infinitamente escalável</strong> sem perda de qualidade (perfeito para
+                        telas de alta resolução como Retina) e possui um tamanho de arquivo geralmente muito pequeno.
+                        Além disso, pode ser estilizado com CSS (cores, transformações).</li>
+                    <li><em>Alternativa (se SVG não for possível)</em>: Para logos complexos com muitos detalhes, um
+                        <strong>PNG de alta resolução</strong> otimizado ou <strong>WebP</strong> pode ser uma opção,
+                        mas sempre prefira SVG.</li>
+                </ul>
+            </li>
+            <li>
+                <h4><strong>Otimização e Tamanho</strong>:</h4>
+                <ul>
+                    <li>Para SVG: Use ferramentas como <strong>SVGO</strong> para remover metadados desnecessários e
+                        otimizar o arquivo.</li>
+                    <li>Para PNG/WebP: Certifique-se de que a imagem esteja bem comprimida e redimensionada para o
+                        tamanho máximo que será exibida.</li>
+                </ul>
+            </li>
+            <li>
+                <h4><strong>Implementação HTML</strong>:</h4>
+                <ul>
+                    <li><strong>Priorize o carregamento</strong>: Coloque a tag <code>&lt;img&gt;</code> do logo o mais
+                        cedo possível no HTML (geralmente no <code>&lt;header&gt;</code>), próximo ao topo da seção
+                        <code>&lt;body&gt;</code>. Evite <code>loading=&quot;lazy&quot;</code> para o logo, pois ele é
+                        um elemento crítico acima da dobra e deve ser carregado imediatamente.</li>
+                    <li><strong>Atributos <code>width</code> e <code>height</code></strong>: Sempre inclua as dimensões
+                        do logo. Isso evita o <abbr title="Refere-se a movimentos inesperados de elementos em uma página web durante o carregamento ou interação do usuário">Layout Shift</abbr>, garantindo que o espaço para o logo seja reservado antes
+                        mesmo de ele carregar.</li>
+                    <li><strong><code>alt</code> descritivo</strong>: O <code>alt</code> do logo deve conter o
+                        <strong>nome da sua empresa/site</strong>. Ex:
+                        <code>&lt;img src=&quot;logo.svg&quot; alt=&quot;Nome da Empresa - Página Inicial&quot;&gt;</code>.
+                        Isso é crucial para SEO e acessibilidade.</li>
+                    <li><strong>Link para a Página Inicial</strong>: O logo geralmente funciona como um link para a
+                        página inicial do site.
+                        <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">a</span> href=<span class="hljs-string">"/"</span> aria-label=<span class="hljs-string">"Nome da Empresa - Ir para a página inicial"</span>&gt;
+  &lt;<span class="hljs-selector-tag">img</span> src=<span class="hljs-string">"logo.svg"</span> alt=<span class="hljs-string">"Nome da Empresa"</span>&gt;
+&lt;/a&gt;
+</code></pre>
+                        <ul>
+                            <li>Considere usar <code>aria-label</code> no link para dar contexto adicional aos leitores
+                                de tela.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4><strong>Considerações Adicionais</strong>:</h4>
+                <ul>
+                    <li><strong>Favicon</strong>: Use uma versão menor e otimizada do seu logo para o favicon
+                        (<code>.ico</code> ou <code>.svg</code> para compatibilidade moderna).</li>
+                    <li><strong>Open Graph/Social Media</strong>: Prepare versões do logo com dimensões específicas para
+                        compartilhamento em redes sociais (Open Graph tags), como 1200x630px para Facebook/LinkedIn.
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <p>Ao seguir estas diretrizes, seu logo não só terá uma aparência impecável em todas as telas, mas também
+            contribuirá positivamente para a performance, acessibilidade e SEO do seu site.</p>
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./README.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+
+        <h2 id="documenta-o-reset-css-moderno-e-tipografia-fluida">Documentação: Reset CSS Moderno e Tipografia Fluida
+        </h2>
+        <p>Este documento explica a estrutura e o propósito do snippet de reset CSS e tipografia fluida. Ele foi
+            projetado para fornecer uma base sólida e acessível para o desenvolvimento front-end, garantindo
+            consistência visual e adaptabilidade em diferentes dispositivos e preferências do usuário.</p>
+        <hr>
+        <h3 id="vis-o-geral">Visão Geral</h3>
+        <p>O objetivo deste reset é eliminar inconsistências padrão dos navegadores e estabelecer uma base previsível
+            para o estilo de novos projetos. Ele incorpora:</p>
+        <ul>
+            <li><strong>Reset Universal</strong>: Zera margens, paddings e define o <code>box-sizing</code> para todos
+                os elementos.</li>
+            <li><strong>Tipografia Fluida</strong>: Utiliza <code>clamp()</code> e variáveis CSS para uma escala de
+                fontes que se adapta automaticamente ao tamanho da tela, priorizando a acessibilidade.</li>
+            <li><strong>Acessibilidade (A11y)</strong>: Inclui regras para <code>prefers-reduced-motion</code> e estados
+                de foco (<code>:focus-visible</code>), além de uma classe <code>sr-only</code>.</li>
+            <li><strong>Mídias e Formulários</strong>: Otimiza a renderização de imagens, vídeos, SVGs e elementos de
+                formulário.</li>
+            <li><strong>Variáveis CSS</strong>: Centraliza definições de cores e line-heights para facilitar a
+                manutenção e a consistência do design.</li>
+        </ul>
+        <hr>
+        <h3 id="se-es-do-c-digo">Seções do Código</h3>
+        <h4 id="1-charset-utf-8-">1. <code>@charset &#39;UTF-8&#39;;</code></h4>
+        <ul>
+            <li><strong>Propósito</strong>: Declara a codificação de caracteres do arquivo CSS como UTF-8. Isso garante
+                que caracteres especiais (como acentuações) sejam interpretados corretamente.</li>
+            <li><strong>Observação</strong>: Embora seja comum, embutir isso em um snippet não é estritamente necessário
+                para o funcionamento do snippet em si, mas é uma boa prática para arquivos CSS completos.</li>
+        </ul>
+        <h4 id="2-vari-veis-css-globais-root-">2. Variáveis CSS Globais (<code>:root</code>)</h4>
+        <p>Define variáveis CSS (custom properties) para valores que serão reutilizados em todo o projeto.</p>
+        <ul>
+            <li><strong>Escala de Tipografia Fluida (<code>--fs-xs</code> a <code>--fs-5xl</code>)</strong>:<ul>
+                    <li><strong>Propósito</strong>: Cria uma escala de tamanhos de fonte responsiva e acessível usando a
+                        função <code>clamp(min, ideal, max)</code>.<ul>
+                            <li><code>min</code>: O tamanho mínimo da fonte (em <code>rem</code>), garantindo que o
+                                texto nunca fique ilegível em telas muito pequenas.</li>
+                            <li><code>ideal</code>: Um valor fluido (usando <code>vw</code> - viewport width) que
+                                permite que o tamanho da fonte aumente ou diminua proporcionalmente à largura da tela.
+                            </li>
+                            <li><code>max</code>: O tamanho máximo da fonte (em <code>rem</code>), prevenindo que o
+                                texto fique excessivamente grande em telas muito amplas.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Benefício</strong>: Elimina a necessidade de múltiplos <code>@media queries</code> para
+                        controlar o tamanho da fonte em diferentes breakpoints, tornando a tipografia intrinsecamente
+                        responsiva. Prioriza a acessibilidade ao não sobrescrever a base de <code>rem</code> (o padrão
+                        do navegador é geralmente 16px).</li>
+                </ul>
+            </li>
+            <li><strong>Line Heights (<code>--lh-tight</code>, <code>--lh-normal</code>,
+                    <code>--lh-relaxed</code>)</strong>:<ul>
+                    <li><strong>Propósito</strong>: Define valores de <code>line-height</code> para diferentes
+                        propósitos (títulos, corpo de texto, etc.), promovendo consistência vertical.</li>
+                </ul>
+            </li>
+            <li><strong>Cores Base (<code>--color-text</code>, <code>--color-text-muted</code>,
+                    <code>--color-focus</code>)</strong>:<ul>
+                    <li><strong>Propósito</strong>: Define cores semânticas para texto principal, texto
+                        secundário/atenuado e o estado de foco. Isso centraliza a gestão das cores principais e permite
+                        temas ou ajustes fáceis no futuro.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4 id="3-prefer-ncia-de-movimento-reduzido-media-prefers-reduced-motion-reduce-">3. Preferência de Movimento
+            Reduzido (<code>@media (prefers-reduced-motion: reduce)</code>)</h4>
+        <ul>
+            <li><strong>Propósito</strong>: Aplica estilos específicos para usuários que indicaram em suas configurações
+                de sistema operacional que preferem menos movimento (por exemplo, devido a vertigem ou ansiedade).</li>
+            <li><strong>Regras Aplicadas</strong>:<ul>
+                    <li><code>scroll-behavior: auto !important;</code>: Desativa a rolagem suave
+                        (<code>smooth scroll</code>).</li>
+                    <li><code>animation-delay</code>, <code>animation-duration</code>,
+                        <code>animation-iteration-count</code>, <code>transition-duration</code>,
+                        <code>transition-delay</code>: Reduz drasticamente ou elimina animações e transições.</li>
+                    <li><code>background-attachment: initial !important;</code>: Previne o paralaxe em fundos para
+                        evitar movimento.</li>
+                </ul>
+            </li>
+            <li><strong>Benefício</strong>: Uma inclusão crucial para a <strong>acessibilidade</strong>, melhorando a
+                experiência de usuários com sensibilidade a movimentos excessivos.</li>
+        </ul>
+        <h4 id="4-reset-b-sico-universal">4. Reset Básico Universal</h4>
+        <ul>
+            <li><strong><code>*, *::before, *::after { box-sizing: border-box; }</code></strong>:<ul>
+                    <li><strong>Propósito</strong>: Define o modelo de caixa para <code>border-box</code> em todos os
+                        elementos. Isso significa que <code>padding</code> e <code>border</code> são incluídos na
+                        largura e altura totais de um elemento, simplificando o cálculo de layouts e tornando-o mais
+                        intuitivo.</li>
+                </ul>
+            </li>
+            <li><strong><code>* { margin: 0; padding: 0; }</code></strong>:<ul>
+                    <li><strong>Propósito</strong>: Remove as margens e paddings padrão que os navegadores aplicam a
+                        diversos elementos, garantindo um &quot;quadro limpo&quot; para o desenvolvimento do layout.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <h4 id="5-configura-o-html-e-body-">5. Configuração <code>html</code> e <code>body</code></h4>
+        <ul>
+            <li><strong><code>html { scroll-behavior: smooth; }</code></strong>:<ul>
+                    <li><strong>Propósito</strong>: Ativa a rolagem suave para âncoras internas (links que apontam para
+                        IDs na mesma página).</li>
+                </ul>
+            </li>
+            <li><strong><code>html { -webkit-text-size-adjust: 100%; }</code></strong>:<ul>
+                    <li><strong>Propósito</strong>: Previne que navegadores baseados em WebKit (como Safari no iOS)
+                        ajustem automaticamente o tamanho da fonte após uma mudança de orientação do dispositivo.</li>
+                </ul>
+            </li>
+            <li><strong><code>html, body { width: 100%; height: 100%; }</code></strong>:<ul>
+                    <li><strong>Propósito</strong>: Garante que os elementos <code>html</code> e <code>body</code>
+                        ocupem 100% da largura e altura da viewport, sendo a base para layouts de página inteira.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4 id="6-estilos-globais-do-body-">6. Estilos Globais do <code>body</code></h4>
+        <ul>
+            <li><strong><code>line-height: var(--lh-normal);</code></strong>:<ul>
+                    <li><strong>Propósito</strong>: Aplica uma altura de linha padrão a todo o texto, definida pela
+                        variável <code>--lh-normal</code>, para melhor legibilidade.</li>
+                </ul>
+            </li>
+            <li><strong><code>-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;</code></strong>:
+                <ul>
+                    <li><strong>Propósito</strong>: Melhora a renderização da fonte, aplicando suavização de serrilhado
+                        para uma aparência mais nítida, especialmente em sistemas macOS.</li>
+                </ul>
+            </li>
+            <li><strong><code>font-size: var(--fs-md);</code></strong>:<ul>
+                    <li><strong>Propósito</strong>: Define o tamanho de fonte base do documento usando a variável fluida
+                        <code>--fs-md</code> da escala de tipografia.</li>
+                </ul>
+            </li>
+            <li><strong><code>font-family: system-ui, -apple-system, &#39;Segoe UI&#39;, Roboto, sans-serif;</code></strong>:
+                <ul>
+                    <li><strong>Propósito</strong>: Define uma pilha de fontes de sistema, que carrega rapidamente e se
+                        integra visualmente com o sistema operacional do usuário.</li>
+                </ul>
+            </li>
+            <li><strong><code>color: var(--color-text);</code></strong>:<ul>
+                    <li><strong>Propósito</strong>: Aplica a cor de texto padrão definida na variável
+                        <code>--color-text</code>.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4 id="7-m-dia-responsiva">7. Mídia Responsiva</h4>
+        <ul>
+            <li><strong><code>img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; object-fit: cover; }</code></strong>:
+                <ul>
+                    <li><strong>Propósito</strong>: Garante que imagens e outros elementos de mídia sejam responsivos
+                        (nunca excedam a largura do seu contêiner) e se comportem como blocos para facilitar o layout.
+                        <code>object-fit: cover;</code> faz com que a mídia preencha o contêiner, cortando partes se
+                        necessário.</li>
+                </ul>
+            </li>
+            <li><strong><code>svg { fill: currentColor; }</code></strong>:<ul>
+                    <li><strong>Propósito</strong>: Permite que a cor de preenchimento de SVGs seja herdada da
+                        propriedade <code>color</code> do seu elemento pai, facilitando a estilização de ícones.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4 id="8-elementos-de-formul-rio">8. Elementos de Formulário</h4>
+        <ul>
+            <li><strong><code>input, button, textarea, select { font: inherit; border: none; background: transparent; }</code></strong>:
+                <ul>
+                    <li><strong>Propósito</strong>: Remove estilos padrão inconsistentes de navegadores para elementos
+                        de formulário, permitindo que eles herdem as propriedades de fonte e tenham um ponto de partida
+                        limpo para personalização.</li>
+                </ul>
+            </li>
+            <li><strong><code>button, input[type=&#39;submit&#39;], input[type=&#39;button&#39;] { cursor: pointer; }</code></strong>:
+                <ul>
+                    <li><strong>Propósito</strong>: Adiciona um cursor de ponteiro para botões e inputs de tipo
+                        <code>submit</code> ou <code>button</code>, fornecendo uma dica visual de que são clicáveis.
+                    </li>
+                </ul>
+            </li>
+            <li><strong><code>button:disabled, input:disabled { cursor: not-allowed; opacity: 0.6; }</code></strong>:
+                <ul>
+                    <li><strong>Propósito</strong>: Fornece um feedback visual para elementos desabilitados, indicando
+                        que não podem ser interagidos.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4 id="9-estados-de-foco-acess-veis">9. Estados de Foco Acessíveis</h4>
+        <ul>
+            <li><strong><code>:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }</code></strong>:
+                <ul>
+                    <li><strong>Propósito</strong>: Define um estilo de contorno de foco claro e consistente que aparece
+                        <strong>apenas</strong> quando o usuário navega via teclado. Isso é crucial para a
+                        acessibilidade, pois usuários de teclado dependem do contorno de foco para saber onde estão na
+                        página. O <code>outline-offset</code> move o contorno para fora do elemento.</li>
+                </ul>
+            </li>
+            <li><strong><code>button:focus:not(:focus-visible) { outline: none; }</code></strong>:<ul>
+                    <li><strong>Propósito</strong>: Remove o contorno padrão de foco em botões quando clicados com o
+                        mouse (já que o <code>:focus-visible</code> cuida da navegação por teclado). Isso evita um
+                        &quot;flash&quot; visual que pode ser indesejado em designs modernos.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4 id="10-tipografia">10. Tipografia</h4>
+        <ul>
+            <li><strong><code>p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; hyphens: auto; }</code></strong>:
+                <ul>
+                    <li><strong>Propósito</strong>: <code>overflow-wrap: break-word;</code> garante que palavras muito
+                        longas quebrem e se ajustem ao contêiner, prevenindo overflow. <code>hyphens: auto;</code>
+                        permite que o navegador automaticamente insira hífens para quebrar palavras entre linhas,
+                        melhorando a legibilidade e o ajuste do texto em colunas estreitas.</li>
+                </ul>
+            </li>
+            <li><strong><code>h1, h2, h3, h4, h5, h6 { line-height: var(--lh-tight); font-weight: 600; }</code></strong>:
+                <ul>
+                    <li><strong>Propósito</strong>: Aplica uma <code>line-height</code> mais justa para títulos e um
+                        <code>font-weight</code> de 600 (semi-bold) para dar destaque visual.</li>
+                </ul>
+            </li>
+            <li><strong><code>h1 { font-size: var(--fs-4xl); }</code> a
+                    <code>h6 { font-size: var(--fs-md); }</code></strong>:<ul>
+                    <li><strong>Propósito</strong>: Atribui os tamanhos de fonte da escala fluida (<code>--fs-xl</code>
+                        a <code>--fs-5xl</code>) aos elementos de título correspondentes, garantindo hierarquia e
+                        responsividade.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4 id="11-links">11. Links</h4>
+        <ul>
+            <li><strong><code>a { color: var(--color-focus); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }</code></strong>:
+                <ul>
+                    <li><strong>Propósito</strong>: Define um estilo básico para links, usando a cor de foco e um
+                        sublinhado moderno com espessura e deslocamento controlados para melhor legibilidade.</li>
+                </ul>
+            </li>
+            <li><strong><code>a:hover { text-decoration-thickness: 2px; }</code></strong>:<ul>
+                    <li><strong>Propósito</strong>: Aumenta a espessura do sublinhado no hover, fornecendo um feedback
+                        visual sutil de que o link é interativo.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4 id="12-listas-ul-ol-">12. Listas (<code>ul</code>, <code>ol</code>)</h4>
+        <ul>
+            <li><strong><code>ul, ol { list-style-position: inside; }</code></strong>:<ul>
+                    <li><strong>Propósito</strong>: Define a posição do marcador da lista para dentro do conteúdo do
+                        item da lista. Isso pode ajudar a evitar que os marcadores fiquem desalinhados com o texto em
+                        algumas situações.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4 id="13-tabelas-table-">13. Tabelas (<code>table</code>)</h4>
+        <ul>
+            <li><strong><code>table { border-collapse: collapse; border-spacing: 0; width: 100%; }</code></strong>:<ul>
+                    <li><strong>Propósito</strong>: Reseta o estilo padrão das tabelas, removendo espaçamento entre
+                        células e tornando-as 100% largas por padrão, facilitando a estilização subsequente.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4 id="14-c-digo-code-pre-">14. Código (<code>code</code>, <code>pre</code>)</h4>
+        <ul>
+            <li><strong><code>code, pre { font-family: &#39;SF Mono&#39;, Monaco, &#39;Cascadia Code&#39;, &#39;Roboto Mono&#39;, monospace; font-size: 0.9em; }</code></strong>:
+                <ul>
+                    <li><strong>Propósito</strong>: Define uma pilha de fontes monoespaçadas modernas para blocos de
+                        código e texto pré-formatado, garantindo legibilidade para código. <code>0.9em</code> reduz
+                        ligeiramente o tamanho da fonte para que o código se encaixe melhor.</li>
+                </ul>
+            </li>
+            <li><strong><code>pre { overflow-x: auto; white-space: pre; }</code></strong>:<ul>
+                    <li><strong>Propósito</strong>: Garante que blocos de código pré-formatados que excedam a largura do
+                        contêiner adicionem uma barra de rolagem horizontal, prevenindo overflow.
+                        <code>white-space: pre;</code> preserva espaços em branco e quebras de linha.</li>
+                </ul>
+            </li>
+        </ul>
+        <h4 id="15-utilit-rios-de-acessibilidade-sr-only-">15. Utilitários de Acessibilidade (<code>.sr-only</code>)
+        </h4>
+        <ul>
+            <li><strong><code>.sr-only { ... }</code></strong>:<ul>
+                    <li><strong>Propósito</strong>: Uma classe utilitária para ocultar conteúdo visualmente de usuários
+                        videntes, mas mantê-lo totalmente acessível para leitores de tela e outras tecnologias
+                        assistivas. Essencial para fornecer contexto adicional sem poluir a interface visual.</li>
+                </ul>
+            </li>
+        </ul>
+        <hr>
+        <h3 id="como-usar">Como Usar</h3>
+        <p>Para usar este reset em seu projeto:</p>
+        <ol>
+            <li><strong>Copie</strong> o conteúdo do snippet JSON fornecido.</li>
+            <li><strong>Abra o VS Code</strong>.</li>
+            <li>Vá em <strong>File</strong> &gt; <strong>Preferences</strong> &gt; <strong>Configure User
+                    Snippets</strong>.</li>
+            <li>Selecione <strong><code>css.json</code></strong> (ou crie um novo para seu projeto em
+                <code>.vscode/seu-nome.code-snippets</code>).</li>
+            <li><strong>Cole</strong> o snippet dentro das chaves <code>{}</code> existentes (se houver outros snippets,
+                separe-os com vírgulas).</li>
+            <li>Salve o arquivo.</li>
+            <li>Em qualquer arquivo <code>.css</code> no VS Code, digite <strong><code>resetcss-fluid</code></strong> e
+                pressione <code>Enter</code> ou <code>Tab</code> para inserir o código.</li>
+        </ol>
+
+
+
+
+
+        <p>@charset &quot;UTF-8&quot;;</p>
+        <p>:root {
+            /<em> Escala de Tipografia Fluida </em>/
+            --fs-xs: clamp(0.75rem, 0.5vw + 0.75rem, 1rem);
+            --fs-sm: clamp(0.875rem, 0.75vw + 0.875rem, 1.125rem);
+            --fs-md: clamp(1rem, 1vw + 1rem, 1.25rem); /<em> Tamanho base (16px, 20px) </em>/
+            --fs-lg: clamp(1.125rem, 1.5vw + 1.125rem, 1.5rem);
+            --fs-xl: clamp(1.25rem, 2vw + 1.25rem, 1.75rem);
+            --fs-2xl: clamp(1.5rem, 2.5vw + 1.5rem, 2rem);
+            --fs-3xl: clamp(1.875rem, 3vw + 1.875rem, 2.5rem);
+            --fs-4xl: clamp(2.25rem, 4vw + 2.25rem, 3rem);
+            --fs-5xl: clamp(2.5rem, 5vw + 2.5rem, 3.5rem);</p>
+        <p> /<em> Line Heights </em>/
+            --lh-tight: 1.25;
+            --lh-normal: 1.5;
+            --lh-relaxed: 1.75;</p>
+        <p> /<em> Cores Base </em>/
+            --color-text: #1a1a1a;
+            --color-text-muted: #6b7280;
+            --color-focus: #3b82f6;
+            }</p>
+        <p>/<em> Preferência de movimento reduzido </em>/
+            @media (prefers-reduced-motion: reduce) {
+            html {
+            scroll-behavior: auto;
+            }</p>
+        <p> <em>, </em>::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            }
+            }</p>
+        <p><em>, </em>::before, *::after {
+            box-sizing: border-box;
+            }</p>
+        <ul>
+            <li>{
+                margin: 0;
+                padding: 0;
+                }</li>
+        </ul>
+        <p>html {
+            scroll-behavior: smooth;
+            /<em> Prevent iOS text size adjust after orientation change </em>/
+            -webkit-text-size-adjust: 100%;
+            }</p>
+        <p>html, body {
+            width: 100%;
+            height: 100%;
+            }</p>
+        <p>body {
+            line-height: var(--lh-relaxed);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: var(--fs-md);
+            font-family: system-ui, -apple-system, &#39;Segoe UI&#39;, Roboto, sans-serif;
+            color: var(--color-text);
+            }</p>
+        <p>/<em> Mídia responsiva </em>/
+            img, picture, video, canvas, svg {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+            }</p>
+        <p>svg {
+            fill: currentColor;
+            }</p>
+        <p>/<em> Form elements </em>/
+            input, button, textarea, select {
+            font: inherit;
+            border: none;
+            background: transparent;
+            }</p>
+        <p>button, input[type=&#39;submit&#39;], input[type=&#39;button&#39;] {
+            cursor: pointer;
+            }</p>
+        <p>button:disabled, input:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+            }</p>
+        <p>/<em> Estados de foco acessíveis </em>/
+            :focus-visible {
+            outline: 2px solid var(--color-focus);
+            outline-offset: 2px;
+            }</p>
+        <p>button:focus:not(:focus-visible) {
+            outline: none;
+            }</p>
+        <p>/<em> Typography </em>/
+            p, h1, h2, h3, h4, h5, h6 {
+            overflow-wrap: break-word;
+            hyphens: auto;
+            }</p>
+        <p>h1, h2, h3, h4, h5, h6 {
+            line-height: var(--lh-tight);
+            font-weight: 600;
+            }</p>
+        <p>h1 { font-size: var(--fs-4xl); }
+            h2 { font-size: var(--fs-3xl); }
+            h3 { font-size: var(--fs-2xl); }
+            h4 { font-size: var(--fs-xl); }
+            h5 { font-size: var(--fs-lg); }
+            h6 { font-size: var(--fs-md); }</p>
+        <p>/<em> Links </em>/
+            a {
+            color: var(--color-focus);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+            }</p>
+        <p>a:hover {
+            text-decoration-thickness: 2px;
+            }</p>
+        <p>/<em> Listas </em>/
+            ul, ol {
+            list-style-position: inside;
+            }</p>
+        <p>/<em> Tabelas </em>/
+            table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            }</p>
+        <p>/<em> Código </em>/
+            code, pre {
+            font-family: &#39;SF Mono&#39;, Monaco, &#39;Cascadia Code&#39;, &#39;Roboto Mono&#39;, monospace;
+            font-size: 0.9em;
+            }</p>
+        <p>pre {
+            overflow-x: auto;
+            white-space: pre;
+            }</p>
+        <p>/<em> Utilitários de acessibilidade </em>/
+            .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+            }</p>
+        <p>/<em> Remove animações para usuários que preferem movimento reduzido </em>/
+            @media (prefers-reduced-motion: reduce) {
+            <em>, </em>::before, *::after {
+            animation-delay: -1ms !important;
+            animation-duration: 1ms !important;
+            animation-iteration-count: 1 !important;
+            background-attachment: initial !important;
+            scroll-behavior: auto !important;
+            transition-duration: 0s !important;
+            transition-delay: 0s !important;
+            }
+            }
+        </p>
+
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./README.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
