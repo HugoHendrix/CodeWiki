@@ -78,8 +78,10 @@
                 <li><a href="Anotações/clean-code.html">Clean Code para HTML e CSS</a></li>
                 <li><a href="Anotações/crud.html">CRUD - Exemplo com Gerenciador de Produtos</a></li>
                 <li><a href="Anotações/crud-explicado.html">CRUD Explicado</a></li>
-                <li><a href="Anotações/documentacao-json-lt.html">Documentação – Uso de JSON-LD e Schema.org no Site</a></li>
-                <li><a href="Anotações/conversao-de-arquvi-json.html">Conversão de Arquivos JSON para Formatos Acessíveis</a></li>
+                <li><a href="Anotações/documentacao-json-lt.html">Documentação – Uso de JSON-LD e Schema.org no Site</a>
+                </li>
+                <li><a href="Anotações/conversao-de-arquvi-json.html">Conversão de Arquivos JSON para Formatos
+                        Acessíveis</a></li>
             </section>
 
             <hr>
@@ -119,9 +121,107 @@
             <!-- BACKSTAGE DA WEB -->
             <section id="backstage">
                 <h2>📤 Backstage da WEB</h2>
-                <p>Anotações e guias sobre o que acontece por trás de um site: DNS, hospedagem, disponibilidade, e diagnósticos para manter tudo no ar.</p>
+                <p>Anotações e guias sobre o que acontece por trás de um site: DNS, hospedagem, disponibilidade, e
+                    diagnósticos para manter tudo no ar.</p>
                 <li><a href="backstage/como-identificar-site-fora-do-ar.html">Como identificar sites fora do ar</a></li>
+                
+                <br>
+                <h2 id="-ferramentas-para-diagn-stico-de-dns">🛠️ Ferramentas para Diagnóstico de DNS</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ferramenta</th>
+                            <th>Descrição</th>
+                            <th>Acesso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>DNSChecker</strong></td>
+                            <td>Permite verificar a propagação de DNS globalmente. Você pode inserir um domínio e ver
+                                como os servidores DNS ao redor do mundo estão respondendo. Ideal para identificar
+                                problemas de resolução ou propagação.</td>
+                            <td><a href="https://dnschecker.org/">dnschecker.org</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>DNSHistory</strong></td>
+                            <td>Exibe o histórico de registros DNS de um domínio. Útil para investigar alterações
+                                suspeitas, rastrear mudanças de IP ou entender o comportamento passado de um site.</td>
+                            <td><a href="https://dnshistory.org/">dnshistory.org</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chrome Net Internals (DNS)</strong></td>
+                            <td>Ferramenta interna do navegador Chrome que mostra o cache DNS local, permite limpá-lo e
+                                visualizar requisições DNS feitas pelo navegador. Excelente para testes locais e
+                                depuração rápida.</td>
+                            <td><code>chrome://net-internals/#dns</code> (digite diretamente na barra de endereço do
+                                Chrome)</td>
+                        </tr>
+                    </tbody>
+                </table>
 
+                    <br>
+                   <h3 style="text-align: center;">Estudando sobre DNS</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Artigo sobre DNS</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/dns/what-is-dns/" target="_blank"
+                                    rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                        <tr>
+                            <td>O que é ataque DDoS?</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/ddos/what-is-a-ddos-attack/"
+                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                        <tr>
+                            <td>O que é armazenamento em cache?</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/cdn/what-is-caching/" target="_blank"
+                                    rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                        <tr>
+                            <td>Artigo sobre IP e TCP</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/ddos/glossary/tcp-ip/"
+                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                        <tr>
+                            <td>Artigo sobre HTTP</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/ddos/glossary/hypertext-transfer-protocol-http/"
+                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                        <tr>
+                            <td>O que é e como funciona DNS</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/dns/what-is-dns/" target="_blank"
+                                    rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                        <tr>
+                            <td>Como a velocidade do site impulsiona o SEO</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/performance/how-website-speed-boosts-seo/"
+                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                        <tr>
+                            <td>Por que a velocidade de um site é importante?</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/performance/why-site-speed-matters/"
+                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                        <tr>
+                            <td>Dicas para melhorar a velocidade do site</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/performance/speed-up-a-website/"
+                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                        <tr>
+                            <td>Como a performance do site afeta conversões</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/performance/more/website-performance-conversion-rates/"
+                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
 
 
@@ -182,6 +282,7 @@
                 <li><a href="JS/copiar-textos.html">Função: copiarTextoPorId(idElemento)</a></li>
                 <li><a href="JS/relógio.html">RELÓGIO COM SAUDAÇÃO</a></li>
                 <li><a href="JS/rolagem-suave.html">Rolagem Suave entre seções (smooth scroll) </a></li>
+                <li><a href="JS/estudando-o-poder-do-js.html">Estudando o poder do JS</a></li>
 
             </section>
 
@@ -279,17 +380,22 @@
                             <td><a href="Recursos-Web/ilustracao-design.html">Ilustrações e Design</a></td>
                             <td>Recursos para Design, Ilustrações e Imagens</td>
                         </tr>
-                    
+
                         <tr>
-                            <td><a href="https://www.httrack.com/page/2/" target="_blank" rel="noopener noreferrer">httrack.com/page/2</a></td>
-                            <td>É uma ferramenta gratuita e de código aberto para download completo de sites, permitindo navegá-los offline. É útil para fazer cópias locais para estudo, backup ou análise de estrutura de sites.</td>
+                            <td><a href="https://www.httrack.com/page/2/" target="_blank"
+                                    rel="noopener noreferrer">httrack.com/page/2</a></td>
+                            <td>É uma ferramenta gratuita e de código aberto para download completo de sites, permitindo
+                                navegá-los offline. É útil para fazer cópias locais para estudo, backup ou análise de
+                                estrutura de sites.</td>
                         </tr>
                         <tr>
                             <td>
-                                <a href="https://www.fronteditor.dev/" target="_blank" rel="noopener noreferrer">Front end Editor</a></li>
+                                <a href="https://www.fronteditor.dev/" target="_blank" rel="noopener noreferrer">Front
+                                    end Editor</a></li>
                             </td>
                             <td>
-                                Playground online para testar e experimentar código HTML, CSS e JavaScript em tempo real.
+                                Playground online para testar e experimentar código HTML, CSS e JavaScript em tempo
+                                real.
                             </td>
                         </tr>
                     </tbody>
@@ -329,7 +435,9 @@
 
             <section id="projetos">
                 <h2>👌 Projetos Mão na Massa</h2>
-                <p>Este espaço foi criado para documentar meus projetos de desenvolvimento web. O objetivo é registrar os desafios, as dúvidas e as soluções encontradas, criando um material de referência prático e acessível.</p>
+                <p>Este espaço foi criado para documentar meus projetos de desenvolvimento web. O objetivo é registrar
+                    os desafios, as dúvidas e as soluções encontradas, criando um material de referência prático e
+                    acessível.</p>
                 <li>
                     <a href="./projeto-dark-souls/README.html">Projeto Dark Souls</a>
                 </li>
