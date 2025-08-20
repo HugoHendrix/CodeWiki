@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+        <h1 id="-documenta-o-t-cnica-fundamentos-para-o-funcionamento-correto-de-um-site">🧠 Documentação Técnica:
+            Fundamentos para o Funcionamento Correto de um Site</h1>
+        <h2 id="-dns-domain-name-system-">🌐 DNS (Domain Name System)</h2>
+        <p>O DNS é o sistema que traduz nomes de domínio (como <code>www.exemplo.com</code>) em endereços IP
+            compreensíveis pelos servidores.</p>
+        <h3 id="fun-es-">Funções:</h3>
+        <ul>
+            <li>Localizar servidores web</li>
+            <li>Direcionar tráfego corretamente</li>
+            <li>Gerenciar registros como A, CNAME, MX, TXT</li>
+        </ul>
+        <h3 id="problemas-comuns-">Problemas comuns:</h3>
+        <ul>
+            <li>Propagação lenta</li>
+            <li>Registros incorretos</li>
+            <li>Cache desatualizado</li>
+        </ul>
+        <p>🔧 Ferramentas úteis:</p>
+        <ul>
+            <li><a href="https://dnschecker.org/" target="_blank" rel="noopener noreferrer">DNSChecker</a></li>
+            <li><a href="https://dnshistory.org/" target="_blank" rel="noopener noreferrer">DNSHistory</a></li>
+            <li><code>chrome://net-internals/#dns</code> (Chrome)</li>
+        </ul>
+        <hr>
+        <h2 id="-formas-de-recuperar-sites">🛠️ Formas de Recuperar Sites</h2>
+        <h3 id="estrat-gias-">Estratégias:</h3>
+        <ul>
+            <li><strong>Backup</strong>: Restaurar arquivos e banco de dados salvos anteriormente</li>
+            <li><strong>Cache de CDN</strong>: Recuperar versões armazenadas temporariamente</li>
+            <li><strong>Wayback Machine</strong>: Ver versões antigas públicas do site</li>
+            <li><strong>Hospedagem</strong>: Solicitar recuperação ao provedor</li>
+        </ul>
+        <hr>
+        <h2 id="-apontamentos-de-dom-nio">🔁 Apontamentos de Domínio</h2>
+        <p>Apontamento é o processo de vincular um domínio ao servidor onde o site está hospedado.</p>
+        <h3 id="tipos-">Tipos:</h3>
+        <ul>
+            <li><strong>Registro A</strong>: Aponta para um IP</li>
+            <li><strong>CNAME</strong>: Aponta para outro domínio</li>
+            <li><strong>NS (Name Server)</strong>: Define os servidores DNS</li>
+        </ul>
+        <p>🔗 Saiba mais: <a href="https://www.duplod.com.br/o-que-e-e-como-fazer-um-apontamento-de-dominio/" target="_blank" rel="noopener noreferrer">Guia sobre
+                apontamento de domínio</a></p>
+        <hr>
+        <h2 id="-ftp-file-transfer-protocol-">📤 FTP (File Transfer Protocol)</h2>
+        <p>FTP é um protocolo usado para transferir arquivos entre o computador local e o servidor.</p>
+        <h3 id="usos-">Usos:</h3>
+        <ul>
+            <li>Enviar arquivos do site</li>
+            <li>Atualizar conteúdo</li>
+            <li>Fazer backup</li>
+        </ul>
+        <h3 id="ferramentas-">Ferramentas:</h3>
+        <ul>
+            <li>FileZilla (cliente FTP)</li>
+            <li>Cyberduck</li>
+            <li>WinSCP</li>
+        </ul>
+        <p>🔐 Segurança:</p>
+        <ul>
+            <li>Prefira SFTP ou FTPS para criptografia</li>
+        </ul>
+        <p>🔗 Saiba mais: <a href="https://www.hostinger.com/br/tutoriais/ftp-o-que-e-como-funciona" target="_blank" rel="noopener noreferrer">O que é FTP e como
+                funciona</a></p>
+        <hr>
+        <h2 id="-termos-essenciais-para-o-funcionamento-de-um-site">🧩 Termos Essenciais para o Funcionamento de um Site
+        </h2>
+        <ul>
+            <li><strong>Hospedagem</strong>: Espaço onde os arquivos do site ficam armazenados</li>
+            <li><strong>CMS (Content Management System)</strong>: Sistema para gerenciar conteúdo (ex: WordPress)</li>
+            <li><strong>SSL</strong>: Certificado de segurança (HTTPS)</li>
+            <li><strong>Responsividade</strong>: Adaptação do site a diferentes dispositivos</li>
+            <li><strong>UX/UI</strong>: Experiência e interface do usuário</li>
+            <li><strong>Sitemap</strong>: Mapa do site para indexação</li>
+            <li><strong>Cache</strong>: Armazenamento temporário para acelerar carregamento</li>
+        </ul>
+        <p>🔗 Referência: <a href="https://criacao.cc/blog/glossario-site-saiba-tudo/" target="_blank" rel="noopener noreferrer">Glossário completo</a></p>
+        <hr>
+        <h2 id="-registro-de-dom-nio">📝 Registro de Domínio</h2>
+        <p>O domínio é o endereço digital do site (ex: <code>meusite.com.br</code>).</p>
+        <h3 id="como-registrar-">Como registrar:</h3>
+        <ul>
+            <li>Acesse <a href="https://registro.br">registro.br</a> para domínios nacionais</li>
+            <li>Use GoDaddy, HostGator, etc. para domínios internacionais</li>
+        </ul>
+        <p>💰 Custo médio:</p>
+        <ul>
+            <li><code>.com.br</code>: R$ 40/ano</li>
+            <li><code>.com</code>: US$ 10–15/ano</li>
+        </ul>
+        <p>🔗 Saiba mais: <a
+                href="https://sebrae.com.br/sites/PortalSebrae/artigos/registro-de-dominio-na-internet,fb89634e2ca62410VgnVCM100000b272010aRCRD" target="_blank" rel="noopener noreferrer">Guia
+                do Sebrae</a></p>
+        <hr>
+        <h2 id="-google-tag-manager-gtm-">📊 Google Tag Manager (GTM)</h2>
+        <p>Ferramenta para gerenciar scripts e tags de rastreamento sem editar o código do site.</p>
+        <h3 id="para-que-serve-">Para que serve:</h3>
+        <ul>
+            <li>Inserir Google Analytics, Facebook Pixel, etc.</li>
+            <li>Monitorar eventos como cliques e formulários</li>
+        </ul>
+        <h3 id="onde-inserir-">Onde inserir:</h3>
+        <ul>
+            <li>Código do GTM no <code>&lt;head&gt;</code> e <code>&lt;body&gt;</code> do site</li>
+        </ul>
+        <p>🔗 Saiba mais: <a href="https://pingback.com/br/resources/google-tag-manager/" target="_blank" rel="noopener noreferrer">Guia do Pingback</a></p>
+        <hr>
+        <h2 id="-google-search-console">🔍 Google Search Console</h2>
+        <p>Ferramenta gratuita do Google para monitorar e otimizar a presença do site nos resultados de busca.</p>
+        <h3 id="para-que-serve-">Para que serve:</h3>
+        <ul>
+            <li>Verificar indexação</li>
+            <li>Identificar erros</li>
+            <li>Monitorar palavras-chave</li>
+        </ul>
+        <h3 id="onde-inserir-">Onde inserir:</h3>
+        <ul>
+            <li>Verificação via DNS, arquivo HTML ou tag no <code>&lt;head&gt;</code></li>
+        </ul>
+        <p>🔗 Saiba mais: <a href="https://support.google.com/webmasters/answer/9128668?hl=pt-BR" target="_blank" rel="noopener noreferrer">Ajuda oficial do
+                Google</a></p>
+        <hr>
+        <h2 id="-google-analytics">📈 Google Analytics</h2>
+        <p>Plataforma de análise de tráfego e comportamento dos usuários no site.</p>
+        <h3 id="para-que-serve-">Para que serve:</h3>
+        <ul>
+            <li>Ver origem dos visitantes</li>
+            <li>Medir conversões</li>
+            <li>Analisar páginas mais acessadas</li>
+        </ul>
+        <h3 id="onde-inserir-">Onde inserir:</h3>
+        <ul>
+            <li>Código de rastreamento no <code>&lt;head&gt;</code> ou via GTM</li>
+        </ul>
+        <p>🔗 Saiba mais: <a href="https://support.google.com/analytics/answer/12159447?hl=pt-BR" target="_blank" rel="noopener noreferrer" >Ajuda oficial do
+                Google Analytics</a></p>
+        <hr>
+        <h2 id="-dicas-para-desenvolver-de-acordo-com-as-regras-do-google">✅ Dicas para Desenvolver de Acordo com as
+            Regras do Google</h2>
+        <h3 id="boas-pr-ticas-">Boas práticas:</h3>
+        <ul>
+            <li>Design responsivo (mobile-first)</li>
+            <li>URLs amigáveis</li>
+            <li>Certificado SSL (HTTPS)</li>
+            <li>Sitemap XML</li>
+            <li>Velocidade de carregamento abaixo de 2 segundos</li>
+            <li>Imagens com <code>alt</code> descritivo</li>
+            <li>Conteúdo original e relevante</li>
+            <li>Meta tags otimizadas</li>
+        </ul>
+        <p>🔗 Guia completo: <a href="https://plugmatica.com.br/blog-artigos/como-criar-site-otimizado.html" target="_blank" rel="noopener noreferrer">Como criar
+                site otimizado para o Google</a></p>
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

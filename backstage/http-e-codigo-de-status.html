@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+        <h1 id="-documenta-o-http-e-c-digos-de-status">🌐 Documentação: HTTP e Códigos de Status</h1>
+        <h2 id="-o-que-http-">❓ O que é HTTP?</h2>
+        <p><strong>HTTP (Hypertext Transfer Protocol)</strong> é o protocolo de comunicação que permite a transferência
+            de dados entre clientes (como navegadores) e servidores na web. Ele funciona no modelo
+            <strong>cliente-servidor</strong>, onde o cliente envia uma <strong>solicitação (request)</strong> e o
+            servidor responde com uma <strong>resposta (response)</strong>.</p>
+        <p>📌 É a base da navegação na internet — cada clique em um link, cada carregamento de página, cada envio de
+            formulário envolve uma troca via HTTP.</p>
+        <hr>
+        <h2 id="-o-que-h-em-uma-solicita-o-http-">📦 O que há em uma solicitação HTTP?</h2>
+        <p>Uma solicitação HTTP é composta por três partes principais:</p>
+        <ol>
+            <li>
+                <p><strong>Linha de solicitação</strong><br>Contém:</p>
+                <ul>
+                    <li>Método HTTP (ex: <code>GET</code>, <code>POST</code>)</li>
+                    <li>Caminho do recurso (ex: <code>/index.html</code>)</li>
+                    <li>Versão do protocolo (ex: <code>HTTP/1.1</code>)</li>
+                </ul>
+            </li>
+            <li>
+                <p><strong>Cabeçalhos de solicitação</strong><br>Informações adicionais como:</p>
+                <ul>
+                    <li>Tipo de conteúdo aceito (<code>Accept</code>)</li>
+                    <li>Idioma preferido (<code>Accept-Language</code>)</li>
+                    <li>Agente do usuário (<code>User-Agent</code>)</li>
+                    <li>Autenticação (<code>Authorization</code>)</li>
+                </ul>
+            </li>
+            <li>
+                <p><strong>Corpo da mensagem</strong> (opcional)<br>Usado em métodos como <code>POST</code> ou
+                    <code>PUT</code> para enviar dados ao servidor (ex: formulários, JSON, arquivos).</p>
+            </li>
+        </ol>
+        <hr>
+        <h2 id="-o-que-um-m-todo-http-">🧭 O que é um método HTTP?</h2>
+        <p>Os <strong>métodos HTTP</strong> indicam a ação que o cliente deseja realizar sobre um recurso. Os principais
+            são:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Método</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>GET</code></td>
+                    <td>Solicita dados de um recurso</td>
+                </tr>
+                <tr>
+                    <td><code>POST</code></td>
+                    <td>Envia dados para o servidor</td>
+                </tr>
+                <tr>
+                    <td><code>PUT</code></td>
+                    <td>Atualiza um recurso existente</td>
+                </tr>
+                <tr>
+                    <td><code>DELETE</code></td>
+                    <td>Remove um recurso</td>
+                </tr>
+                <tr>
+                    <td><code>HEAD</code></td>
+                    <td>Solicita apenas os cabeçalhos da resposta</td>
+                </tr>
+                <tr>
+                    <td><code>OPTIONS</code></td>
+                    <td>Consulta as opções disponíveis para um recurso</td>
+                </tr>
+                <tr>
+                    <td><code>PATCH</code></td>
+                    <td>Aplica modificações parciais</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>🔹 Cada método tem características como segurança, idempotência e cacheabilidade.</p>
+        <hr>
+        <h2 id="-o-que-s-o-cabe-alhos-de-solicita-o-http-">🧾 O que são cabeçalhos de solicitação HTTP?</h2>
+        <p>Os <strong>cabeçalhos de solicitação HTTP</strong> são pares chave-valor que fornecem informações adicionais
+            sobre a requisição.</p>
+        <h3 id="exemplos-comuns-">Exemplos comuns:</h3>
+        <ul>
+            <li><code>Host</code>: domínio do servidor</li>
+            <li><code>User-Agent</code>: identifica o navegador ou cliente</li>
+            <li><code>Accept</code>: tipos de conteúdo aceitos</li>
+            <li><code>Authorization</code>: credenciais de acesso</li>
+            <li><code>Content-Type</code>: tipo de dado enviado no corpo da requisição</li>
+        </ul>
+        <p>🔍 Cabeçalhos ajudam o servidor a entender como responder adequadamente à solicitação.</p>
+        <hr>
+        <h2 id="-c-digos-de-status-http">📊 Códigos de Status HTTP</h2>
+        <p>Os <strong>códigos de status HTTP</strong> são números de três dígitos que indicam o resultado de uma
+            solicitação. Eles são agrupados em cinco categorias:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Categoria</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1xx</td>
+                    <td>Informativo</td>
+                    <td>A solicitação foi recebida e está sendo processada</td>
+                </tr>
+                <tr>
+                    <td>2xx</td>
+                    <td>Sucesso</td>
+                    <td>A solicitação foi concluída com sucesso (<code>200 OK</code>)</td>
+                </tr>
+                <tr>
+                    <td>3xx</td>
+                    <td>Redirecionamento</td>
+                    <td>O recurso foi movido ou redirecionado (<code>301</code>, <code>302</code>)</td>
+                </tr>
+                <tr>
+                    <td>4xx</td>
+                    <td>Erro do cliente</td>
+                    <td>Problema na solicitação (<code>404 Not Found</code>, <code>403 Forbidden</code>)</td>
+                </tr>
+                <tr>
+                    <td>5xx</td>
+                    <td>Erro do servidor</td>
+                    <td>Falha interna no servidor (<code>500 Internal Server Error</code>)</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>📌 O &quot;xx&quot; representa variações dentro de cada categoria (ex: <code>404</code>, <code>403</code>,
+            <code>502</code>).</p>
+
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

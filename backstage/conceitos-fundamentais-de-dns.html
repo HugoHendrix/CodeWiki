@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+        <h1 id="-documenta-o-t-cnica-conceitos-fundamentais-de-dns-cache-cdn-e-seo">📘 Documentação Técnica: Conceitos
+            Fundamentais de DNS, Cache, CDN e SEO</h1>
+        <h2 id="-dns-e-problemas-com-e-mail">✉️ DNS e Problemas com E-mail</h2>
+        <p>O DNS é essencial para o funcionamento correto dos serviços de e-mail. Ele define para onde os e-mails devem
+            ser enviados e como são validados.</p>
+        <h3 id="principais-registros-dns-para-e-mail-">Principais Registros DNS para E-mail:</h3>
+        <ul>
+            <li><strong>MX (Mail Exchange)</strong>: Direciona os e-mails para o servidor correto.</li>
+            <li><strong>SPF (Sender Policy Framework)</strong>: Define quais servidores podem enviar e-mails em nome do
+                domínio.</li>
+            <li><strong>DKIM (DomainKeys Identified Mail)</strong>: Assina digitalmente os e-mails para garantir
+                autenticidade.</li>
+            <li><strong>DMARC (Domain-based Message Authentication, Reporting and Conformance)</strong>: Política de
+                proteção contra falsificação.</li>
+        </ul>
+        <h3 id="problemas-comuns-">Problemas Comuns:</h3>
+        <ul>
+            <li>E-mails não entregues</li>
+            <li>Mensagens caindo em spam</li>
+            <li>Rejeição por servidores de destino</li>
+        </ul>
+        <h3 id="solu-es-">Soluções:</h3>
+        <ul>
+            <li>Verificar e configurar corretamente os registros DNS</li>
+            <li>Usar ferramentas como MXToolbox para diagnóstico</li>
+            <li>Validar registros SPF, DKIM e DMARC com serviços de teste</li>
+        </ul>
+        <hr>
+        <h2 id="-problemas-comuns-relacionados-a-dns">⚠️ Problemas Comuns Relacionados a DNS</h2>
+        <h3 id="principais-problemas-">Principais Problemas:</h3>
+        <ul>
+            <li>Registros incorretos ou ausentes</li>
+            <li>TTL (Time to Live) muito alto</li>
+            <li>Cache DNS desatualizado</li>
+            <li>Ataques DDoS ao servidor DNS</li>
+            <li>Falta de redundância nos servidores</li>
+        </ul>
+        <h3 id="solu-es-">Soluções:</h3>
+        <ul>
+            <li>Revisar registros DNS no painel do provedor</li>
+            <li>Usar TTLs mais curtos para registros dinâmicos</li>
+            <li>Limpar cache local (<code>ipconfig /flushdns</code> no Windows)</li>
+            <li>Utilizar DNS com proteção contra DDoS e suporte a DNSSEC</li>
+        </ul>
+        <hr>
+        <h2 id="-rela-o-entre-cache-cdn-e-atualiza-es">🌐 Relação entre Cache, CDN e Atualizações</h2>
+        <h3 id="conceitos-">Conceitos:</h3>
+        <ul>
+            <li><strong>Cache local</strong>: Armazenado no navegador ou dispositivo do usuário.</li>
+            <li><strong>Cache CDN</strong>: Armazenado em servidores distribuídos geograficamente.</li>
+        </ul>
+        <h3 id="problemas-com-atualiza-es-">Problemas com Atualizações:</h3>
+        <ul>
+            <li>Arquivos podem ficar “presos” no cache da CDN</li>
+            <li>Mudanças não são refletidas imediatamente</li>
+        </ul>
+        <h3 id="solu-es-">Soluções:</h3>
+        <ul>
+            <li>Configurar cabeçalhos <code>Cache-Control</code> e <code>Expires</code></li>
+            <li>Usar versionamento de arquivos (ex: <code>style.v2.css</code>)</li>
+            <li>Limpar cache manualmente via painel da CDN</li>
+        </ul>
+        <hr>
+        <h2 id="-cache-e-seo">🚀 Cache e SEO</h2>
+        <h3 id="benef-cios-do-cache-para-seo-">Benefícios do Cache para SEO:</h3>
+        <ul>
+            <li>Redução no tempo de carregamento</li>
+            <li>Melhor experiência do usuário</li>
+            <li>Menor taxa de rejeição</li>
+            <li>Maior tempo de permanência no site</li>
+        </ul>
+        <p>📈 Resultado: melhora no ranqueamento nos mecanismos de busca.</p>
+        <hr>
+        <h2 id="-lat-ncia-o-que-e-como-corrigir">⏱️ Latência: O Que É e Como Corrigir</h2>
+        <h3 id="defini-o-">Definição:</h3>
+        <p>Latência é o tempo que os dados levam para ir de um ponto a outro na rede.</p>
+        <h3 id="causas-">Causas:</h3>
+        <ul>
+            <li>Distância geográfica entre servidor e usuário</li>
+            <li>Infraestrutura de rede deficiente</li>
+            <li>DNS lento ou congestionado</li>
+        </ul>
+        <h3 id="solu-es-">Soluções:</h3>
+        <ul>
+            <li>Usar CDN para aproximar o conteúdo do usuário</li>
+            <li>Migrar para servidores mais próximos</li>
+            <li>Otimizar recursos do site (imagens, scripts)</li>
+            <li>Trocar o DNS por um mais rápido (ex: Cloudflare 1.1.1.1)</li>
+        </ul>
+        <hr>
+        <h2 id="-diferen-a-entre-servi-os-de-dns-e-cloudflare">🧠 Diferença entre Serviços de DNS e Cloudflare</h2>
+        <h3 id="servi-os-tradicionais-">Serviços Tradicionais:</h3>
+        <ul>
+            <li>Google DNS, OpenDNS, Comcast</li>
+            <li>Foco em velocidade e estabilidade</li>
+            <li>Infraestrutura baseada em data centers com clusters otimizados</li>
+        </ul>
+        <h3 id="cloudflare-dns-">Cloudflare DNS:</h3>
+        <ul>
+            <li>DNS autoritativo e recursivo</li>
+            <li>Alta performance (respostas até 3x mais rápidas)</li>
+            <li>Segurança avançada (DNSSEC, proteção contra DDoS)</li>
+            <li>Rede global com mais de 330 cidades</li>
+        </ul>
+        <hr>
+        <h2 id="-o-que-s-o-clusters-no-contexto-de-dns-">🧩 O Que São Clusters no Contexto de DNS?</h2>
+        <h3 id="defini-o-">Definição:</h3>
+        <p>Clusters são grupos de servidores que trabalham em conjunto para processar consultas DNS.</p>
+        <h3 id="vantagens-">Vantagens:</h3>
+        <ul>
+            <li>Alta disponibilidade: redundância em caso de falha</li>
+            <li>Distribuição de carga: melhora o desempenho</li>
+            <li>Escalabilidade: fácil expansão da infraestrutura</li>
+            <li>Resiliência: maior tolerância a falhas</li>
+        </ul>
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
