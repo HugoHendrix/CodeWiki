@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+        <h2 id="-estudando-javascript">📚 Estudando JavaScript</h2>
+        <h3 id="-pesquisar-">🔍 Pesquisar:</h3>
+        <ul>
+            <li>Elementos que pegam e apontam para o DOM.</li>
+        </ul>
+        <hr>
+        <h3 id="-estrutura-do-dom">🌳 Estrutura do DOM</h3>
+        <p>A tag <code>&lt;html&gt;</code> é a <strong>raiz</strong> (root element) do documento HTML. Seus filhos
+            diretos são <code>&lt;head&gt;</code> e <code>&lt;body&gt;</code>, formando a <strong>árvore do DOM</strong>
+            (Document Object Model).</p>
+        <hr>
+        <h3 id="-getelementbyid-">🔧 <code>getElementById</code></h3>
+        <p><code>getElementById</code> é uma função fundamental em JavaScript para <strong>obter e operar elementos do
+                DOM</strong>. Ela permite que você aponte e obtenha um elemento específico da sua página HTML, indicando
+            seu atributo <code>id</code>.</p>
+        <h4 id="-caracter-sticas-de-uso">🧠 Características de Uso</h4>
+        <ul>
+            <li>
+                <p><strong>Finalidade</strong>: Capturar um elemento HTML específico no DOM com base no atributo
+                    <code>id</code>.</p>
+            </li>
+            <li>
+                <p><strong>Sintaxe</strong>: </p>
+                <pre><code class="lang-javascript"><span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'nomeDoID'</span>);
+</code></pre>
+                <p>Você chama a função a partir do objeto <code>document</code> e passa o ID como
+                    <strong>parâmetro</strong>. </p>
+                <blockquote>
+                    <p><em>Passar como parâmetro</em> em JavaScript significa fornecer valores ou referências para que
+                        uma função os utilize durante sua execução.</p>
+                </blockquote>
+            </li>
+            <li>
+                <p><strong>Nome do Método</strong>: Atenção à capitalização correta: <code>Element</code>,
+                    <code>By</code> e <code>ID</code> começam com letras maiúsculas. Além disso, <code>Element</code>
+                    está no singular — diferente de <code>getElementsByTagName</code>.</p>
+            </li>
+            <li>
+                <p><strong>Retorno</strong>: Retorna o elemento HTML correspondente ao ID especificado. Se nenhum for
+                    encontrado, retorna <code>null</code>.</p>
+            </li>
+            <li>
+                <p><strong>Associação a Variáveis</strong>: O elemento retornado pode ser armazenado em uma variável
+                    para facilitar sua manipulação.</p>
+            </li>
+        </ul>
+        <hr>
+        <h3 id="-manipula-o-de-elementos-obtidos-com-getelementbyid-">🛠️ Manipulação de Elementos Obtidos com
+            <code>getElementById</code></h3>
+        <p>Após obter um elemento, você pode realizar diversas operações:</p>
+        <h4 id="-obter-propriedades">📥 Obter Propriedades</h4>
+        <ul>
+            <li><code>id</code>: Retorna o próprio ID do elemento.</li>
+            <li><code>innerHTML</code>: Retorna o conteúdo HTML interno da tag — útil para <code>&lt;p&gt;</code>,
+                <code>&lt;div&gt;</code>, <code>&lt;h1&gt;</code>, etc.</li>
+            <li><code>value</code>: Usado em elementos de formulário como <code>&lt;input&gt;</code> para acessar ou
+                modificar o texto inserido.</li>
+        </ul>
+        <h4 id="-modificar-propriedades">✏️ Modificar Propriedades</h4>
+        <ul>
+            <li><code>innerHTML</code>: Permite alterar o conteúdo interno da tag.</li>
+            <li><code>style</code>: Modifica o estilo visual do elemento. Exemplo:
+                <pre><code class="lang-javascript">elemento.<span class="hljs-built_in">style</span>.<span class="hljs-built_in">color</span> = 'red';
+</code></pre>
+            </li>
+        </ul>
+        <hr>
+        <h3 id="-exemplo-pr-tico">🧪 Exemplo Prático</h3>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"mensagem"</span>&gt;</span>Texto original<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">let</span> elemento = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"mensagem"</span>);
+  elemento.innerHTML = <span class="hljs-string">"Texto modificado via JavaScript!"</span>;
+  elemento.style.color = <span class="hljs-string">"blue"</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <hr>
+        <h3 id="-contexto-e-import-ncia">🧭 Contexto e Importância</h3>
+        <ul>
+            <li>
+                <p><strong>DOM (Document Object Model)</strong>: Representa a estrutura em árvore do HTML. Cada tag,
+                    texto e atributo são &quot;nós&quot; (nodes). O <code>getElementById</code> permite acessar esses
+                    nós para manipular a página.</p>
+            </li>
+            <li>
+                <p><strong>JavaScript no Navegador</strong>: Métodos como <code>getElementById</code> são essenciais
+                    para o JavaScript do lado do cliente (executado no navegador). Não são usados em ambientes como
+                    <strong>Node.js</strong>, que não manipulam o DOM.</p>
+            </li>
+        </ul>
+        <hr>
+        <h3 id="-compara-o-com-outros-seletores">🧮 Comparação com Outros Seletores</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Método</th>
+                    <th>Retorno</th>
+                    <th>Seleção por</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>getElementById</code></td>
+                    <td>Elemento único (<code>HTMLElement</code>)</td>
+                    <td>ID</td>
+                </tr>
+                <tr>
+                    <td><code>getElementsByTagName</code></td>
+                    <td>Coleção (<code>HTMLCollection</code>)</td>
+                    <td>Tag</td>
+                </tr>
+                <tr>
+                    <td><code>querySelectorAll</code></td>
+                    <td>Lista (<code>NodeList</code>)</td>
+                    <td>CSS selector</td>
+                </tr>
+            </tbody>
+        </table>
+        <blockquote>
+            <p>Observação: <code>getElementsByTagName</code> e <code>querySelectorAll</code> retornam
+                <strong>listas</strong> (coleções), funcionando como arrays ou vetores.</p>
+        </blockquote>
+        <hr>
+        <h3 id="-resumo">✅ Resumo</h3>
+        <p><code>getElementById</code> é um método essencial para interagir com elementos específicos na sua página
+            HTML. Ele permite tanto a <strong>leitura</strong> quanto a <strong>modificação</strong> de propriedades e
+            conteúdos, sendo uma das ferramentas mais utilizadas para criar interatividade com JavaScript.</p>
+
+    </article>
+
+    <article>
+  <h3 id="-exercicio-pratico-com-getelementbyid">💡 Exercício Prático com <code>getElementById</code></h3>
+  <p>
+    Neste exemplo, vamos capturar três elementos HTML diferentes pelo atributo
+    <code>id</code> e, em seguida, manipulá-los de formas variadas. Assim, você
+    verá na prática como o método <code>getElementById</code> pode ser usado em
+    conjunto com arrays e laços de repetição.
+  </p>
+
+  <h4>⚙️ Estrutura HTML</h4>
+  <pre><code class="lang-html">
+&lt;div id="cx1"&gt;Caixa 1&lt;/div&gt;
+&lt;div id="cx2"&gt;Caixa 2&lt;/div&gt;
+&lt;div id="cx3"&gt;Caixa 3&lt;/div&gt;
+  </code></pre>
+
+  <h4>📝 Código JavaScript</h4>
+  <pre><code class="lang-javascript">
+// Capturando os elementos pelo ID
+const caixaUm = document.getElementById('cx1');
+const caixaDois = document.getElementById('cx2');
+const caixaTres = document.getElementById('cx3');
+
+// Testando no console
+console.log(caixaUm);       // Imprime o elemento inteiro
+console.log(caixaUm.id);    // Imprime o ID do elemento
+console.log(caixaUm.innerHTML); // Imprime o conteúdo interno
+
+// Alterando o conteúdo de cada caixa individualmente
+caixaUm.innerHTML = "HTML - Hyper Text Markup Language";
+caixaDois.innerHTML = "CSS - Cascading Style Sheets";
+caixaTres.innerHTML = "JS - JavaScript";
+
+// Agrupando em um array
+const arrayElementos = [caixaUm, caixaDois, caixaTres];
+
+// Percorrendo o array com for...of
+for (let d of arrayElementos) {
+  d.innerHTML = "Linguagem de Programação WEB";
+}
+
+// Mostrando o array no console
+console.log(arrayElementos);
+  </code></pre>
+
+  <h4>🔍 Observações Importantes</h4>
+  <ul>
+    <li><strong>Variáveis descritivas</strong>: use nomes claros (<code>caixaUm</code>, <code>caixaDois</code>, etc.) para facilitar leitura.</li>
+    <li><strong>for...of</strong>: o <code>d</code> é apenas um <em>apelido temporário</em> dado a cada elemento do array durante o loop. 
+      Ele só existe dentro do laço e representa um item por vez.  
+      Exemplo: poderia ser chamado de <code>elemento</code> ou <code>caixa</code>.</li>
+    <li><strong>Arrays de elementos</strong>: permitem aplicar a mesma ação em vários elementos de forma simples e escalável.</li>
+  </ul>
+
+  <blockquote>
+    💡 Dica: se você tivesse 100 caixas, seria inviável escrever linha por linha.
+    O uso de arrays + loops torna o código mais limpo e eficiente.
+  </blockquote>
+</article>
+
+<article>
+  <h3 id="-exercicio-com-map">💡 Exercício com <code>map()</code></h3>
+  <p>
+    Além do <code>for...of</code>, também é possível usar o método
+    <code>map()</code> para percorrer arrays em JavaScript. O
+    <code>map()</code> executa uma função em cada item do array e retorna
+    <strong>um novo array</strong> com os resultados.
+  </p>
+
+  <h4>⚙️ Estrutura HTML</h4>
+  <pre><code class="lang-html">
+&lt;div id="cx1"&gt;Caixa 1&lt;/div&gt;
+&lt;div id="cx2"&gt;Caixa 2&lt;/div&gt;
+&lt;div id="cx3"&gt;Caixa 3&lt;/div&gt;
+  </code></pre>
+
+  <h4>📝 Código JavaScript</h4>
+  <pre><code class="lang-javascript">
+// Capturando os elementos pelo ID
+const caixaUm = document.getElementById('cx1');
+const caixaDois = document.getElementById('cx2');
+const caixaTres = document.getElementById('cx3');
+
+// Agrupando em um array
+const arrayElementos = [caixaUm, caixaDois, caixaTres];
+
+// Usando map() para modificar os elementos
+arrayElementos.map((elemento) => {
+  elemento.innerHTML = "Linguagem de Programação";
+  console.log(elemento);
+});
+  </code></pre>
+
+  <h4>🔍 Diferença entre <code>for</code> e <code>map()</code></h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Aspecto</th>
+        <th><code>for / for...of</code></th>
+        <th><code>map()</code></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Objetivo</strong></td>
+        <td>Executar uma ação em cada item (efeito colateral, como alterar o DOM).</td>
+        <td>Criar um <strong>novo array transformado</strong> a partir do original.</td>
+      </tr>
+      <tr>
+        <td><strong>Retorno</strong></td>
+        <td>Não retorna nada por padrão (a menos que você armazene manualmente).</td>
+        <td>Retorna sempre um <strong>novo array</strong> com os valores resultantes da função.</td>
+      </tr>
+      <tr>
+        <td><strong>Uso típico</strong></td>
+        <td>Alterar dados, atualizar DOM, executar efeitos colaterais.</td>
+        <td>Transformar dados, gerar novas listas, processar informações.</td>
+      </tr>
+      <tr>
+        <td><strong>No caso do DOM</strong></td>
+        <td>É a abordagem mais natural, pois você quer <em>manipular elementos</em>.</td>
+        <td>Pode ser usado, mas não aproveita bem a ideia de <em>retornar novos valores</em>, já que o DOM é manipulado diretamente.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <blockquote>
+    💡 Dica: Use <code>for</code> ou <code>forEach</code> quando quiser apenas
+    executar ações (como atualizar a tela).  
+    Use <code>map()</code> quando quiser <strong>criar um novo array</strong>
+    baseado no original (por exemplo: extrair só os IDs dos elementos).
+  </blockquote>
+</article>
+
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
