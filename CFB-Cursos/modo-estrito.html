@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+        <h2 id="-o-que-o-modo-estrito-">🔒 O que é o Modo Estrito?</h2>
+        <p>O <strong>modo estrito</strong> (<code>&quot;use strict&quot;</code>) foi introduzido no ECMAScript 5 e serve
+            para tornar o JavaScript mais rigoroso na execução do código. Ele impede práticas que podem causar bugs
+            difíceis de detectar e força o desenvolvedor a seguir boas práticas.</p>
+        <hr>
+        <h2 id="-para-que-serve-">🎯 Para que serve?</h2>
+        <ul>
+            <li><strong>Evita erros silenciosos</strong>: transforma falhas que normalmente passariam despercebidas em
+                erros explícitos.</li>
+            <li><strong>Impede uso de variáveis não declaradas</strong>.</li>
+            <li><strong>Restringe palavras reservadas</strong> que podem ser usadas em futuras versões da linguagem.
+            </li>
+            <li><strong>Melhora performance</strong>: permite que o motor JavaScript otimize melhor o código.</li>
+            <li><strong>Ajuda na manutenção</strong>: facilita a leitura e depuração do código.</li>
+        </ul>
+        <hr>
+        <h2 id="-como-ativar-e-desativar-">⚙️ Como ativar e desativar?</h2>
+        <h3 id="-ativar-">✅ Ativar:</h3>
+        <p>Coloque <code>&quot;use strict&quot;;</code> no início do seu script ou função:</p>
+        <pre><code class="lang-javascript"><span class="hljs-meta">"use strict"</span>;
+
+<span class="hljs-keyword">let</span> nome = <span class="hljs-string">"Hugo"</span>;
+</code></pre>
+        <p>Ou dentro de uma função específica:</p>
+        <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">exemplo</span>(<span class="hljs-params"></span>) </span>{
+<span class="hljs-meta">  "use strict"</span>;
+  <span class="hljs-comment">// código aqui</span>
+}
+</code></pre>
+        <h3 id="-desativar-">❌ Desativar:</h3>
+        <p>Simplesmente <strong>não inclua</strong> <code>&quot;use strict&quot;</code> no seu código. O JavaScript
+            voltará ao modo “solto”, que permite práticas menos seguras.</p>
+        <hr>
+        <h2 id="-restri-es-que-o-modo-estrito-imp-e">🚫 Restrições que o modo estrito impõe</h2>
+        <p>Aqui estão algumas das principais:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Restrição</th>
+                    <th>Explicação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>❌ Variáveis não declaradas</td>
+                    <td><code>x = 10;</code> gera erro se <code>x</code> não foi declarado com <code>let</code>,
+                        <code>const</code> ou <code>var</code>.</td>
+                </tr>
+                <tr>
+                    <td>❌ Propriedades não configuráveis</td>
+                    <td>Não é possível deletar propriedades protegidas.</td>
+                </tr>
+                <tr>
+                    <td>❌ Uso de <code>eval</code> limitado</td>
+                    <td><code>eval()</code> não pode criar variáveis no escopo atual.</td>
+                </tr>
+                <tr>
+                    <td>❌ <code>this</code> em funções</td>
+                    <td>Em funções simples, <code>this</code> será <code>undefined</code> em vez de <code>window</code>.
+                    </td>
+                </tr>
+                <tr>
+                    <td>❌ Palavras reservadas</td>
+                    <td>Não pode usar nomes como <code>implements</code>, <code>interface</code>, <code>package</code>,
+                        etc.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Mais detalhes estão disponíveis neste <a href="https://www.downcodes.com/pt/wz/18372.html" target="_blank" rel="noopener noreferrer">guia completo
+                sobre modo estrito</a>.</p>
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

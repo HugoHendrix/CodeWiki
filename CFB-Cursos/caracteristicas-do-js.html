@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+<article>
+    <h2 id="-explicando-cada-parte-">🧠 Explicando cada parte:</h2>
+            <h3 id="-javascript-uma-linguagem-de-programa-o-interpretada-"><strong>JavaScript é uma linguagem de
+                    programação
+                    interpretada</strong></h3>
+            <ul>
+                <li><strong>Interpretada</strong> significa que o código é executado linha por linha, diretamente pelo
+                    navegador ou ambiente de execução (como Node.js), sem precisar ser compilado antes.</li>
+                <li>Diferente de linguagens como C ou Java, que precisam ser transformadas em código de máquina antes de
+                    rodar.</li>
+            </ul>
+            <hr>
+            <h3 id="-estruturada-"><strong>Estruturada</strong></h3>
+            <ul>
+                <li>Refere-se ao estilo de organização do código.</li>
+                <li>JavaScript permite escrever programas com estruturas como <strong>funções</strong>,
+                    <strong>condicionais</strong>, <strong>laços de repetição</strong>, etc., que ajudam a manter o
+                    código
+                    organizado e legível.
+                </li>
+            </ul>
+            <hr>
+            <h3 id="-de-script-em-alto-n-vel-"><strong>De script em alto nível</strong></h3>
+            <ul>
+                <li><strong>Script</strong> indica que é usada para automatizar tarefas ou adicionar funcionalidades,
+                    especialmente em páginas web.</li>
+                <li><strong>Alto nível</strong> quer dizer que a linguagem é mais próxima da linguagem humana e mais
+                    distante do funcionamento interno do computador (como memória ou registradores).</li>
+            </ul>
+            <hr>
+            <h3 id="-com-tipagem-din-mica-fraca-"><strong>Com tipagem dinâmica fraca</strong></h3>
+            <ul>
+                <li><strong>Tipagem dinâmica</strong>: você não precisa declarar o tipo da variável (como
+                    <code>int</code>,
+                    <code>string</code>, etc.). O tipo é determinado automaticamente durante a execução.
+                    <pre><code class="lang-javascript">let x = <span class="hljs-number">10</span><span class="hljs-comment">;     // x é um número</span>
+<span class="hljs-attribute">x</span> = <span class="hljs-string">"texto"</span><span class="hljs-comment">;    // agora x é uma string</span>
+</code></pre>
+                </li>
+                <br>
+                <li><strong>Tipagem fraca</strong>: JavaScript permite conversões automáticas entre tipos, o que pode
+                    causar
+                    comportamentos inesperados:
+                    <pre><code class="lang-javascript">console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"5"</span> + <span class="hljs-number">1</span>); <span class="hljs-comment">// Resultado: "51" (concatenação)</span>
+console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"5"</span> - <span class="hljs-number">1</span>); <span class="hljs-comment">// Resultado: 4 (subtração com conversão)</span>
+</code></pre>
+                </li>
+            </ul>
+            <hr>
+            <h3 id="-multiparadigma-"><strong>Multiparadigma</strong></h3>
+            <ul>
+                <li>JavaScript suporta diferentes estilos de programação:<ul>
+                        <li><strong>Imperativo</strong>: com comandos diretos, como loops e condicionais.</li>
+                        <li><strong>Funcional</strong>: usando funções como <code>map</code>, <code>filter</code>,
+                            <code>reduce</code>.
+                        </li>
+                        <li><strong>Orientado a objetos</strong>: com classes e objetos.</li>
+                    </ul>
+                </li>
+            </ul>
+</article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
