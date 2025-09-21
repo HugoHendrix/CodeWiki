@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+        <h1 id="-diferen-a-entre-pr-incremento-e-p-s-incremento-">⚙️ Diferença entre <strong>Pré-Incremento</strong> e
+            <strong>Pós-Incremento</strong></h1>
+        <p>Em JavaScript (e em várias outras linguagens), temos duas formas de usar o operador de incremento
+            <code>++</code> e o de decremento <code>--</code>.</p>
+        <hr>
+        <h2 id="-pr-incremento-vari-vel-">🔹 <strong>Pré-Incremento</strong> (<code>++variável</code>)</h2>
+        <ul>
+            <li>A variável é <strong>incrementada antes</strong> de ser usada na expressão.</li>
+            <li>O valor final <strong>já atualizado</strong> é o que será retornado.</li>
+        </ul>
+        <pre><code class="lang-javascript"><span class="hljs-keyword">let</span> x = <span class="hljs-number">5</span>
+<span class="hljs-keyword">let</span> y = ++x   <span class="hljs-comment">// incrementa primeiro, depois atribui</span>
+console.<span class="hljs-built_in">log</span>(x) <span class="hljs-comment">// 6</span>
+console.<span class="hljs-built_in">log</span>(y) <span class="hljs-comment">// 6</span>
+</code></pre>
+        <hr>
+        <h2 id="-p-s-incremento-vari-vel-">🔹 <strong>Pós-Incremento</strong> (<code>variável++</code>)</h2>
+        <ul>
+            <li>A variável é usada <strong>primeiro</strong>, e só depois é <strong>incrementada</strong>.</li>
+            <li>O valor retornado é o <strong>antigo</strong>, mas a variável será atualizada logo em seguida.</li>
+        </ul>
+        <pre><code class="lang-javascript"><span class="hljs-keyword">let</span> x = <span class="hljs-number">5</span>
+<span class="hljs-keyword">let</span> y = x++   <span class="hljs-comment">// usa o valor antigo, depois incrementa</span>
+console.<span class="hljs-built_in">log</span>(x) <span class="hljs-comment">// 6</span>
+console.<span class="hljs-built_in">log</span>(y) <span class="hljs-comment">// 5</span>
+</code></pre>
+        <hr>
+        <h2 id="-diferen-a-na-pr-tica">⚡ Diferença na prática</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Operador</th>
+                    <th>Ordem de execução</th>
+                    <th>Exemplo (<code>x = 5</code>)</th>
+                    <th>Valor de <code>y</code></th>
+                    <th>Valor final de <code>x</code></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>++x</code> (pré)</td>
+                    <td>Incrementa, depois usa</td>
+                    <td><code>y = ++x</code></td>
+                    <td>6</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td><code>x++</code> (pós)</td>
+                    <td>Usa o valor atual, depois incrementa</td>
+                    <td><code>y = x++</code></td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h2 id="-exemplo-misto">🧪 Exemplo misto</h2>
+        <pre><code class="lang-javascript">let <span class="hljs-keyword">a</span> = <span class="hljs-number">1</span>
+
+console.<span class="hljs-built_in">log</span>(<span class="hljs-keyword">a</span>++)<span class="hljs-comment"> // mostra 1, mas depois a vira 2</span>
+console.<span class="hljs-built_in">log</span>(++<span class="hljs-keyword">a</span>)<span class="hljs-comment"> // incrementa antes, mostra 3</span>
+console.<span class="hljs-built_in">log</span>(<span class="hljs-keyword">a</span>)  <span class="hljs-comment"> // 3</span>
+</code></pre>
+        <hr>
+        <p>👉 Dica:</p>
+        <ul>
+            <li>Use <strong>pré-incremento</strong> quando você precisa do valor atualizado imediatamente.</li>
+            <li>Use <strong>pós-incremento</strong> quando você precisa primeiro do valor atual, e só depois atualizar.
+            </li>
+        </ul>
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
