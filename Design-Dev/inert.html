@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article id="atributo-inert" class="conteudo-codewiki">
+        <h2>🧱 Atributo <code>inert</code> no HTML — Bloqueio instantâneo de interface</h2>
+
+        <section>
+            <h3>🔍 O que é</h3>
+            <p>
+                O atributo <code>inert</code> é um recurso nativo do HTML usado para
+                <strong>tornar elementos da interface inativos</strong> — impedindo que recebam foco, cliques e sejam
+                lidos por leitores de tela.
+                É ideal para quando se deseja “congelar” parte do conteúdo, como o fundo de um <strong>modal</strong>,
+                <strong>drawer</strong>,
+                <strong>sidebar</strong> ou <strong>menu suspenso</strong>.
+            </p>
+        </section>
+
+        <section>
+            <h3>⚙️ Como funciona</h3>
+            <ul>
+                <li>🔒 Remove todos os elementos filhos da <strong>árvore de acessibilidade</strong>.</li>
+                <li>🚫 Impede que <em>botões, links e inputs</em> recebam foco ou cliques.</li>
+                <li>🧭 Torna-se completamente invisível para leitores de tela.</li>
+            </ul>
+            <p>É como um <em>modo desativado global</em>, que pausa interações na seção especificada sem precisar
+                esconder ou desativar cada elemento individualmente.</p>
+        </section>
+
+        <section>
+            <h3>💡 Exemplo prático</h3>
+            <pre><code class="language-html">
+&lt;div id="app"&gt;
+  &lt;main inert&gt;
+    &lt;h1&gt;Conteúdo principal&lt;/h1&gt;
+    &lt;button&gt;Não clicável&lt;/button&gt;
+  &lt;/main&gt;
+
+  &lt;dialog open&gt;
+    &lt;p&gt;Modal ativo!&lt;/p&gt;
+    &lt;button id="fechar"&gt;Fechar&lt;/button&gt;
+  &lt;/dialog&gt;
+&lt;/div&gt;
+    </code></pre>
+            <p>Enquanto o modal estiver aberto, toda a área <code>&lt;main&gt;</code> está “travada”:</p>
+            <ul>
+                <li>Não aceita cliques;</li>
+                <li>Não recebe foco ao usar TAB;</li>
+                <li>É ignorada por leitores de tela.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>🧠 Comparativo com outras soluções</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Técnica</th>
+                        <th>Impede cliques</th>
+                        <th>Remove do foco</th>
+                        <th>Oculta da acessibilidade</th>
+                        <th>Observações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>pointer-events: none</code></td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>Bloqueia apenas o mouse</td>
+                    </tr>
+                    <tr>
+                        <td><code>aria-hidden="true"</code></td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>Acessível, mas não bloqueia foco</td>
+                    </tr>
+                    <tr>
+                        <td><strong><code>inert</code></strong></td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td><strong>Solução completa e nativa</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h3>🧩 Uso dinâmico com JavaScript</h3>
+            <pre><code class="language-javascript">
+const modal = document.querySelector("#modal");
+const app = document.querySelector("#app");
+
+function abrirModal() {
+  app.setAttribute("inert", "");
+  modal.showModal();
+}
+
+function fecharModal() {
+  app.removeAttribute("inert");
+  modal.close();
+}
+    </code></pre>
+            <p>
+                Quando o modal é aberto, o restante da página (<code>#app</code>) é bloqueado.
+                Ao fechar, tudo volta ao normal.
+            </p>
+        </section>
+
+        <section>
+            <h3>🌍 Suporte dos navegadores</h3>
+            <p>
+                O atributo <code>inert</code> é amplamente suportado pelos navegadores modernos (Chrome, Edge, Firefox,
+                Safari e Opera).
+                Consulte a compatibilidade atualizada em:
+                <a href="https://caniuse.com/mdn-html_global_attributes_inert" target="_blank"
+                    rel="noopener noreferrer">
+                    Can I use inert
+                </a>.
+            </p>
+        </section>
+
+        <section>
+            <h3>🧭 Quando usar</h3>
+            <ul>
+                <li>Ao abrir <strong>modais</strong> ou <strong>popups</strong>;</li>
+                <li>Durante <strong>carregamentos</strong> ou <strong>processos críticos</strong>;</li>
+                <li>Em <strong>menus laterais (drawers)</strong>;</li>
+                <li>Para <strong>bloquear interações temporariamente</strong> sem remover elementos do DOM.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>✅ Conclusão</h3>
+            <p>
+                O atributo <code>inert</code> traz uma solução <strong>nativa, acessível e limpa</strong> para gerenciar
+                estados de interface.
+                Ele elimina a necessidade de adicionar manualmente <code>aria-hidden</code>, <code>tabindex="-1"</code>
+                e
+                <code>pointer-events: none</code>, tornando o código mais simples e consistente, sem sacrificar a
+                <strong>acessibilidade</strong>.
+            </p>
+        </section>
+    </article>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

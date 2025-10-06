@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+<article>
+    📝 Operador Ternário em JavaScript
+O operador ternário (? :) é uma forma curta de escrever um if/else. Ele é usado quando precisamos tomar uma decisão entre duas opções.
+
+✅ Estrutura
+condicao ? valorSeVerdadeiro : valorSeFalso
+condição → expressão lógica que será testada.
+valorSeVerdadeiro → retornado se a condição for verdadeira.
+valorSeFalso → retornado se a condição for falsa.
+🔹 Exemplo simples
+let idade = 18
+let podeVotar = (idade >= 16 ? "Sim, pode votar" : "Não pode votar")
+console.log(podeVotar) // Sim, pode votar
+🔹 Exemplo prático: verificar par ou ímpar
+let num = 10
+let res = (!(num % 2) ? "par" : "ímpar")
+console.log(res) // par
+Aqui usamos:
+
+num % 2 → pega o resto da divisão por 2.
+!(num % 2) → se o resto for 0, o resultado é true.
+🔹 Usando no DOM
+Exemplo interativo para verificar se um número é par ou ímpar:
+
+<input type="number" id="numero" placeholder="Digite um número">
+<button onclick="verificar()">Verificar</button>
+<p id="resultado"></p>
+
+<script>
+  function verificar() {
+    let num = Number(document.getElementById("numero").value)
+    let res = (!(num % 2) ? "par" : "ímpar")
+    document.getElementById("resultado").innerText = `O número ${num} é ${res}`
+  }
+</script>
+🔹 Comparação com if/else
+A mesma lógica acima pode ser escrita assim:
+
+let num = 10
+let res = ""
+
+if (num % 2 === 0) {
+  res = "par"
+} else {
+  res = "ímpar"
+}
+console.log(res) // par
+📌 Quando usar o ternário?
+Use quando:
+
+A condição for simples.
+Só existirem duas possibilidades.
+Você quer deixar o código mais enxuto.
+Evite quando:
+
+A condição for muito complexa.
+Houver várias ramificações (if / else if / else).
+O código ficar difícil de entender.
+✅ Resumo: O operador ternário é ótimo para simplificar condições simples, mas não deve substituir if/else em todos os casos. Use com bom senso!
+</article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
