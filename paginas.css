@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap");
+
+/* Tema das páginas internas da CodeWiki (carregado depois do matcha.css) */
+:root {
+    --navy-1: #0c0b17;
+    --navy-2: #09254a;
+    --glass: rgba(255, 255, 255, 0.03);
+    --glass-2: rgba(255, 255, 255, 0.055);
+    --glass-bd: rgba(255, 255, 255, 0.08);
+    --chip-bg: rgba(255, 255, 255, 0.07);
+    --chip-bd: rgba(255, 255, 255, 0.19);
+    --blue: #2f7df4;
+    --soft: rgba(255, 255, 255, 0.72);
+}
+
+html {
+    background: linear-gradient(180deg, var(--navy-1) 0%, var(--navy-2) 100%) fixed;
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Raleway", var(--ft);
+    color: #fff;
+    background: var(--glass);
+    border: 1px solid var(--glass-bd);
+    border-radius: 12px;
+    width: min(100% - 2rem, 920px);
+    max-width: 920px;
+    margin: 1.5rem auto;
+    padding: 1.5rem 2rem;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+    text-wrap: pretty;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* PNG/SVG com fundo transparente somem no tema escuro: dá um fundo claro */
+img[src$=".png"],
+img[src$=".svg"],
+img[src$=".webp"] {
+    background: #fff;
+    padding: 0.5rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #fff;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+}
+
+a {
+    color: #8ab8ff;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--glass-bd);
+}
+
+p,
+li {
+    line-height: 1.7;
+}
+
+blockquote {
+    background: var(--glass-2);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+}
+
+pre {
+    max-width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--glass-bd);
+    border-radius: 8px;
+}
+
+code {
+    border-radius: 6px;
+}
+
+table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+th,
+td {
+    overflow-wrap: normal;
+}
+
+/* botão "Voltar" do rodapé */
+body>footer:last-child,
+footer {
+    margin: 2rem 0 0;
+    padding: 0;
+}
+
+footer button,
+footer button.accent {
+    padding: 0;
+    background: var(--blue);
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+footer button a,
+footer a.accent {
+    display: inline-block;
+    padding: 0.55rem 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+}
+
+@media (max-width: 700px) {
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 1rem;
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
