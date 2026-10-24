@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+        <h1 id="operadores-matem-ticos-em-javascript">Operadores Matemáticos em JavaScript</h1>
+        <p>Os operadores matemáticos permitem realizar <strong>operações aritméticas</strong> com números em JavaScript.
+            Eles são muito parecidos com os da matemática tradicional.</p>
+        <hr>
+        <h2 id="principais-operadores-aritm-ticos">Principais Operadores Aritméticos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Operador</th>
+                    <th>Descrição</th>
+                    <th>Exemplo</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>+</code></td>
+                    <td>Adição</td>
+                    <td><code>5 + 3</code></td>
+                    <td><code>8</code></td>
+                </tr>
+                <tr>
+                    <td><code>-</code></td>
+                    <td>Subtração</td>
+                    <td><code>10 - 4</code></td>
+                    <td><code>6</code></td>
+                </tr>
+                <tr>
+                    <td><code>*</code></td>
+                    <td>Multiplicação</td>
+                    <td><code>7 * 2</code></td>
+                    <td><code>14</code></td>
+                </tr>
+                <tr>
+                    <td><code>/</code></td>
+                    <td>Divisão</td>
+                    <td><code>20 / 5</code></td>
+                    <td><code>4</code></td>
+                </tr>
+                <tr>
+                    <td><code>%</code></td>
+                    <td>Módulo (resto da divisão)</td>
+                    <td><code>10 % 3</code></td>
+                    <td><code>1</code></td>
+                </tr>
+                <tr>
+                    <td><code>**</code></td>
+                    <td>Exponenciação</td>
+                    <td><code>2 ** 3</code></td>
+                    <td><code>8</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h2 id="declara-o-de-vari-veis">Declaração de Variáveis</h2>
+        <p>Você pode declarar variáveis de duas formas:
+            👉 <strong>Na mesma linha (separadas por vírgula):</strong></p>
+        <pre><code class="lang-javascript"><span class="hljs-keyword">let</span> num1 = <span class="hljs-number">10</span>, num2 = <span class="hljs-number">20</span>;
+console.<span class="hljs-built_in">log</span>(num1); <span class="hljs-comment">// 10</span>
+console.<span class="hljs-built_in">log</span>(num2); <span class="hljs-comment">// 20</span>
+</code></pre>
+        <p>👉 <strong>Uma em cada linha:</strong></p>
+        <pre><code class="lang-javascript"><span class="hljs-keyword">let</span> num1 = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">let</span> num2 = <span class="hljs-number">20</span>;
+console.<span class="hljs-built_in">log</span>(num1); <span class="hljs-comment">// 10</span>
+console.<span class="hljs-built_in">log</span>(num2); <span class="hljs-comment">// 20</span>
+</code></pre>
+        <p>⚠️ Atenção: no <strong>mesmo bloco <code>let</code></strong>, você <strong>não precisa repetir o
+                <code>let</code></strong> a cada variável. O correto é <code>let num1 = 10, num2 = 20;</code>.</p>
+        <hr>
+        <h2 id="preced-ncia-da-matem-tica">Precedência da Matemática</h2>
+        <p>Assim como na matemática, o <strong>JavaScript segue a ordem de precedência</strong> dos operadores:</p>
+        <ol>
+            <li><strong>Parênteses <code>()</code></strong></li>
+            <li><strong>Exponenciação `</strong>`**</li>
+            <li><strong>Multiplicação, Divisão, Módulo</strong> (<code>*</code>, <code>/</code>, <code>%</code>)</li>
+            <li><strong>Adição e Subtração</strong> (<code>+</code>, <code>-</code>)</li>
+        </ol>
+        <p>📌 Exemplo:</p>
+        <pre><code class="lang-javascript">let resultado = <span class="hljs-number">2</span> + <span class="hljs-number">3</span> * <span class="hljs-number">4</span>;
+console.log(resultado); <span class="hljs-comment">// 14 (multiplicação antes da soma)</span>
+
+let resultado2 = (<span class="hljs-number">2</span> + <span class="hljs-number">3</span>) * <span class="hljs-number">4</span>;
+console.log(resultado2); <span class="hljs-comment">// 20 (parênteses mudaram a ordem)</span>
+</code></pre>
+        <hr>
+        <h2 id="incremento-e-decremento">Incremento e Decremento</h2>
+        <p>JavaScript possui operadores especiais para <strong>aumentar ou diminuir valores</strong> de forma rápida:
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Operador</th>
+                    <th>Significado</th>
+                    <th>Exemplo</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>++</code></td>
+                    <td>Incrementa em 1</td>
+                    <td><code>let x = 5; x++;</code></td>
+                    <td><code>6</code></td>
+                </tr>
+                <tr>
+                    <td><code>--</code></td>
+                    <td>Decrementa em 1</td>
+                    <td><code>let x = 5; x--;</code></td>
+                    <td><code>4</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 id="pr-e-p-s-incremento-decremento">Pré e Pós incremento/decremento</h3>
+        <pre><code class="lang-javascript"><span class="hljs-keyword">let</span> x = <span class="hljs-number">5</span>;
+
+console.<span class="hljs-built_in">log</span>(x++); <span class="hljs-comment">// 5 (primeiro mostra, depois soma)</span>
+console.<span class="hljs-built_in">log</span>(x);   <span class="hljs-comment">// 6</span>
+
+console.<span class="hljs-built_in">log</span>(++x); <span class="hljs-comment">// 7 (primeiro soma, depois mostra)</span>
+</code></pre>
+        <hr>
+        <h2 id="resumindo">Resumindo</h2>
+        <ul>
+            <li>Você pode declarar variáveis <strong>na mesma linha</strong> ou <strong>em linhas separadas</strong>.
+            </li>
+            <li>JavaScript segue a <strong>precedência matemática</strong>, mas você pode usar parênteses para
+                controlar.</li>
+            <li>Além das operações básicas, existem operadores práticos de <strong>incremento (<code>++</code>) e
+                    decremento (<code>--</code>)</strong>.</li>
+        </ul>
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+  <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+  <title>CodeWiki</title>
+</head>
+
+<body>
+  <article>
+    <h2 id="-formul-rio-funcional-com-valida-o">✅ Formulário funcional com validação</h2>
+    <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"pt-br"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Formulário de Contato<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-tag">body</span> {
+      <span class="hljs-attribute">font-family</span>: Arial, sans-serif;
+      <span class="hljs-attribute">max-width</span>: <span class="hljs-number">600px</span>;
+      <span class="hljs-attribute">margin</span>: <span class="hljs-number">40px</span> auto;
+      <span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span>;
+    }
+
+    <span class="hljs-selector-tag">label</span> {
+      <span class="hljs-attribute">display</span>: block;
+      <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">15px</span>;
+      <span class="hljs-attribute">font-weight</span>: bold;
+    }
+
+    <span class="hljs-selector-tag">input</span> {
+      <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+      <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+      <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">5px</span>;
+      <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#dedede</span>;
+      <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">4px</span>;
+      <span class="hljs-attribute">box-sizing</span>: border-box;
+    }
+
+    <span class="hljs-selector-id">#iSendButton</span> {
+      <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">20px</span>;
+      <span class="hljs-attribute">padding</span>: <span class="hljs-number">12px</span> <span class="hljs-number">20px</span>;
+      <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#007bff</span>;
+      <span class="hljs-attribute">color</span>: white;
+      <span class="hljs-attribute">border</span>: none;
+      <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">4px</span>;
+      <span class="hljs-attribute">cursor</span>: pointer;
+      <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+    }
+
+    <span class="hljs-selector-id">#iSendButton</span><span class="hljs-selector-class">.needCheck</span> {
+      <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#dc3545</span>;
+    }
+
+    <span class="hljs-selector-id">#iSendButton</span><span class="hljs-selector-pseudo">:disabled</span> {
+      <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#aaa</span>;
+      <span class="hljs-attribute">cursor</span>: not-allowed;
+    }
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Formulário de Contato<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"formContainer"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"nome"</span>&gt;</span>Nome:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"nome"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"nome"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Seu nome"</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"email"</span>&gt;</span>E-mail:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"seu@email.com"</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"telefone"</span>&gt;</span>Telefone:<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tel"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"telefone"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"telefone"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"(99) 99999-9999"</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"iSendButton"</span>&gt;</span>Enviar<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">let</span> iSendButton = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"iSendButton"</span>);
+    <span class="hljs-keyword">let</span> formName = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#nome'</span>);
+    <span class="hljs-keyword">let</span> formEmail = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#email'</span>);
+    <span class="hljs-keyword">let</span> formPhone = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#telefone'</span>);
+
+    formName.addEventListener(<span class="hljs-string">'focusout'</span>, checkEmpty);
+    formEmail.addEventListener(<span class="hljs-string">'focusout'</span>, checkEmpty);
+    formPhone.addEventListener(<span class="hljs-string">'focusout'</span>, checkEmpty);
+
+    iSendButton.addEventListener(<span class="hljs-string">"click"</span>, (e) =&gt; {
+      <span class="hljs-keyword">if</span> (checkEmpty() != <span class="hljs-literal">false</span>) {
+        <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#iSendButton'</span>).innerHTML = <span class="hljs-string">'Enviando...'</span>;
+        <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#iSendButton'</span>).classList.add(<span class="hljs-string">'needCheck'</span>);
+
+        setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+          <span class="hljs-built_in">window</span>.location.href = <span class="hljs-string">"https://www.interago.com.br/App/Sites/157/obrigado-pelo-contato"</span>;
+        }, <span class="hljs-number">1500</span>);
+      }
+    });
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkEmpty</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">let</span> errorBorderColor = <span class="hljs-string">"1px solid #e58787"</span>;
+      <span class="hljs-keyword">let</span> okBorderColor = <span class="hljs-string">"1px solid #dedede"</span>;
+      <span class="hljs-keyword">let</span> nome = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"nome"</span>);
+      <span class="hljs-keyword">let</span> email = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"email"</span>);
+      <span class="hljs-keyword">let</span> phone = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"telefone"</span>);
+      <span class="hljs-keyword">let</span> valid = <span class="hljs-literal">true</span>;
+
+      <span class="hljs-keyword">if</span> (nome.value === <span class="hljs-string">""</span>) {
+        nome.style.border = errorBorderColor;
+        valid = <span class="hljs-literal">false</span>;
+      } <span class="hljs-keyword">else</span> {
+        nome.style.border = okBorderColor;
+      }
+
+      <span class="hljs-keyword">if</span> (email.value === <span class="hljs-string">""</span>) {
+        email.style.border = errorBorderColor;
+        valid = <span class="hljs-literal">false</span>;
+      } <span class="hljs-keyword">else</span> {
+        email.style.border = okBorderColor;
+      }
+
+      <span class="hljs-keyword">if</span> (phone.value === <span class="hljs-string">""</span>) {
+        phone.style.border = errorBorderColor;
+        valid = <span class="hljs-literal">false</span>;
+      } <span class="hljs-keyword">else</span> {
+        phone.style.border = okBorderColor;
+      }
+
+      <span class="hljs-keyword">if</span> (valid == <span class="hljs-literal">true</span>) {
+        <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#iSendButton'</span>).classList.remove(<span class="hljs-string">'needCheck'</span>);
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#iSendButton'</span>).classList.contains(<span class="hljs-string">'needCheck'</span>)) {
+          <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#iSendButton'</span>).classList.add(<span class="hljs-string">'needCheck'</span>);
+        }
+      }
+
+      <span class="hljs-keyword">return</span> valid;
+    }
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+
+  </article>
+
+  <hr>
+
+  <article>
+
+    <h2 id="-documenta-o-formul-rio-de-contato-com-valida-o">📚 Documentação: Formulário de Contato com Validação</h2>
+    <h3 id="-objetivo">🎯 Objetivo</h3>
+    <p>Este formulário permite que usuários enviem informações de contato (nome, e-mail e telefone) com validação básica
+      de preenchimento. Ele fornece feedback visual, evita envio com campos vazios e redireciona para uma página de
+      agradecimento após o envio.</p>
+    <hr>
+    <h3 id="-estrutura-html-esperada">🧩 Estrutura HTML esperada</h3>
+    <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">form</span> id=<span class="hljs-string">"formContainer"</span>&gt;
+  &lt;<span class="hljs-selector-tag">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"nome"</span>&gt;Nome:&lt;/label&gt;
+  &lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"text"</span> id=<span class="hljs-string">"nome"</span> name=<span class="hljs-string">"nome"</span>&gt;
+
+  &lt;<span class="hljs-selector-tag">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"email"</span>&gt;E-mail:&lt;/label&gt;
+  &lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"email"</span> id=<span class="hljs-string">"email"</span> name=<span class="hljs-string">"email"</span>&gt;
+
+  &lt;<span class="hljs-selector-tag">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"telefone"</span>&gt;Telefone:&lt;/label&gt;
+  &lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"tel"</span> id=<span class="hljs-string">"telefone"</span> name=<span class="hljs-string">"telefone"</span>&gt;
+
+  &lt;<span class="hljs-selector-tag">button</span> type=<span class="hljs-string">"button"</span> id=<span class="hljs-string">"iSendButton"</span>&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+    <ul>
+      <li>Cada campo tem um <code>id</code> único para ser identificado no JavaScript.</li>
+      <li>O botão de envio tem <code>type=&quot;button&quot;</code> para evitar envio automático.</li>
+    </ul>
+    <hr>
+    <h3 id="-estilo-css-b-sico">🎨 Estilo CSS básico</h3>
+    <pre><code class="lang-css"><span class="hljs-selector-tag">input</span> {
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#dedede</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">10px</span>;
+}
+
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-pseudo">:focus</span> {
+  <span class="hljs-attribute">outline</span>: none;
+}
+
+<span class="hljs-selector-id">#iSendButton</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#007bff</span>;
+  <span class="hljs-attribute">color</span>: white;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">12px</span> <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">cursor</span>: pointer;
+}
+
+<span class="hljs-selector-id">#iSendButton</span><span class="hljs-selector-class">.needCheck</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#dc3545</span>;
+}
+</code></pre>
+    <ul>
+      <li>Campos válidos mantêm borda cinza.</li>
+      <li>Campos inválidos recebem borda vermelha via JavaScript.</li>
+      <li>O botão muda de cor se houver erro.</li>
+    </ul>
+    <hr>
+    <h3 id="-c-digo-javascript">⚙️ Código JavaScript</h3>
+    <pre><code class="lang-js"><span class="hljs-keyword">let</span> <span class="hljs-attr">iSendButton</span> = document.getElementById(<span class="hljs-string">"iSendButton"</span>);
+<span class="hljs-keyword">let</span> <span class="hljs-attr">formName</span> = document.querySelector('<span class="hljs-comment">#nome');</span>
+<span class="hljs-keyword">let</span> <span class="hljs-attr">formEmail</span> = document.querySelector('<span class="hljs-comment">#email');</span>
+<span class="hljs-keyword">let</span> <span class="hljs-attr">formPhone</span> = document.querySelector('<span class="hljs-comment">#telefone');</span>
+
+formName.addEventListener('focusout', checkEmpty);
+formEmail.addEventListener('focusout', checkEmpty);
+formPhone.addEventListener('focusout', checkEmpty);
+
+iSendButton.addEventListener(<span class="hljs-string">"click"</span>, (e) =&gt; {
+  <span class="hljs-keyword">if</span> (checkEmpty() != <span class="hljs-literal">false</span>) {
+    iSendButton.<span class="hljs-attr">innerHTML</span> = 'Enviando...';
+    iSendButton.classList.add('needCheck');
+
+    setTimeout(function () {
+      window.location.<span class="hljs-attr">href</span> = <span class="hljs-string">"https://www.interago.com.br/App/Sites/157/obrigado-pelo-contato"</span>;
+    }, <span class="hljs-number">1500</span>);
+  }
+});
+
+function checkEmpty() {
+  <span class="hljs-keyword">let</span> <span class="hljs-attr">errorBorderColor</span> = <span class="hljs-string">"1px solid #e58787"</span>;
+  <span class="hljs-keyword">let</span> <span class="hljs-attr">okBorderColor</span> = <span class="hljs-string">"1px solid #dedede"</span>;
+  <span class="hljs-keyword">let</span> <span class="hljs-attr">valid</span> = <span class="hljs-literal">true</span>;
+
+  <span class="hljs-keyword">if</span> (formName.<span class="hljs-attr">value</span> === <span class="hljs-string">""</span>) {
+    formName.style.<span class="hljs-attr">border</span> = errorBorderColor;
+    <span class="hljs-attr">valid</span> = <span class="hljs-literal">false</span>;
+  } <span class="hljs-keyword">else</span> {
+    formName.style.<span class="hljs-attr">border</span> = okBorderColor;
+  }
+
+  <span class="hljs-keyword">if</span> (formEmail.<span class="hljs-attr">value</span> === <span class="hljs-string">""</span>) {
+    formEmail.style.<span class="hljs-attr">border</span> = errorBorderColor;
+    <span class="hljs-attr">valid</span> = <span class="hljs-literal">false</span>;
+  } <span class="hljs-keyword">else</span> {
+    formEmail.style.<span class="hljs-attr">border</span> = okBorderColor;
+  }
+
+  <span class="hljs-keyword">if</span> (formPhone.<span class="hljs-attr">value</span> === <span class="hljs-string">""</span>) {
+    formPhone.style.<span class="hljs-attr">border</span> = errorBorderColor;
+    <span class="hljs-attr">valid</span> = <span class="hljs-literal">false</span>;
+  } <span class="hljs-keyword">else</span> {
+    formPhone.style.<span class="hljs-attr">border</span> = okBorderColor;
+  }
+
+  <span class="hljs-keyword">if</span> (valid) {
+    iSendButton.classList.remove('needCheck');
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">if</span> (!iSendButton.classList.contains('needCheck')) {
+      iSendButton.classList.add('needCheck');
+    }
+  }
+
+  return valid;
+}
+</code></pre>
+    <hr>
+    <h3 id="-explica-o-da-l-gica">🧠 Explicação da lógica</h3>
+    <ul>
+      <li><code>checkEmpty()</code> verifica se os campos estão preenchidos.</li>
+      <li>Se algum estiver vazio:<ul>
+          <li>A borda fica vermelha</li>
+          <li>O botão recebe a classe <code>needCheck</code></li>
+        </ul>
+      </li>
+      <li>Se todos estiverem preenchidos:<ul>
+          <li>O botão muda para &quot;Enviando...&quot;</li>
+          <li>Após 1,5 segundos, o usuário é redirecionado</li>
+        </ul>
+      </li>
+    </ul>
+    <hr>
+    <h3 id="-boas-pr-ticas">💡 Boas práticas</h3>
+    <ul>
+      <li>Use <code>type=&quot;email&quot;</code> e <code>type=&quot;tel&quot;</code> para validação nativa.</li>
+      <li>Adicione <code>required</code> nos campos se quiser validação HTML.</li>
+      <li>Evite redirecionar sem mostrar uma confirmação visual (pode ser adaptado).</li>
+      <li>Para envio real, substitua o <code>setTimeout</code> por uma chamada AJAX ou <code>fetch()</code>.</li>
+    </ul>
+    <hr>
+    <h3 id="-exemplo-de-uso">🧪 Exemplo de uso</h3>
+    <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"text"</span> id=<span class="hljs-string">"nome"</span> placeholder=<span class="hljs-string">"Seu nome"</span>&gt;
+&lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"email"</span> id=<span class="hljs-string">"email"</span> placeholder=<span class="hljs-string">"seu@email.com"</span>&gt;
+&lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"tel"</span> id=<span class="hljs-string">"telefone"</span> placeholder=<span class="hljs-string">"(99) 99999-9999"</span>&gt;
+&lt;<span class="hljs-selector-tag">button</span> id=<span class="hljs-string">"iSendButton"</span>&gt;Enviar&lt;/button&gt;
+</code></pre>
+
+  </article>
+
+
+
+  <hr>
+
+  <article>
+    <h2 id="-bloco-1-selecionando-os-elementos-do-formul-rio">🧠 Bloco 1: Selecionando os elementos do formulário
+    </h2>
+    <pre><code class="lang-js"><span class="hljs-attribute">let iSendButton</span> = document.getElementById(<span class="hljs-string">"iSendButton"</span>);
+</code></pre>
+    <p>🔹 Seleciona o botão de envio do formulário (<code>&lt;button id=&quot;iSendButton&quot;&gt;</code>) e guarda
+      na variável <code>iSendButton</code>.</p>
+    <pre><code class="lang-js">let formName = <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">'#nome'</span>);
+let formEmail = <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">'#email'</span>);
+let formPhone = <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">'#telefone'</span>);
+</code></pre>
+    <p>🔹 Seleciona os campos de entrada (<code>input</code>) de nome, e-mail e telefone usando seus IDs, e guarda
+      em variáveis.</p>
+    <hr>
+    <h2 id="-bloco-2-adicionando-eventos-de-valida-o-ao-sair-dos-campos">🧠 Bloco 2: Adicionando eventos de
+      validação ao sair dos campos</h2>
+    <pre><code class="lang-js"><span class="hljs-selector-tag">formName</span><span class="hljs-selector-class">.addEventListener</span>(<span class="hljs-string">'focusout'</span>, checkEmpty);
+<span class="hljs-selector-tag">formEmail</span><span class="hljs-selector-class">.addEventListener</span>(<span class="hljs-string">'focusout'</span>, checkEmpty);
+<span class="hljs-selector-tag">formPhone</span><span class="hljs-selector-class">.addEventListener</span>(<span class="hljs-string">'focusout'</span>, checkEmpty);
+</code></pre>
+    <p>🔹 Toda vez que o usuário <strong>sai de um campo</strong> (evento <code>focusout</code>), a função
+      <code>checkEmpty()</code> é chamada para verificar se o campo está vazio.
+    </p>
+    <hr>
+    <h2 id="-bloco-3-evento-de-clique-no-bot-o-de-envio">🧠 Bloco 3: Evento de clique no botão de envio</h2>
+    <pre><code class="lang-js">iSendButton.addEventListener(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-params">(e)</span> =&gt;</span> {
+</code></pre>
+    <p>🔹 Quando o botão é clicado, executa a função abaixo.</p>
+    <pre><code class="lang-js">  <span class="hljs-keyword">if</span> (checkEmpty() != <span class="hljs-literal">false</span>) {
+</code></pre>
+    <p>🔹 Chama <code>checkEmpty()</code> para validar os campos. Se todos estiverem preenchidos
+      (<code>true</code>), continua.</p>
+    <pre><code class="lang-js">    <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">'#iSendButton'</span>).innerHTML = <span class="hljs-string">'Enviando...'</span>;
+</code></pre>
+    <p>🔹 Muda o texto do botão para &quot;Enviando...&quot; para indicar que o processo começou.</p>
+    <pre><code class="lang-js">    <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">'#iSendButton'</span>).classList.add(<span class="hljs-string">'needCheck'</span>);
+</code></pre>
+    <p>🔹 Adiciona a classe <code>needCheck</code> ao botão — provavelmente usada para mudar o estilo (como cor
+      vermelha).</p>
+    <pre><code class="lang-js">    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-built_in">window</span>.location.href = <span class="hljs-string">"https://www.interago.com.br/App/Sites/157/obrigado-pelo-contato"</span>;
+    }, <span class="hljs-number">1500</span>);
+</code></pre>
+    <p>🔹 Aguarda 1,5 segundos e redireciona o usuário para uma página de agradecimento.</p>
+    <hr>
+    <h2 id="-bloco-4-fun-o-de-valida-o-checkempty-">🧠 Bloco 4: Função de validação <code>checkEmpty()</code></h2>
+    <pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkEmpty</span><span class="hljs-params">()</span> </span>{
+</code></pre>
+    <p>🔹 Define a função que verifica se os campos estão vazios.</p>
+    <pre><code class="lang-js"><span class="hljs-attribute">  let errorBorderColor</span> = <span class="hljs-string">"1px solid #e58787"</span>;
+<span class="hljs-attribute">  let okBorderColor</span> = <span class="hljs-string">"1px solid #dedede"</span>;
+</code></pre>
+    <p>🔹 Define as cores de borda para campos inválidos (vermelho) e válidos (cinza).</p>
+    <pre><code class="lang-js"><span class="hljs-attribute">  let nome</span> = document.getElementById(<span class="hljs-string">"nome"</span>);
+<span class="hljs-attribute">  let email</span> = document.getElementById(<span class="hljs-string">"email"</span>);
+<span class="hljs-attribute">  let phone</span> = document.getElementById(<span class="hljs-string">"telefone"</span>);
+</code></pre>
+    <p>🔹 Seleciona novamente os campos do formulário (poderia usar as variáveis já definidas antes, mas aqui são
+      reusadas).</p>
+    <pre><code class="lang-js">  <span class="hljs-keyword">let</span> <span class="hljs-attr">valid</span> = <span class="hljs-literal">true</span>;
+</code></pre>
+    <p>🔹 Inicializa uma variável <code>valid</code> como <code>true</code>. Ela será usada para saber se todos os
+      campos estão preenchidos.</p>
+    <hr>
+    <h3 id="-valida-o-de-cada-campo">🔍 Validação de cada campo</h3>
+    <pre><code class="lang-js">  <span class="hljs-keyword">if</span> (nome.value === <span class="hljs-string">""</span>) {
+    nome.<span class="hljs-built_in">style</span>.<span class="hljs-built_in">border</span> = errorBorderColor;
+    valid = <span class="hljs-literal">false</span>;
+  } <span class="hljs-keyword">else</span> {
+    nome.<span class="hljs-built_in">style</span>.<span class="hljs-built_in">border</span> = okBorderColor;
+  }
+</code></pre>
+    <p>🔹 Se o campo nome estiver vazio, pinta a borda de vermelho e marca como inválido. Caso contrário, pinta de
+      cinza.</p>
+    <p>🔹 O mesmo se repete para os campos de e-mail e telefone:</p>
+    <pre><code class="lang-js">  <span class="hljs-keyword">if</span> (email.value === <span class="hljs-string">""</span>) {
+    email.<span class="hljs-built_in">style</span>.<span class="hljs-built_in">border</span> = errorBorderColor;
+    valid = <span class="hljs-literal">false</span>;
+  } <span class="hljs-keyword">else</span> {
+    email.<span class="hljs-built_in">style</span>.<span class="hljs-built_in">border</span> = okBorderColor;
+  }
+
+  <span class="hljs-keyword">if</span> (phone.value === <span class="hljs-string">""</span>) {
+    phone.<span class="hljs-built_in">style</span>.<span class="hljs-built_in">border</span> = errorBorderColor;
+    valid = <span class="hljs-literal">false</span>;
+  } <span class="hljs-keyword">else</span> {
+    phone.<span class="hljs-built_in">style</span>.<span class="hljs-built_in">border</span> = okBorderColor;
+  }
+</code></pre>
+    <hr>
+    <h3 id="-atualiza-a-classe-do-bot-o-com-base-na-valida-o">🔍 Atualiza a classe do botão com base na validação
+    </h3>
+    <pre><code class="lang-js">  <span class="hljs-keyword">if</span>(valid == <span class="hljs-keyword">true</span>) {
+    <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">'#iSendButton'</span>).classList.remove(<span class="hljs-string">'needCheck'</span>);
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">'#iSendButton'</span>).classList.contains(<span class="hljs-string">'needCheck'</span>) == <span class="hljs-keyword">false</span>) {
+      <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">'#iSendButton'</span>).classList.add(<span class="hljs-string">'needCheck'</span>);
+    }
+  }
+</code></pre>
+    <p>🔹 Se todos os campos estiverem preenchidos, remove a classe <code>needCheck</code> do botão.<br>🔹 Se houver
+      erro, adiciona a classe <code>needCheck</code> (caso ainda não esteja lá).</p>
+    <hr>
+    <h3 id="-retorna-o-resultado-da-valida-o">🔚 Retorna o resultado da validação</h3>
+    <pre><code class="lang-js">  <span class="hljs-keyword">return</span> valid;
+}
+</code></pre>
+    <p>🔹 Retorna <code>true</code> se todos os campos estiverem preenchidos, ou <code>false</code> se algum estiver
+      vazio.</p>
+    <hr>
+    <h2 id="-conclus-o">✅ Conclusão</h2>
+    <p>Esse script:</p>
+    <ul>
+      <li>Valida se os campos estão preenchidos</li>
+      <li>Dá feedback visual com bordas coloridas</li>
+      <li>Muda o botão para &quot;Enviando...&quot;</li>
+      <li>Redireciona após 1,5 segundos</li>
+    </ul>
+
+  </article>
+
+
+
+  <footer class="p-1">
+    <button class="accent">
+      <a href="../index.html" type="button" class="accent">Voltar</a>
+    </button>
+  </footer>
+
+</body>
+
+</html>

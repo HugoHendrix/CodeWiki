@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="documentação-uso-de-iframe-em-html">Documentação: Uso de <code>&lt;iframe&gt;</code> em HTML</h1>
+    <p>Esta documentação cobre os principais tópicos relacionados ao uso da tag <code>&lt;iframe&gt;</code> em HTML,
+        conforme estudado nas aulas de Gustavo Guanabara.</p>
+    <hr>
+    <h2 id="✅-o-iframe-ainda-pode-ser-usado">✅ O <code>&lt;iframe&gt;</code> ainda pode ser usado?</h2>
+    <p>Sim, o <code>&lt;iframe&gt;</code> (inline frame) ainda é suportado pelos navegadores modernos. Ele é utilizado
+        para <strong>inserir outro documento HTML dentro da sua página</strong>, como vídeos, mapas, ou páginas
+        externas.</p>
+    <blockquote>
+        <p>📌 Apesar de ser funcional, seu uso requer cuidado com segurança e acessibilidade.</p>
+    </blockquote>
+    <hr>
+    <h2 id="⚙️-configurando-iframes">⚙️ Configurando iframes</h2>
+    <p>Exemplo básico:</p>
+    <pre><code class="language-html">&lt;iframe src=&quot;https://www.example.com&quot; width=&quot;600&quot; height=&quot;400&quot;&gt;&lt;/iframe&gt;
+</code></pre>
+    <h3 id="atributos-úteis">Atributos úteis:</h3>
+    <ul>
+        <li><code>src</code>: define a URL do conteúdo incorporado.</li>
+        <li><code>width</code> e <code>height</code>: definem as dimensões.</li>
+        <li><code>frameborder</code>: (ex. <code>frameborder=&quot;0&quot;</code>) remove a borda.</li>
+        <li><code>title</code>: descreve o conteúdo (acessibilidade).</li>
+        <li><code>loading=&quot;lazy&quot;</code>: carrega o conteúdo apenas quando necessário.</li>
+    </ul>
+    <hr>
+    <h2 id="💻-conteúdo-local-no-iframe">💻 Conteúdo local no iframe</h2>
+    <p>Você pode carregar uma página HTML local:</p>
+    <pre><code class="language-html">&lt;iframe src=&quot;pagina.html&quot; width=&quot;500&quot; height=&quot;300&quot;&gt;&lt;/iframe&gt;
+</code></pre>
+    <p>O caminho deve ser acessível e relativo ao arquivo principal.</p>
+    <hr>
+    <h2 id="🌐-navegação-no-iframe">🌐 Navegação no iframe</h2>
+    <p>É possível criar links que abrem conteúdos dentro do mesmo iframe:</p>
+    <pre><code class="language-html">&lt;iframe name=&quot;janela&quot; width=&quot;600&quot; height=&quot;400&quot;&gt;&lt;/iframe&gt;
+
+&lt;a href=&quot;pagina1.html&quot; target=&quot;janela&quot;&gt;Página 1&lt;/a&gt;
+&lt;a href=&quot;pagina2.html&quot; target=&quot;janela&quot;&gt;Página 2&lt;/a&gt;
+</code></pre>
+    <p>O atributo <code>name</code> do iframe é usado como <code>target</code> nos links.</p>
+    <hr>
+    <h2 id="💡-conteúdo-no-iframe-por-código-javascript">💡 Conteúdo no iframe por código (JavaScript)</h2>
+    <pre><code class="language-html">&lt;iframe id=&quot;meuIframe&quot;&gt;&lt;/iframe&gt;
+
+&lt;script&gt;
+  document.getElementById(&quot;meuIframe&quot;).src = &quot;pagina.html&quot;;
+&lt;/script&gt;
+</code></pre>
+    <p>Você pode alterar o conteúdo dinamicamente com JavaScript.</p>
+    <hr>
+    <h2 id="⚠️-inconvenientes-do-iframe">⚠️ Inconvenientes do iframe</h2>
+    <ul>
+        <li><strong>Segurança</strong>: risco de ataques como clickjacking.</li>
+        <li><strong>SEO</strong>: mecanismos de busca ignoram o conteúdo.</li>
+        <li><strong>Mobile</strong>: pode gerar scroll interno e usabilidade ruim.</li>
+        <li><strong>Estilização</strong>: difícil aplicar CSS externo ao conteúdo interno.</li>
+    </ul>
+    <hr>
+    <h2 id="🔐-tornando-iframes-mais-seguros">🔐 Tornando iframes mais seguros</h2>
+    <p>Use o atributo <code>sandbox</code> para restringir o comportamento:</p>
+    <pre><code class="language-html">&lt;iframe src=&quot;pagina.html&quot; sandbox&gt;&lt;/iframe&gt;
+</code></pre>
+    <p>Você também pode definir permissões específicas:</p>
+    <pre><code class="language-html">&lt;iframe src=&quot;pagina.html&quot; sandbox=&quot;allow-scripts allow-forms&quot;&gt;&lt;/iframe&gt;
+</code></pre>
+    <hr>
+    <h2 id="💡-dicas-para-iframes-melhores">💡 Dicas para iframes melhores</h2>
+    <ol>
+        <li>Sempre use <code>title</code> para acessibilidade.</li>
+        <li>Use <code>loading=&quot;lazy&quot;</code> para desempenho.</li>
+        <li>Restrinja permissões com <code>sandbox</code>.</li>
+        <li>Torne o iframe responsivo com CSS.</li>
+        <li>Evite usar iframe quando for possível integrar diretamente o conteúdo.</li>
+    </ol>
+    <hr>
+    <h2 id="conclusão">Conclusão</h2>
+    <p>O uso de <code>&lt;iframe&gt;</code> continua sendo válido em muitos contextos, especialmente para conteúdos
+        externos como vídeos, mapas e documentos. No entanto, deve-se tomar precauções com segurança, desempenho e
+        acessibilidade para garantir uma boa experiência de usuário.</p>
+
+
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="cursohtml.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <section class="doc-jsonld">
+        <h1>📄 Documentação – Uso de <strong>JSON-LD</strong> e <strong>Schema.org</strong> no Site</h1>
+
+        <h2>1. O que é JSON-LD e por que usar?</h2>
+        <p>
+            O <strong>JSON-LD</strong> (JavaScript Object Notation for Linked Data) é um formato recomendado pelo Google
+            para adicionar <strong>dados estruturados</strong> a páginas da web.
+            Ele <em>não é visível para o visitante</em>, mas ajuda os buscadores (Google, Bing, etc.) a entender melhor
+            o conteúdo do site.
+            Isso melhora a indexação e possibilita a exibição de <strong>rich snippets</strong> (resultados
+            enriquecidos), como:
+        </p>
+        <ul>
+            <li>Nome da empresa e logo no Google</li>
+            <li>FAQ expandida direto nos resultados</li>
+            <li>Endereço, telefone e outros dados de contato</li>
+        </ul>
+        <p>📌 <strong>Referência oficial</strong>: <a href="https://schema.org/" target="_blank"
+                rel="noopener">https://schema.org/</a></p>
+
+        <h2>2. Principais tipos de Schema usados no site</h2>
+
+        <h3>2.1 Organization</h3>
+        <p>Fornece informações sobre a empresa:</p>
+        <ul>
+            <li>Nome</li>
+            <li>Site oficial</li>
+            <li>Logo</li>
+            <li>Endereço</li>
+            <li>País</li>
+        </ul>
+        <p>Esse código deve estar preferencialmente <strong>no início da página</strong> (geralmente no
+            <code>&lt;head&gt;</code>).</p>
+        <pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Nome da Empresa",
+  "url": "https://www.exemplo.com.br",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.exemplo.com.br/imagens/logo.png",
+    "width": "1000",
+    "height": "1000"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Exemplo, 123",
+    "addressLocality": "Cidade",
+    "addressRegion": "Estado",
+    "postalCode": "00000-000",
+    "addressCountry": {
+      "@type": "Country",
+      "name": "BR"
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre>
+
+        <h3>2.2 FAQPage</h3>
+        <p>
+            Permite exibir perguntas e respostas diretamente nos resultados do Google.
+            Esse código pode ser inserido <strong>no final da página</strong> ou no local onde as perguntas/respostas
+            aparecem no HTML.
+        </p>
+        <pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Pergunta exemplo?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Resposta exemplo."
+    }
+  }]
+}
+&lt;/script&gt;
+</code></pre>
+
+        <h2>3. Como validar os dados estruturados</h2>
+        <p>Antes de publicar, valide o código no <strong>Teste de Resultados Avançados do Google</strong>:</p>
+        <p>🔗 <a href="https://search.google.com/test/rich-results" target="_blank"
+                rel="noopener">https://search.google.com/test/rich-results</a></p>
+        <ol>
+            <li>Acesse o link acima.</li>
+            <li>Cole a <strong>URL da página</strong> ou o <strong>código JSON-LD</strong>.</li>
+            <li>Verifique se não há erros.</li>
+            <li>Publique a página corrigida, se necessário.</li>
+        </ol>
+
+        <h2>4. Boas práticas</h2>
+        <ul>
+            <li>Sempre manter o JSON-LD atualizado com as informações reais da empresa.</li>
+            <li>Evitar dados falsos ou desatualizados (o Google pode penalizar).</li>
+            <li>Usar o formato <strong>JSON-LD</strong> em vez de Microdata ou RDFa (é o formato recomendado pelo
+                Google).</li>
+            <li>Testar todas as páginas importantes do site.</li>
+        </ul>
+    </section>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

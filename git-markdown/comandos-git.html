@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="📘-guia-rápido-de-comandos-git">📘 Guia Rápido de Comandos GIT</h1>
+    <p>Guia prático com os comandos Git mais comuns. Ideal para consulta rápida durante o desenvolvimento.</p>
+    <hr>
+    <h2 id="📂-inicialização-de-repositório">📂 Inicialização de repositório</h2>
+    <pre><code class="language-bash">git init
+</code></pre>
+    <blockquote>
+        <p>Cria um novo repositório Git na pasta atual.</p>
+    </blockquote>
+    <hr>
+    <h2 id="🔍-status-do-repositório">🔍 Status do repositório</h2>
+    <pre><code class="language-bash">git status
+</code></pre>
+    <blockquote>
+        <p>Mostra os arquivos modificados e o estado da área de staging.</p>
+    </blockquote>
+    <hr>
+    <h2 id="➕-adicionar-arquivos-ao-staging">➕ Adicionar arquivos ao staging</h2>
+    <pre><code class="language-bash">git add nome-do-arquivo
+# ou para todos:
+git add .
+</code></pre>
+    <blockquote>
+        <p>Adiciona arquivos ao staging (preparando para commit).</p>
+    </blockquote>
+    <hr>
+    <h2 id="💾-commit-de-alterações">💾 Commit de alterações</h2>
+    <pre><code class="language-bash">git commit -m &quot;mensagem do commit&quot;
+</code></pre>
+    <blockquote>
+        <p>Salva as alterações adicionadas com uma mensagem.</p>
+    </blockquote>
+    <hr>
+    <h2 id="🔄-ver-histórico-de-commits">🔄 Ver histórico de commits</h2>
+    <pre><code class="language-bash">git log
+</code></pre>
+    <blockquote>
+        <p>Lista todos os commits do repositório.</p>
+    </blockquote>
+    <hr>
+    <h2 id="🌿-criar-nova-branch">🌿 Criar nova branch</h2>
+    <pre><code class="language-bash">git checkout -b nome-da-branch
+# ou com Git 2.23+
+git switch -c nome-da-branch
+</code></pre>
+    <blockquote>
+        <p>Cria e já muda para a nova branch.</p>
+    </blockquote>
+    <hr>
+    <h2 id="🔁-trocar-de-branch">🔁 Trocar de branch</h2>
+    <pre><code class="language-bash">git checkout nome-da-branch
+# ou com Git 2.23+
+git switch nome-da-branch
+</code></pre>
+    <blockquote>
+        <p>Muda para uma branch existente.</p>
+    </blockquote>
+    <hr>
+    <h2 id="🔄-listar-branches">🔄 Listar branches</h2>
+    <pre><code class="language-bash">git branch
+</code></pre>
+    <blockquote>
+        <p>Mostra todas as branches locais e indica a atual com <code>*</code>.</p>
+    </blockquote>
+    <hr>
+    <h2 id="🔀-mesclar-branches">🔀 Mesclar branches</h2>
+    <pre><code class="language-bash">git checkout main
+git merge nome-da-branch
+</code></pre>
+    <blockquote>
+        <p>Junta as alterações da <code>nome-da-branch</code> com a branch atual (ex: <code>main</code>).</p>
+    </blockquote>
+    <hr>
+    <h2 id="🗑️-remover-arquivos">🗑️ Remover arquivos</h2>
+    <pre><code class="language-bash">git rm nome-do-arquivo
+</code></pre>
+    <blockquote>
+        <p>Remove o arquivo do repositório e da pasta local.</p>
+    </blockquote>
+    <hr>
+    <h2 id="🧪-ver-diferenças">🧪 Ver diferenças</h2>
+    <pre><code class="language-bash">git diff
+</code></pre>
+    <blockquote>
+        <p>Mostra as mudanças que ainda não foram adicionadas ao staging.</p>
+    </blockquote>
+    <hr>
+    <h2 id="🌐-clonar-repositório">🌐 Clonar repositório</h2>
+    <pre><code class="language-bash">git clone url-do-repositorio
+</code></pre>
+    <blockquote>
+        <p>Clona um repositório remoto para sua máquina local.</p>
+    </blockquote>
+    <hr>
+    <h2 id="🔼-enviar-alterações-para-o-repositório-remoto">🔼 Enviar alterações para o repositório remoto</h2>
+    <pre><code class="language-bash">git push origin nome-da-branch
+</code></pre>
+    <blockquote>
+        <p>Envia os commits locais para o repositório remoto.</p>
+    </blockquote>
+    <hr>
+    <h2 id="🔽-puxar-alterações-do-repositório-remoto">🔽 Puxar alterações do repositório remoto</h2>
+    <pre><code class="language-bash">git pull origin nome-da-branch
+</code></pre>
+    <blockquote>
+        <p>Atualiza seu repositório local com as alterações do remoto.</p>
+    </blockquote>
+    <hr>
+    <h2 id="🔁-reverter-commit-sem-apagar-o-histórico">🔁 Reverter commit (sem apagar o histórico)</h2>
+    <pre><code class="language-bash">git revert id-do-commit
+</code></pre>
+    <blockquote>
+        <p>Cria um novo commit que desfaz as alterações do commit indicado.</p>
+    </blockquote>
+    <hr>
+    <h2 id="⚠️-descartar-alterações-locais-não-comitadas">⚠️ Descartar alterações locais (não comitadas)</h2>
+    <pre><code class="language-bash">git checkout -- nome-do-arquivo
+</code></pre>
+    <blockquote>
+        <p>Cuidado! Isso desfaz todas as alterações feitas no arquivo.</p>
+    </blockquote>
+    <hr>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

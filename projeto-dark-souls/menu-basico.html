@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+        <h2 id="-o-que-display-flex-">🧠 O que é <code>display: flex</code>?</h2>
+        <ul>
+            <li>É uma propriedade CSS que transforma um container em um <strong>flex container</strong>.</li>
+            <li>Os elementos filhos se tornam <strong>flex items</strong>, podendo ser alinhados e distribuídos com
+                facilidade.</li>
+        </ul>
+        <hr>
+        <h2 id="-estrutura-html-de-um-menu-b-sico">🧱 Estrutura HTML de um menu básico</h2>
+        <pre><code class="lang-html">&lt;nav <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"navbar"</span>&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-list"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Início<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Sobre<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Projetos<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Contato<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span>
+&lt;<span class="hljs-regexp">/nav&gt;</span>
+</code></pre>
+        <hr>
+        <h2 id="-css-com-display-flex-">🎨 CSS com <code>display: flex</code></h2>
+        <pre><code class="lang-css"><span class="hljs-selector-class">.navbar</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--color-bg-secondary);
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">1rem</span> <span class="hljs-number">2rem</span>;
+}
+
+<span class="hljs-selector-class">.nav-list</span> {
+  <span class="hljs-attribute">display</span>: flex;              <span class="hljs-comment">/* Ativa o Flexbox */</span>
+  <span class="hljs-attribute">gap</span>: <span class="hljs-number">2rem</span>;                  <span class="hljs-comment">/* Espaçamento entre os itens */</span>
+  <span class="hljs-attribute">list-style</span>: none;           <span class="hljs-comment">/* Remove os marcadores de lista */</span>
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-selector-class">.nav-list</span> <span class="hljs-selector-tag">li</span> <span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">text-decoration</span>: none;
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--color-text-primary);
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-built_in">var</span>(--font-title);
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.6rem</span>;
+  <span class="hljs-attribute">transition</span>: color <span class="hljs-number">0.3s</span> ease;
+}
+
+<span class="hljs-selector-class">.nav-list</span> <span class="hljs-selector-tag">li</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--color-accent-gold);
+}
+</code></pre>
+        <hr>
+        <h2 id="-responsividade-opcional-">📱 Responsividade (opcional)</h2>
+        <p>Para transformar o menu em um layout vertical em telas menores:</p>
+        <pre><code class="lang-css">@<span class="hljs-keyword">media</span> (max-width: <span class="hljs-number">768px</span>) {
+  <span class="hljs-selector-class">.nav-list</span> {
+    <span class="hljs-attribute">flex-direction</span>: column;
+    <span class="hljs-attribute">align-items</span>: center;
+  }
+}
+</code></pre>
+        <hr>
+        <h2 id="-explica-o-r-pida-das-propriedades-flex">🧩 Explicação rápida das propriedades Flex</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Propriedade</th>
+                    <th>Função</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>display: flex</code></td>
+                    <td>Ativa o Flexbox no container</td>
+                </tr>
+                <tr>
+                    <td><code>flex-direction</code></td>
+                    <td>Define a direção (<code>row</code>, <code>column</code>, etc.)</td>
+                </tr>
+                <tr>
+                    <td><code>justify-content</code></td>
+                    <td>Alinha horizontalmente (<code>center</code>, <code>space-between</code>, etc.)</td>
+                </tr>
+                <tr>
+                    <td><code>align-items</code></td>
+                    <td>Alinha verticalmente (<code>center</code>, <code>flex-start</code>, etc.)</td>
+                </tr>
+                <tr>
+                    <td><code>gap</code></td>
+                    <td>Espaçamento entre os itens</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <article>
+        
+        <section>
+            <h2>Bordas Estilizadas com CSS</h2>
+
+            <div>
+                <h3>1. Vértices Arredondados (border-radius)</h3>
+                <p>Controla o arredondamento dos cantos da borda:</p>
+                <ul>
+                    <li><code>border-radius: 10px;</code> (todos os cantos igualmente)</li>
+                    <li><code>border-radius: 10px 5px 15px 20px;</code> (top-left, top-right, bottom-right, bottom-left)
+                    </li>
+                    <li>Valores em porcentagem criam formas elípticas: <code>border-radius: 50%;</code> (círculo
+                        perfeito se elemento quadrado)</li>
+                </ul>
+                <p><strong>Dica:</strong> Use <code>overflow: hidden;</code> junto com border-radius para cortar
+                    conteúdo interno.</p>
+            </div>
+
+            <div>
+                <h3>2. Bordas com Imagens Personalizadas (border-image)</h3>
+                <p>Cria bordas usando imagens. Propriedades principais:</p>
+                <ul>
+                    <li><code>border-image-source: url('imagem.png');</code> (define a imagem)</li>
+                    <li><code>border-image-slice: 30;</code> (divide a imagem em 9 regiões)</li>
+                    <li><code>border-image-width: 20px;</code> (largura da borda)</li>
+                    <li><code>border-image-repeat: stretch|repeat|round;</code> (como a imagem se repete)</li>
+                </ul>
+
+                <p>Exemplo prático com gradiente:</p>
+                <code>border-image: linear-gradient(45deg, #ff6b6b, #4ecdc4) 1;</code>
+
+                <p><strong>Atenção:</strong> Funciona melhor com elementos que tenham borda definida
+                    (<code>border-width</code>).</p>
+            </div>
+
+            <div>
+                <h3>Combinação de Efeitos</h3>
+                <p>Exemplo de card moderno:</p>
+                <pre>
+                    <code>
+.card {<br>
+border-radius: 15px 5px;<br>
+border: 2px solid;<br>
+border-image: linear-gradient(to right, #ff6b6b, #4ecdc4) 1;<br>
+box-shadow: 3px 3px 10px rgba(0,0,0,0.1);<br>
+}
+                        </code>
+                </pre>
+            </div>
+
+            <div>
+                <h3>Boas Práticas</h3>
+                <ul>
+                    <li>Para border-radius: Use valores consistentes no design (ex: 4px, 8px, 16px)</li>
+                    <li>Para border-image: Prefira SVG para bordas complexas (melhor escalabilidade)</li>
+                    <li>Teste em vários navegadores - algumas propriedades precisam de prefixos (-webkit-)</li>
+                </ul>
+            </div>
+        </section>
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./cursohtml.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

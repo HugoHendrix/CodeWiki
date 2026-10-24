@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h1 id="gradientes-em-css-guia-completo">Gradientes em CSS: Guia Completo</h1>
+    <p>Os gradientes permitem criar transições suaves entre cores. No CSS, você pode aplicar gradientes como plano de
+        fundo usando as funções <code>linear-gradient()</code> e <code>radial-gradient()</code>. </p>
+    <hr>
+    <h2 id="tipos-de-gradientes"><strong>Tipos de Gradientes</strong></h2>
+    <h3 id="1-gradiente-linear-linear-gradient">1. Gradiente Linear (<code>linear-gradient()</code>)</h3>
+    <p>Cria uma transição em linha reta. </p>
+    <h4 id="sintaxe">Sintaxe:</h4>
+    <pre><code class="language-css">background-image: linear-gradient(direção, cor1, cor2, ..., corN);  
+    </code></pre>
+    <h4 id="direções">Direções:</h4>
+    <ul>
+        <li><strong>Por ângulo</strong>: <code>90deg</code> (esquerda para direita), <code>45deg</code> (diagonal).
+        </li>
+        <li><strong>Por palavras-chave</strong>: <ul>
+                <li><code>to top</code> (de baixo para cima). </li>
+                <li><code>to right</code> (da esquerda para a direita). </li>
+                <li><code>to bottom right</code> (diagonal superior esquerda para inferior direita).</li>
+            </ul>
+        </li>
+    </ul>
+    <h4 id="exemplo">Exemplo:</h4>
+    <pre><code class="language-css">div {  
+      background-image: linear-gradient(45deg, red, yellow);  
+    }  
+    </code></pre>
+   
+    <hr>
+    <h3 id="2-gradiente-radial-radial-gradient">2. Gradiente Radial (<code>radial-gradient()</code>)</h3>
+    <p>Cria uma transição circular ou elíptica. </p>
+    <h4 id="sintaxe-1">Sintaxe:</h4>
+    <pre><code class="language-css">background-image: radial-gradient(formato tamanho posição, cor1, cor2, ..., corN);  
+    </code></pre>
+    <h4 id="parâmetros">Parâmetros:</h4>
+    <ul>
+        <li><strong>Formato</strong>: <code>circle</code> (círculo) ou <code>ellipse</code> (padrão, elipse). </li>
+        <li><strong>Tamanho</strong>: <code>farthest-corner</code> (preenche o elemento) ou <code>200px</code> (tamanho
+            fixo). </li>
+        <li><strong>Posição</strong>: <code>center</code> (padrão), <code>top left</code>, etc.</li>
+    </ul>
+    <h4 id="exemplo-1">Exemplo:</h4>
+    <pre><code class="language-css">div {  
+      background-image: radial-gradient(circle, red, yellow);  
+    }  
+    </code></pre>
+   
+    <hr>
+    <h2 id="controlando-a-distribuição-das-cores"><strong>Controlando a Distribuição das Cores</strong></h2>
+    <p>Use <strong>porcentagens</strong> após as cores para definir onde cada uma começa/termina: </p>
+    <pre><code class="language-css">div {  
+      background-image: linear-gradient(to right, red 20%, yellow 80%);  
+    }  
+    </code></pre>
+    <ul>
+        <li><code>red 20%</code>: Vermelho ocupa 20% do espaço antes de começar a transição. </li>
+        <li><code>yellow 80%</code>: Amarelo termina aos 80%, criando uma zona sólida após esse ponto.</li>
+    </ul>
+   
+    <hr>
+    <h2 id="altura-do-elemento"><strong>Altura do Elemento</strong></h2>
+    <p>Gradientes só são visíveis se o elemento tiver <strong>altura definida</strong>: </p>
+    <pre><code class="language-css">div {  
+      height: 200px; /* Altura fixa */  
+      /* ou */  
+      min-height: 100vh; /* Altura mínima da tela */  
+    }  
+    </code></pre>
+    <hr>
+    <h2 id="exemplos-avançados"><strong>Exemplos Avançados</strong></h2>
+    <h3 id="1-gradiente-com-múltiplas-cores">1. Gradiente com Múltiplas Cores</h3>
+    <pre><code class="language-css">div {  
+      background-image: linear-gradient(  
+        to right,  
+        red,  
+        orange 30%,  
+        yellow 60%,  
+        green  
+      );  
+    }  
+    </code></pre>
+  
+    <h3 id="2-gradiente-radial-com-posição-customizada">2. Gradiente Radial com Posição Customizada</h3>
+    <pre><code class="language-css">div {  
+      background-image: radial-gradient(  
+        circle at top left, /* Centro no canto superior esquerdo */  
+        red,  
+        yellow 70%  
+      );  
+    }  
+    </code></pre>
+   
+    <hr>
+    <h2 id="dicas-práticas"><strong>Dicas Práticas</strong></h2>
+    <ol>
+        <li>
+            <p><strong>Use Ferramentas Visuais</strong>: </p>
+            <ul>
+                <li><a href="https://cssgradient.io/" target="_blank" rel="noopener noreferrer">CSS Gradient Generator</a> para criar gradientes rapidamente.
+                </li>
+                <li><a href="https://color.adobe.com" target="_blank" rel="noopener noreferrer">Adobe Color</a> para paletas harmoniosas.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Transparência</strong>:<br>Use <code>rgba()</code> para cores translúcidas: </p>
+            <pre><code class="language-css">background-image: linear-gradient(to bottom, rgba(255,0,0,0.5), rgba(0,0,255,0.5));  
+    </code></pre>
+        </li>
+        <li>
+           
+            <pre><code class="language-css">div {  
+      background-image: repeating-linear-gradient(  
+        45deg,  
+        red,  
+        red 10px,  
+        blue 10px,  
+        blue 20px  
+      );  
+    }  
+    </code></pre>
+            
+        </li>
+    </ol>
+    <hr>
+    
+
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="cursohtml.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

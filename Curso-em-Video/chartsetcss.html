@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h3 id="por-que-usar-charset-utf-8-no-css"><strong>Por que usar <code>@charset &quot;UTF-8&quot;;</code> no
+            CSS?</strong></h3>
+    <p>O <code>@charset &quot;UTF-8&quot;;</code> define a codificação de caracteres do arquivo CSS. Sua principal
+        função é garantir que o navegador interprete corretamente caracteres especiais (como acentos, emojis ou
+        símbolos) presentes no código CSS. Veja os detalhes:</p>
+    <hr>
+    <h4 id="1-para-que-serve"><strong>1. Para que serve?</strong></h4>
+    <ul>
+        <li><strong>Evitar erros de renderização</strong>:<br>Se o CSS contém caracteres não-ASCII (ex: <code>ã</code>,
+            <code>ç</code>, <code>→</code>, <code>❤️</code>), sem a declaração <code>@charset</code>, o navegador pode
+            exibir caracteres incorretos ou &quot;quebrados&quot;.</li>
+        <li><strong>Compatibilidade com múltiplos idiomas</strong>:<br>UTF-8 suporta quase todos os caracteres de
+            idiomas modernos, ideal para projetos multilíngues.</li>
+    </ul>
+    <hr>
+    <h4 id="2-quando-é-necessário"><strong>2. Quando é necessário?</strong></h4>
+    <ul>
+        <li><strong>Seu CSS inclui caracteres especiais</strong>:<br>Exemplo: <code>content: &quot;✔️&quot;;</code> em
+            pseudoelementos ou comentários com acentos (<code>/* Menu de navegação */</code>).</li>
+        <li><strong>O servidor não define a codificação</strong>:<br>Se o header HTTP não especifica
+            <code>Content-Type: text/css; charset=UTF-8</code>, o <code>@charset</code> resolve ambiguidades.</li>
+        <li><strong>Arquivo salvo em UTF-8</strong>:<br>Se o arquivo CSS foi salvo com essa codificação (comum em
+            editores como VS Code), a declaração reforça a interpretação correta.</li>
+    </ul>
+    <hr>
+    <h4 id="3-como-usar"><strong>3. Como usar?</strong></h4>
+    <ul>
+        <li>Deve ser <strong>a primeira linha do arquivo CSS</strong>, sem espaços antes:
+            <pre><code class="language-css">@charset &quot;UTF-8&quot;;
+body { font-family: Arial, sans-serif; }
+</code></pre>
+        </li>
+        <li>Se houver qualquer caractere antes (incluindo espaços ou comentários), a declaração será
+            <strong>ignorada</strong>.</li>
+    </ul>
+    <hr>
+    <h4 id="4-exemplo-prático"><strong>4. Exemplo Prático</strong></h4>
+    <p><strong>Cenário sem <code>@charset</code>:</strong><br>Se você escrever: </p>
+    <pre><code class="language-css">.tooltip::after { content: &quot;Atenção: campo obrigatório!&quot;; }
+</code></pre>
+    <p>E o navegador interpretar o arquivo como <code>ISO-8859-1</code>, o &quot;ç&quot; pode aparecer como
+        <code>Ã§</code>.</p>
+    <p><strong>Cenário com <code>@charset</code>:</strong><br>O navegador renderiza os caracteres corretamente.</p>
+    <hr>
+    <h4 id="5-observações"><strong>5. Observações</strong></h4>
+    <ul>
+        <li><strong>Não é sempre obrigatório</strong>:<br>Muitos navegadores assumem UTF-8 por padrão, especialmente se
+            o HTML já declara <code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code>.</li>
+        <li><strong>Alternativa</strong>:<br>Configurar o servidor para enviar o header
+            <code>Content-Type: text/css; charset=UTF-8</code>, dispensando o <code>@charset</code>.</li>
+    </ul>
+    <hr>
+    <h3 id="resumo"><strong>Resumo</strong></h3>
+    <p>Use <code>@charset &quot;UTF-8&quot;;</code> no CSS quando:<br>✅ O arquivo contém caracteres não-ASCII.<br>✅ Não
+        há garantia de que o servidor defina a codificação correta.<br>✅ Você quer evitar riscos de compatibilidade em
+        ambientes desconhecidos. </p>
+    <p>É uma boa prática para projetos profissionais, especialmente em equipes ou sistemas com múltiplos idiomas! 🌍</p>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="cursohtml.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

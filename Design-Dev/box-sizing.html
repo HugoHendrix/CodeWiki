@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h1 id="a-propriedade-css-box-sizing-border-box">A propriedade CSS
+        <strong><code>box-sizing: border-box</code></strong></h1>
+    <p><img src="box-sizing.png" alt="box-sizing"></p>
+    <hr>
+    <p>🧙‍♂️ Você não passará ... até conferir este documento útil sobre <code>box-sizing</code> no <a
+            href="https://webreference.com">Web Reference</a>.</p>
+    <p>Uma regra CSS para governar todas, uma regra para alinhá-las, uma regra para trazê-las todas e no markup uni-las.</p>
+    <pre><code class="language-css">*, *:before, *:after {
+    box-sizing: border-box;
+}
+</code></pre>
+    <p><strong>CSS box-sizing</strong><br>Com <code>box-sizing: border-box</code>, o padding e a borda de um elemento
+        são incluídos na largura e altura do elemento, o que significa que o tamanho que você define é o tamanho que
+        você obtém. Isso torna os layouts muito mais previsíveis e fáceis de controlar.</p>
+    <p>É isso, essa é a dica do dia, e é uma que vai render dividendos em tempo economizado.</p>
+    <hr>
+    <h3 id="explicação-detalhada"><strong>Explicação Detalhada</strong></h3>
+    <h4 id="1-o-que-é-box-sizing-border-box"><strong>1. O que é <code>box-sizing: border-box</code>?</strong></h4>
+    <ul>
+        <li><strong>Definição</strong>: A propriedade <code>box-sizing</code> controla como a largura e a altura de um
+            elemento são calculadas.</li>
+        <li><strong>Valores</strong>:<ul>
+                <li><code>content-box</code> (padrão): A largura e a altura incluem apenas o conteúdo. Padding e borda
+                    são adicionados ao tamanho total.</li>
+                <li><code>border-box</code>: A largura e a altura incluem o conteúdo, o padding e a borda. O tamanho
+                    definido é o tamanho total do elemento.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="2-por-que-usar-box-sizing-border-box"><strong>2. Por que usar <code>box-sizing: border-box</code>?</strong>
+    </h4>
+    <ul>
+        <li><strong>Previsibilidade</strong>: O tamanho do elemento é mais fácil de controlar, pois padding e borda não
+            afetam a largura e altura definidas.</li>
+        <li><strong>Facilidade de layout</strong>: Evita cálculos manuais para ajustar o tamanho dos elementos.</li>
+        <li><strong>Consistência</strong>: Garante que todos os elementos sigam a mesma lógica de dimensionamento.</li>
+    </ul>
+    <hr>
+    <h4 id="3-como-aplicar-box-sizing-border-box"><strong>3. Como aplicar <code>box-sizing: border-box</code>?</strong>
+    </h4>
+    <ul>
+        <li>Aplique a regra globalmente para todos os elementos, incluindo pseudo-elementos (<code>:before</code> e
+            <code>:after</code>):
+            <pre><code class="language-css">*, *:before, *:after {
+    box-sizing: border-box;
+}
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="4-exemplo-prático"><strong>4. Exemplo prático</strong></h4>
+    <ul>
+        <li>
+            <p><strong>Sem <code>box-sizing: border-box</code></strong>:</p>
+            <pre><code class="language-css">.box {
+    width: 200px;
+    padding: 20px;
+    border: 5px solid black;
+}
+</code></pre>
+            <ul>
+                <li>Largura total: <code>200px (conteúdo) + 40px (padding) + 10px (borda) = 250px</code>.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Com <code>box-sizing: border-box</code></strong>:</p>
+            <pre><code class="language-css">.box {
+    width: 200px;
+    padding: 20px;
+    border: 5px solid black;
+    box-sizing: border-box;
+}
+</code></pre>
+            <ul>
+                <li>Largura total: <code>200px</code> (já inclui padding e borda).</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h3 id="organizando-como-anotação-de-estudo"><strong>Organizando como Anotação de Estudo</strong></h3>
+    <p>Aqui está um resumo organizado para você consultar:</p>
+    <hr>
+    <h4 id="propriedade-css-box-sizing-border-box"><strong>Propriedade CSS: <code>box-sizing: border-box</code></strong>
+    </h4>
+    <p><strong>O que é?</strong></p>
+    <ul>
+        <li>Propriedade que controla como a largura e a altura de um elemento são calculadas.</li>
+    </ul>
+    <p><strong>Valores</strong></p>
+    <ul>
+        <li><code>content-box</code>: Padding e borda são adicionados ao tamanho do conteúdo (comportamento padrão).
+        </li>
+        <li><code>border-box</code>: Padding e borda são incluídos no tamanho definido.</li>
+    </ul>
+    <p><strong>Por que usar?</strong></p>
+    <ul>
+        <li>Torna os layouts mais previsíveis e fáceis de controlar.</li>
+        <li>Evita cálculos manuais para ajustar o tamanho dos elementos.</li>
+        <li>Garante consistência no dimensionamento.</li>
+    </ul>
+    <p><strong>Como aplicar?</strong></p>
+    <ul>
+        <li>Use a regra globalmente:
+            <pre><code class="language-css">*, *:before, *:after {
+    box-sizing: border-box;
+}
+</code></pre>
+        </li>
+    </ul>
+    <p><strong>Exemplo prático</strong></p>
+    <ul>
+        <li>
+            <p>Sem <code>box-sizing: border-box</code>:</p>
+            <pre><code class="language-css">.box {
+    width: 200px;
+    padding: 20px;
+    border: 5px solid black;
+}
+</code></pre>
+            <ul>
+                <li>Largura total: 250px.</li>
+            </ul>
+        </li>
+        <li>
+            <p>Com <code>box-sizing: border-box</code>:</p>
+            <pre><code class="language-css">.box {
+    width: 200px;
+    padding: 20px;
+    border: 5px solid black;
+    box-sizing: border-box;
+}
+</code></pre>
+            <ul>
+                <li>Largura total: 200px.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="próximos-passos"><strong>Próximos Passos</strong></h4>
+    <ol>
+        <li><strong>Aplique globalmente</strong>: Adicione a regra <code>box-sizing: border-box</code> no início do seu
+            CSS.</li>
+        <li><strong>Teste em seus layouts</strong>: Verifique como os elementos se comportam com e sem a propriedade.
+        </li>
+        <li><strong>Economize tempo</strong>: Pare de calcular manualmente o tamanho dos elementos!</li>
+    </ol>
+    <hr>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+        <section>
+            <h2>1. Modelo de Caixa CSS (CSS Box Model)</h2>
+            <p>Anotações referente a <a href="curso-em-video-aulas-em-pdf/16.pdf" target="_blank" rel="noopener noreferrer">aula 16</a>.</p>
+            <p>
+              O modelo de caixa é a base do layout na web. Todo elemento HTML é uma caixa composta por:
+              <strong>conteúdo</strong>, <strong>padding</strong>, <strong>border</strong>, e <strong>margin</strong>.
+              Importante para controlar espaçamento, alinhamento e dimensionamento de elementos.
+            </p>
+          </section>
+        
+          <section>
+            <h2>2. Caixas Aninhadas</h2>
+            <p>
+              Caixas podem ser colocadas dentro de outras, criando hierarquias. Isso define relações entre elementos pais e filhos,
+              afetando layout (ex.: um <code>&lt;div&gt;</code> contendo vários <code>&lt;div&gt;</code> filhos).
+            </p>
+          </section>
+        
+          <section>
+            <h2>3. Anatomia da Caixa CSS</h2>
+            <div>
+              <h3>(a) Padding</h3>
+              <p>Espaço interno entre o conteúdo e a borda. Controlado por <code>padding-top</code>, <code>padding-right</code>, etc.</p>
+            </div>
+            <div>
+              <h3>(b) Margin</h3>
+              <p>Espaço externo além da borda. Separa elementos. Controlado por <code>margin-top</code>, <code>margin-right</code>, etc.</p>
+            </div>
+            <div>
+              <h3>(c) Height & (d) Width</h3>
+              <p>Definem altura e largura do <strong>conteúdo</strong>. Valores como <code>px</code>, <code>%</code>, ou <code>auto</code>.</p>
+            </div>
+            <div>
+              <h3>(e) Border</h3>
+              <p>Linha ao redor do padding e conteúdo. Propriedades: <code>border-width</code>, <code>border-style</code>, <code>border-color</code>.</p>
+            </div>
+            <div>
+              <h3>(f) Outline</h3>
+              <p>Semelhante à borda, mas não ocupa espaço no layout (não afeta o modelo de caixa).</p>
+            </div>
+          </section>
+        
+          <section>
+            <h2>4. Tipos de Caixas CSS</h2>
+            <div>
+              <h3>(a) Block-level</h3>
+              <p>Ocupam toda a largura do container (ex.: <code>&lt;div&gt;</code>, <code>&lt;h1&gt;</code>).</p>
+            </div>
+            <div>
+              <h3>(b) Inline-level</h3>
+              <p>Ocupam apenas espaço necessário (ex.: <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>).</p>
+            </div>
+            <div>
+              <h3>(c) Inline-block</h3>
+              <p>Mistura: ocupa espaço necessário, mas permite definir width/height (ex.: <code>display: inline-block</code>).</p>
+            </div>
+          </section>
+        
+          <section>
+            <h2>5. Centralização com margin: auto</h2>
+            <p>
+              Funciona para caixas block-level com <code>width</code> definido. Exemplo:
+              <pre><code>
+        width: 300px; 
+        margin: auto; 
+        background-color: burlywood;
+            </code></pre>
+            </p>
+          </section>
+        
+          <section>
+            <h2>6. Shorthand Properties</h2>
+            <div>
+              <h3>(a) Border</h3>
+              <p><code>border: 2px solid #000;</code> (ordem: width, style, color).</p>
+            </div>
+            <div>
+              <h3>(b) Padding</h3>
+              <p><code>padding: 10px 5px 15px 5px;</code> (sentido horário: top, right, bottom, left).</p>
+            </div>
+            <div>
+              <h3>(c) Margin</h3>
+              <p><code>margin: 20px 10px;</code> (vertical horizontal).</p>
+            </div>
+            <div>
+              <h3>(d) Outline</h3>
+              <p><code>outline: 1px dashed red;</code> (similar à border, mas sem afetar layout).</p>
+            </div>
+          </section>
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./cursohtml.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

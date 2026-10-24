@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+        <h2 id="-performance-api-medindo-o-tempo-de-execu-o-com-precis-o-">🧭 <strong>Performance API – Medindo o Tempo
+                de Execução com Precisão</strong></h2>
+        <p>A <strong>Performance API</strong> é uma ferramenta nativa do navegador projetada para medir <strong>tempos
+                de execução de forma precisa</strong>, ideal para otimizar o desempenho de scripts, animações e
+            renderizações.
+            Diferente de <code>console.time()</code>, ela oferece medições de <strong>alta resolução</strong>,
+            <strong>não bloqueia a thread principal</strong> e integra-se diretamente às ferramentas de desenvolvimento.
+        </p>
+        <hr>
+        <h3 id="-exemplo-b-sico-">⚙️ <strong>Exemplo básico</strong></h3>
+        <pre><code class="lang-javascript"><span class="hljs-selector-tag">performance</span><span class="hljs-selector-class">.mark</span>(<span class="hljs-string">'start'</span>);
+
+<span class="hljs-comment">// Código a ser medido</span>
+<span class="hljs-selector-tag">for</span> (let i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1</span>_000_000; i++) {
+  <span class="hljs-selector-tag">Math</span><span class="hljs-selector-class">.sqrt</span>(i);
+}
+
+<span class="hljs-selector-tag">performance</span><span class="hljs-selector-class">.mark</span>(<span class="hljs-string">'end'</span>);
+<span class="hljs-selector-tag">performance</span><span class="hljs-selector-class">.measure</span>(<span class="hljs-string">'render'</span>, <span class="hljs-string">'start'</span>, <span class="hljs-string">'end'</span>);
+
+<span class="hljs-comment">// Exibindo resultado</span>
+<span class="hljs-selector-tag">console</span><span class="hljs-selector-class">.log</span>(performance.getEntriesByName(<span class="hljs-string">'render'</span>)[<span class="hljs-number">0</span>].duration);
+</code></pre>
+        <p>🧩 <strong>Explicação passo a passo:</strong></p>
+        <ol>
+            <li><code>performance.mark(&#39;start&#39;)</code> → cria uma marca temporal chamada “start”.</li>
+            <li>Executa o código que você quer medir.</li>
+            <li><code>performance.mark(&#39;end&#39;)</code> → cria uma segunda marca.</li>
+            <li><code>performance.measure(&#39;render&#39;, &#39;start&#39;, &#39;end&#39;)</code> → calcula a diferença
+                entre as marcas.</li>
+            <li><code>performance.getEntriesByName(&#39;render&#39;)</code> → retorna informações detalhadas, incluindo
+                a duração em milissegundos (com precisão de microssegundos).</li>
+        </ol>
+        <hr>
+        <h3 id="-sa-da-esperada-">🔍 <strong>Saída esperada</strong></h3>
+        <pre><code class="lang-js"><span class="hljs-class">PerformanceMeasure </span>{
+<span class="hljs-symbol">  name:</span> <span class="hljs-string">"render"</span>,
+<span class="hljs-symbol">  entryType:</span> <span class="hljs-string">"measure"</span>,
+<span class="hljs-symbol">  startTime:</span> <span class="hljs-number">125.23</span>,
+<span class="hljs-symbol">  duration:</span> <span class="hljs-number">4.87</span>
+}
+</code></pre>
+        <p>A propriedade <strong><code>duration</code></strong> indica o tempo total de execução do código medido.</p>
+        <hr>
+        <h3 id="-visualizando-nas-devtools-">📊 <strong>Visualizando nas DevTools</strong></h3>
+        <p>Os resultados também podem ser vistos em
+            <strong>DevTools → Performance → Timings</strong>
+            (cada marca e medição aparece no registro da linha do tempo).
+        </p>
+        <hr>
+        <h3 id="-por-que-usar-a-performance-api-">⚡ <strong>Por que usar a Performance API</strong></h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Característica</th>
+                    <th><code>console.time()</code></th>
+                    <th><code>performance.mark()</code></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Precisão</td>
+                    <td>Milissegundos</td>
+                    <td>Submilissegundo</td>
+                </tr>
+                <tr>
+                    <td>Bloqueia thread principal</td>
+                    <td>Sim</td>
+                    <td>Não</td>
+                </tr>
+                <tr>
+                    <td>Visualização no DevTools</td>
+                    <td>Não</td>
+                    <td>Sim</td>
+                </tr>
+                <tr>
+                    <td>Funciona com async code</td>
+                    <td>Difícil</td>
+                    <td>Sim</td>
+                </tr>
+                <tr>
+                    <td>Integração com observadores</td>
+                    <td>Não</td>
+                    <td>Sim (<code>PerformanceObserver</code>)</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h3 id="-limpeza-e-boas-pr-ticas-">🧠 <strong>Limpeza e boas práticas</strong></h3>
+        <p>Depois de medir, é uma boa prática <strong>limpar as marcas</strong> para não acumular dados desnecessários:
+        </p>
+        <pre><code class="lang-javascript">performance.clearMarks()<span class="hljs-comment">;</span>
+performance.clearMeasures()<span class="hljs-comment">;</span>
+</code></pre>
+        <hr>
+        <h3 id="-monitoramento-em-tempo-real-">🔭 <strong>Monitoramento em tempo real</strong></h3>
+        <p>Com <code>PerformanceObserver</code>, você pode observar as medições automaticamente:</p>
+        <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> observer = <span class="hljs-keyword">new</span> PerformanceObserver(<span class="hljs-function">(<span class="hljs-params">list</span>) =&gt;</span> {
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> entry <span class="hljs-keyword">of</span> list.getEntries()) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${entry.name}</span>: <span class="hljs-subst">${entry.duration.toFixed(<span class="hljs-number">2</span>)}</span>ms`</span>);
+  }
+});
+
+observer.observe({ <span class="hljs-attr">entryTypes</span>: [<span class="hljs-string">'measure'</span>] });
+</code></pre>
+        <p>Agora, toda nova medição será registrada <strong>em tempo real</strong>.</p>
+        <hr>
+        <h3 id="-dica-avan-ada-">💡 <strong>Dica avançada</strong></h3>
+        <p>Você pode criar funções utilitárias para medir facilmente qualquer bloco de código:</p>
+        <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">medirTempo</span>(<span class="hljs-params">nome, fn</span>) </span>{
+  performance.mark(<span class="hljs-string">`<span class="hljs-subst">${nome}</span>-start`</span>);
+  fn();
+  performance.mark(<span class="hljs-string">`<span class="hljs-subst">${nome}</span>-end`</span>);
+  performance.measure(nome, <span class="hljs-string">`<span class="hljs-subst">${nome}</span>-start`</span>, <span class="hljs-string">`<span class="hljs-subst">${nome}</span>-end`</span>);
+  <span class="hljs-keyword">const</span> tempo = performance.getEntriesByName(nome).pop().duration;
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${nome}</span>: <span class="hljs-subst">${tempo.toFixed(<span class="hljs-number">3</span>)}</span>ms`</span>);
+  performance.clearMarks();
+  performance.clearMeasures();
+}
+</code></pre>
+        <p><strong>Uso:</strong></p>
+        <pre><code class="lang-js">medirTempo(<span class="hljs-string">'loop pesado'</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-keyword">for</span> (let i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1</span>_000_000; i++) Math.pow(i, <span class="hljs-number">2</span>);
+});
+</code></pre>
+        <hr>
+        <h3 id="-resumo-">🚀 <strong>Resumo</strong></h3>
+        <p>✅ Alta precisão (submilissegundo)
+            <br>
+            ✅ Integração com DevTools
+            <br>
+            ✅ Ideal para medir renderizações, loops, cálculos e eventos assíncronos
+            <br>
+            ✅ Recomendado para aplicações que exigem performance real-time</p>
+        <hr>
+        <p>🔗 <strong>Documentação oficial:</strong> <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Performance_API" target="_blank"
+                rel="noopener noreferrer">MDN – Performance API</a></p>
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

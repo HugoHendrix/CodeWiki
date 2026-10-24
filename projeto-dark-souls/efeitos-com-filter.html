@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+
+        <h1 id="-documenta-o-efeitos-visuais-com-filter-em-css">📄 Documentação: Efeitos Visuais com <code>filter</code>
+            em CSS</h1>
+        <h2 id="-objetivo">🎯 Objetivo</h2>
+        <p>Aplicar efeitos visuais diretamente em elementos HTML (como imagens, vídeos ou blocos) usando a propriedade
+            <code>filter</code>. Ideal para criar atmosferas estilizadas, destacar elementos ou simular condições
+            ambientais (como névoa, veneno, luz solar etc.).</p>
+        <hr>
+        <h2 id="-sintaxe-b-sica">🧪 Sintaxe Básica</h2>
+        <pre><code class="lang-css"><span class="hljs-selector-tag">selector</span> {
+  <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">efeito</span>(valor);
+}
+</code></pre>
+        <p>Você pode aplicar um único efeito ou combinar múltiplos:</p>
+        <pre><code class="lang-css"><span class="hljs-selector-tag">img</span> {
+  <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">grayscale</span>(100%) <span class="hljs-built_in">brightness</span>(80%) <span class="hljs-built_in">blur</span>(2px);
+}
+</code></pre>
+        <hr>
+        <h2 id="-principais-tipos-de-filter-">🎨 Principais Tipos de <code>filter</code></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Efeito</th>
+                    <th>Descrição</th>
+                    <th>Exemplo CSS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>grayscale()</code></td>
+                    <td>Converte para preto e branco (escala de cinza)</td>
+                    <td><code>filter: grayscale(100%)</code></td>
+                </tr>
+                <tr>
+                    <td><code>blur()</code></td>
+                    <td>Aplica desfoque, útil para simular névoa ou profundidade</td>
+                    <td><code>filter: blur(4px)</code></td>
+                </tr>
+                <tr>
+                    <td><code>brightness()</code></td>
+                    <td>Ajusta o brilho (valores &gt;100% aumentam, &lt;100% escurecem)</td>
+                    <td><code>filter: brightness(80%)</code></td>
+                </tr>
+                <tr>
+                    <td><code>contrast()</code></td>
+                    <td>Aumenta ou reduz o contraste</td>
+                    <td><code>filter: contrast(150%)</code></td>
+                </tr>
+                <tr>
+                    <td><code>opacity()</code></td>
+                    <td>Define a opacidade (0 = invisível, 1 = totalmente visível)</td>
+                    <td><code>filter: opacity(0.5)</code></td>
+                </tr>
+                <tr>
+                    <td><code>sepia()</code></td>
+                    <td>Dá um tom envelhecido, como fotos antigas</td>
+                    <td><code>filter: sepia(100%)</code></td>
+                </tr>
+                <tr>
+                    <td><code>saturate()</code></td>
+                    <td>Intensifica ou reduz a saturação das cores</td>
+                    <td><code>filter: saturate(200%)</code></td>
+                </tr>
+                <tr>
+                    <td><code>invert()</code></td>
+                    <td>Inverte as cores (negativo fotográfico)</td>
+                    <td><code>filter: invert(100%)</code></td>
+                </tr>
+                <tr>
+                    <td><code>drop-shadow()</code></td>
+                    <td>Adiciona sombra ao elemento (semelhante ao <code>box-shadow</code>, mas mais flexível)</td>
+                    <td><code>filter: drop-shadow(2px 4px 6px black)</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h2 id="-exemplos-pr-ticos">🧱 Exemplos Práticos</h2>
+        <h3 id="-imagem-com-estilo-sombrio">🔥 Imagem com estilo sombrio</h3>
+        <pre><code class="lang-css"><span class="hljs-selector-tag">img</span><span class="hljs-selector-class">.dark</span> {
+  <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">grayscale</span>(100%) <span class="hljs-built_in">brightness</span>(70%) <span class="hljs-built_in">contrast</span>(120%);
+}
+</code></pre>
+        <h3 id="-simula-o-de-n-voa-ou-veneno">🌫️ Simulação de névoa ou veneno</h3>
+        <pre><code class="lang-css"><span class="hljs-selector-tag">img</span><span class="hljs-selector-class">.blurred</span> {
+  <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">blur</span>(3px) <span class="hljs-built_in">opacity</span>(0.8);
+}
+</code></pre>
+        <h3 id="-estilo-envelhecido-para-arte-conceitual">🧙 Estilo envelhecido para arte conceitual</h3>
+        <pre><code class="lang-css"><span class="hljs-selector-tag">img</span><span class="hljs-selector-class">.sepia-style</span> {
+  <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">sepia</span>(100%) <span class="hljs-built_in">contrast</span>(110%) <span class="hljs-built_in">brightness</span>(90%);
+}
+</code></pre>
+        <hr>
+        <h2 id="-dicas-avan-adas">🧠 Dicas Avançadas</h2>
+        <ul>
+            <li>Combine <code>filter</code> com <code>transition</code> para criar efeitos interativos:</li>
+        </ul>
+        <pre><code class="lang-css"><span class="hljs-selector-tag">img</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">filter</span>: <span class="hljs-built_in">grayscale</span>(0%) <span class="hljs-built_in">brightness</span>(100%);
+  <span class="hljs-attribute">transition</span>: filter <span class="hljs-number">0.5s</span> ease;
+}
+</code></pre>
+        <ul>
+            <li>Use <code>filter</code> em elementos <code>div</code>, <code>section</code> ou <code>video</code> para
+                estilizar blocos inteiros.</li>
+            <li>Pode ser aplicado em pseudo-elementos (<code>::before</code>, <code>::after</code>) para efeitos
+                decorativos.</li>
+        </ul>
+        <hr>
+
+
+    </article>
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

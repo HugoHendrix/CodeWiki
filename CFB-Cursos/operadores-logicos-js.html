@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+        <h1 id="operadores-l-gicos-em-javascript">Operadores Lógicos em JavaScript</h1>
+        <p>Os operadores lógicos permitem combinar expressões booleanas (<code>true</code> ou <code>false</code>) para
+            formar condições mais complexas.
+            O resultado também é sempre um valor <strong>booleano</strong>.</p>
+        <hr>
+        <h2 id="principais-operadores">Principais Operadores</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Operador</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Exemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&amp;&amp;</code></td>
+                    <td>AND (E)</td>
+                    <td>Retorna <code>true</code> se <strong>todas</strong> as condições forem verdadeiras</td>
+                    <td><code>(5 &gt; 2 &amp;&amp; 10 &gt; 5)</code> → <code>true</code></td>
+                </tr>
+                <tr>
+                    <td><code>||</code></td>
+                    <td>OR (OU)</td>
+                    <td>Retorna <code>true</code> se <strong>pelo menos uma</strong> condição for verdadeira</td>
+                    <td>(5 &gt; 10) \ (10 &gt; 5) → <code>true</code></td>
+                </tr>
+                <tr>
+                    <td><code>!</code></td>
+                    <td>NOT (NÃO)</td>
+                    <td>Inverte o valor lógico da expressão</td>
+                    <td><code>!(5 &gt; 2)</code> → <code>false</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h2 id="tabelas-verdade">Tabelas Verdade</h2>
+        <h3 id="operador-and-">Operador AND (<code>&amp;&amp;</code>)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>A &amp;&amp; B</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>true</td>
+                    <td>true</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>true</td>
+                    <td>false</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>false</td>
+                    <td>true</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>false</td>
+                    <td>false</td>
+                    <td>false</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h3 id="operador-or-">Operador OR (<code>||</code>)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>A</th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>true</td>
+                    <td>true</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>true</td>
+                    <td>false</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>false</td>
+                    <td>true</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>false</td>
+                    <td>false</td>
+                    <td>false</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h3 id="operador-not-">Operador NOT (<code>!</code>)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>A</th>
+                    <th>!A</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>true</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>false</td>
+                    <td>true</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h2 id="exemplos-em-c-digo">Exemplos em Código</h2>
+        <pre><code class="lang-javascript"><span class="hljs-keyword">let</span> a = <span class="hljs-literal">true</span>;
+<span class="hljs-keyword">let</span> b = <span class="hljs-literal">false</span>;
+
+<span class="hljs-built_in">console</span>.log(a &amp;&amp; b); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(a || b); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(!a);     <span class="hljs-comment">// false</span>
+</code></pre>
+        <p>Outro exemplo prático:</p>
+        <pre><code class="lang-javascript"><span class="hljs-keyword">let</span> idade = <span class="hljs-number">20</span>;
+<span class="hljs-keyword">let</span> temCarteira = <span class="hljs-literal">true</span>;
+
+<span class="hljs-keyword">if</span> (idade &gt;= <span class="hljs-number">18</span> &amp;&amp; temCarteira) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Pode dirigir"</span>);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Não pode dirigir"</span>);
+}
+</code></pre>
+        <hr>
+        <h2 id="resumindo">Resumindo</h2>
+        <ul>
+            <li><code>&amp;&amp;</code> → Só retorna <code>true</code> se <strong>todos forem verdadeiros</strong>.</li>
+            <li><code>||</code> → Retorna <code>true</code> se <strong>pelo menos um for verdadeiro</strong>.</li>
+            <li><code>!</code> → Inverte o valor lógico.</li>
+        </ul>
+
+        <img src="./tabela-da-verdade.png" width="50%" alt="tabela da verdade operadores logicos">
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

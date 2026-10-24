@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article class="custom-functions-guide">
+        <header>
+            <h1>Funções Personalizadas em CSS: Expandindo as Possibilidades</h1>
+            <p class="article-meta">
+                Fonte: <a href="https://www.oddbird.net/2025/04/11/custom-functions/?ref=dailydev" target="_blank" rel="noopener noreferrer">OddBird</a> 
+            </p>
+        </header>
+    
+        <section>
+            <h2>1. Introdução às Funções Personalizadas</h2>
+            <p>As funções personalizadas permitem estender o CSS com lógica própria, criando:</p>
+            <ul>
+                <li>Cálculos complexos reutilizáveis</li>
+                <li>Manipulação avançada de valores</li>
+                <li>Lógica condicional em propriedades CSS</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>2. Sintaxe Básica</h2>
+            <pre><code>@function --minha-funcao($param1, $param2) {
+        @return calc($param1 * $param2 / 100%);
+    }
+    
+    .elemento {
+        width: --minha-funcao(300px, 50);
+    }</code></pre>
+        </section>
+    
+        <section>
+            <h2>3. Casos de Uso Comuns</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aplicação</th>
+                        <th>Exemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cálculos responsivos</td>
+                        <td><code>font-size: --responsive-size(viewport-width);</code></td>
+                    </tr>
+                    <tr>
+                        <td>Manipulação de cores</td>
+                        <td><code>background: --contrast-color(#fff);</code></td>
+                    </tr>
+                    <tr>
+                        <td>Layouts complexos</td>
+                        <td><code>grid-template: --adaptive-grid(5, 200px);</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    
+        <section>
+            <h2>4. Comparação: Funções Nativas vs Personalizadas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Nativas (ex: calc())</th>
+                        <th>Personalizadas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Reutilização</td>
+                        <td>Limitada</td>
+                        <td>Alta</td>
+                    </tr>
+                    <tr>
+                        <td>Complexidade</td>
+                        <td>Estática</td>
+                        <td>Dinâmica</td>
+                    </tr>
+                    <tr>
+                        <td>Manutenção</td>
+                        <td>Direta</td>
+                        <td>Centralizada</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    
+        <section>
+            <h2>5. Exemplo Prático: Função de Contraste</h2>
+            <pre><code>@function --auto-contrast($base-color) {
+        @if (lightness($base-color) > 50%) {
+            @return #000;
+        } @else {
+            @return #fff;
+        }
+    }
+    
+    .card {
+        background: var(--cor-fundo);
+        color: --auto-contrast(var(--cor-fundo));
+    }</code></pre>
+        </section>
+    
+        <section>
+            <h2>6. Melhores Práticas</h2>
+            <div class="warning">
+                <strong>Atenção:</strong> Funções complexas podem impactar performance
+            </div>
+            <ol>
+                <li>Prefira nomes descritivos</li>
+                <li>Documente suas funções</li>
+                <li>Teste em diferentes navegadores</li>
+                <li>Use fallbacks para compatibilidade</li>
+            </ol>
+        </section>
+    
+        <div class="references">
+            <h2>7. Referências</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions" target="_blank" rel="noopener noreferrer">MDN: Funções CSS</a></li>
+                <li><a href="https://www.w3.org/TR/css-values-5/#custom-functions" target="_blank" rel="noopener noreferrer">Especificação CSS Values 5</a></li>                
+            </ul>
+        </div>
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

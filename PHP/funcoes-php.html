@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <article class="php-functions-guide">
+        <header>
+            <h1>As 100 Funções PHP Mais Utilizadas</h1>
+            <p class="article-meta">
+                Fonte: <a href="https://www.exakat.io/the-top-100-php-functions-in-2024/?ref=dailydev" target="_blank"
+                    rel="noopener noreferrer">Exakat</a>
+            </p>
+        </header>
+
+        <section>
+            <h2>1. Introdução</h2>
+            <p>Análise das funções PHP mais utilizadas em projetos modernos, baseada em dados reais de código em
+                produção.</p>
+        </section>
+
+        <section>
+            <h2>2. Top 10 Funções Essenciais</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Posição</th>
+                        <th>Função</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><code>count()</code></td>
+                        <td>Conta elementos em um array</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><code>strlen()</code></td>
+                        <td>Retorna o comprimento de uma string</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><code>isset()</code></td>
+                        <td>Verifica se variável está definida</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><code>empty()</code></td>
+                        <td>Verifica se variável está vazia</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><code>array_key_exists()</code></td>
+                        <td>Verifica chave em array</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><code>in_array()</code></td>
+                        <td>Verifica valor em array</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><code>explode()</code></td>
+                        <td>Divide string em array</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><code>implode()</code></td>
+                        <td>Junta array em string</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><code>str_replace()</code></td>
+                        <td>Substitui texto em string</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><code>is_array()</code></td>
+                        <td>Verifica tipo array</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>3. Categorias Principais</h2>
+            <h3>3.1 Manipulação de Strings</h3>
+            <ul>
+                <li><code>substr()</code> - Extrai parte da string</li>
+                <li><code>trim()</code> - Remove espaços em branco</li>
+                <li><code>strtolower()</code> - Converte para minúsculas</li>
+            </ul>
+
+            <h3>3.2 Trabalhando com Arrays</h3>
+            <ul>
+                <li><code>array_map()</code> - Aplica função a elementos</li>
+                <li><code>array_filter()</code> - Filtra elementos</li>
+                <li><code>array_merge()</code> - Combina arrays</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Exemplos Práticos</h2>
+            <pre><code>// Validação de dados
+    if (!empty($_POST['email']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        // Processar formulário
+    }
+    
+    // Manipulação de array
+    $numbers = [1, 2, 3];
+    $squared = array_map(fn($n) => $n ** 2, $numbers);</code></pre>
+        </section>
+
+        <section>
+            <h2>5. Funções de Segurança</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Função</th>
+                        <th>Uso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>htmlspecialchars()</code></td>
+                        <td>Prevenção XSS</td>
+                    </tr>
+                    <tr>
+                        <td><code>password_hash()</code></td>
+                        <td>Criptografia de senhas</td>
+                    </tr>
+                    <tr>
+                        <td><code>mysqli_real_escape_string()</code></td>
+                        <td>Segurança em SQL</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>6. Lista Completa das 100 Funções</h2>
+            
+            <h3>Manipulação de Strings</h3>
+            <ul>
+                <li><code>strlen()</code> - Retorna o comprimento de uma string</li>
+                <li><code>substr()</code> - Extrai parte de uma string</li>
+                <li><code>str_replace()</code> - Substitui texto em uma string</li>
+                <li><code>trim()</code> - Remove espaços e caracteres especiais do início/fim</li>
+                <li><code>strpos()</code> - Encontra a posição da primeira ocorrência de um texto</li>
+                <li><code>strtolower()</code> - Converte para minúsculas</li>
+                <li><code>strtoupper()</code> - Converte para maiúsculas</li>
+                <li><code>explode()</code> - Divide string em array usando delimitador</li>
+                <li><code>implode()</code> - Junta elementos de array em string</li>
+                <li><code>htmlspecialchars()</code> - Converte caracteres especiais em entidades HTML</li>
+                <li><code>sprintf()</code> - Formata string com placeholders</li>
+                <li><code>preg_match()</code> - Executa expressão regular</li>
+                <li><code>urlencode()</code> - Codifica string para URL</li>
+                <li><code>json_encode()</code> - Converte dados para JSON</li>
+                <li><code>json_decode()</code> - Converte JSON para dados PHP</li>
+            </ul>
+        
+            <h3>Arrays</h3>
+            <ul>
+                <li><code>count()</code> - Conta elementos do array</li>
+                <li><code>array_key_exists()</code> - Verifica se chave existe</li>
+                <li><code>in_array()</code> - Verifica se valor existe</li>
+                <li><code>array_map()</code> - Aplica função a cada elemento</li>
+                <li><code>array_filter()</code> - Filtra elementos usando callback</li>
+                <li><code>array_merge()</code> - Combina arrays</li>
+                <li><code>array_push()</code> - Adiciona elementos no final</li>
+                <li><code>array_pop()</code> - Remove último elemento</li>
+                <li><code>array_keys()</code> - Retorna todas as chaves do array</li>
+                <li><code>array_values()</code> - Retorna todos os valores do array</li>
+                <li><code>array_reverse()</code> - Inverte ordem dos elementos</li>
+                <li><code>array_unique()</code> - Remove valores duplicados</li>
+            </ul>
+        
+            <h3>Validação e Tipo</h3>
+            <ul>
+                <li><code>isset()</code> - Verifica se variável existe</li>
+                <li><code>empty()</code> - Verifica se variável está vazia</li>
+                <li><code>is_array()</code> - Verifica se é array</li>
+                <li><code>is_string()</code> - Verifica se é string</li>
+                <li><code>is_numeric()</code> - Verifica se é número</li>
+                <li><code>filter_var()</code> - Filtra/valida variável</li>
+                <li><code>gettype()</code> - Retorna o tipo da variável</li>
+            </ul>
+        
+            <h3>Datas e Horas</h3>
+            <ul>
+                <li><code>date()</code> - Formata data/hora local</li>
+                <li><code>time()</code> - Retorna timestamp atual</li>
+                <li><code>strtotime()</code> - Converte string para timestamp</li>
+                <li><code>date_diff()</code> - Calcula diferença entre datas</li>
+                <li><code>gmdate()</code> - Formata data/hora GMT</li>
+            </ul>
+        
+            <h3>Sistema de Arquivos</h3>
+            <ul>
+                <li><code>file_get_contents()</code> - Lê arquivo para string</li>
+                <li><code>file_put_contents()</code> - Escreve em arquivo</li>
+                <li><code>fopen()</code> - Abre arquivo ou URL</li>
+                <li><code>fclose()</code> - Fecha ponteiro de arquivo</li>
+                <li><code>unlink()</code> - Apaga arquivo</li>
+                <li><code>is_dir()</code> - Verifica se é diretório</li>
+                <li><code>mkdir()</code> - Cria diretório</li>
+            </ul>
+        
+            <h3>Banco de Dados</h3>
+            <ul>
+                <li><code>mysqli_connect()</code> - Conecta ao MySQL</li>
+                <li><code>mysqli_query()</code> - Executa query MySQL</li>
+                <li><code>mysqli_fetch_assoc()</code> - Retorna linha como array associativo</li>
+                <li><code>pg_query()</code> - Executa query PostgreSQL</li>
+                <li><code>PDO::prepare()</code> - Prepara statement SQL (PDO)</li>
+            </ul>
+        
+            <h3>Segurança</h3>
+            <ul>
+                <li><code>password_hash()</code> - Cria hash de senha</li>
+                <li><code>password_verify()</code> - Verifica senha contra hash</li>
+                <li><code>openssl_encrypt()</code> - Criptografia com OpenSSL</li>
+                <li><code>hash()</code> - Gera hash de string</li>
+            </ul>
+        
+            <h3>Funções Modernas (PHP 7.4+)</h3>
+            <ul>
+                <li><code>str_contains()</code> - Verifica se string contém substring (PHP 8+)</li>
+                <li><code>array_filter() com arrow functions</code> - Sintaxe simplificada para callbacks</li>
+                <li><code>match</code> - Expressão de correspondência (similar a switch melhorado)</li>
+                <li><code>null coalescing operator (??)</code> - Atalho para isset()/ternário</li>
+            </ul>
+        
+            <h3>Outras Essenciais</h3>
+            <ul>
+                <li><code>error_reporting()</code> - Define nível de reporte de erros</li>
+                <li><code>header()</code> - Envia cabeçalho HTTP</li>
+                <li><code>session_start()</code> - Inicia sessão</li>
+                <li><code>setcookie()</code> - Define cookie</li>
+                <li><code>function_exists()</code> - Verifica se função existe</li>
+                <li><code>call_user_func()</code> - Chama função dinamicamente</li>
+                <li><code>get_class()</code> - Retorna nome da classe de um objeto</li>
+                <li><code>method_exists()</code> - Verifica se método existe</li>
+            </ul>
+        
+            <h3>Funções Adicionais</h3>
+            <ul>
+                <li><code>round()</code> - Arredonda número</li>
+                <li><code>rand()</code> - Gera número aleatório</li>
+                <li><code>mt_rand()</code> - Gera número aleatório mais seguro</li>
+                <li><code>min()</code> - Retorna menor valor</li>
+                <li><code>max()</code> - Retorna maior valor</li>
+                <li><code>abs()</code> - Valor absoluto</li>
+                <li><code>floor()</code> - Arredonda para baixo</li>
+                <li><code>ceil()</code> - Arredonda para cima</li>
+                <li><code>number_format()</code> - Formata número</li>
+                <li><code>base64_encode()</code> - Codifica dados em Base64</li>
+                <li><code>base64_decode()</code> - Decodifica Base64</li>
+                <li><code>serialize()</code> - Converte valor em string armazenável</li>
+                <li><code>unserialize()</code> - Recupera valor serializado</li>
+                <li><code>getenv()</code> - Obtém variável de ambiente</li>
+                <li><code>putenv()</code> - Define variável de ambiente</li>
+                <li><code>gethostname()</code> - Obtém nome do host</li>
+                <li><code>phpinfo()</code> - Exibe configuração do PHP</li>
+                <li><code>debug_backtrace()</code> - Gera rastreamento de execução</li>
+                <li><code>class_exists()</code> - Verifica se classe existe</li>
+                <li><code>interface_exists()</code> - Verifica se interface existe</li>
+                <li><code>trait_exists()</code> - Verifica se trait existe</li>
+                <li><code>property_exists()</code> - Verifica se propriedade existe</li>
+            </ul>
+        </section>
+    
+
+        <div class="references">
+            <h2>7. Referências</h2>
+            <ul>
+                <li><a href="https://www.php.net/manual/en/indexes.functions.php" target="_blank"
+                        rel="noopener noreferrer">Documentação Oficial PHP</a></li>
+                <li><a href="https://www.exakat.io/" target="_blank" rel="noopener noreferrer">Relatório Completo
+                        Exakat</a></li>
+            </ul>
+        </div>
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

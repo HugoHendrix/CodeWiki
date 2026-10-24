@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <article>
+
+        <h2 id="importando-fontes-no-css-import-vs-link-">Importando Fontes no CSS: <code>@import</code> vs.
+            <code>&lt;link&gt;</code></h2>
+        <p>Ao trabalhar com fontes externas, como as do Google Fonts, você tem principalmente duas abordagens para
+            incluí-las em seu projeto: a regra <code>@import</code> dentro do CSS ou a tag <code>&lt;link&gt;</code> no
+            HTML. Embora ambas funcionem, uma é geralmente <strong>preferível</strong> por razões de performance e boas
+            práticas.</p>
+        <hr>
+        <h3 id="a-op-o-style-import-url-style-">A Opção <code>&lt;style&gt;@import url(...);&lt;/style&gt;</code></h3>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+@<span class="hljs-keyword">import</span> url(<span class="hljs-string">'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=MedievalSharp&amp;family=Pirata+One&amp;family=UnifrakturCook:wght@700&amp;display=swap'</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+        <h4 id="como-funciona">Como Funciona</h4>
+        <p>Quando você usa <code>@import</code> dentro de uma tag <code>&lt;style&gt;</code> no seu HTML (ou diretamente
+            em um arquivo CSS), o navegador precisa <strong>primeiro carregar e analisar o arquivo HTML</strong>, depois
+            encontrar a tag <code>&lt;style&gt;</code>, então carregar e analisar o CSS dentro dela e, <strong>só
+                então</strong>, descobrir que precisa carregar o arquivo de fontes referenciado pelo
+            <code>@import</code>.</p>
+        <h4 id="vantagens">Vantagens</h4>
+        <ul>
+            <li><strong>Organização (aparente)</strong>: Para alguns, pode parecer mais organizado manter toda a
+                importação de estilos dentro do CSS.</li>
+        </ul>
+        <h4 id="desvantagens">Desvantagens</h4>
+        <ul>
+            <li><strong>Problemas de Performance (Cascata de Requisições)</strong>: Esta é a principal desvantagem. O
+                <code>@import</code> cria uma &quot;cascata&quot; de requisições. O navegador não pode começar a baixar
+                o arquivo de fontes até que o arquivo CSS que o contém seja totalmente baixado e analisado. Isso atrasa
+                a renderização da página, pois as fontes só estarão disponíveis mais tarde. Esse atraso é conhecido como
+                <strong>&quot;Flash of Unstyled Text&quot; (FOUT)</strong>, onde o texto é exibido com uma fonte padrão
+                antes que a fonte customizada seja carregada.</li>
+            <li><strong>Bloqueio de Renderização</strong>: Embora a importação da fonte em si não seja totalmente
+                bloqueante, o processo atrasado pode contribuir para um carregamento visual mais lento da página.</li>
+        </ul>
+        <hr>
+        <h3 id="a-op-o-link-no-html">A Opção <code>&lt;link&gt;</code> no HTML</h3>
+        <pre><code class="lang-html">&lt;<span class="hljs-keyword">link</span> rel=<span class="hljs-string">"preconnect"</span> href=<span class="hljs-string">"https://fonts.googleapis.com"</span>&gt;
+&lt;<span class="hljs-keyword">link</span> rel=<span class="hljs-string">"preconnect"</span> href=<span class="hljs-string">"https://fonts.gstatic.com"</span> crossorigin&gt;
+&lt;<span class="hljs-keyword">link</span> href=<span class="hljs-string">"https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=MedievalSharp&amp;family=Pirata+One&amp;family=UnifrakturCook:wght@700&amp;display=swap"</span> rel=<span class="hljs-string">"stylesheet"</span>&gt;
+</code></pre>
+        <h4 id="como-funciona">Como Funciona</h4>
+        <p>A tag <code>&lt;link&gt;</code> é colocada diretamente na seção <code>&lt;head&gt;</code> do seu documento
+            HTML. Quando o navegador encontra uma tag <code>&lt;link rel=&quot;stylesheet&quot;&gt;</code>, ele pode
+            iniciar o download do arquivo CSS (e, por extensão, as fontes dentro dele ou referenciadas por ele)
+            <strong>paralelamente</strong> ao parseamento do HTML.</p>
+        <p>Os atributos <code>rel=&quot;preconnect&quot;</code> e <code>crossorigin</code> são otimizações adicionais:
+        </p>
+        <ul>
+            <li><strong><code>rel=&quot;preconnect&quot;</code></strong>: Informa ao navegador que você pretende fazer
+                uma conexão com o domínio <code>fonts.googleapis.com</code> e <code>fonts.gstatic.com</code> (onde as
+                fontes e os arquivos CSS das fontes estão hospedados) o mais rápido possível. Isso economiza tempo, pois
+                a fase de &quot;handshake&quot; da conexão (DNS lookup, TCP handshake, TLS negotiation) pode começar
+                mais cedo.</li>
+            <li><strong><code>crossorigin</code></strong>: É necessário para requisições de fontes de domínios
+                diferentes devido às políticas de CORS (Cross-Origin Resource Sharing).</li>
+        </ul>
+        <h4 id="vantagens">Vantagens</h4>
+        <ul>
+            <li><strong>Melhor Performance (Carregamento Paralelo)</strong>: O navegador pode descobrir e iniciar o
+                download do arquivo de fontes (ou do CSS que aponta para elas) muito mais cedo no processo de
+                carregamento da página. Isso reduz o tempo de carregamento da fonte e o FOUT.</li>
+            <li><strong>Prioridade de Carregamento</strong>: O navegador pode priorizar o carregamento de recursos
+                críticos descobertos no <code>&lt;head&gt;</code>.</li>
+            <li><strong>Otimizações Adicionais</strong>: Permite o uso de <code>preconnect</code> para otimizar ainda
+                mais a conexão com o servidor de fontes.</li>
+            <li><strong>Padrão da Indústria</strong>: É a forma recomendada pela maioria dos fornecedores de fontes e
+                por especialistas em performance web.</li>
+        </ul>
+        <hr>
+        <h3 id="qual-alternativa-melhor-">Qual Alternativa é Melhor?</h3>
+        <p>A alternativa <strong><code>&lt;link&gt;</code> no HTML é definitivamente a melhor escolha</strong> para
+            importar fontes externas.</p>
+        <ul>
+            <li><strong>Performance:</strong> Proporciona um carregamento mais rápido das fontes, resultando em uma
+                melhor experiência do usuário e menor impacto no Core Web Vitals (métricas de performance do Google).
+            </li>
+            <li><strong>Otimização:</strong> Permite o uso de <code>preconnect</code> para otimizações de rede.</li>
+            <li><strong>Padrão:</strong> É a prática recomendada.</li>
+        </ul>
+        <p><strong>Em resumo:</strong> Sempre que possível, utilize a tag <code>&lt;link&gt;</code> na seção
+            <code>&lt;head&gt;</code> do seu documento HTML para importar fontes e outros arquivos CSS. Reserve o
+            <code>@import</code> apenas para casos muito específicos (como importar um pequeno arquivo CSS dentro de
+            outro arquivo CSS grande, embora mesmo assim <code>link</code> seja geralmente preferível para performance).
+        </p>
+
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./README.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

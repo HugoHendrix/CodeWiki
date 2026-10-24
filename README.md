@@ -16,7 +16,6 @@ O repositório está organizado da seguinte forma:
 - **[Snippets](#-snippets)**: Trechos de código úteis para reutilização.
 - **[Recursos para WEB](#-recursos-para-desenvolvimento-e-design)**: Links para documentações, ferramentas e outros recursos.
 - **[Curso em Video - Gustava Guanabara](#-curso-em-video)**: Anotações e PDF do Curso em Video.
-- **[Análise e Desenvolvimento de Sistemas](#-analise-e-desenvolvimento-de-sistemas---unifran)**: Anotações sobre a faculdade de ADS pela Unifran/Cruzeiro do Sul.
 
 ---
 
@@ -26,7 +25,7 @@ O repositório está organizado da seguinte forma:
 
 Dicas e Boas Práticas
 
-- [Anotação - Risco ao usar target_blank](Anotações/problemas-target-blank.md)
+- [Anotação - Risco ao usar target_blank](Anotações/problemas-target-blank.html)
 - [Como Adicionar Link para PDF no Seu Site](Anotações/link-pdf.md)
 - [Como Criar e Usar Snippets Personalizados no VS Code](Anotações/snippets-vscode.md)
 - [Otimizando Fontes da Web para Melhorar o Desempenho do Site](Anotações/fonts.md)
@@ -113,11 +112,10 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 
 ## 📌 Recursos para Desenvolvimento e Design
 
-- [Bibliotecas e Ícones](Recursos-Web/icones.md)
-- [Ilustrações e Design](Recursos-Web/ilustracoes-designs.md)
-- [Outros Recursos](Recursos-Web/outros.md)
-- [Recursos para WEB](Recursos-Web/recursos-web.md)
-- [Referências Técnicas](Recursos-Web/referencia-tecnica.md)
+- [Documentações](Recursos-Web/documentacao.html)
+- [Ferramenta de IP](Recursos-Web/ferramenta-ip.html)
+- [Gerador de Imagem com IA](Recursos-Web/gerador-imagem-ia.html)
+- [Ilustrações e Design](Recursos-Web/ilustracao-design.html)
 
 ---
 
@@ -126,28 +124,6 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 # 🖖 Curso em Video
 
 - [Curso de HTML e CSS](Curso-em-Video/README.md)
-
----
-
----
-
----
-
-# 🎓 Analise e Desenvolvimento de Sistemas - UNIFRAN
-
-### Jornada de Extensão
-
-- ✔ [Orientações para Atividade de Extensão](ADS-Unifran/Atividade-Extensao/atividade-extensao.md)
-- ✔ [ODS - A serviço da comunidade](ADS-Unifran/Atividade-Extensao/ods.md)
-- ✔ [PDF com orientações](ADS-Unifran/Atividade-Extensao/jornada-extensao.pdf)
-- ✔ [Projeto de Extensão](https://hugohendrix.github.io/estancia-alvorada/)
-
-### Disciplinas
-
-- 📌 [Aplicações para a Internet](ADS-Unifran/Aplicações-para-a-Internet/README.md)
-- 📌 [Computação e Informática](ADS-Unifran/Computação-e-Informática/README.md)
-- 📌 [Sistemas Operacionais](ADS-Unifran/Sistemas-Operacionais/README.md)
-- 📌 [Programação de Computadores](ADS-Unifran/Programacao-de-computadores/README.md)
 
 ---
 
@@ -165,7 +141,6 @@ Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 - [Snippets](#-snippets)
 - [Recursos para WEB](#-recursos-para-desenvolvimento-e-design)
 - [Curso em Video](#-curso-em-video)
-- [Análise e Desenvolvimento de Sistemas](#-analise-e-desenvolvimento-de-sistemas---unifran)
 
 ---
 

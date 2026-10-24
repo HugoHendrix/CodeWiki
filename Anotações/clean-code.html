@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article class="prose p-6 rounded border bg-surface">
+        <h1><strong>Clean Code para HTML e CSS: Escrevendo Código Front-end Legível e Manutenível</strong></h1>
+
+        <p class="lead">
+            Para muitos iniciantes em desenvolvimento web, HTML e CSS podem parecer simples linguagens de marcação e
+            estilo, onde "funcionar" é o único objetivo.
+        </p>
+
+        <p>
+            No entanto, à medida que os projetos crescem em complexidade e equipes colaboram, a <em>qualidade</em> do
+            código torna-se crucial. É aqui que entram os princípios de <strong>Clean Code</strong>.
+        </p>
+
+        <p>
+            Embora popularizados no contexto de linguagens como Java ou Python, os conceitos de Clean Code são
+            perfeitamente aplicáveis ao HTML e CSS. Adotar essas práticas desde o início tornará seu trabalho mais
+            profissional e poupará dores de cabeça futuras.
+        </p>
+
+        <p>Este artigo explora como aplicar os princípios de Clean Code ao seu HTML e CSS, focando em criar código que
+            seja legível, compreensível e fácil de manter.</p>
+
+        <h2>O que é Clean Code, Afinal?</h2>
+        <ul class="mb-6">
+            <li><strong>Fácil de Ler:</strong> O código deve ser compreensível sem esforço.</li>
+            <li><strong>Fácil de Manter:</strong> Mudanças e correções devem ser simples.</li>
+            <li><strong>Claro e Direto:</strong> A intenção do código deve ser óbvia.</li>
+            <li><strong>Simples:</strong> Complexidade desnecessária deve ser evitada.</li>
+        </ul>
+
+        <h2>Clean Code no HTML: Estrutura com Significado</h2>
+
+        <ol class="mb-6">
+            <li>
+                <strong>Abrace a Semântica:</strong> Use tags como <code>&lt;header&gt;</code>,
+                <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, etc., para definir o propósito do conteúdo.<br>
+                <ul>
+                    <li><em>Evite:</em> <code>&lt;div class="main-navigation"&gt;</code></li>
+                    <li><em>Prefira:</em> <code>&lt;nav&gt;</code></li>
+                </ul>
+            </li>
+            <li>
+                <strong>Formatação é Fundamental:</strong> Use indentação consistente, minúsculas e feche todas as tags.
+            </li>
+            <li>
+                <strong>Nomes que Falam por Si:</strong> Nomes de `class` e `id` devem refletir função, não aparência.
+                <ul>
+                    <li><em>Evite:</em> <code>class="texto-azul-pequeno"</code></li>
+                    <li><em>Prefira:</em> <code>class="aviso-usuario"</code></li>
+                </ul>
+            </li>
+            <li>
+                <strong>Mantenha a Simplicidade Estrutural:</strong> Evite aninhamentos desnecessários.
+            </li>
+            <li>
+                <strong>Separação de Interesses:</strong> Evite estilos inline. Use arquivos CSS externos.
+            </li>
+            <li>
+                <strong>Pense em Acessibilidade (A11y):</strong> Use <code>alt</code>, <code>label</code> com
+                <code>for</code>, e cabeçalhos bem estruturados.
+            </li>
+            <li>
+                <strong>Valide Seu Código:</strong> Use o W3C Validator para evitar erros de sintaxe.
+            </li>
+        </ol>
+
+        <h2>Clean Code no CSS: Estilo com Organização</h2>
+
+        <ol class="mb-6">
+            <li>
+                <strong>Organize Suas Regras:</strong> Comente seções, agrupe estilos relacionados.
+            </li>
+            <li>
+                <strong>Nomenclatura Clara e Consistente:</strong> Use <code>kebab-case</code> ou BEM.
+            </li>
+            <li>
+                <strong>Legibilidade Visual:</strong> Uma declaração por linha, identação clara.
+                <pre><code class="language-css">
+.cartao-produto {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.cartao-produto__titulo {
+  font-size: 1.2em;
+  color: #333;
+}
+      </code></pre>
+            </li>
+            <li>
+                <strong>Não Se Repita (DRY):</strong> Use classes utilitárias e variáveis CSS.
+            </li>
+            <li>
+                <strong>Evite <code>!important</code>:</strong> Use apenas em casos realmente necessários.
+            </li>
+            <li>
+                <strong>Comente o "Porquê", não o "O Quê":</strong> Explique decisões complexas.
+            </li>
+            <li>
+                <strong>Divida para Conquistar:</strong> Use múltiplos arquivos ou pré-processadores como Sass.
+            </li>
+        </ol>
+
+        <h2>Por Que se Preocupar com Clean Code em HTML/CSS?</h2>
+        <ul class="mb-6">
+            <li><strong>Manutenção Simplificada:</strong> Alterações mais rápidas e seguras.</li>
+            <li><strong>Colaboração Eficaz:</strong> Seu código será mais fácil de entender.</li>
+            <li><strong>Menos Bugs:</strong> Código limpo reduz erros e facilita o debug.</li>
+            <li><strong>Potencial de Desempenho:</strong> Arquivos menores e mais eficientes.</li>
+            <li><strong>Acessibilidade e SEO:</strong> Melhora a experiência do usuário e ranking nos buscadores.</li>
+        </ul>
+
+        <h2>Conclusão</h2>
+        <p>
+            Adotar os princípios de Clean Code em HTML e CSS é um investimento em qualidade, legibilidade e longevidade
+            dos seus projetos.
+        </p>
+        <p class="text-muted">
+            O código é escrito uma vez, mas lido muitas vezes. Escreva código limpo!
+        </p>
+
+        <hr class="mt-8">
+    </article>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

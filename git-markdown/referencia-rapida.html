@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<article class="git-cheat-sheet">
+    <header>
+        <h1>Referência Rápida de Git</h1>
+        <p class="article-meta">
+            Fonte: <a href="https://www.freecodecamp.org/news/git-cheat-sheet/?ref=dailydev" target="_blank"
+                rel="noopener noreferrer">freeCodeCamp</a>
+        </p>
+    </header>
+
+    <section>
+        <h2>1. Comandos Básicos do Git</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Comando</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>git init</code></td>
+                    <td>Inicializa um novo repositório Git</td>
+                </tr>
+                <tr>
+                    <td><code>git clone [url]</code></td>
+                    <td>Clona um repositório de uma URL remota</td>
+                </tr>
+                <tr>
+                    <td><code>git status</code></td>
+                    <td>Mostra o status da árvore de trabalho</td>
+                </tr>
+                <tr>
+                    <td><code>git add [arquivo]</code></td>
+                    <td>Adiciona conteúdo do arquivo ao índice</td>
+                </tr>
+                <tr>
+                    <td><code>git commit -m "[mensagem]"</code></td>
+                    <td>Registra alterações no repositório</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>2. Ramificações (Branches) e Mesclagem</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Comando</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>git branch</code></td>
+                    <td>Lista todos os branches locais</td>
+                </tr>
+                <tr>
+                    <td><code>git branch [nome-do-branch]</code></td>
+                    <td>Cria um novo branch</td>
+                </tr>
+                <tr>
+                    <td><code>git checkout [nome-do-branch]</code></td>
+                    <td>Muda para outro branch</td>
+                </tr>
+                <tr>
+                    <td><code>git merge [branch]</code></td>
+                    <td>Mescla o branch especificado com o branch atual</td>
+                </tr>
+                <tr>
+                    <td><code>git branch -d [nome-do-branch]</code></td>
+                    <td>Exclui um branch</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip">
+            <strong>Dica:</strong> Use <code>git checkout -b [nome-do-branch]</code> para criar e mudar para um novo
+            branch em um único comando.
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Repositórios Remotos</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Comando</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>git remote add [nome] [url]</code></td>
+                    <td>Adiciona um novo repositório remoto</td>
+                </tr>
+                <tr>
+                    <td><code>git fetch [remoto]</code></td>
+                    <td>Baixa objetos do repositório remoto</td>
+                </tr>
+                <tr>
+                    <td><code>git pull [remoto] [branch]</code></td>
+                    <td>Busca e integra com outro repositório</td>
+                </tr>
+                <tr>
+                    <td><code>git push [remoto] [branch]</code></td>
+                    <td>Atualiza referências remotas com objetos associados</td>
+                </tr>
+                <tr>
+                    <td><code>git remote -v</code></td>
+                    <td>Lista todos os repositórios remotos</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note">
+            <strong>Observação:</strong> <code>git pull</code> é equivalente a <code>git fetch</code> seguido por
+            <code>git merge</code>.
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Desfazendo Alterações</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Comando</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>git reset [arquivo]</code></td>
+                    <td>Remove um arquivo da área de stage mantendo as alterações</td>
+                </tr>
+                <tr>
+                    <td><code>git reset --hard [commit]</code></td>
+                    <td>Redefine o HEAD atual para o estado especificado (cuidado!)</td>
+                </tr>
+                <tr>
+                    <td><code>git checkout -- [arquivo]</code></td>
+                    <td>Descarta alterações no diretório de trabalho</td>
+                </tr>
+                <tr>
+                    <td><code>git revert [commit]</code></td>
+                    <td>Cria novo commit que desfaz alterações</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="warning">
+            <strong>Aviso:</strong> <code>git reset --hard</code> irá excluir permanentemente alterações não commitadas.
+            Use com cautela!
+        </div>
+    </section>
+
+    <section>
+        <h2>5. Comandos Avançados</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Comando</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>git stash</code></td>
+                    <td>Armazena temporariamente alterações sem commit</td>
+                </tr>
+                <tr>
+                    <td><code>git rebase [branch]</code></td>
+                    <td>Reaplica commits em cima de outra base</td>
+                </tr>
+                <tr>
+                    <td><code>git cherry-pick [commit]</code></td>
+                    <td>Aplica alterações de um commit específico</td>
+                </tr>
+                <tr>
+                    <td><code>git bisect</code></td>
+                    <td>Busca binária para encontrar commit que introduziu um bug</td>
+                </tr>
+                <tr>
+                    <td><code>git submodule</code></td>
+                    <td>Gerencia submódulos do projeto</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>6. Apelidos Úteis (Aliases)</h2>
+
+        <pre><code># Adicione isso ao seu arquivo ~/.gitconfig
+[alias]
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+    last = log -1 HEAD
+    unstage = reset HEAD --
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit --date=relative</code></pre>
+    </section>
+
+    <div class="references">
+        <h2>7. Referências</h2>
+        <ul>
+            <li><a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer">Documentação Oficial do
+                    Git</a></li>
+            <li><a href="https://www.atlassian.com/git/tutorials" target="_blank" rel="noopener noreferrer">Tutoriais de
+                    Git da Atlassian</a></li>
+            <li><a href="https://github.com/git-tips/tips" target="_blank" rel="noopener noreferrer">Coleção de Dicas de
+                    Git</a></li>
+        </ul>
+    </div>
+</article>
+
+<body>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

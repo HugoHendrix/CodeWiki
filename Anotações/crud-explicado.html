@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h2 id="📄-estrutura-html"><strong>📄 ESTRUTURA HTML</strong></h2>
+    <h3 id="1-cabeçalho-e-meta-tags"><strong>1. Cabeçalho e Meta Tags</strong></h3>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;CRUD - Gerenciador de Produtos&lt;/title&gt;
+</code></pre>
+    <ul>
+        <li><code>DOCTYPE html</code>: Define que é HTML5</li>
+        <li><code>lang=&quot;pt-BR&quot;</code>: Especifica idioma português brasileiro</li>
+        <li><code>charset=&quot;UTF-8&quot;</code>: Suporte a caracteres especiais e acentos</li>
+        <li><code>viewport</code>: Torna o site responsivo em dispositivos móveis</li>
+    </ul>
+    <h3 id="2-seção-de-estatísticas"><strong>2. Seção de Estatísticas</strong></h3>
+    <pre><code class="language-html">&lt;div class=&quot;stats&quot;&gt;
+    &lt;div class=&quot;stat-card&quot;&gt;
+        &lt;div class=&quot;stat-number&quot; id=&quot;totalProdutos&quot;&gt;0&lt;/div&gt;
+        &lt;div class=&quot;stat-label&quot;&gt;Total de Produtos&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;stat-card&quot;&gt;
+        &lt;div class=&quot;stat-number&quot; id=&quot;valorTotal&quot;&gt;R$ 0,00&lt;/div&gt;
+        &lt;div class=&quot;stat-label&quot;&gt;Valor Total em Estoque&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    <p><strong>Explicação:</strong></p>
+    <ul>
+        <li><code>class=&quot;stats&quot;</code>: Container principal das estatísticas</li>
+        <li><code>id=&quot;totalProdutos&quot;</code> e <code>id=&quot;valorTotal&quot;</code>: IDs únicos para o
+            JavaScript acessar e atualizar os valores</li>
+        <li>Os valores iniciais são &quot;0&quot; e &quot;R$ 0,00&quot; que serão atualizados dinamicamente</li>
+    </ul>
+    <h3 id="3-formulário-principal"><strong>3. Formulário Principal</strong></h3>
+    <pre><code class="language-html">&lt;form id=&quot;produtoForm&quot;&gt;
+    &lt;div class=&quot;form-row&quot;&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;nome&quot;&gt;Nome do Produto&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;nome&quot; name=&quot;nome&quot; required&gt;
+        &lt;/div&gt;
+        &lt;!-- ... outros campos ... --&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+    <p><strong>Elementos importantes:</strong></p>
+    <ul>
+        <li><code>id=&quot;produtoForm&quot;</code>: JavaScript usa este ID para capturar o envio</li>
+        <li><code>name=&quot;nome&quot;</code>: Nome do campo usado pelo FormData</li>
+        <li><code>required</code>: Validação HTML5 nativa</li>
+        <li><code>for=&quot;nome&quot;</code>: Liga o label ao input correspondente</li>
+        <li><code>type=&quot;number&quot; step=&quot;0.01&quot;</code>: Para preços com centavos</li>
+    </ul>
+    <h3 id="4-sistema-de-busca"><strong>4. Sistema de Busca</strong></h3>
+    <pre><code class="language-html">&lt;div class=&quot;search-container&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;search-input&quot; id=&quot;searchInput&quot; placeholder=&quot;🔍 Buscar...&quot;&gt;
+    &lt;select id=&quot;filterCategoria&quot;&gt;
+        &lt;option value=&quot;&quot;&gt;Todas as categorias&lt;/option&gt;
+        &lt;option value=&quot;Eletrônicos&quot;&gt;Eletrônicos&lt;/option&gt;
+        &lt;!-- ... outras opções ... --&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+</code></pre>
+    <ul>
+        <li><code>id=&quot;searchInput&quot;</code>: JavaScript monitora mudanças neste campo</li>
+        <li><code>id=&quot;filterCategoria&quot;</code>: Filtro adicional por categoria</li>
+    </ul>
+    <h3 id="5-tabela-de-dados"><strong>5. Tabela de Dados</strong></h3>
+    <pre><code class="language-html">&lt;table id=&quot;produtosTable&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;#&lt;/th&gt;
+            &lt;th&gt;Nome&lt;/th&gt;
+            &lt;!-- ... outras colunas ... --&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody id=&quot;produtosBody&quot;&gt;
+        &lt;!-- Conteúdo gerado dinamicamente pelo JavaScript --&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+    <ul>
+        <li><code>id=&quot;produtosBody&quot;</code>: JavaScript insere as linhas aqui</li>
+        <li><code>thead</code>: Cabeçalho fixo da tabela</li>
+        <li><code>tbody</code>: Corpo da tabela onde os dados são inseridos</li>
+    </ul>
+    <hr>
+    <h2 id="⚡-código-javascript-detalhado"><strong>⚡ CÓDIGO JAVASCRIPT DETALHADO</strong></h2>
+    <h3 id="1-variáveis-globais-e-estado"><strong>1. Variáveis Globais e Estado</strong></h3>
+    <pre><code class="language-javascript">let produtos = [];
+let editandoId = null;
+</code></pre>
+    <p><strong>Explicação:</strong></p>
+    <ul>
+        <li><code>produtos = []</code>: Array que armazena todos os produtos na memória</li>
+        <li><code>editandoId = null</code>: Controla se estamos editando (null = modo criar, ID = modo editar)</li>
+    </ul>
+    <h3 id="2-captura-de-elementos-dom"><strong>2. Captura de Elementos DOM</strong></h3>
+    <pre><code class="language-javascript">const form = document.getElementById(&#39;produtoForm&#39;);
+const tbody = document.getElementById(&#39;produtosBody&#39;);
+const submitBtn = document.getElementById(&#39;submitBtn&#39;);
+// ... outros elementos
+</code></pre>
+    <p><strong>Por que fazer isso:</strong></p>
+    <ul>
+        <li>Armazena referências aos elementos HTML uma única vez</li>
+        <li>Melhora performance (não precisa buscar no DOM toda vez)</li>
+        <li>Facilita manutenção do código</li>
+    </ul>
+    <h3 id="3-event-listeners"><strong>3. Event Listeners</strong></h3>
+    <pre><code class="language-javascript">form.addEventListener(&#39;submit&#39;, handleSubmit);
+cancelBtn.addEventListener(&#39;click&#39;, cancelarEdicao);
+searchInput.addEventListener(&#39;input&#39;, filtrarProdutos);
+filterCategoria.addEventListener(&#39;change&#39;, filtrarProdutos);
+</code></pre>
+    <p><strong>Eventos monitorados:</strong></p>
+    <ul>
+        <li><code>submit</code>: Quando o formulário é enviado</li>
+        <li><code>click</code>: Quando botão cancelar é clicado </li>
+        <li><code>input</code>: Toda vez que usuário digita na busca</li>
+        <li><code>change</code>: Quando categoria do filtro muda</li>
+    </ul>
+    <h3 id="4-função-createupdate---handlesubmit"><strong>4. Função CREATE/UPDATE - handleSubmit</strong></h3>
+    <pre><code class="language-javascript">function handleSubmit(e) {
+    e.preventDefault(); // Impede recarregamento da página
+    
+    const formData = new FormData(form); // Captura dados do formulário
+    const produto = {
+        id: editandoId || gerarId(), // Se editando usa ID existente, senão gera novo
+        nome: formData.get(&#39;nome&#39;).trim(), // Remove espaços extras
+        preco: parseFloat(formData.get(&#39;preco&#39;)), // Converte string para número
+        categoria: formData.get(&#39;categoria&#39;),
+        descricao: formData.get(&#39;descricao&#39;).trim(),
+        dataCriacao: editandoId ? 
+            produtos.find(p =&gt; p.id === editandoId).dataCriacao : 
+            Date.now() // Mantém data original se editando
+    };
+
+    if (editandoId) {
+        // MODO UPDATE
+        const index = produtos.findIndex(p =&gt; p.id === editandoId);
+        produtos[index] = produto; // Substitui produto existente
+        editandoId = null; // Sai do modo edição
+        submitBtn.textContent = &#39;Adicionar Produto&#39;;
+        cancelBtn.style.display = &#39;none&#39;;
+    } else {
+        // MODO CREATE
+        produtos.push(produto); // Adiciona novo produto
+    }
+
+    form.reset(); // Limpa formulário
+    renderizarTabela(); // Atualiza interface
+    atualizarEstatisticas();
+}
+</code></pre>
+    <p><strong>Detalhes importantes:</strong></p>
+    <ul>
+        <li><code>e.preventDefault()</code>: Impede comportamento padrão do formulário (recarregar página)</li>
+        <li><code>FormData</code>: API moderna para capturar dados de formulário</li>
+        <li><code>trim()</code>: Remove espaços em branco no início/fim</li>
+        <li><code>parseFloat()</code>: Converte string para número decimal</li>
+        <li><code>findIndex()</code>: Encontra posição do produto no array</li>
+    </ul>
+    <h3 id="5-função-read---renderizartabela"><strong>5. Função READ - renderizarTabela</strong></h3>
+    <pre><code class="language-javascript">function renderizarTabela(produtosFiltrados = produtos) {
+    if (produtosFiltrados.length === 0) {
+        tbody.innerHTML = `&lt;tr&gt;&lt;td colspan=&quot;7&quot; class=&quot;empty-state&quot;&gt;Mensagem&lt;/td&gt;&lt;/tr&gt;`;
+        return;
+    }
+
+    tbody.innerHTML = produtosFiltrados.map((produto, index) =&gt; `
+        &lt;tr&gt;
+            &lt;td&gt;${index + 1}&lt;/td&gt;
+            &lt;td&gt;&lt;strong&gt;${produto.nome}&lt;/strong&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;strong&gt;${formatarPreco(produto.preco)}&lt;/strong&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;span style=&quot;...&quot;&gt;${produto.categoria}&lt;/span&gt;&lt;/td&gt;
+            &lt;td&gt;${produto.descricao || &#39;Sem descrição&#39;}&lt;/td&gt;
+            &lt;td&gt;${formatarData(produto.dataCriacao)}&lt;/td&gt;
+            &lt;td class=&quot;actions&quot;&gt;
+                &lt;button class=&quot;btn-edit&quot; onclick=&quot;editarProduto(${produto.id})&quot;&gt;✏️ Editar&lt;/button&gt;
+                &lt;button class=&quot;btn-delete&quot; onclick=&quot;excluirProduto(${produto.id})&quot;&gt;🗑️ Excluir&lt;/button&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    `).join(&#39;&#39;);
+}
+</code></pre>
+    <p><strong>Conceitos-chave:</strong></p>
+    <ul>
+        <li><strong>Parâmetro padrão</strong>: <code>produtosFiltrados = produtos</code> - se não passar parâmetro, usa
+            array completo</li>
+        <li><strong>Template literals</strong>: Usando backticks (`) para strings multi-linha</li>
+        <li><strong>Array.map()</strong>: Transforma cada produto em uma linha HTML</li>
+        <li><strong>join(&#39;&#39;)</strong>: Une array de strings em uma string única</li>
+        <li><strong>Operador ||</strong>: <code>produto.descricao || &#39;Sem descrição&#39;</code> - se vazio, usa
+            texto padrão</li>
+        <li><strong>onclick inline</strong>: Chama função JavaScript diretamente do HTML</li>
+    </ul>
+    <h3 id="6-função-update---editarproduto"><strong>6. Função UPDATE - editarProduto</strong></h3>
+    <pre><code class="language-javascript">function editarProduto(id) {
+    const produto = produtos.find(p =&gt; p.id === id); // Encontra produto pelo ID
+    if (!produto) return; // Se não encontrar, sai da função
+
+    // Preenche formulário com dados existentes
+    document.getElementById(&#39;nome&#39;).value = produto.nome;
+    document.getElementById(&#39;preco&#39;).value = produto.preco;
+    document.getElementById(&#39;categoria&#39;).value = produto.categoria;
+    document.getElementById(&#39;descricao&#39;).value = produto.descricao;
+
+    // Muda para modo edição
+    editandoId = id;
+    submitBtn.textContent = &#39;Atualizar Produto&#39;;
+    cancelBtn.style.display = &#39;inline-block&#39;;
+
+    // Scroll suave para o formulário
+    document.querySelector(&#39;.form-container&#39;).scrollIntoView({ 
+        behavior: &#39;smooth&#39; 
+    });
+}
+</code></pre>
+    <p><strong>Técnicas utilizadas:</strong></p>
+    <ul>
+        <li><strong>Array.find()</strong>: Encontra primeiro elemento que atende condição</li>
+        <li><strong>Early return</strong>: <code>if (!produto) return</code> - sai cedo se não encontrar</li>
+        <li><strong>DOM manipulation</strong>: Altera valores dos campos do formulário</li>
+        <li><strong>scrollIntoView()</strong>: API para scroll suave até elemento</li>
+    </ul>
+    <h3 id="7-função-delete---excluirproduto"><strong>7. Função DELETE - excluirProduto</strong></h3>
+    <pre><code class="language-javascript">function excluirProduto(id) {
+    if (confirm(&#39;Tem certeza que deseja excluir este produto?&#39;)) {
+        produtos = produtos.filter(p =&gt; p.id !== id); // Remove produto do array
+        renderizarTabela(); // Atualiza interface
+        atualizarEstatisticas();
+        
+        // Se estava editando o produto excluído, cancela edição
+        if (editandoId === id) {
+            cancelarEdicao();
+        }
+    }
+}
+</code></pre>
+    <p><strong>Pontos importantes:</strong></p>
+    <ul>
+        <li><code>confirm()</code>: Diálogo nativo de confirmação do browser</li>
+        <li><strong>Array.filter()</strong>: Cria novo array sem o elemento removido</li>
+        <li><strong>Verificação de estado</strong>: Se estava editando produto excluído, limpa formulário</li>
+    </ul>
+    <h3 id="8-sistema-de-filtros"><strong>8. Sistema de Filtros</strong></h3>
+    <pre><code class="language-javascript">function filtrarProdutos() {
+    const termo = searchInput.value.toLowerCase(); // Busca case-insensitive
+    const categoria = filterCategoria.value;
+
+    const produtosFiltrados = produtos.filter(produto =&gt; {
+        const nomeMatch = produto.nome.toLowerCase().includes(termo);
+        const categoriaMatch = produto.categoria.toLowerCase().includes(termo);
+        const categoriaFilter = !categoria || produto.categoria === categoria;
+        
+        return (nomeMatch || categoriaMatch) &amp;&amp; categoriaFilter;
+    });
+
+    renderizarTabela(produtosFiltrados);
+}
+</code></pre>
+    <p><strong>Lógica de filtro:</strong></p>
+    <ul>
+        <li><code>toLowerCase()</code>: Busca sem distinção de maiúsculas/minúsculas</li>
+        <li><code>includes()</code>: Verifica se string contém o termo</li>
+        <li><strong>Múltiplos critérios</strong>: Busca no nome OU categoria</li>
+        <li><strong>Filtro adicional</strong>: E também filtra por categoria selecionada</li>
+        <li><strong>Operador lógico</strong>: <code>(A || B) &amp;&amp; C</code> - (nome OU categoria) E
+            filtro-categoria</li>
+    </ul>
+    <h3 id="9-funções-utilitárias"><strong>9. Funções Utilitárias</strong></h3>
+    <pre><code class="language-javascript">// Gerar ID único baseado em timestamp + random
+function gerarId() {
+    return Date.now() + Math.random();
+}
+
+// Formatar data em português
+function formatarData(timestamp) {
+    return new Date(timestamp).toLocaleDateString(&#39;pt-BR&#39;);
+}
+
+// Formatar preço em Real brasileiro
+function formatarPreco(preco) {
+    return new Intl.NumberFormat(&#39;pt-BR&#39;, {
+        style: &#39;currency&#39;,
+        currency: &#39;BRL&#39;
+    }).format(preco);
+}
+</code></pre>
+    <p><strong>APIs modernas utilizadas:</strong></p>
+    <ul>
+        <li><code>Date.now()</code>: Timestamp atual em milissegundos</li>
+        <li><code>toLocaleDateString()</code>: Formatação de data localizada</li>
+        <li><code>Intl.NumberFormat</code>: API de formatação internacional de números/moedas</li>
+    </ul>
+    <h3 id="10-atualização-de-estatísticas"><strong>10. Atualização de Estatísticas</strong></h3>
+    <pre><code class="language-javascript">function atualizarEstatisticas() {
+    const total = produtos.length; // Conta elementos do array
+    const valorTotal = produtos.reduce((sum, produto) =&gt; sum + produto.preco, 0);
+
+    document.getElementById(&#39;totalProdutos&#39;).textContent = total;
+    document.getElementById(&#39;valorTotal&#39;).textContent = formatarPreco(valorTotal);
+}
+</code></pre>
+    <p><strong>Array.reduce() explicado:</strong></p>
+    <ul>
+        <li><strong>Acumulador</strong>: <code>sum</code> - valor que vai sendo somado</li>
+        <li><strong>Valor atual</strong>: <code>produto</code> - elemento atual do array</li>
+        <li><strong>Valor inicial</strong>: <code>0</code> - começa somando do zero</li>
+        <li><strong>Função</strong>: <code>sum + produto.preco</code> - soma preço ao acumulador</li>
+    </ul>
+    <hr>
+    <h2 id="🔄-fluxo-completo-do-crud"><strong>🔄 FLUXO COMPLETO DO CRUD</strong></h2>
+    <h3 id="adicionar-produto"><strong>Adicionar Produto:</strong></h3>
+    <ol>
+        <li>Usuário preenche formulário</li>
+        <li>Clica &quot;Adicionar&quot; → dispara <code>handleSubmit</code></li>
+        <li><code>FormData</code> captura dados</li>
+        <li>Produto é adicionado ao array <code>produtos</code></li>
+        <li><code>renderizarTabela()</code> atualiza interface</li>
+        <li><code>atualizarEstatisticas()</code> recalcula totais</li>
+    </ol>
+    <h3 id="editar-produto"><strong>Editar Produto:</strong></h3>
+    <ol>
+        <li>Usuário clica &quot;Editar&quot; → chama <code>editarProduto(id)</code></li>
+        <li>Formulário é preenchido com dados existentes</li>
+        <li>Modo muda para &quot;edição&quot; (<code>editandoId = id</code>)</li>
+        <li>Usuário modifica e envia</li>
+        <li><code>handleSubmit</code> detecta modo edição</li>
+        <li>Produto existente é substituído no array</li>
+        <li>Interface é atualizada</li>
+    </ol>
+    <h3 id="excluir-produto"><strong>Excluir Produto:</strong></h3>
+    <ol>
+        <li>Usuário clica &quot;Excluir&quot; → chama <code>excluirProduto(id)</code></li>
+        <li><code>confirm()</code> pede confirmação</li>
+        <li>Se confirmado, <code>filter()</code> remove do array</li>
+        <li>Interface é atualizada</li>
+    </ol>
+    <h3 id="buscarfiltrar"><strong>Buscar/Filtrar:</strong></h3>
+    <ol>
+        <li>Usuário digita → dispara <code>filtrarProdutos</code></li>
+        <li>Array é filtrado por critérios</li>
+        <li><code>renderizarTabela(produtosFiltrados)</code> mostra apenas resultados</li>
+    </ol>
+    <p>Este CRUD demonstra conceitos fundamentais do JavaScript moderno: manipulação de DOM, arrays, objetos, eventos,
+        APIs nativas e programação funcional!</p>
+
+
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

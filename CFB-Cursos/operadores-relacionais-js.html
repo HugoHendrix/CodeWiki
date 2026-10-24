@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+        <h1 id="operadores-relacionais-em-javascript">Operadores Relacionais em JavaScript</h1>
+        <p>Os operadores relacionais são usados para <strong>comparar valores</strong> em JavaScript.
+            O resultado dessas comparações é sempre um <strong>booleano</strong> (<code>true</code> ou
+            <code>false</code>).</p>
+        <hr>
+        <h2 id="principais-operadores">Principais Operadores</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Operador</th>
+                    <th>Descrição</th>
+                    <th>Exemplo</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&gt;</code></td>
+                    <td>Maior que</td>
+                    <td><code>10 &gt; 5</code></td>
+                    <td><code>true</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;</code></td>
+                    <td>Menor que</td>
+                    <td><code>10 &lt; 5</code></td>
+                    <td><code>false</code></td>
+                </tr>
+                <tr>
+                    <td><code>&gt;=</code></td>
+                    <td>Maior ou igual</td>
+                    <td><code>10 &gt;= 10</code></td>
+                    <td><code>true</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;=</code></td>
+                    <td>Menor ou igual</td>
+                    <td><code>5 &lt;= 8</code></td>
+                    <td><code>true</code></td>
+                </tr>
+                <tr>
+                    <td><code>==</code></td>
+                    <td>Igual (com conversão de tipo)</td>
+                    <td><code>&quot;5&quot; == 5</code></td>
+                    <td><code>true</code></td>
+                </tr>
+                <tr>
+                    <td><code>===</code></td>
+                    <td>Estritamente igual (sem conversão de tipo)</td>
+                    <td><code>&quot;5&quot; === 5</code></td>
+                    <td><code>false</code></td>
+                </tr>
+                <tr>
+                    <td><code>!=</code></td>
+                    <td>Diferente (com conversão de tipo)</td>
+                    <td><code>&quot;5&quot; != 5</code></td>
+                    <td><code>false</code></td>
+                </tr>
+                <tr>
+                    <td><code>!==</code></td>
+                    <td>Estritamente diferente (sem conversão de tipo)</td>
+                    <td><code>&quot;5&quot; !== 5</code></td>
+                    <td><code>true</code></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h2 id="igualdade-simples-vs-estrita">Igualdade Simples vs Estrita</h2>
+        <p>Em JavaScript, existe diferença entre <strong>igualdade simples (<code>==</code>)</strong> e
+            <strong>igualdade estrita (<code>===</code>)</strong>:</p>
+        <pre><code class="lang-javascript">console.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> == <span class="hljs-string">"5"</span>);   <span class="hljs-comment">// true  (compara apenas o valor)</span>
+console.<span class="hljs-built_in">log</span>(<span class="hljs-number">5</span> === <span class="hljs-string">"5"</span>);  <span class="hljs-comment">// false (compara valor e tipo)</span>
+</code></pre>
+        <ul>
+            <li><code>==</code> → converte os valores antes de comparar (pode causar confusão).</li>
+            <li><code>===</code> → compara valor e tipo, sendo mais seguro.</li>
+        </ul>
+        <p>📌 <strong>Boa prática:</strong> prefira sempre o uso de <code>===</code> e <code>!==</code>.</p>
+        <hr>
+        <h2 id="exemplos-de-uso">Exemplos de Uso</h2>
+        <pre><code class="lang-javascript"><span class="hljs-keyword">let</span> <span class="hljs-attr">idade</span> = <span class="hljs-number">18</span>;
+
+console.log(idade &gt;= <span class="hljs-number">18</span>); // <span class="hljs-literal">true</span>
+console.log(idade &lt; <span class="hljs-number">18</span>);  // <span class="hljs-literal">false</span>
+
+<span class="hljs-keyword">let</span> <span class="hljs-attr">a</span> = <span class="hljs-number">5</span>, <span class="hljs-attr">b</span> = <span class="hljs-string">"5"</span>;
+
+console.log(<span class="hljs-attr">a</span> == b);  // <span class="hljs-literal">true</span>  (mesmo valor, tipos diferentes)
+console.log(<span class="hljs-attr">a</span> === b); // <span class="hljs-literal">false</span> (valor igual, tipos diferentes)
+</code></pre>
+        <hr>
+        <h2 id="resumo">Resumo</h2>
+        <ul>
+            <li>Operadores relacionais servem para <strong>comparar valores</strong>.</li>
+            <li>O resultado de toda comparação é um <strong>booleano</strong> (<code>true</code> ou <code>false</code>).
+            </li>
+            <li><strong>Igualdade simples (<code>==</code>)</strong> converte os tipos antes de comparar.</li>
+            <li><strong>Igualdade estrita (<code>===</code>)</strong> compara <strong>valor e tipo</strong> (mais
+                recomendado).</li>
+        </ul>
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

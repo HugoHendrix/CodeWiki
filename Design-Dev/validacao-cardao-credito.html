@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <article class="p-1">
+        <header>
+            <h1>Validação de Cartão de Crédito com HTML Puro</h1>
+        </header>
+
+        <section>
+            <h2>1. Introdução</h2>
+            <p>Técnica pouco conhecida para validação básica de números de cartão de crédito diretamente no HTML, sem necessidade de JavaScript (embora JS possa melhorar a formatação).</p>
+        </section>
+
+        <section>
+            <h2>2. Implementação Básica (HTML Only)</h2>
+            <pre><code>&lt;input type="text"
+       inputmode="numeric"
+       pattern="[0-9]{13,19}"
+       maxlength="19"
+       placeholder="1234-5678-9012-3456"
+       title="Insira um número do cartão de crédito válido"
+       required&gt;</code></pre>
+
+            <h3>Atributos Chave:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Atributo</th>
+                        <th>Função</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>inputmode="numeric"</code></td>
+                        <td>Mostra teclado numérico em dispositivos móveis</td>
+                    </tr>
+                    <tr>
+                        <td><code>pattern="[0-9]{13,19}"</code></td>
+                        <td>Regex: aceita apenas números (13-19 dígitos)</td>
+                    </tr>
+                    <tr>
+                        <td><code>maxlength="19"</code></td>
+                        <td>Limita ao comprimento máximo de cartões (19 dígitos)</td>
+                    </tr>
+                    <tr>
+                        <td><code>title</code></td>
+                        <td>Mensagem de erro personalizada quando a validação falha</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Demonstração:</h3>
+            <form>
+                <input type="text"
+                       inputmode="numeric"
+                       pattern="[0-9]{13,19}"
+                       maxlength="19"
+                       placeholder="1234-5678-9012-3456"
+                       title="Insira um número do cartão de crédito válido"
+                       required>
+                <button type="submit">Testar Validação</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>3. Melhoria com JavaScript (Formatação Automática)</h2>
+            <pre><code>&lt;script&gt;
+// Formata como XXXX-XXXX-XXXX-XXXX durante a digitação
+document.querySelector('input').addEventListener('input', e => {
+    e.target.value = e.target.value
+        .replace(/[^0-9]/g, '')  // Remove caracteres não numéricos
+        .replace(/(.{4})/g, '$1-') // Adiciona hífen a cada 4 dígitos
+        .trim(); // Remove espaços em branco
+});
+&lt;/script&gt;</code></pre>
+
+            <h3>Demonstração com Formatação:</h3>
+            <form>
+                <input id="formattedCardInput" type="text"
+                       inputmode="numeric"
+                       pattern="[0-9]{13,19}"
+                       maxlength="19"
+                       placeholder="1234-5678-9012-3456"
+                       title="Insira um número do cartão de crédito válido"
+                       required>
+                <button type="submit">Testar Validação</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>4. Limitações e Considerações</h2>
+            <ul>
+                <li><strong>Validação básica</strong>: Verifica apenas formato, não autenticidade do cartão</li>
+                <li><strong>Browsers modernos</strong>: Funciona melhor em navegadores atualizados</li>
+                <li><strong>Complemento necessário</strong>: Recomendado usar validação adicional no back-end</li>
+            </ul>
+            
+            <div class="note">
+                <strong>Nota:</strong> Esta técnica oferece uma primeira camada de validação, mas não substitui verificações de segurança completas no back-end.
+            </div>
+        </section>
+
+        <div class="references">
+            <h2>5. Referências</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern" target="_blank" rel="noopener noreferrer">MDN: Pattern Validation</a></li>
+                <li><a href="https://www.pcisecuritystandards.org/" target="_blank" rel="noopener noreferrer">PCI Security Standards</a></li>
+            </ul>
+        </div>
+    </article>
+
+    <script>
+        // Aplica a formatação automática ao campo de demonstração
+        document.getElementById('formattedCardInput').addEventListener('input', e => {
+            e.target.value = e.target.value
+                .replace(/[^0-9]/g, '')
+                .replace(/(.{4})/g, '$1-')
+                .trim();
+        });
+    </script>
+    <footer class="p-1">
+        <button class="accent">
+            <a href="index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

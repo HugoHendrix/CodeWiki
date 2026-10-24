@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+        <h1 id="-operadores-bitwise-em-javascript">⚙️ Operadores Bitwise em JavaScript</h1>
+        <p>Em JavaScript, os operadores <strong>bitwise</strong> comparam os números na forma binária.
+            Exemplo:</p>
+        <pre><code class="lang-javascript">let <span class="hljs-selector-tag">a</span> = <span class="hljs-number">5</span>   <span class="hljs-comment">// binário: 0101</span>
+let <span class="hljs-selector-tag">b</span> = <span class="hljs-number">3</span>   <span class="hljs-comment">// binário: 0011</span>
+</code></pre>
+        <hr>
+        <h2 id="-principais-operadores">📌 Principais Operadores</h2>
+        <h3 id="1-and-bit-a-bit-">1. <strong>AND bit a bit – <code>&amp;</code></strong></h3>
+        <p>Compara bit a bit e retorna <code>1</code> apenas se <strong>ambos os bits</strong> forem <code>1</code>.</p>
+        <pre><code class="lang-javascript">console.log(<span class="hljs-number">5</span> &amp; <span class="hljs-number">3</span>) <span class="hljs-comment">// 1</span>
+<span class="hljs-comment">// 0101</span>
+<span class="hljs-comment">// 0011</span>
+<span class="hljs-comment">// 0001 = 1</span>
+</code></pre>
+        <hr>
+        <h3 id="2-or-bit-a-bit-">2. <strong>OR bit a bit – <code>|</code></strong></h3>
+        <p>Compara bit a bit e retorna <code>1</code> se <strong>pelo menos um</strong> dos bits for <code>1</code>.</p>
+        <pre><code class="lang-javascript">console.log(<span class="hljs-number">5</span> | <span class="hljs-number">3</span>) <span class="hljs-comment">// 7</span>
+<span class="hljs-comment">// 0101</span>
+<span class="hljs-comment">// 0011</span>
+<span class="hljs-comment">// 0111 = 7</span>
+</code></pre>
+        <hr>
+        <h3 id="3-xor-ou-exclusivo-">3. <strong>XOR (OU exclusivo) – <code>^</code></strong></h3>
+        <p>Retorna <code>1</code> se os bits forem <strong>diferentes</strong>, e <code>0</code> se forem iguais.</p>
+        <pre><code class="lang-javascript">console.log(<span class="hljs-number">5</span> ^ <span class="hljs-number">3</span>) <span class="hljs-comment">// 6</span>
+<span class="hljs-comment">// 0101</span>
+<span class="hljs-comment">// 0011</span>
+<span class="hljs-comment">// 0110 = 6</span>
+</code></pre>
+        <hr>
+        <h3 id="4-not-complemento-">4. <strong>NOT (complemento) – <code>~</code></strong></h3>
+        <p>Inverte os bits do número (todos os <code>0</code> viram <code>1</code> e vice-versa).
+            ⚠️ Em JavaScript, os números são representados em <strong>32 bits com sinal</strong> (complemento de dois),
+            por isso o resultado pode parecer estranho.</p>
+        <pre><code class="lang-javascript">console.log(~<span class="hljs-number">5</span>) // -<span class="hljs-number">6</span>
+// <span class="hljs-number">00000000</span> <span class="hljs-number">00000000</span> <span class="hljs-number">00000000</span> <span class="hljs-number">00000101</span> (<span class="hljs-number">5</span>)
+// <span class="hljs-number">11111111</span> <span class="hljs-number">11111111</span> <span class="hljs-number">11111111</span> <span class="hljs-number">11111010</span> = -<span class="hljs-number">6</span>
+</code></pre>
+        <hr>
+        <h3 id="5-shift-left-">5. <strong>Shift Left – <code>&lt;&lt;</code></strong></h3>
+        <p>Desloca os bits para a esquerda e adiciona zeros à direita.
+            Equivale a multiplicar por 2 a cada deslocamento.</p>
+        <pre><code class="lang-javascript">console.log(<span class="hljs-number">5</span> &lt;&lt; <span class="hljs-number">1</span>) <span class="hljs-comment">// 10</span>
+<span class="hljs-comment">// 0101 &lt;&lt; 1 → 1010 = 10</span>
+</code></pre>
+        <hr>
+        <h3 id="6-shift-right-com-sinal-">6. <strong>Shift Right com sinal – <code>&gt;&gt;</code></strong></h3>
+        <p>Desloca os bits para a direita <strong>mantendo o bit de sinal</strong>.
+            Equivale a dividir por 2 a cada deslocamento.</p>
+        <pre><code class="lang-javascript">console.log(<span class="hljs-number">5</span> &gt;&gt; <span class="hljs-number">1</span>) <span class="hljs-comment">// 2</span>
+<span class="hljs-comment">// 0101 &gt;&gt; 1 → 0010 = 2</span>
+</code></pre>
+        <hr>
+        <h3 id="7-shift-right-sem-sinal-">7. <strong>Shift Right sem sinal – <code>&gt;&gt;&gt;</code></strong></h3>
+        <p>Desloca para a direita <strong>preenchendo com zeros</strong>, sem considerar o sinal.</p>
+        <pre><code class="lang-javascript">console.log(<span class="hljs-number">-5</span> &gt;&gt;&gt; <span class="hljs-number">1</span>) <span class="hljs-comment">// 2147483645</span>
+</code></pre>
+        <hr>
+        <h2 id="-resumo-da-tabela">⚡ Resumo da Tabela</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Operador</th>
+                    <th>Nome</th>
+                    <th>Exemplo (<code>a=5</code>, <code>b=3</code>)</th>
+                    <th>Resultado</th>
+                
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&amp;</code></td>
+                    <td>AND bit a bit</td>
+                    <td><code>a &amp; b</code></td>
+                    <td>1</td>
+                   
+                </tr>
+                <tr>
+                    <td>`</td>
+                    <td>`</td>
+                    <td>OR bit a bit</td>
+                    <td>`a</td>
+                   
+                </tr>
+                <tr>
+                    <td><code>^</code></td>
+                    <td>XOR bit a bit</td>
+                    <td><code>a ^ b</code></td>
+                    <td>6</td>
+                  
+                </tr>
+                <tr>
+                    <td><code>~</code></td>
+                    <td>NOT bit a bit</td>
+                    <td><code>~a</code></td>
+                    <td>-6</td>
+                    
+                </tr>
+                <tr>
+                    <td><code>&lt;&lt;</code></td>
+                    <td>Shift Left</td>
+                    <td><code>a &lt;&lt; 1</code></td>
+                    <td>10</td>
+                    
+                  
+                </tr>
+                <tr>
+                    <td><code>&gt;&gt;</code></td>
+                    <td>Shift Right com sinal</td>
+                    <td><code>a &gt;&gt; 1</code></td>
+                    <td>2</td>
+                   
+                   
+                </tr>
+                <tr>
+                    <td><code>&gt;&gt;&gt;</code></td>
+                    <td>Shift Right sem sinal</td>
+                    <td><code>a &gt;&gt;&gt; 1</code></td>
+                    <td>2147483645</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

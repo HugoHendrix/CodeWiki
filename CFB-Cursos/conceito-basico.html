@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+        <h1 id="-introdu-o-ao-javascript-conceitos-b-sicos">📘 Introdução ao JavaScript: Conceitos Básicos</h1>
+        <h2 id="-impress-o-no-console">🖨️ Impressão no Console</h2>
+        <pre><code class="lang-javascript">console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"Hello World"</span>)
+</code></pre>
+        <ul>
+            <li><code>console.log()</code> é o comando utilizado para imprimir mensagens no console do navegador ou
+                ambiente de execução.</li>
+            <li>O ponto e vírgula (<code>;</code>) ao final da linha é opcional na maioria dos casos modernos, devido ao
+                recurso de <em>Automatic Semicolon Insertion</em> (ASI) do JavaScript.</li>
+        </ul>
+        <hr>
+        <h2 id="-coment-rios-em-javascript">💬 Comentários em JavaScript</h2>
+        <p>Comentários são usados para explicar o código ou desativar trechos durante testes. Eles não são executados.
+        </p>
+        <ul>
+            <li>
+                <p><strong>Comentário de uma linha</strong>:</p>
+                <pre><code class="lang-javascript"><span class="hljs-comment">// Este é um comentário de uma linha</span>
+</code></pre>
+            </li>
+            <li>
+                <p><strong>Comentário em bloco</strong>:</p>
+                <pre><code class="lang-javascript"><span class="hljs-comment">/*
+  Este é um comentário
+  de múltiplas linhas
+*/</span>
+</code></pre>
+            </li>
+        </ul>
+        <hr>
+        <h2 id="-caracter-sticas-da-linguagem">⚙️ Características da Linguagem</h2>
+        <ul>
+            <li><strong>Interpretada</strong>: JavaScript é uma linguagem interpretada, ou seja, o código é executado
+                diretamente pelo navegador ou ambiente de runtime (como Node.js), sem necessidade de compilação prévia.
+            </li>
+            <li><strong>Execução imediata</strong>: O código é processado e executado linha por linha no momento em que
+                é carregado.</li>
+        </ul>
+        <hr>
+        <h2 id="-onde-inserir-o-script-head-vs-body-">🧠 Onde inserir o script: <code>&lt;head&gt;</code> vs
+            <code>&lt;body&gt;</code>
+        </h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Local do Script</th>
+                    <th>Comportamento</th>
+                    <th>Recomendação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&lt;head&gt;</code></td>
+                    <td>O script é carregado antes do conteúdo da página. Pode bloquear o carregamento visual se não for
+                        assíncrono.</td>
+                    <td>Use com <code>async</code> ou <code>defer</code> para evitar bloqueios.</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;body&gt;</code></td>
+                    <td>O script é carregado após o conteúdo da página. Garante que os elementos HTML já estejam
+                        disponíveis.</td>
+                    <td>Ideal para scripts que manipulam o DOM.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 id="exemplo-com-defer-">Exemplo com <code>defer</code>:</h3>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"script.js"</span> <span class="hljs-attr">defer</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <blockquote>
+            <p>O atributo <code>defer</code> permite que o script seja carregado em paralelo e executado após o
+                carregamento completo do HTML.</p>
+        </blockquote>
+
+        <h2 id="-o-que-o-defer-">🚀 O que é o <code>defer</code>?</h2>
+        <p>O atributo <code>defer</code> é usado na tag <code>&lt;script&gt;</code> para indicar que o script deve ser
+            <strong>executado apenas após o HTML ter sido completamente carregado e analisado</strong> (ou seja, depois
+            que o DOM estiver pronto).</p>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"script.js"</span> <span class="hljs-attr">defer</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+        <hr>
+        <h2 id="-como-funciona-">⚙️ Como funciona?</h2>
+        <ul>
+            <li>O navegador <strong>baixa o script em paralelo</strong> enquanto continua analisando o HTML.</li>
+            <li><strong>Não bloqueia</strong> o carregamento da página.</li>
+            <li>O script é <strong>executado na ordem em que aparece</strong> no HTML, <strong>após o DOM estar
+                    pronto</strong>.</li>
+        </ul>
+        <hr>
+        <h2 id="-quando-usar-defer-">✅ Quando usar <code>defer</code>?</h2>
+        <p>Use <code>defer</code> quando:</p>
+        <ul>
+            <li>O script <strong>precisa acessar elementos do DOM</strong>.</li>
+            <li>Há <strong>mais de um script</strong> e a ordem de execução é importante.</li>
+            <li>Você quer <strong>evitar que o carregamento da página seja bloqueado</strong> por scripts no
+                <code>&lt;head&gt;</code>.</li>
+        </ul>
+        <hr>
+        <h2 id="-compara-o-com-async-">🆚 Comparação com <code>async</code></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Ordem de execução</th>
+                    <th>Bloqueia o DOM?</th>
+                    <th>Ideal para...</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>defer</code></td>
+                    <td>Mantém a ordem</td>
+                    <td>Não</td>
+                    <td>Scripts que dependem do DOM</td>
+                </tr>
+                <tr>
+                    <td><code>async</code></td>
+                    <td>Executa assim que baixar</td>
+                    <td>Sim (interrompe parsing)</td>
+                    <td>Scripts independentes</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h2 id="-exemplo-pr-tico">🔍 Exemplo prático</h2>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"lib.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"main.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+</code></pre>
+        <p>Nesse exemplo:</p>
+        <ul>
+            <li><code>lib.js</code> será carregado e executado <strong>antes</strong> de <code>main.js</code>.</li>
+            <li>Ambos só serão executados <strong>depois que o HTML estiver pronto</strong>.</li>
+        </ul>
+
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

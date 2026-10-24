@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta name="description" content="Wiki pessoal com conteúdos de programação, HTML, CSS, JavaScript e mais.">
+    <meta property="og:title" content="CodeWiki">
+    <meta property="og:description" content="Wiki pessoal de conhecimentos em desenvolvimento web.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/book.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="busca.js" defer></script>
+    <title>Code Wiki | Biblioteca Dev</title>
+</head>
+
+<body>
+
+    <header class="topbar">
+        <button type="button" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"
+            aria-controls="sidebar">☰</button>
+        <a href="index.html" class="topbar-title">📘 CodeWiki</a>
+    </header>
+    <div class="sidebar-overlay" hidden></div>
+
+    <div class="container">
+        <!-- Barra Lateral -->
+        <nav class="sidebar" id="sidebar" aria-label="Menu principal">
+            <h2>Menu</h2>
+
+            <div class="search" role="search">
+                <input type="search" id="busca" placeholder="Buscar na wiki…  ( / )" autocomplete="off"
+                    aria-label="Buscar na wiki" aria-autocomplete="list" aria-controls="busca-resultados"
+                    aria-expanded="false" role="combobox">
+                <ul id="busca-resultados" class="search-results" role="listbox" hidden></ul>
+            </div>
+
+            <ul>
+                <li><a href="#anotacao">Anotações</a>
+                    <ul>
+                        <li><a href="#snippets">Snippets</a></li>
+                        <li><a href="#devcrew">The Design.dev Crew</a></li>
+                        <li><a href="#front-side">UX/UI no Front-End</a></li>
+                        <li><a href="#backstage">Backstage da WEB</a></li>
+                    </ul>
+                </li>
+                <li><a href="#html">HTML</a></li>
+                <li><a href="#css">CSS</a></li>
+                <li><a href="#javascript">JavaScript</a></li>
+                <li><a href="#php">PHP</a></li>
+                <li><a href="#git-markdown">Git e Markdown</a></li>
+                <li><a href="#recursos-web">Recursos e Ferramentas</a></li>
+                <li><a href="#cursos-online">Cursos de Programação</a></li>
+                <li><a href="#livros">Livros de Programação</a></li>
+                <li><a href="#projetos">Projetos Mão na Massa</a></li>
+            </ul>
+        </nav>
+
+        <!-- Conteúdo Principal -->
+        <main class="content">
+            <h1>📘 Bem-vindo ao CodeWiki!</h1>
+            <p>Este repositório tem a finalidade de organizar minhas anotações, dicas e trechos de códigos diversos.
+                <br> É um projeto em constante evolução, então sinta-se à vontade para explorar!
+            </p>
+            <hr>
+
+            <!-- ANOTAÇÕES -->
+            <section id="anotacao">
+                <h2>📝 Anotações</h2>
+                <li><a href="Anotações/problemas-target-blank.html">Risco ao usar target_blank</a></li>
+                <li><a href="Anotações/link-pdf.html">Como Adicionar Link para PDF no Seu Site</a></li>
+                <li><a href="Anotações/snippets-vscode.html">Como Criar e Usar Snippets Personalizados no VS Code</a>
+                </li>
+                <li><a href="Anotações/fonts.html">Otimizando Fontes da Web para Melhorar o Desempenho do Site
+                    </a></li>
+                <li><a href="Anotações/devmap.html">Guia To-Do List para Front-End Developer</a></li>
+                <li><a href="Anotações/simula-rede.html">Simulando Condições de Rede no DevTools do Chrome
+                    </a></li>
+                <li><a href="Anotações/clean-code.html">Clean Code para HTML e CSS</a></li>
+                <li><a href="Anotações/crud.html">CRUD - Exemplo com Gerenciador de Produtos</a></li>
+                <li><a href="Anotações/crud-explicado.html">CRUD Explicado</a></li>
+                <li><a href="Anotações/documentacao-json-lt.html">Documentação – Uso de JSON-LD e Schema.org no Site</a>
+                </li>
+                <li><a href="Anotações/conversao-de-arquvi-json.html">Conversão de Arquivos JSON para Formatos
+                        Acessíveis</a></li>
+                <li><a href="Anotações/atalho-teclado.html">Atalhos de teclado</a></li>
+
+                <li><a href="Anotações/pesquisa-avancada.html">Pesquisa Avançada no Google</a></li>
+            </section>
+
+            <hr>
+
+            <!-- SNIPPETS -->
+            <section id="snippets">
+                <h2>🚩 Snippets</h2>
+                <li><a href="Snippets/acordeao.html"> Criando um Acordeão com <code>details</code> e
+                        <code>summary</code> sem JavaScript
+                    </a></li>
+                <li><a href="Snippets/acordeao-com-js.html">Acordeão com HTML, CSS e JS</a></li>
+                <li><a href="Snippets/sliders-multi-range.html">Criando um Sistema de Sliders Multi-Range com
+                        Atualização Dinâmica de Total
+                    </a></li>
+                <li><a href="Snippets/galeria-infinita.html">Galeria de Imagens com Rolagem Infinita</a></li>
+                <li><a href="Snippets/turn-on.html">Script em Batch para abrir programas automaticamente</a></li>
+                <li><a href="Snippets/desliga-pc.html">Desligar o Computador usando VBScript</a></li>
+                <li><a href="Snippets/varios-scripts.html">Vários scripts em VBScript ou Batch</a></li>
+                <li><a href="Snippets/rolagem-texto.html">Rolagem de Texto ao Passar o Mouse</a></li>
+                <li><a href="Snippets/validacao-form.html">Validação de Formulário</a></li>
+
+            </section>
+
+            <hr>
+
+            <!-- DESIGN DEV CREW -->
+            <section id="devcrew">
+                <h2>🎁 Design-DEV</h2>
+                <li><a href="Design-Dev/index.html">Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
+
+                    </a></li>
+
+            </section>
+
+            <hr>
+
+            <section id="front-side">
+                <h2>🖌️ UX/UI no Front-End</h2>
+                <p>Seção dedicada a aplicar conceitos de design digital no desenvolvimento front-end. Encontre guias
+                    práticos sobre experiência do usuário, interface intuitiva, composição visual e recursos gráficos
+                    para elevar a qualidade dos seus projetos.</p>
+                <ul>
+                    <li><a href="Recursos-Web/ilustracao-design.html">Recursos para Design e Desenvolvimento</a></li>
+                    <li><a href="ui-ux/importancia-das-cores.html">A importância das cores um site</a></li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <!-- BACKSTAGE DA WEB -->
+            <section id="backstage">
+                <h2>📤 Backstage da WEB</h2>
+                <p>Anotações e guias sobre o que acontece por trás de um site: DNS, hospedagem, disponibilidade, e
+                    diagnósticos para manter tudo no ar.</p>
+                <li><a href="backstage/como-identificar-site-fora-do-ar.html">Como identificar sites fora do ar</a></li>
+                <li><a href="backstage/conceitos-fundamentais-de-dns.html">Documentação Técnica: Conceitos Fundamentais
+                        de DNS, Cache, CDN e SEO</a></li>
+                <li><a href="backstage/doc-sobre-seo.html">Documentação: Perguntas sobre SEO</a></li>
+                <li><a href="backstage/http-e-codigo-de-status.html">Documentação: HTTP e Códigos de Status</a></li>
+                <li><a href="backstage/fundamentos-para-funcionamento-coreto-site.html">Fundamentos para o Funcionamento
+                        Correto de um Site</a></li>
+
+                <br>
+                <h2 id="-ferramentas-para-diagn-stico-de-dns">🛠️ Ferramentas para Diagnóstico de DNS</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ferramenta</th>
+                            <th>Descrição</th>
+                            <th>Acesso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>DNSChecker</strong></td>
+                            <td>Permite verificar a propagação de DNS globalmente. Você pode inserir um domínio e ver
+                                como os servidores DNS ao redor do mundo estão respondendo. Ideal para identificar
+                                problemas de resolução ou propagação.</td>
+                            <td><a href="https://dnschecker.org/">dnschecker.org</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>DNSHistory</strong></td>
+                            <td>Exibe o histórico de registros DNS de um domínio. Útil para investigar alterações
+                                suspeitas, rastrear mudanças de IP ou entender o comportamento passado de um site.</td>
+                            <td><a href="https://dnshistory.org/">dnshistory.org</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chrome Net Internals (DNS)</strong></td>
+                            <td>Ferramenta interna do navegador Chrome que mostra o cache DNS local, permite limpá-lo e
+                                visualizar requisições DNS feitas pelo navegador. Excelente para testes locais e
+                                depuração rápida.</td>
+                            <td><code>chrome://net-internals/#dns</code> (digite diretamente na barra de endereço do
+                                Chrome)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+                <h3 style="text-align: center;">Estudando sobre DNS</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Artigo sobre DNS</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/dns/what-is-dns/" target="_blank"
+                                    rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                        <tr>
+                            <td>O que é ataque DDoS?</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/ddos/what-is-a-ddos-attack/"
+                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                        <tr>
+                            <td>O que é armazenamento em cache?</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/cdn/what-is-caching/" target="_blank"
+                                    rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                        <tr>
+                            <td>Artigo sobre IP e TCP</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/ddos/glossary/tcp-ip/"
+                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                        <tr>
+                            <td>Artigo sobre HTTP</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/ddos/glossary/hypertext-transfer-protocol-http/"
+                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                        <tr>
+                            <td>O que é e como funciona DNS</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/dns/what-is-dns/" target="_blank"
+                                    rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                        <tr>
+                            <td>Como a velocidade do site impulsiona o SEO</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/performance/how-website-speed-boosts-seo/"
+                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                        <tr>
+                            <td>Por que a velocidade de um site é importante?</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/performance/why-site-speed-matters/"
+                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                        <tr>
+                            <td>Dicas para melhorar a velocidade do site</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/performance/speed-up-a-website/"
+                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                        <tr>
+                            <td>Como a performance do site afeta conversões</td>
+                            <td><a href="https://www.cloudflare.com/pt-br/learning/performance/more/website-performance-conversion-rates/"
+                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+
+            <hr>
+
+            <!-- SEÇÃO HTML -->
+            <section id="html">
+                <h2>💻 HTML (HYPER TEXT MARKUP LANGUANGE)</h2>
+                <p>HTML (HyperText Markup Language) é o bloco de construção mais básico da Web. Ele define o significado
+                    e a estrutura do conteúdo da Web.</p>
+                <li><a href="HTML/josh-html-skeleton.html">Artigo de Josh W. Comeau: HTML Skeleton</a></li>
+                <li><a href="HTML/melhor-carregamento.html">Documentação: preconnect, prefetch, e preload</a></li>
+                <li><a href="HTML/valida-form.html">Validação de Formulários com Atributos HTML Nativos</a></li>
+                <li><a href="HTML/popover.html">Popover API (HTML) + Cascade Layers (CSS)</a></li>
+
+            </section>
+
+            <hr>
+
+            <!-- SEÇÃO CSS -->
+            <section id="css">
+                <h2>🎨 CSS (CASCADING STYLE SHEETS)</h2>
+                <p>Cascading Style Sheets (CSS) é uma linguagem de estilos que define como um documento escrito em HTML
+                    ou XML deve ser apresentado. É uma tecnologia fundamental da World Wide Web, juntamente com HTML e
+                    JavaScript.</p>
+                <li><a href="CSS/reset-css-josh.html">CSS Reset de Josh Comeau</a></li>
+                <li><a href="CSS/container-queries.html">Container Queries no CSS</a></li>
+                <li><a href="CSS/media-queries-e-clamp-function-css.html">Documentação: Media Queries e CLAMP FUNCTION
+                        no CSS</a></li>
+                <li><a href="CSS/nova-sintaxe-media-queries.html">Nova Sintaxe de Consultas de Mídia
+                    </a></li>
+                <li><a href="CSS/alinhamento-vertical.html">Documentação de Alinhamento Vertical em CSS</a></li>
+                <li><a href="CSS/fonte-fluid.html">Tipografia fluida: abordagem moderna explicada</a></li>
+                <li><a href="CSS/efeito-img.html">50 efeitos de imagem CSS criativos para sites envolventes</a></li>
+                <li><a href="CSS/system-color.html">Cores de Sistema CSS</a></li>
+                <li><a href="CSS/funcoes-css.html">Funções Personalizadas em CSS</a></li>
+                <li><a href="CSS/backdrop-filter.html">Usando backdrop-filter no CSS</a></li>
+                <li><a href="CSS/inverted.html">Efeito Hover com Raio Invertido em CSS
+                    </a></li>
+                <li><a href="CSS/css-arrumado.html">CSS Arrumado</a></li>
+                <li><a href="CSS/carousels.html">Artigo do CSS-Tricks Carousels somente com CSS</a></li>
+                <li><a href="CSS/scramble-effect.html">Texto embaralhado com CSS (Scramble Effect)</a></li>
+
+
+
+            </section>
+
+            <hr>
+
+            <!-- SEÇÃO JAVASCRIPT -->
+            <section id="javascript">
+                <h2>💻 JAVASCRIPT</h2>
+                <p>JavaScript (às vezes abreviado para JS) é uma linguagem leve, interpretada e baseada em objetos com
+                    funções de primeira classe, mais conhecida como a linguagem de script para páginas Web, mas usada
+                    também em vários outros ambientes sem browser, tais como node.js, Apache CouchDB e Adobe Acrobat. O
+                    JavaScript é uma linguagem baseada em protótipos, multi-paradigma e dinâmica, suportando estilos de
+                    orientação a objetos, imperativos e declarativos.</p>
+                <li><a href="JS/btn-topo.html">Como Adicionar um Botão de Voltar ao Topo</a></li>
+                <li><a href="JS/copiar-textos.html">Função: copiarTextoPorId(idElemento)</a></li>
+                <li><a href="JS/relógio.html">RELÓGIO COM SAUDAÇÃO</a></li>
+                <li><a href="JS/rolagem-suave.html">Rolagem Suave entre seções (smooth scroll) </a></li>
+                <li><a href="JS/estudando-o-poder-do-js.html">Estudando o poder do JS</a></li>
+            
+
+            </section>
+
+            <hr>
+
+            <!-- SEÇÃO PHP -->
+            <section id="php">
+                <h2>💻 PHP (PHP Hypertext Preprocessor) </h2>
+                <h4>(Originalmente Personal Home Page)</h4>
+                <p>PHP é uma linguagem de script de código aberto amplamente utilizada, especialmente adequada para o
+                    desenvolvimento web. Pode ser incorporada em HTML e é especialmente adequada para desenvolvimento
+                    web.
+                    O PHP é um dos principais componentes da pilha LAMP (Linux, Apache, MySQL e PHP).</p>
+                <li><a href="PHP/funcoes-php.html">100 Funções PHP Mais Utilizadas</a></li>
+
+
+            </section>
+
+
+            <hr>
+
+            <!-- SEÇÃO DE GIT E MARKDOWN -->
+            <section id="git-markdown">
+                <h2>📂 GIT E MARKDOWN</h2>
+                <p>Git é um sistema de controle de versão distribuído, usado para rastrear alterações no código-fonte
+                    durante o desenvolvimento de software.</p>
+                <!-- <li><a href="git-markdown/comandos-git.html">Guia Rápido de Comandos GIT</a></li>
+                <li><a href="git-markdown/referencia-rapida.html">Guia de Referência Rápida GIT</a></li> -->
+                <li><a href="git-markdown/principais-comandos.html">Principais Comandos GIT</a></li>
+
+                <br>
+
+                <h2>📝 Markdown & Documentação</h2>
+                <p>Já, o Markdown é uma linguagem de marcação de texto que
+                    permite formatar textos de forma simples.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Link</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href="https://codebeautify.org/markdown-to-html" target="_blank"
+                                    rel="noopener noreferrer">Markdown to HTML (CodeBeautify)</a>
+                            </td>
+                            <td>
+                                Ferramenta simples para converter rapidamente Markdown em HTML com visualização
+                                instantânea.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="https://markdowneditor.org/" target="_blank"
+                                    rel="noopener noreferrer">MarkdownEditor.org</a>
+                            </td>
+                            <td>
+                                Editor Markdown com visualização lado a lado em tempo real. Ideal para anotações,
+                                READMEs e documentação.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="https://readme.so/pt" target="_blank" rel="noopener noreferrer">Readme.so</a>
+                            </td>
+                            <td>
+                                Construtor de arquivos README.md com blocos pré-formatados. Ideal para projetos open
+                                source e portfólios.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="https://markdowntohtml.com/" target="_blank" rel="noopener noreferrer">Free
+                                    Markdown to HTML Converter</a>
+                            </td>
+                            <td>
+                                Converter Markdown para HTML
+                                Cole ou digite seu markdown e veja-o renderizado como HTML. Baixe ou copie o HTML
+                                resultante.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <hr>
+
+            <!-- SEÇÃO DE RECURSOS PARA WEB -->
+            <section id="recursos-web">
+                <h2>⚙ Recursos e Ferramentas</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Link</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="Recursos-Web/documentacao.html">Documentações</a> </td>
+                            <td>Diversas Documentações e Referências Técnicas para Consultas</td>
+                        </tr>
+                        <tr>
+                            <td><a href="Recursos-Web/ilustracao-design.html">Ilustrações e Design</a></td>
+                            <td>Recursos para Design, Ilustrações e Imagens</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://www.httrack.com/page/2/" target="_blank"
+                                    rel="noopener noreferrer">httrack.com/page/2</a></td>
+                            <td>É uma ferramenta gratuita e de código aberto para download completo de sites, permitindo
+                                navegá-los offline. É útil para fazer cópias locais para estudo, backup ou análise de
+                                estrutura de sites.</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="https://www.fronteditor.dev/" target="_blank" rel="noopener noreferrer">Front
+                                    end Editor</a></li>
+                            </td>
+                            <td>
+                                Playground online para testar e experimentar código HTML, CSS e JavaScript em tempo
+                                real.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="https://filezilla-project.org/" target="_blank"
+                                    rel="noopener noreferrer">FileZilla</a></li>
+                            </td>
+                            <td>
+                                Software de código aberto para transferência de arquivos via FTP, FTPS e SFTP, com
+                                interface intuitiva e recursos avançados. Amplamente utilizado por desenvolvedores web e
+                                administradores de sistema.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="http://place-hold.it/" target="_blank"
+                                    rel="noopener noreferrer">place-hold.it</a></li>
+                            </td>
+                            <td>
+                                Serviço online que fornece imagens de espaço reservado de forma rápida e fácil para uso
+                                temporário em projetos durante o desenvolvimento. Ideal para preencher layouts até que
+                                as imagens finais estejam disponíveis. </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="http://emojidb.org/" target="_blank" rel="noopener noreferrer">emojidb.org</a>
+                                
+                            </td>
+                            <td>
+                                Site que oferece uma variedade de emojis e símbolos para uso em comunicações digitais.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="https://layout.bradwoods.io/" target="_blank" rel="noopener noreferrer">CSS Layout Generator</a>
+                            </td>
+                            <td>O CSS Layout Generator é uma ferramenta interativa pra gerar layouts de página usando CSS. Ela permite escolher vários modelos de layout (como grid ou flexbox), ver uma prévia visual e pegar o código CSS/HTML gerado para usar no seu projeto. </td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://design.dev/#tools" target="_blank" rel="noreferrer noopener">Design & Dev Tools For Creators</a></td>
+                            <td>Lista de ferramentas essenciais para criar e manter Design Systems (sistemas de design), destacando a convergência entre design e código (como Storybook, Figma, e frameworks de UI/UX).</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://www.notion.so/Tutorial-OBS-Studio-2cbd6d7894a2805cbac3dbb1651eb749?source=copy_link" target="_blank" rel="noopener noreferrer">Tutorial e dicas para OBS Studio</a></td>
+                            <td>Um guia prático no Notion que ensina passo a passo como configurar e usar o OBS Studio para gravação e transmissão de vídeos.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+            </section>
+
+            <hr>
+
+            <!-- SEÇÃO DE CURSOS ONLINE -->
+            <section id="cursos-online">
+                <h2>👩‍💻 Cursos Online de Programação</h2>
+                <p>
+                    Se você quer aprender programação pela internet, existem diversos cursos
+                    gratuitos e pagos que oferecem ótimo conteúdo. Aqui você encontra links e
+                    anotações dos cursos que acompanho.
+                </p>
+
+                <h3>📺 Curso em Vídeo</h3>
+                <ul>
+                    <li>
+                        <a href="https://www.cursoemvideo.com/" target="_blank" rel="noopener noreferrer">
+                            Site Curso em Vídeo
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://gustavoguanabara.github.io/" target="_blank" rel="noopener noreferrer">
+                            Repositório público do Prof. Gustavo Guanabara
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Curso-em-Video/cursohtml.html">Curso de HTML e CSS</a>
+                    </li>
+                </ul>
+
+                <h3>🎓 CFB Cursos</h3>
+                <ul>
+                    <li>
+                        <a href="https://www.youtube.com/@cfbcursos" target="_blank" rel="noopener noreferrer">
+                            Canal no YouTube
+                        </a>
+                    </li>
+                    <!-- <li> SITE FORA DO AR
+                        <a href="https://www.cfbcursos.com.br/" target="_blank" rel="noopener noreferrer">
+                            Site oficial CFB Cursos
+                        </a>
+                    </li> -->
+                    <li>
+                        <a href="CFB-Cursos/index.html">Curso de JavaScript</a>
+                    </li>
+                </ul>
+
+                <!-- Espaço para novos cursos futuramente -->
+                <!-- <h3>📚 Outros Cursos</h3>
+                <p>Em breve adicionarei mais cursos e materiais interessantes aqui.</p> -->
+            </section>
+
+
+            <hr>
+
+            <!-- SEÇÃO DE LIVROS DE PROGRAMAÇÃO -->
+            <section id="livros">
+                <h2>📚 Livros de Programação</h2>
+                <li><a href="https://devfreebooks.github.io/" target="_blank" rel="noopener noreferrer">Dev Free Books -
+                        Coleção de livros para DEVs</a></li>
+
+
+            </section>
+
+            <hr>
+
+            <section id="projetos">
+                <h2>👌 Projetos Mão na Massa</h2>
+                <p>Este espaço foi criado para documentar meus projetos de desenvolvimento web. O objetivo é registrar
+                    os desafios, as dúvidas e as soluções encontradas, criando um material de referência prático e
+                    acessível.</p>
+                <li>
+                    <a href="./projeto-dark-souls/README.html">Projeto Dark Souls</a>
+                </li>
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

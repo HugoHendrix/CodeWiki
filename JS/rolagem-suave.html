@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h2>Rolagem Suave entre Seções</h2>
+    <p>Para implementar rolagem suave (smooth scroll) em seu site, existem várias abordagens. Aqui estão as principais:
+    </p>
+    <h3 id="1-usando-css-puro-mais-simples">1. Usando CSS Puro (Mais Simples)</h3>
+    <p>Adicione a propriedade <code>scroll-behavior</code> ao elemento raiz do seu CSS:</p>
+    <pre><code class="language-css">html {
+  scroll-behavior: smooth;
+}
+</code></pre>
+    <p><strong>Funciona para:</strong></p>
+    <ul>
+        <li>Navegação via âncoras (<code>&lt;a href=&quot;#section&quot;&gt;</code>)</li>
+        <li>Scroll automático com JavaScript (ex: <code>window.scrollTo()</code>)</li>
+    </ul>
+    <p><strong>Compatibilidade:</strong><br>Funciona na maioria dos navegadores modernos (Chrome, Firefox, Edge), mas
+        não no IE ou Safari antigo.</p>
+    <hr>
+    <h3 id="2-usando-javascript-nativo">2. Usando JavaScript Nativo</h3>
+    <p>Para mais controle ou compatibilidade, use métodos JavaScript:</p>
+    <h4 id="a-com-scrollto">a. Com <code>scrollTo()</code></h4>
+    <pre><code class="language-javascript">// Rolagem suave para coordenadas específicas
+window.scrollTo({
+  top: 1000,
+  behavior: &#39;smooth&#39;
+});
+
+// Ou para um elemento
+const element = document.getElementById(&#39;section&#39;);
+element.scrollIntoView({ behavior: &#39;smooth&#39; });
+</code></pre>
+    <h4 id="b-interceptando-cliques-em-âncoras">b. Interceptando cliques em âncoras</h4>
+    <pre><code class="language-javascript">document.querySelectorAll(&#39;a[href^=&quot;#&quot;]&#39;).forEach(anchor =&gt; {
+  anchor.addEventListener(&#39;click&#39;, function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute(&#39;href&#39;));
+    target.scrollIntoView({ behavior: &#39;smooth&#39; });
+  });
+});
+</code></pre>
+    <hr>
+    <h3 id="3-personalização-avançada-exemplo">3. Personalização Avançada (Exemplo)</h3>
+    <p>Para controlar duração ou efeitos de easing:</p>
+    <pre><code class="language-javascript">function smoothScrollTo(target, duration = 1000) {
+  const start = window.pageYOffset;
+  const distance = target.offsetTop - start;
+  let startTime = null;
+
+  function animation(currentTime) {
+    if (!startTime) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+    
+    window.scrollTo(0, start + distance * easeInOutQuad(progress));
+    
+    if (timeElapsed &lt; duration) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  function easeInOutQuad(t) {
+    return t &lt; 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  }
+
+  requestAnimationFrame(animation);
+}
+
+// Uso:
+smoothScrollTo(document.getElementById(&#39;secao&#39;), 1500);
+</code></pre>
+    <hr>
+    <h3 id="4-usando-bibliotecas-externas">4. Usando Bibliotecas Externas</h3>
+    <ul>
+        <li>
+            <p><strong>SmoothScroll.js</strong> (leve: ~4KB): </p>
+            <pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  const scroll = new SmoothScroll(&#39;a[href*=&quot;#&quot;]&#39;);
+&lt;/script&gt;
+</code></pre>
+        </li>
+        <li>
+            <p><strong>jQuery</strong> (se já estiver usando):</p>
+            <pre><code class="language-javascript">$(&#39;a[href^=&quot;#&quot;]&#39;).on(&#39;click&#39;, function(e) {
+  e.preventDefault();
+  $(&#39;html, body&#39;).animate({
+    scrollTop: $($(this).attr(&#39;href&#39;)).offset().top
+  }, 500);
+});
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h3 id="considerações">Considerações:</h3>
+    <ul>
+        <li><strong>Compatibilidade:</strong> Use polyfills (como <code>smoothscroll-polyfill</code>) se precisar de
+            suporte para Safari ou IE.</li>
+        <li><strong>Desempenho:</strong> Evite animações muito longas ou complexas.</li>
+        <li><strong>Acessibilidade:</strong> Mantenha o foco no elemento alvo usando <code>element.focus()</code> após a
+            rolagem.</li>
+    </ul>
+    
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

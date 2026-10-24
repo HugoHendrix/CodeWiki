@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article class="backdrop-filter-guide">
+        <header>
+            <h1>Usando backdrop-filter no CSS para Efeitos de UI Modernos</h1>
+            <p class="article-meta">
+                Fonte: <a href="https://css-tricks.com/using-css-backdrop-filter-for-ui-effects/?ref=dailydev"
+                    target="_blank" rel="noopener noreferrer">CSS-Tricks</a>
+            </p>
+        </header>
+
+        <section>
+            <h2>1. Introdução ao backdrop-filter</h2>
+            <p>A propriedade CSS <code>backdrop-filter</code> permite aplicar efeitos visuais à área <em>atrás</em> de
+                um elemento, criando:</p>
+            <ul>
+                <li>Efeitos de vidro fosco (glassmorphism)</li>
+                <li>Overlays estilizados</li>
+                <li>Transições suaves de cor</li>
+                <li>Modais e diálogos modernos</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. Funções de Filtro Disponíveis</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Função</th>
+                        <th>Exemplo</th>
+                        <th>Efeito</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>blur()</code></td>
+                        <td><code>blur(5px)</code></td>
+                        <td>Desfoque do fundo</td>
+                    </tr>
+                    <tr>
+                        <td><code>brightness()</code></td>
+                        <td><code>brightness(120%)</code></td>
+                        <td>Ajuste de brilho</td>
+                    </tr>
+                    <tr>
+                        <td><code>contrast()</code></td>
+                        <td><code>contrast(80%)</code></td>
+                        <td>Contraste do fundo</td>
+                    </tr>
+                    <tr>
+                        <td><code>grayscale()</code></td>
+                        <td><code>grayscale(50%)</code></td>
+                        <td>Conversão para escala de cinza</td>
+                    </tr>
+                    <tr>
+                        <td><code>hue-rotate()</code></td>
+                        <td><code>hue-rotate(90deg)</code></td>
+                        <td>Mudança de tonalidade</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>3. Exemplo: Efeito Vidro Fosco</h2>
+            <pre><code>.modal {
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px) saturate(180%);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }</code></pre>
+        </section>
+
+        <section>
+            <h2>4. Suporte de Navegadores</h2>
+            <ul>
+                <li>Chrome 76+ ✅</li>
+                <li>Firefox 103+ ✅</li>
+                <li>Safari 9+ ✅</li>
+                <li>Edge 79+ ✅</li>
+                <li>Internet Explorer ❌</li>
+            </ul>
+            <div class="note">
+                <strong>Nota:</strong> Para suporte mais amplo, use prefixo <code>-webkit-backdrop-filter</code>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Aplicações Práticas</h2>
+            <h3>5.1. Overlays de Navegação</h3>
+            <pre><code>.nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backdrop-filter: blur(5px) brightness(90%);
+    }</code></pre>
+
+            <h3>5.2. Cards Interativos</h3>
+            <pre><code>.card:hover {
+        backdrop-filter: brightness(110%) contrast(120%);
+        transition: backdrop-filter 0.3s ease;
+    }</code></pre>
+        </section>
+
+        <section>
+            <h2>6. Considerações de Desempenho</h2>
+            <div class="warning">
+                <strong>Atenção:</strong> Efeitos muito intensos podem causar:
+                <ul>
+                    <li>Redução na taxa de FPS</li>
+                    <li>Consumo maior de memória</li>
+                    <li>Problemas em dispositivos móveis</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="references">
+            <h2>7. Referências</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter" target="_blank"
+                        rel="noopener noreferrer">MDN Web Docs</a></li>
+                <li><a href="https://caniuse.com/css-backdrop-filter" target="_blank" rel="noopener noreferrer">Can I
+                        Use</a></li>
+                <li><a href="https://webkit.org/blog/3632/introducing-backdrop-filters/" target="_blank"
+                        rel="noopener noreferrer">Documentação WebKit</a></li>
+                <li><a href="https://css-tricks.com/almanac/properties/b/backdrop-filter/" target="_blank" rel="noopener noreferrer"><code>Backdrop-filter</code> no CSS-Tricks</a></li>
+                </a></li>
+                <li><a href="https://www.joshwcomeau.com/css/backdrop-filter/" target="_blank" rel="noopener noreferrer">Frosted glass with <code>Backdrop-filter</code> </a></li>
+            </ul>
+        </div>
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

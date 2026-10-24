@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article id="variaveis-javascript">
+        <header>
+            <h1>📌 Variáveis no JavaScript</h1>
+            <p>Entender como o JavaScript lida com variáveis é fundamental para evitar erros e escrever código limpo.
+                Aqui veremos as diferenças entre <code>var</code>, <code>let</code>, <code>const</code>, além do modo
+                <em>strict</em> e como a linguagem trata a tipagem dinâmica.</p>
+        </header>
+
+        <section>
+            <h2>🔒 O que é "use strict"?</h2>
+            <p>O <code>"use strict"</code> ativa o <strong>modo restrito</strong> do JavaScript. Ele muda a forma como o
+                motor interpreta o código, tornando-o mais seguro e menos propenso a erros silenciosos.</p>
+            <ul>
+                <li>Evita a criação de variáveis globais sem querer.</li>
+                <li>Impede a duplicação de nomes de parâmetros.</li>
+                <li>Lança mais erros explícitos (em vez de ignorar).</li>
+            </ul>
+            <pre><code>"use strict";
+
+x = 10; // ❌ ReferenceError (sem 'var', 'let' ou 'const')</code></pre>
+        </section>
+
+        <section>
+            <h2>📍 Características do <code>var</code></h2>
+            <ul>
+                <li>Escopo de função (não de bloco).</li>
+                <li>Pode ser redeclarada sem erro.</li>
+                <li>Sofre <em>hoisting</em> (é “içada” para o topo do escopo).</li>
+            </ul>
+            <pre><code>function exemplo() {
+  if (true) {
+    var a = 5;
+  }
+  console.log(a); // ✅ 5 (var ignora o bloco)
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>📍 Características do <code>let</code></h2>
+            <ul>
+                <li>Escopo de bloco (<code>{ }</code>).</li>
+                <li>Não pode ser redeclarada no mesmo escopo.</li>
+                <li>É inicializada apenas quando o código atinge sua linha.</li>
+            </ul>
+            <pre><code>if (true) {
+  let b = 10;
+}
+console.log(b); // ❌ ReferenceError (fora do escopo)</code></pre>
+        </section>
+
+        <section>
+            <h2>📍 Características do <code>const</code></h2>
+            <ul>
+                <li>Escopo de bloco, assim como <code>let</code>.</li>
+                <li>Deve ser inicializada no momento da declaração.</li>
+                <li>Não pode ser reatribuída.</li>
+                <li>Objetos e arrays podem ser mutados, mas não reatribuídos.</li>
+            </ul>
+            <pre><code>const PI = 3.14;
+PI = 3.1415; // ❌ TypeError: Assignment to constant variable
+
+const user = { nome: "Hendrix" };
+user.nome = "CodeWiki"; // ✅ permitido (mutação de objeto)</code></pre>
+        </section>
+
+        <section>
+            <h2>⚠️ ReferenceError e TypeError</h2>
+            <p><strong>ReferenceError:</strong> acontece quando tentamos acessar uma variável que não existe ou não foi
+                declarada.</p>
+            <pre><code>console.log(x); // ❌ ReferenceError: x is not defined</code></pre>
+
+            <p><strong>TypeError:</strong> ocorre quando tentamos realizar uma operação inválida em um tipo de dado,
+                como reatribuir uma constante.</p>
+            <pre><code>const y = 50;
+y = 100; // ❌ TypeError: Assignment to constant variable</code></pre>
+        </section>
+
+        <section>
+            <h2>🔄 Tipagem Dinâmica e Casting Automático</h2>
+            <p>O JavaScript é uma linguagem de <strong>tipagem dinâmica</strong>, ou seja, o tipo da variável pode mudar
+                em tempo de execução. Além disso, ele realiza <em>type coercion</em> (conversão implícita de tipos) em
+                algumas operações.</p>
+            <pre><code>let n = 10;        // número
+n = "dez";         // agora é string
+
+console.log("5" + 2);  // "52" (concatenação)
+console.log("5" - 2);  // 3   (conversão automática para número)</code></pre>
+        </section>
+
+    <p>👉 Resumindo: prefira <code>let</code> e <code>const</code> no dia a dia, use <code>"use strict"</code>
+                para evitar erros silenciosos e lembre-se que o JavaScript pode mudar o tipo de variáveis dinamicamente.
+            </p>
+    </article>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

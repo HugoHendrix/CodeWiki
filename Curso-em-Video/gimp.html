@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h2 id="gimp-gnu-image-manipulation-program"><strong>GIMP</strong> (GNU Image Manipulation Program)</h2>
+    <p><img src="logo-gimp.png" alt="Logo do Gimp"></p>
+    <p>Uma ferramenta gratuita e poderosa para edição de imagens.</p>
+    <hr>
+    <h3 id="1-formato-e-tamanho-dos-arquivos-no-gimp"><strong>1. Formato e Tamanho dos Arquivos no GIMP</strong></h3>
+    <ul>
+        <li><strong>Formato</strong>: O GIMP suporta vários formatos de imagem, como JPEG, PNG, GIF, BMP, TIFF, WebP,
+            entre outros. Cada formato tem suas características:<ul>
+                <li><strong>JPEG</strong>: Ideal para fotos, pois oferece boa compressão, mas perde qualidade ao salvar.
+                </li>
+                <li><strong>PNG</strong>: Ideal para imagens com transparência ou que precisam de alta qualidade, como
+                    logos e ícones.</li>
+                <li><strong>GIF</strong>: Usado para animações simples e imagens com poucas cores.</li>
+                <li><strong>WebP</strong>: Um formato moderno que oferece compressão superior ao JPEG e PNG, mas nem
+                    todos os navegadores suportam.</li>
+            </ul>
+        </li>
+        <li><strong>Tamanho</strong>: O tamanho do arquivo depende da resolução (largura x altura em pixels) e da
+            qualidade da compressão. Imagens maiores e com menos compressão resultam em arquivos maiores.</li>
+    </ul>
+    <hr>
+    <h3 id="2-importância-de-usar-imagens-leves-em-sites"><strong>2. Importância de Usar Imagens Leves em Sites</strong>
+    </h3>
+    <ul>
+        <li><strong>Performance</strong>: Imagens pesadas podem tornar o site lento, especialmente em dispositivos
+            móveis ou conexões de internet mais lentas. Sites lentos têm uma taxa de rejeição maior e são penalizados
+            pelos mecanismos de busca, como o Google.</li>
+        <li><strong>Experiência do Usuário</strong>: Um site que carrega rapidamente proporciona uma experiência melhor
+            ao usuário, aumentando a chance de ele permanecer no site e interagir com o conteúdo.</li>
+        <li><strong>SEO</strong>: O Google prioriza sites rápidos em seus resultados de busca. Imagens otimizadas ajudam
+            a melhorar o desempenho do site, o que impacta positivamente o SEO (Search Engine Optimization).</li>
+    </ul>
+    <hr>
+    <h3 id="3-diferença-entre-os-formatos-de-imagem"><strong>3. Diferença Entre os Formatos de Imagem</strong></h3>
+    <ul>
+        <li><strong>JPEG</strong>:<ul>
+                <li><strong>Vantagens</strong>: Compactação eficiente, ideal para fotos.</li>
+                <li><strong>Desvantagens</strong>: Perda de qualidade ao salvar, não suporta transparência.</li>
+            </ul>
+        </li>
+        <li><strong>PNG</strong>:<ul>
+                <li><strong>Vantagens</strong>: Suporta transparência, sem perda de qualidade.</li>
+                <li><strong>Desvantagens</strong>: Arquivos maiores comparados ao JPEG.</li>
+            </ul>
+        </li>
+        <li><strong>GIF</strong>:<ul>
+                <li><strong>Vantagens</strong>: Suporta animações e transparência.</li>
+                <li><strong>Desvantagens</strong>: Limitado a 256 cores, não é ideal para fotos.</li>
+            </ul>
+        </li>
+        <li><strong>WebP</strong>:<ul>
+                <li><strong>Vantagens</strong>: Alta compressão com boa qualidade, suporta transparência e animação.
+                </li>
+                <li><strong>Desvantagens</strong>: Nem todos os navegadores suportam.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h3 id="4-usar-diferentes-tipos-de-tamanho-da-mesma-imagem"><strong>4. Usar Diferentes Tipos de Tamanho da Mesma
+            Imagem</strong></h3>
+    <ul>
+        <li><strong>Responsividade</strong>: Para sites responsivos, é comum usar diferentes tamanhos da mesma imagem,
+            dependendo do dispositivo do usuário. Isso pode ser feito com a tag <code>&lt;picture&gt;</code> em HTML ou
+            com o atributo <code>srcset</code>.<ul>
+                <li>Exemplo:
+                    <pre><code class="language-html">&lt;picture&gt;
+  &lt;source media=&quot;(max-width: 600px)&quot; srcset=&quot;imagem-pequena.jpg&quot;&gt;
+  &lt;source media=&quot;(min-width: 601px)&quot; srcset=&quot;imagem-grande.jpg&quot;&gt;
+  &lt;img src=&quot;imagem-padrao.jpg&quot; alt=&quot;Descrição da imagem&quot;&gt;
+&lt;/picture&gt;
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Otimização</strong>: Use imagens menores para dispositivos móveis e maiores para desktops. Isso
+            melhora o desempenho sem sacrificar a qualidade visual.</li>
+    </ul>
+    <hr>
+    <h3 id="5-usar-o-gimp-para-redimensionar-e-definir-qualidade-em-70"><strong>5. Usar o GIMP para Redimensionar e
+            Definir Qualidade em 70%</strong></h3>
+    <ul>
+        <li><strong>Redimensionar</strong>:<ul>
+                <li>Abra a imagem no GIMP.</li>
+                <li>Vá em <strong>Imagem &gt; Escalar Imagem</strong>.</li>
+                <li>Defina a largura e altura desejadas (em pixels). Mantenha a proporção clicando no ícone de corrente
+                    para evitar distorções.</li>
+                <li>Clique em <strong>Escalar</strong>.</li>
+            </ul>
+        </li>
+        <li><strong>Definir Qualidade em 70%</strong>:<ul>
+                <li>Após redimensionar, vá em <strong>Arquivo &gt; Exportar como</strong>.</li>
+                <li>Escolha o formato JPEG e clique em <strong>Exportar</strong>.</li>
+                <li>Na janela que abrir, ajuste a qualidade para <strong>70%</strong>.</li>
+                <li>Clique em <strong>Exportar</strong>.</li>
+            </ul>
+        </li>
+        <li><strong>Backup</strong>: Sempre mantenha uma cópia da imagem original em alta resolução para futuras edições
+            ou ajustes.</li>
+    </ul>
+    <hr>
+    <h3 id="6-salvar-arquivos-com-nomes-intuitivos"><strong>6. Salvar Arquivos com Nomes Intuitivos</strong></h3>
+    <ul>
+        <li><strong>Boas Práticas</strong>:<ul>
+                <li>Use nomes em <strong>minúsculas</strong> e sem espaços ou caracteres especiais.</li>
+                <li>Inclua informações como o conteúdo da imagem e o tamanho (ex: <code>banner-1920x800.jpg</code>).
+                </li>
+                <li>Isso facilita a organização e a identificação rápida dos arquivos.</li>
+            </ul>
+        </li>
+        <li><strong>Exemplos</strong>:<ul>
+                <li><code>logo-300x300.png</code></li>
+                <li><code>banner-1200x600.jpg</code></li>
+                <li><code>icone-favicon-32x32.ico</code></li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h3 id="7-evitar-deixar-o-site-lento"><strong>7. Evitar Deixar o Site Lento</strong></h3>
+    <ul>
+        <li><strong>Dicas</strong>:<ul>
+                <li><strong>Otimize as Imagens</strong>: Reduza o tamanho e a qualidade das imagens sem comprometer a
+                    visibilidade.</li>
+                <li><strong>Use Lazy Loading</strong>: Carregue imagens apenas quando elas estiverem visíveis na tela.
+                </li>
+                <li><strong>Comprima Arquivos</strong>: Use ferramentas como <strong>GZIP</strong> para comprimir
+                    arquivos CSS, JavaScript e HTML.</li>
+                <li><strong>Use CDN</strong>: Utilize uma <strong>Rede de Distribuição de Conteúdo (CDN)</strong> para
+                    servir imagens e outros recursos estáticos.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h3 id="8-evitar-ajustar-o-tamanho-da-imagem-com-css"><strong>8. Evitar Ajustar o Tamanho da Imagem com CSS</strong>
+    </h3>
+    <ul>
+        <li><strong>Problemas com CSS</strong>:<ul>
+                <li>Se você usar uma imagem grande e redimensioná-la com CSS (ex: <code>width: 200px;</code>), o
+                    navegador ainda carrega o arquivo grande, o que torna o site lento.</li>
+                <li>Além disso, redimensionar imagens com CSS pode resultar em perda de qualidade ou distorção.</li>
+            </ul>
+        </li>
+        <li><strong>Solução</strong>:<ul>
+                <li>Crie a imagem no tamanho exato que será exibido no site.</li>
+                <li>Use ferramentas como o GIMP para redimensionar a imagem antes de colocá-la no site.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h3 id="resumo-das-boas-práticas"><strong>Resumo das Boas Práticas</strong></h3>
+    <ol>
+        <li><strong>Redimensione as imagens</strong> no GIMP para o tamanho exato que será usado no site.</li>
+        <li><strong>Defina a qualidade em 70%</strong> ao exportar para JPEG, mantendo um bom equilíbrio entre qualidade
+            e tamanho.</li>
+        <li><strong>Mantenha as imagens originais</strong> para futuras edições.</li>
+        <li><strong>Nomeie os arquivos de forma intuitiva</strong> e organizada.</li>
+        <li><strong>Evite redimensionar imagens com CSS</strong>; sempre use o tamanho correto.</li>
+        <li><strong>Otimize o site</strong> para evitar lentidão, usando técnicas como lazy loading e compressão de
+            imagens.</li>
+    </ol>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="cursohtml.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

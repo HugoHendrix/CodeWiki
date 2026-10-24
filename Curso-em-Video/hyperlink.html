@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h3 id="📚-documentação-hyperlinks-em-html"><strong>📚 Documentação: Hyperlinks em HTML</strong></h3>
+    <p><em>(Baseado no Capítulo 10 do Curso de HTML do Prof. Gustavo Guanabara)</em> </p>
+    <hr>
+    <h2 id="1-o-que-são-hyperlinks"><strong>1. O Que São Hyperlinks?</strong></h2>
+    <ul>
+        <li><strong>Definição:</strong> Elementos que conectam páginas da web, permitindo navegação entre documentos,
+            sites ou downloads. </li>
+        <li><strong>Analogia:</strong> Como &quot;portais&quot; entre páginas na internet. </li>
+        <li><strong>Tag HTML:</strong> <code>&lt;a&gt;</code> (âncora).</li>
+    </ul>
+    <hr>
+    <h2 id="2-sintaxe-básica"><strong>2. Sintaxe Básica</strong></h2>
+    <pre><code class="language-html">&lt;a href=&quot;URL&quot;&gt;Texto do Link&lt;/a&gt;
+</code></pre>
+    <ul>
+        <li><strong><code>href</code>:</strong> Atributo obrigatório que define o destino (URL). </li>
+        <li><strong>Exemplo:</strong>
+            <pre><code class="language-html">&lt;a href=&quot;https://github.com&quot;&gt;Visite o GitHub&lt;/a&gt;
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h2 id="3-tipos-de-links"><strong>3. Tipos de Links</strong></h2>
+    <h3 id="a-links-internos"><strong>a) Links Internos</strong></h3>
+    <ul>
+        <li>Apontam para páginas do mesmo site. </li>
+        <li><strong>Exemplo:</strong>
+            <pre><code class="language-html">&lt;a href=&quot;sobre.html&quot;&gt;Sobre Nós&lt;/a&gt;
+</code></pre>
+        </li>
+    </ul>
+    <h3 id="b-links-externos"><strong>b) Links Externos</strong></h3>
+    <ul>
+        <li>Apontam para outros sites (use URL completa). </li>
+        <li><strong>Exemplo:</strong>
+            <pre><code class="language-html">&lt;a href=&quot;https://google.com&quot;&gt;Google&lt;/a&gt;
+</code></pre>
+        </li>
+    </ul>
+    <h3 id="c-links-para-download"><strong>c) Links para Download</strong></h3>
+    <ul>
+        <li>Usam os atributos <code>download</code> e <code>type</code>. </li>
+        <li><strong>Exemplo:</strong>
+            <pre><code class="language-html">&lt;a href=&quot;manual.pdf&quot; download=&quot;manual.pdf&quot; type=&quot;application/pdf&quot;&gt;Baixar PDF&lt;/a&gt;
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h2 id="4-atributos-importantes"><strong>4. Atributos Importantes</strong></h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Atributo</th>
+                <th>Função</th>
+                <th>Exemplo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>hreflang</code></td>
+                <td>Define o idioma do destino (<code>pt</code>, <code>en</code>, etc.).</td>
+                <td><code>hreflang=&quot;en&quot;</code></td>
+            </tr>
+            <tr>
+                <td><code>target</code></td>
+                <td>Controla onde o link abre (<code>_blank</code>, <code>_self</code>, etc.).</td>
+                <td><code>target=&quot;_blank&quot;</code></td>
+            </tr>
+            <tr>
+                <td><code>rel</code></td>
+                <td>Indica a relação com o destino (<code>external</code>, <code>nofollow</code>, etc.).</td>
+                <td><code>rel=&quot;external&quot;</code></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h2 id="5-valores-do-atributo-target"><strong>5. Valores do Atributo <code>target</code></strong></h2>
+    <ul>
+        <li><strong><code>_blank</code>:</strong> Abre em nova aba/janela. </li>
+        <li><strong><code>_self</code>:</strong> Abre na mesma aba (padrão). </li>
+        <li><strong><code>_parent</code>:</strong> Abre no frame pai. </li>
+        <li><strong><code>_top</code>:</strong> Ignora todos os frames.</li>
+    </ul>
+    <p><strong>Exemplo:</strong> </p>
+    <pre><code class="language-html">&lt;a href=&quot;https://youtube.com&quot; target=&quot;_blank&quot;&gt;Abrir YouTube em nova aba&lt;/a&gt;
+</code></pre>
+    <hr>
+    <h2 id="6-navegação-entre-pastas"><strong>6. Navegação entre Pastas</strong></h2>
+    <ul>
+        <li><strong><code>./</code>:</strong> Pasta atual. </li>
+        <li><strong><code>../</code>:</strong> Volta uma pasta. </li>
+        <li><strong>Exemplo:</strong>
+            <pre><code class="language-html">&lt;a href=&quot;../projetos/portfolio.html&quot;&gt;Portfólio&lt;/a&gt;
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h2 id="media-types-tipos-de-mime"><strong>7. Media Types (Tipos de MIME)</strong></h2>
+    <p>São identificadores que dizem ao navegador <strong>que tipo de arquivo</strong> está sendo vinculado ou baixado.
+    </p>
+    <h4 id="principais-tipos"><strong>Principais Tipos:</strong></h4>
+    <table>
+        <thead>
+            <tr>
+                <th>Categoria</th>
+                <th>Media Type</th>
+                <th>Uso Típico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Documentos</strong></td>
+                <td><code>application/pdf</code></td>
+                <td>Arquivos PDF</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>application/zip</code></td>
+                <td>Arquivos compactados (.zip)</td>
+            </tr>
+            <tr>
+                <td><strong>Imagens</strong></td>
+                <td><code>image/jpeg</code></td>
+                <td>Fotos (.jpg, .jpeg)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>image/png</code></td>
+                <td>Imagens transparentes (.png)</td>
+            </tr>
+            <tr>
+                <td><strong>Vídeo/Audio</strong></td>
+                <td><code>video/mp4</code></td>
+                <td>Vídeos MP4</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>audio/mpeg</code></td>
+                <td>Arquivos de áudio (.mp3)</td>
+            </tr>
+            <tr>
+                <td><strong>Texto</strong></td>
+                <td><code>text/html</code></td>
+                <td>Páginas HTML</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><code>text/css</code></td>
+                <td>Arquivos CSS</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4 id="como-usar"><strong>Como Usar?</strong></h4>
+    <ul>
+        <li>Em links de download:
+            <pre><code class="language-html">&lt;a href=&quot;manual.pdf&quot; download=&quot;manual.pdf&quot; type=&quot;application/pdf&quot;&gt;Baixar PDF&lt;/a&gt;
+</code></pre>
+        </li>
+        <li>Em tags como <code>&lt;link&gt;</code> (para CSS):
+            <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;estilo.css&quot; type=&quot;text/css&quot;&gt;
+</code></pre>
+        </li>
+    </ul>
+    <h4 id="onde-encontrar-a-lista-completa"><strong>Onde Encontrar a Lista Completa?</strong></h4>
+    <ul>
+        <li><a href="https://www.iana.org/assignments/media-types/media-types.xhtml">Lista Oficial da IANA</a>.</li>
+    </ul>
+    <hr>
+    <hr>
+    <h2 id="8-boas-práticas"><strong>8. Boas Práticas</strong></h2>
+    <p>✅ Use <code>rel=&quot;external&quot;</code> para links externos.<br>✅ Sempre prefira <code>https://</code> em
+        URLs.<br>✅ Para downloads, nomeie o arquivo no atributo <code>download</code>. </p>
+    <hr>
+    <h2 id="9-exercícios-práticos"><strong>9. Exercícios Práticos</strong></h2>
+    <ol>
+        <li><strong>Link Simples:</strong>
+            <pre><code class="language-html">&lt;a href=&quot;contato.html&quot;&gt;Fale Conosco&lt;/a&gt;
+</code></pre>
+        </li>
+        <li><strong>Link com Target:</strong>
+            <pre><code class="language-html">&lt;a href=&quot;https://linkedin.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;LinkedIn&lt;/a&gt;
+</code></pre>
+        </li>
+        <li><strong>Download de Imagem:</strong>
+            <pre><code class="language-html">&lt;a href=&quot;foto.jpg&quot; download=&quot;minha-foto.jpg&quot; type=&quot;image/jpeg&quot;&gt;Baixar Foto&lt;/a&gt;
+</code></pre>
+        </li>
+    </ol>
+    <hr>
+
+
+    <h3 id="🔍-explicação-detalhada-atributo-target"><strong>🔍 Explicação Detalhada: Atributo
+            <code>target</code></strong></h3>
+    <p>O atributo <code>target</code> em links HTML (<code>&lt;a&gt;</code>) controla <strong>onde</strong> o conteúdo
+        do link será aberto. Vamos entender cada valor:</p>
+    <hr>
+    <h4 id="1-target_blank"><strong>1. <code>target=&quot;_blank&quot;</code></strong></h4>
+    <ul>
+        <li><strong>O que faz?</strong> Abre o link em uma <strong>nova aba/janela</strong> do navegador. </li>
+        <li><strong>Quando usar?</strong>
+            <ul>
+                <li>Para links externos (evita que o usuário saia do seu site). </li>
+                <li>Exemplo:
+                    <pre><code class="language-html">&lt;a href=&quot;https://google.com&quot; target=&quot;_blank&quot;&gt;Abrir Google&lt;/a&gt;
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li><strong>Dica:</strong> Combine com <code>rel=&quot;noopener noreferrer&quot;</code> para segurança (evita
+            ataques de <em>tabnabbing</em>).</li>
+        <div class="flash severe">
+            <p>💡 Ataques de tabnabbing, que é uma forma de phishing que ocorre quando um invasor rouba suas informações de login ao hackear uma aba do seu navegador enquanto você está logado, é importante tomar precauções como verificar se há elementos suspeitos em e-mails, não compartilhar informações pessoais, usar um serviço de isolamento de navegador e confirmar a mensagem com o remetente. <br> <a href="../Anotações/problemas-target-blank.html" target="_blank" rel="external noopener noreferrer">Veja mais no artigo sobre o assunto.</a>
+            </p>
+        </div>
+    </ul>
+    <hr>
+    <h4 id="2-target_self"><strong>2. <code>target=&quot;_self&quot;</code></strong></h4>
+    <ul>
+        <li><strong>O que faz?</strong> Abre o link na <strong>mesma aba</strong> (comportamento padrão se
+            <code>target</code> não for especificado).
+        </li>
+        <li><strong>Quando usar?</strong>
+            <ul>
+                <li>Navegação interna no site (ex: menu de páginas). </li>
+                <li>Exemplo:
+                    <pre><code class="language-html">&lt;a href=&quot;sobre.html&quot; target=&quot;_self&quot;&gt;Sobre Nós&lt;/a&gt;
+</code></pre>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="3-target_parent"><strong>3. <code>target=&quot;_parent&quot;</code></strong></h4>
+    <ul>
+        <li><strong>O que faz?</strong> Abre o link no <strong>frame pai</strong> (útil em páginas com
+            <em>framesets</em>).
+        </li>
+        <li><strong>Contexto:</strong>
+            <ul>
+                <li>Se a página estiver dentro de um <code>&lt;iframe&gt;</code>, o link abrirá no frame que o contém.
+                </li>
+                <li>Exemplo:
+                    <pre><code class="language-html">&lt;a href=&quot;pagina2.html&quot; target=&quot;_parent&quot;&gt;Voltar ao Frame Pai&lt;/a&gt;
+</code></pre>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h4 id="4-target_top"><strong>4. <code>target=&quot;_top&quot;</code></strong></h4>
+    <ul>
+        <li><strong>O que faz?</strong> Ignora todos os frames e abre o link no <strong>contexto completo da
+                janela</strong>. </li>
+        <li><strong>Quando usar?</strong>
+            <ul>
+                <li>Quando seu site está dentro de um <em>iframe</em> e você quer &quot;escapar&quot; dele. </li>
+                <li>Exemplo:
+                    <pre><code class="language-html">&lt;a href=&quot;home.html&quot; target=&quot;_top&quot;&gt;Sair do Frame&lt;/a&gt;
+</code></pre>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h3 id="📌-por-que-usar-o-atributo-rel"><strong>📌 Por Que Usar o Atributo <code>rel</code>?</strong></h3>
+    <p>O atributo <code>rel</code> define a <strong>relação</strong> entre a página atual e o link. É importante para:
+    </p>
+    <h4 id="1-segurança-e-performance"><strong>1. Segurança e Performance</strong></h4>
+    <ul>
+        <li><code>rel=&quot;noopener noreferrer&quot;</code>: <ul>
+                <li>Usado com <code>target=&quot;_blank&quot;</code> para evitar vulnerabilidades como
+                    <em>tabnabbing</em>.
+                </li>
+                <li>Exemplo:
+                    <pre><code class="language-html">&lt;a href=&quot;https://site-externo.com&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Link Seguro&lt;/a&gt;
+</code></pre>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <h4 id="2-seo-e-semântica"><strong>2. SEO e Semântica</strong></h4>
+    <ul>
+        <li><code>rel=&quot;external&quot;</code>: Indica que o link é para um <strong>site externo</strong>. </li>
+        <li><code>rel=&quot;nofollow&quot;</code>: Diz aos mecanismos de busca para <strong>não seguir</strong> o link
+            (usado em links patrocinados ou não confiáveis). </li>
+        <li>Exemplo:
+            <pre><code class="language-html">&lt;a href=&quot;https://exemplo.com&quot; rel=&quot;external nofollow&quot;&gt;Link Externo&lt;/a&gt;
+</code></pre>
+        </li>
+    </ul>
+    <h4 id="3-navegação-entre-páginas"><strong>3. Navegação entre Páginas</strong></h4>
+    <ul>
+        <li><code>rel=&quot;prev&quot;</code> e <code>rel=&quot;next&quot;</code>: Para indicar paginação (útil para
+            SEO).
+            <pre><code class="language-html">&lt;a href=&quot;pagina2.html&quot; rel=&quot;next&quot;&gt;Próxima Página&lt;/a&gt;
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+
+    <h3 id="📌-resumo-prático"><strong>📌 Resumo Prático</strong></h3>
+    <pre><code class="language-html">&lt;!-- Link seguro em nova aba --&gt;  
+&lt;a href=&quot;https://exemplo.com&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Abrir Exemplo&lt;/a&gt;  
+
+&lt;!-- Download de imagem --&gt;  
+&lt;a href=&quot;foto.png&quot; download=&quot;foto.png&quot; type=&quot;image/png&quot;&gt;Baixar Imagem&lt;/a&gt;  
+
+&lt;!-- Link externo com SEO --&gt;  
+&lt;a href=&quot;https://outrosite.com&quot; rel=&quot;external nofollow&quot;&gt;Site Parceiro&lt;/a&gt;  
+
+&lt;!-- Link Interno --&gt;  
+&lt;a href=&quot;sobre.html&quot;&gt;Sobre&lt;/a&gt;  
+
+&lt;!-- Link Externo --&gt;  
+&lt;a href=&quot;https://twitter.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Twitter&lt;/a&gt;  
+
+&lt;!-- Download media-types --&gt;  
+&lt;a href=&quot;arquivo.zip&quot; download=&quot;arquivo.zip&quot; type=&quot;application/zip&quot;&gt;Baixar ZIP&lt;/a&gt;  
+</code></pre>
+    <p>Esses conceitos são essenciais para criar links eficientes, seguros e otimizados para SEO! 🌐</p>
+
+    <hr>
+
+    <h2 id="🔗-recursos-adicionais"><strong>🔗 Recursos Adicionais</strong></h2>
+    <ul>
+        <li><a href="https://github.com/gustavoguanabara" target="_blank" rel="external noopener noreferrer">Repositório do Curso</a> </li>
+        <li><a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n" target="_blank" rel="external noopener noreferrer">Playlist no YouTube</a>
+        </li>
+        <li><a href="https://www.iana.org/assignments/media-types/media-types.xhtml" target="_blank" rel="external noopener noreferrer">Lista de Media Types (IANA)</a>
+        </li>
+        <li><a href="../Anotações/problemas-target-blank.html" target="_blank" rel="external noopener noreferrer">Perigo ao Usar target="_blank" no HTML
+        </a></li>
+    </ul>
+    <hr>
+
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

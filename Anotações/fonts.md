@@ -1,10 +1,10 @@
-### **Otimizando Fontes da Web para Melhorar o Desempenho do Site**
+## **Otimizando Fontes da Web para Melhorar o Desempenho do Site**
 
 As fontes da web são essenciais para o design e a identidade visual de um site, mas se não forem otimizadas, podem impactar negativamente o desempenho. Vamos explorar como usar `font-display`, pré-carregar fontes e considerar fontes variáveis para garantir que seu site carregue rapidamente sem sacrificar a estética.
 
 ---
 
-## **1. Usando `font-display` para Controlar o Carregamento de Fontes**
+### **1. Usando `font-display` para Controlar o Carregamento de Fontes**
 
 A propriedade `font-display` permite controlar como as fontes são exibidas enquanto estão sendo carregadas. Isso evita problemas como "flash de texto invisível" (FOIT) ou "flash de texto não estilizado" (FOUT).
 

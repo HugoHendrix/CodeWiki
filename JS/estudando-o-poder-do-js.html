@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+
+        <h2 id="-documenta-o-o-poder-do-javascript">📘 Documentação: O Poder do JavaScript</h2>
+        <h3 id="-objetivo">🧩 Objetivo</h3>
+        <p>Demonstrar como o JavaScript pode interagir com elementos HTML para modificar conteúdo, estilo e
+            comportamento de forma dinâmica.</p>
+        <hr>
+        <h3 id="-estrutura-html">🖼️ Estrutura HTML</h3>
+        <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>O Poder do JavaScript<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"demo"</span>&gt;</span>JS pode mudar o conteúdo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+        <ul>
+            <li><code>&lt;h2&gt;</code>: Título da página.</li>
+            <li><code>&lt;p id=&quot;demo&quot;&gt;</code>: Parágrafo com um identificador único
+                (<code>id=&quot;demo&quot;</code>) que será manipulado via JavaScript.</li>
+        </ul>
+        <hr>
+        <h3 id="-bot-es-interativos">🧪 Botões Interativos</h3>
+        <p>Cada botão utiliza o evento <code>onclick</code> para executar uma ação JavaScript ao ser clicado.</p>
+        <h4 id="-mudar-a-cor-do-texto-para-vermelho">🔹 Mudar a cor do texto para vermelho</h4>
+        <pre><code class="lang-html">&lt;button type=<span class="hljs-string">"button"</span> onclick='document.getElementById(<span class="hljs-string">"demo"</span>).<span class="hljs-built_in">style</span>.<span class="hljs-built_in">color</span>=<span class="hljs-string">"red"</span>'&gt;
+  Mudar o conteú<span class="hljs-keyword">do</span> para a <span class="hljs-built_in">cor</span> Vermelho
+&lt;/button&gt;
+</code></pre>
+        <ul>
+            <li><code>document.getElementById(&quot;demo&quot;)</code>: Seleciona o elemento com
+                <code>id=&quot;demo&quot;</code>.
+            </li>
+            <li><code>.style.color = &quot;red&quot;</code>: Altera a cor do texto para vermelho.</li>
+        </ul>
+        <h4 id="-mudar-o-conte-do-do-par-grafo">🔹 Mudar o conteúdo do parágrafo</h4>
+        <pre><code class="lang-html">&lt;button <span class="hljs-keyword">type</span>=<span class="hljs-string">"button"</span> onclick=<span class="hljs-symbol">'document.getElementById</span>(<span class="hljs-string">"demo"</span>).innerHTML=<span class="hljs-string">"Hello JS"</span>'&gt;
+  Mudar o conteú<span class="hljs-keyword">do</span> para Hello JS
+&lt;/button&gt;
+</code></pre>
+        <ul>
+            <li><code>.innerHTML</code>: Substitui o conteúdo interno do elemento por <code>&quot;Hello JS&quot;</code>.
+            </li>
+        </ul>
+        <h4 id="-aumentar-o-tamanho-da-fonte">🔹 Aumentar o tamanho da fonte</h4>
+        <pre><code class="lang-html">&lt;button <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"button"</span> onclick=<span class="hljs-symbol">'document</span>.getElementById(<span class="hljs-string">"demo"</span>).style.fontSize=<span class="hljs-string">"30px"</span>'&gt;
+  <span class="hljs-type">Aumentar</span> a fonte para <span class="hljs-number">30</span>px
+&lt;/button&gt;
+</code></pre>
+        <ul>
+            <li><code>.style.fontSize = &quot;30px&quot;</code>: Modifica o tamanho da fonte.</li>
+            <li><strong>⚠ Nota</strong>: O uso de <code>camelCase</code> é necessário em JavaScript para propriedades
+                CSS
+                com hífen (ex: <code>font-size</code> → <code>fontSize</code>).</li>
+        </ul>
+        <h4 id="-bot-o-geral-m-ltiplas-a-es-">🔹 Botão Geral (múltiplas ações)</h4>
+        <pre><code class="lang-html">&lt;button type=<span class="hljs-string">"button"</span> onclick='
+  document.getElementById(<span class="hljs-string">"demo"</span>).innerHTML=<span class="hljs-string">"Hello World"</span>;
+  document.getElementById(<span class="hljs-string">"demo"</span>).<span class="hljs-built_in">style</span>.<span class="hljs-built_in">color</span>=<span class="hljs-string">"red"</span>;
+  document.getElementById(<span class="hljs-string">"demo"</span>).<span class="hljs-built_in">style</span>.fontSize=<span class="hljs-string">"30px"</span>;
+'&gt;
+  Botão Geral
+&lt;/button&gt;
+</code></pre>
+        <ul>
+            <li>Executa três ações:<ul>
+                    <li>Muda o conteúdo para <code>&quot;Hello World&quot;</code>.</li>
+                    <li>Altera a cor para vermelho.</li>
+                    <li>Aumenta a fonte para 30px.</li>
+                </ul>
+            </li>
+            <li><strong>Ponto e vírgula <code>;</code></strong>: Separa as instruções para que sejam executadas em
+                sequência.</li>
+        </ul>
+        <hr>
+        <h3 id="-conceitos-importantes">🧠 Conceitos Importantes</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Conceito</th>
+                    <th>Explicação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>onclick</code></td>
+                    <td>Evento que dispara uma função JavaScript ao clicar em um elemento.</td>
+                </tr>
+                <tr>
+                    <td><code>document.getElementById()</code></td>
+                    <td>Seleciona um elemento HTML pelo seu <code>id</code>.</td>
+                </tr>
+                <tr>
+                    <td><code>.style</code></td>
+                    <td>Permite modificar estilos CSS diretamente via JavaScript.</td>
+                </tr>
+                <tr>
+                    <td><code>.innerHTML</code></td>
+                    <td>Altera o conteúdo HTML interno de um elemento.</td>
+                </tr>
+                <tr>
+                    <td><code>camelCase</code></td>
+                    <td>Convenção usada em JavaScript para propriedades CSS com hífen.</td>
+                </tr>
+                <tr>
+                    <td><code>;</code> (ponto e vírgula)</td>
+                    <td>Indica o fim de uma instrução JavaScript.</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h3 id="-resultado-esperado">✅ Resultado Esperado</h3>
+        <p>Ao clicar nos botões, o parágrafo com <code>id=&quot;demo&quot;</code> será atualizado dinamicamente,
+            mostrando o poder do JavaScript em manipular o DOM (Document Object Model).</p>
+
+
+        <p id="demo"><strong>A linguagem JavaScript pode mudar o conteúdo</strong></p>
+
+        <button type="button" onclick='document.getElementById("demo").style.color="red"'>
+            Mudar o conteúdo para a cor Vermelho
+        </button>
+        <!-- .style: Usado para acessar e mudar os estilos de um elemento, como cores e tamanhos. -->
+
+        <button type="button" onclick='document.getElementById("demo").innerHTML="Hello JS"'>
+            Mudar o conteúdo para Hello JS
+        </button>
+        <!-- innerHTML: Usado para mudar o conteúdo de um elemento. -->
+
+        <button type="button" onclick='document.getElementById("demo").style.fontSize="30px"'>
+            Aumentar a fonte para 30px
+        </button>
+        <!-- camelCase: Usado para escrever propriedades de estilo com hífen (-) do CSS no JavaScript (por exemplo, font-size vira fontSize). -->
+
+        <button type="button" onclick='
+  document.getElementById("demo").innerHTML="Hello World";
+  document.getElementById("demo").style.color="red";
+  document.getElementById("demo").style.fontSize="30px";
+'>
+            Botão Geral
+        </button>
+
+        <!-- 
+O Evento onclick: Para dizer ao navegador para executar um código quando o botão for clicado.
+
+O Ponto e Vírgula ;: Para separar as instruções de JavaScript e dizer ao navegador para executá-las uma após a outra.
+
+A Repetição de Código: Para que o JavaScript saiba em qual elemento ele deve aplicar cada uma das ações.
+-->
+
+
+    </article>
+
+
+    <article>
+        <h2 id="-documenta-o-ampliada-c-digo-inteligente-e-reutiliz-vel-com-javascript">📘 Documentação Ampliada: Código
+            Inteligente e Reutilizável com JavaScript</h2>
+        <h3 id="-objetivo">🎯 Objetivo</h3>
+        <p>Demonstrar como tornar o código JavaScript mais legível, reutilizável e eficiente ao interagir com elementos
+            HTML.</p>
+        <hr>
+        <h3 id="-boas-pr-ticas-aplicadas">🧠 Boas Práticas Aplicadas</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Prática</th>
+                    <th>Benefício</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Separação de Preocupações</strong></td>
+                    <td>Mantém HTML e JavaScript organizados e independentes.</td>
+                </tr>
+                <tr>
+                    <td><strong>Uso de Funções</strong></td>
+                    <td>Permite reutilização e facilita manutenção do código.</td>
+                </tr>
+                <tr>
+                    <td><strong>Uso de Variáveis</strong></td>
+                    <td>Evita repetição de código e melhora a performance.</td>
+                </tr>
+                <tr>
+                    <td><strong>Estilo Centralizado</strong></td>
+                    <td>Facilita ajustes visuais e promove consistência.</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h3 id="-exemplo-completo-com-separa-o-de-c-digo">💻 Exemplo Completo com Separação de Código</h3>
+        <h4 id="-html-estrutura-">📄 HTML (estrutura)</h4>
+        <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"pt-BR"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>O Poder do JavaScript<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"style.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>O Poder do JavaScript<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"demo"</span>&gt;</span>JS pode mudar o conteúdo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"mudarConteudo()"</span>&gt;</span>Trocar o conteúdo<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"script.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+        <h4 id="-javascript-comportamento-">⚙️ JavaScript (comportamento)</h4>
+        <pre><code class="lang-javascript"><span class="hljs-comment">// script.js</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mudarConteudo</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> paragrafo = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"demo"</span>);
+
+  paragrafo.innerHTML = <span class="hljs-string">"Estou aprendendo JavaScript"</span>;
+  paragrafo.style.color = <span class="hljs-string">"green"</span>;
+  paragrafo.style.fontSize = <span class="hljs-string">"48px"</span>;
+  paragrafo.style.backgroundColor = <span class="hljs-string">"limegreen"</span>;
+}
+</code></pre>
+        <hr>
+        <h3 id="-explica-o-da-fun-o-mudarconteudo-">🔍 Explicação da Função <code>mudarConteudo()</code></h3>
+        <ul>
+            <li><code>document.getElementById(&quot;demo&quot;)</code>: Busca o elemento com
+                <code>id=&quot;demo&quot;</code>.
+            </li>
+            <li><code>paragrafo.innerHTML</code>: Altera o conteúdo textual.</li>
+            <li><code>paragrafo.style.color</code>: Muda a cor do texto.</li>
+            <li><code>paragrafo.style.fontSize</code>: Define o tamanho da fonte.</li>
+            <li><code>paragrafo.style.backgroundColor</code>: Aplica cor de fundo.</li>
+        </ul>
+        <hr>
+        <h3>Exemplo do código</h3>
+        <p id="demonstracao">JS pode mudar o conteúdo</p>
+        <button type="button" onclick="mudarConteudo()">Trocar o conteúdo</button>
+        <script>
+            function mudarConteudo() {
+                const paragrafo = document.getElementById("demonstracao");
+
+                paragrafo.innerHTML = "Estou aprendendo JavaScript";
+                paragrafo.style.color = "green";
+                paragrafo.style.fontSize = "48px";
+                paragrafo.style.backgroundColor = "limegreen";
+            }
+        </script>
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

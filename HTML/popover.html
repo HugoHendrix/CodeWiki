@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <h2 id="📌-popover-api-html--cascade-layers-css">📌 Popover API (HTML) + Cascade Layers (CSS)</h2>
+    <h3 id="🧠-o-que-é-a-popover-api">🧠 O que é a Popover API?</h3>
+    <p>A <strong>Popover API</strong> é um recurso moderno do HTML que permite criar elementos interativos (como menus,
+        tooltips ou modais) <strong>sem precisar de JavaScript</strong>.</p>
+    <p>Introduzida no HTML Living Standard, essa API facilita o controle da visibilidade de elementos em resposta a
+        ações do usuário (como clicar num botão).</p>
+    <hr>
+    <h3 id="🚀-exemplo-prático">🚀 Exemplo Prático</h3>
+    <pre><code class="language-html">&lt;button popovertarget=&quot;popover&quot;&gt;Abrir Popover&lt;/button&gt;
+&lt;div id=&quot;popover&quot; popover&gt;Conteúdo do popover&lt;/div&gt;
+</code></pre>
+    <h4 id="✅-o-que-está-acontecendo">✅ O que está acontecendo:</h4>
+    <ul>
+        <li>O botão com <code>popovertarget=&quot;popover&quot;</code> controla a visibilidade do elemento com
+            <code>id=&quot;popover&quot;</code>.</li>
+        <li>O atributo <code>popover</code> transforma a <code>&lt;div&gt;</code> em um elemento interativo que pode ser
+            mostrado/ocultado automaticamente.</li>
+    </ul>
+    <hr>
+    <h3 id="🎨-estilizando-com-layer">🎨 Estilizando com @layer</h3>
+    <pre><code class="language-css">@layer style {
+  #popover {
+    background: var(--color-2); /* Cor de fundo definida em outro lugar */
+    color: white;
+    padding: 1em;
+  }
+}
+</code></pre>
+    <h4 id="sobre-layer">Sobre <code>@layer</code>:</h4>
+    <p><code>@layer</code> é parte das <strong>Cascade Layers</strong>, uma nova funcionalidade do CSS que ajuda a
+        organizar e controlar a ordem de prioridade entre estilos de diferentes origens (reset, temas, componentes,
+        etc.).</p>
+    <hr>
+    <h3 id="📘-explicação-de-atributos-importantes">📘 Explicação de atributos importantes</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Atributo HTML</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>popover</code></td>
+                <td>Torna o elemento interativo (pode ser exibido ou escondido).</td>
+            </tr>
+            <tr>
+                <td><code>popovertarget</code></td>
+                <td>Indica qual elemento será controlado ao clicar no botão.</td>
+            </tr>
+            <tr>
+                <td><code>id</code></td>
+                <td>Identificador do popover, usado para referenciar no botão.</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h3 id="🧪-compatibilidade">🧪 Compatibilidade</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Navegador</th>
+                <th>Suporte</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Chrome 114+</td>
+                <td>✅</td>
+            </tr>
+            <tr>
+                <td>Firefox 117+</td>
+                <td>✅</td>
+            </tr>
+            <tr>
+                <td>Safari</td>
+                <td>❌ (parcial ou em desenvolvimento)</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Recomenda-se verificar a <a href="https://caniuse.com/?search=popover" target="_blank" rel="noopener noreferrer" >compatibilidade atual no Can I Use</a>.
+    </p>
+    <hr>
+    <h3 id="📦-quando-usar">📦 Quando usar?</h3>
+    <ul>
+        <li>Menus dropdown</li>
+        <li>Tooltips</li>
+        <li>Modais simples</li>
+        <li>Notificações contextuais</li>
+    </ul>
+    <hr>
+    <h3 id="🧱-comparação-antes-e-depois">🧱 Comparação: Antes e Depois</h3>
+    <h4 id="🔧-antigo-com-js">🔧 Antigo (com JS):</h4>
+    <pre><code class="language-html">&lt;button onclick=&quot;popover.classList.toggle(&#39;show&#39;)&quot;&gt;Abrir&lt;/button&gt;
+&lt;div id=&quot;popover&quot; class=&quot;popover&quot;&gt;Conteúdo&lt;/div&gt;
+</code></pre>
+    <h4 id="✨-novo-com-popover-api">✨ Novo (com Popover API):</h4>
+    <pre><code class="language-html">&lt;button popovertarget=&quot;popover&quot;&gt;Abrir&lt;/button&gt;
+&lt;div id=&quot;popover&quot; popover&gt;Conteúdo&lt;/div&gt;
+</code></pre>
+    <hr>
+    <h3 id="📂-referências">📂 Referências</h3>
+    <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API" target="_blank" rel="noopener noreferrer">MDN Web Docs - Popover API</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer" target="_blank" rel="noopener noreferrer">MDN Web Docs - Cascade Layers</a></li> 
+        <li><a href="https://caniuse.com/?search=popover" target="_blank" rel="noopener noreferrer">Can I Use - popover</a></li>
+    </ul>
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

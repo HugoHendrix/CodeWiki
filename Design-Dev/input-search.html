@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+        <h3 id="-o-que-faz-o-input-type-search-">🔍 O que faz o <code>&lt;input type=&quot;search&quot;&gt;</code></h3>
+        <p>É um campo de texto otimizado para buscas. Ele se comporta quase como um <code>type=&quot;text&quot;</code>,
+            mas com <strong>recursos nativos adicionais</strong> voltados à experiência do usuário e acessibilidade.</p>
+        <hr>
+        <h3 id="-1-bot-o-de-limpar-nativo-">✅ 1. Botão de limpar nativo (×)</h3>
+        <p>Nos navegadores modernos (principalmente Safari, Chrome e Edge), o campo de busca exibe automaticamente um
+            <strong>botão “×”</strong> à direita quando o usuário digita algo.
+            Clicar nesse botão <strong>limpa o campo instantaneamente</strong>, sem precisar de JavaScript.</p>
+        <hr>
+        <h3 id="-2-acessibilidade-integrada">✅ 2. Acessibilidade integrada</h3>
+        <p>Ele já vem com a semântica de “campo de pesquisa”.
+            Isso significa que <strong>leitores de tela</strong> entendem que o usuário está interagindo com uma busca,
+            sem precisar adicionar <code>aria-label</code> ou <code>role=&quot;searchbox&quot;</code> manualmente
+            (embora seja possível adicionar para reforço).</p>
+        <hr>
+        <h3 id="-3-teclado-otimizado-em-dispositivos-m-veis">✅ 3. Teclado otimizado em dispositivos móveis</h3>
+        <p>Em smartphones e tablets, o teclado muda automaticamente para um <strong>layout otimizado para
+                pesquisa</strong>, com um botão “Search” ou “Go”, tornando a experiência mais fluida.</p>
+        <hr>
+        <h3 id="-4-compat-vel-com-atributos-avan-ados">✅ 4. Compatível com atributos avançados</h3>
+        <p>O <code>input type=&quot;search&quot;</code> funciona com atributos que melhoram a usabilidade:</p>
+        <ul>
+            <li><strong><code>enterkeyhint=&quot;search&quot;</code></strong> → controla o texto do botão “Enter” no
+                teclado virtual.</li>
+            <li><strong><code>incremental</code></strong> → permite enviar eventos conforme o usuário digita (sem
+                precisar pressionar Enter).</li>
+            <li><strong><code>role=&quot;search&quot;</code></strong> → reforça a semântica da área de busca.</li>
+        </ul>
+        <p>Exemplo mais completo:</p>
+        <pre><code class="lang-html">&lt;<span class="hljs-keyword">form</span> role=<span class="hljs-string">"search"</span>&gt;
+  &lt;<span class="hljs-keyword">input</span> 
+    <span class="hljs-keyword">type</span>=<span class="hljs-string">"search"</span> 
+    placeholder=<span class="hljs-string">"Buscar no site..."</span> 
+    enterkeyhint=<span class="hljs-string">"search"</span> 
+    incremental 
+  /&gt;
+&lt;/<span class="hljs-keyword">form</span>&gt;
+</code></pre>
+        <hr>
+        <h3 id="-dica-extra">💡 Dica extra</h3>
+        <p>Se quiser estilizar o botão “×”, ele é controlado por pseudoelementos específicos de cada navegador (por
+            exemplo, <code>::-webkit-search-cancel-button</code> em navegadores baseados em Chromium e Safari).</p>
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

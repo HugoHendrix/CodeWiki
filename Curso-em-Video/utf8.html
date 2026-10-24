@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h1 id="utf-8">UTF-8</h1>
+    <h2
+        id="um-dos-sistemas-de-codificação-de-caracteres-mais-importantes-e-amplamente-utilizados-na-computação-e-na-web">
+        Um dos sistemas de codificação de caracteres mais importantes e amplamente utilizados na computação e na web.
+    </h2>
+    <h3 id="o-que-é-utf-8"><strong>O que é UTF-8?</strong></h3>
+    <p><strong>Definição:</strong><br>UTF-8 (<strong>Unicode Transformation Format - 8 bits</strong>) é um formato de
+        codificação de caracteres que permite representar todos os caracteres do <strong>padrão Unicode</strong> de
+        forma eficiente e compatível com sistemas antigos.</p>
+    <p><strong>Unicode:</strong> </p>
+    <ul>
+        <li>O Unicode é um padrão que atribui um número único (chamado de <strong>code point</strong>) para cada
+            caractere, símbolo ou emoji, independentemente do idioma ou plataforma. </li>
+        <li>Exemplos de code points: <ul>
+                <li>&quot;A&quot; → U+0041 </li>
+                <li>&quot;ç&quot; → U+00E7 </li>
+                <li>&quot;😊&quot; → U+1F60A</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>UTF-8:</strong> </p>
+    <ul>
+        <li>É uma forma de codificar esses code points em bytes (sequências de 8 bits) para armazenamento e transmissão.
+        </li>
+        <li>É <strong>retrocompatível com o ASCII</strong>, o que significa que os primeiros 128 caracteres do Unicode
+            são idênticos ao ASCII.</li>
+    </ul>
+    <hr>
+    <h3 id="por-que-o-utf-8-é-importante"><strong>Por que o UTF-8 é importante?</strong></h3>
+    <ol>
+        <li>
+            <p><strong>Universalidade:</strong> </p>
+            <ul>
+                <li>Suporta todos os caracteres de todos os idiomas, incluindo símbolos e emojis. </li>
+                <li>Isso é essencial para a globalização da web e de aplicativos.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Eficiência:</strong> </p>
+            <ul>
+                <li>Usa de 1 a 4 bytes para representar caracteres, dependendo da complexidade. </li>
+                <li>Caracteres ASCII (como letras latinas básicas) usam apenas 1 byte, o que economiza espaço.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Retrocompatibilidade:</strong> </p>
+            <ul>
+                <li>Como é compatível com o ASCII, sistemas antigos podem ler textos em UTF-8 sem problemas.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Padrão da web:</strong> </p>
+            <ul>
+                <li>O UTF-8 é o padrão recomendado para páginas web, bancos de dados, emails e muito mais.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="como-o-utf-8-funciona"><strong>Como o UTF-8 funciona?</strong></h3>
+    <p>O UTF-8 usa um sistema de codificação variável, onde cada caractere pode ocupar de 1 a 4 bytes. A estrutura dos
+        bytes depende do code point do caractere.</p>
+    <p><strong>Exemplos de codificação:</strong></p>
+    <ol>
+        <li>
+            <p><strong>Caracteres ASCII (1 byte):</strong> </p>
+            <ul>
+                <li>Code points de U+0000 a U+007F. </li>
+                <li>Exemplo: &quot;A&quot; (U+0041) → <code>01000001</code> (1 byte).</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Caracteres latinos com acentos (2 bytes):</strong> </p>
+            <ul>
+                <li>Code points de U+0080 a U+07FF. </li>
+                <li>Exemplo: &quot;ç&quot; (U+00E7) → <code>11000011 10100111</code> (2 bytes).</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Caracteres de outros idiomas (3 bytes):</strong> </p>
+            <ul>
+                <li>Code points de U+0800 a U+FFFF. </li>
+                <li>Exemplo: &quot;漢&quot; (U+6F22) → <code>11100110 10111100 10100010</code> (3 bytes).</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Emojis e caracteres especiais (4 bytes):</strong> </p>
+            <ul>
+                <li>Code points de U+10000 a U+10FFFF. </li>
+                <li>Exemplo: &quot;😊&quot; (U+1F60A) → <code>11110000 10011111 10011000 10001010</code> (4 bytes).</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="utf-8-vs-outras-codificações"><strong>UTF-8 vs. Outras Codificações</strong></h3>
+    <ol>
+        <li>
+            <p><strong>UTF-16:</strong> </p>
+            <ul>
+                <li>Usa 2 ou 4 bytes por caractere. </li>
+                <li>Menos eficiente para textos em inglês ou ASCII. </li>
+                <li>Comum em sistemas Windows e Java.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>UTF-32:</strong> </p>
+            <ul>
+                <li>Usa 4 bytes fixos por caractere. </li>
+                <li>Muito ineficiente em termos de espaço. </li>
+                <li>Raramente usado.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>ISO-8859-1 (Latin-1):</strong> </p>
+            <ul>
+                <li>Codificação antiga que suporta apenas caracteres europeus. </li>
+                <li>Não suporta idiomas como chinês, árabe ou japonês.</li>
+            </ul>
+        </li>
+    </ol>
+    <p><strong>Vantagem do UTF-8:</strong> </p>
+    <ul>
+        <li>Combina eficiência, compatibilidade e suporte universal.</li>
+    </ul>
+    <hr>
+    <h3 id="utf-8-na-prática"><strong>UTF-8 na Prática</strong></h3>
+    <ol>
+        <li>
+            <p><strong>Em páginas web:</strong> </p>
+            <ul>
+                <li>O UTF-8 é o padrão recomendado para HTML, CSS e JavaScript. </li>
+                <li>Para usar UTF-8 em uma página HTML, adicione a meta tag no <code>&lt;head&gt;</code>:
+                    <pre><code class="language-html">&lt;meta charset=&quot;UTF-8&quot;&gt;
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Em bancos de dados:</strong> </p>
+            <ul>
+                <li>Configurar o banco de dados para usar UTF-8 evita problemas com caracteres especiais. </li>
+                <li>Exemplo em MySQL:
+                    <pre><code class="language-sql">CREATE DATABASE meu_banco CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Em arquivos de texto:</strong> </p>
+            <ul>
+                <li>Ao salvar um arquivo de texto, escolha a codificação UTF-8 no editor (ex.: Notepad++, VS Code).
+                </li>
+                <li>Isso garante que caracteres especiais sejam exibidos corretamente.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Em linguagens de programação:</strong> </p>
+            <ul>
+                <li>A maioria das linguagens modernas (Python, JavaScript, Java, etc.) suporta UTF-8 nativamente. </li>
+                <li>Exemplo em Python:
+                    <pre><code class="language-python">texto = &quot;Olá, mundo! 😊&quot;
+print(texto)
+</code></pre>
+                </li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="problemas-comuns-com-codificação"><strong>Problemas Comuns com Codificação</strong></h3>
+    <ol>
+        <li>
+            <p><strong>Caracteres quebrados:</strong> </p>
+            <ul>
+                <li>Ocorre quando um texto não é codificado ou decodificado corretamente. </li>
+                <li>Exemplo: &quot;Olá&quot; vira &quot;OlÃ¡&quot;.</li>
+            </ul>
+        </li>
+        <li>
+            <p><strong>Solução:</strong> </p>
+            <ul>
+                <li>Certifique-se de que todos os componentes (navegador, servidor, banco de dados) estejam configurados
+                    para usar UTF-8. </li>
+                <li>Verifique a codificação dos arquivos e scripts.</li>
+            </ul>
+        </li>
+    </ol>
+    <hr>
+    <h3 id="resumo"><strong>Resumo</strong></h3>
+    <ul>
+        <li><strong>UTF-8:</strong> Codificação universal que suporta todos os caracteres do Unicode. </li>
+        <li><strong>Vantagens:</strong> Eficiente, compatível com ASCII e amplamente adotado. </li>
+        <li><strong>Uso:</strong> Páginas web, bancos de dados, arquivos de texto e programação. </li>
+        <li><strong>Importância:</strong> Fundamental para a globalização e a interoperabilidade de sistemas.</li>
+    </ul>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="../index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

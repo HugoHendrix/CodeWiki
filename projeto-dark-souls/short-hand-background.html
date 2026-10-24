@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+    <article>
+        <h1 id="shorthand-para-background-no-css">Shorthand para Background no CSS</h1>
+        <p>A shorthand comum para definir o <strong>background</strong> no CSS é a propriedade <code>background</code>,
+            que permite configurar várias características do fundo em uma única linha. Ela pode incluir:</p>
+        <ul>
+            <li><code>background-color</code></li>
+            <li><code>background-image</code></li>
+            <li><code>background-position</code></li>
+            <li><code>background-size</code></li>
+            <li><code>background-repeat</code></li>
+            <li><code>background-attachment</code></li>
+            <li><code>background-origin</code></li>
+            <li><code>background-clip</code></li>
+        </ul>
+        <h3 id="-exemplo-de-shorthand-">🧪 Exemplo de shorthand:</h3>
+        <pre><code class="lang-css"><span class="hljs-selector-tag">elemento</span> {
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#f0f0f0</span> <span class="hljs-built_in">url</span>(<span class="hljs-string">'imagem.jpg'</span>) no-repeat center/cover fixed;
+}
+</code></pre>
+        <h3 id="-explicando-o-exemplo-">🔍 Explicando o exemplo:</h3>
+        <ul>
+            <li><code>#f0f0f0</code> → cor de fundo</li>
+            <li><code>url(&#39;imagem.jpg&#39;)</code> → imagem de fundo</li>
+            <li><code>no-repeat</code> → não repetir a imagem</li>
+            <li><code>center/cover</code> → posição central e tamanho para cobrir o elemento</li>
+            <li><code>fixed</code> → a imagem fica fixa na tela (não rola com o conteúdo)</li>
+        </ul>
+        <p>Você pode usar apenas os valores que precisar — não é obrigatório incluir todos. Por exemplo:</p>
+        <pre><code class="lang-css">background: url(<span class="hljs-string">'bg.png'</span>) center <span class="hljs-keyword">no</span>-<span class="hljs-keyword">repeat</span>;
+</code></pre>
+        <hr>
+        <h2 id="propriedades-do-css-relacionadas-ao-background-">Propriedades do CSS relacionadas ao
+            <strong>background</strong></h2>
+        <hr>
+        <h3 id="-background-color-">🎨 <code>background-color</code></h3>
+        <p>Define a <strong>cor de fundo</strong> do elemento.</p>
+        <pre><code class="lang-css"><span class="hljs-built_in">background</span>-<span class="hljs-built_in">color</span>: lightblue;
+</code></pre>
+        <p>Você pode usar nomes de cores, hexadecimais (<code>#ff0000</code>), RGB, HSL, etc.</p>
+        <hr>
+        <h3 id="-background-image-">🖼️ <code>background-image</code></h3>
+        <p>Define uma <strong>imagem de fundo</strong>.</p>
+        <pre><code class="lang-css"><span class="hljs-built_in">background</span>-<span class="hljs-built_in">image</span>: url(<span class="hljs-string">'fundo.jpg'</span>);
+</code></pre>
+        <p>Pode usar imagens locais ou URLs externas. Também aceita gradientes:</p>
+        <pre><code class="lang-css"><span class="hljs-built_in">background</span>-<span class="hljs-built_in">image</span>: <span class="hljs-built_in">linear</span>-gradient(to right, red, yellow);
+</code></pre>
+        <hr>
+        <h3 id="-background-position-">📍 <code>background-position</code></h3>
+        <p>Define a <strong>posição da imagem de fundo</strong> dentro do elemento.</p>
+        <pre><code class="lang-css"><span class="hljs-built_in">background</span>-<span class="hljs-built_in">position</span>: <span class="hljs-built_in">center</span>;
+<span class="hljs-built_in">background</span>-<span class="hljs-built_in">position</span>: top left;
+<span class="hljs-built_in">background</span>-<span class="hljs-built_in">position</span>: <span class="hljs-number">50</span><span class="hljs-symbol">%</span> <span class="hljs-number">50</span><span class="hljs-symbol">%</span>;
+</code></pre>
+        <p>Você pode usar palavras-chave (<code>top</code>, <code>right</code>, <code>center</code>) ou valores
+            (<code>px</code>, <code>%</code>).</p>
+        <hr>
+        <h3 id="-background-size-">📐 <code>background-size</code></h3>
+        <p>Controla o <strong>tamanho da imagem de fundo</strong>.</p>
+        <pre><code class="lang-css"><span class="hljs-built_in">background</span>-<span class="hljs-built_in">size</span>: cover;     <span class="hljs-comment">/* cobre todo o elemento */</span>
+<span class="hljs-built_in">background</span>-<span class="hljs-built_in">size</span>: contain;   <span class="hljs-comment">/* ajusta para caber sem cortar */</span>
+<span class="hljs-built_in">background</span>-<span class="hljs-built_in">size</span>: <span class="hljs-number">100</span>px <span class="hljs-number">50</span>px; <span class="hljs-comment">/* largura e altura específicas */</span>
+</code></pre>
+        <hr>
+        <h3 id="-background-repeat-">🔁 <code>background-repeat</code></h3>
+        <p>Define se a imagem de fundo deve <strong>se repetir</strong>.</p>
+        <pre><code class="lang-css">background-<span class="hljs-keyword">repeat</span>: <span class="hljs-keyword">repeat</span>;       <span class="hljs-comment">/* padrão: repete em x e y */</span>
+background-<span class="hljs-keyword">repeat</span>: <span class="hljs-keyword">no</span>-<span class="hljs-keyword">repeat</span>;    <span class="hljs-comment">/* não repete */</span>
+background-<span class="hljs-keyword">repeat</span>: <span class="hljs-keyword">repeat</span>-x;     <span class="hljs-comment">/* repete só na horizontal */</span>
+background-<span class="hljs-keyword">repeat</span>: <span class="hljs-keyword">repeat</span>-y;     <span class="hljs-comment">/* repete só na vertical */</span>
+</code></pre>
+        <hr>
+        <h3 id="-background-attachment-">📌 <code>background-attachment</code></h3>
+        <p>Controla se o fundo <strong>rola com o conteúdo</strong> ou fica fixo.</p>
+        <pre><code class="lang-css"><span class="hljs-attribute">background-attachment</span>: scroll;  <span class="hljs-comment">/* padrão: rola junto */</span>
+<span class="hljs-attribute">background-attachment</span>: fixed;   <span class="hljs-comment">/* fica fixo na tela */</span>
+<span class="hljs-attribute">background-attachment</span>: local;   <span class="hljs-comment">/* rola com o conteúdo interno */</span>
+</code></pre>
+        <hr>
+        <h3 id="-background-origin-">🧭 <code>background-origin</code></h3>
+        <p>Define <strong>onde começa</strong> o fundo dentro do box do elemento.</p>
+        <pre><code class="lang-css"><span class="hljs-built_in">background</span>-<span class="hljs-built_in">origin</span>: padding-<span class="hljs-built_in">box</span>;  <span class="hljs-comment">/* padrão: começa no padding */</span>
+<span class="hljs-built_in">background</span>-<span class="hljs-built_in">origin</span>: <span class="hljs-built_in">border</span>-<span class="hljs-built_in">box</span>;   <span class="hljs-comment">/* inclui a borda */</span>
+<span class="hljs-built_in">background</span>-<span class="hljs-built_in">origin</span>: <span class="hljs-built_in">content</span>-<span class="hljs-built_in">box</span>;  <span class="hljs-comment">/* só dentro do conteúdo */</span>
+</code></pre>
+        <hr>
+        <h3 id="-background-clip-">✂️ <code>background-clip</code></h3>
+        <p>Define <strong>até onde o fundo é visível</strong>.</p>
+        <pre><code class="lang-css"><span class="hljs-built_in">background</span>-clip: <span class="hljs-built_in">border</span>-<span class="hljs-built_in">box</span>;   <span class="hljs-comment">/* cobre até a borda */</span>
+<span class="hljs-built_in">background</span>-clip: padding-<span class="hljs-built_in">box</span>;  <span class="hljs-comment">/* cobre até o padding */</span>
+<span class="hljs-built_in">background</span>-clip: <span class="hljs-built_in">content</span>-<span class="hljs-built_in">box</span>;  <span class="hljs-comment">/* cobre só o conteúdo */</span>
+</code></pre>
+        <hr>
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./README.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

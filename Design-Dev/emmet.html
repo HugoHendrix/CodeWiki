@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>CodeWiki</title>
+</head>
+
+<body>
+
+    <h3 id="🚀-documentação-emmet-no-vs-code"><strong>🚀 Documentação: Emmet no VS Code</strong></h3>
+    <p><em>(Ferramenta essencial para acelerar a escrita de HTML/CSS)</em> </p>
+    <hr>
+    <h2 id="1-o-que-é-o-emmet"><strong>1. O Que é o Emmet?</strong></h2>
+    <ul>
+        <li><strong>Definição:</strong> Plugin que permite escrever HTML e CSS de forma rápida usando
+            <strong>abreviações</strong> (snippets). </li>
+        <li><strong>Exemplo:</strong> Digitar <code>ul&gt;li*5</code> e pressionar <code>Tab</code> gera uma lista não
+            ordenada com 5 itens. </li>
+        <li><strong>Benefícios:</strong>
+            <ul>
+                <li>Economiza tempo. </li>
+                <li>Reduz erros de sintaxe. </li>
+                <li>Ideal para estruturas repetitivas.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h2 id="2-abreviações-básicas-de-html"><strong>2. Abreviações Básicas de HTML</strong></h2>
+    <h3 id="estrutura-inicial"><strong>Estrutura Inicial</strong></h3>
+    <ul>
+        <li><strong><code>!</code> → HTML Boilerplate:</strong>
+            <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+        </li>
+    </ul>
+    <h3 id="elementos-com-classes-e-ids"><strong>Elementos com Classes e IDs</strong></h3>
+    <ul>
+        <li><strong><code>div.container</code> →</strong>
+            <pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;&lt;/div&gt;
+</code></pre>
+        </li>
+        <li><strong><code>section#home</code> →</strong>
+            <pre><code class="language-html">&lt;section id=&quot;home&quot;&gt;&lt;/section&gt;
+</code></pre>
+        </li>
+    </ul>
+    <h3 id="aninhamento-de-elementos"><strong>Aninhamento de Elementos</strong></h3>
+    <ul>
+        <li><strong><code>nav&gt;ul&gt;li</code> →</strong>
+            <pre><code class="language-html">&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+        </li>
+    </ul>
+    <h3 id="multiplicação-de-elementos"><strong>Multiplicação de Elementos</strong></h3>
+    <ul>
+        <li><strong><code>ul&gt;li*3</code> →</strong>
+            <pre><code class="language-html">&lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h2 id="3-abreviações-de-css"><strong>3. Abreviações de CSS</strong></h2>
+    <ul>
+        <li><strong><code>m20</code> →</strong> <code>margin: 20px;</code> </li>
+        <li><strong><code>p10-20</code> →</strong> <code>padding: 10px 20px;</code> </li>
+        <li><strong><code>bgc#f00</code> →</strong> <code>background-color: #ff0000;</code> </li>
+        <li><strong><code>d:n</code> →</strong> <code>display: none;</code></li>
+    </ul>
+    <hr>
+    <h2 id="4-recursos-avançados"><strong>4. Recursos Avançados</strong></h2>
+    <h3 id="navegação-entre-irmãos"><strong>Navegação entre Irmãos</strong></h3>
+    <ul>
+        <li><strong><code>header+main+footer</code> →</strong>
+            <pre><code class="language-html">&lt;header&gt;&lt;/header&gt;
+&lt;main&gt;&lt;/main&gt;
+&lt;footer&gt;&lt;/footer&gt;
+</code></pre>
+        </li>
+    </ul>
+    <h3 id="texto-dentro-de-elementos"><strong>Texto dentro de Elementos</strong></h3>
+    <ul>
+        <li><strong><code>h1{Título Principal}</code> →</strong>
+            <pre><code class="language-html">&lt;h1&gt;Título Principal&lt;/h1&gt;
+</code></pre>
+        </li>
+    </ul>
+    <h3 id="atributos-personalizados"><strong>Atributos Personalizados</strong></h3>
+    <ul>
+        <li><strong><code>a[href=&quot;#&quot;]</code> →</strong>
+            <pre><code class="language-html">&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;
+</code></pre>
+        </li>
+    </ul>
+    <h3 id="agrupamento-com-parênteses"><strong>Agrupamento com Parênteses</strong></h3>
+    <ul>
+        <li><strong><code>(article&gt;h2+p)*2</code> →</strong>
+            <pre><code class="language-html">&lt;article&gt;
+    &lt;h2&gt;&lt;/h2&gt;
+    &lt;p&gt;&lt;/p&gt;
+&lt;/article&gt;
+&lt;article&gt;
+    &lt;h2&gt;&lt;/h2&gt;
+    &lt;p&gt;&lt;/p&gt;
+&lt;/article&gt;
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h2 id="5-dicas-e-truques"><strong>5. Dicas e Truques</strong></h2>
+    <h3 id="lorem-ipsum-automático"><strong>Lorem Ipsum Automático</strong></h3>
+    <ul>
+        <li><strong><code>p&gt;lorem20</code> →</strong> Gera um parágrafo com 20 palavras aleatórias.
+            <pre><code class="language-html">&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit...&lt;/p&gt;
+</code></pre>
+        </li>
+    </ul>
+    <h3 id="números-incrementais"><strong>Números Incrementais</strong></h3>
+    <ul>
+        <li><strong><code>ul&gt;li.item$*3</code> →</strong>
+            <pre><code class="language-html">&lt;ul&gt;
+    &lt;li class=&quot;item1&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item2&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item3&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+        </li>
+    </ul>
+    <h3 id="preenchimento-de-imagens"><strong>Preenchimento de Imagens</strong></h3>
+    <ul>
+        <li><strong><code>img[src=&quot;img/photo$$.jpg&quot;]*4</code> →</strong>
+            <pre><code class="language-html">&lt;img src=&quot;img/photo01.jpg&quot; alt=&quot;&quot;&gt;
+&lt;img src=&quot;img/photo02.jpg&quot; alt=&quot;&quot;&gt;
+... (até photo04.jpg)
+</code></pre>
+        </li>
+    </ul>
+    <hr>
+    <h2 id="6-personalizando-o-emmet-no-vs-code"><strong>6. Personalizando o Emmet no VS Code</strong></h2>
+    <ol>
+        <li>Acesse <code>File &gt; Preferences &gt; Settings</code> (ou <code>Ctrl + ,</code>). </li>
+        <li>Busque por <strong>Emmet</strong>. </li>
+        <li>Adicione snippets personalizados:
+            <pre><code class="language-json">&quot;emmet.extensionsPath&quot;: &quot;caminho/para/seu/snippets.json&quot;
+</code></pre>
+        </li>
+    </ol>
+    <hr>
+    <h2 id="7-tabela-de-referência-rápida"><strong>7. Tabela de Referência Rápida</strong></h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Abreviação</th>
+                <th>Resultado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>div#header</code></td>
+                <td><code>&lt;div id=&quot;header&quot;&gt;&lt;/div&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>ul.nav&gt;li*3&gt;a</code></td>
+                <td>Lista com 3 links</td>
+            </tr>
+            <tr>
+                <td><code>input:text</code></td>
+                <td><code>&lt;input type=&quot;text&quot;&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>btn:s</code></td>
+                <td><code>&lt;button type=&quot;submit&quot;&gt;&lt;/button&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>@m20</code></td>
+                <td><code>margin: 20px;</code> (CSS)</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h2 id="🔗-recursos-úteis"><strong>🔗 Recursos Úteis</strong></h2>
+    <ul>
+        <li><a href="https://docs.emmet.io/">Documentação Oficial do Emmet</a> </li>
+        <li><a href="https://docs.emmet.io/cheat-sheet/">Lista Completa de Abreviações</a> </li>
+        <li><a href="https://code.visualstudio.com/docs/editor/emmet">Customização no VS Code</a></li>
+    </ul>
+    <hr>
+
+
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="index.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
