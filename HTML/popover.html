@@ -4,25 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Popover API (HTML) + Cascade Layers (CSS) | CodeWiki</title>
+    <meta name="description" content="A Popover API é um recurso moderno do HTML que permite criar elementos interativos (como menus, tooltips ou modais) sem precisar de JavaScript .">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/HTML/popover.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Popover API (HTML) + Cascade Layers (CSS) | CodeWiki">
+    <meta property="og:description" content="A Popover API é um recurso moderno do HTML que permite criar elementos interativos (como menus, tooltips ou modais) sem precisar de JavaScript .">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/HTML/popover.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Popover API (HTML) + Cascade Layers (CSS) | CodeWiki">
+    <meta name="twitter:description" content="A Popover API é um recurso moderno do HTML que permite criar elementos interativos (como menus, tooltips ou modais) sem precisar de JavaScript .">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Popover API (HTML) + Cascade Layers (CSS)", "description": "A Popover API é um recurso moderno do HTML que permite criar elementos interativos (como menus, tooltips ou modais) sem precisar de JavaScript .", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/HTML/popover.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/HTML/popover.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
-    <h2 id="📌-popover-api-html--cascade-layers-css">📌 Popover API (HTML) + Cascade Layers (CSS)</h2>
-    <h3 id="🧠-o-que-é-a-popover-api">🧠 O que é a Popover API?</h3>
+    <h1 id="📌-popover-api-html--cascade-layers-css">📌 Popover API (HTML) + Cascade Layers (CSS)</h1>
+    <h2 id="🧠-o-que-é-a-popover-api">🧠 O que é a Popover API?</h2>
     <p>A <strong>Popover API</strong> é um recurso moderno do HTML que permite criar elementos interativos (como menus,
         tooltips ou modais) <strong>sem precisar de JavaScript</strong>.</p>
     <p>Introduzida no HTML Living Standard, essa API facilita o controle da visibilidade de elementos em resposta a
         ações do usuário (como clicar num botão).</p>
     <hr>
-    <h3 id="🚀-exemplo-prático">🚀 Exemplo Prático</h3>
+    <h2 id="🚀-exemplo-prático">🚀 Exemplo Prático</h2>
     <pre><code class="language-html">&lt;button popovertarget=&quot;popover&quot;&gt;Abrir Popover&lt;/button&gt;
 &lt;div id=&quot;popover&quot; popover&gt;Conteúdo do popover&lt;/div&gt;
 </code></pre>
-    <h4 id="✅-o-que-está-acontecendo">✅ O que está acontecendo:</h4>
+    <h3 id="✅-o-que-está-acontecendo">✅ O que está acontecendo:</h3>
     <ul>
         <li>O botão com <code>popovertarget=&quot;popover&quot;</code> controla a visibilidade do elemento com
             <code>id=&quot;popover&quot;</code>.</li>
@@ -30,7 +51,7 @@
             mostrado/ocultado automaticamente.</li>
     </ul>
     <hr>
-    <h3 id="🎨-estilizando-com-layer">🎨 Estilizando com @layer</h3>
+    <h2 id="🎨-estilizando-com-layer">🎨 Estilizando com @layer</h2>
     <pre><code class="language-css">@layer style {
   #popover {
     background: var(--color-2); /* Cor de fundo definida em outro lugar */
@@ -39,12 +60,12 @@
   }
 }
 </code></pre>
-    <h4 id="sobre-layer">Sobre <code>@layer</code>:</h4>
+    <h3 id="sobre-layer">Sobre <code>@layer</code>:</h3>
     <p><code>@layer</code> é parte das <strong>Cascade Layers</strong>, uma nova funcionalidade do CSS que ajuda a
         organizar e controlar a ordem de prioridade entre estilos de diferentes origens (reset, temas, componentes,
         etc.).</p>
     <hr>
-    <h3 id="📘-explicação-de-atributos-importantes">📘 Explicação de atributos importantes</h3>
+    <h2 id="📘-explicação-de-atributos-importantes">📘 Explicação de atributos importantes</h2>
     <table>
         <thead>
             <tr>
@@ -68,7 +89,7 @@
         </tbody>
     </table>
     <hr>
-    <h3 id="🧪-compatibilidade">🧪 Compatibilidade</h3>
+    <h2 id="🧪-compatibilidade">🧪 Compatibilidade</h2>
     <table>
         <thead>
             <tr>
@@ -94,7 +115,7 @@
     <p>Recomenda-se verificar a <a href="https://caniuse.com/?search=popover" target="_blank" rel="noopener noreferrer" >compatibilidade atual no Can I Use</a>.
     </p>
     <hr>
-    <h3 id="📦-quando-usar">📦 Quando usar?</h3>
+    <h2 id="📦-quando-usar">📦 Quando usar?</h2>
     <ul>
         <li>Menus dropdown</li>
         <li>Tooltips</li>
@@ -102,17 +123,17 @@
         <li>Notificações contextuais</li>
     </ul>
     <hr>
-    <h3 id="🧱-comparação-antes-e-depois">🧱 Comparação: Antes e Depois</h3>
-    <h4 id="🔧-antigo-com-js">🔧 Antigo (com JS):</h4>
+    <h2 id="🧱-comparação-antes-e-depois">🧱 Comparação: Antes e Depois</h2>
+    <h3 id="🔧-antigo-com-js">🔧 Antigo (com JS):</h3>
     <pre><code class="language-html">&lt;button onclick=&quot;popover.classList.toggle(&#39;show&#39;)&quot;&gt;Abrir&lt;/button&gt;
 &lt;div id=&quot;popover&quot; class=&quot;popover&quot;&gt;Conteúdo&lt;/div&gt;
 </code></pre>
-    <h4 id="✨-novo-com-popover-api">✨ Novo (com Popover API):</h4>
+    <h3 id="✨-novo-com-popover-api">✨ Novo (com Popover API):</h3>
     <pre><code class="language-html">&lt;button popovertarget=&quot;popover&quot;&gt;Abrir&lt;/button&gt;
 &lt;div id=&quot;popover&quot; popover&gt;Conteúdo&lt;/div&gt;
 </code></pre>
     <hr>
-    <h3 id="📂-referências">📂 Referências</h3>
+    <h2 id="📂-referências">📂 Referências</h2>
     <ul>
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API" target="_blank" rel="noopener noreferrer">MDN Web Docs - Popover API</a></li>
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer" target="_blank" rel="noopener noreferrer">MDN Web Docs - Cascade Layers</a></li> 

@@ -4,24 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Passo a Passo para Simular Condições de Rede | CodeWiki</title>
+    <meta name="description" content="O DevTools do Chrome é uma ferramenta poderosa para desenvolvedores front-end, e uma de suas funcionalidades mais úteis é a capacidade de simular…">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/Anota%C3%A7%C3%B5es/simula-rede.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Passo a Passo para Simular Condições de Rede | CodeWiki">
+    <meta property="og:description" content="O DevTools do Chrome é uma ferramenta poderosa para desenvolvedores front-end, e uma de suas funcionalidades mais úteis é a capacidade de simular…">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/Anota%C3%A7%C3%B5es/simula-rede.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Passo a Passo para Simular Condições de Rede | CodeWiki">
+    <meta name="twitter:description" content="O DevTools do Chrome é uma ferramenta poderosa para desenvolvedores front-end, e uma de suas funcionalidades mais úteis é a capacidade de simular…">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Passo a Passo para Simular Condições de Rede", "description": "O DevTools do Chrome é uma ferramenta poderosa para desenvolvedores front-end, e uma de suas funcionalidades mais úteis é a capacidade de simular…", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/Anota%C3%A7%C3%B5es/simula-rede.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/Anota%C3%A7%C3%B5es/simula-rede.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
-    <h3 id="-simulando-condi-es-de-rede-no-devtools-do-chrome-"><strong>Simulando Condições de Rede no DevTools do
-            Chrome</strong></h3>
+    <h2 id="-simulando-condi-es-de-rede-no-devtools-do-chrome-"><strong>Simulando Condições de Rede no DevTools do
+            Chrome</strong></h2>
     <p>O DevTools do Chrome é uma ferramenta poderosa para desenvolvedores front-end, e uma de suas funcionalidades mais
         úteis é a capacidade de simular diferentes condições de rede. Isso é especialmente útil para testar como seu
         site ou aplicativo se comporta em conexões lentas, como 3G ou 4G lento. Vamos ver como fazer isso passo a passo.
     </p>
     <p><img src="devtools.jpg" alt="simula-rede"></p>
     <hr>
-    <h2 id="-passo-a-passo-para-simular-condi-es-de-rede-"><strong>Passo a Passo para Simular Condições de Rede</strong>
-    </h2>
-    <h3 id="-1-abra-o-devtools-"><strong>1. Abra o DevTools</strong></h3>
+    <h1 id="-passo-a-passo-para-simular-condi-es-de-rede-"><strong>Passo a Passo para Simular Condições de Rede</strong>
+    </h1>
+    <h2 id="-1-abra-o-devtools-"><strong>1. Abra o DevTools</strong></h2>
     <ol>
         <li>Clique com o botão direito em qualquer lugar da página e selecione <strong>&quot;Inspecionar&quot;</strong>.
         </li>
@@ -31,11 +52,11 @@
             </ul>
         </li>
     </ol>
-    <h3 id="-2-v-para-a-aba-rede-network-"><strong>2. Vá para a Aba &quot;Rede&quot; (Network)</strong></h3>
+    <h2 id="-2-v-para-a-aba-rede-network-"><strong>2. Vá para a Aba &quot;Rede&quot; (Network)</strong></h2>
     <ul>
         <li>No painel do DevTools, clique na aba <strong>&quot;Rede&quot;</strong> (Network).</li>
     </ul>
-    <h3 id="-3-ative-o-throttling-"><strong>3. Ative o Throttling</strong></h3>
+    <h2 id="-3-ative-o-throttling-"><strong>3. Ative o Throttling</strong></h2>
     <ol>
         <li>No topo do painel &quot;Rede&quot;, localize o menu suspenso <strong>&quot;Throttling&quot;</strong> (ou
             &quot;Limitação de rede&quot;).</li>
@@ -59,8 +80,8 @@
         </li>
     </ol>
     <hr>
-    <h2 id="-exemplo-de-uso-"><strong>Exemplo de Uso</strong></h2>
-    <h3 id="-testando-um-site-em-conex-o-lenta-"><strong>Testando um Site em Conexão Lenta</strong></h3>
+    <h1 id="-exemplo-de-uso-"><strong>Exemplo de Uso</strong></h1>
+    <h2 id="-testando-um-site-em-conex-o-lenta-"><strong>Testando um Site em Conexão Lenta</strong></h2>
     <ol>
         <li>Abra o DevTools e vá para a aba <strong>&quot;Rede&quot;</strong>.</li>
         <li>Selecione <strong>&quot;Slow 3G&quot;</strong> no menu de Throttling.</li>
@@ -69,7 +90,7 @@
             otimizações necessárias.</li>
     </ol>
     <hr>
-    <h2 id="-benef-cios-de-simular-condi-es-de-rede-"><strong>Benefícios de Simular Condições de Rede</strong></h2>
+    <h1 id="-benef-cios-de-simular-condi-es-de-rede-"><strong>Benefícios de Simular Condições de Rede</strong></h1>
     <ol>
         <li>
             <p><strong>Teste de Desempenho</strong>:</p>
@@ -94,7 +115,7 @@
         </li>
     </ol>
     <hr>
-    <h2 id="-dicas-adicionais-"><strong>Dicas Adicionais</strong></h2>
+    <h1 id="-dicas-adicionais-"><strong>Dicas Adicionais</strong></h1>
     <ol>
         <li>
             <p><strong>Combine com Outras Ferramentas</strong>:</p>
@@ -121,7 +142,7 @@
         </li>
     </ol>
     <hr>
-    <h2 id="-exemplo-de-configura-o-personalizada-"><strong>Exemplo de Configuração Personalizada</strong></h2>
+    <h1 id="-exemplo-de-configura-o-personalizada-"><strong>Exemplo de Configuração Personalizada</strong></h1>
     <p>Se você quiser simular uma conexão muito lenta (por exemplo, 2G), pode criar uma configuração personalizada:</p>
     <ul>
         <li><strong>Download</strong>: 50 Kbps.</li>
@@ -130,7 +151,7 @@
     </ul>
     <p>Isso ajudará a testar como seu site se comporta em condições extremas.</p>
     <hr>
-    <h2 id="-conclus-o-"><strong>Conclusão</strong></h2>
+    <h1 id="-conclus-o-"><strong>Conclusão</strong></h1>
     <p>Simular condições de rede no DevTools do Chrome é uma maneira eficaz de garantir que seu site ou aplicativo
         funcione bem em qualquer cenário. Use essa funcionalidade para identificar e corrigir problemas de desempenho,
         melhorar a experiência do usuário e garantir que seu site seja acessível para todos, independentemente da

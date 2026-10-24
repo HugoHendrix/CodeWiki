@@ -4,16 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Mantendo a Proporção de Aspecto com a Propriedade aspect-ratio no CSS</title>
+    <meta name="description" content="Manter a proporção de aspecto (aspect ratio) em layouts de design web é essencial, especialmente para elementos como imagens e vídeos .">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/Design-Dev/aspect-radio.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Mantendo a Proporção de Aspecto com a Propriedade aspect-ratio no CSS">
+    <meta property="og:description" content="Manter a proporção de aspecto (aspect ratio) em layouts de design web é essencial, especialmente para elementos como imagens e vídeos .">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/Design-Dev/aspect-radio.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mantendo a Proporção de Aspecto com a Propriedade aspect-ratio no CSS">
+    <meta name="twitter:description" content="Manter a proporção de aspecto (aspect ratio) em layouts de design web é essencial, especialmente para elementos como imagens e vídeos .">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Mantendo a Proporção de Aspecto com a Propriedade aspect-ratio no CSS", "description": "Manter a proporção de aspecto (aspect ratio) em layouts de design web é essencial, especialmente para elementos como imagens e vídeos .", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/Design-Dev/aspect-radio.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/Design-Dev/aspect-radio.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
 
-    <h3 id="mantendo-a-proporção-de-aspecto-com-a-propriedade-aspect-ratio-no-css"><strong>Mantendo a Proporção de
-            Aspecto com a Propriedade <code>aspect-ratio</code> no CSS</strong></h3>
+    <h1 id="mantendo-a-proporção-de-aspecto-com-a-propriedade-aspect-ratio-no-css"><strong>Mantendo a Proporção de
+            Aspecto com a Propriedade <code>aspect-ratio</code> no CSS</strong></h1>
     <ul>
         <li>Manter a proporção de aspecto (aspect ratio) em layouts de design web é essencial, especialmente para
             elementos como <strong>imagens</strong> e <strong>vídeos</strong>.</li>
@@ -23,7 +44,7 @@
             <strong>16:9</strong>, independentemente do tamanho do contêiner.</li>
     </ul>
     <hr>
-    <h4 id="como-funciona"><strong>Como Funciona?</strong></h4>
+    <h2 id="como-funciona"><strong>Como Funciona?</strong></h2>
     <ul>
         <li>
             <p><strong><code>aspect-ratio</code></strong>:</p>
@@ -42,13 +63,13 @@
         </li>
     </ul>
     <hr>
-    <h4 id="código-html"><strong>Código HTML</strong></h4>
+    <h2 id="código-html"><strong>Código HTML</strong></h2>
     <pre><code class="language-html">&lt;figure&gt;
     &lt;img src=&quot;example.jpg&quot; alt=&quot;demo image&quot;&gt;
 &lt;/figure&gt;
 </code></pre>
     <hr>
-    <h4 id="código-css"><strong>Código CSS</strong></h4>
+    <h2 id="código-css"><strong>Código CSS</strong></h2>
     <pre><code class="language-css">figure {
     width: 100%; /* Largura do contêiner */
     aspect-ratio: 16/9; /* Proporção de aspecto 16:9 */
@@ -62,7 +83,7 @@ figure img {
 }
 </code></pre>
     <hr>
-    <h4 id="explicação-do-código"><strong>Explicação do Código</strong></h4>
+    <h2 id="explicação-do-código"><strong>Explicação do Código</strong></h2>
     <ol>
         <li>
             <p><strong><code>figure</code></strong>:</p>
@@ -83,7 +104,7 @@ figure img {
         </li>
     </ol>
     <hr>
-    <h4 id="benefícios"><strong>Benefícios</strong></h4>
+    <h2 id="benefícios"><strong>Benefícios</strong></h2>
     <ol>
         <li>
             <p><strong>Layout Responsivo</strong>:</p>
@@ -107,7 +128,7 @@ figure img {
         </li>
     </ol>
     <hr>
-    <h4 id="considerações"><strong>Considerações</strong></h4>
+    <h2 id="considerações"><strong>Considerações</strong></h2>
     <ol>
         <li>
             <p><strong>Suporte a Navegadores</strong>:</p>
@@ -126,7 +147,7 @@ figure img {
         </li>
     </ol>
     <hr>
-    <h4 id="exemplo-prático"><strong>Exemplo Prático</strong></h4>
+    <h2 id="exemplo-prático"><strong>Exemplo Prático</strong></h2>
     <pre><code class="language-html">&lt;figure&gt;
     &lt;img src=&quot;example.jpg&quot; alt=&quot;demo image&quot;&gt;
 &lt;/figure&gt;
@@ -144,7 +165,7 @@ figure img {
 }
 </code></pre>
     <hr>
-    <h4 id="conclusão"><strong>Conclusão</strong></h4>
+    <h2 id="conclusão"><strong>Conclusão</strong></h2>
     <ul>
         <li>A propriedade <strong><code>aspect-ratio</code></strong> é uma solução moderna e eficaz para manter
             proporções de aspecto em elementos como imagens e vídeos.</li>

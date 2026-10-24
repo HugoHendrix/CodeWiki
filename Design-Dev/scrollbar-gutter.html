@@ -4,16 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Evitando Saltos no Layout com scrollbar-gutter: stable | CodeWiki</title>
+    <meta name="description" content="Um problema comum em páginas da web é a mudança irritante no layout quando a barra de rolagem aparece ou desaparece.">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/Design-Dev/scrollbar-gutter.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Evitando Saltos no Layout com scrollbar-gutter: stable | CodeWiki">
+    <meta property="og:description" content="Um problema comum em páginas da web é a mudança irritante no layout quando a barra de rolagem aparece ou desaparece.">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/Design-Dev/scrollbar-gutter.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Evitando Saltos no Layout com scrollbar-gutter: stable | CodeWiki">
+    <meta name="twitter:description" content="Um problema comum em páginas da web é a mudança irritante no layout quando a barra de rolagem aparece ou desaparece.">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Evitando Saltos no Layout com scrollbar-gutter: stable", "description": "Um problema comum em páginas da web é a mudança irritante no layout quando a barra de rolagem aparece ou desaparece.", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/Design-Dev/scrollbar-gutter.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/Design-Dev/scrollbar-gutter.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
 
-    <h3 id="evitando-saltos-no-layout-com-scrollbar-gutter-stable"><strong>Evitando Saltos no Layout com
-            <code>scrollbar-gutter: stable</code></strong></h3>
+    <h1 id="evitando-saltos-no-layout-com-scrollbar-gutter-stable"><strong>Evitando Saltos no Layout com
+            <code>scrollbar-gutter: stable</code></strong></h1>
     <ul>
         <li>Um problema comum em páginas da web é a mudança irritante no layout quando a barra de rolagem aparece ou
             desaparece.</li>
@@ -23,7 +44,7 @@
             espaço para a barra de rolagem, independentemente do tamanho do conteúdo.</li>
     </ul>
     <hr>
-    <h4 id="como-funciona"><strong>Como Funciona?</strong></h4>
+    <h2 id="como-funciona"><strong>Como Funciona?</strong></h2>
     <ul>
         <li><strong><code>scrollbar-gutter: stable</code></strong>:<ul>
                 <li>Reserva um espaço fixo para a barra de rolagem, mesmo quando ela não está visível.</li>
@@ -32,7 +53,7 @@
         </li>
     </ul>
     <hr>
-    <h4 id="implementação"><strong>Implementação</strong></h4>
+    <h2 id="implementação"><strong>Implementação</strong></h2>
     <p>Aqui está como usar a propriedade:</p>
     <pre><code class="language-css">.container {
     scrollbar-gutter: stable;
@@ -43,7 +64,7 @@
         <li>Isso garante que o layout permaneça consistente, independentemente da visibilidade da barra de rolagem.</li>
     </ul>
     <hr>
-    <h4 id="benefícios"><strong>Benefícios</strong></h4>
+    <h2 id="benefícios"><strong>Benefícios</strong></h2>
     <ol>
         <li>
             <p><strong>Layout Consistente</strong>:</p>
@@ -65,7 +86,7 @@
         </li>
     </ol>
     <hr>
-    <h4 id="considerações"><strong>Considerações</strong></h4>
+    <h2 id="considerações"><strong>Considerações</strong></h2>
     <ol>
         <li>
             <p><strong>Suporte a Navegadores</strong>:</p>
@@ -84,7 +105,7 @@
         </li>
     </ol>
     <hr>
-    <h4 id="exemplo-prático"><strong>Exemplo Prático</strong></h4>
+    <h2 id="exemplo-prático"><strong>Exemplo Prático</strong></h2>
     <pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
     &lt;p&gt;Este é um conteúdo que pode exceder a altura da janela e exigir uma barra de rolagem.&lt;/p&gt;
     &lt;p&gt;Com `scrollbar-gutter: stable`, o layout não salta quando a barra de rolagem aparece.&lt;/p&gt;
@@ -97,7 +118,7 @@
 }
 </code></pre>
     <hr>
-    <h4 id="conclusão"><strong>Conclusão</strong></h4>
+    <h2 id="conclusão"><strong>Conclusão</strong></h2>
     <ul>
         <li>A propriedade <strong><code>scrollbar-gutter: stable</code></strong> é uma solução eficaz para evitar saltos
             no layout causados pela barra de rolagem.</li>

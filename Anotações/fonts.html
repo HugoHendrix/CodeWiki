@@ -4,34 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Otimizando Fontes da Web para Melhorar o Desempenho do Site</title>
+    <meta name="description" content="As fontes da web são essenciais para o design e a identidade visual de um site, mas se não forem otimizadas, podem impactar negativamente o desempenho.…">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/Anota%C3%A7%C3%B5es/fonts.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Otimizando Fontes da Web para Melhorar o Desempenho do Site">
+    <meta property="og:description" content="As fontes da web são essenciais para o design e a identidade visual de um site, mas se não forem otimizadas, podem impactar negativamente o desempenho.…">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/Anota%C3%A7%C3%B5es/fonts.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Otimizando Fontes da Web para Melhorar o Desempenho do Site">
+    <meta name="twitter:description" content="As fontes da web são essenciais para o design e a identidade visual de um site, mas se não forem otimizadas, podem impactar negativamente o desempenho.…">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Otimizando Fontes da Web para Melhorar o Desempenho do Site", "description": "As fontes da web são essenciais para o design e a identidade visual de um site, mas se não forem otimizadas, podem impactar negativamente o desempenho.…", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/Anota%C3%A7%C3%B5es/fonts.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/Anota%C3%A7%C3%B5es/fonts.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
 
-    <h2 id="-otimizando-fontes-da-web-para-melhorar-o-desempenho-do-site-"><strong>Otimizando Fontes da Web para
-            Melhorar o Desempenho do Site</strong></h2>
+    <h1 id="-otimizando-fontes-da-web-para-melhorar-o-desempenho-do-site-"><strong>Otimizando Fontes da Web para
+            Melhorar o Desempenho do Site</strong></h1>
     <p>As fontes da web são essenciais para o design e a identidade visual de um site, mas se não forem otimizadas,
         podem impactar negativamente o desempenho. Vamos explorar como usar <code>font-display</code>, pré-carregar
         fontes e considerar fontes variáveis para garantir que seu site carregue rapidamente sem sacrificar a estética.
     </p>
     <hr>
-    <h3 id="-1-usando-font-display-para-controlar-o-carregamento-de-fontes-"><strong>1. Usando <code>font-display</code>
-            para Controlar o Carregamento de Fontes</strong></h3>
+    <h2 id="-1-usando-font-display-para-controlar-o-carregamento-de-fontes-"><strong>1. Usando <code>font-display</code>
+            para Controlar o Carregamento de Fontes</strong></h2>
     <p>A propriedade <code>font-display</code> permite controlar como as fontes são exibidas enquanto estão sendo
         carregadas. Isso evita problemas como &quot;flash de texto invisível&quot; (FOIT) ou &quot;flash de texto não
         estilizado&quot; (FOUT).</p>
-    <h3 id="-sintaxe-b-sica-"><strong>Sintaxe Básica</strong></h3>
+    <h2 id="-sintaxe-b-sica-"><strong>Sintaxe Básica</strong></h2>
     <pre><code class="lang-css">@<span class="hljs-keyword">font-face</span> {
   <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'MyFont'</span>;
   <span class="hljs-attribute">src</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">'/fonts/myfont.woff2'</span>) <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff2'</span>);
   <span class="hljs-attribute">font-display</span>: swap; <span class="hljs-comment">/* Controla o comportamento de carregamento */</span>
 }
 </code></pre>
-    <h3 id="-valores-de-font-display-"><strong>Valores de <code>font-display</code></strong></h3>
+    <h2 id="-valores-de-font-display-"><strong>Valores de <code>font-display</code></strong></h2>
     <ul>
         <li><strong><code>auto</code></strong>: Comportamento padrão do navegador (geralmente causa FOIT).</li>
         <li><strong><code>block</code></strong>: Oculta o texto até que a fonte seja carregada (FOIT).</li>
@@ -42,7 +63,7 @@
         <li><strong><code>optional</code></strong>: Tenta carregar a fonte, mas usa a alternativa se a fonte não estiver
             pronta rapidamente.</li>
     </ul>
-    <h3 id="-exemplo-pr-tico-"><strong>Exemplo Prático</strong></h3>
+    <h2 id="-exemplo-pr-tico-"><strong>Exemplo Prático</strong></h2>
     <pre><code class="lang-css">@<span class="hljs-keyword">font-face</span> {
   <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'MyFont'</span>;
   <span class="hljs-attribute">src</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">'/fonts/myfont.woff2'</span>) <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff2'</span>);
@@ -50,13 +71,13 @@
 }
 </code></pre>
     <hr>
-    <h2 id="-2-pr-carregando-fontes-cr-ticas-"><strong>2. Pré-carregando Fontes Críticas</strong></h2>
+    <h1 id="-2-pr-carregando-fontes-cr-ticas-"><strong>2. Pré-carregando Fontes Críticas</strong></h1>
     <p>O pré-carregamento de fontes garante que elas sejam carregadas o mais cedo possível, melhorando o tempo de
         exibição do texto.</p>
-    <h3 id="-sintaxe-"><strong>Sintaxe</strong></h3>
+    <h2 id="-sintaxe-"><strong>Sintaxe</strong></h2>
     <pre><code class="lang-html">&lt;link rel=<span class="hljs-string">"preload"</span> href=<span class="hljs-string">"/fonts/myfont.woff2"</span> <span class="hljs-keyword">as</span>=<span class="hljs-string">"font"</span> <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"font/woff2"</span> crossorigin&gt;
 </code></pre>
-    <h3 id="-explica-o-"><strong>Explicação</strong></h3>
+    <h2 id="-explica-o-"><strong>Explicação</strong></h2>
     <ul>
         <li><strong><code>rel=&quot;preload&quot;</code></strong>: Indica que o recurso deve ser carregado
             prioritariamente.</li>
@@ -64,7 +85,7 @@
         <li><strong><code>crossorigin</code></strong>: Necessário para fontes hospedadas em domínios diferentes (CDNs).
         </li>
     </ul>
-    <h3 id="-exemplo-pr-tico-"><strong>Exemplo Prático</strong></h3>
+    <h2 id="-exemplo-pr-tico-"><strong>Exemplo Prático</strong></h2>
     <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"preload"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/fonts/myfont.woff2"</span> <span class="hljs-attr">as</span>=<span class="hljs-string">"font"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"font/woff2"</span> <span class="hljs-attr">crossorigin</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
@@ -80,16 +101,16 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 </code></pre>
     <hr>
-    <h2 id="-3-usando-fontes-vari-veis-"><strong>3. Usando Fontes Variáveis</strong></h2>
+    <h1 id="-3-usando-fontes-vari-veis-"><strong>3. Usando Fontes Variáveis</strong></h1>
     <p>Fontes variáveis permitem armazenar múltiplos pesos e estilos em um único arquivo, reduzindo o número de
         solicitações HTTP.</p>
-    <h3 id="-vantagens-"><strong>Vantagens</strong></h3>
+    <h2 id="-vantagens-"><strong>Vantagens</strong></h2>
     <ul>
         <li><strong>Menos Arquivos</strong>: Um único arquivo substitui vários arquivos de fonte.</li>
         <li><strong>Flexibilidade</strong>: Permite ajustar pesos e estilos dinamicamente via CSS.</li>
         <li><strong>Desempenho</strong>: Reduz o tempo de carregamento e o uso de banda.</li>
     </ul>
-    <h3 id="-sintaxe-"><strong>Sintaxe</strong></h3>
+    <h2 id="-sintaxe-"><strong>Sintaxe</strong></h2>
     <pre><code class="lang-css">@<span class="hljs-keyword">font-face</span> {
   <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'MyVariableFont'</span>;
   <span class="hljs-attribute">src</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">'/fonts/myvariablefont.woff2'</span>) <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff2-variations'</span>);
@@ -97,7 +118,7 @@
   <span class="hljs-attribute">font-stretch</span>: <span class="hljs-number">75%</span> <span class="hljs-number">125%</span>; <span class="hljs-comment">/* Define a faixa de largura suportada */</span>
 }
 </code></pre>
-    <h3 id="-exemplo-pr-tico-"><strong>Exemplo Prático</strong></h3>
+    <h2 id="-exemplo-pr-tico-"><strong>Exemplo Prático</strong></h2>
     <pre><code class="lang-css">@<span class="hljs-keyword">font-face</span> {
   <span class="hljs-attribute">font-family</span>: <span class="hljs-string">'MyVariableFont'</span>;
   <span class="hljs-attribute">src</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">'/fonts/myvariablefont.woff2'</span>) <span class="hljs-built_in">format</span>(<span class="hljs-string">'woff2-variations'</span>);
@@ -115,28 +136,28 @@
 }
 </code></pre>
     <hr>
-    <h2 id="-4-outras-dicas-para-otimiza-o-de-fontes-"><strong>4. Outras Dicas para Otimização de Fontes</strong></h2>
-    <h3 id="-a-use-formatos-modernos-"><strong>a. Use Formatos Modernos</strong></h3>
+    <h1 id="-4-outras-dicas-para-otimiza-o-de-fontes-"><strong>4. Outras Dicas para Otimização de Fontes</strong></h1>
+    <h2 id="-a-use-formatos-modernos-"><strong>a. Use Formatos Modernos</strong></h2>
     <ul>
         <li>Prefira formatos como <strong>WOFF2</strong>, que oferecem melhor compressão e suporte amplo.</li>
     </ul>
-    <h3 id="-b-limite-o-n-mero-de-fontes-"><strong>b. Limite o Número de Fontes</strong></h3>
+    <h2 id="-b-limite-o-n-mero-de-fontes-"><strong>b. Limite o Número de Fontes</strong></h2>
     <ul>
         <li>Use apenas as fontes necessárias para reduzir o número de solicitações HTTP.</li>
     </ul>
-    <h3 id="-c-subconjunto-de-fontes-"><strong>c. Subconjunto de Fontes</strong></h3>
+    <h2 id="-c-subconjunto-de-fontes-"><strong>c. Subconjunto de Fontes</strong></h2>
     <ul>
         <li>Crie subconjuntos de fontes que incluam apenas os caracteres necessários (por exemplo, apenas caracteres
             latinos).</li>
     </ul>
-    <h3 id="-d-hospede-fontes-localmente-"><strong>d. Hospede Fontes Localmente</strong></h3>
+    <h2 id="-d-hospede-fontes-localmente-"><strong>d. Hospede Fontes Localmente</strong></h2>
     <ul>
         <li>Evite dependências de CDNs externas para garantir maior controle e confiabilidade.</li>
     </ul>
     <hr>
-    <h2 id="-exemplo-completo-"><strong>Exemplo Completo</strong></h2>
+    <h1 id="-exemplo-completo-"><strong>Exemplo Completo</strong></h1>
     <p>Aqui está um exemplo completo que combina todas as técnicas:</p>
-    <h3 id="-html-"><strong>HTML</strong></h3>
+    <h2 id="-html-"><strong>HTML</strong></h2>
     <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"pt-BR"</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
@@ -168,7 +189,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
     <hr>
-    <h2 id="-conclus-o-"><strong>Conclusão</strong></h2>
+    <h1 id="-conclus-o-"><strong>Conclusão</strong></h1>
     <p>Otimizar fontes da web é crucial para melhorar o desempenho do seu site. Use <code>font-display</code> para
         controlar o carregamento, pré-carregue fontes críticas e considere fontes variáveis para reduzir solicitações
         HTTP. Pequenas otimizações podem resultar em grandes ganhos de desempenho!</p>

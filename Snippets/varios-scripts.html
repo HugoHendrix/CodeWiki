@@ -4,21 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Scripts em VBScript e Batch para gerenciar o sistema | CodeWiki</title>
+    <meta name="description" content="Desligar após X segundos (útil para desligar o PC em um horário programado): Set ws = CreateObject( &quot;WScript.Shell&quot; ) ws.Run &quot;shutdown -s -t 300&quot; , 0…">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/Snippets/varios-scripts.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Scripts em VBScript e Batch para gerenciar o sistema | CodeWiki">
+    <meta property="og:description" content="Desligar após X segundos (útil para desligar o PC em um horário programado): Set ws = CreateObject( &quot;WScript.Shell&quot; ) ws.Run &quot;shutdown -s -t 300&quot; , 0…">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/Snippets/varios-scripts.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Scripts em VBScript e Batch para gerenciar o sistema | CodeWiki">
+    <meta name="twitter:description" content="Desligar após X segundos (útil para desligar o PC em um horário programado): Set ws = CreateObject( &quot;WScript.Shell&quot; ) ws.Run &quot;shutdown -s -t 300&quot; , 0…">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Scripts em VBScript e Batch para gerenciar o sistema", "description": "Desligar após X segundos (útil para desligar o PC em um horário programado): Set ws = CreateObject( \"WScript.Shell\" ) ws.Run \"shutdown -s -t 300\" , 0…", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/Snippets/varios-scripts.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/Snippets/varios-scripts.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
 
-    <h4
+    <h3
         id="voc-pode-criar-v-rios-scripts-em-vbscript-ou-batch-bat-para-automatizar-tarefas-no-windows-aqui-est-o-algumas-ideias-teis-">
         Você pode criar vários scripts em <strong>VBScript</strong> ou <strong>Batch (.bat)</strong> para automatizar
-        tarefas no Windows. Aqui estão algumas ideias úteis:</h4>
+        tarefas no Windows. Aqui estão algumas ideias úteis:</h3>
     <hr>
-    <h2 id="-1-scripts-de-gerenciamento-do-sistema-">📌 <strong>1. Scripts de Gerenciamento do Sistema</strong></h2>
-    <h3 id="-desligar-reiniciar-suspender-o-pc-"><strong>🔹 Desligar / Reiniciar / Suspender o PC</strong></h3>
+    <h1 id="-1-scripts-de-gerenciamento-do-sistema-">📌 <strong>1. Scripts de Gerenciamento do Sistema</strong></h1>
+    <h2 id="-desligar-reiniciar-suspender-o-pc-"><strong>🔹 Desligar / Reiniciar / Suspender o PC</strong></h2>
     <ul>
         <li><strong>Desligar após X segundos</strong> (útil para desligar o PC em um horário programado):
             <pre><code class="lang-vbs">Set ws = CreateObject(<span class="hljs-string">"WScript.Shell"</span>)
@@ -42,56 +63,56 @@ ws.Run <span class="hljs-comment">"rundll32.exe powrprof.dll,SetSuspendState 0,1
         </li>
     </ul>
     <hr>
-    <h2 id="-2-scripts-para-limpeza-autom-tica-">📌 <strong>2. Scripts para Limpeza Automática</strong></h2>
-    <h3 id="-limpar-arquivos-tempor-rios-"><strong>🔹 Limpar arquivos temporários</strong></h3>
+    <h1 id="-2-scripts-para-limpeza-autom-tica-">📌 <strong>2. Scripts para Limpeza Automática</strong></h1>
+    <h2 id="-limpar-arquivos-tempor-rios-"><strong>🔹 Limpar arquivos temporários</strong></h2>
     <pre><code class="lang-vbs"><span class="hljs-keyword">Set</span> ws <span class="hljs-comment">= CreateObject(</span><span class="hljs-comment">"WScript.Shell"</span><span class="hljs-comment">)</span>
 ws.Run <span class="hljs-comment">"cleanmgr /sagerun:1"</span><span class="hljs-comment">, 0</span>
 </code></pre>
-    <h3 id="-limpar-a-lixeira-automaticamente-"><strong>🔹 Limpar a Lixeira automaticamente</strong></h3>
+    <h2 id="-limpar-a-lixeira-automaticamente-"><strong>🔹 Limpar a Lixeira automaticamente</strong></h2>
     <pre><code class="lang-vbs"><span class="hljs-keyword">Set</span> objShell <span class="hljs-comment">= CreateObject(</span><span class="hljs-comment">"Shell.Application"</span><span class="hljs-comment">)</span>
 objShell.Namespace(10).Items().InvokeVerb(<span class="hljs-string">"Delete"</span>)
 </code></pre>
-    <h3 id="-excluir-arquivos-antigos-ex-logs-com-mais-de-30-dias-"><strong>🔹 Excluir arquivos antigos (ex: logs com
-            mais de 30 dias)</strong></h3>
+    <h2 id="-excluir-arquivos-antigos-ex-logs-com-mais-de-30-dias-"><strong>🔹 Excluir arquivos antigos (ex: logs com
+            mais de 30 dias)</strong></h2>
     <pre><code class="lang-bat">@echo off
 forfiles /<span class="hljs-selector-tag">p</span> <span class="hljs-string">"C:\Logs"</span> /s /m *<span class="hljs-selector-class">.log</span> /d -<span class="hljs-number">30</span> /c <span class="hljs-string">"cmd /c del @path"</span>
 </code></pre>
     <hr>
-    <h2 id="-3-scripts-para-redes-e-internet-">📌 <strong>3. Scripts para Redes e Internet</strong></h2>
-    <h3 id="-reiniciar-o-adaptador-de-rede-til-se-a-internet-cair-"><strong>🔹 Reiniciar o adaptador de rede (útil se a
-            internet cair)</strong></h3>
+    <h1 id="-3-scripts-para-redes-e-internet-">📌 <strong>3. Scripts para Redes e Internet</strong></h1>
+    <h2 id="-reiniciar-o-adaptador-de-rede-til-se-a-internet-cair-"><strong>🔹 Reiniciar o adaptador de rede (útil se a
+            internet cair)</strong></h2>
     <pre><code class="lang-vbs">Set ws = CreateObject(<span class="hljs-string">"WScript.Shell"</span>)
 ws.Run <span class="hljs-string">"netsh interface set interface "</span><span class="hljs-string">"Wi-Fi"</span><span class="hljs-string">" disable"</span>, <span class="hljs-number">0</span>
 WScript.Sleep <span class="hljs-number">2000</span> 'Aguarda <span class="hljs-number">2</span> segundos
 ws.Run <span class="hljs-string">"netsh interface set interface "</span><span class="hljs-string">"Wi-Fi"</span><span class="hljs-string">" enable"</span>, <span class="hljs-number">0</span>
 </code></pre>
-    <h3 id="-verificar-conex-o-com-um-site-ping-"><strong>🔹 Verificar conexão com um site (ping)</strong></h3>
+    <h2 id="-verificar-conex-o-com-um-site-ping-"><strong>🔹 Verificar conexão com um site (ping)</strong></h2>
     <pre><code class="lang-bat">@<span class="hljs-built_in">echo</span> off
 <span class="hljs-built_in">ping</span> google.com -n <span class="hljs-number">1</span>
 <span class="hljs-keyword">if</span> <span class="hljs-variable">%errorlevel%</span>==<span class="hljs-number">0</span> (<span class="hljs-built_in">echo</span> Internet OK!) <span class="hljs-keyword">else</span> (<span class="hljs-built_in">echo</span> Sem conexão!)
 <span class="hljs-built_in">pause</span>
 </code></pre>
     <hr>
-    <h2 id="-4-scripts-para-automa-o-de-tarefas-">📌 <strong>4. Scripts para Automação de Tarefas</strong></h2>
-    <h3 id="-abrir-v-rios-programas-ao-mesmo-tempo-"><strong>🔹 Abrir vários programas ao mesmo tempo</strong></h3>
+    <h1 id="-4-scripts-para-automa-o-de-tarefas-">📌 <strong>4. Scripts para Automação de Tarefas</strong></h1>
+    <h2 id="-abrir-v-rios-programas-ao-mesmo-tempo-"><strong>🔹 Abrir vários programas ao mesmo tempo</strong></h2>
     <pre><code class="lang-vbs">Set ws = CreateObject(<span class="hljs-string">"WScript.Shell"</span>)
 ws<span class="hljs-selector-class">.Run</span> <span class="hljs-string">"chrome.exe"</span>, <span class="hljs-number">0</span>
 ws<span class="hljs-selector-class">.Run</span> <span class="hljs-string">"notepad.exe"</span>, <span class="hljs-number">0</span>
 ws<span class="hljs-selector-class">.Run</span> <span class="hljs-string">"calc.exe"</span>, <span class="hljs-number">0</span>
 </code></pre>
-    <h3 id="-fechar-um-programa-travado-ex-fechar-o-chrome-"><strong>🔹 Fechar um programa travado (ex: fechar o
-            Chrome)</strong></h3>
+    <h2 id="-fechar-um-programa-travado-ex-fechar-o-chrome-"><strong>🔹 Fechar um programa travado (ex: fechar o
+            Chrome)</strong></h2>
     <pre><code class="lang-vbs"><span class="hljs-keyword">Set</span> ws <span class="hljs-comment">= CreateObject(</span><span class="hljs-comment">"WScript.Shell"</span><span class="hljs-comment">)</span>
 ws.Run <span class="hljs-comment">"taskkill /f /im chrome.exe"</span><span class="hljs-comment">, 0</span>
 </code></pre>
-    <h3 id="-backup-autom-tico-de-pastas-"><strong>🔹 Backup automático de pastas</strong></h3>
+    <h2 id="-backup-autom-tico-de-pastas-"><strong>🔹 Backup automático de pastas</strong></h2>
     <pre><code class="lang-bat">@<span class="hljs-built_in">echo</span> off
 robocopy <span class="hljs-string">"C:\Documentos"</span> <span class="hljs-string">"D:\Backup"</span> /MIR /<span class="hljs-built_in">LOG</span>:backup.<span class="hljs-built_in">log</span>
 <span class="hljs-built_in">echo</span> Backup concluí<span class="hljs-keyword">do</span> em %<span class="hljs-built_in">date</span>% %<span class="hljs-built_in">time</span>% &gt;&gt; backup.<span class="hljs-built_in">log</span>
 </code></pre>
     <hr>
-    <h2 id="-5-scripts-para-seguran-a-">📌 <strong>5. Scripts para Segurança</strong></h2>
-    <h3 id="-bloquear-a-tela-windows-l-"><strong>🔹 Bloquear a tela (Windows + L)</strong></h3>
+    <h1 id="-5-scripts-para-seguran-a-">📌 <strong>5. Scripts para Segurança</strong></h1>
+    <h2 id="-bloquear-a-tela-windows-l-"><strong>🔹 Bloquear a tela (Windows + L)</strong></h2>
     <pre><code class="lang-vbs">Set ws = CreateObject(<span class="hljs-string">"WScript.Shell"</span>)
 ws.SendKeys <span class="hljs-string">"^{ESC}"</span>  <span class="hljs-symbol">'Abre</span> o menu Iniciar
 WScript.Sleep <span class="hljs-number">100</span>
@@ -101,8 +122,8 @@ ws.SendKeys <span class="hljs-string">"{ENTER}"</span> <span class="hljs-symbol"
 WScript.Sleep <span class="hljs-number">100</span>
 ws.SendKeys <span class="hljs-string">"l"</span>       <span class="hljs-symbol">'Bloqueia</span>
 </code></pre>
-    <h3 id="-desativar-ativar-o-teclado-requer-admin-"><strong>🔹 Desativar/Ativar o Teclado (requer admin)</strong>
-    </h3>
+    <h2 id="-desativar-ativar-o-teclado-requer-admin-"><strong>🔹 Desativar/Ativar o Teclado (requer admin)</strong>
+    </h2>
     <pre><code class="lang-bat">@<span class="hljs-built_in">echo</span> off
 :: Desativar
 rundll32 keyboard,<span class="hljs-built_in">disable</span>
@@ -110,9 +131,9 @@ rundll32 keyboard,<span class="hljs-built_in">disable</span>
 rundll32 keyboard,<span class="hljs-built_in">enable</span>
 </code></pre>
     <hr>
-    <h2 id="-6-scripts-para-divers-o-brincadeiras-">📌 <strong>6. Scripts para Diversão / Brincadeiras</strong></h2>
-    <h3 id="-abrir-o-cd-rom-repetidamente-se-tiver-drive-"><strong>🔹 Abrir o CD-ROM repetidamente (se tiver
-            drive)</strong></h3>
+    <h1 id="-6-scripts-para-divers-o-brincadeiras-">📌 <strong>6. Scripts para Diversão / Brincadeiras</strong></h1>
+    <h2 id="-abrir-o-cd-rom-repetidamente-se-tiver-drive-"><strong>🔹 Abrir o CD-ROM repetidamente (se tiver
+            drive)</strong></h2>
     <pre><code class="lang-vbs"><span class="hljs-keyword">Set</span> oWMP = <span class="hljs-built_in">CreateObject</span>(<span class="hljs-string">"WMPlayer.OCX.7"</span>)
 <span class="hljs-keyword">Set</span> colCDROMs = oWMP.cdromCollection
 <span class="hljs-keyword">Do</span> <span class="hljs-keyword">While</span> <span class="hljs-literal">True</span>
@@ -123,17 +144,17 @@ rundll32 keyboard,<span class="hljs-built_in">enable</span>
     <span class="hljs-keyword">Next</span>
 <span class="hljs-keyword">Loop</span>
 </code></pre>
-    <h3 id="-mensagem-pop-up-ex-lembrete-"><strong>🔹 Mensagem pop-up (ex: lembrete)</strong></h3>
+    <h2 id="-mensagem-pop-up-ex-lembrete-"><strong>🔹 Mensagem pop-up (ex: lembrete)</strong></h2>
     <pre><code class="lang-vbs"><span class="hljs-built_in">MsgBox</span> <span class="hljs-string">"Hora de fazer uma pausa!"</span>, vbInformation, <span class="hljs-string">"Lembrete"</span>
 </code></pre>
-    <h3 id="-trocar-o-papel-de-parede-automaticamente-"><strong>🔹 Trocar o papel de parede automaticamente</strong>
-    </h3>
+    <h2 id="-trocar-o-papel-de-parede-automaticamente-"><strong>🔹 Trocar o papel de parede automaticamente</strong>
+    </h2>
     <pre><code class="lang-vbs"><span class="hljs-keyword">Set</span> ws <span class="hljs-comment">= CreateObject(</span><span class="hljs-comment">"WScript.Shell"</span><span class="hljs-comment">)</span>
 ws.RegWrite <span class="hljs-comment">"HKCU\Control Panel\Desktop\Wallpaper"</span><span class="hljs-comment">,</span> <span class="hljs-comment">"C:\wallpaper.jpg"</span><span class="hljs-comment">,</span> <span class="hljs-comment">"REG_SZ"</span>
 ws.Run <span class="hljs-comment">"RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters"</span><span class="hljs-comment">, 0</span>
 </code></pre>
     <hr>
-    <h3 id="-como-salvar-e-executar-"><strong>Como salvar e executar?</strong></h3>
+    <h2 id="-como-salvar-e-executar-"><strong>Como salvar e executar?</strong></h2>
     <ol>
         <li>Abra o <strong>Bloco de Notas</strong>.</li>
         <li>Cole o código.</li>

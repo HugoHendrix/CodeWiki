@@ -4,23 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Criando Efeito de Texto 3D em Camadas com CSS | CodeWiki</title>
+    <meta name="description" content="O CSS continua a surpreender com suas possibilidades criativas, e um exemplo impressionante é o efeito de texto em camadas 3D.">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/Design-Dev/camadas.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Criando Efeito de Texto 3D em Camadas com CSS | CodeWiki">
+    <meta property="og:description" content="O CSS continua a surpreender com suas possibilidades criativas, e um exemplo impressionante é o efeito de texto em camadas 3D.">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/Design-Dev/camadas.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Criando Efeito de Texto 3D em Camadas com CSS | CodeWiki">
+    <meta name="twitter:description" content="O CSS continua a surpreender com suas possibilidades criativas, e um exemplo impressionante é o efeito de texto em camadas 3D.">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Criando Efeito de Texto 3D em Camadas com CSS", "description": "O CSS continua a surpreender com suas possibilidades criativas, e um exemplo impressionante é o efeito de texto em camadas 3D.", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/Design-Dev/camadas.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/Design-Dev/camadas.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
-    <h3 id="criando-efeito-de-texto-3d-em-camadas-com-css"><strong>Criando Efeito de Texto 3D em Camadas com
-            CSS</strong></h3>
-    <h4 id="introdução"><strong>Introdução</strong></h4>
+    <h1 id="criando-efeito-de-texto-3d-em-camadas-com-css"><strong>Criando Efeito de Texto 3D em Camadas com
+            CSS</strong></h1>
+    <h2 id="introdução"><strong>Introdução</strong></h2>
     <ul>
         <li>O <strong>CSS</strong> continua a surpreender com suas possibilidades criativas, e um exemplo impressionante
             é o efeito de texto em camadas 3D.</li>
         <li>Usando propriedades como <code>-webkit-text-stroke</code> e <code>text-shadow</code>, é possível criar
             designs de texto visualmente atraentes sem a necessidade de imagens ou JavaScript.</li>
     </ul>
-    <h4 id="como-funciona"><strong>Como Funciona?</strong></h4>
+    <h2 id="como-funciona"><strong>Como Funciona?</strong></h2>
     <ol>
         <li>
             <p><strong><code>-webkit-text-stroke</code></strong>:</p>
@@ -46,7 +67,7 @@
             </ul>
         </li>
     </ol>
-    <h4 id="código-css"><strong>Código CSS</strong></h4>
+    <h2 id="código-css"><strong>Código CSS</strong></h2>
     <pre><code class="language-css">body {
     background: #313859; /* Fundo escuro para destacar o texto */
 }
@@ -64,17 +85,17 @@ h1 {
                  35px 35px 18px #1b1f33; /* Sombra final com desfoque */
 }
 </code></pre>
-    <h4 id="html-básico"><strong>HTML Básico</strong></h4>
+    <h2 id="html-básico"><strong>HTML Básico</strong></h2>
     <pre><code class="language-html">&lt;h1&gt;Fofinho&lt;/h1&gt;
 </code></pre>
-    <h4 id="resultado"><strong>Resultado</strong></h4>
+    <h2 id="resultado"><strong>Resultado</strong></h2>
     <ul>
         <li>O texto &quot;Fofinho&quot; aparecerá com um contorno branco e várias camadas de sombras coloridas, criando
             um efeito 3D empilhado.</li>
         <li>O fundo escuro (<code>#313859</code>) ajuda a destacar o efeito.</li>
     </ul>
     <p><img src="fofinho.png" alt="fofinho"></p>
-    <h4 id="considerações"><strong>Considerações</strong></h4>
+    <h2 id="considerações"><strong>Considerações</strong></h2>
     <ol>
         <li>
             <p><strong>Prefixo <code>-webkit</code></strong>:</p>
@@ -94,7 +115,7 @@ h1 {
             </ul>
         </li>
     </ol>
-    <h4 id="conclusão"><strong>Conclusão</strong></h4>
+    <h2 id="conclusão"><strong>Conclusão</strong></h2>
     <ul>
         <li>Esse efeito de texto 3D em camadas é um exemplo poderoso do que pode ser alcançado apenas com CSS.</li>
         <li>Com técnicas criativas e um pouco de experimentação, é possível criar designs impressionantes que elevam a

@@ -4,18 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Hyperlinks em HTML | CodeWiki</title>
+    <meta name="description" content="O que são hyperlinks em HTML e como criá-los, com base no capítulo 10 do Curso de HTML do Gustavo Guanabara.">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/Curso-em-Video/hyperlink.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Hyperlinks em HTML | CodeWiki">
+    <meta property="og:description" content="O que são hyperlinks em HTML e como criá-los, com base no capítulo 10 do Curso de HTML do Gustavo Guanabara.">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/Curso-em-Video/hyperlink.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hyperlinks em HTML | CodeWiki">
+    <meta name="twitter:description" content="O que são hyperlinks em HTML e como criá-los, com base no capítulo 10 do Curso de HTML do Gustavo Guanabara.">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Hyperlinks em HTML", "description": "O que são hyperlinks em HTML e como criá-los, com base no capítulo 10 do Curso de HTML do Gustavo Guanabara.", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/Curso-em-Video/hyperlink.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/Curso-em-Video/hyperlink.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
 
-    <h3 id="📚-documentação-hyperlinks-em-html"><strong>📚 Documentação: Hyperlinks em HTML</strong></h3>
+    <h2 id="📚-documentação-hyperlinks-em-html"><strong>📚 Documentação: Hyperlinks em HTML</strong></h2>
     <p><em>(Baseado no Capítulo 10 do Curso de HTML do Prof. Gustavo Guanabara)</em> </p>
     <hr>
-    <h2 id="1-o-que-são-hyperlinks"><strong>1. O Que São Hyperlinks?</strong></h2>
+    <h1 id="1-o-que-são-hyperlinks"><strong>1. O Que São Hyperlinks?</strong></h1>
     <ul>
         <li><strong>Definição:</strong> Elementos que conectam páginas da web, permitindo navegação entre documentos,
             sites ou downloads. </li>
@@ -23,7 +44,7 @@
         <li><strong>Tag HTML:</strong> <code>&lt;a&gt;</code> (âncora).</li>
     </ul>
     <hr>
-    <h2 id="2-sintaxe-básica"><strong>2. Sintaxe Básica</strong></h2>
+    <h1 id="2-sintaxe-básica"><strong>2. Sintaxe Básica</strong></h1>
     <pre><code class="language-html">&lt;a href=&quot;URL&quot;&gt;Texto do Link&lt;/a&gt;
 </code></pre>
     <ul>
@@ -34,8 +55,8 @@
         </li>
     </ul>
     <hr>
-    <h2 id="3-tipos-de-links"><strong>3. Tipos de Links</strong></h2>
-    <h3 id="a-links-internos"><strong>a) Links Internos</strong></h3>
+    <h1 id="3-tipos-de-links"><strong>3. Tipos de Links</strong></h1>
+    <h2 id="a-links-internos"><strong>a) Links Internos</strong></h2>
     <ul>
         <li>Apontam para páginas do mesmo site. </li>
         <li><strong>Exemplo:</strong>
@@ -43,7 +64,7 @@
 </code></pre>
         </li>
     </ul>
-    <h3 id="b-links-externos"><strong>b) Links Externos</strong></h3>
+    <h2 id="b-links-externos"><strong>b) Links Externos</strong></h2>
     <ul>
         <li>Apontam para outros sites (use URL completa). </li>
         <li><strong>Exemplo:</strong>
@@ -51,7 +72,7 @@
 </code></pre>
         </li>
     </ul>
-    <h3 id="c-links-para-download"><strong>c) Links para Download</strong></h3>
+    <h2 id="c-links-para-download"><strong>c) Links para Download</strong></h2>
     <ul>
         <li>Usam os atributos <code>download</code> e <code>type</code>. </li>
         <li><strong>Exemplo:</strong>
@@ -60,7 +81,7 @@
         </li>
     </ul>
     <hr>
-    <h2 id="4-atributos-importantes"><strong>4. Atributos Importantes</strong></h2>
+    <h1 id="4-atributos-importantes"><strong>4. Atributos Importantes</strong></h1>
     <table>
         <thead>
             <tr>
@@ -88,7 +109,7 @@
         </tbody>
     </table>
     <hr>
-    <h2 id="5-valores-do-atributo-target"><strong>5. Valores do Atributo <code>target</code></strong></h2>
+    <h1 id="5-valores-do-atributo-target"><strong>5. Valores do Atributo <code>target</code></strong></h1>
     <ul>
         <li><strong><code>_blank</code>:</strong> Abre em nova aba/janela. </li>
         <li><strong><code>_self</code>:</strong> Abre na mesma aba (padrão). </li>
@@ -99,7 +120,7 @@
     <pre><code class="language-html">&lt;a href=&quot;https://youtube.com&quot; target=&quot;_blank&quot;&gt;Abrir YouTube em nova aba&lt;/a&gt;
 </code></pre>
     <hr>
-    <h2 id="6-navegação-entre-pastas"><strong>6. Navegação entre Pastas</strong></h2>
+    <h1 id="6-navegação-entre-pastas"><strong>6. Navegação entre Pastas</strong></h1>
     <ul>
         <li><strong><code>./</code>:</strong> Pasta atual. </li>
         <li><strong><code>../</code>:</strong> Volta uma pasta. </li>
@@ -109,10 +130,10 @@
         </li>
     </ul>
     <hr>
-    <h2 id="media-types-tipos-de-mime"><strong>7. Media Types (Tipos de MIME)</strong></h2>
+    <h1 id="media-types-tipos-de-mime"><strong>7. Media Types (Tipos de MIME)</strong></h1>
     <p>São identificadores que dizem ao navegador <strong>que tipo de arquivo</strong> está sendo vinculado ou baixado.
     </p>
-    <h4 id="principais-tipos"><strong>Principais Tipos:</strong></h4>
+    <h3 id="principais-tipos"><strong>Principais Tipos:</strong></h3>
     <table>
         <thead>
             <tr>
@@ -164,7 +185,7 @@
             </tr>
         </tbody>
     </table>
-    <h4 id="como-usar"><strong>Como Usar?</strong></h4>
+    <h3 id="como-usar"><strong>Como Usar?</strong></h3>
     <ul>
         <li>Em links de download:
             <pre><code class="language-html">&lt;a href=&quot;manual.pdf&quot; download=&quot;manual.pdf&quot; type=&quot;application/pdf&quot;&gt;Baixar PDF&lt;/a&gt;
@@ -175,17 +196,17 @@
 </code></pre>
         </li>
     </ul>
-    <h4 id="onde-encontrar-a-lista-completa"><strong>Onde Encontrar a Lista Completa?</strong></h4>
+    <h3 id="onde-encontrar-a-lista-completa"><strong>Onde Encontrar a Lista Completa?</strong></h3>
     <ul>
         <li><a href="https://www.iana.org/assignments/media-types/media-types.xhtml">Lista Oficial da IANA</a>.</li>
     </ul>
     <hr>
     <hr>
-    <h2 id="8-boas-práticas"><strong>8. Boas Práticas</strong></h2>
+    <h1 id="8-boas-práticas"><strong>8. Boas Práticas</strong></h1>
     <p>✅ Use <code>rel=&quot;external&quot;</code> para links externos.<br>✅ Sempre prefira <code>https://</code> em
         URLs.<br>✅ Para downloads, nomeie o arquivo no atributo <code>download</code>. </p>
     <hr>
-    <h2 id="9-exercícios-práticos"><strong>9. Exercícios Práticos</strong></h2>
+    <h1 id="9-exercícios-práticos"><strong>9. Exercícios Práticos</strong></h1>
     <ol>
         <li><strong>Link Simples:</strong>
             <pre><code class="language-html">&lt;a href=&quot;contato.html&quot;&gt;Fale Conosco&lt;/a&gt;
@@ -203,12 +224,12 @@
     <hr>
 
 
-    <h3 id="🔍-explicação-detalhada-atributo-target"><strong>🔍 Explicação Detalhada: Atributo
-            <code>target</code></strong></h3>
+    <h2 id="🔍-explicação-detalhada-atributo-target"><strong>🔍 Explicação Detalhada: Atributo
+            <code>target</code></strong></h2>
     <p>O atributo <code>target</code> em links HTML (<code>&lt;a&gt;</code>) controla <strong>onde</strong> o conteúdo
         do link será aberto. Vamos entender cada valor:</p>
     <hr>
-    <h4 id="1-target_blank"><strong>1. <code>target=&quot;_blank&quot;</code></strong></h4>
+    <h3 id="1-target_blank"><strong>1. <code>target=&quot;_blank&quot;</code></strong></h3>
     <ul>
         <li><strong>O que faz?</strong> Abre o link em uma <strong>nova aba/janela</strong> do navegador. </li>
         <li><strong>Quando usar?</strong>
@@ -228,7 +249,7 @@
         </div>
     </ul>
     <hr>
-    <h4 id="2-target_self"><strong>2. <code>target=&quot;_self&quot;</code></strong></h4>
+    <h3 id="2-target_self"><strong>2. <code>target=&quot;_self&quot;</code></strong></h3>
     <ul>
         <li><strong>O que faz?</strong> Abre o link na <strong>mesma aba</strong> (comportamento padrão se
             <code>target</code> não for especificado).
@@ -244,7 +265,7 @@
         </li>
     </ul>
     <hr>
-    <h4 id="3-target_parent"><strong>3. <code>target=&quot;_parent&quot;</code></strong></h4>
+    <h3 id="3-target_parent"><strong>3. <code>target=&quot;_parent&quot;</code></strong></h3>
     <ul>
         <li><strong>O que faz?</strong> Abre o link no <strong>frame pai</strong> (útil em páginas com
             <em>framesets</em>).
@@ -261,7 +282,7 @@
         </li>
     </ul>
     <hr>
-    <h4 id="4-target_top"><strong>4. <code>target=&quot;_top&quot;</code></strong></h4>
+    <h3 id="4-target_top"><strong>4. <code>target=&quot;_top&quot;</code></strong></h3>
     <ul>
         <li><strong>O que faz?</strong> Ignora todos os frames e abre o link no <strong>contexto completo da
                 janela</strong>. </li>
@@ -276,10 +297,10 @@
         </li>
     </ul>
     <hr>
-    <h3 id="📌-por-que-usar-o-atributo-rel"><strong>📌 Por Que Usar o Atributo <code>rel</code>?</strong></h3>
+    <h2 id="📌-por-que-usar-o-atributo-rel"><strong>📌 Por Que Usar o Atributo <code>rel</code>?</strong></h2>
     <p>O atributo <code>rel</code> define a <strong>relação</strong> entre a página atual e o link. É importante para:
     </p>
-    <h4 id="1-segurança-e-performance"><strong>1. Segurança e Performance</strong></h4>
+    <h3 id="1-segurança-e-performance"><strong>1. Segurança e Performance</strong></h3>
     <ul>
         <li><code>rel=&quot;noopener noreferrer&quot;</code>: <ul>
                 <li>Usado com <code>target=&quot;_blank&quot;</code> para evitar vulnerabilidades como
@@ -292,7 +313,7 @@
             </ul>
         </li>
     </ul>
-    <h4 id="2-seo-e-semântica"><strong>2. SEO e Semântica</strong></h4>
+    <h3 id="2-seo-e-semântica"><strong>2. SEO e Semântica</strong></h3>
     <ul>
         <li><code>rel=&quot;external&quot;</code>: Indica que o link é para um <strong>site externo</strong>. </li>
         <li><code>rel=&quot;nofollow&quot;</code>: Diz aos mecanismos de busca para <strong>não seguir</strong> o link
@@ -302,7 +323,7 @@
 </code></pre>
         </li>
     </ul>
-    <h4 id="3-navegação-entre-páginas"><strong>3. Navegação entre Páginas</strong></h4>
+    <h3 id="3-navegação-entre-páginas"><strong>3. Navegação entre Páginas</strong></h3>
     <ul>
         <li><code>rel=&quot;prev&quot;</code> e <code>rel=&quot;next&quot;</code>: Para indicar paginação (útil para
             SEO).
@@ -312,7 +333,7 @@
     </ul>
     <hr>
 
-    <h3 id="📌-resumo-prático"><strong>📌 Resumo Prático</strong></h3>
+    <h2 id="📌-resumo-prático"><strong>📌 Resumo Prático</strong></h2>
     <pre><code class="language-html">&lt;!-- Link seguro em nova aba --&gt;  
 &lt;a href=&quot;https://exemplo.com&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Abrir Exemplo&lt;/a&gt;  
 
@@ -335,7 +356,7 @@
 
     <hr>
 
-    <h2 id="🔗-recursos-adicionais"><strong>🔗 Recursos Adicionais</strong></h2>
+    <h1 id="🔗-recursos-adicionais"><strong>🔗 Recursos Adicionais</strong></h1>
     <ul>
         <li><a href="https://github.com/gustavoguanabara" target="_blank" rel="external noopener noreferrer">Repositório do Curso</a> </li>
         <li><a href="https://www.youtube.com/playlist?list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n" target="_blank" rel="external noopener noreferrer">Playlist no YouTube</a>

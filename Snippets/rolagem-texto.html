@@ -4,22 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Rolagem de texto ao passar o mouse | CodeWiki</title>
+    <meta name="description" content="Este código cria uma série de &quot;piadas&quot; (ou textos) que, ao passar o mouse, rolam horizontalmente para revelar o conteúdo completo. É uma técnica útil…">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/Snippets/rolagem-texto.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Rolagem de texto ao passar o mouse | CodeWiki">
+    <meta property="og:description" content="Este código cria uma série de &quot;piadas&quot; (ou textos) que, ao passar o mouse, rolam horizontalmente para revelar o conteúdo completo. É uma técnica útil…">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/Snippets/rolagem-texto.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rolagem de texto ao passar o mouse | CodeWiki">
+    <meta name="twitter:description" content="Este código cria uma série de &quot;piadas&quot; (ou textos) que, ao passar o mouse, rolam horizontalmente para revelar o conteúdo completo. É uma técnica útil…">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Rolagem de texto ao passar o mouse", "description": "Este código cria uma série de \"piadas\" (ou textos) que, ao passar o mouse, rolam horizontalmente para revelar o conteúdo completo. É uma técnica útil…", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/Snippets/rolagem-texto.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/Snippets/rolagem-texto.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
 
-    <h3 id="rolagem-de-texto-ao-passar-o-mouse">Rolagem de Texto ao Passar o Mouse</h3>
+    <h2 id="rolagem-de-texto-ao-passar-o-mouse">Rolagem de Texto ao Passar o Mouse</h2>
     <p>Este código cria uma série de &quot;piadas&quot; (ou textos) que, ao passar o mouse, rolam horizontalmente para
         revelar o conteúdo completo. É uma técnica útil para exibir textos longos em espaços limitados, como manchetes,
         trechos ou comentários.</p>
     <p><a href="https://codepen.io/themolitor/live/Jjzxvma/4a4e4787ebd4aad2a91909debef126e6?utm_source=design.dev">Exemplo
             do código</a></p>
     <hr>
-    <h2 id="-1-estrutura-html-"><strong>1. Estrutura HTML</strong></h2>
+    <h1 id="-1-estrutura-html-"><strong>1. Estrutura HTML</strong></h1>
     <p>O HTML define a estrutura básica da caixa de piadas.</p>
     <pre><code class="lang-html">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"joke-box"</span>&gt;
     &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"jokes"</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"joke1"</span>&gt;Why can't CSS devs clean their desk?&amp;nbsp; Because everything <span class="hljs-keyword">is</span> !important. 😅&lt;/<span class="hljs-keyword">div</span>&gt;
@@ -28,7 +49,7 @@
     &lt;!<span class="hljs-comment">-- Outras piadas seguem a mesma estrutura --&gt;</span>
 &lt;/<span class="hljs-keyword">div</span>&gt;
 </code></pre>
-    <h3 id="-explica-o-"><strong>Explicação:</strong></h3>
+    <h2 id="-explica-o-"><strong>Explicação:</strong></h2>
     <ul>
         <li><strong><code>#joke-box</code></strong>: Contêiner principal que envolve todas as piadas.</li>
         <li><strong><code>.jokes</code></strong>: Cada piada é um elemento dentro do contêiner. O texto é exibido em uma
@@ -37,9 +58,9 @@
             em linhas.</li>
     </ul>
     <hr>
-    <h2 id="-2-estilos-css-"><strong>2. Estilos CSS</strong></h2>
+    <h1 id="-2-estilos-css-"><strong>2. Estilos CSS</strong></h1>
     <p>O CSS define o layout e a aparência das piadas.</p>
-    <h3 id="-estilos-globais-"><strong>Estilos Globais</strong></h3>
+    <h2 id="-estilos-globais-"><strong>Estilos Globais</strong></h2>
     <pre><code class="lang-css">* {
   <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>; <span class="hljs-comment">/* Remove margens padrão */</span>
 }
@@ -48,7 +69,7 @@
   <span class="hljs-attribute">margin</span>: <span class="hljs-number">12px</span>; <span class="hljs-comment">/* Adiciona margem ao contêiner */</span>
 }
 </code></pre>
-    <h3 id="-estilo-das-piadas-"><strong>Estilo das Piadas</strong></h3>
+    <h2 id="-estilo-das-piadas-"><strong>Estilo das Piadas</strong></h2>
     <pre><code class="lang-css"><span class="hljs-selector-class">.jokes</span> {
   <span class="hljs-attribute">line-height</span>: <span class="hljs-number">60px</span>; <span class="hljs-comment">/* Altura da linha */</span>
   <span class="hljs-attribute">font-family</span>: sans-serif; <span class="hljs-comment">/* Fonte */</span>
@@ -62,7 +83,7 @@
   <span class="hljs-attribute">max-width</span>: <span class="hljs-number">100%</span>; <span class="hljs-comment">/* Largura máxima */</span>
 }
 </code></pre>
-    <h3 id="-estilos-individuais-para-cada-piada-"><strong>Estilos Individuais para Cada Piada</strong></h3>
+    <h2 id="-estilos-individuais-para-cada-piada-"><strong>Estilos Individuais para Cada Piada</strong></h2>
     <p>Cada piada tem uma largura, cor de texto e fundo personalizados.</p>
     <pre><code class="lang-css"><span class="hljs-selector-id">#joke1</span> {
   <span class="hljs-attribute">width</span>: <span class="hljs-number">470px</span>;
@@ -81,7 +102,7 @@
 }
 <span class="hljs-comment">/* Outras piadas seguem a mesma estrutura */</span>
 </code></pre>
-    <h3 id="-explica-o-"><strong>Explicação:</strong></h3>
+    <h2 id="-explica-o-"><strong>Explicação:</strong></h2>
     <ul>
         <li><strong><code>line-height</code> e <code>height</code></strong>: Garantem que o texto fique centralizado
             verticalmente.</li>
@@ -91,9 +112,9 @@
         </li>
     </ul>
     <hr>
-    <h2 id="-3-javascript-"><strong>3. JavaScript</strong></h2>
+    <h1 id="-3-javascript-"><strong>3. JavaScript</strong></h1>
     <p>O JavaScript adiciona a funcionalidade de rolagem horizontal ao passar o mouse.</p>
-    <h3 id="-fun-o-principal-"><strong>Função Principal</strong></h3>
+    <h2 id="-fun-o-principal-"><strong>Função Principal</strong></h2>
     <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">scrollMeTheWay</span>(<span class="hljs-params">selector, buffer = <span class="hljs-number">20</span>, speed = <span class="hljs-number">2</span></span>) </span>{
     <span class="hljs-keyword">const</span> elements = <span class="hljs-built_in">document</span>.querySelectorAll(selector);
 
@@ -154,7 +175,7 @@
     });
 }
 </code></pre>
-    <h3 id="-inicializa-o-"><strong>Inicialização</strong></h3>
+    <h2 id="-inicializa-o-"><strong>Inicialização</strong></h2>
     <pre><code class="lang-javascript"><span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">'DOMContentLoaded'</span>, <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
     const jokes = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'.jokes'</span>);
     <span class="hljs-keyword">if</span> (jokes.length &gt; <span class="hljs-number">0</span>) {
@@ -162,7 +183,7 @@
     }
 });
 </code></pre>
-    <h3 id="-explica-o-"><strong>Explicação:</strong></h3>
+    <h2 id="-explica-o-"><strong>Explicação:</strong></h2>
     <ol>
         <li>
             <p><strong><code>scrollMeTheWay()</code></strong>:</p>
@@ -188,13 +209,13 @@
         </li>
     </ol>
     <hr>
-    <h2 id="-4-como-funciona-a-rolagem-"><strong>4. Como Funciona a Rolagem?</strong></h2>
+    <h1 id="-4-como-funciona-a-rolagem-"><strong>4. Como Funciona a Rolagem?</strong></h1>
     <ul>
         <li>Ao passar o mouse sobre uma piada, o texto rola horizontalmente para revelar o conteúdo completo.</li>
         <li>Quando o mouse é retirado, o texto retorna à posição inicial.</li>
     </ul>
     <hr>
-    <h2 id="-5-exemplo-completo-"><strong>5. Exemplo Completo</strong></h2>
+    <h1 id="-5-exemplo-completo-"><strong>5. Exemplo Completo</strong></h1>
     <p>Aqui está o código completo para você testar:</p>
     <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"pt-BR"</span>&gt;</span>
@@ -304,7 +325,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
     <hr>
-    <h2 id="-6-considera-es-finais-"><strong>6. Considerações Finais</strong></h2>
+    <h1 id="-6-considera-es-finais-"><strong>6. Considerações Finais</strong></h1>
     <ul>
         <li><strong>Responsividade</strong>: O código já é responsivo, mas você pode ajustar os tamanhos das piadas para
             diferentes dispositivos.</li>

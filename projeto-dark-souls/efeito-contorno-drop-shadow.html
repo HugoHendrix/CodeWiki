@@ -4,21 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Efeito de Contorno ( drop-shadow ) | CodeWiki</title>
+    <meta name="description" content="O efeito de contorno em volta de um personagem em uma imagem, que segue a forma dele, é criado com a propriedade CSS filter e a função drop-shadow() .">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/efeito-contorno-drop-shadow.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Efeito de Contorno ( drop-shadow ) | CodeWiki">
+    <meta property="og:description" content="O efeito de contorno em volta de um personagem em uma imagem, que segue a forma dele, é criado com a propriedade CSS filter e a função drop-shadow() .">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/efeito-contorno-drop-shadow.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Efeito de Contorno ( drop-shadow ) | CodeWiki">
+    <meta name="twitter:description" content="O efeito de contorno em volta de um personagem em uma imagem, que segue a forma dele, é criado com a propriedade CSS filter e a função drop-shadow() .">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Efeito de Contorno ( drop-shadow )", "description": "O efeito de contorno em volta de um personagem em uma imagem, que segue a forma dele, é criado com a propriedade CSS filter e a função drop-shadow() .", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/efeito-contorno-drop-shadow.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/efeito-contorno-drop-shadow.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
     <article>
-        <h3 id="efeito-de-contorno-drop-shadow-">Efeito de Contorno (<code>drop-shadow</code>)</h3>
+        <h1 id="efeito-de-contorno-drop-shadow-">Efeito de Contorno (<code>drop-shadow</code>)</h1>
         <p>O efeito de contorno em volta de um personagem em uma imagem, que segue a forma dele, é criado com a
             propriedade CSS <strong><code>filter</code></strong> e a função <strong><code>drop-shadow()</code></strong>.
         </p>
         <p>Essa técnica é ideal para imagens com fundo transparente (como arquivos PNG), pois o <code>drop-shadow</code>
             ignora as partes transparentes e aplica o efeito apenas aos pixels visíveis.</p>
-        <h4 id="estrutura-b-sica">Estrutura Básica</h4>
+        <h2 id="estrutura-b-sica">Estrutura Básica</h2>
         <p>A sintaxe da função <code>drop-shadow()</code> é a seguinte:</p>
         <pre><code class="lang-css">filter: <span class="hljs-keyword">drop</span>-shadow(<span class="hljs-keyword">offset</span>-x <span class="hljs-keyword">offset</span>-y blur-radius color);
 </code></pre>
@@ -32,7 +53,7 @@
                 pode aumentar este valor.</li>
             <li><strong><code>color</code></strong>: A cor da borda/sombra.</li>
         </ul>
-        <h4 id="exemplo-pr-tico">Exemplo Prático</h4>
+        <h2 id="exemplo-pr-tico">Exemplo Prático</h2>
         <p>Vamos criar um exemplo com uma imagem de um personagem.</p>
         <p><strong>HTML:</strong></p>
         <pre><code class="lang-html">&lt;img src=<span class="hljs-string">"caminho/para/sua-imagem.png"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"contorno-personagem"</span> alt=<span class="hljs-string">"Personagem com contorno"</span>&gt;
@@ -55,7 +76,7 @@
             <li><code>blue</code>: A cor da borda.</li>
         </ul>
         <hr>
-        <h4 id="varia-es-comuns">Variações Comuns</h4>
+        <h2 id="varia-es-comuns">Variações Comuns</h2>
         <p>Você pode ajustar os valores para criar efeitos diferentes:</p>
         <ul>
             <li>

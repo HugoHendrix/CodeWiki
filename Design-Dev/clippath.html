@@ -4,16 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Criando Estética Cyberpunk com clip-path no CSS | CodeWiki</title>
+    <meta name="description" content="Esses pontos criam um polígono que recorta um pequeno retângulo no canto inferior direito do botão.">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/Design-Dev/clippath.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Criando Estética Cyberpunk com clip-path no CSS | CodeWiki">
+    <meta property="og:description" content="Esses pontos criam um polígono que recorta um pequeno retângulo no canto inferior direito do botão.">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/Design-Dev/clippath.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Criando Estética Cyberpunk com clip-path no CSS | CodeWiki">
+    <meta name="twitter:description" content="Esses pontos criam um polígono que recorta um pequeno retângulo no canto inferior direito do botão.">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Criando Estética Cyberpunk com clip-path no CSS", "description": "Esses pontos criam um polígono que recorta um pequeno retângulo no canto inferior direito do botão.", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/Design-Dev/clippath.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/Design-Dev/clippath.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
 
-    <h3 id="criando-estética-cyberpunk-com-clip-path-no-css"><strong>Criando Estética Cyberpunk com
-            <code>clip-path</code> no CSS</strong></h3>
+    <h1 id="criando-estética-cyberpunk-com-clip-path-no-css"><strong>Criando Estética Cyberpunk com
+            <code>clip-path</code> no CSS</strong></h1>
     <ul>
         <li>A estética <strong>Cyberpunk</strong> é conhecida por seus designs futuristas e recortes geométricos.</li>
         <li>Com a propriedade CSS <strong><code>clip-path</code></strong>, é fácil criar efeitos visuais
@@ -22,7 +43,7 @@
             inferior direito, típico do estilo Cyberpunk.</li>
     </ul>
     <hr>
-    <h4 id="como-funciona"><strong>Como Funciona?</strong></h4>
+    <h2 id="como-funciona"><strong>Como Funciona?</strong></h2>
     <ul>
         <li>
             <p><strong><code>clip-path</code></strong>:</p>
@@ -42,7 +63,7 @@
         </li>
     </ul>
     <hr>
-    <h4 id="código-css"><strong>Código CSS</strong></h4>
+    <h2 id="código-css"><strong>Código CSS</strong></h2>
     <pre><code class="language-css">button {
     padding: 8px 15px; /* Espaçamento interno */
     background: yellow; /* Cor de fundo */
@@ -62,7 +83,7 @@
 }
 </code></pre>
     <hr>
-    <h4 id="explicação-do-clip-path"><strong>Explicação do <code>clip-path</code></strong></h4>
+    <h2 id="explicação-do-clip-path"><strong>Explicação do <code>clip-path</code></strong></h2>
     <ul>
         <li><strong><code>100% 0</code></strong>: Canto superior direito.</li>
         <li><strong><code>100% calc(100% - 10px)</code></strong>: Desce 10px do canto inferior direito.</li>
@@ -72,7 +93,7 @@
     </ul>
     <p>Esses pontos criam um polígono que recorta um pequeno retângulo no canto inferior direito do botão.</p>
     <hr>
-    <h4 id="considerações"><strong>Considerações</strong></h4>
+    <h2 id="considerações"><strong>Considerações</strong></h2>
     <ol>
         <li>
             <p><strong>Efeitos Externos Ocultos</strong>:</p>
@@ -101,7 +122,7 @@
         </li>
     </ol>
     <hr>
-    <h4 id="exemplo-prático"><strong>Exemplo Prático</strong></h4>
+    <h2 id="exemplo-prático"><strong>Exemplo Prático</strong></h2>
     <pre><code class="language-html">&lt;button&gt;Clique Aqui&lt;/button&gt;
 </code></pre>
     <pre><code class="language-css">button {
@@ -124,7 +145,7 @@
 </code></pre>
     <p><img src="cyberpunk.png" alt="cyberpunk"></p>
     <hr>
-    <h4 id="conclusão"><strong>Conclusão</strong></h4>
+    <h2 id="conclusão"><strong>Conclusão</strong></h2>
     <ul>
         <li>A propriedade <strong><code>clip-path</code></strong> é uma ferramenta poderosa para criar designs únicos e
             modernos, como a estética Cyberpunk.</li>

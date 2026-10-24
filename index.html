@@ -2,21 +2,35 @@
 <html lang="pt-br" data-color-scheme="dark">
 
 <head>
-    <meta name="description" content="Wiki pessoal com conteúdos de programação, HTML, CSS, JavaScript e mais.">
-    <meta property="og:title" content="CodeWiki">
-    <meta property="og:description" content="Wiki pessoal de conhecimentos em desenvolvimento web.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeWiki | Biblioteca de desenvolvimento web</title>
+    <meta name="description" content="Wiki pessoal de desenvolvimento web: anotações, guias e snippets de HTML, CSS, JavaScript, PHP e Git, com busca e exemplos práticos.">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CodeWiki | Biblioteca de desenvolvimento web">
+    <meta property="og:description" content="Wiki pessoal de desenvolvimento web: anotações, guias e snippets de HTML, CSS, JavaScript, PHP e Git, com busca e exemplos práticos.">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="CodeWiki: biblioteca de desenvolvimento web">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CodeWiki | Biblioteca de desenvolvimento web">
+    <meta name="twitter:description" content="Wiki pessoal de desenvolvimento web: anotações, guias e snippets de HTML, CSS, JavaScript, PHP e Git, com busca e exemplos práticos.">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
     <link rel="shortcut icon" href="img/book.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://hugohendrix.github.io/CodeWiki/#site", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/", "description": "Wiki pessoal de desenvolvimento web: anotações, guias e snippets de HTML, CSS, JavaScript, PHP e Git, com busca e exemplos práticos.", "inLanguage": "pt-BR", "publisher": {"@id": "https://hugohendrix.github.io/CodeWiki/#autor"}}, {"@type": "Person", "@id": "https://hugohendrix.github.io/CodeWiki/#autor", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix", "sameAs": ["https://github.com/HugoHendrix"]}, {"@type": "CollectionPage", "@id": "https://hugohendrix.github.io/CodeWiki/#pagina", "url": "https://hugohendrix.github.io/CodeWiki/", "name": "CodeWiki | Biblioteca de desenvolvimento web", "description": "Wiki pessoal de desenvolvimento web: anotações, guias e snippets de HTML, CSS, JavaScript, PHP e Git, com busca e exemplos práticos.", "isPartOf": {"@id": "https://hugohendrix.github.io/CodeWiki/#site"}, "inLanguage": "pt-BR"}]}</script>
     <script src="busca.js" defer></script>
-    <title>Code Wiki | Biblioteca Dev</title>
 </head>
 
 <body>
@@ -84,6 +98,7 @@
             <!-- ANOTAÇÕES -->
             <section id="anotacao">
                 <h2>📝 Anotações</h2>
+                <ul class="link-list">
                 <li><a href="Anotações/problemas-target-blank.html">Risco ao usar target_blank</a></li>
                 <li><a href="Anotações/link-pdf.html">Como Adicionar Link para PDF no Seu Site</a></li>
                 <li><a href="Anotações/snippets-vscode.html">Como Criar e Usar Snippets Personalizados no VS Code</a>
@@ -103,6 +118,8 @@
                 <li><a href="Anotações/atalho-teclado.html">Atalhos de teclado</a></li>
 
                 <li><a href="Anotações/pesquisa-avancada.html">Pesquisa Avançada no Google</a></li>
+                </ul>
+
             </section>
 
             <hr>
@@ -110,6 +127,7 @@
             <!-- SNIPPETS -->
             <section id="snippets">
                 <h2>🚩 Snippets</h2>
+                <ul class="link-list">
                 <li><a href="Snippets/acordeao.html"> Criando um Acordeão com <code>details</code> e
                         <code>summary</code> sem JavaScript
                     </a></li>
@@ -123,6 +141,7 @@
                 <li><a href="Snippets/varios-scripts.html">Vários scripts em VBScript ou Batch</a></li>
                 <li><a href="Snippets/rolagem-texto.html">Rolagem de Texto ao Passar o Mouse</a></li>
                 <li><a href="Snippets/validacao-form.html">Validação de Formulário</a></li>
+                </ul>
 
             </section>
 
@@ -131,9 +150,11 @@
             <!-- DESIGN DEV CREW -->
             <section id="devcrew">
                 <h2>🎁 Design-DEV</h2>
+                <ul class="link-list">
                 <li><a href="Design-Dev/index.html">Dicas, Trechos de Código e Boas Práticas — The Design.dev Crew
 
                     </a></li>
+                </ul>
 
             </section>
 
@@ -144,7 +165,7 @@
                 <p>Seção dedicada a aplicar conceitos de design digital no desenvolvimento front-end. Encontre guias
                     práticos sobre experiência do usuário, interface intuitiva, composição visual e recursos gráficos
                     para elevar a qualidade dos seus projetos.</p>
-                <ul>
+                <ul class="link-list">
                     <li><a href="Recursos-Web/ilustracao-design.html">Recursos para Design e Desenvolvimento</a></li>
                     <li><a href="ui-ux/importancia-das-cores.html">A importância das cores um site</a></li>
                 </ul>
@@ -157,6 +178,7 @@
                 <h2>📤 Backstage da WEB</h2>
                 <p>Anotações e guias sobre o que acontece por trás de um site: DNS, hospedagem, disponibilidade, e
                     diagnósticos para manter tudo no ar.</p>
+                <ul class="link-list">
                 <li><a href="backstage/como-identificar-site-fora-do-ar.html">Como identificar sites fora do ar</a></li>
                 <li><a href="backstage/conceitos-fundamentais-de-dns.html">Documentação Técnica: Conceitos Fundamentais
                         de DNS, Cache, CDN e SEO</a></li>
@@ -164,6 +186,7 @@
                 <li><a href="backstage/http-e-codigo-de-status.html">Documentação: HTTP e Códigos de Status</a></li>
                 <li><a href="backstage/fundamentos-para-funcionamento-coreto-site.html">Fundamentos para o Funcionamento
                         Correto de um Site</a></li>
+                </ul>
 
                 <br>
                 <h2 id="-ferramentas-para-diagn-stico-de-dns">🛠️ Ferramentas para Diagnóstico de DNS</h2>
@@ -209,10 +232,12 @@
                 <h2>💻 HTML (HYPER TEXT MARKUP LANGUANGE)</h2>
                 <p>HTML (HyperText Markup Language) é o bloco de construção mais básico da Web. Ele define o significado
                     e a estrutura do conteúdo da Web.</p>
+                <ul class="link-list">
                 <li><a href="HTML/josh-html-skeleton.html">Artigo de Josh W. Comeau: HTML Skeleton</a></li>
                 <li><a href="HTML/melhor-carregamento.html">Documentação: preconnect, prefetch, e preload</a></li>
                 <li><a href="HTML/valida-form.html">Validação de Formulários com Atributos HTML Nativos</a></li>
                 <li><a href="HTML/popover.html">Popover API (HTML) + Cascade Layers (CSS)</a></li>
+                </ul>
 
             </section>
 
@@ -224,6 +249,7 @@
                 <p>Cascading Style Sheets (CSS) é uma linguagem de estilos que define como um documento escrito em HTML
                     ou XML deve ser apresentado. É uma tecnologia fundamental da World Wide Web, juntamente com HTML e
                     JavaScript.</p>
+                <ul class="link-list">
                 <li><a href="CSS/reset-css-josh.html">CSS Reset de Josh Comeau</a></li>
                 <li><a href="CSS/container-queries.html">Container Queries no CSS</a></li>
                 <li><a href="CSS/media-queries-e-clamp-function-css.html">Documentação: Media Queries e CLAMP FUNCTION
@@ -241,8 +267,7 @@
                 <li><a href="CSS/css-arrumado.html">CSS Arrumado</a></li>
                 <li><a href="CSS/carousels.html">Artigo do CSS-Tricks Carousels somente com CSS</a></li>
                 <li><a href="CSS/scramble-effect.html">Texto embaralhado com CSS (Scramble Effect)</a></li>
-
-
+                </ul>
 
             </section>
 
@@ -256,12 +281,14 @@
                     também em vários outros ambientes sem browser, tais como node.js, Apache CouchDB e Adobe Acrobat. O
                     JavaScript é uma linguagem baseada em protótipos, multi-paradigma e dinâmica, suportando estilos de
                     orientação a objetos, imperativos e declarativos.</p>
+                <ul class="link-list">
                 <li><a href="JS/btn-topo.html">Como Adicionar um Botão de Voltar ao Topo</a></li>
                 <li><a href="JS/copiar-textos.html">Função: copiarTextoPorId(idElemento)</a></li>
                 <li><a href="JS/relógio.html">RELÓGIO COM SAUDAÇÃO</a></li>
                 <li><a href="JS/rolagem-suave.html">Rolagem Suave entre seções (smooth scroll) </a></li>
                 <li><a href="JS/estudando-o-poder-do-js.html">Estudando o poder do JS</a></li>
             
+                </ul>
 
             </section>
 
@@ -275,8 +302,9 @@
                     desenvolvimento web. Pode ser incorporada em HTML e é especialmente adequada para desenvolvimento
                     web.
                     O PHP é um dos principais componentes da pilha LAMP (Linux, Apache, MySQL e PHP).</p>
+                <ul class="link-list">
                 <li><a href="PHP/funcoes-php.html">100 Funções PHP Mais Utilizadas</a></li>
-
+                </ul>
 
             </section>
 
@@ -289,8 +317,10 @@
                 <p>Git é um sistema de controle de versão distribuído, usado para rastrear alterações no código-fonte
                     durante o desenvolvimento de software.</p>
                 <!-- <li><a href="git-markdown/comandos-git.html">Guia Rápido de Comandos GIT</a></li>
+                <ul class="link-list">
                 <li><a href="git-markdown/referencia-rapida.html">Guia de Referência Rápida GIT</a></li> -->
                 <li><a href="git-markdown/principais-comandos.html">Principais Comandos GIT</a></li>
+                </ul>
 
                 <br>
 
@@ -381,7 +411,7 @@
                 </p>
 
                 <h3>📺 Curso em Vídeo</h3>
-                <ul>
+                <ul class="link-list">
                     <li>
                         <a href="https://www.cursoemvideo.com/" target="_blank" rel="noopener noreferrer">
                             Site Curso em Vídeo
@@ -398,7 +428,7 @@
                 </ul>
 
                 <h3>🎓 CFB Cursos</h3>
-                <ul>
+                <ul class="link-list">
                     <li>
                         <a href="https://www.youtube.com/@cfbcursos" target="_blank" rel="noopener noreferrer">
                             Canal no YouTube
@@ -425,9 +455,10 @@
             <!-- SEÇÃO DE LIVROS DE PROGRAMAÇÃO -->
             <section id="livros">
                 <h2>📚 Livros de Programação</h2>
+                <ul class="link-list">
                 <li><a href="https://devfreebooks.github.io/" target="_blank" rel="noopener noreferrer">Dev Free Books -
                         Coleção de livros para DEVs</a></li>
-
+                </ul>
 
             </section>
 
@@ -438,9 +469,12 @@
                 <p>Este espaço foi criado para documentar meus projetos de desenvolvimento web. O objetivo é registrar
                     os desafios, as dúvidas e as soluções encontradas, criando um material de referência prático e
                     acessível.</p>
+                <ul class="link-list">
                 <li>
                     <a href="./projeto-dark-souls/README.html">Projeto Dark Souls</a>
                 </li>
+                </ul>
+
             </section>
 
         </main>

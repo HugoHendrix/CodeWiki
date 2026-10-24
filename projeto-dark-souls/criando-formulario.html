@@ -4,16 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Criando um formulário em HTML | CodeWiki</title>
+    <meta name="description" content="Como criar um formulário em HTML e interceptar o envio com JavaScript para exibir uma mensagem de sucesso.">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/criando-formulario.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Criando um formulário em HTML | CodeWiki">
+    <meta property="og:description" content="Como criar um formulário em HTML e interceptar o envio com JavaScript para exibir uma mensagem de sucesso.">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/criando-formulario.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Criando um formulário em HTML | CodeWiki">
+    <meta name="twitter:description" content="Como criar um formulário em HTML e interceptar o envio com JavaScript para exibir uma mensagem de sucesso.">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Criando um formulário em HTML", "description": "Como criar um formulário em HTML e interceptar o envio com JavaScript para exibir uma mensagem de sucesso.", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/criando-formulario.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/criando-formulario.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
 
     <article>
-        <h2 id="-1-criando-o-formul-rio-html">🧱 1. Criando o Formulário HTML</h2>
+        <h1 id="-1-criando-o-formul-rio-html">🧱 1. Criando o Formulário HTML</h1>
         <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">form</span> id=<span class="hljs-string">"form-contato"</span> action=<span class="hljs-string">"#"</span> method=<span class="hljs-string">"POST"</span>&gt;
   &lt;<span class="hljs-selector-tag">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"nome"</span>&gt;Nome:&lt;/label&gt;
   &lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"text"</span> id=<span class="hljs-string">"nome"</span> name=<span class="hljs-string">"nome"</span> required&gt;
@@ -28,7 +49,7 @@
 &lt;/form&gt;
 </code></pre>
         <hr>
-        <h2 id="-github-pages-limita-es">🚫 GitHub Pages: Limitações</h2>
+        <h1 id="-github-pages-limita-es">🚫 GitHub Pages: Limitações</h1>
         <ul>
             <li>GitHub Pages <strong>não executa código de servidor</strong>.</li>
             <li>Isso significa que formulários com <code>action=&quot;processa.php&quot;</code> ou
@@ -36,15 +57,15 @@
             </li>
         </ul>
         <hr>
-        <h2 id="-alternativas-para-praticar-envio-de-dados">✅ Alternativas para praticar envio de dados</h2>
-        <h3 id="-1-simular-envio-com-javascript">🔁 1. Simular envio com JavaScript</h3>
+        <h1 id="-alternativas-para-praticar-envio-de-dados">✅ Alternativas para praticar envio de dados</h1>
+        <h2 id="-1-simular-envio-com-javascript">🔁 1. Simular envio com JavaScript</h2>
         <p>Você pode interceptar o envio e exibir uma mensagem de sucesso:</p>
         <pre><code class="lang-javascript"><span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"form-contato"</span>).addEventListener(<span class="hljs-string">"submit"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
   e.preventDefault(); <span class="hljs-comment">// Impede o envio real</span>
   alert(<span class="hljs-string">"Mensagem enviada com sucesso (simulação)!"</span>);
 });
 </code></pre>
-        <h3 id="-2-usar-servi-os-externos-gratuitos">☁️ 2. Usar serviços externos gratuitos</h3>
+        <h2 id="-2-usar-servi-os-externos-gratuitos">☁️ 2. Usar serviços externos gratuitos</h2>
         <p>Esses serviços recebem os dados do formulário e enviam por email ou armazenam:</p>
         <table>
             <thead>
@@ -86,7 +107,7 @@
 &lt;/form&gt;
 </code></pre>
         <hr>
-        <h2 id="-boas-pr-ticas-para-formul-rios">🧠 Boas práticas para formulários</h2>
+        <h1 id="-boas-pr-ticas-para-formul-rios">🧠 Boas práticas para formulários</h1>
         <ul>
             <li>Use <code>label</code> com <code>for</code> para acessibilidade.</li>
             <li>Valide campos com <code>required</code>, <code>type=&quot;email&quot;</code>, etc.</li>
@@ -94,7 +115,7 @@
             <li>Use <code>placeholder</code> com moderação — não substitui o <code>label</code>.</li>
         </ul>
         <hr>
-        <h2 id="-dica-para-estudo-avan-ado">🧪 Dica para estudo avançado</h2>
+        <h1 id="-dica-para-estudo-avan-ado">🧪 Dica para estudo avançado</h1>
         <p>Você pode usar o <code>fetch()</code> para enviar dados via JavaScript para APIs externas ou simular envio
             local:</p>
         <pre><code class="lang-javascript">fetch(<span class="hljs-string">"https://formspree.io/f/SEU_ID"</span>, {

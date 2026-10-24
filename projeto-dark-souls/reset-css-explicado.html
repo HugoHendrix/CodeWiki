@@ -4,22 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Documentação: Reset CSS Moderno e Tipografia Fluida | CodeWiki</title>
+    <meta name="description" content="Este documento explica a estrutura e o propósito do snippet de reset CSS e tipografia fluida. Ele foi projetado para fornecer uma base sólida e acessível…">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/reset-css-explicado.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Documentação: Reset CSS Moderno e Tipografia Fluida | CodeWiki">
+    <meta property="og:description" content="Este documento explica a estrutura e o propósito do snippet de reset CSS e tipografia fluida. Ele foi projetado para fornecer uma base sólida e acessível…">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/reset-css-explicado.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Documentação: Reset CSS Moderno e Tipografia Fluida | CodeWiki">
+    <meta name="twitter:description" content="Este documento explica a estrutura e o propósito do snippet de reset CSS e tipografia fluida. Ele foi projetado para fornecer uma base sólida e acessível…">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Documentação: Reset CSS Moderno e Tipografia Fluida", "description": "Este documento explica a estrutura e o propósito do snippet de reset CSS e tipografia fluida. Ele foi projetado para fornecer uma base sólida e acessível…", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/reset-css-explicado.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/reset-css-explicado.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
     <article>
 
-        <h2 id="documenta-o-reset-css-moderno-e-tipografia-fluida">Documentação: Reset CSS Moderno e Tipografia Fluida
-        </h2>
+        <h1 id="documenta-o-reset-css-moderno-e-tipografia-fluida">Documentação: Reset CSS Moderno e Tipografia Fluida
+        </h1>
         <p>Este documento explica a estrutura e o propósito do snippet de reset CSS e tipografia fluida. Ele foi
             projetado para fornecer uma base sólida e acessível para o desenvolvimento front-end, garantindo
             consistência visual e adaptabilidade em diferentes dispositivos e preferências do usuário.</p>
         <hr>
-        <h3 id="vis-o-geral">Visão Geral</h3>
+        <h2 id="vis-o-geral">Visão Geral</h2>
         <p>O objetivo deste reset é eliminar inconsistências padrão dos navegadores e estabelecer uma base previsível
             para o estilo de novos projetos. Ele incorpora:</p>
         <ul>
@@ -35,15 +56,15 @@
                 manutenção e a consistência do design.</li>
         </ul>
         <hr>
-        <h3 id="se-es-do-c-digo">Seções do Código</h3>
-        <h4 id="1-charset-utf-8-">1. <code>@charset &#39;UTF-8&#39;;</code></h4>
+        <h2 id="se-es-do-c-digo">Seções do Código</h2>
+        <h3 id="1-charset-utf-8-">1. <code>@charset &#39;UTF-8&#39;;</code></h3>
         <ul>
             <li><strong>Propósito</strong>: Declara a codificação de caracteres do arquivo CSS como UTF-8. Isso garante
                 que caracteres especiais (como acentuações) sejam interpretados corretamente.</li>
             <li><strong>Observação</strong>: Embora seja comum, embutir isso em um snippet não é estritamente necessário
                 para o funcionamento do snippet em si, mas é uma boa prática para arquivos CSS completos.</li>
         </ul>
-        <h4 id="2-vari-veis-css-globais-root-">2. Variáveis CSS Globais (<code>:root</code>)</h4>
+        <h3 id="2-vari-veis-css-globais-root-">2. Variáveis CSS Globais (<code>:root</code>)</h3>
         <p>Define variáveis CSS (custom properties) para valores que serão reutilizados em todo o projeto.</p>
         <ul>
             <li><strong>Escala de Tipografia Fluida (<code>--fs-xs</code> a <code>--fs-5xl</code>)</strong>:<ul>
@@ -78,8 +99,8 @@
                 </ul>
             </li>
         </ul>
-        <h4 id="3-prefer-ncia-de-movimento-reduzido-media-prefers-reduced-motion-reduce-">3. Preferência de Movimento
-            Reduzido (<code>@media (prefers-reduced-motion: reduce)</code>)</h4>
+        <h3 id="3-prefer-ncia-de-movimento-reduzido-media-prefers-reduced-motion-reduce-">3. Preferência de Movimento
+            Reduzido (<code>@media (prefers-reduced-motion: reduce)</code>)</h3>
         <ul>
             <li><strong>Propósito</strong>: Aplica estilos específicos para usuários que indicaram em suas configurações
                 de sistema operacional que preferem menos movimento (por exemplo, devido a vertigem ou ansiedade).</li>
@@ -96,7 +117,7 @@
             <li><strong>Benefício</strong>: Uma inclusão crucial para a <strong>acessibilidade</strong>, melhorando a
                 experiência de usuários com sensibilidade a movimentos excessivos.</li>
         </ul>
-        <h4 id="4-reset-b-sico-universal">4. Reset Básico Universal</h4>
+        <h3 id="4-reset-b-sico-universal">4. Reset Básico Universal</h3>
         <ul>
             <li><strong><code>*, *::before, *::after { box-sizing: border-box; }</code></strong>:<ul>
                     <li><strong>Propósito</strong>: Define o modelo de caixa para <code>border-box</code> em todos os
@@ -112,7 +133,7 @@
                 </ul>
             </li>
         </ul>
-        <h4 id="5-configura-o-html-e-body-">5. Configuração <code>html</code> e <code>body</code></h4>
+        <h3 id="5-configura-o-html-e-body-">5. Configuração <code>html</code> e <code>body</code></h3>
         <ul>
             <li><strong><code>html { scroll-behavior: smooth; }</code></strong>:<ul>
                     <li><strong>Propósito</strong>: Ativa a rolagem suave para âncoras internas (links que apontam para
@@ -130,7 +151,7 @@
                 </ul>
             </li>
         </ul>
-        <h4 id="6-estilos-globais-do-body-">6. Estilos Globais do <code>body</code></h4>
+        <h3 id="6-estilos-globais-do-body-">6. Estilos Globais do <code>body</code></h3>
         <ul>
             <li><strong><code>line-height: var(--lh-normal);</code></strong>:<ul>
                     <li><strong>Propósito</strong>: Aplica uma altura de linha padrão a todo o texto, definida pela
@@ -160,7 +181,7 @@
                 </ul>
             </li>
         </ul>
-        <h4 id="7-m-dia-responsiva">7. Mídia Responsiva</h4>
+        <h3 id="7-m-dia-responsiva">7. Mídia Responsiva</h3>
         <ul>
             <li><strong><code>img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; object-fit: cover; }</code></strong>:
                 <ul>
@@ -176,7 +197,7 @@
                 </ul>
             </li>
         </ul>
-        <h4 id="8-elementos-de-formul-rio">8. Elementos de Formulário</h4>
+        <h3 id="8-elementos-de-formul-rio">8. Elementos de Formulário</h3>
         <ul>
             <li><strong><code>input, button, textarea, select { font: inherit; border: none; background: transparent; }</code></strong>:
                 <ul>
@@ -199,7 +220,7 @@
                 </ul>
             </li>
         </ul>
-        <h4 id="9-estados-de-foco-acess-veis">9. Estados de Foco Acessíveis</h4>
+        <h3 id="9-estados-de-foco-acess-veis">9. Estados de Foco Acessíveis</h3>
         <ul>
             <li><strong><code>:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }</code></strong>:
                 <ul>
@@ -216,7 +237,7 @@
                 </ul>
             </li>
         </ul>
-        <h4 id="10-tipografia">10. Tipografia</h4>
+        <h3 id="10-tipografia">10. Tipografia</h3>
         <ul>
             <li><strong><code>p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; hyphens: auto; }</code></strong>:
                 <ul>
@@ -240,7 +261,7 @@
                 </ul>
             </li>
         </ul>
-        <h4 id="11-links">11. Links</h4>
+        <h3 id="11-links">11. Links</h3>
         <ul>
             <li><strong><code>a { color: var(--color-focus); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }</code></strong>:
                 <ul>
@@ -254,7 +275,7 @@
                 </ul>
             </li>
         </ul>
-        <h4 id="12-listas-ul-ol-">12. Listas (<code>ul</code>, <code>ol</code>)</h4>
+        <h3 id="12-listas-ul-ol-">12. Listas (<code>ul</code>, <code>ol</code>)</h3>
         <ul>
             <li><strong><code>ul, ol { list-style-position: inside; }</code></strong>:<ul>
                     <li><strong>Propósito</strong>: Define a posição do marcador da lista para dentro do conteúdo do
@@ -263,7 +284,7 @@
                 </ul>
             </li>
         </ul>
-        <h4 id="13-tabelas-table-">13. Tabelas (<code>table</code>)</h4>
+        <h3 id="13-tabelas-table-">13. Tabelas (<code>table</code>)</h3>
         <ul>
             <li><strong><code>table { border-collapse: collapse; border-spacing: 0; width: 100%; }</code></strong>:<ul>
                     <li><strong>Propósito</strong>: Reseta o estilo padrão das tabelas, removendo espaçamento entre
@@ -271,7 +292,7 @@
                 </ul>
             </li>
         </ul>
-        <h4 id="14-c-digo-code-pre-">14. Código (<code>code</code>, <code>pre</code>)</h4>
+        <h3 id="14-c-digo-code-pre-">14. Código (<code>code</code>, <code>pre</code>)</h3>
         <ul>
             <li><strong><code>code, pre { font-family: &#39;SF Mono&#39;, Monaco, &#39;Cascadia Code&#39;, &#39;Roboto Mono&#39;, monospace; font-size: 0.9em; }</code></strong>:
                 <ul>
@@ -287,8 +308,8 @@
                 </ul>
             </li>
         </ul>
-        <h4 id="15-utilit-rios-de-acessibilidade-sr-only-">15. Utilitários de Acessibilidade (<code>.sr-only</code>)
-        </h4>
+        <h3 id="15-utilit-rios-de-acessibilidade-sr-only-">15. Utilitários de Acessibilidade (<code>.sr-only</code>)
+        </h3>
         <ul>
             <li><strong><code>.sr-only { ... }</code></strong>:<ul>
                     <li><strong>Propósito</strong>: Uma classe utilitária para ocultar conteúdo visualmente de usuários
@@ -298,7 +319,7 @@
             </li>
         </ul>
         <hr>
-        <h3 id="como-usar">Como Usar</h3>
+        <h2 id="como-usar">Como Usar</h2>
         <p>Para usar este reset em seu projeto:</p>
         <ol>
             <li><strong>Copie</strong> o conteúdo do snippet JSON fornecido.</li>

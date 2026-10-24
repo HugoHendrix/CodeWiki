@@ -4,30 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Estudando JavaScript | CodeWiki</title>
+    <meta name="description" content="Anotações de estudo de JavaScript sobre a estrutura do documento HTML, a árvore do DOM e a seleção de elementos pelo id.">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/CFB-Cursos/estudando-js-id.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Estudando JavaScript | CodeWiki">
+    <meta property="og:description" content="Anotações de estudo de JavaScript sobre a estrutura do documento HTML, a árvore do DOM e a seleção de elementos pelo id.">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/CFB-Cursos/estudando-js-id.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Estudando JavaScript | CodeWiki">
+    <meta name="twitter:description" content="Anotações de estudo de JavaScript sobre a estrutura do documento HTML, a árvore do DOM e a seleção de elementos pelo id.">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Estudando JavaScript", "description": "Anotações de estudo de JavaScript sobre a estrutura do documento HTML, a árvore do DOM e a seleção de elementos pelo id.", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/CFB-Cursos/estudando-js-id.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/CFB-Cursos/estudando-js-id.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
     <article>
-        <h2 id="-estudando-javascript">📚 Estudando JavaScript</h2>
-        <h3 id="-pesquisar-">🔍 Pesquisar:</h3>
+        <h1 id="-estudando-javascript">📚 Estudando JavaScript</h1>
+        <h2 id="-pesquisar-">🔍 Pesquisar:</h2>
         <ul>
             <li>Elementos que pegam e apontam para o DOM.</li>
         </ul>
         <hr>
-        <h3 id="-estrutura-do-dom">🌳 Estrutura do DOM</h3>
+        <h2 id="-estrutura-do-dom">🌳 Estrutura do DOM</h2>
         <p>A tag <code>&lt;html&gt;</code> é a <strong>raiz</strong> (root element) do documento HTML. Seus filhos
             diretos são <code>&lt;head&gt;</code> e <code>&lt;body&gt;</code>, formando a <strong>árvore do DOM</strong>
             (Document Object Model).</p>
         <hr>
-        <h3 id="-getelementbyid-">🔧 <code>getElementById</code></h3>
+        <h2 id="-getelementbyid-">🔧 <code>getElementById</code></h2>
         <p><code>getElementById</code> é uma função fundamental em JavaScript para <strong>obter e operar elementos do
                 DOM</strong>. Ela permite que você aponte e obtenha um elemento específico da sua página HTML, indicando
             seu atributo <code>id</code>.</p>
-        <h4 id="-caracter-sticas-de-uso">🧠 Características de Uso</h4>
+        <h3 id="-caracter-sticas-de-uso">🧠 Características de Uso</h3>
         <ul>
             <li>
                 <p><strong>Finalidade</strong>: Capturar um elemento HTML específico no DOM com base no atributo
@@ -59,10 +80,10 @@
             </li>
         </ul>
         <hr>
-        <h3 id="-manipula-o-de-elementos-obtidos-com-getelementbyid-">🛠️ Manipulação de Elementos Obtidos com
-            <code>getElementById</code></h3>
+        <h2 id="-manipula-o-de-elementos-obtidos-com-getelementbyid-">🛠️ Manipulação de Elementos Obtidos com
+            <code>getElementById</code></h2>
         <p>Após obter um elemento, você pode realizar diversas operações:</p>
-        <h4 id="-obter-propriedades">📥 Obter Propriedades</h4>
+        <h3 id="-obter-propriedades">📥 Obter Propriedades</h3>
         <ul>
             <li><code>id</code>: Retorna o próprio ID do elemento.</li>
             <li><code>innerHTML</code>: Retorna o conteúdo HTML interno da tag — útil para <code>&lt;p&gt;</code>,
@@ -70,7 +91,7 @@
             <li><code>value</code>: Usado em elementos de formulário como <code>&lt;input&gt;</code> para acessar ou
                 modificar o texto inserido.</li>
         </ul>
-        <h4 id="-modificar-propriedades">✏️ Modificar Propriedades</h4>
+        <h3 id="-modificar-propriedades">✏️ Modificar Propriedades</h3>
         <ul>
             <li><code>innerHTML</code>: Permite alterar o conteúdo interno da tag.</li>
             <li><code>style</code>: Modifica o estilo visual do elemento. Exemplo:
@@ -79,7 +100,7 @@
             </li>
         </ul>
         <hr>
-        <h3 id="-exemplo-pr-tico">🧪 Exemplo Prático</h3>
+        <h2 id="-exemplo-pr-tico">🧪 Exemplo Prático</h2>
         <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"mensagem"</span>&gt;</span>Texto original<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
@@ -89,7 +110,7 @@
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
         <hr>
-        <h3 id="-contexto-e-import-ncia">🧭 Contexto e Importância</h3>
+        <h2 id="-contexto-e-import-ncia">🧭 Contexto e Importância</h2>
         <ul>
             <li>
                 <p><strong>DOM (Document Object Model)</strong>: Representa a estrutura em árvore do HTML. Cada tag,
@@ -103,7 +124,7 @@
             </li>
         </ul>
         <hr>
-        <h3 id="-compara-o-com-outros-seletores">🧮 Comparação com Outros Seletores</h3>
+        <h2 id="-compara-o-com-outros-seletores">🧮 Comparação com Outros Seletores</h2>
         <table>
             <thead>
                 <tr>
@@ -135,7 +156,7 @@
                 <strong>listas</strong> (coleções), funcionando como arrays ou vetores.</p>
         </blockquote>
         <hr>
-        <h3 id="-resumo">✅ Resumo</h3>
+        <h2 id="-resumo">✅ Resumo</h2>
         <p><code>getElementById</code> é um método essencial para interagir com elementos específicos na sua página
             HTML. Ele permite tanto a <strong>leitura</strong> quanto a <strong>modificação</strong> de propriedades e
             conteúdos, sendo uma das ferramentas mais utilizadas para criar interatividade com JavaScript.</p>
@@ -143,7 +164,7 @@
     </article>
 
     <article>
-  <h3 id="-exercicio-pratico-com-getelementbyid">💡 Exercício Prático com <code>getElementById</code></h3>
+  <h2 id="-exercicio-pratico-com-getelementbyid">💡 Exercício Prático com <code>getElementById</code></h2>
   <p>
     Neste exemplo, vamos capturar três elementos HTML diferentes pelo atributo
     <code>id</code> e, em seguida, manipulá-los de formas variadas. Assim, você
@@ -151,14 +172,14 @@
     conjunto com arrays e laços de repetição.
   </p>
 
-  <h4>⚙️ Estrutura HTML</h4>
+  <h3>⚙️ Estrutura HTML</h3>
   <pre><code class="lang-html">
 &lt;div id="cx1"&gt;Caixa 1&lt;/div&gt;
 &lt;div id="cx2"&gt;Caixa 2&lt;/div&gt;
 &lt;div id="cx3"&gt;Caixa 3&lt;/div&gt;
   </code></pre>
 
-  <h4>📝 Código JavaScript</h4>
+  <h3>📝 Código JavaScript</h3>
   <pre><code class="lang-javascript">
 // Capturando os elementos pelo ID
 const caixaUm = document.getElementById('cx1');
@@ -187,7 +208,7 @@ for (let d of arrayElementos) {
 console.log(arrayElementos);
   </code></pre>
 
-  <h4>🔍 Observações Importantes</h4>
+  <h3>🔍 Observações Importantes</h3>
   <ul>
     <li><strong>Variáveis descritivas</strong>: use nomes claros (<code>caixaUm</code>, <code>caixaDois</code>, etc.) para facilitar leitura.</li>
     <li><strong>for...of</strong>: o <code>d</code> é apenas um <em>apelido temporário</em> dado a cada elemento do array durante o loop. 
@@ -203,7 +224,7 @@ console.log(arrayElementos);
 </article>
 
 <article>
-  <h3 id="-exercicio-com-map">💡 Exercício com <code>map()</code></h3>
+  <h2 id="-exercicio-com-map">💡 Exercício com <code>map()</code></h2>
   <p>
     Além do <code>for...of</code>, também é possível usar o método
     <code>map()</code> para percorrer arrays em JavaScript. O
@@ -211,14 +232,14 @@ console.log(arrayElementos);
     <strong>um novo array</strong> com os resultados.
   </p>
 
-  <h4>⚙️ Estrutura HTML</h4>
+  <h3>⚙️ Estrutura HTML</h3>
   <pre><code class="lang-html">
 &lt;div id="cx1"&gt;Caixa 1&lt;/div&gt;
 &lt;div id="cx2"&gt;Caixa 2&lt;/div&gt;
 &lt;div id="cx3"&gt;Caixa 3&lt;/div&gt;
   </code></pre>
 
-  <h4>📝 Código JavaScript</h4>
+  <h3>📝 Código JavaScript</h3>
   <pre><code class="lang-javascript">
 // Capturando os elementos pelo ID
 const caixaUm = document.getElementById('cx1');
@@ -235,7 +256,7 @@ arrayElementos.map((elemento) => {
 });
   </code></pre>
 
-  <h4>🔍 Diferença entre <code>for</code> e <code>map()</code></h4>
+  <h3>🔍 Diferença entre <code>for</code> e <code>map()</code></h3>
   <table>
     <thead>
       <tr>

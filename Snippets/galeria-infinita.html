@@ -4,20 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Galeria de imagens com rolagem infinita (HTML, CSS e JS)</title>
+    <meta name="description" content="Este código cria uma galeria de imagens com rolagem infinita, onde as imagens se movem continuamente da direita para a esquerda. Vamos detalhar cada…">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/Snippets/galeria-infinita.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Galeria de imagens com rolagem infinita (HTML, CSS e JS)">
+    <meta property="og:description" content="Este código cria uma galeria de imagens com rolagem infinita, onde as imagens se movem continuamente da direita para a esquerda. Vamos detalhar cada…">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/Snippets/galeria-infinita.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Galeria de imagens com rolagem infinita (HTML, CSS e JS)">
+    <meta name="twitter:description" content="Este código cria uma galeria de imagens com rolagem infinita, onde as imagens se movem continuamente da direita para a esquerda. Vamos detalhar cada…">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Galeria de imagens com rolagem infinita (HTML, CSS e JS)", "description": "Este código cria uma galeria de imagens com rolagem infinita, onde as imagens se movem continuamente da direita para a esquerda. Vamos detalhar cada…", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/Snippets/galeria-infinita.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/Snippets/galeria-infinita.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
-    <h3 id="galeria-de-imagens-com-rolagem-infinita">Galeria de Imagens com Rolagem Infinita</h3>
+    <h2 id="galeria-de-imagens-com-rolagem-infinita">Galeria de Imagens com Rolagem Infinita</h2>
     <p>Este código cria uma galeria de imagens com rolagem infinita, onde as imagens se movem continuamente da direita
         para
         a esquerda. Vamos detalhar cada parte do código (HTML, CSS e JavaScript) para entender como ele funciona.</p>
     <p><a href="https://hugohendrix.github.io/galeria-one-piece/">Galeria One Piece</a></p>
     <hr>
-    <h2 id="-1-estrutura-html-"><strong>1. Estrutura HTML</strong></h2>
+    <h1 id="-1-estrutura-html-"><strong>1. Estrutura HTML</strong></h1>
     <p>O HTML define a estrutura básica da galeria de imagens.</p>
     <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"photo-gallery-container"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"photo-gallery"</span>&gt;</span>
@@ -29,7 +50,7 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-    <h3 id="-explica-o-"><strong>Explicação:</strong></h3>
+    <h2 id="-explica-o-"><strong>Explicação:</strong></h2>
     <ul>
         <li><strong><code>#photo-gallery-container</code></strong>: Contêiner principal que envolve a galeria.</li>
         <li><strong><code>#photo-gallery</code></strong>: Contêiner que hospeda as imagens e seus links.</li>
@@ -38,9 +59,9 @@
         <li><strong><code>.photo</code></strong>: As imagens em si, que são exibidas como thumbnails.</li>
     </ul>
     <hr>
-    <h2 id="-2-estilos-css-"><strong>2. Estilos CSS</strong></h2>
+    <h1 id="-2-estilos-css-"><strong>2. Estilos CSS</strong></h1>
     <p>O CSS define o layout e a aparência da galeria.</p>
-    <h3 id="-configura-o-b-sica-"><strong>Configuração Básica</strong></h3>
+    <h2 id="-configura-o-b-sica-"><strong>Configuração Básica</strong></h2>
     <pre><code class="lang-css"><span class="hljs-selector-id">#photo-gallery-container</span> {
     <span class="hljs-attribute">white-space</span>: nowrap; <span class="hljs-comment">/* Impede que as imagens quebrem para a próxima linha */</span>
     <span class="hljs-attribute">width</span>: <span class="hljs-number">100vw</span>; <span class="hljs-comment">/* Ocupa toda a largura da viewport */</span>
@@ -55,7 +76,7 @@
     <span class="hljs-attribute">width</span>: max-content; <span class="hljs-comment">/* A largura se ajusta ao conteúdo */</span>
 }
 </code></pre>
-    <h3 id="-estilo-das-imagens-"><strong>Estilo das Imagens</strong></h3>
+    <h2 id="-estilo-das-imagens-"><strong>Estilo das Imagens</strong></h2>
     <pre><code class="lang-css"><span class="hljs-selector-class">.photo-link</span> {
     <span class="hljs-attribute">display</span>: inline-block; <span class="hljs-comment">/* Exibe os links em linha */</span>
     <span class="hljs-attribute">width</span>: <span class="hljs-number">33vh</span>; <span class="hljs-comment">/* Largura fixa para cada imagem */</span>
@@ -77,7 +98,7 @@
     <span class="hljs-attribute">object-fit</span>: cover; <span class="hljs-comment">/* Garante que a imagem cubra o espaço sem distorcer */</span>
 }
 </code></pre>
-    <h3 id="-explica-o-"><strong>Explicação:</strong></h3>
+    <h2 id="-explica-o-"><strong>Explicação:</strong></h2>
     <ul>
         <li><strong><code>white-space: nowrap;</code></strong>: Mantém as imagens em uma única linha.</li>
         <li><strong><code>position: fixed;</code></strong>: Fixa a galeria na tela, independente da rolagem da página.
@@ -86,9 +107,9 @@
         <li><strong><code>object-fit: cover;</code></strong>: Garante que as imagens cubram o espaço sem distorcer.</li>
     </ul>
     <hr>
-    <h2 id="-3-javascript-"><strong>3. JavaScript</strong></h2>
+    <h1 id="-3-javascript-"><strong>3. JavaScript</strong></h1>
     <p>O JavaScript cria a rolagem infinita e replica os itens da galeria para criar um efeito contínuo.</p>
-    <h3 id="-fun-o-principal-"><strong>Função Principal</strong></h3>
+    <h2 id="-fun-o-principal-"><strong>Função Principal</strong></h2>
     <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">initInfiniteCarousel</span>(<span class="hljs-params">selector, speed</span>) </span>{
     <span class="hljs-keyword">const</span> carousel = <span class="hljs-built_in">document</span>.querySelector(selector);
     <span class="hljs-keyword">if</span> (!carousel) <span class="hljs-keyword">return</span>;
@@ -125,10 +146,10 @@
     animateScroll();
 }
 </code></pre>
-    <h3 id="-configura-o-"><strong>Configuração</strong></h3>
+    <h2 id="-configura-o-"><strong>Configuração</strong></h2>
     <pre><code class="lang-javascript"><span class="hljs-selector-tag">initInfiniteCarousel</span>(<span class="hljs-string">'#photo-gallery'</span>, <span class="hljs-number">1</span>);
 </code></pre>
-    <h3 id="-debounce-opcional-"><strong>Debounce (Opcional)</strong></h3>
+    <h2 id="-debounce-opcional-"><strong>Debounce (Opcional)</strong></h2>
     <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">debounce</span>(<span class="hljs-params">func, wait</span>) </span>{
     <span class="hljs-keyword">let</span> timeout;
     <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">...args</span>) =&gt;</span> {
@@ -137,7 +158,7 @@
     };
 }
 </code></pre>
-    <h3 id="-explica-o-"><strong>Explicação:</strong></h3>
+    <h2 id="-explica-o-"><strong>Explicação:</strong></h2>
     <ol>
         <li>
             <p><strong><code>fillCarousel()</code></strong>:</p>
@@ -167,16 +188,16 @@
         </li>
     </ol>
     <hr>
-    <h2 id="-4-como-funciona-o-efeito-de-rolagem-infinita-"><strong>4. Como Funciona o Efeito de Rolagem
+    <h1 id="-4-como-funciona-o-efeito-de-rolagem-infinita-"><strong>4. Como Funciona o Efeito de Rolagem
             Infinita?</strong>
-    </h2>
+    </h1>
     <ul>
         <li>As imagens são clonadas várias vezes para criar uma sequência contínua.</li>
         <li>A galeria é movida para a esquerda usando <code>transform: translateX</code>.</li>
         <li>Quando a rolagem atinge o final de um ciclo, ela reinicia, criando a ilusão de uma rolagem infinita.</li>
     </ul>
     <hr>
-    <h2 id="-5-exemplo-pr-tico-"><strong>5. Exemplo Prático</strong></h2>
+    <h1 id="-5-exemplo-pr-tico-"><strong>5. Exemplo Prático</strong></h1>
     <p>Aqui está o código completo para você testar:</p>
     <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"pt-BR"</span>&gt;</span>
@@ -268,7 +289,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
     <hr>
-    <h2 id="-6-considera-es-finais-"><strong>6. Considerações Finais</strong></h2>
+    <h1 id="-6-considera-es-finais-"><strong>6. Considerações Finais</strong></h1>
     <ul>
         <li><strong>Responsividade</strong>: O código já é responsivo, mas você pode ajustar os tamanhos das imagens e
             margens para diferentes dispositivos.</li>

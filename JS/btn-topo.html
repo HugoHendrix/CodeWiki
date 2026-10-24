@@ -5,18 +5,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Como Adicionar um Botão de Voltar ao Topo | CodeWiki</title>
+    <meta name="description" content="id=&quot;back-to-top&quot; : Um identificador único para personalizar o botão e controlá-lo com JavaScript.">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/JS/btn-topo.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Como Adicionar um Botão de Voltar ao Topo | CodeWiki">
+    <meta property="og:description" content="id=&quot;back-to-top&quot; : Um identificador único para personalizar o botão e controlá-lo com JavaScript.">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/JS/btn-topo.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Como Adicionar um Botão de Voltar ao Topo | CodeWiki">
+    <meta name="twitter:description" content="id=&quot;back-to-top&quot; : Um identificador único para personalizar o botão e controlá-lo com JavaScript.">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Como Adicionar um Botão de Voltar ao Topo", "description": "id=\"back-to-top\" : Um identificador único para personalizar o botão e controlá-lo com JavaScript.", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/JS/btn-topo.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/JS/btn-topo.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
-    <h2 id="como-adicionar-um-botão-de-voltar-ao-topo"><strong>Como Adicionar um Botão de Voltar ao Topo</strong></h2>
+    <h1 id="como-adicionar-um-botão-de-voltar-ao-topo"><strong>Como Adicionar um Botão de Voltar ao Topo</strong></h1>
     <p>Um botão de &quot;voltar ao topo&quot; melhora a navegação, permitindo que o usuário volte rapidamente ao início
         da página. Abaixo estão os passos para implementá-lo:</p>
     <hr>
-    <h4 id="1-estrutura-html"><strong>1. Estrutura HTML</strong></h4>
+    <h3 id="1-estrutura-html"><strong>1. Estrutura HTML</strong></h3>
     <p>Adicione um botão ao final do corpo da página:</p>
     <pre><code class="language-html">&lt;button id=&quot;back-to-top&quot; title=&quot;Voltar ao topo&quot;&gt;&amp;uarr;&lt;/button&gt;
 </code></pre>
@@ -27,7 +48,7 @@
             caractere ou ícone, como uma imagem.</li>
     </ul>
     <hr>
-    <h4 id="2-estilo-css"><strong>2. Estilo CSS</strong></h4>
+    <h3 id="2-estilo-css"><strong>2. Estilo CSS</strong></h3>
     <p>Crie o design do botão com o seguinte CSS:</p>
     <pre><code class="language-css">#back-to-top {
     position: fixed;
@@ -59,7 +80,7 @@
             suaviza as mudanças.</li>
     </ul>
     <hr>
-    <h4 id="3-lógica-em-javascript"><strong>3. Lógica em JavaScript</strong></h4>
+    <h3 id="3-lógica-em-javascript"><strong>3. Lógica em JavaScript</strong></h3>
     <p>Implemente a funcionalidade com este script:</p>
     <pre><code class="language-javascript">// Obtenha o botão
 const backToTopButton = document.getElementById(&quot;back-to-top&quot;);
@@ -87,7 +108,7 @@ backToTopButton.onclick = function () {
             (<code>behavior: &quot;smooth&quot;</code>).</li>
     </ul>
     <hr>
-    <h4 id="4-onde-inserir"><strong>4. Onde Inserir</strong></h4>
+    <h3 id="4-onde-inserir"><strong>4. Onde Inserir</strong></h3>
     <ul>
         <li><strong>HTML</strong>: Coloque o botão dentro do <code>&lt;body&gt;</code>.</li>
         <li><strong>CSS</strong>: Inclua no arquivo de estilos principal ou dentro de uma tag
@@ -96,7 +117,7 @@ backToTopButton.onclick = function () {
             <code>&lt;script&gt;</code> ao final do HTML.</li>
     </ul>
     <hr>
-    <h4 id="5-personalização"><strong>5. Personalização</strong></h4>
+    <h3 id="5-personalização"><strong>5. Personalização</strong></h3>
     <ul>
         <li><strong>Tamanho</strong>: Ajuste as propriedades <code>width</code> e <code>height</code> no CSS.</li>
         <li><strong>Posição</strong>: Modifique os valores de <code>bottom</code> e <code>right</code>.</li>

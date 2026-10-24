@@ -4,21 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Documentação: O Poder do JavaScript | CodeWiki</title>
+    <meta name="description" content="Demonstrar como o JavaScript pode interagir com elementos HTML para modificar conteúdo, estilo e comportamento de forma dinâmica.">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/JS/estudando-o-poder-do-js.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Documentação: O Poder do JavaScript | CodeWiki">
+    <meta property="og:description" content="Demonstrar como o JavaScript pode interagir com elementos HTML para modificar conteúdo, estilo e comportamento de forma dinâmica.">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/JS/estudando-o-poder-do-js.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Documentação: O Poder do JavaScript | CodeWiki">
+    <meta name="twitter:description" content="Demonstrar como o JavaScript pode interagir com elementos HTML para modificar conteúdo, estilo e comportamento de forma dinâmica.">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Documentação: O Poder do JavaScript", "description": "Demonstrar como o JavaScript pode interagir com elementos HTML para modificar conteúdo, estilo e comportamento de forma dinâmica.", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/JS/estudando-o-poder-do-js.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/JS/estudando-o-poder-do-js.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
     <article>
 
-        <h2 id="-documenta-o-o-poder-do-javascript">📘 Documentação: O Poder do JavaScript</h2>
-        <h3 id="-objetivo">🧩 Objetivo</h3>
+        <h1 id="-documenta-o-o-poder-do-javascript">📘 Documentação: O Poder do JavaScript</h1>
+        <h2 id="-objetivo">🧩 Objetivo</h2>
         <p>Demonstrar como o JavaScript pode interagir com elementos HTML para modificar conteúdo, estilo e
             comportamento de forma dinâmica.</p>
         <hr>
-        <h3 id="-estrutura-html">🖼️ Estrutura HTML</h3>
+        <h2 id="-estrutura-html">🖼️ Estrutura HTML</h2>
         <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>O Poder do JavaScript<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"demo"</span>&gt;</span>JS pode mudar o conteúdo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre>
@@ -28,9 +49,9 @@
                 (<code>id=&quot;demo&quot;</code>) que será manipulado via JavaScript.</li>
         </ul>
         <hr>
-        <h3 id="-bot-es-interativos">🧪 Botões Interativos</h3>
+        <h2 id="-bot-es-interativos">🧪 Botões Interativos</h2>
         <p>Cada botão utiliza o evento <code>onclick</code> para executar uma ação JavaScript ao ser clicado.</p>
-        <h4 id="-mudar-a-cor-do-texto-para-vermelho">🔹 Mudar a cor do texto para vermelho</h4>
+        <h3 id="-mudar-a-cor-do-texto-para-vermelho">🔹 Mudar a cor do texto para vermelho</h3>
         <pre><code class="lang-html">&lt;button type=<span class="hljs-string">"button"</span> onclick='document.getElementById(<span class="hljs-string">"demo"</span>).<span class="hljs-built_in">style</span>.<span class="hljs-built_in">color</span>=<span class="hljs-string">"red"</span>'&gt;
   Mudar o conteú<span class="hljs-keyword">do</span> para a <span class="hljs-built_in">cor</span> Vermelho
 &lt;/button&gt;
@@ -41,7 +62,7 @@
             </li>
             <li><code>.style.color = &quot;red&quot;</code>: Altera a cor do texto para vermelho.</li>
         </ul>
-        <h4 id="-mudar-o-conte-do-do-par-grafo">🔹 Mudar o conteúdo do parágrafo</h4>
+        <h3 id="-mudar-o-conte-do-do-par-grafo">🔹 Mudar o conteúdo do parágrafo</h3>
         <pre><code class="lang-html">&lt;button <span class="hljs-keyword">type</span>=<span class="hljs-string">"button"</span> onclick=<span class="hljs-symbol">'document.getElementById</span>(<span class="hljs-string">"demo"</span>).innerHTML=<span class="hljs-string">"Hello JS"</span>'&gt;
   Mudar o conteú<span class="hljs-keyword">do</span> para Hello JS
 &lt;/button&gt;
@@ -50,7 +71,7 @@
             <li><code>.innerHTML</code>: Substitui o conteúdo interno do elemento por <code>&quot;Hello JS&quot;</code>.
             </li>
         </ul>
-        <h4 id="-aumentar-o-tamanho-da-fonte">🔹 Aumentar o tamanho da fonte</h4>
+        <h3 id="-aumentar-o-tamanho-da-fonte">🔹 Aumentar o tamanho da fonte</h3>
         <pre><code class="lang-html">&lt;button <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"button"</span> onclick=<span class="hljs-symbol">'document</span>.getElementById(<span class="hljs-string">"demo"</span>).style.fontSize=<span class="hljs-string">"30px"</span>'&gt;
   <span class="hljs-type">Aumentar</span> a fonte para <span class="hljs-number">30</span>px
 &lt;/button&gt;
@@ -61,7 +82,7 @@
                 CSS
                 com hífen (ex: <code>font-size</code> → <code>fontSize</code>).</li>
         </ul>
-        <h4 id="-bot-o-geral-m-ltiplas-a-es-">🔹 Botão Geral (múltiplas ações)</h4>
+        <h3 id="-bot-o-geral-m-ltiplas-a-es-">🔹 Botão Geral (múltiplas ações)</h3>
         <pre><code class="lang-html">&lt;button type=<span class="hljs-string">"button"</span> onclick='
   document.getElementById(<span class="hljs-string">"demo"</span>).innerHTML=<span class="hljs-string">"Hello World"</span>;
   document.getElementById(<span class="hljs-string">"demo"</span>).<span class="hljs-built_in">style</span>.<span class="hljs-built_in">color</span>=<span class="hljs-string">"red"</span>;
@@ -81,7 +102,7 @@
                 sequência.</li>
         </ul>
         <hr>
-        <h3 id="-conceitos-importantes">🧠 Conceitos Importantes</h3>
+        <h2 id="-conceitos-importantes">🧠 Conceitos Importantes</h2>
         <table>
             <thead>
                 <tr>
@@ -117,7 +138,7 @@
             </tbody>
         </table>
         <hr>
-        <h3 id="-resultado-esperado">✅ Resultado Esperado</h3>
+        <h2 id="-resultado-esperado">✅ Resultado Esperado</h2>
         <p>Ao clicar nos botões, o parágrafo com <code>id=&quot;demo&quot;</code> será atualizado dinamicamente,
             mostrando o poder do JavaScript em manipular o DOM (Document Object Model).</p>
 
@@ -160,13 +181,13 @@ A Repetição de Código: Para que o JavaScript saiba em qual elemento ele deve 
 
 
     <article>
-        <h2 id="-documenta-o-ampliada-c-digo-inteligente-e-reutiliz-vel-com-javascript">📘 Documentação Ampliada: Código
-            Inteligente e Reutilizável com JavaScript</h2>
-        <h3 id="-objetivo">🎯 Objetivo</h3>
+        <h1 id="-documenta-o-ampliada-c-digo-inteligente-e-reutiliz-vel-com-javascript">📘 Documentação Ampliada: Código
+            Inteligente e Reutilizável com JavaScript</h1>
+        <h2 id="-objetivo">🎯 Objetivo</h2>
         <p>Demonstrar como tornar o código JavaScript mais legível, reutilizável e eficiente ao interagir com elementos
             HTML.</p>
         <hr>
-        <h3 id="-boas-pr-ticas-aplicadas">🧠 Boas Práticas Aplicadas</h3>
+        <h2 id="-boas-pr-ticas-aplicadas">🧠 Boas Práticas Aplicadas</h2>
         <table>
             <thead>
                 <tr>
@@ -194,8 +215,8 @@ A Repetição de Código: Para que o JavaScript saiba em qual elemento ele deve 
             </tbody>
         </table>
         <hr>
-        <h3 id="-exemplo-completo-com-separa-o-de-c-digo">💻 Exemplo Completo com Separação de Código</h3>
-        <h4 id="-html-estrutura-">📄 HTML (estrutura)</h4>
+        <h2 id="-exemplo-completo-com-separa-o-de-c-digo">💻 Exemplo Completo com Separação de Código</h2>
+        <h3 id="-html-estrutura-">📄 HTML (estrutura)</h3>
         <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"pt-BR"</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
@@ -213,7 +234,7 @@ A Repetição de Código: Para que o JavaScript saiba em qual elemento ele deve 
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
-        <h4 id="-javascript-comportamento-">⚙️ JavaScript (comportamento)</h4>
+        <h3 id="-javascript-comportamento-">⚙️ JavaScript (comportamento)</h3>
         <pre><code class="lang-javascript"><span class="hljs-comment">// script.js</span>
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mudarConteudo</span>(<span class="hljs-params"></span>) </span>{
@@ -226,7 +247,7 @@ A Repetição de Código: Para que o JavaScript saiba em qual elemento ele deve 
 }
 </code></pre>
         <hr>
-        <h3 id="-explica-o-da-fun-o-mudarconteudo-">🔍 Explicação da Função <code>mudarConteudo()</code></h3>
+        <h2 id="-explica-o-da-fun-o-mudarconteudo-">🔍 Explicação da Função <code>mudarConteudo()</code></h2>
         <ul>
             <li><code>document.getElementById(&quot;demo&quot;)</code>: Busca o elemento com
                 <code>id=&quot;demo&quot;</code>.
@@ -237,7 +258,7 @@ A Repetição de Código: Para que o JavaScript saiba em qual elemento ele deve 
             <li><code>paragrafo.style.backgroundColor</code>: Aplica cor de fundo.</li>
         </ul>
         <hr>
-        <h3>Exemplo do código</h3>
+        <h2>Exemplo do código</h2>
         <p id="demonstracao">JS pode mudar o conteúdo</p>
         <button type="button" onclick="mudarConteudo()">Trocar o conteúdo</button>
         <script>

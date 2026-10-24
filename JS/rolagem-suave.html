@@ -4,17 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Rolagem Suave entre Seções | CodeWiki</title>
+    <meta name="description" content="Compatibilidade: Funciona na maioria dos navegadores modernos (Chrome, Firefox, Edge), mas não no IE ou Safari antigo.">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/JS/rolagem-suave.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Rolagem Suave entre Seções | CodeWiki">
+    <meta property="og:description" content="Compatibilidade: Funciona na maioria dos navegadores modernos (Chrome, Firefox, Edge), mas não no IE ou Safari antigo.">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/JS/rolagem-suave.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rolagem Suave entre Seções | CodeWiki">
+    <meta name="twitter:description" content="Compatibilidade: Funciona na maioria dos navegadores modernos (Chrome, Firefox, Edge), mas não no IE ou Safari antigo.">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Rolagem Suave entre Seções", "description": "Compatibilidade: Funciona na maioria dos navegadores modernos (Chrome, Firefox, Edge), mas não no IE ou Safari antigo.", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/JS/rolagem-suave.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/JS/rolagem-suave.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
-    <h2>Rolagem Suave entre Seções</h2>
+    <h1>Rolagem Suave entre Seções</h1>
     <p>Para implementar rolagem suave (smooth scroll) em seu site, existem várias abordagens. Aqui estão as principais:
     </p>
-    <h3 id="1-usando-css-puro-mais-simples">1. Usando CSS Puro (Mais Simples)</h3>
+    <h2 id="1-usando-css-puro-mais-simples">1. Usando CSS Puro (Mais Simples)</h2>
     <p>Adicione a propriedade <code>scroll-behavior</code> ao elemento raiz do seu CSS:</p>
     <pre><code class="language-css">html {
   scroll-behavior: smooth;
@@ -28,9 +49,9 @@
     <p><strong>Compatibilidade:</strong><br>Funciona na maioria dos navegadores modernos (Chrome, Firefox, Edge), mas
         não no IE ou Safari antigo.</p>
     <hr>
-    <h3 id="2-usando-javascript-nativo">2. Usando JavaScript Nativo</h3>
+    <h2 id="2-usando-javascript-nativo">2. Usando JavaScript Nativo</h2>
     <p>Para mais controle ou compatibilidade, use métodos JavaScript:</p>
-    <h4 id="a-com-scrollto">a. Com <code>scrollTo()</code></h4>
+    <h3 id="a-com-scrollto">a. Com <code>scrollTo()</code></h3>
     <pre><code class="language-javascript">// Rolagem suave para coordenadas específicas
 window.scrollTo({
   top: 1000,
@@ -41,7 +62,7 @@ window.scrollTo({
 const element = document.getElementById(&#39;section&#39;);
 element.scrollIntoView({ behavior: &#39;smooth&#39; });
 </code></pre>
-    <h4 id="b-interceptando-cliques-em-âncoras">b. Interceptando cliques em âncoras</h4>
+    <h3 id="b-interceptando-cliques-em-âncoras">b. Interceptando cliques em âncoras</h3>
     <pre><code class="language-javascript">document.querySelectorAll(&#39;a[href^=&quot;#&quot;]&#39;).forEach(anchor =&gt; {
   anchor.addEventListener(&#39;click&#39;, function(e) {
     e.preventDefault();
@@ -51,7 +72,7 @@ element.scrollIntoView({ behavior: &#39;smooth&#39; });
 });
 </code></pre>
     <hr>
-    <h3 id="3-personalização-avançada-exemplo">3. Personalização Avançada (Exemplo)</h3>
+    <h2 id="3-personalização-avançada-exemplo">3. Personalização Avançada (Exemplo)</h2>
     <p>Para controlar duração ou efeitos de easing:</p>
     <pre><code class="language-javascript">function smoothScrollTo(target, duration = 1000) {
   const start = window.pageYOffset;
@@ -81,7 +102,7 @@ element.scrollIntoView({ behavior: &#39;smooth&#39; });
 smoothScrollTo(document.getElementById(&#39;secao&#39;), 1500);
 </code></pre>
     <hr>
-    <h3 id="4-usando-bibliotecas-externas">4. Usando Bibliotecas Externas</h3>
+    <h2 id="4-usando-bibliotecas-externas">4. Usando Bibliotecas Externas</h2>
     <ul>
         <li>
             <p><strong>SmoothScroll.js</strong> (leve: ~4KB): </p>
@@ -103,7 +124,7 @@ smoothScrollTo(document.getElementById(&#39;secao&#39;), 1500);
         </li>
     </ul>
     <hr>
-    <h3 id="considerações">Considerações:</h3>
+    <h2 id="considerações">Considerações:</h2>
     <ul>
         <li><strong>Compatibilidade:</strong> Use polyfills (como <code>smoothscroll-polyfill</code>) se precisar de
             suporte para Safari ou IE.</li>

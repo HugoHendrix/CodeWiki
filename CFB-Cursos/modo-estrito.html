@@ -4,20 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>O que é o Modo Estrito? | CodeWiki</title>
+    <meta name="description" content="O modo estrito ( &quot;use strict&quot; ) foi introduzido no ECMAScript 5 e serve para tornar o JavaScript mais rigoroso na execução do código. Ele impede práticas…">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/CFB-Cursos/modo-estrito.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="O que é o Modo Estrito? | CodeWiki">
+    <meta property="og:description" content="O modo estrito ( &quot;use strict&quot; ) foi introduzido no ECMAScript 5 e serve para tornar o JavaScript mais rigoroso na execução do código. Ele impede práticas…">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/CFB-Cursos/modo-estrito.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="O que é o Modo Estrito? | CodeWiki">
+    <meta name="twitter:description" content="O modo estrito ( &quot;use strict&quot; ) foi introduzido no ECMAScript 5 e serve para tornar o JavaScript mais rigoroso na execução do código. Ele impede práticas…">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "O que é o Modo Estrito?", "description": "O modo estrito ( \"use strict\" ) foi introduzido no ECMAScript 5 e serve para tornar o JavaScript mais rigoroso na execução do código. Ele impede práticas…", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/CFB-Cursos/modo-estrito.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/CFB-Cursos/modo-estrito.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
     <article>
-        <h2 id="-o-que-o-modo-estrito-">🔒 O que é o Modo Estrito?</h2>
+        <h1 id="-o-que-o-modo-estrito-">🔒 O que é o Modo Estrito?</h1>
         <p>O <strong>modo estrito</strong> (<code>&quot;use strict&quot;</code>) foi introduzido no ECMAScript 5 e serve
             para tornar o JavaScript mais rigoroso na execução do código. Ele impede práticas que podem causar bugs
             difíceis de detectar e força o desenvolvedor a seguir boas práticas.</p>
         <hr>
-        <h2 id="-para-que-serve-">🎯 Para que serve?</h2>
+        <h1 id="-para-que-serve-">🎯 Para que serve?</h1>
         <ul>
             <li><strong>Evita erros silenciosos</strong>: transforma falhas que normalmente passariam despercebidas em
                 erros explícitos.</li>
@@ -28,8 +49,8 @@
             <li><strong>Ajuda na manutenção</strong>: facilita a leitura e depuração do código.</li>
         </ul>
         <hr>
-        <h2 id="-como-ativar-e-desativar-">⚙️ Como ativar e desativar?</h2>
-        <h3 id="-ativar-">✅ Ativar:</h3>
+        <h1 id="-como-ativar-e-desativar-">⚙️ Como ativar e desativar?</h1>
+        <h2 id="-ativar-">✅ Ativar:</h2>
         <p>Coloque <code>&quot;use strict&quot;;</code> no início do seu script ou função:</p>
         <pre><code class="lang-javascript"><span class="hljs-meta">"use strict"</span>;
 
@@ -41,11 +62,11 @@
   <span class="hljs-comment">// código aqui</span>
 }
 </code></pre>
-        <h3 id="-desativar-">❌ Desativar:</h3>
+        <h2 id="-desativar-">❌ Desativar:</h2>
         <p>Simplesmente <strong>não inclua</strong> <code>&quot;use strict&quot;</code> no seu código. O JavaScript
             voltará ao modo “solto”, que permite práticas menos seguras.</p>
         <hr>
-        <h2 id="-restri-es-que-o-modo-estrito-imp-e">🚫 Restrições que o modo estrito impõe</h2>
+        <h1 id="-restri-es-que-o-modo-estrito-imp-e">🚫 Restrições que o modo estrito impõe</h1>
         <p>Aqui estão algumas das principais:</p>
         <table>
             <thead>

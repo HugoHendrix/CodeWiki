@@ -4,18 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Atributo inert no HTML — Bloqueio instantâneo de interface</title>
+    <meta name="description" content="O atributo inert é um recurso nativo do HTML usado para tornar elementos da interface inativos — impedindo que recebam foco, cliques e sejam lidos por…">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/Design-Dev/inert.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Atributo inert no HTML — Bloqueio instantâneo de interface">
+    <meta property="og:description" content="O atributo inert é um recurso nativo do HTML usado para tornar elementos da interface inativos — impedindo que recebam foco, cliques e sejam lidos por…">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/Design-Dev/inert.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Atributo inert no HTML — Bloqueio instantâneo de interface">
+    <meta name="twitter:description" content="O atributo inert é um recurso nativo do HTML usado para tornar elementos da interface inativos — impedindo que recebam foco, cliques e sejam lidos por…">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Atributo inert no HTML — Bloqueio instantâneo de interface", "description": "O atributo inert é um recurso nativo do HTML usado para tornar elementos da interface inativos — impedindo que recebam foco, cliques e sejam lidos por…", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/Design-Dev/inert.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/Design-Dev/inert.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
     <article id="atributo-inert" class="conteudo-codewiki">
-        <h2>🧱 Atributo <code>inert</code> no HTML — Bloqueio instantâneo de interface</h2>
+        <h1>🧱 Atributo <code>inert</code> no HTML — Bloqueio instantâneo de interface</h1>
 
         <section>
-            <h3>🔍 O que é</h3>
+            <h2>🔍 O que é</h2>
             <p>
                 O atributo <code>inert</code> é um recurso nativo do HTML usado para
                 <strong>tornar elementos da interface inativos</strong> — impedindo que recebam foco, cliques e sejam
@@ -27,7 +48,7 @@
         </section>
 
         <section>
-            <h3>⚙️ Como funciona</h3>
+            <h2>⚙️ Como funciona</h2>
             <ul>
                 <li>🔒 Remove todos os elementos filhos da <strong>árvore de acessibilidade</strong>.</li>
                 <li>🚫 Impede que <em>botões, links e inputs</em> recebam foco ou cliques.</li>
@@ -38,7 +59,7 @@
         </section>
 
         <section>
-            <h3>💡 Exemplo prático</h3>
+            <h2>💡 Exemplo prático</h2>
             <pre><code class="language-html">
 &lt;div id="app"&gt;
   &lt;main inert&gt;
@@ -61,7 +82,7 @@
         </section>
 
         <section>
-            <h3>🧠 Comparativo com outras soluções</h3>
+            <h2>🧠 Comparativo com outras soluções</h2>
             <table>
                 <thead>
                     <tr>
@@ -99,7 +120,7 @@
         </section>
 
         <section>
-            <h3>🧩 Uso dinâmico com JavaScript</h3>
+            <h2>🧩 Uso dinâmico com JavaScript</h2>
             <pre><code class="language-javascript">
 const modal = document.querySelector("#modal");
 const app = document.querySelector("#app");
@@ -121,7 +142,7 @@ function fecharModal() {
         </section>
 
         <section>
-            <h3>🌍 Suporte dos navegadores</h3>
+            <h2>🌍 Suporte dos navegadores</h2>
             <p>
                 O atributo <code>inert</code> é amplamente suportado pelos navegadores modernos (Chrome, Edge, Firefox,
                 Safari e Opera).
@@ -134,7 +155,7 @@ function fecharModal() {
         </section>
 
         <section>
-            <h3>🧭 Quando usar</h3>
+            <h2>🧭 Quando usar</h2>
             <ul>
                 <li>Ao abrir <strong>modais</strong> ou <strong>popups</strong>;</li>
                 <li>Durante <strong>carregamentos</strong> ou <strong>processos críticos</strong>;</li>
@@ -144,7 +165,7 @@ function fecharModal() {
         </section>
 
         <section>
-            <h3>✅ Conclusão</h3>
+            <h2>✅ Conclusão</h2>
             <p>
                 O atributo <code>inert</code> traz uma solução <strong>nativa, acessível e limpa</strong> para gerenciar
                 estados de interface.

@@ -4,20 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Servidor DNS, domínio e hospedagem: como a internet encontra um site</title>
+    <meta name="description" content="O DNS é o sistema que traduz nomes de domínio (ex: google.com ) para endereços IP (ex: 142.250.190.46 ). Isso acontece porque os computadores se…">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/Curso-em-Video/servidor-dns.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Servidor DNS, domínio e hospedagem: como a internet encontra um site">
+    <meta property="og:description" content="O DNS é o sistema que traduz nomes de domínio (ex: google.com ) para endereços IP (ex: 142.250.190.46 ). Isso acontece porque os computadores se…">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/Curso-em-Video/servidor-dns.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Servidor DNS, domínio e hospedagem: como a internet encontra um site">
+    <meta name="twitter:description" content="O DNS é o sistema que traduz nomes de domínio (ex: google.com ) para endereços IP (ex: 142.250.190.46 ). Isso acontece porque os computadores se…">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Servidor DNS, domínio e hospedagem: como a internet encontra um site", "description": "O DNS é o sistema que traduz nomes de domínio (ex: google.com ) para endereços IP (ex: 142.250.190.46 ). Isso acontece porque os computadores se…", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/Curso-em-Video/servidor-dns.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/Curso-em-Video/servidor-dns.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
 
-    <h2
+    <h1
         id="servidor-dns-domain-name-system--rotas-da-internet--url-uniform-resource-locator--domínio--hospedagem--tld-top-level-domain--gtld-generic-top-level-domain--domínio-e-da-hospedagem">
         Servidor DNS (Domain Name System) / Rotas da Internet / URL (Uniform Resource Locator) / Domínio / Hospedagem /
-        TLD (Top-Level Domain) / gTLD (Generic Top-Level Domain) / Domínio e da Hospedagem</h2>
+        TLD (Top-Level Domain) / gTLD (Generic Top-Level Domain) / Domínio e da Hospedagem</h1>
     <hr>
-    <h3 id="1-servidor-dns-domain-name-system"><strong>1. Servidor DNS (Domain Name System)</strong></h3>
+    <h2 id="1-servidor-dns-domain-name-system"><strong>1. Servidor DNS (Domain Name System)</strong></h2>
     <p>O DNS é o sistema que traduz nomes de domínio (ex: <code>google.com</code>) para endereços IP (ex:
         <code>142.250.190.46</code>). Isso acontece porque os computadores se comunicam por IPs, mas as pessoas preferem
         usar nomes fáceis de lembrar. </p>
@@ -36,7 +57,7 @@
             autoritativos corretos.</li>
     </ul>
     <hr>
-    <h3 id="2-rotas-da-internet"><strong>2. Rotas da Internet</strong></h3>
+    <h2 id="2-rotas-da-internet"><strong>2. Rotas da Internet</strong></h2>
     <p>As rotas da internet definem como os pacotes de dados trafegam entre servidores e dispositivos. Quando você
         acessa um site, seu pedido passa por vários roteadores ao longo do caminho até chegar ao servidor de destino.
     </p>
@@ -48,7 +69,7 @@
 tracert google.com     # No Windows
 </code></pre>
     <hr>
-    <h3 id="3-url-uniform-resource-locator"><strong>3. URL (Uniform Resource Locator)</strong></h3>
+    <h2 id="3-url-uniform-resource-locator"><strong>3. URL (Uniform Resource Locator)</strong></h2>
     <p>A URL é o endereço completo de um recurso na web. Um exemplo de URL é: </p>
     <pre><code>https://www.exemplo.com/pagina?query=teste#secao1
 </code></pre>
@@ -63,7 +84,7 @@ tracert google.com     # No Windows
         <li><strong>Fragmento</strong>: <code>#secao1</code> → Ponto específico dentro da página.</li>
     </ul>
     <hr>
-    <h3 id="4-domínio"><strong>4. Domínio</strong></h3>
+    <h2 id="4-domínio"><strong>4. Domínio</strong></h2>
     <p>O domínio é o nome do site (ex: <code>exemplo.com</code>). Ele precisa ser registrado em um <strong>registrador
             de domínios</strong>, como GoDaddy, Namecheap, Registro.br, etc. </p>
     <p>Os domínios são divididos em níveis: </p>
@@ -75,7 +96,7 @@ tracert google.com     # No Windows
     </ul>
     <p>Cada domínio registrado aponta para servidores DNS, que indicam qual servidor hospedará o site.</p>
     <hr>
-    <h3 id="5-hospedagem"><strong>5. Hospedagem</strong></h3>
+    <h2 id="5-hospedagem"><strong>5. Hospedagem</strong></h2>
     <p>A hospedagem é onde os arquivos do site ficam armazenados. Existem vários tipos de hospedagem: </p>
     <ul>
         <li><strong>Compartilhada</strong>: Vários sites no mesmo servidor (mais barato, mas menos desempenho). </li>
@@ -86,7 +107,7 @@ tracert google.com     # No Windows
     </ul>
     <p>Empresas como HostGator, DigitalOcean, AWS e Vercel oferecem diferentes tipos de hospedagem.</p>
     <hr>
-    <h3 id="6-tld-top-level-domain"><strong>6. TLD (Top-Level Domain)</strong></h3>
+    <h2 id="6-tld-top-level-domain"><strong>6. TLD (Top-Level Domain)</strong></h2>
     <p>O <strong>TLD</strong> é a parte final de um domínio (<code>.com</code>, <code>.org</code>, <code>.net</code>,
         <code>.br</code>). Ele é controlado por entidades como a <strong>ICANN (Internet Corporation for Assigned Names
             and Numbers)</strong>. </p>
@@ -100,7 +121,7 @@ tracert google.com     # No Windows
             etc.</li>
     </ul>
     <hr>
-    <h3 id="7-gtld-generic-top-level-domain"><strong>7. gTLD (Generic Top-Level Domain)</strong></h3>
+    <h2 id="7-gtld-generic-top-level-domain"><strong>7. gTLD (Generic Top-Level Domain)</strong></h2>
     <p>Os <strong>gTLDs</strong> são TLDs genéricos, ou seja, não pertencem a um país específico. Exemplos: </p>
     <ul>
         <li><strong>.com</strong> → Comercial (mais popular). </li>
@@ -111,7 +132,7 @@ tracert google.com     # No Windows
     <p>Hoje em dia, existem gTLDs específicos para nichos, como <code>.shop</code>, <code>.art</code>,
         <code>.app</code>, <code>.dev</code>.</p>
     <hr>
-    <h3 id="8-detalhes-do-domínio-e-da-hospedagem"><strong>8. Detalhes do Domínio e da Hospedagem</strong></h3>
+    <h2 id="8-detalhes-do-domínio-e-da-hospedagem"><strong>8. Detalhes do Domínio e da Hospedagem</strong></h2>
     <p>Ao registrar um domínio, alguns detalhes são importantes: </p>
     <ul>
         <li><strong>WHOIS</strong>: Banco de dados que mostra quem registrou um domínio. </li>
@@ -127,7 +148,7 @@ tracert google.com     # No Windows
         <li><strong>Backup automático</strong>: Se há backups para evitar perda de dados.</li>
     </ul>
     <hr>
-    <h3 id="resumo"><strong>Resumo</strong></h3>
+    <h2 id="resumo"><strong>Resumo</strong></h2>
     <table>
         <thead>
             <tr>

@@ -4,16 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Criando um Sistema de Sliders Multi-Range com Atualização Dinâmica de Total</title>
+    <meta name="description" content="O HTML consiste em três sliders, cada um representando um produto com um preço específico. O valor total é exibido em um campo de saída ( &lt;output&gt; ).">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/Snippets/sliders-multi-range.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Criando um Sistema de Sliders Multi-Range com Atualização Dinâmica de Total">
+    <meta property="og:description" content="O HTML consiste em três sliders, cada um representando um produto com um preço específico. O valor total é exibido em um campo de saída ( &lt;output&gt; ).">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/Snippets/sliders-multi-range.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Criando um Sistema de Sliders Multi-Range com Atualização Dinâmica de Total">
+    <meta name="twitter:description" content="O HTML consiste em três sliders, cada um representando um produto com um preço específico. O valor total é exibido em um campo de saída ( &lt;output&gt; ).">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Criando um Sistema de Sliders Multi-Range com Atualização Dinâmica de Total", "description": "O HTML consiste em três sliders, cada um representando um produto com um preço específico. O valor total é exibido em um campo de saída ( <output> ).", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/Snippets/sliders-multi-range.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/Snippets/sliders-multi-range.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
 
-    <h3 id="-criando-um-sistema-de-sliders-multi-range-com-atualiza-o-din-mica-de-total-"><strong>Criando um Sistema de
-            Sliders Multi-Range com Atualização Dinâmica de Total</strong></h3>
+    <h1 id="-criando-um-sistema-de-sliders-multi-range-com-atualiza-o-din-mica-de-total-"><strong>Criando um Sistema de
+            Sliders Multi-Range com Atualização Dinâmica de Total</strong></h1>
     <p><a href="https://codepen.io/themolitor/pen/mdoxjKq/5ccf57f05485491c76304ea4af86d519/">Exemplo</a></p>
     <ul>
         <li>Este exemplo demonstra como criar um sistema de <strong>sliders multi-range</strong> que atualiza
@@ -24,7 +45,7 @@
             JavaScript.</li>
     </ul>
     <hr>
-    <h4 id="-estrutura-html-"><strong>Estrutura HTML</strong></h4>
+    <h2 id="-estrutura-html-"><strong>Estrutura HTML</strong></h2>
     <p>O HTML consiste em três sliders, cada um representando um produto com um preço específico. O valor total é
         exibido em um campo de saída (<code>&lt;output&gt;</code>).</p>
     <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"page-wrapper"</span>&gt;</span>
@@ -65,7 +86,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
     <hr>
-    <h4 id="-estiliza-o-com-css-"><strong>Estilização com CSS</strong></h4>
+    <h2 id="-estiliza-o-com-css-"><strong>Estilização com CSS</strong></h2>
     <p>O CSS personaliza a aparência dos sliders, dos rótulos e do layout geral.</p>
     <pre><code class="lang-css"><span class="hljs-comment">/* Estilo dos Sliders */</span>
 <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type="range"]</span> {
@@ -149,7 +170,7 @@
 }
 </code></pre>
     <hr>
-    <h4 id="-l-gica-com-javascript-"><strong>Lógica com JavaScript</strong></h4>
+    <h2 id="-l-gica-com-javascript-"><strong>Lógica com JavaScript</strong></h2>
     <p>O JavaScript atualiza o valor total sempre que um slider é ajustado.</p>
     <pre><code class="lang-javascript"><span class="hljs-comment">// Atualiza o valor total</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateTotal</span>(<span class="hljs-params"></span>) </span>{
@@ -194,7 +215,7 @@
 });
 </code></pre>
     <hr>
-    <h4 id="-funcionalidades-principais-"><strong>Funcionalidades Principais</strong></h4>
+    <h2 id="-funcionalidades-principais-"><strong>Funcionalidades Principais</strong></h2>
     <ol>
         <li>
             <p><strong>Sliders Personalizados</strong>:</p>
@@ -217,7 +238,7 @@
         </li>
     </ol>
     <hr>
-    <h4 id="-conclus-o-"><strong>Conclusão</strong></h4>
+    <h2 id="-conclus-o-"><strong>Conclusão</strong></h2>
     <ul>
         <li>Este exemplo combina <strong>HTML</strong>, <strong>CSS</strong> e <strong>JavaScript</strong> para criar
             uma interface interativa e visualmente atraente.</li>

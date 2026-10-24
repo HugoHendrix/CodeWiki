@@ -4,15 +4,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
   <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-  <title>CodeWiki</title>
+    <title>Formulário funcional com validação | CodeWiki</title>
+    <meta name="description" content="Este formulário permite que usuários enviem informações de contato (nome, e-mail e telefone) com validação básica de preenchimento. Ele fornece feedback…">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/Snippets/validacao-form.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Formulário funcional com validação | CodeWiki">
+    <meta property="og:description" content="Este formulário permite que usuários enviem informações de contato (nome, e-mail e telefone) com validação básica de preenchimento. Ele fornece feedback…">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/Snippets/validacao-form.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Formulário funcional com validação | CodeWiki">
+    <meta name="twitter:description" content="Este formulário permite que usuários enviem informações de contato (nome, e-mail e telefone) com validação básica de preenchimento. Ele fornece feedback…">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Formulário funcional com validação", "description": "Este formulário permite que usuários enviem informações de contato (nome, e-mail e telefone) com validação básica de preenchimento. Ele fornece feedback…", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/Snippets/validacao-form.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/Snippets/validacao-form.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
   <article>
-    <h2 id="-formul-rio-funcional-com-valida-o">✅ Formulário funcional com validação</h2>
+    <h1 id="-formul-rio-funcional-com-valida-o">✅ Formulário funcional com validação</h1>
     <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"pt-br"</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
@@ -151,13 +172,13 @@
 
   <article>
 
-    <h2 id="-documenta-o-formul-rio-de-contato-com-valida-o">📚 Documentação: Formulário de Contato com Validação</h2>
-    <h3 id="-objetivo">🎯 Objetivo</h3>
+    <h1 id="-documenta-o-formul-rio-de-contato-com-valida-o">📚 Documentação: Formulário de Contato com Validação</h1>
+    <h2 id="-objetivo">🎯 Objetivo</h2>
     <p>Este formulário permite que usuários enviem informações de contato (nome, e-mail e telefone) com validação básica
       de preenchimento. Ele fornece feedback visual, evita envio com campos vazios e redireciona para uma página de
       agradecimento após o envio.</p>
     <hr>
-    <h3 id="-estrutura-html-esperada">🧩 Estrutura HTML esperada</h3>
+    <h2 id="-estrutura-html-esperada">🧩 Estrutura HTML esperada</h2>
     <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">form</span> id=<span class="hljs-string">"formContainer"</span>&gt;
   &lt;<span class="hljs-selector-tag">label</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"nome"</span>&gt;Nome:&lt;/label&gt;
   &lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"text"</span> id=<span class="hljs-string">"nome"</span> name=<span class="hljs-string">"nome"</span>&gt;
@@ -176,7 +197,7 @@
       <li>O botão de envio tem <code>type=&quot;button&quot;</code> para evitar envio automático.</li>
     </ul>
     <hr>
-    <h3 id="-estilo-css-b-sico">🎨 Estilo CSS básico</h3>
+    <h2 id="-estilo-css-b-sico">🎨 Estilo CSS básico</h2>
     <pre><code class="lang-css"><span class="hljs-selector-tag">input</span> {
   <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#dedede</span>;
   <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
@@ -206,7 +227,7 @@
       <li>O botão muda de cor se houver erro.</li>
     </ul>
     <hr>
-    <h3 id="-c-digo-javascript">⚙️ Código JavaScript</h3>
+    <h2 id="-c-digo-javascript">⚙️ Código JavaScript</h2>
     <pre><code class="lang-js"><span class="hljs-keyword">let</span> <span class="hljs-attr">iSendButton</span> = document.getElementById(<span class="hljs-string">"iSendButton"</span>);
 <span class="hljs-keyword">let</span> <span class="hljs-attr">formName</span> = document.querySelector('<span class="hljs-comment">#nome');</span>
 <span class="hljs-keyword">let</span> <span class="hljs-attr">formEmail</span> = document.querySelector('<span class="hljs-comment">#email');</span>
@@ -265,7 +286,7 @@ function checkEmpty() {
 }
 </code></pre>
     <hr>
-    <h3 id="-explica-o-da-l-gica">🧠 Explicação da lógica</h3>
+    <h2 id="-explica-o-da-l-gica">🧠 Explicação da lógica</h2>
     <ul>
       <li><code>checkEmpty()</code> verifica se os campos estão preenchidos.</li>
       <li>Se algum estiver vazio:<ul>
@@ -280,7 +301,7 @@ function checkEmpty() {
       </li>
     </ul>
     <hr>
-    <h3 id="-boas-pr-ticas">💡 Boas práticas</h3>
+    <h2 id="-boas-pr-ticas">💡 Boas práticas</h2>
     <ul>
       <li>Use <code>type=&quot;email&quot;</code> e <code>type=&quot;tel&quot;</code> para validação nativa.</li>
       <li>Adicione <code>required</code> nos campos se quiser validação HTML.</li>
@@ -288,7 +309,7 @@ function checkEmpty() {
       <li>Para envio real, substitua o <code>setTimeout</code> por uma chamada AJAX ou <code>fetch()</code>.</li>
     </ul>
     <hr>
-    <h3 id="-exemplo-de-uso">🧪 Exemplo de uso</h3>
+    <h2 id="-exemplo-de-uso">🧪 Exemplo de uso</h2>
     <pre><code class="lang-html">&lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"text"</span> id=<span class="hljs-string">"nome"</span> placeholder=<span class="hljs-string">"Seu nome"</span>&gt;
 &lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"email"</span> id=<span class="hljs-string">"email"</span> placeholder=<span class="hljs-string">"seu@email.com"</span>&gt;
 &lt;<span class="hljs-selector-tag">input</span> type=<span class="hljs-string">"tel"</span> id=<span class="hljs-string">"telefone"</span> placeholder=<span class="hljs-string">"(99) 99999-9999"</span>&gt;
@@ -302,8 +323,8 @@ function checkEmpty() {
   <hr>
 
   <article>
-    <h2 id="-bloco-1-selecionando-os-elementos-do-formul-rio">🧠 Bloco 1: Selecionando os elementos do formulário
-    </h2>
+    <h1 id="-bloco-1-selecionando-os-elementos-do-formul-rio">🧠 Bloco 1: Selecionando os elementos do formulário
+    </h1>
     <pre><code class="lang-js"><span class="hljs-attribute">let iSendButton</span> = document.getElementById(<span class="hljs-string">"iSendButton"</span>);
 </code></pre>
     <p>🔹 Seleciona o botão de envio do formulário (<code>&lt;button id=&quot;iSendButton&quot;&gt;</code>) e guarda
@@ -315,8 +336,8 @@ let formPhone = <span class="hljs-built_in">document</span>.<span class="hljs-bu
     <p>🔹 Seleciona os campos de entrada (<code>input</code>) de nome, e-mail e telefone usando seus IDs, e guarda
       em variáveis.</p>
     <hr>
-    <h2 id="-bloco-2-adicionando-eventos-de-valida-o-ao-sair-dos-campos">🧠 Bloco 2: Adicionando eventos de
-      validação ao sair dos campos</h2>
+    <h1 id="-bloco-2-adicionando-eventos-de-valida-o-ao-sair-dos-campos">🧠 Bloco 2: Adicionando eventos de
+      validação ao sair dos campos</h1>
     <pre><code class="lang-js"><span class="hljs-selector-tag">formName</span><span class="hljs-selector-class">.addEventListener</span>(<span class="hljs-string">'focusout'</span>, checkEmpty);
 <span class="hljs-selector-tag">formEmail</span><span class="hljs-selector-class">.addEventListener</span>(<span class="hljs-string">'focusout'</span>, checkEmpty);
 <span class="hljs-selector-tag">formPhone</span><span class="hljs-selector-class">.addEventListener</span>(<span class="hljs-string">'focusout'</span>, checkEmpty);
@@ -325,7 +346,7 @@ let formPhone = <span class="hljs-built_in">document</span>.<span class="hljs-bu
       <code>checkEmpty()</code> é chamada para verificar se o campo está vazio.
     </p>
     <hr>
-    <h2 id="-bloco-3-evento-de-clique-no-bot-o-de-envio">🧠 Bloco 3: Evento de clique no botão de envio</h2>
+    <h1 id="-bloco-3-evento-de-clique-no-bot-o-de-envio">🧠 Bloco 3: Evento de clique no botão de envio</h1>
     <pre><code class="lang-js">iSendButton.addEventListener(<span class="hljs-string">"click"</span>, <span class="hljs-function"><span class="hljs-params">(e)</span> =&gt;</span> {
 </code></pre>
     <p>🔹 Quando o botão é clicado, executa a função abaixo.</p>
@@ -346,7 +367,7 @@ let formPhone = <span class="hljs-built_in">document</span>.<span class="hljs-bu
 </code></pre>
     <p>🔹 Aguarda 1,5 segundos e redireciona o usuário para uma página de agradecimento.</p>
     <hr>
-    <h2 id="-bloco-4-fun-o-de-valida-o-checkempty-">🧠 Bloco 4: Função de validação <code>checkEmpty()</code></h2>
+    <h1 id="-bloco-4-fun-o-de-valida-o-checkempty-">🧠 Bloco 4: Função de validação <code>checkEmpty()</code></h1>
     <pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkEmpty</span><span class="hljs-params">()</span> </span>{
 </code></pre>
     <p>🔹 Define a função que verifica se os campos estão vazios.</p>
@@ -365,7 +386,7 @@ let formPhone = <span class="hljs-built_in">document</span>.<span class="hljs-bu
     <p>🔹 Inicializa uma variável <code>valid</code> como <code>true</code>. Ela será usada para saber se todos os
       campos estão preenchidos.</p>
     <hr>
-    <h3 id="-valida-o-de-cada-campo">🔍 Validação de cada campo</h3>
+    <h2 id="-valida-o-de-cada-campo">🔍 Validação de cada campo</h2>
     <pre><code class="lang-js">  <span class="hljs-keyword">if</span> (nome.value === <span class="hljs-string">""</span>) {
     nome.<span class="hljs-built_in">style</span>.<span class="hljs-built_in">border</span> = errorBorderColor;
     valid = <span class="hljs-literal">false</span>;
@@ -391,8 +412,8 @@ let formPhone = <span class="hljs-built_in">document</span>.<span class="hljs-bu
   }
 </code></pre>
     <hr>
-    <h3 id="-atualiza-a-classe-do-bot-o-com-base-na-valida-o">🔍 Atualiza a classe do botão com base na validação
-    </h3>
+    <h2 id="-atualiza-a-classe-do-bot-o-com-base-na-valida-o">🔍 Atualiza a classe do botão com base na validação
+    </h2>
     <pre><code class="lang-js">  <span class="hljs-keyword">if</span>(valid == <span class="hljs-keyword">true</span>) {
     <span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">'#iSendButton'</span>).classList.remove(<span class="hljs-string">'needCheck'</span>);
   } <span class="hljs-keyword">else</span> {
@@ -404,14 +425,14 @@ let formPhone = <span class="hljs-built_in">document</span>.<span class="hljs-bu
     <p>🔹 Se todos os campos estiverem preenchidos, remove a classe <code>needCheck</code> do botão.<br>🔹 Se houver
       erro, adiciona a classe <code>needCheck</code> (caso ainda não esteja lá).</p>
     <hr>
-    <h3 id="-retorna-o-resultado-da-valida-o">🔚 Retorna o resultado da validação</h3>
+    <h2 id="-retorna-o-resultado-da-valida-o">🔚 Retorna o resultado da validação</h2>
     <pre><code class="lang-js">  <span class="hljs-keyword">return</span> valid;
 }
 </code></pre>
     <p>🔹 Retorna <code>true</code> se todos os campos estiverem preenchidos, ou <code>false</code> se algum estiver
       vazio.</p>
     <hr>
-    <h2 id="-conclus-o">✅ Conclusão</h2>
+    <h1 id="-conclus-o">✅ Conclusão</h1>
     <p>Esse script:</p>
     <ul>
       <li>Valida se os campos estão preenchidos</li>

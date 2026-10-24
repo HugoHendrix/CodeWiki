@@ -4,20 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Acordeão com details e summary, sem JavaScript | CodeWiki</title>
+    <meta name="description" content="Neste tutorial, você aprenderá a criar um acordeão retrátil usando apenas HTML e CSS, sem a necessidade de JavaScript. A combinação das tags &lt;details&gt; e…">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/Snippets/acordeao.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Acordeão com details e summary, sem JavaScript | CodeWiki">
+    <meta property="og:description" content="Neste tutorial, você aprenderá a criar um acordeão retrátil usando apenas HTML e CSS, sem a necessidade de JavaScript. A combinação das tags &lt;details&gt; e…">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/Snippets/acordeao.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Acordeão com details e summary, sem JavaScript | CodeWiki">
+    <meta name="twitter:description" content="Neste tutorial, você aprenderá a criar um acordeão retrátil usando apenas HTML e CSS, sem a necessidade de JavaScript. A combinação das tags &lt;details&gt; e…">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Acordeão com details e summary, sem JavaScript", "description": "Neste tutorial, você aprenderá a criar um acordeão retrátil usando apenas HTML e CSS, sem a necessidade de JavaScript. A combinação das tags <details> e…", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/Snippets/acordeao.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/Snippets/acordeao.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
-    <h3 id="-criando-um-acorde-o-com-details-e-summary-sem-javascript-"><strong>Criando um Acordeão com
-            <code>&lt;details&gt;</code> e <code>&lt;summary&gt;</code> sem JavaScript</strong></h3>
+    <h2 id="-criando-um-acorde-o-com-details-e-summary-sem-javascript-"><strong>Criando um Acordeão com
+            <code>&lt;details&gt;</code> e <code>&lt;summary&gt;</code> sem JavaScript</strong></h2>
     <p>Neste tutorial, você aprenderá a criar um acordeão retrátil usando apenas HTML e CSS, sem a necessidade de
         JavaScript. A combinação das tags <code>&lt;details&gt;</code> e <code>&lt;summary&gt;</code> do HTML, junto com
         o atributo <code>name</code>, permite criar uma funcionalidade de acordeão de forma simples e eficiente.</p>
     <hr>
-    <h2 id="-como-funciona-"><strong>Como Funciona?</strong></h2>
+    <h1 id="-como-funciona-"><strong>Como Funciona?</strong></h1>
     <ul>
         <li><strong><code>&lt;details&gt;</code></strong>: Um elemento que pode ser expandido ou recolhido para mostrar
             ou ocultar conteúdo.</li>
@@ -28,7 +49,7 @@
             comportamento de acordeão.</li>
     </ul>
     <hr>
-    <h2 id="-estrutura-html-"><strong>Estrutura HTML</strong></h2>
+    <h1 id="-estrutura-html-"><strong>Estrutura HTML</strong></h1>
     <p>Aqui está um exemplo básico de um acordeão com três seções:</p>
     <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">details</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"acordeao"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>Seção 1<span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
@@ -46,7 +67,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span>
 </code></pre>
     <hr>
-    <h2 id="-explica-o-do-html-"><strong>Explicação do HTML</strong></h2>
+    <h1 id="-explica-o-do-html-"><strong>Explicação do HTML</strong></h1>
     <ol>
         <li>
             <p><strong><code>&lt;details&gt;</code></strong>:</p>
@@ -72,7 +93,7 @@
         </li>
     </ol>
     <hr>
-    <h2 id="-estilizando-com-css-"><strong>Estilizando com CSS</strong></h2>
+    <h1 id="-estilizando-com-css-"><strong>Estilizando com CSS</strong></h1>
     <p>Você pode personalizar a aparência do acordeão usando CSS. Aqui está um exemplo básico:</p>
     <pre><code class="lang-css"><span class="hljs-comment">/* Estilo básico para o acordeão */</span>
 <span class="hljs-selector-tag">details</span> {
@@ -106,7 +127,7 @@
 }
 </code></pre>
     <hr>
-    <h2 id="-explica-o-do-css-"><strong>Explicação do CSS</strong></h2>
+    <h1 id="-explica-o-do-css-"><strong>Explicação do CSS</strong></h1>
     <ol>
         <li>
             <p><strong><code>details</code></strong>:</p>
@@ -135,7 +156,7 @@
         </li>
     </ol>
     <hr>
-    <h2 id="-exemplo-completo-"><strong>Exemplo Completo</strong></h2>
+    <h1 id="-exemplo-completo-"><strong>Exemplo Completo</strong></h1>
     <p>Aqui está o código completo para você testar:</p>
     <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"pt-BR"</span>&gt;</span>
@@ -195,7 +216,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
     <hr>
-    <h2 id="-funcionalidades-adicionais-"><strong>Funcionalidades Adicionais</strong></h2>
+    <h1 id="-funcionalidades-adicionais-"><strong>Funcionalidades Adicionais</strong></h1>
     <ol>
         <li>
             <p><strong>Ícones Personalizados</strong>:</p>
@@ -220,7 +241,7 @@
         </li>
     </ol>
     <hr>
-    <h2 id="-conclus-o-"><strong>Conclusão</strong></h2>
+    <h1 id="-conclus-o-"><strong>Conclusão</strong></h1>
     <p>Usar <code>&lt;details&gt;</code> e <code>&lt;summary&gt;</code> é uma maneira simples e eficaz de criar
         acordeões sem a necessidade de JavaScript. Com um pouco de CSS, você pode personalizar a aparência e o
         comportamento para atender às necessidades do seu projeto.</p>

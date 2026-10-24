@@ -4,26 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Documentação: Componente Acordeão (Accordion) | CodeWiki</title>
+    <meta name="description" content="O componente acordeão permite mostrar ou esconder conteúdo ao clicar em um cabeçalho. É útil para FAQs, menus, seções colapsáveis ou qualquer área onde o…">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/Snippets/acordeao-com-js.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Documentação: Componente Acordeão (Accordion) | CodeWiki">
+    <meta property="og:description" content="O componente acordeão permite mostrar ou esconder conteúdo ao clicar em um cabeçalho. É útil para FAQs, menus, seções colapsáveis ou qualquer área onde o…">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/Snippets/acordeao-com-js.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Documentação: Componente Acordeão (Accordion) | CodeWiki">
+    <meta name="twitter:description" content="O componente acordeão permite mostrar ou esconder conteúdo ao clicar em um cabeçalho. É útil para FAQs, menus, seções colapsáveis ou qualquer área onde o…">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Documentação: Componente Acordeão (Accordion)", "description": "O componente acordeão permite mostrar ou esconder conteúdo ao clicar em um cabeçalho. É útil para FAQs, menus, seções colapsáveis ou qualquer área onde o…", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/Snippets/acordeao-com-js.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/Snippets/acordeao-com-js.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
 
     <article>
-        <h2 id="-documenta-o-componente-acorde-o-accordion-">📚 Documentação: Componente Acordeão (Accordion)</h2>
-        <h3 id="-objetivo">🎯 Objetivo</h3>
+        <h1 id="-documenta-o-componente-acorde-o-accordion-">📚 Documentação: Componente Acordeão (Accordion)</h1>
+        <h2 id="-objetivo">🎯 Objetivo</h2>
         <p>O componente acordeão permite <strong>mostrar ou esconder conteúdo</strong> ao clicar em um cabeçalho. É útil
             para FAQs, menus, seções colapsáveis ou qualquer área onde o conteúdo precisa ser organizado de forma
             compacta.</p>
         <hr>
-        <h3 id="-funcionamento">🧠 Funcionamento</h3>
+        <h2 id="-funcionamento">🧠 Funcionamento</h2>
         <p>O acordeão é ativado por elementos com a classe <code>.toggleAccordionDefault</code>. Ao clicar, ele alterna
             a visibilidade do conteúdo imediatamente abaixo.</p>
         <hr>
-        <h3 id="-estrutura-html-esperada">🧩 Estrutura HTML esperada</h3>
+        <h2 id="-estrutura-html-esperada">🧩 Estrutura HTML esperada</h2>
         <pre><code class="lang-html">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"toggleAccordionDefault"</span>&gt;Título da Seção&lt;/<span class="hljs-keyword">div</span>&gt;
 &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"accordionContent"</span>&gt;Conteúdo escondido&lt;/<span class="hljs-keyword">div</span>&gt;
 </code></pre>
@@ -32,7 +53,7 @@
             <li>O segundo <code>&lt;div&gt;</code> é o <strong>conteúdo</strong> que será expandido ou recolhido.</li>
         </ul>
         <hr>
-        <h3 id="-estilo-css-b-sico">🎨 Estilo CSS básico</h3>
+        <h2 id="-estilo-css-b-sico">🎨 Estilo CSS básico</h2>
         <pre><code class="lang-css"><span class="hljs-selector-class">.toggleAccordionDefault</span> {
   <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f1f1f1</span>;
   <span class="hljs-attribute">padding</span>: <span class="hljs-number">15px</span>;
@@ -62,7 +83,7 @@
                     cabeçalho</strong>.</li>
         </ul>
         <hr>
-        <h3 id="-c-digo-javascript">⚙️ Código JavaScript</h3>
+        <h2 id="-c-digo-javascript">⚙️ Código JavaScript</h2>
         <pre><code class="lang-js"><span class="hljs-keyword">var</span> activeAccordion = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">".toggleAccordionDefault"</span>);
 
 activeAccordion.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">activeAccordions</span>) </span>{
@@ -73,7 +94,7 @@ activeAccordion.forEach(<span class="hljs-function"><span class="hljs-keyword">f
   });
 });
 </code></pre>
-        <h4 id="explica-o-passo-a-passo-">Explicação passo a passo:</h4>
+        <h3 id="explica-o-passo-a-passo-">Explicação passo a passo:</h3>
         <ul>
             <li>Seleciona todos os elementos com <code>.toggleAccordionDefault</code></li>
             <li>Para cada um, adiciona um evento de clique</li>
@@ -85,7 +106,7 @@ activeAccordion.forEach(<span class="hljs-function"><span class="hljs-keyword">f
             </li>
         </ul>
         <hr>
-        <h3 id="-boas-pr-ticas">💡 Boas práticas</h3>
+        <h2 id="-boas-pr-ticas">💡 Boas práticas</h2>
         <ul>
             <li>Use títulos claros e objetivos nos cabeçalhos.</li>
             <li>Mantenha o conteúdo conciso para facilitar a leitura.</li>
@@ -97,8 +118,8 @@ activeAccordion.forEach(<span class="hljs-function"><span class="hljs-keyword">f
     </article>
 
     <article>
-        <h2 id="-html-css-js-para-o-acorde-o">🧪 HTML + CSS + JS para o acordeão</h2>
-        <h3 id="-exemplo-completo">Exemplo completo</h3>
+        <h1 id="-html-css-js-para-o-acorde-o">🧪 HTML + CSS + JS para o acordeão</h1>
+        <h2 id="-exemplo-completo">Exemplo completo</h2>
         <pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"pt-br"</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>

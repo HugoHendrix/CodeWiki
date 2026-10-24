@@ -4,10 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>CSS Carousels: carrosséis só com CSS | CodeWiki</title>
+    <meta name="description" content="O artigo CSS Carousels do CSS-Tricks apresenta uma abordagem moderna para criar carrosséis utilizando apenas CSS, aproveitando recursos recentes como…">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/CSS/carousels.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="CSS Carousels: carrosséis só com CSS | CodeWiki">
+    <meta property="og:description" content="O artigo CSS Carousels do CSS-Tricks apresenta uma abordagem moderna para criar carrosséis utilizando apenas CSS, aproveitando recursos recentes como…">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/CSS/carousels.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CSS Carousels: carrosséis só com CSS | CodeWiki">
+    <meta name="twitter:description" content="O artigo CSS Carousels do CSS-Tricks apresenta uma abordagem moderna para criar carrosséis utilizando apenas CSS, aproveitando recursos recentes como…">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "CSS Carousels: carrosséis só com CSS", "description": "O artigo CSS Carousels do CSS-Tricks apresenta uma abordagem moderna para criar carrosséis utilizando apenas CSS, aproveitando recursos recentes como…", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/CSS/carousels.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/CSS/carousels.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
@@ -15,7 +36,7 @@
     <p>O artigo <a href="https://css-tricks.com/css-carousels/?ref=dailydev" target="_blank" rel="noopener noreferrer">CSS Carousels</a> do CSS-Tricks apresenta
         uma abordagem moderna para criar carrosséis utilizando apenas CSS, aproveitando recursos recentes como botões de
         rolagem e marcadores de rolagem, introduzidos na especificação CSS Overflow Module Level 5.</p>
-    <h3 id="🧱-estrutura-básica">🧱 Estrutura Básica</h3>
+    <h1 id="🧱-estrutura-básica">🧱 Estrutura Básica</h1>
     <p>A estrutura HTML é composta por uma lista não ordenada (<code>&lt;ul&gt;</code>) com itens
         (<code>&lt;li&gt;</code>) representando os slides:</p>
     <pre><code class="language-html">&lt;ul class=&quot;carousel&quot;&gt;
@@ -36,7 +57,7 @@
   gap: 2rem;
 }
 </code></pre>
-    <h3 id="🎯-scroll-snapping">🎯 Scroll Snapping</h3>
+    <h1 id="🎯-scroll-snapping">🎯 Scroll Snapping</h1>
     <p>Para garantir que a rolagem pare exatamente em cada slide, utiliza-se o <code>scroll-snap-type</code> no
         contêiner e <code>scroll-snap-align</code> nos itens:(<a
             href="https://css-tricks.com/how-to-make-a-css-only-carousel/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer"
@@ -50,7 +71,7 @@
 }
 </code></pre>
     <p>Isso proporciona uma experiência de rolagem suave e precisa, alinhando cada slide ao centro do contêiner.</p>
-    <h3 id="🧭-botões-de-rolagem">🧭 Botões de Rolagem</h3>
+    <h1 id="🧭-botões-de-rolagem">🧭 Botões de Rolagem</h1>
     <p>O CSS introduz pseudo-elementos <code>::scroll-button(left)</code> e <code>::scroll-button(right)</code> para
         criar botões de navegação sem JavaScript:(<a href="https://css-tricks.com/css-carousels/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer"
             title="CSS Carousels">CSS-Tricks</a>)</p>
@@ -66,7 +87,7 @@
         funcionalidade está atualmente disponível apenas no Chrome, conforme mencionado no artigo.(<a
             href="https://css-tricks.com/css-only-carousel/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer"
             title="CSS-Only Carousel">CSS-Tricks</a>)</p>
-    <h3 id="🔘-marcadores-de-rolagem">🔘 Marcadores de Rolagem</h3>
+    <h1 id="🔘-marcadores-de-rolagem">🔘 Marcadores de Rolagem</h1>
     <p>Os marcadores de rolagem, semelhantes aos pontos indicadores de slides, são implementados com os pseudo-elementos
         <code>::scroll-marker-group</code> e <code>::scroll-marker</code>:(<a
             href="https://css-tricks.com/css-carousels/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" title="CSS Carousels">CSS-Tricks</a>)
@@ -86,12 +107,12 @@
 </code></pre>
     <p>Esses marcadores permitem que o usuário saiba em qual slide está e navegue diretamente para um slide específico.
     </p>
-    <h3 id="⚠️-considerações-de-compatibilidade">⚠️ Considerações de Compatibilidade</h3>
+    <h1 id="⚠️-considerações-de-compatibilidade">⚠️ Considerações de Compatibilidade</h1>
     <p>Embora esses recursos sejam poderosos, é crucial considerar a compatibilidade entre navegadores. Atualmente, os
         botões e marcadores de rolagem são suportados apenas no Chrome. Para garantir uma experiência consistente em
         todos os navegadores, pode ser necessário implementar soluções alternativas ou utilizar JavaScript para replicar
         essas funcionalidades.</p>
-    <h3 id="🔗-recursos-adicionais">🔗 Recursos Adicionais</h3>
+    <h1 id="🔗-recursos-adicionais">🔗 Recursos Adicionais</h1>
     <ul>
         <li><a href="https://www.w3.org/TR/css-overflow-3/" target="_blank" rel="noopener noreferrer">CSS Overflow Module Level 5 Specification</a></li>
         <li><a href="https://css-tricks.com/css-carousels/?ref=dailydev" target="_blank" rel="noopener noreferrer">Artigo Original no CSS-Tricks</a></li>

@@ -4,15 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>CRUD explicado em JavaScript: DOM, arrays e eventos | CodeWiki</title>
+    <meta name="description" content="Este CRUD demonstra conceitos fundamentais do JavaScript moderno: manipulação de DOM, arrays, objetos, eventos, APIs nativas e programação funcional!">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/Anota%C3%A7%C3%B5es/crud-explicado.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="CRUD explicado em JavaScript: DOM, arrays e eventos | CodeWiki">
+    <meta property="og:description" content="Este CRUD demonstra conceitos fundamentais do JavaScript moderno: manipulação de DOM, arrays, objetos, eventos, APIs nativas e programação funcional!">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/Anota%C3%A7%C3%B5es/crud-explicado.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CRUD explicado em JavaScript: DOM, arrays e eventos | CodeWiki">
+    <meta name="twitter:description" content="Este CRUD demonstra conceitos fundamentais do JavaScript moderno: manipulação de DOM, arrays, objetos, eventos, APIs nativas e programação funcional!">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "CRUD explicado em JavaScript: DOM, arrays e eventos", "description": "Este CRUD demonstra conceitos fundamentais do JavaScript moderno: manipulação de DOM, arrays, objetos, eventos, APIs nativas e programação funcional!", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/Anota%C3%A7%C3%B5es/crud-explicado.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/Anota%C3%A7%C3%B5es/crud-explicado.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
-    <h2 id="📄-estrutura-html"><strong>📄 ESTRUTURA HTML</strong></h2>
-    <h3 id="1-cabeçalho-e-meta-tags"><strong>1. Cabeçalho e Meta Tags</strong></h3>
+    <h1 id="📄-estrutura-html"><strong>📄 ESTRUTURA HTML</strong></h1>
+    <h2 id="1-cabeçalho-e-meta-tags"><strong>1. Cabeçalho e Meta Tags</strong></h2>
     <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;pt-BR&quot;&gt;
 &lt;head&gt;
@@ -26,7 +47,7 @@
         <li><code>charset=&quot;UTF-8&quot;</code>: Suporte a caracteres especiais e acentos</li>
         <li><code>viewport</code>: Torna o site responsivo em dispositivos móveis</li>
     </ul>
-    <h3 id="2-seção-de-estatísticas"><strong>2. Seção de Estatísticas</strong></h3>
+    <h2 id="2-seção-de-estatísticas"><strong>2. Seção de Estatísticas</strong></h2>
     <pre><code class="language-html">&lt;div class=&quot;stats&quot;&gt;
     &lt;div class=&quot;stat-card&quot;&gt;
         &lt;div class=&quot;stat-number&quot; id=&quot;totalProdutos&quot;&gt;0&lt;/div&gt;
@@ -45,7 +66,7 @@
             JavaScript acessar e atualizar os valores</li>
         <li>Os valores iniciais são &quot;0&quot; e &quot;R$ 0,00&quot; que serão atualizados dinamicamente</li>
     </ul>
-    <h3 id="3-formulário-principal"><strong>3. Formulário Principal</strong></h3>
+    <h2 id="3-formulário-principal"><strong>3. Formulário Principal</strong></h2>
     <pre><code class="language-html">&lt;form id=&quot;produtoForm&quot;&gt;
     &lt;div class=&quot;form-row&quot;&gt;
         &lt;div class=&quot;form-group&quot;&gt;
@@ -64,7 +85,7 @@
         <li><code>for=&quot;nome&quot;</code>: Liga o label ao input correspondente</li>
         <li><code>type=&quot;number&quot; step=&quot;0.01&quot;</code>: Para preços com centavos</li>
     </ul>
-    <h3 id="4-sistema-de-busca"><strong>4. Sistema de Busca</strong></h3>
+    <h2 id="4-sistema-de-busca"><strong>4. Sistema de Busca</strong></h2>
     <pre><code class="language-html">&lt;div class=&quot;search-container&quot;&gt;
     &lt;input type=&quot;text&quot; class=&quot;search-input&quot; id=&quot;searchInput&quot; placeholder=&quot;🔍 Buscar...&quot;&gt;
     &lt;select id=&quot;filterCategoria&quot;&gt;
@@ -78,7 +99,7 @@
         <li><code>id=&quot;searchInput&quot;</code>: JavaScript monitora mudanças neste campo</li>
         <li><code>id=&quot;filterCategoria&quot;</code>: Filtro adicional por categoria</li>
     </ul>
-    <h3 id="5-tabela-de-dados"><strong>5. Tabela de Dados</strong></h3>
+    <h2 id="5-tabela-de-dados"><strong>5. Tabela de Dados</strong></h2>
     <pre><code class="language-html">&lt;table id=&quot;produtosTable&quot;&gt;
     &lt;thead&gt;
         &lt;tr&gt;
@@ -98,8 +119,8 @@
         <li><code>tbody</code>: Corpo da tabela onde os dados são inseridos</li>
     </ul>
     <hr>
-    <h2 id="⚡-código-javascript-detalhado"><strong>⚡ CÓDIGO JAVASCRIPT DETALHADO</strong></h2>
-    <h3 id="1-variáveis-globais-e-estado"><strong>1. Variáveis Globais e Estado</strong></h3>
+    <h1 id="⚡-código-javascript-detalhado"><strong>⚡ CÓDIGO JAVASCRIPT DETALHADO</strong></h1>
+    <h2 id="1-variáveis-globais-e-estado"><strong>1. Variáveis Globais e Estado</strong></h2>
     <pre><code class="language-javascript">let produtos = [];
 let editandoId = null;
 </code></pre>
@@ -108,7 +129,7 @@ let editandoId = null;
         <li><code>produtos = []</code>: Array que armazena todos os produtos na memória</li>
         <li><code>editandoId = null</code>: Controla se estamos editando (null = modo criar, ID = modo editar)</li>
     </ul>
-    <h3 id="2-captura-de-elementos-dom"><strong>2. Captura de Elementos DOM</strong></h3>
+    <h2 id="2-captura-de-elementos-dom"><strong>2. Captura de Elementos DOM</strong></h2>
     <pre><code class="language-javascript">const form = document.getElementById(&#39;produtoForm&#39;);
 const tbody = document.getElementById(&#39;produtosBody&#39;);
 const submitBtn = document.getElementById(&#39;submitBtn&#39;);
@@ -120,7 +141,7 @@ const submitBtn = document.getElementById(&#39;submitBtn&#39;);
         <li>Melhora performance (não precisa buscar no DOM toda vez)</li>
         <li>Facilita manutenção do código</li>
     </ul>
-    <h3 id="3-event-listeners"><strong>3. Event Listeners</strong></h3>
+    <h2 id="3-event-listeners"><strong>3. Event Listeners</strong></h2>
     <pre><code class="language-javascript">form.addEventListener(&#39;submit&#39;, handleSubmit);
 cancelBtn.addEventListener(&#39;click&#39;, cancelarEdicao);
 searchInput.addEventListener(&#39;input&#39;, filtrarProdutos);
@@ -133,7 +154,7 @@ filterCategoria.addEventListener(&#39;change&#39;, filtrarProdutos);
         <li><code>input</code>: Toda vez que usuário digita na busca</li>
         <li><code>change</code>: Quando categoria do filtro muda</li>
     </ul>
-    <h3 id="4-função-createupdate---handlesubmit"><strong>4. Função CREATE/UPDATE - handleSubmit</strong></h3>
+    <h2 id="4-função-createupdate---handlesubmit"><strong>4. Função CREATE/UPDATE - handleSubmit</strong></h2>
     <pre><code class="language-javascript">function handleSubmit(e) {
     e.preventDefault(); // Impede recarregamento da página
     
@@ -174,7 +195,7 @@ filterCategoria.addEventListener(&#39;change&#39;, filtrarProdutos);
         <li><code>parseFloat()</code>: Converte string para número decimal</li>
         <li><code>findIndex()</code>: Encontra posição do produto no array</li>
     </ul>
-    <h3 id="5-função-read---renderizartabela"><strong>5. Função READ - renderizarTabela</strong></h3>
+    <h2 id="5-função-read---renderizartabela"><strong>5. Função READ - renderizarTabela</strong></h2>
     <pre><code class="language-javascript">function renderizarTabela(produtosFiltrados = produtos) {
     if (produtosFiltrados.length === 0) {
         tbody.innerHTML = `&lt;tr&gt;&lt;td colspan=&quot;7&quot; class=&quot;empty-state&quot;&gt;Mensagem&lt;/td&gt;&lt;/tr&gt;`;
@@ -208,7 +229,7 @@ filterCategoria.addEventListener(&#39;change&#39;, filtrarProdutos);
             texto padrão</li>
         <li><strong>onclick inline</strong>: Chama função JavaScript diretamente do HTML</li>
     </ul>
-    <h3 id="6-função-update---editarproduto"><strong>6. Função UPDATE - editarProduto</strong></h3>
+    <h2 id="6-função-update---editarproduto"><strong>6. Função UPDATE - editarProduto</strong></h2>
     <pre><code class="language-javascript">function editarProduto(id) {
     const produto = produtos.find(p =&gt; p.id === id); // Encontra produto pelo ID
     if (!produto) return; // Se não encontrar, sai da função
@@ -237,7 +258,7 @@ filterCategoria.addEventListener(&#39;change&#39;, filtrarProdutos);
         <li><strong>DOM manipulation</strong>: Altera valores dos campos do formulário</li>
         <li><strong>scrollIntoView()</strong>: API para scroll suave até elemento</li>
     </ul>
-    <h3 id="7-função-delete---excluirproduto"><strong>7. Função DELETE - excluirProduto</strong></h3>
+    <h2 id="7-função-delete---excluirproduto"><strong>7. Função DELETE - excluirProduto</strong></h2>
     <pre><code class="language-javascript">function excluirProduto(id) {
     if (confirm(&#39;Tem certeza que deseja excluir este produto?&#39;)) {
         produtos = produtos.filter(p =&gt; p.id !== id); // Remove produto do array
@@ -257,7 +278,7 @@ filterCategoria.addEventListener(&#39;change&#39;, filtrarProdutos);
         <li><strong>Array.filter()</strong>: Cria novo array sem o elemento removido</li>
         <li><strong>Verificação de estado</strong>: Se estava editando produto excluído, limpa formulário</li>
     </ul>
-    <h3 id="8-sistema-de-filtros"><strong>8. Sistema de Filtros</strong></h3>
+    <h2 id="8-sistema-de-filtros"><strong>8. Sistema de Filtros</strong></h2>
     <pre><code class="language-javascript">function filtrarProdutos() {
     const termo = searchInput.value.toLowerCase(); // Busca case-insensitive
     const categoria = filterCategoria.value;
@@ -282,7 +303,7 @@ filterCategoria.addEventListener(&#39;change&#39;, filtrarProdutos);
         <li><strong>Operador lógico</strong>: <code>(A || B) &amp;&amp; C</code> - (nome OU categoria) E
             filtro-categoria</li>
     </ul>
-    <h3 id="9-funções-utilitárias"><strong>9. Funções Utilitárias</strong></h3>
+    <h2 id="9-funções-utilitárias"><strong>9. Funções Utilitárias</strong></h2>
     <pre><code class="language-javascript">// Gerar ID único baseado em timestamp + random
 function gerarId() {
     return Date.now() + Math.random();
@@ -307,7 +328,7 @@ function formatarPreco(preco) {
         <li><code>toLocaleDateString()</code>: Formatação de data localizada</li>
         <li><code>Intl.NumberFormat</code>: API de formatação internacional de números/moedas</li>
     </ul>
-    <h3 id="10-atualização-de-estatísticas"><strong>10. Atualização de Estatísticas</strong></h3>
+    <h2 id="10-atualização-de-estatísticas"><strong>10. Atualização de Estatísticas</strong></h2>
     <pre><code class="language-javascript">function atualizarEstatisticas() {
     const total = produtos.length; // Conta elementos do array
     const valorTotal = produtos.reduce((sum, produto) =&gt; sum + produto.preco, 0);
@@ -324,8 +345,8 @@ function formatarPreco(preco) {
         <li><strong>Função</strong>: <code>sum + produto.preco</code> - soma preço ao acumulador</li>
     </ul>
     <hr>
-    <h2 id="🔄-fluxo-completo-do-crud"><strong>🔄 FLUXO COMPLETO DO CRUD</strong></h2>
-    <h3 id="adicionar-produto"><strong>Adicionar Produto:</strong></h3>
+    <h1 id="🔄-fluxo-completo-do-crud"><strong>🔄 FLUXO COMPLETO DO CRUD</strong></h1>
+    <h2 id="adicionar-produto"><strong>Adicionar Produto:</strong></h2>
     <ol>
         <li>Usuário preenche formulário</li>
         <li>Clica &quot;Adicionar&quot; → dispara <code>handleSubmit</code></li>
@@ -334,7 +355,7 @@ function formatarPreco(preco) {
         <li><code>renderizarTabela()</code> atualiza interface</li>
         <li><code>atualizarEstatisticas()</code> recalcula totais</li>
     </ol>
-    <h3 id="editar-produto"><strong>Editar Produto:</strong></h3>
+    <h2 id="editar-produto"><strong>Editar Produto:</strong></h2>
     <ol>
         <li>Usuário clica &quot;Editar&quot; → chama <code>editarProduto(id)</code></li>
         <li>Formulário é preenchido com dados existentes</li>
@@ -344,14 +365,14 @@ function formatarPreco(preco) {
         <li>Produto existente é substituído no array</li>
         <li>Interface é atualizada</li>
     </ol>
-    <h3 id="excluir-produto"><strong>Excluir Produto:</strong></h3>
+    <h2 id="excluir-produto"><strong>Excluir Produto:</strong></h2>
     <ol>
         <li>Usuário clica &quot;Excluir&quot; → chama <code>excluirProduto(id)</code></li>
         <li><code>confirm()</code> pede confirmação</li>
         <li>Se confirmado, <code>filter()</code> remove do array</li>
         <li>Interface é atualizada</li>
     </ol>
-    <h3 id="buscarfiltrar"><strong>Buscar/Filtrar:</strong></h3>
+    <h2 id="buscarfiltrar"><strong>Buscar/Filtrar:</strong></h2>
     <ol>
         <li>Usuário digita → dispara <code>filtrarProdutos</code></li>
         <li>Array é filtrado por critérios</li>

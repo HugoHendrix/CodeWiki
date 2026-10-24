@@ -4,23 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>Atributos de Validação Nativos | CodeWiki</title>
+    <meta name="description" content="Os navegadores modernos possuem uma validação de formulários interna poderosa, que pode ser usada para garantir que os dados inseridos pelos usuários…">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/HTML/valida-form.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Atributos de Validação Nativos | CodeWiki">
+    <meta property="og:description" content="Os navegadores modernos possuem uma validação de formulários interna poderosa, que pode ser usada para garantir que os dados inseridos pelos usuários…">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/HTML/valida-form.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Atributos de Validação Nativos | CodeWiki">
+    <meta name="twitter:description" content="Os navegadores modernos possuem uma validação de formulários interna poderosa, que pode ser usada para garantir que os dados inseridos pelos usuários…">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Atributos de Validação Nativos", "description": "Os navegadores modernos possuem uma validação de formulários interna poderosa, que pode ser usada para garantir que os dados inseridos pelos usuários…", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/HTML/valida-form.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/HTML/valida-form.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
-    <h3 id="validação-de-formulários-com-atributos-html-nativos"><strong>Validação de Formulários com Atributos HTML
-            Nativos</strong></h3>
+    <h2 id="validação-de-formulários-com-atributos-html-nativos"><strong>Validação de Formulários com Atributos HTML
+            Nativos</strong></h2>
     <p>Os navegadores modernos possuem uma validação de formulários interna poderosa, que pode ser usada para garantir
         que os dados inseridos pelos usuários sejam válidos antes de enviar o formulário. Isso elimina a necessidade de
         bibliotecas JavaScript pesadas para validação básica. Vamos explorar os principais atributos HTML nativos que
         você pode usar para validar formulários.</p>
     <hr>
-    <h2 id="atributos-de-validação-nativos"><strong>Atributos de Validação Nativos</strong></h2>
+    <h1 id="atributos-de-validação-nativos"><strong>Atributos de Validação Nativos</strong></h1>
     <p>Aqui estão alguns dos atributos HTML mais úteis para validação de formulários:</p>
-    <h3 id="1-required"><strong>1. <code>required</code></strong></h3>
+    <h2 id="1-required"><strong>1. <code>required</code></strong></h2>
     <ul>
         <li><strong>O que faz</strong>: Define que o campo é obrigatório.</li>
         <li><strong>Exemplo</strong>:
@@ -28,7 +49,7 @@
     </code></pre>
         </li>
     </ul>
-    <h3 id="2-type"><strong>2. <code>type</code></strong></h3>
+    <h2 id="2-type"><strong>2. <code>type</code></strong></h2>
     <ul>
         <li><strong>O que faz</strong>: Define o tipo de entrada esperada (e-mail, número, URL, etc.).</li>
         <li><strong>Exemplos</strong>:
@@ -38,7 +59,7 @@
     </code></pre>
         </li>
     </ul>
-    <h3 id="3-min-e-max"><strong>3. <code>min</code> e <code>max</code></strong></h3>
+    <h2 id="3-min-e-max"><strong>3. <code>min</code> e <code>max</code></strong></h2>
     <ul>
         <li><strong>O que fazem</strong>: Define os valores mínimo e máximo para campos numéricos ou de data.</li>
         <li><strong>Exemplos</strong>:
@@ -47,7 +68,7 @@
     </code></pre>
         </li>
     </ul>
-    <h3 id="4-minlength-e-maxlength"><strong>4. <code>minlength</code> e <code>maxlength</code></strong></h3>
+    <h2 id="4-minlength-e-maxlength"><strong>4. <code>minlength</code> e <code>maxlength</code></strong></h2>
     <ul>
         <li><strong>O que fazem</strong>: Define o comprimento mínimo e máximo do texto.</li>
         <li><strong>Exemplos</strong>:
@@ -55,7 +76,7 @@
     </code></pre>
         </li>
     </ul>
-    <h3 id="5-pattern"><strong>5. <code>pattern</code></strong></h3>
+    <h2 id="5-pattern"><strong>5. <code>pattern</code></strong></h2>
     <ul>
         <li><strong>O que faz</strong>: Define uma expressão regular para validar o formato do campo.</li>
         <li><strong>Exemplo</strong>:
@@ -63,7 +84,7 @@
     </code></pre>
         </li>
     </ul>
-    <h3 id="6-step"><strong>6. <code>step</code></strong></h3>
+    <h2 id="6-step"><strong>6. <code>step</code></strong></h2>
     <ul>
         <li><strong>O que faz</strong>: Define o incremento para campos numéricos ou de data/hora.</li>
         <li><strong>Exemplo</strong>:
@@ -71,7 +92,7 @@
     </code></pre>
         </li>
     </ul>
-    <h3 id="7-novalidate"><strong>7. <code>novalidate</code></strong></h3>
+    <h2 id="7-novalidate"><strong>7. <code>novalidate</code></strong></h2>
     <ul>
         <li><strong>O que faz</strong>: Desativa a validação nativa do formulário (útil para formulários que usam
             validação personalizada).</li>
@@ -84,7 +105,7 @@
         </li>
     </ul>
     <hr>
-    <h2 id="exemplo-completo-de-formulário-validado"><strong>Exemplo Completo de Formulário Validado</strong></h2>
+    <h1 id="exemplo-completo-de-formulário-validado"><strong>Exemplo Completo de Formulário Validado</strong></h1>
     <p>Aqui está um exemplo de formulário que usa vários atributos de validação nativos:</p>
     <pre><code class="language-html">&lt;!DOCTYPE html&gt;
     &lt;html lang=&quot;pt-BR&quot;&gt;
@@ -133,7 +154,7 @@
     &lt;/html&gt;
     </code></pre>
     <hr>
-    <h2 id="explicação-do-código"><strong>Explicação do Código</strong></h2>
+    <h1 id="explicação-do-código"><strong>Explicação do Código</strong></h1>
     <ol>
         <li>
             <p><strong>Validação Nativa</strong>:</p>
@@ -159,7 +180,7 @@
         </li>
     </ol>
     <hr>
-    <h2 id="vantagens-da-validação-nativa"><strong>Vantagens da Validação Nativa</strong></h2>
+    <h1 id="vantagens-da-validação-nativa"><strong>Vantagens da Validação Nativa</strong></h1>
     <ol>
         <li>
             <p><strong>Simplicidade</strong>:</p>
@@ -187,7 +208,7 @@
         </li>
     </ol>
     <hr>
-    <h2 id="personalizando-mensagens-de-erro"><strong>Personalizando Mensagens de Erro</strong></h2>
+    <h1 id="personalizando-mensagens-de-erro"><strong>Personalizando Mensagens de Erro</strong></h1>
     <p>Se você quiser personalizar as mensagens de erro, pode usar JavaScript:</p>
     <pre><code class="language-javascript">document.querySelector(&#39;form&#39;).addEventListener(&#39;submit&#39;, (event) =&gt; {
         const campo = document.getElementById(&#39;cep&#39;);
@@ -201,7 +222,7 @@
     });
     </code></pre>
     <hr>
-    <h2 id="conclusão"><strong>Conclusão</strong></h2>
+    <h1 id="conclusão"><strong>Conclusão</strong></h1>
     <p>A validação de formulários com atributos HTML nativos é uma maneira eficiente e poderosa de garantir que os dados
         inseridos pelos usuários sejam válidos. Use esses atributos para simplificar seu código e melhorar a experiência
         do usuário.</p>

@@ -4,21 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="../paginas.css">
     <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
-    <title>CodeWiki</title>
+    <title>O que é :focus-visible ? | CodeWiki</title>
+    <meta name="description" content="A propriedade CSS :focus-visible é uma maneira inteligente de aplicar estilos de foco apenas quando eles são realmente úteis, como quando um usuário está…">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/Design-Dev/focus-visible.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="O que é :focus-visible ? | CodeWiki">
+    <meta property="og:description" content="A propriedade CSS :focus-visible é uma maneira inteligente de aplicar estilos de foco apenas quando eles são realmente úteis, como quando um usuário está…">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/Design-Dev/focus-visible.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="O que é :focus-visible ? | CodeWiki">
+    <meta name="twitter:description" content="A propriedade CSS :focus-visible é uma maneira inteligente de aplicar estilos de foco apenas quando eles são realmente úteis, como quando um usuário está…">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "O que é :focus-visible ?", "description": "A propriedade CSS :focus-visible é uma maneira inteligente de aplicar estilos de foco apenas quando eles são realmente úteis, como quando um usuário está…", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/Design-Dev/focus-visible.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/Design-Dev/focus-visible.html", "dateModified": "2026-10-24", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
 </head>
 
 <body>
 
-    <h3 id="usando-focus-visible-para-melhorar-a-acessibilidade">Usando <code>:focus-visible</code> para Melhorar a
-        Acessibilidade</h3>
+    <h2 id="usando-focus-visible-para-melhorar-a-acessibilidade">Usando <code>:focus-visible</code> para Melhorar a
+        Acessibilidade</h2>
     <p>A propriedade CSS <code>:focus-visible</code> é uma maneira inteligente de aplicar estilos de foco apenas quando
         eles são realmente úteis, como quando um usuário está navegando com o teclado. Isso ajuda a criar interfaces
         mais acessíveis e evita estilos desnecessários quando o foco é acionado por um mouse ou toque.</p>
     <hr>
-    <h2 id="o-que-é-focus-visible"><strong>O que é <code>:focus-visible</code>?</strong></h2>
+    <h1 id="o-que-é-focus-visible"><strong>O que é <code>:focus-visible</code>?</strong></h1>
     <ul>
         <li><strong>Funcionalidade</strong>: Aplica estilos de foco apenas quando o foco é acionado por meio de
             navegação por teclado (como a tecla <code>Tab</code>).</li>
@@ -26,13 +47,13 @@
             o mouse ou toque, mantendo a interface mais limpa e acessível.</li>
     </ul>
     <hr>
-    <h2 id="exemplo-de-uso"><strong>Exemplo de Uso</strong></h2>
-    <h3 id="html"><strong>HTML</strong></h3>
+    <h1 id="exemplo-de-uso"><strong>Exemplo de Uso</strong></h1>
+    <h2 id="html"><strong>HTML</strong></h2>
     <pre><code class="language-html">&lt;button&gt;Clique aqui&lt;/button&gt;
 &lt;input type=&quot;text&quot; placeholder=&quot;Digite algo&quot;&gt;
 &lt;a href=&quot;#&quot;&gt;Link de exemplo&lt;/a&gt;
 </code></pre>
-    <h3 id="css"><strong>CSS</strong></h3>
+    <h2 id="css"><strong>CSS</strong></h2>
     <pre><code class="language-css">/* Estilo padrão para todos os elementos */
 button, input, a {
   padding: 10px 20px;
@@ -52,7 +73,7 @@ a:focus-visible {
 }
 </code></pre>
     <hr>
-    <h2 id="explicação-do-código"><strong>Explicação do Código</strong></h2>
+    <h1 id="explicação-do-código"><strong>Explicação do Código</strong></h1>
     <ol>
         <li>
             <p><strong>Estilo Padrão</strong>:</p>
@@ -73,7 +94,7 @@ a:focus-visible {
         </li>
     </ol>
     <hr>
-    <h2 id="por-que-usar-focus-visible"><strong>Por que Usar <code>:focus-visible</code>?</strong></h2>
+    <h1 id="por-que-usar-focus-visible"><strong>Por que Usar <code>:focus-visible</code>?</strong></h1>
     <ol>
         <li>
             <p><strong>Melhora a Acessibilidade</strong>:</p>
@@ -97,7 +118,7 @@ a:focus-visible {
         </li>
     </ol>
     <hr>
-    <h2 id="boas-práticas"><strong>Boas Práticas</strong></h2>
+    <h1 id="boas-práticas"><strong>Boas Práticas</strong></h1>
     <ol>
         <li>
             <p><strong>Contraste Adequado</strong>:</p>
@@ -122,7 +143,7 @@ a:focus-visible {
         </li>
     </ol>
     <hr>
-    <h2 id="exemplo-completo"><strong>Exemplo Completo</strong></h2>
+    <h1 id="exemplo-completo"><strong>Exemplo Completo</strong></h1>
     <p>Aqui está o código completo para você testar:</p>
     <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;pt-BR&quot;&gt;
@@ -162,7 +183,7 @@ a:focus-visible {
 &lt;/html&gt;
 </code></pre>
     <hr>
-    <h2 id="conclusão"><strong>Conclusão</strong></h2>
+    <h1 id="conclusão"><strong>Conclusão</strong></h1>
     <p>Usar <code>:focus-visible</code> é uma maneira eficaz de melhorar a acessibilidade e a usabilidade da sua
         interface, garantindo que os estilos de foco sejam aplicados apenas quando necessário. Experimente essa técnica
         em seus projetos e veja a diferença!</p>
