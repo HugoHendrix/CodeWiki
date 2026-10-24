@@ -12,45 +12,50 @@
     <link rel="shortcut icon" href="img/book.png" type="image/x-icon">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="style.css">
+    <script src="busca.js" defer></script>
     <title>Code Wiki | Biblioteca Dev</title>
 </head>
 
 <body>
 
+    <header class="topbar">
+        <button type="button" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"
+            aria-controls="sidebar">☰</button>
+        <a href="index.html" class="topbar-title">📘 CodeWiki</a>
+    </header>
+    <div class="sidebar-overlay" hidden></div>
+
     <div class="container">
         <!-- Barra Lateral -->
-        <nav class="sidebar">
-            <menu>
-                <nav>
-                    <ul>
-                        <h2>Menu</h2>
-                        <li><a href="#anotacao">Anotações</a>
-                            <ul>
-                                <li><a href="#snippets">Snippets</a></li>
-                                <li><a href="#devcrew">The Design.dev Crew</a></li>
-                                <li><a href="#front-side">UX/UI no Front-End</a></li>
-                                <li><a href="#backstage">Backstage da WEB</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#html">HTML</a></li>
-                        <li><a href="#css">CSS</a></li>
-                        <li><a href="#javascript">JavaSript</a></li>
-                        <li><a href="#php">PHP</a></li>
-                        <li><a href="#git-markdown">Git e Markdown</a></li>
-                        <li><a href="#recursos-web">Recursos e Ferramentas</a>
+        <nav class="sidebar" id="sidebar" aria-label="Menu principal">
+            <h2>Menu</h2>
 
-                        </li>
-                        <li><a href="#cursos-online">Cursos de Programação</a></li>
-                        <!-- <li><a href="#bootcamp">Bootcamps de Programação</a></li> -->
-                        <li><a href="#livros">Livros de Programação</a></li>
-                        <li><a href="#projetos">Projetos Mão na Massa</a></li>
-                        <!-- <li><a href="#investimentos">Guia de Investimentos</a></li> -->
-                        <!-- <li><a href="#day-trade">Guia para Day Trading</a></li> -->
-                        <!-- <li><a href="#ads">Analise e Desenvolvimento de Sistemas</a></li> -->
-                        <!-- <li><a href="#livros">Livros de Programação</a></li> -->
+            <div class="search" role="search">
+                <input type="search" id="busca" placeholder="Buscar na wiki…  ( / )" autocomplete="off"
+                    aria-label="Buscar na wiki" aria-autocomplete="list" aria-controls="busca-resultados"
+                    aria-expanded="false" role="combobox">
+                <ul id="busca-resultados" class="search-results" role="listbox" hidden></ul>
+            </div>
+
+            <ul>
+                <li><a href="#anotacao">Anotações</a>
+                    <ul>
+                        <li><a href="#snippets">Snippets</a></li>
+                        <li><a href="#devcrew">The Design.dev Crew</a></li>
+                        <li><a href="#front-side">UX/UI no Front-End</a></li>
+                        <li><a href="#backstage">Backstage da WEB</a></li>
                     </ul>
-                </nav>
-            </menu>
+                </li>
+                <li><a href="#html">HTML</a></li>
+                <li><a href="#css">CSS</a></li>
+                <li><a href="#javascript">JavaScript</a></li>
+                <li><a href="#php">PHP</a></li>
+                <li><a href="#git-markdown">Git e Markdown</a></li>
+                <li><a href="#recursos-web">Recursos e Ferramentas</a></li>
+                <li><a href="#cursos-online">Cursos de Programação</a></li>
+                <li><a href="#livros">Livros de Programação</a></li>
+                <li><a href="#projetos">Projetos Mão na Massa</a></li>
+            </ul>
         </nav>
 
         <!-- Conteúdo Principal -->
@@ -255,7 +260,7 @@
                 <li><a href="HTML/josh-html-skeleton.html">Artigo de Josh W. Comeau: HTML Skeleton</a></li>
                 <li><a href="HTML/melhor-carregamento.html">Documentação: preconnect, prefetch, e preload</a></li>
                 <li><a href="HTML/valida-form.html">Validação de Formulários com Atributos HTML Nativos</a></li>
-                <li><a href="html/popover.html">Popover API (HTML) + Cascade Layers (CSS)</a></li>
+                <li><a href="HTML/popover.html">Popover API (HTML) + Cascade Layers (CSS)</a></li>
 
             </section>
 
@@ -278,7 +283,7 @@
                 <li><a href="CSS/efeito-img.html">50 efeitos de imagem CSS criativos para sites envolventes</a></li>
                 <li><a href="CSS/system-color.html">Cores de Sistema CSS</a></li>
                 <li><a href="CSS/funcoes-css.html">Funções Personalizadas em CSS</a></li>
-                <li><a href="css/backdrop-filter.html">Usando backdrop-filter no CSS</a></li>
+                <li><a href="CSS/backdrop-filter.html">Usando backdrop-filter no CSS</a></li>
                 <li><a href="CSS/inverted.html">Efeito Hover com Raio Invertido em CSS
                     </a></li>
                 <li><a href="CSS/css-arrumado.html">CSS Arrumado</a></li>
@@ -555,74 +560,6 @@
                     <a href="./projeto-dark-souls/README.html">Projeto Dark Souls</a>
                 </li>
             </section>
-
-            <!-- SEÇÃO DOS BOOTCAMPS -->
-            <!-- <section id="bootcamp">
-                <h2>🚩 BOOTCAMPS de Programação</h2>
-                <li><a href="Bootcamps/dio-satander-bootcamp2025/index.html">DIO Bootcamp Santander 2025</a></li>
-
-            </section> -->
-
-            <!-- <hr> -->
-            <!-- SEÇÃO DE INVESTIMENTOS -->
-            <!-- <section id="investimentos">
-                <h2>📊 Guia de Investimentos para Iniciantes</h2>
-                <li><a href="Investimentos/guia.html">Guia para Iniciantes</a></li>
-                <li><a href="Investimentos/estrategia.html">Estratégia de Alocação de Ativos</a></li>
-                <li><a href="Investimentos/segmentos.html">Segmentos de Investimento: Uma Visão Geral</a></li>
-                <li><a href="Investimentos/como-investir.html">Como investir nas melhores ações</a></li>
-                <li><a href="Investimentos/carteira-fiis.html">Avaliar e montar uma carteira de fundos imobiliários
-                        (FIIs)</a></li>
-                <li><a href="Investimentos/etf-internacional.html">Como investir em ETFs internacionais pela B3</a></li>
-                <li><a href="Investimentos/buyandhold.html">Buy & Hold: A Filosofia do Investidor de Longo Prazo</a>
-                </li>
-                <li><a href="Investimentos/cripto-mercado.html">Mercado de Criptomoedas: Uma Revolução Digital</a></li>
-                <li><a href="Investimentos/fii.html">Fundos de Investimento Imobiliário (FIIs)</a></li>
-                <li><a href="Investimentos/renda-fixa.html">Conceitos Fundamentais da Renda Fixa
-                    </a></li>
-                <li><a href="Investimentos/tesouro-direto.html">Conceitos Fundamentais do Tesouro Direto</a></li>
-                <li><a href="Investimentos/analise-accoes.html">Análise de Ações</a></li>
-                <li><a href="Investimentos/horizonte.html">Investindo no Exterior</a></li>
-                <li><a href="Investimentos/contabilidade-pessoal.html">Conceitos Fundamentais da Contabilidade Pessoal
-                    </a></li>
-                <li><a href="Investimentos/mentalidade.html">Mentalidade Vencedora no Longo Prazo</a></li>
-                <li><a href="Investimentos/conceito-fundamental.html">Conceitos Fundamentais de Modelagem Financeira e Valuation</a></li>
-                <li><a href="Investimentos/formula-joel.html">Introdução â Fórmula de Joel Greenblatt</a></li>
-                <li><a href="Investimentos/preparar-investimento.html">Preparando-se para investir em ações</a></li>
-                
-
-            </section>
-
-            <hr>
-            <section>
-                <h2>🔧 Ferramentas para ajudar nos Investimentos</h2>
-                <li><a href="Investimentos/glossario.html">Glossário de Investimentos</a></li>
-                <li><a href="Investimentos/calculadora-base.html">Calculadora de Análise de Ações</a></li>
-            </section>
-
-            <hr> -->
-
-            <!-- SEÇÃO DAY TRADING -->
-            <!-- <section id="day-trade">
-                <h2>💸 Guia Completo: Day Trading</h2>
-                <li><a href="day-trading/day-trade.html">Introdução ao Day Trading</a></li>
-                <li><a href="day-trading/bolsa.html">O que é a Bolsa de Valores?</a></li>
-                <li><a href="day-trading/plano-de-acao-day-trade.html">Plano de ação para Day Trade</a></li>
-
-
-
-            </section> -->
-
-            <!-- <section id="ads">
-                <h2>🎓 ADS - Análise e Desenvolvimento de Sistemas</h2>
-                <h3>📖 Disciplinas</h3>
-                <li><a href="ADS-Unifran/Aplicações-para-a-Internet/aplicacoes-para-internet.html">Aplicações para a Internet</a></li>
-                <li><a href="ADS-Unifran/Computação-e-Informática/computacao-informatica.html">Computação e Informática</a></li>
-                <li><a href="ADS-Unifran/Sistemas-Operacionais/sistemas-operacionais.html">Sistemas Operacionais</a></li>
-                <li><a href="ADS-Unifran/Programacao-de-computadores/programacao-computadores.html">Programação de Computadores</a></li>
-        
-
-             </section> -->
 
         </main>
 
