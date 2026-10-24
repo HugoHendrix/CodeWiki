@@ -22,7 +22,7 @@
         var itens = [];
         var vistos = {};
 
-        function add(titulo, grupo, el, tipo) {
+        function add(titulo, grupo, el, tipo, desc) {
             titulo = limpa(titulo);
             if (!titulo) return;
             var href = el.getAttribute('href');
@@ -36,7 +36,7 @@
                 href: href,
                 alvo: el.target,
                 t: norm(titulo),
-                g: norm(grupo)
+                g: norm(grupo + ' ' + (desc || ''))
             });
         }
 
@@ -59,7 +59,10 @@
                 titulo = tr.cells[0].textContent + ' – ' + titulo;
             }
             var externo = /^https?:\/\//.test(href);
-            add(titulo, grupo, a, externo ? 'externo' : 'pagina');
+            // cards: a descrição também entra na busca
+            var card = a.closest('.card');
+            var p = card && card.querySelector('p');
+            add(titulo, grupo, a, externo ? 'externo' : 'pagina', p ? p.textContent : '');
         });
 
         return itens;
@@ -212,6 +215,9 @@
         }
     }
 
+    var btnBusca = document.querySelector('.search-btn');
+    if (btnBusca) btnBusca.addEventListener('click', function () { input.focus(); });
+
     input.addEventListener('input', render);
     input.addEventListener('focus', function () { if (limpa(input.value)) render(); });
     input.addEventListener('blur', fecha);
@@ -236,7 +242,6 @@
         var tag = (document.activeElement && document.activeElement.tagName) || '';
         if (e.key === '/' && !/^(INPUT|TEXTAREA|SELECT)$/.test(tag) && !e.ctrlKey && !e.metaKey && !e.altKey) {
             e.preventDefault();
-            abreMenu();
             input.focus();
         }
     });

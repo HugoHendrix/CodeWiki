@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-color-scheme="dark">
 
 <head>
     <meta name="description" content="Wiki pessoal com conteúdos de programação, HTML, CSS, JavaScript e mais.">
@@ -10,6 +10,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/book.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
     <link rel="stylesheet" href="style.css">
     <script src="busca.js" defer></script>
@@ -29,13 +32,6 @@
         <!-- Barra Lateral -->
         <nav class="sidebar" id="sidebar" aria-label="Menu principal">
             <h2>Menu</h2>
-
-            <div class="search" role="search">
-                <input type="search" id="busca" placeholder="Buscar na wiki…  ( / )" autocomplete="off"
-                    aria-label="Buscar na wiki" aria-autocomplete="list" aria-controls="busca-resultados"
-                    aria-expanded="false" role="combobox">
-                <ul id="busca-resultados" class="search-results" role="listbox" hidden></ul>
-            </div>
 
             <ul>
                 <li><a href="#anotacao">Anotações</a>
@@ -60,11 +56,30 @@
 
         <!-- Conteúdo Principal -->
         <main class="content">
-            <h1>📘 Bem-vindo ao CodeWiki!</h1>
-            <p>Este repositório tem a finalidade de organizar minhas anotações, dicas e trechos de códigos diversos.
-                <br> É um projeto em constante evolução, então sinta-se à vontade para explorar!
-            </p>
-            <hr>
+            <header class="hero">
+                <p class="crumb">Página inicial <span>/</span> <strong>Biblioteca Dev</strong></p>
+                <h1>CodeWiki</h1>
+                <p class="hero-sub">Minhas anotações, dicas e trechos de código. Um projeto em constante evolução, sinta-se à vontade para explorar.</p>
+
+                <div class="search" role="search">
+                    <input type="search" id="busca" placeholder="Buscar na wiki…" autocomplete="off"
+                        aria-label="Buscar na wiki" aria-autocomplete="list" aria-controls="busca-resultados"
+                        aria-expanded="false" role="combobox">
+                    <button type="button" class="search-btn" aria-label="Buscar" tabindex="-1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+                    <ul id="busca-resultados" class="search-results" role="listbox" hidden></ul>
+                </div>
+
+                <nav class="chips" aria-label="Atalhos">
+                    <a href="#anotacao">Anotações</a>
+                    <a href="#snippets">Snippets</a>
+                    <a href="#html">HTML</a>
+                    <a href="#css">CSS</a>
+                    <a href="#javascript">JavaScript</a>
+                    <a href="#php">PHP</a>
+                    <a href="#git-markdown">Git</a>
+                    <a href="#recursos-web">Recursos</a>
+                </nav>
+            </header>
 
             <!-- ANOTAÇÕES -->
             <section id="anotacao">
@@ -152,101 +167,38 @@
 
                 <br>
                 <h2 id="-ferramentas-para-diagn-stico-de-dns">🛠️ Ferramentas para Diagnóstico de DNS</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Ferramenta</th>
-                            <th>Descrição</th>
-                            <th>Acesso</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>DNSChecker</strong></td>
-                            <td>Permite verificar a propagação de DNS globalmente. Você pode inserir um domínio e ver
-                                como os servidores DNS ao redor do mundo estão respondendo. Ideal para identificar
-                                problemas de resolução ou propagação.</td>
-                            <td><a href="https://dnschecker.org/">dnschecker.org</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>DNSHistory</strong></td>
-                            <td>Exibe o histórico de registros DNS de um domínio. Útil para investigar alterações
-                                suspeitas, rastrear mudanças de IP ou entender o comportamento passado de um site.</td>
-                            <td><a href="https://dnshistory.org/">dnshistory.org</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Chrome Net Internals (DNS)</strong></td>
-                            <td>Ferramenta interna do navegador Chrome que mostra o cache DNS local, permite limpá-lo e
-                                visualizar requisições DNS feitas pelo navegador. Excelente para testes locais e
-                                depuração rápida.</td>
-                            <td><code>chrome://net-internals/#dns</code> (digite diretamente na barra de endereço do
-                                Chrome)</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="cards">
+                    <article class="card">
+                        <h3><a href="https://dnschecker.org/" target="_blank" rel="noopener noreferrer">DNSChecker</a></h3>
+                        <p>Permite verificar a propagação de DNS globalmente. Você pode inserir um domínio e ver como os servidores DNS ao redor do mundo estão respondendo. Ideal para identificar problemas de resolução ou propagação.</p>
+                        <span class="card-url">dnschecker.org</span>
+                    </article>
+                    <article class="card">
+                        <h3><a href="https://dnshistory.org/" target="_blank" rel="noopener noreferrer">DNSHistory</a></h3>
+                        <p>Exibe o histórico de registros DNS de um domínio. Útil para investigar alterações suspeitas, rastrear mudanças de IP ou entender o comportamento passado de um site.</p>
+                        <span class="card-url">dnshistory.org</span>
+                    </article>
+                    <article class="card">
+                        <h3>Chrome Net Internals (DNS)</h3>
+                        <p>Ferramenta interna do navegador Chrome que mostra o cache DNS local, permite limpá-lo e visualizar requisições DNS feitas pelo navegador. Excelente para testes locais e depuração rápida.</p>
+                        <code>chrome://net-internals/#dns</code>
+                    </article>
+                </div>
 
                 <br>
-                <h3 style="text-align: center;">Estudando sobre DNS</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Título</th>
-                            <th>Link</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Artigo sobre DNS</td>
-                            <td><a href="https://www.cloudflare.com/pt-br/learning/dns/what-is-dns/" target="_blank"
-                                    rel="noopener noreferrer">Acessar</a></td>
-                        </tr>
-                        <tr>
-                            <td>O que é ataque DDoS?</td>
-                            <td><a href="https://www.cloudflare.com/pt-br/learning/ddos/what-is-a-ddos-attack/"
-                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
-                        </tr>
-                        <tr>
-                            <td>O que é armazenamento em cache?</td>
-                            <td><a href="https://www.cloudflare.com/pt-br/learning/cdn/what-is-caching/" target="_blank"
-                                    rel="noopener noreferrer">Acessar</a></td>
-                        </tr>
-                        <tr>
-                            <td>Artigo sobre IP e TCP</td>
-                            <td><a href="https://www.cloudflare.com/pt-br/learning/ddos/glossary/tcp-ip/"
-                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
-                        </tr>
-                        <tr>
-                            <td>Artigo sobre HTTP</td>
-                            <td><a href="https://www.cloudflare.com/pt-br/learning/ddos/glossary/hypertext-transfer-protocol-http/"
-                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
-                        </tr>
-                        <tr>
-                            <td>O que é e como funciona DNS</td>
-                            <td><a href="https://www.cloudflare.com/pt-br/learning/dns/what-is-dns/" target="_blank"
-                                    rel="noopener noreferrer">Acessar</a></td>
-                        </tr>
-                        <tr>
-                            <td>Como a velocidade do site impulsiona o SEO</td>
-                            <td><a href="https://www.cloudflare.com/pt-br/learning/performance/how-website-speed-boosts-seo/"
-                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
-                        </tr>
-                        <tr>
-                            <td>Por que a velocidade de um site é importante?</td>
-                            <td><a href="https://www.cloudflare.com/pt-br/learning/performance/why-site-speed-matters/"
-                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
-                        </tr>
-                        <tr>
-                            <td>Dicas para melhorar a velocidade do site</td>
-                            <td><a href="https://www.cloudflare.com/pt-br/learning/performance/speed-up-a-website/"
-                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
-                        </tr>
-                        <tr>
-                            <td>Como a performance do site afeta conversões</td>
-                            <td><a href="https://www.cloudflare.com/pt-br/learning/performance/more/website-performance-conversion-rates/"
-                                    target="_blank" rel="noopener noreferrer">Acessar</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <h3>Estudando sobre DNS</h3>
+                <ul class="link-list">
+                    <li><a href="https://www.cloudflare.com/pt-br/learning/dns/what-is-dns/" target="_blank" rel="noopener noreferrer">Artigo sobre DNS</a></li>
+                    <li><a href="https://www.cloudflare.com/pt-br/learning/ddos/what-is-a-ddos-attack/" target="_blank" rel="noopener noreferrer">O que é ataque DDoS?</a></li>
+                    <li><a href="https://www.cloudflare.com/pt-br/learning/cdn/what-is-caching/" target="_blank" rel="noopener noreferrer">O que é armazenamento em cache?</a></li>
+                    <li><a href="https://www.cloudflare.com/pt-br/learning/ddos/glossary/tcp-ip/" target="_blank" rel="noopener noreferrer">Artigo sobre IP e TCP</a></li>
+                    <li><a href="https://www.cloudflare.com/pt-br/learning/ddos/glossary/hypertext-transfer-protocol-http/" target="_blank" rel="noopener noreferrer">Artigo sobre HTTP</a></li>
+                    <li><a href="https://www.cloudflare.com/pt-br/learning/dns/what-is-dns/" target="_blank" rel="noopener noreferrer">O que é e como funciona DNS</a></li>
+                    <li><a href="https://www.cloudflare.com/pt-br/learning/performance/how-website-speed-boosts-seo/" target="_blank" rel="noopener noreferrer">Como a velocidade do site impulsiona o SEO</a></li>
+                    <li><a href="https://www.cloudflare.com/pt-br/learning/performance/why-site-speed-matters/" target="_blank" rel="noopener noreferrer">Por que a velocidade de um site é importante?</a></li>
+                    <li><a href="https://www.cloudflare.com/pt-br/learning/performance/speed-up-a-website/" target="_blank" rel="noopener noreferrer">Dicas para melhorar a velocidade do site</a></li>
+                    <li><a href="https://www.cloudflare.com/pt-br/learning/performance/more/website-performance-conversion-rates/" target="_blank" rel="noopener noreferrer">Como a performance do site afeta conversões</a></li>
+                </ul>
             </section>
 
 
@@ -345,56 +297,24 @@
                 <h2>📝 Markdown & Documentação</h2>
                 <p>Já, o Markdown é uma linguagem de marcação de texto que
                     permite formatar textos de forma simples.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Link</th>
-                            <th>Descrição</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <a href="https://codebeautify.org/markdown-to-html" target="_blank"
-                                    rel="noopener noreferrer">Markdown to HTML (CodeBeautify)</a>
-                            </td>
-                            <td>
-                                Ferramenta simples para converter rapidamente Markdown em HTML com visualização
-                                instantânea.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="https://markdowneditor.org/" target="_blank"
-                                    rel="noopener noreferrer">MarkdownEditor.org</a>
-                            </td>
-                            <td>
-                                Editor Markdown com visualização lado a lado em tempo real. Ideal para anotações,
-                                READMEs e documentação.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="https://readme.so/pt" target="_blank" rel="noopener noreferrer">Readme.so</a>
-                            </td>
-                            <td>
-                                Construtor de arquivos README.md com blocos pré-formatados. Ideal para projetos open
-                                source e portfólios.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="https://markdowntohtml.com/" target="_blank" rel="noopener noreferrer">Free
-                                    Markdown to HTML Converter</a>
-                            </td>
-                            <td>
-                                Converter Markdown para HTML
-                                Cole ou digite seu markdown e veja-o renderizado como HTML. Baixe ou copie o HTML
-                                resultante.
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="cards">
+                    <article class="card">
+                        <h3><a href="https://codebeautify.org/markdown-to-html" target="_blank" rel="noopener noreferrer">Markdown to HTML (CodeBeautify)</a></h3>
+                        <p>Ferramenta simples para converter rapidamente Markdown em HTML com visualização instantânea.</p>
+                    </article>
+                    <article class="card">
+                        <h3><a href="https://markdowneditor.org/" target="_blank" rel="noopener noreferrer">MarkdownEditor.org</a></h3>
+                        <p>Editor Markdown com visualização lado a lado em tempo real. Ideal para anotações, READMEs e documentação.</p>
+                    </article>
+                    <article class="card">
+                        <h3><a href="https://readme.so/pt" target="_blank" rel="noopener noreferrer">Readme.so</a></h3>
+                        <p>Construtor de arquivos README.md com blocos pré-formatados. Ideal para projetos open source e portfólios.</p>
+                    </article>
+                    <article class="card">
+                        <h3><a href="https://markdowntohtml.com/" target="_blank" rel="noopener noreferrer">Free Markdown to HTML Converter</a></h3>
+                        <p>Converter Markdown para HTML Cole ou digite seu markdown e veja-o renderizado como HTML. Baixe ou copie o HTML resultante.</p>
+                    </article>
+                </div>
             </section>
 
             <hr>
@@ -402,86 +322,48 @@
             <!-- SEÇÃO DE RECURSOS PARA WEB -->
             <section id="recursos-web">
                 <h2>⚙ Recursos e Ferramentas</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Link</th>
-                            <th>Descrição</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><a href="Recursos-Web/documentacao.html">Documentações</a> </td>
-                            <td>Diversas Documentações e Referências Técnicas para Consultas</td>
-                        </tr>
-                        <tr>
-                            <td><a href="Recursos-Web/ilustracao-design.html">Ilustrações e Design</a></td>
-                            <td>Recursos para Design, Ilustrações e Imagens</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="https://www.httrack.com/page/2/" target="_blank"
-                                    rel="noopener noreferrer">httrack.com/page/2</a></td>
-                            <td>É uma ferramenta gratuita e de código aberto para download completo de sites, permitindo
-                                navegá-los offline. É útil para fazer cópias locais para estudo, backup ou análise de
-                                estrutura de sites.</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="https://www.fronteditor.dev/" target="_blank" rel="noopener noreferrer">Front
-                                    end Editor</a></li>
-                            </td>
-                            <td>
-                                Playground online para testar e experimentar código HTML, CSS e JavaScript em tempo
-                                real.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="https://filezilla-project.org/" target="_blank"
-                                    rel="noopener noreferrer">FileZilla</a></li>
-                            </td>
-                            <td>
-                                Software de código aberto para transferência de arquivos via FTP, FTPS e SFTP, com
-                                interface intuitiva e recursos avançados. Amplamente utilizado por desenvolvedores web e
-                                administradores de sistema.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="http://place-hold.it/" target="_blank"
-                                    rel="noopener noreferrer">place-hold.it</a></li>
-                            </td>
-                            <td>
-                                Serviço online que fornece imagens de espaço reservado de forma rápida e fácil para uso
-                                temporário em projetos durante o desenvolvimento. Ideal para preencher layouts até que
-                                as imagens finais estejam disponíveis. </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="http://emojidb.org/" target="_blank" rel="noopener noreferrer">emojidb.org</a>
-                                
-                            </td>
-                            <td>
-                                Site que oferece uma variedade de emojis e símbolos para uso em comunicações digitais.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="https://layout.bradwoods.io/" target="_blank" rel="noopener noreferrer">CSS Layout Generator</a>
-                            </td>
-                            <td>O CSS Layout Generator é uma ferramenta interativa pra gerar layouts de página usando CSS. Ela permite escolher vários modelos de layout (como grid ou flexbox), ver uma prévia visual e pegar o código CSS/HTML gerado para usar no seu projeto. </td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://design.dev/#tools" target="_blank" rel="noreferrer noopener">Design & Dev Tools For Creators</a></td>
-                            <td>Lista de ferramentas essenciais para criar e manter Design Systems (sistemas de design), destacando a convergência entre design e código (como Storybook, Figma, e frameworks de UI/UX).</td>
-                        </tr>
-                        <tr>
-                            <td><a href="https://www.notion.so/Tutorial-OBS-Studio-2cbd6d7894a2805cbac3dbb1651eb749?source=copy_link" target="_blank" rel="noopener noreferrer">Tutorial e dicas para OBS Studio</a></td>
-                            <td>Um guia prático no Notion que ensina passo a passo como configurar e usar o OBS Studio para gravação e transmissão de vídeos.</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="cards">
+                    <article class="card">
+                        <h3><a href="Recursos-Web/documentacao.html">Documentações</a></h3>
+                        <p>Diversas Documentações e Referências Técnicas para Consultas</p>
+                    </article>
+                    <article class="card">
+                        <h3><a href="Recursos-Web/ilustracao-design.html">Ilustrações e Design</a></h3>
+                        <p>Recursos para Design, Ilustrações e Imagens</p>
+                    </article>
+                    <article class="card">
+                        <h3><a href="https://www.httrack.com/page/2/" target="_blank" rel="noopener noreferrer">httrack.com/page/2</a></h3>
+                        <p>É uma ferramenta gratuita e de código aberto para download completo de sites, permitindo navegá-los offline. É útil para fazer cópias locais para estudo, backup ou análise de estrutura de sites.</p>
+                    </article>
+                    <article class="card">
+                        <h3><a href="https://www.fronteditor.dev/" target="_blank" rel="noopener noreferrer">Front end Editor</a></h3>
+                        <p>Playground online para testar e experimentar código HTML, CSS e JavaScript em tempo real.</p>
+                    </article>
+                    <article class="card">
+                        <h3><a href="https://filezilla-project.org/" target="_blank" rel="noopener noreferrer">FileZilla</a></h3>
+                        <p>Software de código aberto para transferência de arquivos via FTP, FTPS e SFTP, com interface intuitiva e recursos avançados. Amplamente utilizado por desenvolvedores web e administradores de sistema.</p>
+                    </article>
+                    <article class="card">
+                        <h3><a href="http://place-hold.it/" target="_blank" rel="noopener noreferrer">place-hold.it</a></h3>
+                        <p>Serviço online que fornece imagens de espaço reservado de forma rápida e fácil para uso temporário em projetos durante o desenvolvimento. Ideal para preencher layouts até que as imagens finais estejam disponíveis.</p>
+                    </article>
+                    <article class="card">
+                        <h3><a href="http://emojidb.org/" target="_blank" rel="noopener noreferrer">emojidb.org</a></h3>
+                        <p>Site que oferece uma variedade de emojis e símbolos para uso em comunicações digitais.</p>
+                    </article>
+                    <article class="card">
+                        <h3><a href="https://layout.bradwoods.io/" target="_blank" rel="noopener noreferrer">CSS Layout Generator</a></h3>
+                        <p>O CSS Layout Generator é uma ferramenta interativa pra gerar layouts de página usando CSS. Ela permite escolher vários modelos de layout (como grid ou flexbox), ver uma prévia visual e pegar o código CSS/HTML gerado para usar no seu projeto.</p>
+                    </article>
+                    <article class="card">
+                        <h3><a href="https://design.dev/#tools" target="_blank" rel="noopener noreferrer">Design & Dev Tools For Creators</a></h3>
+                        <p>Lista de ferramentas essenciais para criar e manter Design Systems (sistemas de design), destacando a convergência entre design e código (como Storybook, Figma, e frameworks de UI/UX).</p>
+                    </article>
+                    <article class="card">
+                        <h3><a href="https://www.notion.so/Tutorial-OBS-Studio-2cbd6d7894a2805cbac3dbb1651eb749?source=copy_link" target="_blank" rel="noopener noreferrer">Tutorial e dicas para OBS Studio</a></h3>
+                        <p>Um guia prático no Notion que ensina passo a passo como configurar e usar o OBS Studio para gravação e transmissão de vídeos.</p>
+                    </article>
+                </div>
 
 
 
