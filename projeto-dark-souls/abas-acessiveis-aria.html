@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-color-scheme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="stylesheet" href="../paginas.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>Abas acessíveis (ARIA) com conteúdo inline | CodeWiki</title>
+    <meta name="description" content="Como troquei o carregamento por fetch por abas acessíveis com conteúdo inline: estrutura ARIA, teclado, endereço por hash e armadilhas.">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/abas-acessiveis-aria.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Abas acessíveis (ARIA) com conteúdo inline | CodeWiki">
+    <meta property="og:description" content="Como troquei o carregamento por fetch por abas acessíveis com conteúdo inline: estrutura ARIA, teclado, endereço por hash e armadilhas.">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/abas-acessiveis-aria.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Abas acessíveis (ARIA) com conteúdo inline | CodeWiki">
+    <meta name="twitter:description" content="Como troquei o carregamento por fetch por abas acessíveis com conteúdo inline: estrutura ARIA, teclado, endereço por hash e armadilhas.">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Abas acessíveis (ARIA) com conteúdo inline", "description": "Como troquei o carregamento por fetch por abas acessíveis com conteúdo inline: estrutura ARIA, teclado, endereço por hash e armadilhas.", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/abas-acessiveis-aria.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/abas-acessiveis-aria.html", "dateModified": "2026-10-30", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
+</head>
+
+<body>
+
+    <article>
+
+
+        <h1>Abas acessíveis (ARIA) com conteúdo inline</h1>
+        <p>No Projeto Dark Souls, o conteúdo trocava ao clicar em botões, e cada seção era buscada com
+            <code>fetch</code>. Funcionava, mas tinha problemas. Esta anotação explica por que troquei por abas com o
+            texto já dentro do HTML e como montei o padrão ARIA de abas.</p>
+
+        <h2>Por que sair do <code>fetch</code></h2>
+        <ul>
+            <li><strong>Frágil:</strong> imagens das seções quebraram porque os caminhos (<code>../assets/...</code>)
+                eram resolvidos a partir da página principal, e não do arquivo carregado.</li>
+            <li><strong>Mais lento a cada clique:</strong> toda troca pedia um arquivo ao servidor.</li>
+            <li><strong>Pouco indexável:</strong> a área de conteúdo começava vazia, então o texto aparecia só depois
+                de um clique.</li>
+            <li><strong>Pouco acessível:</strong> botões comuns não dizem ao leitor de tela que existe um grupo de abas.</li>
+        </ul>
+
+        <h2>A estrutura HTML</h2>
+        <p>Cada botão é uma <code>tab</code>, e cada bloco de conteúdo é um <code>tabpanel</code>. Os atributos ligam
+            um ao outro.</p>
+<pre><code class="lang-html">&lt;nav class=&quot;nav-buttons&quot; role=&quot;tablist&quot; aria-label=&quot;Temas de Dark Souls&quot; hidden&gt;
+  &lt;button type=&quot;button&quot; role=&quot;tab&quot; id=&quot;tab-lore&quot; aria-controls=&quot;lore&quot;
+          aria-selected=&quot;false&quot; tabindex=&quot;-1&quot; class=&quot;btn&quot;&gt;Lore&lt;/button&gt;
+  &lt;!-- demais abas --&gt;
+&lt;/nav&gt;
+
+&lt;div id=&quot;lore&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;tab-lore&quot; tabindex=&quot;0&quot;&gt;
+  &lt;!-- conteúdo da aba --&gt;
+&lt;/div&gt;</code></pre>
+        <ul>
+            <li><code>aria-controls</code> aponta da aba para o painel, e <code>aria-labelledby</code> faz o caminho
+                inverso.</li>
+            <li><code>aria-selected</code> indica a aba ativa.</li>
+            <li><code>tabindex="-1"</code> nas abas inativas: só a aba ativa entra na ordem do Tab. As outras são
+                alcançadas pelas setas (técnica chamada <em>roving tabindex</em>).</li>
+            <li>O <code>nav</code> começa com <code>hidden</code> e o JavaScript o mostra. Sem JavaScript, os botões
+                somem e todo o conteúdo fica visível.</li>
+        </ul>
+
+        <h2>O JavaScript</h2>
+<pre><code class="lang-js">const tablist = document.getElementById(&#x27;nav-anchor&#x27;);
+const tabs = Array.from(tablist.querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;));
+const panels = tabs.map(tab =&gt; document.getElementById(tab.getAttribute(&#x27;aria-controls&#x27;)));
+
+function ativarAba(indice, { foco = false, atualizarHash = true } = {}) {
+  tabs.forEach((tab, i) =&gt; {
+    const ativa = i === indice;
+    tab.setAttribute(&#x27;aria-selected&#x27;, ativa);
+    tab.tabIndex = ativa ? 0 : -1;
+    panels[i].hidden = !ativa;
+  });
+  if (foco) tabs[indice].focus();
+  if (atualizarHash) history.replaceState(null, &#x27;&#x27;, &#x27;#&#x27; + panels[indice].id);
+}</code></pre>
+        <h3>Teclado</h3>
+        <p>As setas movem entre as abas, e <kbd>Home</kbd> e <kbd>End</kbd> vão à primeira e à última.</p>
+<pre><code class="lang-js">tab.addEventListener(&#x27;keydown&#x27;, e =&gt; {
+  const ultimo = tabs.length - 1;
+  const teclas = {
+    ArrowRight: i === ultimo ? 0 : i + 1,
+    ArrowLeft:  i === 0 ? ultimo : i - 1,
+    Home: 0,
+    End: ultimo
+  };
+  if (e.key in teclas) {
+    e.preventDefault();
+    ativarAba(teclas[e.key], { foco: true });
+  }
+});</code></pre>
+        <h3>Endereço por aba</h3>
+        <p>Com <code>history.replaceState</code> cada aba ganha um endereço (<code>#lore</code>, <code>#folclore</code>)
+            sem poluir o botão "voltar". Ao abrir a página com um desses endereços, a aba correspondente já aparece
+            ativa, e o evento <code>hashchange</code> cobre os links internos do menu e do rodapé.</p>
+
+        <h2>Armadilhas que encontrei</h2>
+        <ul>
+            <li><strong><code>hidden</code> some se o CSS definir <code>display</code>.</strong> Um
+                <code>display: flex</code> na classe do <code>nav</code> anulava o atributo. A correção é uma regra
+                <code>[hidden] { display: none !important; }</code>.</li>
+            <li><strong>Imagens em painéis escondidos.</strong> Com <code>loading="lazy"</code> elas só são baixadas
+                quando a aba aparece, então a primeira carga continua leve.</li>
+            <li><strong>Foco visível.</strong> Defina um <code>:focus-visible</code> nos botões e nos painéis. Sem ele,
+                quem usa o teclado não sabe onde está.</li>
+        </ul>
+
+        <h2>Como testar</h2>
+        <ul>
+            <li>Navegue só com o teclado: Tab, setas, Home e End.</li>
+            <li>Abra a página com um endereço, como <code>#folclore</code>.</li>
+            <li>Desative o JavaScript e confira se todo o texto continua visível.</li>
+            <li>Teste com um leitor de tela (NVDA ou VoiceOver): ele deve anunciar "aba 2 de 5".</li>
+        </ul>
+
+        <h2>Resultado</h2>
+        <p>Troca instantânea, sem requisições extras, texto no HTML para os buscadores e navegação completa pelo
+            teclado. O artigo "Filosofia da Transitoriedade", que antes esticava a página, virou a quinta aba.</p>
+
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./README.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

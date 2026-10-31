@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-color-scheme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="stylesheet" href="../paginas.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>Imagens em WebP e carregamento preguiçoso | CodeWiki</title>
+    <meta name="description" content="Como converti 46 imagens para WebP com Python, atualizei as referências sem quebrar nada e usei loading lazy com width e height.">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/imagens-webp-e-lazy-loading.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Imagens em WebP e carregamento preguiçoso | CodeWiki">
+    <meta property="og:description" content="Como converti 46 imagens para WebP com Python, atualizei as referências sem quebrar nada e usei loading lazy com width e height.">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/imagens-webp-e-lazy-loading.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Imagens em WebP e carregamento preguiçoso | CodeWiki">
+    <meta name="twitter:description" content="Como converti 46 imagens para WebP com Python, atualizei as referências sem quebrar nada e usei loading lazy com width e height.">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Imagens em WebP e carregamento preguiçoso", "description": "Como converti 46 imagens para WebP com Python, atualizei as referências sem quebrar nada e usei loading lazy com width e height.", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/imagens-webp-e-lazy-loading.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/imagens-webp-e-lazy-loading.html", "dateModified": "2026-10-30", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
+</head>
+
+<body>
+
+    <article>
+
+
+        <h1>Imagens em WebP e carregamento preguiçoso</h1>
+        <p>O Projeto Dark Souls tinha cerca de 4 MB de imagens, entre PNG e JPG, e até um arquivo <code>.zip</code>
+            dentro da pasta de assets. Esta anotação mostra como converti tudo para WebP e o que mudou no HTML e no
+            CSS.</p>
+
+        <h2>Antes e depois</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Antes</th>
+                    <th>Depois</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Imagens convertidas</td>
+                    <td>46 arquivos PNG e JPG (3,4 MB)</td>
+                    <td>46 arquivos WebP (2,5 MB)</td>
+                </tr>
+                <tr>
+                    <td>Pasta <code>assets</code></td>
+                    <td>4,0 MB, com um <code>.zip</code></td>
+                    <td>2,7 MB, sem o <code>.zip</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Conversão com Python</h2>
+        <p>Usei a biblioteca Pillow para converter tudo de uma vez, limitando a largura a 1920 px:</p>
+<pre><code class="lang-python">import glob, os
+from PIL import Image
+
+for caminho in glob.glob(&#x27;assets/images/**/*&#x27;, recursive=True):
+    if not caminho.lower().endswith((&#x27;.jpg&#x27;, &#x27;.jpeg&#x27;, &#x27;.png&#x27;)):
+        continue
+    imagem = Image.open(caminho)
+    transparente = imagem.mode in (&#x27;RGBA&#x27;, &#x27;LA&#x27;, &#x27;P&#x27;)
+    imagem = imagem.convert(&#x27;RGBA&#x27; if transparente else &#x27;RGB&#x27;)
+    if imagem.width &gt; 1920:
+        imagem = imagem.resize((1920, round(imagem.height * 1920 / imagem.width)))
+    imagem.save(os.path.splitext(caminho)[0] + &#x27;.webp&#x27;, &#x27;WEBP&#x27;, quality=82, method=6)</code></pre>
+        <ul>
+            <li><code>quality=82</code> manteve boa aparência com bastante economia.</li>
+            <li>Conservar o canal alfa (<code>RGBA</code>) é importante para logos e ícones com fundo transparente.</li>
+        </ul>
+
+        <h2>Atualizar as referências</h2>
+        <p>Depois de converter, é preciso trocar a extensão em todos os lugares que citam as imagens: HTML, CSS e
+            JavaScript. Eu apaguei os originais e fiz um script que conferia se todo caminho citado ainda existia.</p>
+        <p>O erro que o script pegou: duas imagens de fundo no CSS estavam escritas com barra dupla
+            (<code>images//background/</code>), então a troca automática não as encontrou.</p>
+
+        <h2>O que não converter</h2>
+        <ul>
+            <li>A <strong>imagem de compartilhamento</strong> (<code>og:image</code>) fica em JPG ou PNG, porque
+                nem todas as redes sociais aceitam WebP.</li>
+            <li>O <strong>favicon</strong> também fica em PNG ou SVG.</li>
+        </ul>
+
+        <h2>Carregamento preguiçoso</h2>
+        <p>O atributo <code>loading="lazy"</code> adia o download das imagens que estão fora da tela. Coloque também
+            <code>width</code> e <code>height</code> para o navegador reservar o espaço e evitar que o layout pule.</p>
+<pre><code class="lang-html">&lt;img src=&quot;assets/images/wallpaper/wallpaper-anor-londo.webp&quot;
+     width=&quot;1920&quot; height=&quot;1080&quot; loading=&quot;lazy&quot;
+     alt=&quot;Catedral de Anor Londo iluminada pelo sol&quot;&gt;</code></pre>
+        <ul>
+            <li>Não use <code>lazy</code> na imagem principal do topo da página, porque ela precisa carregar logo.</li>
+            <li>Em abas escondidas com <code>hidden</code>, as imagens <code>lazy</code> só são baixadas quando a aba
+                aparece.</li>
+        </ul>
+
+        <h2>Veja também</h2>
+        <ul>
+            <li><a href="boas-praticas-imagens.html">Boas práticas com imagens</a></li>
+            <li><a href="galeria-de-imagens.html">Galeria de imagens explicada</a></li>
+        </ul>
+
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./README.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

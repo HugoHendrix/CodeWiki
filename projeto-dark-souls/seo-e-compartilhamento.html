@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-color-scheme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="stylesheet" href="../paginas.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>SEO básico e imagem de compartilhamento | CodeWiki</title>
+    <meta name="description" content="Checklist de SEO aplicado no Projeto Dark Souls: título, descrição, canonical, Open Graph, imagem 1200x630, robots, sitemap e o cache do GitHub Pages.">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/seo-e-compartilhamento.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="SEO básico e imagem de compartilhamento | CodeWiki">
+    <meta property="og:description" content="Checklist de SEO aplicado no Projeto Dark Souls: título, descrição, canonical, Open Graph, imagem 1200x630, robots, sitemap e o cache do GitHub Pages.">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/seo-e-compartilhamento.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SEO básico e imagem de compartilhamento | CodeWiki">
+    <meta name="twitter:description" content="Checklist de SEO aplicado no Projeto Dark Souls: título, descrição, canonical, Open Graph, imagem 1200x630, robots, sitemap e o cache do GitHub Pages.">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "SEO básico e imagem de compartilhamento", "description": "Checklist de SEO aplicado no Projeto Dark Souls: título, descrição, canonical, Open Graph, imagem 1200x630, robots, sitemap e o cache do GitHub Pages.", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/seo-e-compartilhamento.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/seo-e-compartilhamento.html", "dateModified": "2026-10-30", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
+</head>
+
+<body>
+
+    <article>
+
+
+        <h1>SEO básico e imagem de compartilhamento</h1>
+        <p>Um checklist do que apliquei no Projeto Dark Souls para a página aparecer bem nas buscas e nas redes
+            sociais.</p>
+
+        <h2>1. Título e descrição</h2>
+<pre><code class="lang-html">&lt;title&gt;Dark Souls Project | Lore, filosofia e galeria de Dark Souls&lt;/title&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Projeto de fã sobre Dark Souls: características do jogo, lore, folclore, filosofia e galeria de imagens.&quot;&gt;</code></pre>
+        <ul>
+            <li>Título com cerca de 60 caracteres, com o assunto antes do nome do site.</li>
+            <li>Descrição com cerca de 150 caracteres, que faça a pessoa querer clicar.</li>
+        </ul>
+
+        <h2>2. Endereço canônico</h2>
+<pre><code class="lang-html">&lt;link rel=&quot;canonical&quot; href=&quot;https://hugohendrix.github.io/dark-souls-project/&quot;&gt;</code></pre>
+        <p>Diz ao Google qual é o endereço oficial da página, evitando conteúdo duplicado.</p>
+
+        <h2>3. Open Graph e Twitter Card</h2>
+        <p>São as tags que definem o cartão exibido quando o link é colado no WhatsApp, no LinkedIn ou no X.</p>
+<pre><code class="lang-html">&lt;meta property=&quot;og:type&quot; content=&quot;website&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Dark Souls Project&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Explore um universo sombrio: lore, folclore e filosofia.&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;https://hugohendrix.github.io/dark-souls-project/&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://hugohendrix.github.io/dark-souls-project/assets/images/og-image.jpg&quot;&gt;
+&lt;meta property=&quot;og:image:width&quot; content=&quot;1200&quot;&gt;
+&lt;meta property=&quot;og:image:height&quot; content=&quot;630&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;</code></pre>
+        <ul>
+            <li>A <strong>imagem</strong> deve ter 1200 × 630 px e usar um endereço completo (com
+                <code>https://</code>).</li>
+            <li>Eu gerei a imagem a partir de uma arte da própria galeria, com o título do projeto por cima.</li>
+            <li>No projeto original havia campos <code>og:*</code> vazios e uma tag escrita errado
+                (<code>twitter:image:loading=</code>). Tags vazias ou quebradas não ajudam em nada.</li>
+        </ul>
+
+        <h2>4. <code>robots.txt</code> e <code>sitemap.xml</code></h2>
+<pre><code class="lang-text">User-agent: *
+Allow: /
+
+Sitemap: https://hugohendrix.github.io/dark-souls-project/sitemap.xml</code></pre>
+        <p>O <code>sitemap.xml</code> lista as páginas do site. Depois de publicar, envie o arquivo no Google Search
+            Console.</p>
+
+        <h2>5. Detalhes que passam despercebidos</h2>
+        <ul>
+            <li><strong>Favicon:</strong> o tipo declarado deve combinar com o arquivo (<code>image/png</code> para um
+                PNG).</li>
+            <li><strong>Links externos:</strong> use <code>rel="noopener noreferrer"</code> (eu tinha escrito
+                <code>noopenner</code>, e o navegador ignorava).</li>
+            <li><strong>Link do logo:</strong> <code>href="/"</code> leva à raiz do domínio. Em um projeto do GitHub Pages
+                isso sai do projeto, então o correto é <code>./</code>.</li>
+        </ul>
+
+        <h2>6. Cache do GitHub Pages</h2>
+        <p>O GitHub Pages manda o navegador guardar cada arquivo por <strong>10 minutos</strong>
+            (<code>Cache-Control: max-age=600</code>). Depois de publicar, o site pode parecer quebrado porque o
+            navegador mistura arquivos novos e antigos. Atualize com <kbd>Ctrl</kbd> + <kbd>F5</kbd> ou teste em uma
+            janela anônima antes de achar que o conserto falhou.</p>
+
+        <h2>Teste final</h2>
+        <ul>
+            <li>Cole o link no WhatsApp para ver o cartão (ele guarda cache, então pode demorar).</li>
+            <li>Rode o Lighthouse no DevTools e confira as notas de SEO e acessibilidade.</li>
+        </ul>
+
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./README.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
