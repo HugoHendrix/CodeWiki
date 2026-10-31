@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-color-scheme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="stylesheet" href="../paginas.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>Modelos de mensagem com campos {{variavel}} | CodeWiki</title>
+    <meta name="description" content="Como montar modelos de texto com campos entre chaves duplas e preenchê-los com uma expressão regular, mantendo marcadores para o que falta.">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/projeto-bloco-de-notas/modelos-de-mensagem-com-campos.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Modelos de mensagem com campos {{variavel}} | CodeWiki">
+    <meta property="og:description" content="Como montar modelos de texto com campos entre chaves duplas e preenchê-los com uma expressão regular, mantendo marcadores para o que falta.">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/projeto-bloco-de-notas/modelos-de-mensagem-com-campos.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Modelos de mensagem com campos {{variavel}} | CodeWiki">
+    <meta name="twitter:description" content="Como montar modelos de texto com campos entre chaves duplas e preenchê-los com uma expressão regular, mantendo marcadores para o que falta.">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Modelos de mensagem com campos {{variavel}}", "description": "Como montar modelos de texto com campos entre chaves duplas e preenchê-los com uma expressão regular, mantendo marcadores para o que falta.", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/projeto-bloco-de-notas/modelos-de-mensagem-com-campos.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/projeto-bloco-de-notas/modelos-de-mensagem-com-campos.html", "dateModified": "2026-10-31", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
+</head>
+
+<body>
+
+    <article>
+
+
+        <h1>Modelos de mensagem com campos <code>{{variavel}}</code></h1>
+        <p>As mensagens padrão do Bloco de Notas têm lacunas que o operador preenche uma vez (veículo, local e horário)
+            e que se repetem em todas as mensagens. Esta anotação mostra a técnica.</p>
+
+        <h2>O modelo</h2>
+<pre><code class="lang-js">const modelo = &#x27;Identificamos o veículo {{veiculo}} parado em {{local}} desde as {{horario}}.&#x27;;</code></pre>
+        <h2>Substituir os campos</h2>
+<pre><code class="lang-js">function preencher(texto) {
+  const dados = {
+    veiculo: document.getElementById(&#x27;m-veiculo&#x27;).value.trim() || &#x27;[veículo]&#x27;,
+    local: document.getElementById(&#x27;m-local&#x27;).value.trim() || &#x27;[local]&#x27;,
+    horario: document.getElementById(&#x27;m-horario&#x27;).value || &#x27;[horário]&#x27;
+  };
+  return texto.replace(/\{\{(\w+)\}\}/g, (inteiro, chave) =&gt;
+    chave in dados ? dados[chave] : inteiro);
+}</code></pre>
+        <ul>
+            <li>A expressão regular <code>/\{\{(\w+)\}\}/g</code> encontra tudo o que está entre chaves duplas.</li>
+            <li>A função de substituição recebe o nome do campo e devolve o valor correspondente.</li>
+            <li>Se o campo ainda não foi preenchido, aparece um marcador como <code>[veículo]</code>, o que evita
+                enviar uma mensagem com lacuna escondida.</li>
+            <li>Um campo desconhecido (<code>{{outro}}</code>) é mantido como está, em vez de virar
+                <code>undefined</code>.</li>
+        </ul>
+
+        <h2>Deixar o usuário editar os modelos</h2>
+        <p>O modelo guardado é o texto com as chaves, e a mensagem mostrada é o resultado do <code>preencher</code>.
+            Assim, ao editar, o usuário vê e altera o modelo, e ao copiar, leva o texto já preenchido. Os modelos
+            ficam no <code>localStorage</code> (veja <a href="salvar-no-navegador-localstorage.html">Salvar no navegador</a>),
+            e um botão restaura os padrões.</p>
+
+        <h2>Por que isso agiliza</h2>
+        <p>O operador digita o veículo uma vez e todas as mensagens ficam prontas. Foi o que mais ajudou no registro
+            diário das ocorrências sobre os motoristas.</p>
+
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./README.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
