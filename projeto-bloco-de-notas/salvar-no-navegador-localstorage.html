@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-color-scheme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="stylesheet" href="../paginas.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>Salvar no navegador com localStorage | CodeWiki</title>
+    <meta name="description" content="Como salvar anotações e listas no navegador com localStorage, com tratamento de erros, JSON, debounce e versão das chaves.">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/projeto-bloco-de-notas/salvar-no-navegador-localstorage.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Salvar no navegador com localStorage | CodeWiki">
+    <meta property="og:description" content="Como salvar anotações e listas no navegador com localStorage, com tratamento de erros, JSON, debounce e versão das chaves.">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/projeto-bloco-de-notas/salvar-no-navegador-localstorage.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Salvar no navegador com localStorage | CodeWiki">
+    <meta name="twitter:description" content="Como salvar anotações e listas no navegador com localStorage, com tratamento de erros, JSON, debounce e versão das chaves.">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Salvar no navegador com localStorage", "description": "Como salvar anotações e listas no navegador com localStorage, com tratamento de erros, JSON, debounce e versão das chaves.", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/projeto-bloco-de-notas/salvar-no-navegador-localstorage.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/projeto-bloco-de-notas/salvar-no-navegador-localstorage.html", "dateModified": "2026-10-31", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
+</head>
+
+<body>
+
+    <article>
+
+
+        <h1>Salvar no navegador com <code>localStorage</code></h1>
+        <p>No Bloco de Notas do Operador, tudo o que o usuário escreve (anotações, mensagens, checklist, lembretes) é
+            salvo no próprio navegador, sem servidor. Esta anotação mostra como organizei isso.</p>
+
+        <h2>Um ajudante com tratamento de erros</h2>
+        <p>O <code>localStorage</code> pode estar bloqueado (modo privado, política da empresa) ou cheio. Por isso
+            encapsulei as chamadas em um objeto que nunca lança erro e que guarda os dados em JSON:</p>
+<pre><code class="lang-js">const memoria = {
+  ler(chave, padrao) {
+    try {
+      const bruto = localStorage.getItem(chave);
+      return bruto === null ? padrao : JSON.parse(bruto);
+    } catch (e) {
+      return padrao;
+    }
+  },
+  gravar(chave, valor) {
+    try {
+      localStorage.setItem(chave, JSON.stringify(valor));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+};</code></pre>
+        <ul>
+            <li><code>JSON.stringify</code> e <code>JSON.parse</code> permitem guardar listas e objetos, e não só texto.</li>
+            <li>O valor padrão evita um <code>null</code> na primeira visita.</li>
+            <li>O retorno <code>true</code> ou <code>false</code> deixa a tela avisar quando não foi possível salvar.</li>
+        </ul>
+
+        <h2>Salvar enquanto digita, sem exagero (debounce)</h2>
+        <p>Gravar a cada tecla é desperdício. Com um pequeno atraso, só a última digitação é salva:</p>
+<pre><code class="lang-js">let espera;
+area.addEventListener(&#x27;input&#x27;, () =&gt; {
+  nota.texto = area.value;
+  clearTimeout(espera);
+  espera = setTimeout(salvarNotas, 400);
+});</code></pre>
+        <h2>Versão das chaves</h2>
+        <p>Usei nomes como <code>notas:v1</code>. Se um dia o formato dos dados mudar, basta criar a <code>v2</code> e
+            migrar, sem quebrar quem já tem dados salvos.</p>
+
+        <h2>Cuidados</h2>
+        <ul>
+            <li>Os dados ficam só naquele navegador e naquele aparelho. Para levar para outro lugar, ofereci o botão
+                de baixar em <code>.txt</code>.</li>
+            <li>Nunca guarde senhas ou dados sensíveis no <code>localStorage</code>.</li>
+            <li>Limpar os dados do site apaga tudo. Vale avisar o usuário.</li>
+        </ul>
+
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./README.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-color-scheme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="stylesheet" href="../paginas.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>Lembretes com temporizador e aviso sonoro | CodeWiki</title>
+    <meta name="description" content="Como criar lembretes que sobrevivem ao recarregamento guardando o horário de término, com aviso sonoro pela Web Audio API e alertas acessíveis.">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/projeto-bloco-de-notas/lembretes-com-temporizador.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Lembretes com temporizador e aviso sonoro | CodeWiki">
+    <meta property="og:description" content="Como criar lembretes que sobrevivem ao recarregamento guardando o horário de término, com aviso sonoro pela Web Audio API e alertas acessíveis.">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/projeto-bloco-de-notas/lembretes-com-temporizador.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lembretes com temporizador e aviso sonoro | CodeWiki">
+    <meta name="twitter:description" content="Como criar lembretes que sobrevivem ao recarregamento guardando o horário de término, com aviso sonoro pela Web Audio API e alertas acessíveis.">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Lembretes com temporizador e aviso sonoro", "description": "Como criar lembretes que sobrevivem ao recarregamento guardando o horário de término, com aviso sonoro pela Web Audio API e alertas acessíveis.", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/projeto-bloco-de-notas/lembretes-com-temporizador.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/projeto-bloco-de-notas/lembretes-com-temporizador.html", "dateModified": "2026-10-31", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
+</head>
+
+<body>
+
+    <article>
+
+
+        <h1>Lembretes com temporizador e aviso sonoro</h1>
+        <p>O Bloco de Notas tem lembretes para voltar a contatar um motorista. Esta anotação explica como fiz o
+            temporizador, o aviso sonoro e o que acontece quando a página é recarregada.</p>
+
+        <h2>Guardar o horário de término, e não o tempo restante</h2>
+        <p>Se eu guardasse "faltam 600 segundos", o valor ficaria errado depois de fechar a aba. Guardando o
+            <strong>momento em que acaba</strong>, o tempo restante é sempre uma conta:</p>
+<pre><code class="lang-js">lembretes.push({ id: novoId(), texto, fim: Date.now() + minutos * 60000 });
+
+const restante = lembrete.fim - Date.now();   // em milissegundos</code></pre>
+        <p>Assim o lembrete continua correndo depois de recarregar a página.</p>
+
+        <h2>Atualizar a tela a cada segundo</h2>
+<pre><code class="lang-js">setInterval(() =&gt; {
+  const total = Math.ceil((lembrete.fim - Date.now()) / 1000);
+  tempoEl.textContent = pad(Math.floor(total / 60)) + &#x27;:&#x27; + pad(total % 60);
+}, 1000);</code></pre>
+        <h2>Aviso sonoro com a Web Audio API</h2>
+<pre><code class="lang-js">function tocarAviso() {
+  const ctx = contextoAudio || new AudioContext();
+  [0, 0.35, 0.7].forEach((atraso) =&gt; {
+    const osc = ctx.createOscillator();
+    const ganho = ctx.createGain();
+    osc.frequency.value = 880;
+    ganho.gain.value = 0.15;
+    osc.connect(ganho);
+    ganho.connect(ctx.destination);
+    osc.start(ctx.currentTime + atraso);
+    osc.stop(ctx.currentTime + atraso + 0.2);
+  });
+}</code></pre>
+        <ul>
+            <li>Três bipes curtos, sem precisar de nenhum arquivo de áudio.</li>
+            <li>Navegadores só liberam som depois de uma ação do usuário. Por isso criei o
+                <code>AudioContext</code> no clique de "Criar lembrete", e não quando o tempo acaba.</li>
+        </ul>
+
+        <h2>Avisos que não dependem de som</h2>
+        <ul>
+            <li>O cartão muda de cor e mostra "Tempo esgotado".</li>
+            <li>O título da aba ganha o prefixo "⏰ Lembrete!", que aparece mesmo com a aba em segundo plano.</li>
+            <li>Um elemento com <code>role="alert"</code> e <code>aria-live="assertive"</code> anuncia o lembrete para
+                leitores de tela.</li>
+        </ul>
+
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./README.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>
