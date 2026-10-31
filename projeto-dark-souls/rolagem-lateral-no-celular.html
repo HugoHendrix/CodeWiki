@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-color-scheme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+    <link rel="stylesheet" href="../paginas.css">
+    <link rel="shortcut icon" href="../img/book.png" type="image/x-icon">
+    <title>Como encontrar e corrigir rolagem lateral no celular | CodeWiki</title>
+    <meta name="description" content="Passo a passo para achar e corrigir a rolagem lateral em telas pequenas: script de diagnóstico, causas comuns e correções com max-width, flex-wrap e clamp.">
+    <meta name="author" content="Hugo Hendrix">
+    <meta name="theme-color" content="#09254a">
+    <link rel="canonical" href="https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/rolagem-lateral-no-celular.html">
+    <meta property="og:site_name" content="CodeWiki">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Como encontrar e corrigir rolagem lateral no celular | CodeWiki">
+    <meta property="og:description" content="Passo a passo para achar e corrigir a rolagem lateral em telas pequenas: script de diagnóstico, causas comuns e correções com max-width, flex-wrap e clamp.">
+    <meta property="og:url" content="https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/rolagem-lateral-no-celular.html">
+    <meta property="og:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Como encontrar e corrigir rolagem lateral no celular | CodeWiki">
+    <meta name="twitter:description" content="Passo a passo para achar e corrigir a rolagem lateral em telas pequenas: script de diagnóstico, causas comuns e correções com max-width, flex-wrap e clamp.">
+    <meta name="twitter:image" content="https://hugohendrix.github.io/CodeWiki/img/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Como encontrar e corrigir rolagem lateral no celular", "description": "Passo a passo para achar e corrigir a rolagem lateral em telas pequenas: script de diagnóstico, causas comuns e correções com max-width, flex-wrap e clamp.", "inLanguage": "pt-BR", "url": "https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/rolagem-lateral-no-celular.html", "mainEntityOfPage": "https://hugohendrix.github.io/CodeWiki/projeto-dark-souls/rolagem-lateral-no-celular.html", "dateModified": "2026-10-30", "author": {"@type": "Person", "name": "Hugo Hendrix", "url": "https://github.com/HugoHendrix"}, "isPartOf": {"@type": "WebSite", "name": "CodeWiki", "url": "https://hugohendrix.github.io/CodeWiki/"}}</script>
+</head>
+
+<body>
+
+    <article>
+
+
+        <h1>Como encontrar e corrigir rolagem lateral no celular</h1>
+        <p>Ao testar o Projeto Dark Souls em uma tela de 375 px, a página tinha <strong>1136 px de largura</strong>.
+            O usuário precisava rolar para o lado para ler o texto. Esta anotação mostra como achei o problema e o que
+            corrigi.</p>
+
+        <h2>1. Confirmar o problema</h2>
+        <p>No DevTools, ative o modo responsivo (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>M</kbd>), escolha uma largura
+            de 375 px e rode no console:</p>
+<pre><code class="lang-js">({
+  janela: document.documentElement.clientWidth,
+  pagina: document.documentElement.scrollWidth
+})</code></pre>
+        <p>Se <code>pagina</code> for maior que <code>janela</code>, existe rolagem lateral.</p>
+
+        <h2>2. Achar o elemento culpado</h2>
+<pre><code class="lang-js">const largura = document.documentElement.clientWidth;
+[...document.querySelectorAll(&#x27;body *&#x27;)]
+  .filter(el =&gt; el.getBoundingClientRect().right &gt; largura + 2)
+  .slice(0, 10)
+  .map(el =&gt; el.tagName + &#x27;.&#x27; + el.className);</code></pre>
+        <p>O script lista os elementos que passam da borda da tela. O primeiro costuma ser a causa, e os outros são
+            efeito dele.</p>
+
+        <h2>3. O que estava errado e como corrigi</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Causa</th>
+                    <th>Correção</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Texto com <code>width: 92ch</code></td>
+                    <td><code>width: 100%; max-width: 92ch;</code></td>
+                </tr>
+                <tr>
+                    <td>Formulário com <code>width: 620px</code></td>
+                    <td><code>width: 100%; max-width: 800px;</code></td>
+                </tr>
+                <tr>
+                    <td>Menu e botões em <code>display: flex</code> sem quebra de linha</td>
+                    <td>Adicionar <code>flex-wrap: wrap</code></td>
+                </tr>
+                <tr>
+                    <td>Título em <code>4rem</code> fixos</td>
+                    <td><code>font-size: clamp(2.2rem, 8vw, 4rem)</code></td>
+                </tr>
+                <tr>
+                    <td>Altura do rodapé em <code>height: 50%</code></td>
+                    <td>Remover a altura e usar <code>padding</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>4. Ajustes específicos para telas pequenas</h2>
+<pre><code class="lang-css">@media (max-width: 768px) {
+  .container-fluid { padding: 2rem 1rem; }
+  .content { width: 100%; padding: 1.5rem 1rem; }
+  .nav-buttons { flex-direction: column; }
+  p { text-align: left; }   /* texto justificado em tela estreita gera buracos */
+}</code></pre>
+        <h2>Regras para evitar o problema</h2>
+        <ul>
+            <li>Prefira <code>max-width</code> a <code>width</code> fixa.</li>
+            <li>Use <code>flex-wrap: wrap</code> em qualquer linha de itens.</li>
+            <li>Use <code>clamp()</code> para tipografia que acompanha a tela.</li>
+            <li>Teste em 375 px antes de publicar, e não só no tamanho do seu monitor.</li>
+            <li>Evite esconder o problema com <code>overflow-x: hidden</code> no <code>body</code>. Ele corta o conteúdo,
+                não corrige a causa.</li>
+        </ul>
+
+        <h2>Resultado</h2>
+        <p>A largura da página passou de 1136 px para 375 px, sem rolagem lateral, e o mesmo script voltou lista vazia.</p>
+
+
+    </article>
+
+    <footer class="p-1">
+        <button class="accent">
+            <a href="./README.html" type="button" class="accent">Voltar</a>
+        </button>
+    </footer>
+
+</body>
+
+</html>

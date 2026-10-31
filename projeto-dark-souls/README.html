@@ -13,26 +13,76 @@
 <body>
 <article>
     <h1>Projeto Dark Souls: A Essência por Trás das Cinzas</h1>
+    <p><a href="https://hugohendrix.github.io/dark-souls-project/">Ver o site</a> · <a href="https://github.com/HugoHendrix/dark-souls-project">Código no GitHub</a> · <a href="https://hugohendrix.github.io/portfolio-hugo/">Portfólio</a></p>
+    <p><img src="../img/dark-souls.jpg" alt="Página inicial do Dark Souls Project" width="800" height="506"></p>
     <p>Inspirado no primeiro jogo da icônica franquia, criei um projeto que mergulha fundo na complexa tapeçaria de Dark Souls. Meu objetivo é desvendar os segredos de sua lore, a profundidade de sua filosofia e as ricas referências à mitologia e folclore japonês.
 </p>
-<p>Conforme o projeto avança, venho documentando cada descoberta e análise. Para acompanhar todo o material, basta consultar este documento.</p>
-<h3>Anotações</h3>
-<ul>
-    <li><a href="boas-praticas-imagens.html">Boas práticas com imagens</a></li>
-    <li><a href="carregamento-dinamico-de-conteudo.html">Carregamento dinâmico de conteúdo HTML</a></li>
-    <li><a href="container-flex.html">Layout Responsivo com Flexbox</a></li>
-    <li><a href="criando-formulario.html">Criando o Formulário HTML</a></li>
-    <li><a href="efeito-contorno-drop-shadow.html">Efeito Drop Shadow com CSS</a></li>
-    <li><a href="parallax-simples.html">Efeito parallax com HTML e CSS</a></li>
-    <li><a href="funcao-load-content.html">Função JS para carregar o conteúdo</a></li>
-    <li><a href="galeria-de-imagens.html">Galeria de imagens explicado</a></li>
-    <li><a href="import-vs-link.html">Importando Fontes no CSS: <code>@import</code> vs. <code>link</code></a></li>
-    <li><a href="menu-basico.html">Menu de navegação básico com flex</a></li>
-    <li><a href="meta-tags-explicado.html">Meta Tags explicado</a></li>
-    <li><a href="reset-css-explicado.html">Reset CSS explicado</a></li>
-    <li><a href="short-hand-background.html">Shorthand Background CSS</a></li>
-</ul>
-    
+<p>Conforme o projeto avançou, fui documentando cada descoberta e cada problema resolvido. Esta página reúne todo o material.</p>
+
+    <h2>O projeto em resumo</h2>
+    <ul>
+        <li><strong>O que é:</strong> site de fã sobre o primeiro Dark Souls, com 5 abas de conteúdo (características, lore, folclore, filosofia e filosofia da transitoriedade), galeria de imagens e seção de créditos.</li>
+        <li><strong>Tecnologias:</strong> HTML, CSS (Flexbox, Grid e variáveis) e JavaScript puros.</li>
+        <li><strong>O que pratiquei:</strong> layout responsivo, acessibilidade, desempenho de imagens e SEO.</li>
+    </ul>
+
+    <h2>Como o projeto evoluiu</h2>
+    <h3>Versão 1: primeiro desenho</h3>
+    <ul>
+        <li>Conteúdo dividido em arquivos HTML e carregado com <code>fetch</code> ao clicar nos botões.</li>
+        <li>Formulário de contato com serviço externo.</li>
+        <li>Imagens em PNG e JPG, cerca de 4 MB.</li>
+    </ul>
+    <h3>Versão 2: revisão completa</h3>
+    <ul>
+        <li>Página que tinha 1136 px de largura no celular passou a caber em 375 px. Veja <a href="rolagem-lateral-no-celular.html">Como encontrar e corrigir rolagem lateral</a>.</li>
+        <li><code>fetch</code> trocado por <a href="abas-acessiveis-aria.html">abas acessíveis com conteúdo inline</a>, e o artigo longo virou a quinta aba.</li>
+        <li>46 imagens convertidas para WebP. Veja <a href="imagens-webp-e-lazy-loading.html">Imagens em WebP e carregamento preguiçoso</a>.</li>
+        <li>Metadados completos, imagem de compartilhamento, <code>robots.txt</code> e <code>sitemap.xml</code>. Veja <a href="seo-e-compartilhamento.html">SEO básico e imagem de compartilhamento</a>.</li>
+        <li>Galeria com teclado e Esc, aviso de projeto de fã e seção "Sobre o projeto" no lugar do formulário.</li>
+    </ul>
+
+    <h2>Anotações</h2>
+    <h3>Layout e CSS</h3>
+    <ul>
+        <li><a href="container-flex.html">Layout Responsivo com Flexbox</a></li>
+        <li><a href="menu-basico.html">Menu de navegação básico com flex</a></li>
+        <li><a href="rolagem-lateral-no-celular.html">Como encontrar e corrigir rolagem lateral no celular</a></li>
+        <li><a href="reset-css-explicado.html">Reset CSS explicado</a></li>
+        <li><a href="short-hand-background.html">Shorthand Background CSS</a></li>
+        <li><a href="parallax-simples.html">Efeito parallax com HTML e CSS</a></li>
+        <li><a href="efeito-contorno-drop-shadow.html">Efeito Drop Shadow com CSS</a></li>
+        <li><a href="efeitos-com-filter.html">Efeitos visuais com <code>filter</code></a></li>
+        <li><a href="import-vs-link.html">Importando Fontes no CSS: <code>@import</code> vs. <code>link</code></a></li>
+    </ul>
+    <h3>Imagens e desempenho</h3>
+    <ul>
+        <li><a href="imagens-webp-e-lazy-loading.html">Imagens em WebP e carregamento preguiçoso</a></li>
+        <li><a href="boas-praticas-imagens.html">Boas práticas com imagens</a></li>
+        <li><a href="galeria-de-imagens.html">Galeria de imagens explicada</a></li>
+    </ul>
+    <h3>JavaScript e acessibilidade</h3>
+    <ul>
+        <li><a href="abas-acessiveis-aria.html">Abas acessíveis (ARIA) com conteúdo inline</a></li>
+        <li><a href="carregamento-dinamico-de-conteudo.html">Carregamento dinâmico de conteúdo HTML</a> (técnica antiga)</li>
+        <li><a href="funcao-load-content.html">Função JS para carregar o conteúdo</a> (técnica antiga)</li>
+        <li><a href="criando-formulario.html">Criando o Formulário HTML</a></li>
+    </ul>
+    <h3>SEO e publicação</h3>
+    <ul>
+        <li><a href="seo-e-compartilhamento.html">SEO básico e imagem de compartilhamento</a></li>
+        <li><a href="meta-tags-explicado.html">Meta Tags explicado</a></li>
+    </ul>
+
+    <h2>O que aprendi</h2>
+    <ul>
+        <li>Testar em 375 px desde o começo evita refazer o layout no fim.</li>
+        <li>Conteúdo no HTML é mais rápido, mais acessível e mais fácil de manter que conteúdo carregado por script.</li>
+        <li>Toda troca automática precisa de uma verificação: um script que confere os caminhos evitou imagens quebradas.</li>
+        <li>O cache do GitHub Pages (10 minutos) pode fazer um conserto parecer que falhou.</li>
+    </ul>
+
+    <p><em>Projeto de fã, sem fins lucrativos e sem vínculo com a FromSoftware ou a Bandai Namco.</em></p>
 </article>
     <footer class="p-1">
         <button class="accent">
